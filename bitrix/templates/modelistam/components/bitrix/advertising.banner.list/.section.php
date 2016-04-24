@@ -1,0 +1,3 @@
+<?
+$sSectionName="advertising.banner.list";
+?>

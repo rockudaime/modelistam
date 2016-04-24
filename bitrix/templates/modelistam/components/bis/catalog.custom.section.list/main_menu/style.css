@@ -1,0 +1,103 @@
+.page-main-menu {
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    z-index: 10;
+}
+.main-menu-wrap-list {
+    position: relative;
+    display: inline-block;
+}
+.main-catalog-link {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    background:#4B80BB url("images/ui-icon-arrow-menu-down.png") no-repeat 94% center;
+    padding: 6px 30px 6px 12px;
+    border-radius: 5px;
+}
+.main-catalog-item:hover .main-catalog-link {
+    color: #fff;
+    text-decoration: none;
+    background: #2291cd url("images/ui-icon-arrow-menu-down.png") no-repeat 94% center;
+}
+.catalog-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.catalog-icon > i {
+    background: #d3e9f5;
+    display: none;
+    width: 18px;
+    height: 2px;
+    margin: 0 0 5px;
+}
+
+.main-menu-list {
+    display: none;
+    position: absolute;
+    min-height: 250px;
+    background: #2291cd;
+    padding: 12px 0;
+    width: 250px;
+    top: 33px;
+    left: 0;
+    font-size: 17px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+}
+.main-menu-list a {
+    color: #fff;
+}
+.dropdown__gen__link {
+    display: block;
+    padding: 5px 15px;
+}
+.dropdown__gen:hover .dropdown__gen__link {
+    color: #fff;
+    text-decoration: none;
+    background: #40A8E0;
+}
+.parent-inner-menu {
+    display: none;
+    position: absolute;
+    min-height: 250px;
+    left: 250px;
+    width: 250px;
+    top: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.61);
+    background: #40A8E0;
+    border-radius: 0 0 6px 6px;
+    padding: 12px 0;
+    font-size: 17px;
+}
+.parent-iner-menu__link {
+    display: block;
+    padding: 5px 15px 4px 15px;
+    color: #fff;
+}
+.parent-iner-menu__link:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #2291cd;
+}
+.parent-iner-menu__link--level-two {
+}
+.parent-iner-menu__link--level-three {
+}
+@media screen and (max-width: 860px) {
+    .catalog-icon > i{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .main-catalog-item:hover .main-menu-list {
+        display: block;
+    }
+    .dropdown__gen:hover > .parent-inner-menu {
+        display: block;
+    }
+}

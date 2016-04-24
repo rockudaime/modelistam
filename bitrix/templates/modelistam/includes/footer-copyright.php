@@ -1,0 +1,1 @@
+<a class="email-modelistam" href="mailto:modelistam@modelistam.com.ua"><i></i>modelistam@modelistam.com.ua</a>

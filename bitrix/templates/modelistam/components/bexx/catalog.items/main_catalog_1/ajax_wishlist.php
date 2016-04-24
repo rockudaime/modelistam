@@ -1,0 +1,1 @@
+<a class="top-wishlist-link wishlist-link wishlist-link--active" href="/personal/"><i></i>В списке желаний</a>

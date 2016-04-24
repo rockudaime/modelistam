@@ -1,0 +1,67 @@
+#page-wrapper - основная обертка страницы до футера.
+
+================= Шапка сайта =========================
+    .page-header-wrapper -> обертка над шапкой сайта
+    #top-menu.header__top-menu -> обертка над верхней частью шапки с лого (белый фон) на всю ширину
+        .header__top-menu__inner -> обертка над верхней частью шапки с шириной и верхним паддингом
+        .top-cart -> корзина (находится в коде html в обертке над верхней частью шапки, по факту же в части с серым фоном)
+        .top-links-menu -> иконочное меню в серой части шапки, хотя код по факту не там (версталось скорее всего позиционированием, что не есть хорошо)
+    .page-header-wrapper__inner -> обертка, которая центрирует по ширине
+        #header.header -> обертка
+
+
+
+============ Основной контент =========================
+    .page-main-menu-wrap -> обертка над основным-боковым меню(на главной), в остальный случаях обертка над хлебными крошками с выпадающим меню
+        #main-menu.page-main-menu -> обертка основного-бокового меню с центрированием по ширине
+            .main-catalog-link -> кнопка раскрывающая основное-боковое меню
+            .breadcrumb-wrap -> обертка хлебных крошек
+    .not-home-page -> обертка выпадающего бокового меню.
+        .menu-inside
+            .front-left -> блок бокового меню
+    .page-inner -> контейнер для основного контента, задает общую ширину и центрирован по ширине имеет небольшой паддинг.
+        #content-wrapper -> обертка основного контента (зачем он нужен???)
+            #content -> еще одна обертка (в ней нету смысла)
+                #Workarea -> еще одна обертка (в ней нету смысла!!!!!)
+                    .content-wrap -> обертка контента
+                        .catalog-h1 -> основной заголовок страницы
+                        .sidebar-left -> боковое меню содержит фильтры, а также блок недавно просмотренного
+
+                        .catalog-content -> содержимое на странице категории, содержит слайдер и товары
+
+                    .front-bottom-wrap -> обертка нижнего блока адрессов
+
+
+====================== Футер ============================
+
+#footer-wrapper ->
+    .footer-login-mobile->
+        #dynamic_auth
+            .toppest-menu
+                .login-block-ok
+                    .login-icon
+            .auth-block
+
+    #footer ->
+        .footer__inner ->
+            .footer-links ->
+                .footer-items ->
+                    .info-menu
+                        .info-item
+
+                .footer-info ->
+                    .info-menu
+                        .info-item
+                .information ->
+                    .info-menu_last
+                        .info-item
+            .footer__contacts
+                .contacts-city
+                .contacts-work-time
+                .phones-footer
+                .skype
+            .footer__contacts
+                .contacts-city
+                .contacts-work-time
+                .phones-footer
+                .skype

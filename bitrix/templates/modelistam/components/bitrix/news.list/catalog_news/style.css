@@ -1,0 +1,18 @@
+.news-date-time {
+    font-size: 10px;
+    color: rgb(180, 26, 26);
+}
+.catalog-news-template {
+   margin: 0 0 30px;
+}
+.catalog-news-template .news-item-inner {
+    padding: 4px;
+    margin: 0 0 14px;
+    box-shadow: 0 2px 5px #b3b2b1;
+    font-size: 14px;
+}
+
+.catalog-news-template .news-item__name-link {
+    color: #5b5b5b;
+    text-decoration: none;
+}
