@@ -1,0 +1,220 @@
+@import "variables";
+/*
+Файл со стилями для корзины. Изначальный файл:
+bitrix/templates/modelistam/components/bexx/order/template1/style.css
+Так что конечный файл необходимо будет поместить туда же.
+*/
+
+$phone-width: 460px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+//color
+$cart-bg: #fffdf6;
+
+@mixin phone {
+    @media screen and (max-width: #{$phone-width}) {
+        @content;
+    }
+}
+@mixin tablet {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width})  {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+
+}
+
+.order-block {
+    overflow: hidden;
+    margin: 0 0 18px;
+    color: #5a5a5a;
+    font-size: 14px;
+}
+.order-block__main-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 24px;
+}
+.order-block__left {
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    margin-right: 1%;
+    background: $cart-bg;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    input[type="text"], textarea{
+        min-width: 136px;
+        min-height: 25px;
+        border-radius: 4px;
+        padding: 4px 6px;
+        color: $text-color;
+
+        @include phone{
+            min-width: 95%;
+        }
+
+        @include tablet{
+            max-width: 150px;
+            width: 95%;
+        }
+
+    }
+
+    input[type="text"]:focus, textarea:focus{
+        border: 1px solid $main-blue;
+        outline: none;
+    }
+    textarea{
+        min-height: 50px;
+    }
+
+    @include phone{
+        width: 90%;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    @include tablet{
+        margin-left: 15px;
+        max-width: 340px;
+        width: 95%;
+    }
+
+}
+.order-block__left-inner {
+    margin: 0 0 30px;
+}
+.order-block-left__bottom {
+    margin: 0 0 12px;
+}
+
+.order-block-left__bottom .butt3--big{
+    background: #659812;
+}
+
+.order-block__right {
+    margin: 0 0 20px;
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    // border: 1px solid $main-grey;
+    border-radius: 4px;
+
+    @include phone{
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+
+    }
+}
+.page-order__table {
+    width: 100%;
+}
+.page-order__table select,
+.page-order__table textarea{
+    max-width: 180px;
+}
+.page-order__table > tbody > tr > td {
+    width: 50%;
+    padding: 5px 7px 5px 0;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+    @include phone{
+        width: 100%;
+    }
+    @include tablet{
+        width: 100%;
+    }
+}
+.order-addr-input {
+
+}
+.order_prop_group_name {
+	font-weight: bold;
+}
+.order-block__cart-table {
+    margin: 0;
+    font-size: 14px;
+}
+.order-block__cart-table td {
+    padding: 12px;
+    border-bottom: 1px dashed #dcdcdc;
+}
+.order_cart_items_line--name {
+    min-width: 150px;
+}
+.order_cart_items_line--total-quantity {
+    font-size: 14px;
+    min-width: 60px;
+}
+.order_cart_items_line--total-price {
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 70px;
+}
+.order_cart_items_line--price {
+    min-width: 70px;
+}
+.order-block__cart-table .order_cart_items_header {
+    padding: 12px;
+    border-bottom: 1px solid #dcdcdc;
+    font-weight: normal;
+    text-align: center;
+}
+.order-block__cart-table .order_cart_items_header:first-child {
+    text-align: left;
+}
+.order-block__total {
+    overflow: hidden;
+    padding: 12px;
+    font-size: 18px;
+    background: $cart-bg;
+}
+.order-block__total__left {
+    float: left;
+    margin: 0 25px 10px 0;
+}
+.order-block__total__right {
+    float: left;
+}
+.order-block__cart {
+    overflow: hidden;
+    margin: 0 0 22px;
+    font-size: 13px;
+}
+.order-block__cart .cart-title {
+    margin: 0;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    font-size: 18px;
+    overflow: hidden;
+}
+.order-block__cart .cart-title > a {
+    float: right;
+    text-decoration: underline;
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-top: 4px;
+}
+.order-block__cart .cart-title > a:hover {
+    color: #32abed;
+}
+.order-block__cart-inner {
+    border: 1px solid #dcdcdc;
+    border-top: none;
+    padding: 10px 0 0;
+}
+
+tr.prop_error td {color: #f00;}
+tr.prop_error td input {border: #f00 1px solid;}

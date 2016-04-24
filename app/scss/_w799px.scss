@@ -1,0 +1,610 @@
+/*------------------------------------------------------------
+===========  Media-queries from 643px to 890px   ===========
+----------------------------------------------------------- */
+@media screen and (max-width: 890px) {
+	.search .search__q-input {
+		min-width: 221px;
+	}
+	.search_focused .search__q-input {
+		min-width: 221px;
+	}
+	.search_focused .search__submit {
+		padding: 10px 30px 0px 17px;
+		margin: 0;
+	}
+	#search {
+		width: 289px;
+	}
+	.catalog-view-changer{
+		margin: 0;
+	}
+	.top-skype, .top-work-hours, .top-phone{
+		width: 100%;
+	}
+
+	// --------------------------
+	// ------- Страница товара ---
+	//--------------------------
+	.product-cart__image{
+		width: 50%;
+	}
+	.product-main-image, .detail__gallery{
+		float: left;
+		width: 100%;
+		padding: 0;
+	}
+	.detail__gallery__item{
+		display: inline-block;
+		width: 49%;
+
+	}
+	.product-right-block__inner-left-bottom{
+		display: none;
+	}
+
+	.video-item-detail{
+		float: none;
+		width: 75%;
+		margin: 0 auto;;
+		padding: 0;
+	}
+	.product-bottom{
+		float: none;
+		width: 100%;
+	}
+	.detail__main-props__item{
+		padding: 10px 0;
+	}
+	.product-right-block__inner{
+		display: block;
+		width: 100%;
+	}
+	.product-right-block__inner-left{
+		display: block;
+		width: 100%;
+	}
+	.item-detail-menu-wrap{
+		width: 100%;
+		padding: 0;
+		margin-bottom: 1.5em;
+		box-sizing: border-box;
+	}
+
+}
+
+@media screen and (max-width: 845px) {
+	#search {
+		width: 232px;
+	}
+	.search .search__q-input {
+		width: 180px;
+		min-width: 164px;
+	}
+	.search_focused .search__q-input {
+		min-width: 164px;
+	}
+	.search__submit {
+		padding: 10px 11px 0px 14px;
+		margin: 0;
+	}
+	.search__q-input_full{
+		display:none;
+
+	}
+	.search__q-input_sm{
+		display: inline-block;
+	}
+	.search_focused .search__submit {
+		padding: 10px 8px 0px 14px;
+		margin: 0;
+	}
+	.detail-container__content > .pagetitle{
+		padding-right: 0;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	.product-compare-block{
+		display: none;
+		visibility: hidden;
+	}
+	.description__bottom__right{
+		position: absolute;
+		bottom: 13px;
+		right: 15px;
+	}
+	.inner-price-block{
+		margin-right: 35px;
+		margin-bottom: 15px;
+	}
+	.front-location-kyiv{
+		border: none;
+	}
+
+	// Styles for category page
+	// the filter and sort buttons
+	.catalog-view-changer{
+		display: none;
+	}
+	.mobile-filter-links{
+	    display: block;
+		width: 100%;
+		border-bottom: 1px solid $main-grey;
+		padding: 2% 0 2% 6%;
+		text-align: center;
+		box-sizing: border-box;
+	}
+
+	.filter-link, .sort-link{
+		border: 1px solid #000;
+		border-radius: 6px;
+		padding: 8px 10px;
+		width: 40%;
+		display: block;
+		float: left;
+		background: url(images/ui-icon-sort-down.gif) 95% center no-repeat;
+	}
+	.filter-link:hover, .sort-link:hover{
+		cursor: pointer;
+		background: $main-blue;
+		color: #fff;
+
+	}
+	.filter-link{
+		margin-right: 2%;
+
+	}
+	.product-sort-simple{
+		display: none;
+	}
+	#sort-form, .sort{
+		border: none;
+		height: 0;
+		position: static;
+		margin: 0;
+	}
+	.product-sort-simple{
+		width: 90%;
+		max-width: 450px;
+		position: absolute;
+		right: 0;
+		z-index: 9999;
+		background: $bg-grey;
+		border: 1px solid $main-grey;
+		border-bottom: none;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+	}
+	.product-sort-simple b{
+		display: none;
+	}
+	.product-sort__link{
+		display: block;
+		width: 100%;
+		font-size: 1rem;
+		text-decoration: none;
+		// text-transform: capitalize;
+		padding: 10px 25px 5px;
+		border-bottom: 1px solid $main-grey;
+		color: $text-color;
+	}
+	.product-sort__link:hover{
+		background: $bg-grey;
+	}
+	.product-filter:nth-child(1) .filter-values-block, 	.product-filter:nth-child(2) .filter-values-block{
+		display: block;
+	}
+	.checkbox-black-checked{
+		margin-right: 25px;
+	}
+
+}
+
+@media screen and (max-width: 799px) {
+	.header__middle-inner{
+		display: none;
+	}
+
+    /* Response menu*/
+    .header__top-menu {
+        background: none;
+        box-shadow: none;
+    }
+    .fastfilter-submit-block .submit {
+        font-size: 14px;
+    }
+    .section__main-content__left {
+        float: none;
+        width: auto;
+        margin: 0 0 10px;
+    }
+    .root-image-block {
+        float: none;
+    }
+    .section-news-video-block,
+    .catalog-top-block {
+        display: none;
+    }
+
+
+    #pull-login-block {
+        display: block;
+        float: left;
+    }
+    /* header */
+	.login-text_sm{
+		display: inline-block;
+	}
+	.login-text_full{
+		display: none;
+	}
+    .toppest-menu {
+        clear: both;
+        margin-right: 0;
+    }
+    .toppest-menu ul {
+        background: none;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all .5s;
+    }
+    .footer-login-mobile #dynamic_auth{
+        left: 0;
+    }
+    .footer-login-mobile #dynamic_auth .toppest-menu{
+        margin: 0;
+    }
+    .footer-login-mobile #dynamic_auth .toppest-menu li{
+        margin: 0;
+    }
+    .footer-login-mobile #dynamic_auth .toppest-menu ul{
+        float: left;
+    }
+    .top-cart {
+        position: absolute;
+        margin: 0;
+        right: 10px;
+        width: auto;
+        top:10px;
+    }
+    #dynamic_auth{
+        position: absolute;
+        right: 0;
+        top: 13px;
+    }
+    .cart-link-wrap {
+         display: none;
+    }
+	.toppest-menu li b {
+		display: none;
+	}
+    .page-main-menu {
+        border: none;
+    }
+
+    /* content */
+    .table-order__cell-name {
+        width: auto;
+    }
+    .page-cart-item-quantity__add,
+    .page-cart-item-quantity__del {
+        display: none;
+    }
+    .page-cart-item-name > a {
+        font-size: 12px;
+    }
+    .table-order__cell-total {
+        width: 60px;
+    }
+    #footer-wrapper {
+        margin-top: 20px;
+    }
+
+    /* footer */
+    #footer {
+        padding: 10px;
+    }
+
+    .footer-catalog,
+    .footer-menu {
+        width: 48%;
+    }
+    .front-menu-list li{
+        width: 30%;
+    }
+    .front-bg, .page-inner, .front-category-wrap {
+        transition: all .5s;
+        padding: 0 10px;
+    }
+    .front-middle {
+        margin: 0 0 10px;
+        overflow: hidden;
+    }
+    .client-link{
+		    width: 104px;
+        font-size: 12px;
+    background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 100% center;
+    padding: 0px 0px 3px 0px;
+    //  #   display: none;
+    }
+	.top-client {
+		margin: 3px 0px 0px 27px;
+	}
+    .client-link span{
+		border-bottom: 1px solid #afafaf;
+        // #text-decoration: underline;
+        color: #0d0d0d;
+        font-size: 15px;
+    }
+    .client-link:hover{
+
+        // #background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 94% center;
+    }
+    .client-link:hover span{
+		border-bottom: none;
+        text-decoration: none;
+        color: #D34F27;
+        cursor: pointer;
+    }
+    .contacts__content{
+        width: auto;
+        margin: 3px 0 0;
+    }
+    .contacts__tabs-link{
+        margin: 3px 7px 0;
+    }
+    .head_phones_select{
+        font-size: 11px;
+    }
+    .head_phones_select-city{
+        border: none;
+        padding: 7px 0;
+        font-size: 11px;
+    }
+    .contacts__callback{
+        font-size: 11px;
+    }
+    .response-menu li{
+        // #padding: 4px 8px 0px 0px;
+		padding: 4px 0px 0px 22px;
+    }
+	 .response-menu li:first-child{
+        // padding: 4px 8px 0px 22px;
+    }
+
+    .header__phones-top-menu{
+        display: block;
+    }
+	.phone-header span {
+		font-size: 16px;
+	}
+	.contacts__callback {
+		margin: 0px 0px 0;
+	}
+	.toppest-menu ul {
+		padding: 3px 6px;
+	}
+	.page-header-wrapper {
+		padding: 0px 16px;
+	}
+	.contacts__content {
+		padding-left: 0px;
+	}
+	.logo-main{
+		width: 150px;
+	}
+	.page-header-wrapper__inner {
+		padding: 40px 1px 0px 0px;
+	}
+	.head_color {
+		background: url("http://modelistam.com.ua/site_new/test_1/head_color_bg_02.png") #F6F6F6 repeat-x center;
+		margin: -130px 0 12px;
+		height: 108px;
+	}
+	#search {
+		top: -7px;
+		left: -34px;
+	}
+	.top-links-menu {
+		top: 113px;
+	}
+	.header-cart-link i{
+		background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-cart_02.png") no-repeat;
+		width: 32px;
+		height: 28px;
+		    display: block;
+	}
+	.top-cart-block{
+		float: right;
+	}
+	    .header-wishlist-link i{
+    // #    background: url("images/ui-icon-wishlist.png") no-repeat left center;
+            margin: 0 0 7px 6px;
+        width: 37px;
+        height: 23px;
+		border: none;
+
+    }
+    .top-wishlist-block:hover .header-wishlist-link i{
+        background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-wishlist-hover.png") no-repeat left center;
+		border: none;
+		margin-left: 2px;
+    }
+    .header-compare-link i{
+    //  #   background: url("images/ui-icon-compare.png") no-repeat left center;
+        margin: 0 0 7px 10px;
+        width: 37px;
+        height: 23px;
+		border: none;
+    }
+    .top-compare-block:hover .header-compare-link i{
+        background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-compare-hover.png") no-repeat left center;
+		border: none;
+		margin-left: 6px;
+    }
+    .header-price-link i{
+    // #    background: url("images/ui-icon-item-money.png") no-repeat left center;
+        margin: 0 0 0 7px;
+        width: 37px;
+        height: 28px;
+		border: none;
+
+    }
+    .top-price-block:hover .header-price-link i{
+        background: url("images/ui-icon-price-hover.png") no-repeat left center;
+		border: none;
+		margin-left: 7px;
+    }
+    .header-waiting-link i{
+    //  #   background: url("images/ui-icon-waiting.png") no-repeat left center;
+        margin: 0 0 5px 10px;
+        width: 37px;
+        height: 23px;
+		border: none;
+    }
+    .top-waiting-block:hover .header-waiting-link i{
+        background: url("images/ui-icon-waiting-hover.png") no-repeat left center;
+		border: none;
+    }
+	.top-cart-block{
+		    margin-left: 35px;
+	}
+    /*.sidebar-left,*/
+     .section-viewed-block, .front-right{
+        display: none;
+    }
+	.sidebar-left{
+		width: 90%;
+		max-width: 375px;
+	}
+	.filter-header{
+		border-bottom: 1px solid $main-grey;
+		box-sizing: border-box;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 25px;
+		margin: 0;
+		font-size: 1em;
+
+	}
+	.filter-button{
+		height: 30px;
+	}
+	.checkbox-black{
+		margin-right: 25px;
+	}
+    .sidebar-filter{
+        display: none;
+		position: absolute;
+		top: 0;
+		left: 10px;
+		width: 100%;
+		z-index: 99999;
+    }
+	.filter-values-block{
+		display:none;
+		margin: 0;
+	}
+    .catalog-content{
+        width: 100%;
+        margin: 0;
+    }
+    .catalog-top-menu__item{
+        box-sizing: border-box;
+        width: 19%;
+    }
+    .catalog-top-menu__link{
+        padding: 0;
+    }
+    .page-inner{
+        margin: 0;
+    }
+    .top-menu-left-text{
+        display: none;
+    }
+
+	/*-----------------------
+	 Styles for Cart Page
+	 ----------------------- */
+
+	.cart-page .header__middle-inner,
+	.order-page .header__middle-inner{
+
+		display: block;
+	}
+	.cart-page .header,
+	.order-page .header{
+		padding-bottom: 5px;
+		margin-bottom: 15px;
+	}
+	/*-----------------------
+	 End of the Cart Page
+	 ----------------------- */
+
+}
+@media screen and (max-width: 762px) {
+
+
+
+	.search .search__q-input {
+		width: 63px;
+		min-width: 63px;
+		padding: 13px 0px 0px 0px;
+	}
+    .footer-items{
+        width: 35%;
+    }
+    .footer__contacts{
+        float: left;
+        margin-left: 20px;
+        width: 35%;
+    }
+	#search {
+		width: 120px;
+	}
+	.about_t{
+		display: none;
+	}
+    .catalog-content, #catalog-container{
+        padding-bottom: 0;
+    }
+    .content-tabs-catalog{
+        display: none;
+    }
+    .front-bottom-wrap{
+        padding-top: 10px;
+        border-top: 1px solid #d6dbdf;
+    }
+
+
+
+}
+@media screen and (max-width: 643px) {
+	 #pull-search {
+        display: block;
+    }
+	.login-text_sm {
+		display: none;
+	}
+	.toppest-menu li b {
+		display: block;
+	}
+	.toppest-menu li {
+		margin-right: -31px;
+	}
+    .search-block {
+        display: none;
+    }
+	.head_color {
+		margin: -114px 0 12px;
+	}
+	.header__middle{
+		width:initial;
+	}
+	.contacts_t{
+		display: none;
+	}
+	.description__bottom__right{
+		right: 0;
+	}
+}
