@@ -1215,11 +1215,11 @@ div.catalog-item-card .item-image  img {
     background: url("images/ui-icon-avail-yes.png") no-repeat left center;
     display: inline-block;
     padding: 0 5px 0 23px;
-    width: 200px;
+    width: 100px;
 }
 .product-avail-no {
     color: #A6A6A6;
-    width: 200px;
+    width: 100px;
 }
 .product-properties {
     margin: 10px 0 12px;
@@ -1627,12 +1627,13 @@ a.button-buy-orange {
     vertical-align: top;
 }
 .best_price_guarantee{
+    display: block !important;
     font-size: 15px;
     color: #fff;
     background: #76A035;
     padding: 10px 20px;
     border-radius: 25px;
-    margin: 0 0 10px;
+    margin: 0 15px 10px;
 }
 .best_price_guarantee i{
     width: 21px;
@@ -1768,6 +1769,7 @@ a.button-buy-orange {
     padding: 0 10px;
     margin: 0 0 10px;
     width: 50%;
+    min-width: 240px;
     background: #FFFAE8;
 }
 .product-right-block__inner-left{
