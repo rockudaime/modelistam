@@ -23,7 +23,6 @@ foreach($sections as $arSection) {
 		}
 	}
 }
-
 $sections_urls = CBexxShop::GetSectionUrl($sections_ids); // реальные пути разделов
 
 // Если установлен модуль рекламы, задействуем его
@@ -33,7 +32,6 @@ if ($ad_module_installed) {
 }
 $counter = 0;
 ?>
-
 <?foreach($arResult["SECTIONS"] as $arSection):?>
     <?$counter++;?>
 	<?if ($arSection['DEPTH_LEVEL']==$CURRENT_DEPTH):?>
@@ -123,8 +121,7 @@ $counter = 0;
 			<ul class="parent-inner-menu">
 				<li>
 					<?$i=0?>
-
-                                        <?$flag=false?>
+                    <?$flag=false?>
 					<?foreach ($arSection['CHILDS'] as $child_section):?>
                                                 <?if ($flag==false){
                                                     $qnt = $parts_depth_1['CHILDS_DEPTH_LEVEL_2'][$child_section['ID']]['QNT'];
@@ -134,51 +131,25 @@ $counter = 0;
 
 						<?if ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+1):?>
                                                     <?if ($i==$delimiter):?></li><li class="last"><?$set=true;?><?endif;?>
-
-                                                    <ul class="klm1">
-                                                        <li>
-                                                        <h6 class="dropdown-level_2">
-                                                            <a href="<?=$sections_urls[$child_section['ID']]?>" class="text-bold"><?=$child_section['NAME']?></a><i></i>
-                                                        </h6>
-
-                                                        <?if (($qnt !== 0) and ($flag==true)):?>
-                                                            <ul class="klm2">
-                                                        <?endif;?>
-
-                                                        <?if ($qnt == 0):?>
-                                                            </li>
-                                                            </ul>
-                                                            <?$flag=false;?>
-                                                        <?endif;?>
-
-                                                        <?$i++?>
-						<?elseif ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+2):?>
-                                                        <li>
-							                                <p class="dropdown-level_3"><a href="<?=$sections_urls[$child_section['ID']]?>"><?=$child_section['NAME']?></a></p>
-                                                        </li>
+<ul class="klm1">
+<li><h6 class="dropdown-level_2"><a href="<?=$sections_urls[$child_section['ID']]?>" class="text-bold"><?=$child_section['NAME']?></a><i></i></h6>
+<?if (($qnt !== 0) and ($flag==true)):?><ul class="klm2">
+<?endif;?>
+<?if ($qnt == 0):?>
+</li>
+</ul>
+<?$flag=false;?>
+<?endif;?><?$i++?><?elseif ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+2):?>
+<li><p class="dropdown-level_3"><a href="<?=$sections_urls[$child_section['ID']]?>"><?=$child_section['NAME']?></a></p></li>
                                                         <?$qnt = $qnt  - 1;?>
                                                             <?if ($qnt == 0):?>
-                                                            <?$flag=false;?>
-                                                              </ul>
-                                                              </li>
-                                                            </ul>
+                                                            <?$flag=false;?></ul></li></ul>
                                                         <?endif;?>
                                                 <?endif;?>
-					<?endforeach;?>
-
-				</li>
-
-			</ul>
-			<?endif;?>
-		</li>
+					<?endforeach;?></li></ul>
+			<?endif;?></li>
 	<?endif;?>
-<?endforeach;?>
-</ul>
-
-
-
-
-
+<?endforeach;?></ul>
 <script>
     $(document).mouseover(function() {
         $('.icon-hover-element-item .icons-catalog-menu__link').removeClass("icon-hover-element");
@@ -292,7 +263,5 @@ $counter = 0;
 	$(function() {
 		BIS.menuCustomModule.init();
 	});
-
-
 </script>
 

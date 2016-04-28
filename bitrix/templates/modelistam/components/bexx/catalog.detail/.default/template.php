@@ -1389,6 +1389,9 @@ if ($_REQUEST['zapchasti']):?>
       </div><!-- end of #consultation -->
     </div><!-- End of .resp-tabs-container  -->
     <script src="<?=SITE_TEMPLATE_PATH?>/js/easyResponsiveTabs.js"></script>
+    <script>
+         $('#demoTab').easyResponsiveTabs();
+    </script>
 
 <!--       <script type="text/javascript">
           BIS.itemMenuObj = {
