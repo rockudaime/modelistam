@@ -66,7 +66,15 @@ $showPagination = ($arParams['SCROLL_HIDE_PAGINATION'] != 'Y') ? 'true' : 'false
         $('#owl-carousel-<?=$arParams['CODE'];?>').owlCarousel({
             items: <?=$itemsToScroll;?>,
             navigation: <?=$showNavigation;?>,
-            pagination: <?=$showPagination;?>
+            pagination: <?=$showPagination;?>,
+            responsive: true,
+            responsiveRefreshRate : 200,
+            responsiveBaseWidth: window,
+            itemsDesktop : [1199,4],
+            itemsDesktopSmall : [980,3],
+            itemsTablet: [769,3],
+            itemsTabletSmall: [600, 2],
+            itemsMobile : [479,1],
         });
     })
 </script>

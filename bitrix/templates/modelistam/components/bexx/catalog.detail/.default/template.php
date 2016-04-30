@@ -524,7 +524,7 @@ if ($_REQUEST['zapchasti']):?>
                         </div>-->
                         <?//VTL-5?>
 
-                        <div class="item-top-product">
+                    <div class="item-top-product">
                             <?if ($arResult['PROPERTIES']['BEST_PRICE_GUARANTEE']['VALUE'] == 1):?>
                                 <div class="best_price_guarantee">
                                     <i></i><span> Гарантия лучшей цены</span>
@@ -854,6 +854,8 @@ if ($_REQUEST['zapchasti']):?>
                     </div>
 
                 </div>
+
+                <!-- Rating block -->
                 <div class="rating-block">
                     <div class="rating-content">
                         <input type="hidden"
@@ -893,6 +895,7 @@ if ($_REQUEST['zapchasti']):?>
                         <?=$user_voted?"вы уже голосовали":""?>
                     </div>
                 </div>
+                <!-- End of Rating block (start at 858) -->
                <!-- <div class="product-static-block">
                     <?//$APPLICATION->IncludeFile("includes/product-static-block.php");?>
                 </div>-->
@@ -988,7 +991,9 @@ if ($_REQUEST['zapchasti']):?>
                 <?endif;?>
 
             </div>
-            <div class="product-right-block__inner-left">
+            <!-- Здесь был product-right-block__inner-left -->
+		</div>
+        <div class="product-right-block__inner-left">
                 <div class="manufacturer">
                     Производитель: <?=$arResult['BRAND']['NAME']?>
                 </div>
@@ -1008,8 +1013,7 @@ if ($_REQUEST['zapchasti']):?>
                     <li class="left-bottom-item"><a href="/about/consultation/">Консультация</a></li>
                     <li class="left-bottom-item"><a href="/about/service/">Сервисный центр</a></li>
                 </ul>
-            </div>
-		</div>
+        </div>
 	</div>
 	<!--/.product-card-inner-->
   <div style="display: inline-block; width: 100%;">
@@ -1388,12 +1392,12 @@ if ($_REQUEST['zapchasti']):?>
         7
       </div><!-- end of #consultation -->
     </div><!-- End of .resp-tabs-container  -->
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/easyResponsiveTabs.js"></script>
+<!--     <script src="<?=SITE_TEMPLATE_PATH?>/js/easyResponsiveTabs.js"></script>
     <script>
          $('#demoTab').easyResponsiveTabs();
     </script>
-
-<!--       <script type="text/javascript">
+ -->
+  <script type="text/javascript">
           BIS.itemMenuObj = {
               init: function() {
                   var self = this;
@@ -1452,7 +1456,7 @@ if ($_REQUEST['zapchasti']):?>
           $(function() {
               BIS.itemMenuObj.init();
           })
-      </script> -->
+      </script> 
   </div>
     <!--<div id="product-bottom" class="product-bottom">
         <div class="product-bottom__inner">
