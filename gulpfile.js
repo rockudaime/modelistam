@@ -24,7 +24,7 @@ var compass = require('gulp-compass');
 // });
 
 gulp.task('sass', function () {
-  gulp.src('app/scss/*.scss')
+  gulp.src('app/scss/**/*.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
@@ -36,7 +36,7 @@ gulp.task('sass', function () {
 
 // JavaScript processing
 gulp.task('scripts', function() {
-    gulp.src('app/js/*.js')
+    gulp.src('app/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('all.js'))
@@ -56,14 +56,14 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'tovar3.html'
+            index: 'tovar2.html'
         }
     }, cb);
 });
 
 gulp.task('watch', function () {
- gulp.watch('app/scss/*.scss', ['sass', browsersync.reload]);
- gulp.watch('app/js/*.js', ['scripts', browsersync.reload]);
+ gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
+ gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
  gulp.watch('app/img/*', ['images', browsersync.reload]);
 });
 

@@ -956,7 +956,9 @@ div.catalog-item-card .item-image  img {
     margin: 15px 0 15px 0;
 
 }
-
+.product:nth-child(3n) .product-inner{
+    border-right: none;
+}
 .product-inner:hover {
     border: 1px solid #4B80BB;
     border-radius: 3px;
@@ -2349,6 +2351,7 @@ span.price-text {
     color: #5A5A5A;
     font-size: 15px;
 }
+
 .also-names {
     font-size: 10px;
     color: rgb(141, 141, 141);
@@ -2999,6 +3002,13 @@ table.title-search-result td.title-search-separator, table.title-search-result t
     border-bottom: 1px solid #dedede;
    /* margin: 0 0 30px;*/
     position: relative;
+}
+.front-bg{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
 }
 .front-middle {
     margin: 0 auto;
