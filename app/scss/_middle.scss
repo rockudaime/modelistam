@@ -959,7 +959,7 @@ div.catalog-item-card .item-image  img {
 .product:nth-child(3n) .product-inner{
     border-right: none;
 }
-.product-inner:hover {
+.product-inner:hover, .product:nth-child(3n) .product-inner:hover {
     border: 1px solid #4B80BB;
     border-radius: 3px;
     box-shadow: 0 0 5px 1px #d6dbdf;
@@ -1125,6 +1125,7 @@ div.catalog-item-card .item-image  img {
 }
 .description__bottom__right {
     overflow: hidden;
+    height: 64px;
 }
 
 .product-preview-text {
@@ -1523,8 +1524,8 @@ a.button-buy-orange {
     border: none;
 }
 .brands-container__content .brand-list .brand-item{
-    width: 17%;
-    padding: 1%;
+    width: 21%;
+    padding: 5px 15px;
     display: inline-block;
     border: 1px solid rgba(255,255,255,0)
 }
@@ -4662,6 +4663,7 @@ ul.dropdown > li > ul > li{
 .content-tabs-catalog{
     width: 100%;
     border-radius: 3px;
+    border-bottom: 1px solid $main-grey;
 }
 .menu-tabs-catalog-item{
     display: inline-block;
@@ -4725,12 +4727,12 @@ ul.dropdown > li > ul > li{
 .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(3){
     position: absolute;
     top:0;
-    left: 200px;
+    left: 275px;
 }
 .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(4){
     position: absolute;
     top: 0;
-    left: 365px;
+    left: 470px;
 }
 .parent-inner-information__item .brands-container__content{
     width: 100%;

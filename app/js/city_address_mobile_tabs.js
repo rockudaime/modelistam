@@ -11,8 +11,10 @@ var SalonObj = {
         var isMobile = false;
         if (wWidth < 800) {
             self.enableMobileLinks();
+            $('.adress-centre span').hide();
         } else {
             self.disableMobileLinks();
+            $('.adress-centre span').show();
         }
     },
 
