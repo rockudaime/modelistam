@@ -1014,6 +1014,7 @@ if ($_REQUEST['zapchasti']):?>
                     <li class="left-bottom-item"><a href="/about/service/">Сервисный центр</a></li>
                 </ul>
         </div>
+        <!-- end of  div.product-right-block__inner-left-->
 	</div>
 	<!--/.product-card-inner-->
   <div style="display: inline-block; width: 100%;">
@@ -1272,7 +1273,7 @@ if ($_REQUEST['zapchasti']):?>
       </div><!-- end of #characteristics -->
 
       <div id="answers" class="item-detail-menu-container">
-        Here will be answers on the questions.
+        4
       </div><!-- end of #canswers -->
 
       <div id="acksesories" class="item-detail-menu-container">

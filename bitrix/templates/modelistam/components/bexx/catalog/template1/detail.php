@@ -122,7 +122,8 @@ $APPLICATION->SetPageProperty("not_show_page_title","Y");
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </noindex>
         </div>-->
-        <div class="detail__brands">
+<!-- 03.05.2016 заменяю этот участок другим из файла section.php в этой же папке -->
+        <!-- <div class="detail__brands">
             <div class="detail-brands-title">
                 <?
                 //TM-9
@@ -231,8 +232,81 @@ $APPLICATION->SetPageProperty("not_show_page_title","Y");
                 })
 
             </script>
-        </div>
+        </div> -->
 
+<!-- Конец заменяемого участка -->
+
+
+
+<!-- Начало блока, что заменил -->
+        <!--tabs mobile-->
+    <div class="content-tabs-catalog">
+        <ul class="menu-tabs-catalog">
+            <li class="menu-tabs-catalog-item">
+                <div class="menu-tabs-catalog-item__title"><?$APPLICATION->ShowProperty('custom_h1_text');?> по брендам<b></b></div>
+                <ul class="parent-inner-information">
+                    <li class="parent-inner-information__item">
+                        <div class="detail__brands">
+                            <div class="detail__brands__content">
+                                <?$APPLICATION->IncludeComponent("bexx:catalog.items", "brands", array(
+                                        "IBLOCK_TYPE" => "info",
+                                        "IBLOCK_ID" => "25",
+                                        "BLOCK_TITLE"=> "Производители",
+                                        "PARENT_IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
+                                        "PARENT_IBLOCK_ID" => $arParams['IBLOCK_ID'],
+                                        "SECT_ID" => $arResult['SECTION']['ID'], //custom param
+                                        "IBLOCK_CATALOG_ID" => $arParams['IBLOCK_ID'], //custom param
+                                        "CURRENT_PRODUCT_ID" => $detailResult['ID'], //custom param
+                                        "CURRENT_BRAND_ID" => $detailResult['PROPERTIES']['Brand']['VALUE'], //custom param
+                                        "SECTION_ID" => "",
+                                        "INCLUDE_SUBSECTIONS" => "Y",
+                                        "CHECK_PERMISSIONS" => $arParams['CHECK_PERMISSIONS'],
+                                        "CATALOG_PATH" => $arParams['SEF_FOLDER'],
+                                        "ACTIVE" => $arParams['CHECK_ACTIVE'],
+                                        "ACTIVE_DATE" => $arParams['CHECK_ACTIVE'],
+                                        "DESCRIPTION_FROM_PROPS" => $arParams['DESCRIPTION_FROM_PROPS'],
+                                        "USE_EXTERNAL_FILTERING" => $arParams['USE_EXTERNAL_FILTERING'],
+                                        "ALLOW_PAGENAV" => "Y",
+                                        "ALLOW_USER_PAGENAV" => $arParams['ALLOW_USER_PAGENAV'],
+                                        "COUNT" => "25",
+                                        "CACHE_TYPE" => "A",
+                                        "CACHE_TYPE" => "N",
+                                        "CACHE_TIME" => "36000000",
+                                        "CACHE_WITH_FILTER" => $arParams['CACHE_WITH_FILTER'],
+                                        "CACHE_WITH_SORTING" => $arParams['CACHE_WITH_SORTING'],
+                                        "CACHE_WITH_PAGING" => $arParams['CACHE_WITH_PAGING'],
+                                        "SET_TITLE" => "N",
+                                    ),
+                                    $component
+                                );
+                                ?>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-tabs-catalog-item">
+                <div class="menu-tabs-catalog-item__title"><a href="/info/accesories" rel="#"><i class="menu-item-accedories"></i> Аксесуары<b></b></a></div>
+                <ul class="parent-inner-information">
+                    <li class="parent-inner-information__item">Аксесуары</li>
+                </ul>
+            </li>
+            <li class="menu-tabs-catalog-item">
+                <div class="menu-tabs-catalog-item__title"><i class="menu-item-service"><a href="/info/service" rel="#"></i>Обслуживание<b></b></a></div>
+                <ul class="parent-inner-information">
+                    <li class="parent-inner-information__item">Обслуживание</li>
+                </ul>
+            </li>
+            <li class="menu-tabs-catalog-item last">
+                <div class="menu-tabs-catalog-item__title"><i class="menu-item-choise"><a href="/info/howtochoice" rel="#"></i>Как выбрать<b></b></div></div>
+                <ul class="parent-inner-information">
+                    <li class="parent-inner-information__item">Как выбрать</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--/ tabs mobile-->
+<!-- Конец блока, что заменил -->
         <?//MM-209?>
         <div class="block-viewed">
             <?$APPLICATION->IncludeFile("includes/last-viewed-main.php");?>
