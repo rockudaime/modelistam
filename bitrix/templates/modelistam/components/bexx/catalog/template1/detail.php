@@ -243,7 +243,19 @@ $APPLICATION->SetPageProperty("not_show_page_title","Y");
     <div class="content-tabs-catalog">
         <ul class="menu-tabs-catalog">
             <li class="menu-tabs-catalog-item">
-                <div class="menu-tabs-catalog-item__title"><?$APPLICATION->ShowProperty('custom_h1_text');?> по брендам<b></b></div>
+                <div class="menu-tabs-catalog-item__title">
+                <?
+                //TM-9
+                //if ($isCatalog)
+                $APPLICATION->IncludeComponent("bis:breadcrumb", ".default", array(
+                        "START_FROM" => "0",
+                        "PATH" => "",
+                        "SITE_ID" => "-"
+                    ),
+                    false,
+                    Array('HIDE_ICONS' => 'Y')
+                );?>
+                 по брендам<b></b></div>
                 <ul class="parent-inner-information">
                     <li class="parent-inner-information__item">
                         <div class="detail__brands">

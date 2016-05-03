@@ -4704,6 +4704,17 @@ ul.dropdown > li > ul > li{
     cursor: pointer;
     color: #D65B35;
 }
+.menu-tabs-catalog-item__title .breadcrumb{
+    display: inline;
+}
+.menu-tabs-catalog-item__title i{
+    display: none;
+}
+.menu-tabs-catalog-item__title a{
+    font-weight: normal;
+    font-size: 16px;
+}
+
 .menu-tabs-catalog-item__title i.menu-item-accedories{
     background: url("images/ui-icon-catalog-accesories.png") no-repeat 94% center;
     width: 30px;
