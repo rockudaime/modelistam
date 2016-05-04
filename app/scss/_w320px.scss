@@ -425,43 +425,43 @@
     .front-follow-tablet {
         padding: 0 30%;
     }
-    .content-tabs-catalog{
-        display: block;
-        border: 1px solid #787878;
-    }
-    .menu-tabs-catalog-item{
-         border-bottom: 1px solid #787878;
-        display: block;
-    }
-    .menu-tabs-catalog-item__title b{
-        background: url("images/ui-icon-catalog-tabs-mobile.png") no-repeat 94% center;
-        width: 20px;
-        height: 20px;
-        display: inline-block;
-        float: right;
-    }
-    .menu-tabs-catalog-item__title:hover{
-        background: #346CAB;
-        color: #fff;
-        cursor: pointer;
-    }
-    .menu-tabs-catalog .menu-tabs-catalog-item:first-child .parent-inner-information{
-        display: none;
-        position: relative;
-    }
-    .menu-tabs-catalog .menu-tabs-catalog-item:first-child:hover .parent-inner-information{
-        display: block;
-    }
-    .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(2){
-        display: block;
-    }
-    .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(3), .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(4){
-        position: relative;
-        left: 0;
-    }
-    .menu-tabs-catalog-item:hover .parent-inner-information{
-        display: block;
-    }
+    // .content-tabs-catalog{
+    //     display: block;
+    //     border: 1px solid #787878;
+    // }
+    // .menu-tabs-catalog-item{
+    //      border-bottom: 1px solid #787878;
+    //     display: block;
+    // }
+    // .menu-tabs-catalog-item__title b{
+    //     background: url("images/ui-icon-catalog-tabs-mobile.png") no-repeat 94% center;
+    //     width: 20px;
+    //     height: 20px;
+    //     display: inline-block;
+    //     float: right;
+    // }
+    // .menu-tabs-catalog-item__title:hover{
+    //     background: #346CAB;
+    //     color: #fff;
+    //     cursor: pointer;
+    // }
+    // .menu-tabs-catalog .menu-tabs-catalog-item:first-child .parent-inner-information{
+    //     display: none;
+    //     position: relative;
+    // }
+    // .menu-tabs-catalog .menu-tabs-catalog-item:first-child:hover .parent-inner-information{
+    //     display: block;
+    // }
+    // .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(2){
+    //     display: block;
+    // }
+    // .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(3), .menu-tabs-catalog .menu-tabs-catalog-item:nth-child(4){
+    //     position: relative;
+    //     left: 0;
+    // }
+    // .menu-tabs-catalog-item:hover .parent-inner-information{
+    //     display: block;
+    // }
     .brands-catalog{
         display: none;
     }
