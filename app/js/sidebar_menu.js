@@ -1,4 +1,4 @@
-/* Этот скрипт из 
+/* Этот скрипт из
 /bitrix/templates/modelistam/components/bitrix/catalog.section.list/template_icons_custom/template.php
 Он отвечает за отображения бокового меню. В основном обработка событий наведения.
  */
@@ -69,7 +69,7 @@ var menuCustomModule = {
             if (curUrl.indexOf(curItemUrl) != -1) {
                 $(this).addClass('active');
             }
-        })
+        });
     },
     addCssClassForItems: function() {
         this.elems.itemsKlm1.has('.klm2').find('.dropdown-level_2').addClass('has-sub-menu');
@@ -121,7 +121,7 @@ var menuCustomModule = {
             }
         });
     }
-}
+};
 
 //init menuCustomModule
 $(function() {

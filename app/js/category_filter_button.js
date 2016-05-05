@@ -11,16 +11,12 @@ $(document).mouseup(function (e)
 { if ($(document).width() <= 800){
         var container = $(".product-sort-simple");
 
-        if (!container.is(e.target) // if the target of the click isn't the container...
-            && container.has(e.target).length === 0 // ... nor a descendant of the container
-            && !sortLink.is(e.target))
+        if (!container.is(e.target) && container.has(e.target).length === 0 && !sortLink.is(e.target))
         {
             container.hide();
         }
 
-        if (!sidebar.is(e.target) // if the target of the click isn't the container...
-            && sidebar.has(e.target).length === 0 // ... nor a descendant of the container
-            && !filterLink.is(e.target)) 
+        if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0 && !filterLink.is(e.target))
         {
             sidebar.hide();
         }
@@ -45,7 +41,7 @@ sortLink.click(function() {
 
 if ($('.filter-values-block').css('display') === 'block') {
         $('.filterToggler').addClass('icon-down').removeClass('icon-up');
-};
+}
 filterHeader.click(function() {
     // $(this).next().toggle();
     if ($(this).children('span').hasClass('icon-down')) {
@@ -54,5 +50,5 @@ filterHeader.click(function() {
     } else {
         $(this).children('span').removeClass('icon-up').addClass('icon-down');
         $(this).next().toggle();
-    };
+    }
 });

@@ -1222,7 +1222,7 @@ div.catalog-item-card .item-image  img {
 }
 .product-avail-no {
     color: #A6A6A6;
-    width: 100px;
+    width: 115px;
 }
 .product-properties {
     margin: 10px 0 12px;
@@ -1243,6 +1243,9 @@ div.catalog-item-card .item-image  img {
     font-size: 14px;
     display: inline-block;
 }
+
+
+
 .wishlist-link {
     font-size: 12px;
 }
@@ -1987,6 +1990,11 @@ span.price-text {
 }
 .items-links .product-compare-link{
     display:block;
+}
+.product .product-compare-block .float-left{
+     background: url("images/ui-icon-compare.png") no-repeat scroll 3px 0px;
+     height: 42px;
+
 }
 .fast-buy-block {
     margin: 0 0 5px;
@@ -4419,9 +4427,19 @@ table.cart-items tfoot td:first-child {
 .how-many-items *{
     display: inline-block;
 }
-.how-many-items .items-in-cart span{
-    font-size: 18px;
+.items-in-cart{
+    width: 75%;
+    float: right;
 }
+.how-many-items .items-in-cart span{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    margin-top: -38px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
 .how-many-items .items-in-cart span span.price{
     font-weight: 600;
 }

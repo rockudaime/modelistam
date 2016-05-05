@@ -168,7 +168,7 @@
     .shop_works-time{
         border: none;
         display: inline-block;
-        width: 200px;
+        width: 225px;
     }
     .product-right-block__inner-left-bottom{
         margin-bottom: 7px;
@@ -516,7 +516,28 @@
     .brand-active {
         background: url(images/ui-icon-brand-active.png) -70px 0 no-repeat;
     }
-    // .brands-container__content .brand-list .brand-item
+    // вы смотрели + в корзине
+    .how-many-items .items-in-cart span{
+        margin-top: -60px;
+    }
+    .poly-items__item .product-wishlist-block{
+        width: 40%;
+        float: right;
+    }
+    .poly-items__item .product-wishlist-block a > div{
+        display: none;
+    }
+    .poly-items__item .product-wishlist-block .top-wishlist-link{
+        padding: 11px 0;
+    }
+    .poly-items__item .product-wishlist-block{
+        width: 30%;
+    }
+    .home-page .product-add-basket{
+        padding: 0;
+        width: 70%;
+    }
+
     .home-page .brands-container__content{
         width: 500px;
     }
@@ -524,6 +545,7 @@
         width: 160px;
         padding: 6px 0;
     }
+
 
     // news and groups
     .news-content{
@@ -719,6 +741,7 @@
         right: 0px;
    }
 
+
     // ==================================
     // Конец страницы категории mw: 992px
     // ==================================
@@ -765,6 +788,9 @@
     }
     .product-right-block__inner-left-bottom{
         display: none;
+    }
+    .product-right-block__inner-left div{
+        padding: 9px 0;
     }
 
     .product-right-block__inner-left{

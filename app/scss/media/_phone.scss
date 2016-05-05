@@ -247,9 +247,23 @@
     }
     .home-page .front-bg{
         padding: 0;
+        margin-bottom: 30px;
+    }
+    div.how-many-items{
+        display: none;
     }
     .front-wrapper-slider{
         padding: 0;
+    }
+    .poly-items__title{
+        margin-bottom: 0;
+    }
+    .poly-items__item .butt2{
+        padding: 7px 11px;
+    }
+    .poly-items__item .product-wishlist-block .top-wishlist-link{
+        padding: 13px 0;
+        margin: 12px 0 0;
     }
     .front-wrapper-slider .owl-pagination{
         border: none;
@@ -293,6 +307,14 @@
     .home-page .front-category-wrap{
         padding-top: 0;
         margin-top: -25px;
+    }
+
+    div.items-in-cart{
+        display: none;
+        margin: 0;
+    }
+    .home-page .product-add-basket{
+        width: 100%;
     }
 
 
@@ -425,7 +447,7 @@
             margin: 0;
         }
         .product-avail-yes{
-            width: 100px;
+            width: 115px;
         }
 
         div.stock-alert-block{

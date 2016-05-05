@@ -118,10 +118,21 @@
         background: none;
         padding: 0 25px;
     }
+    // вы смотрели + в корзине
+
+    .items-in-cart {
+        width: 63%;
+    }
+    .poly-items__item .product-wishlist-block {
+        width: 23%;
+    }
+    .home-page .product-add-basket{
+        padding: 0;
+        width: 77%;
+    }
 
 
 
-    
 
     // =======================================
     // Конец стилей главной страницы mw: 767px
