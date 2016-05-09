@@ -76,11 +76,12 @@ var SalonObj = {
         links.off('click.mobile');
     }
 };
+
 $(function() {
     SalonObj.init();
     var updateLayout = debounce(function(e) {
         var wWidth = $(window).width();
-        if (wWidth < 994){
+        if (wWidth < 992){
             SalonObj.enableMobileLinks();
             $('.adress-centre span').hide();
         } else {
