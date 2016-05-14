@@ -181,7 +181,7 @@
         box-sizing: border-box;
     }
     .item-detail-menu-wrap .item-detail-menu-item a{
-        padding: 15px 18px;
+        padding: 17px 18px;
     }
 
 
@@ -742,7 +742,7 @@
    .description__bottom__right{
        position: absolute;
        bottom: -10px;
-        right: 0px;
+       right: 0px;
    }
 
 
@@ -776,8 +776,10 @@
         width: 30px;
 
     }
-    .detail__gallery__item{
-        // border-color: $main-blue;
+    .detail__gallery__item a{
+        height: 30px;
+        width: 30px;
+        display: block;
     }
     .detail__gallery__item img{
         display: none;
@@ -839,14 +841,41 @@
         width: 100%;
     }
 
+    // табы выбора контента
+    .item-detail-menu-item{
+        position: relative;
+    }
+
+    li.item-detail-menu-item span{
+        display: block;
+    }
+    .item-detail-menu-item > ul{
+        display: none;
+
+    }
+
+    .item-detail-menu-item:hover > ul{
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: -57px;
+        background: #fff;
+        border: 1px solid #777;
+        z-index: 9999;
+        width: 215px;
+    }
+    .item-detail-menu-item:hover > ul > li{
+        display: block;
+        border-bottom: 1px dashed $main-grey;
+    }
 
     // =================================
     // Конец карточки товара mw: 992px
     // =================================
 
-    // ************************************************************
-    // *   Стили блока с адрессом который идет перед футером     *
-    // ************************************************************
+// ************************************************************
+// *   Стили блока с адрессом который идет перед футером     *
+// ************************************************************
 
     .brands-container__content .brand-list .brand-item {
         width: 28%;
@@ -879,9 +908,9 @@
     // Конец стилей блока с адресом mw: 992px
     // =======================================
 
-    //***********************
-    // *   Стили ФУТЕРА     *
-    //***********************
+//***********************
+// *   Стили ФУТЕРА     *
+//***********************
     #footer{
         padding: 40px 20px 20px;
     }

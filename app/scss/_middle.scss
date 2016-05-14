@@ -2055,16 +2055,26 @@ span.price-text {
 }
 .item-detail-menu-wrap .item-detail-menu-item{
     display: inline-block;
-
 }
-.item-detail-menu-wrap .item-detail-menu-item a{
+
+li.item-detail-menu-item span{
+    display: none;
+}
+.item-detail-menu-item > ul{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+.item-detail-menu-wrap .item-detail-menu-item a,
+.item-detail-menu-item span{
     color: $text-color;
     display: block;
     width: 100%;
-    padding: 15px 25px;
+    padding: 16px 25px;
     box-sizing: border-box;
 }
-.item-detail-menu-wrap .item-detail-menu-item:hover a{
+.item-detail-menu-wrap .item-detail-menu-item:hover a,
+.item-detail-menu-item:hover span{
     color: #A0BAD8;
     cursor: pointer;
     text-decoration: none;
