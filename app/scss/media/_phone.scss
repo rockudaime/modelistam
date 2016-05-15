@@ -524,6 +524,38 @@
         // Конец карточки товара mw: 544px
         // =================================
 
+// ************************************************************
+// *   Стили страницы доставки - delivery page  *
+// ************************************************************
+             .delivery-cities .delivery-cities-tabs{
+               padding: 0;
+               width: 100%;
+               display: none;
+             }
+             .delivery-city-link{
+               display: block;
+               background: $main-blue;
+               padding: 5px 15px;
+               color: #fff;
+               border: none;
+               border-radius: 0;
+             }
+             .delivery-cities .delivery-active{
+               display: block;
+               border-radius: 5px;
+             }
+             .delivery-active a{
+               background: $main-blue;
+               padding: 5px 15px;
+               color: #fff;
+               border: none;
+             }
+
+
+             // ==================================================
+             // Конец страницы доставки - delivery page mw: 1199px
+             // ==================================================
+
 // ***********************************************************
 // *                Стили блока по брендам, над адресами
 //************************************************************

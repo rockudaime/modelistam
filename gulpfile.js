@@ -56,7 +56,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'glavnaya2.html'
+            index: 'delivery.html'
         }
     }, cb);
 });

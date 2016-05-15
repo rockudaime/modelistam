@@ -1,5 +1,6 @@
 upload/
 app/img/
+app/assets/
 dist/
 bitrix/js/
 bitrix/components/

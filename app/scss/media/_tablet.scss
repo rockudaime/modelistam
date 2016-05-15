@@ -263,6 +263,36 @@
        // Конец карточки товара mw: 767px
        // =================================
 
+// ************************************************************
+// *   Стили страницы доставки - delivery page  *
+// ************************************************************
+     .main-delivery-block{
+       padding: 0;
+     }
+     .delivery-service{
+       padding: 15px 0;
+     }
+     .delivery-service-info{
+       padding: 0 20px;
+       width: 100%;
+       float: none;
+       padding: 0;
+     }
+     .delivery-time,
+     .delivery-cost,
+     .delivery-payment{
+       padding-bottom: 10px;
+     }
+     .delivery-service-desc{
+       width: 100%;
+       float: none;
+     }
+     .location-main .salon-adress{
+      //  display: block;
+     }
+     // ==================================================
+     // Конец страницы доставки - delivery page mw: 1199px
+     // ==================================================
 
 // ************************************************************
 // *   Стили блока с адрессом который идет перед футером     *
