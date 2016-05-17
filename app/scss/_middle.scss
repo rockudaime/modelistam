@@ -3856,13 +3856,19 @@ table.cart-items tfoot td:first-child {
     text-decoration: underline;
 }
 
-/* login & reg block */
+// ***********************
+// Страница регистрации
+// ************************
+// Log in
+
 .bx-auth-reg {
     overflow: hidden;
-    margin: 0 0 18px;
+    width: 490px;
+    margin: 0 auto 1em auto;
 }
 .auth-block {
     display: none;
+
     position: relative;
     background: #fff;
     width: 200px;
@@ -3876,6 +3882,24 @@ table.cart-items tfoot td:first-child {
     font: bold 15px Arial, sans-serif;
     color: #2B2B2B;
     margin: 0 0 10px;
+}
+.bx-auth-input,
+.registration__entity input{
+    width: 450px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 4px;
+    padding: 0 18px;
+}
+.registration__entity input:focus{
+    border: 1px solid #4B80BB;
+    outline: none;
+}
+.registration__entity--submit input{
+    width: 486px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 18px;
 }
 .auth-page__entity,
 .registration__entity {

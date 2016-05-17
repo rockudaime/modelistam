@@ -23,9 +23,7 @@ $this->setFrameMode(true);
             }
         }
     }
-
     $sections_urls = CBexxShop::GetSectionUrl($sections_ids); // реальные пути разделов
-
     // Если установлен модуль рекламы, задействуем его
     $ad_module_installed = IsModuleInstalled("advertising");
     if ($ad_module_installed) {
@@ -34,40 +32,25 @@ $this->setFrameMode(true);
     $counter = 0;
     ?>
     <!--klm-->
-
     <li class="<?=$class?> dropdown__gen icons-catalog-menu__item">
-    <div class="main-menu-item-primary0">
-		<div class="main-menu-item-primary_two">
-			<a href="<?=$sections_urls[$arSection['ID']]?>" class="dir dropdown__gen__link icons-catalog-menu__link">
-				<span>
-					<?=Комплектующие?>
-				</span><i></i>
-				<img src="/upload/iblock/93c/93c1b6c6bba8387f5622d331783e3f4b.png" alt="" title="" style="top: -425px;"/>
-			</a>
-		</div>
-    </div>
-    <ul class="parent-inner-menu">
-    <!--klm-->
-
-    <?foreach($arResult["SECTIONS"] as $arSection):?>
-    <?$counter++;?>
-    <?if ($arSection['DEPTH_LEVEL']==$CURRENT_DEPTH):?>
-    <?$class="count-".$counter." ";
-    //if ($counter==count($arResult["SECTIONS"])) $class .= "last";
-    if (!$arSection['CHILDS']) $class .= " no_hover";
-    ?>
-    <li class="<?=$class?> dropdown__gen icons-catalog-menu__item-level_0">
-        <?if ($arSection['CHILDS']):?>
+        <div class="main-menu-item-primary0">
+		  <div class="main-menu-item-primary_two">
+		      <a href="<?=$sections_urls[$arSection['ID']]?>" class="dir dropdown__gen__link icons-catalog-menu__link"><span><?=Комплектующие?></span><i></i><img src="/upload/iblock/93c/93c1b6c6bba8387f5622d331783e3f4b.png" alt="" title="" style="top: -425px;"/></a>
+		  </div>
+        </div>
+        <ul class="parent-inner-menu">
+        <!--klm-->
+        <?foreach($arResult["SECTIONS"] as $arSection):?>
+        <?$counter++;?>
+        <?if ($arSection['DEPTH_LEVEL']==$CURRENT_DEPTH):?>
+        <?$class="count-".$counter." ";
+        //if ($counter==count($arResult["SECTIONS"])) $class .= "last";
+        if (!$arSection['CHILDS']) $class .= " no_hover";?>
+            <li class="<?=$class?> dropdown__gen icons-catalog-menu__item-level_0">
+            <?if ($arSection['CHILDS']):?>
         <?endif;?>
-
-
-
         <div class="main-menu-item-primary1">
-            <a href="<?=$sections_urls[$arSection['ID']]?>" class="text-bold dir dropdown__gen__link icons-catalog-menu__link-level_0">
-                    <span>
-                        <?=$arSection['NAME']?>
-                    </span><i></i>
-            </a>
+            <a href="<?=$sections_urls[$arSection['ID']]?>" class="text-bold dir dropdown__gen__link icons-catalog-menu__link-level_0"><span><?=$arSection['NAME']?></span><i></i></a>
         </div>
         <?if ($arSection['CHILDS']):?>
         <?
@@ -87,16 +70,12 @@ $this->setFrameMode(true);
                 if ($ad_module_installed) $arAdvKeywords[] = $s['NAME'];
                 if ($s['DEPTH_LEVEL']==$CURRENT_DEPTH+1) {
                     $parts[$s['ID']] = 1;
-
-
                     //PM-2
                     $qnt = 0;
                     $parts_depth_1['CHILDS_DEPTH_LEVEL_2'][$s['ID']] = array(
                         "QNT" => $qnt
                     );
                     //PM-2
-
-
                 } elseif ($s['DEPTH_LEVEL']==$CURRENT_DEPTH+2) {
                     $parts[$s['IBLOCK_SECTION_ID']]++;
                     //PM-2
@@ -139,54 +118,36 @@ $this->setFrameMode(true);
         }
         ?>
         <ul class="parent-inner-menu__level0">
-            <li>
-                <?$i=0?>
-
+            <li><?$i=0?>
                 <?$flag=false?>
                 <?foreach ($arSection['CHILDS'] as $child_section):?>
                 <?if ($flag==false){
                     $qnt = $parts_depth_1['CHILDS_DEPTH_LEVEL_2'][$child_section['ID']]['QNT'];
                     $flag=true;
-                }?>
-
-
-                <?if ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+1):?>
+                }?><?if ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+1):?>
                 <?if ($i==$delimiter):?></li><li class="last"><?$set=true;?><?endif;?>
-
                 <ul class="klm1">
                     <li class="icons-catalog-menu__item-level_2">
                         <h6 class="dropdown-level_2">
-
                             <?if ($child_section['CODE'] ==''):?>
-                                <?=$child_section['NAME']?></a><i></i>
-                            <?else:?>
+                                <?=$child_section['NAME']?></a><i></i><?else:?>
                                 <?//if ($child_section['EXTERNAL_ID'] == 'menu_links'):?>
                                 <?if ($child_section['PICTURE']):?>
-                                    <a href="<?=$child_section['CODE']?>" class="text-bold">
-                                        <img src="<?//=$child_section['PICTURE']['SRC']?>" alt="" title=""/>
-                                        <?=$child_section['NAME']?>
-                                    </a>
+                            <a href="<?=$child_section['CODE']?>" class="text-bold"><img src="<?//=$child_section['PICTURE']['SRC']?>" alt="" title=""/><?=$child_section['NAME']?></a>
                                 <?else:?>
-                                    <a href="<?=$sections_urls[$child_section['ID']]?>" class="text-bold icons-catalog-menu__link-level_2"><?=$child_section['NAME']?><i></i></a>
-                                <?endif;?>
+                            <a href="<?=$sections_urls[$child_section['ID']]?>" class="text-bold icons-catalog-menu__link-level_2"><?=$child_section['NAME']?><i></i></a>
                             <?endif;?>
-                        </h6>
-
-                        <?if (($qnt !== 0) and ($flag==true)):?>
-                        <ul class="klm2 parent-inner-menu__level2">
-                            <?endif;?>
-
-                            <?if ($qnt == 0):?>
+                    <?endif;?></h6>
+                    <?if (($qnt !== 0) and ($flag==true)):?>
+                    <ul class="klm2 parent-inner-menu__level2"><?endif;?><?if ($qnt == 0):?>
                     </li>
                 </ul>
             <?$flag=false;?>
             <?endif;?>
-
                 <?$i++?>
                 <?elseif ($child_section['DEPTH_LEVEL']==$CURRENT_DEPTH+2):?>
             <li>
-
-                <?if ($child_section['CODE'] ==''):?>
+            <?if ($child_section['CODE'] ==''):?>
                     <h6 class="just-text">
                         <p><?=$child_section['NAME']?></a><i></i></p>
                     </h6>
@@ -205,24 +166,15 @@ $this->setFrameMode(true);
 <?endif;?>
 <?endif;?>
 <?endforeach;?>
-
-    </li>
-
-    </ul>
+</li></ul>
 <?endif;?>
-
-
-
-    </li>
+</li>
 <?endif;?>
 <?endforeach;?>
-
 <!--klm-->
 </ul>
 </li>
-
 <!--klm-->
-
 </ul>
 
 <script>
@@ -231,25 +183,18 @@ $this->setFrameMode(true);
         $('.icons-catalog-menu__item').removeClass("icon-hover-element-item");
         $('.icons-catalog-menu__item:hover').addClass("icon-hover-element-item");
         $('.icon-hover-element-item .icons-catalog-menu__link').addClass("icon-hover-element");
-    });
-</script>
-<script>
-    $(document).mouseover(function() {
+
         $('.icon-hover-element-item-level_2 .icons-catalog-menu__link-level_2').removeClass("icon-hover-element-level_2");
         $('.icons-catalog-menu__item-level_2').removeClass("icon-hover-element-item-level_2");
         $('.icons-catalog-menu__item-level_2:hover').addClass("icon-hover-element-item-level_2");
         $('.icon-hover-element-item-level_2 .icons-catalog-menu__link-level_2').addClass("icon-hover-element-level_2");
-    });
-</script>
-<script>
-    $(document).mouseover(function() {
+
         $('.icon-hover-element-item-level_0 .icons-catalog-menu__link-level_0').removeClass("icon-hover-element-level_0");
         $('.icons-catalog-menu__item-level_0').removeClass("icon-hover-element-item-level_0");
         $('.icons-catalog-menu__item-level_0:hover').addClass("icon-hover-element-item-level_0");
         $('.icon-hover-element-item-level_0 .icons-catalog-menu__link-level_0').addClass("icon-hover-element-level_0");
     });
-</script>
-<script type="text/javascript">
+
     BIS.menuCustomModule = {
         elems: {
             dropDown: {},
@@ -349,7 +294,5 @@ $this->setFrameMode(true);
     $(function() {
         BIS.menuCustomModule.init();
     });
-
-
 </script>
 

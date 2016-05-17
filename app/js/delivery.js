@@ -33,6 +33,7 @@ var updateLayout = debounce(function(e) {
 		var cssActiveLink = 'delivery-active';
 		var dataId;
 		var currentBlock;
+
 		blocks.hide();
 		$('#kyiv').show();
 		links.on('click.mobile', function(e) {
@@ -55,6 +56,12 @@ var updateLayout = debounce(function(e) {
 	      currentBlock.show();
 	      $(this).parent('.delivery-cities-tabs').addClass(cssActiveLink);
 		});
+		if (wWidth >= 545){
+			console.log(wWidth);
+			tabs.addClass('u-inline-block');
+		} else {
+			tabs.removeClass('u-inline-block');
+		}
   }, 500); // Maximum run of once per 500 milliseconds
 updateLayout();
 window.addEventListener("resize", updateLayout, false);

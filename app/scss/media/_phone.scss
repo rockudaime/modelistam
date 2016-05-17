@@ -79,7 +79,7 @@
     .top-wishlist-block,
     .top-compare-block,
     .top-waiting-block{
-        margin: 0 0 4px 5px;
+        margin: 0 0 4px 3px;
     }
     .cart-link-wrap {
         padding: 0;
@@ -564,6 +564,34 @@
              // ==================================================
              // Конец страницы доставки - delivery page mw: 1199px
              // ==================================================
+
+// ***********************************************************
+// *             Страница регистрации                        *
+// ***********************************************************
+
+.bx-auth-reg {
+    width: 100%;
+}
+.bx-auth-input,
+.registration__entity input{
+    width: 100%;
+    box-sizing: border-box;
+}
+.registration__entity input:focus{
+    border: 1px solid #4B80BB;
+    outline: none;
+}
+.registration__entity--submit input{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 18px;
+    box-sizing: border-box;
+}
+
+// ===================================
+// Конец стилей страницы регистрации
+// ===================================
 
 // ***********************************************************
 // *                Стили блока по брендам, над адресами
