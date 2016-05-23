@@ -8,7 +8,6 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
         <div class="front-location-title">
             <?$APPLICATION->IncludeFile("includes/front-location-title.php");?>
         </div>
-
         <ul class="location-tab">
             <li class="salon-cities-tabs salon-active"><a data-id="kyiv" href="#" rel="#" class="salon-city-link">В Киеве</a></li>
             <li class="salon-cities-tabs"><a data-id="kharkiv" href="#" rel="#" class="salon-city-link">В Харькове</a></li>
@@ -62,11 +61,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 </div>
 </div>
 </div>
-
 </div>
 </div>
-
-
 
 <div id="footer-wrapper">
     <div class="footer-login-mobile">

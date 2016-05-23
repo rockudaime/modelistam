@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bitrix/templates/modelistam/css/normalize.css" />
+    <link rel="stylesheet" href="dist/main.css">
+    <link rel="stylesheet" href="dist/cart.css">
+    <script type="text/javascript" src="bitrix/templates/modelistam/js/jquery/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+    <div class="page-inner">
+        <div class="order-block__right">
+
+            <div class="order-block__cart clearfix">
+<!-- Начало товара в корзине -->
+                <div class="cart-product clearfix">
+                    <div class="cart-product__item-delete">
+                        <a href="#" class="cart-product__delete_checkbox-item"></a>
+                    </div>
+                    <div class="cart-product__image">
+                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                    </div>
+                    <div class="cart-product__name">
+                        <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
+                    </div>
+                    <div class="cart-product__quantity">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
+                        <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
+                        <span class="cart-product__price">120 045 грн</span>
+                    </div>
+
+                   <div class="cart-product__recomended">
+                       <h3>Рекомендуем к этому товару:</h3>
+                       <ul>
+                           <li><a href="#">Батарейки</a></li>
+                           <li><a href="#">Аккумуляторы</a></li>
+                           <li><a href="#">Сумки</a></li>
+                       </ul>
+                   </div> 
+
+                    <!-- Кнопка + всплывающее окно для редактирования товаров в корзине -->
+                    
+                    <div>
+                        <div class="popup-back">
+                            <div class="close-popup">
+                                <a href="#" rel="#" class="come-back"><i></i><span>Назад</span></a>
+                            </div>
+
+                            <? /* Ссылка отложить */?>
+                            <div id="product-wishlist-<?=$item['ID']?>" class="product-wishlist-block cart-wishlist-block">
+                                <a href="#product-wishlist-<?=$item['ID']?>"
+                                   rel="<?=$arResult['AJAX_CALL_ID']?>"
+                                   class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist"
+                                   params="do=add2wishlist&id=<?=$offer_id?>"><i></i><span>В избранное</span>
+                                </a>
+                            </div>
+                            <div class="delete-detail-block">
+                                <a href="#" class="page-cart__delete_checkbox"><i></i><span>Удалить</span></a>
+                                <input type="checkbox" class="delete_checkbox" name="del[<?=$item['ID']?>]" value="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Конец товара в корзине -->
+<!-- Начало товара в корзине -->
+                <div class="cart-product clearfix">
+                    <div class="cart-product__item-delete">
+                        <a href="#" class="cart-product__delete_checkbox-item"></a>
+                    </div>
+                    <div class="cart-product__image">
+                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                    </div>
+                    <div class="cart-product__name">
+                        <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
+                    </div>
+                    <div class="cart-product__quantity">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
+                        <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
+                        <span class="cart-product__price">120 045 грн</span>
+                    </div>
+
+                   <div class="cart-product__recomended clearfix">
+                        <h3><i class="cart-special-offer">Комплект со скидкой 10%</i></h3>
+                        <img src="dist/images/cart-recomended.png" alt="">
+                        <div class="cart-product__name">
+                            <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
+                        </div>
+                        <div class="product-cart__recomended-sum">
+                            <div class="sum-container">
+                                <span>300 грн</span> <del>330 грн</del>
+                            </div>
+                            
+                            <a href="#" class="btn btn-cart btn-cart-add">Добавить</a>
+                        </div>
+
+                   </div> 
+
+                    <!-- Кнопка + всплывающее окно для редактирования товаров в корзине -->
+                    
+                    <div>
+                        <div class="popup-back">
+                            <div class="close-popup">
+                                <a href="#" rel="#" class="come-back"><i></i><span>Назад</span></a>
+                            </div>
+
+                            <? /* Ссылка отложить */?>
+                            <div id="product-wishlist-<?=$item['ID']?>" class="product-wishlist-block cart-wishlist-block">
+                                <a href="#product-wishlist-<?=$item['ID']?>"
+                                   rel="<?=$arResult['AJAX_CALL_ID']?>"
+                                   class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist"
+                                   params="do=add2wishlist&id=<?=$offer_id?>"><i></i><span>В избранное</span>
+                                </a>
+                            </div>
+                            <div class="delete-detail-block">
+                                <a href="#" class="page-cart__delete_checkbox"><i></i><span>Удалить</span></a>
+                                <input type="checkbox" class="delete_checkbox" name="del[<?=$item['ID']?>]" value="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Конец товара в корзине -->
+<!-- Начало товара в корзине -->
+                <div class="cart-product clearfix">
+                    <div class="cart-product__item-delete">
+                        <a href="#" class="cart-product__delete_checkbox-item"></a>
+                    </div>
+                    <div class="cart-product__image">
+                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                    </div>
+                    <div class="cart-product__name">
+                        <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
+                    </div>
+                    <div class="cart-product__quantity">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
+                        <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
+                        <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
+                        <span class="cart-product__price">120 045 грн</span>
+                    </div>
+
+                    <!-- Кнопка + всплывающее окно для редактирования товаров в корзине -->
+                    
+                    <div>
+                        <div class="popup-back">
+                            <div class="close-popup">
+                                <a href="#" rel="#" class="come-back"><i></i><span>Назад</span></a>
+                            </div>
+
+                            <? /* Ссылка отложить */?>
+                            <div id="product-wishlist-<?=$item['ID']?>" class="product-wishlist-block cart-wishlist-block">
+                                <a href="#product-wishlist-<?=$item['ID']?>"
+                                   rel="<?=$arResult['AJAX_CALL_ID']?>"
+                                   class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist"
+                                   params="do=add2wishlist&id=<?=$offer_id?>"><i></i><span>В избранное</span>
+                                </a>
+                            </div>
+                            <div class="delete-detail-block">
+                                <a href="#" class="page-cart__delete_checkbox"><i></i><span>Удалить</span></a>
+                                <input type="checkbox" class="delete_checkbox" name="del[<?=$item['ID']?>]" value="1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- Конец товара в корзине -->
+
+                <div class="order-total-sum">
+                    Итого без доставки: <span>12 304 грн</span>
+                </div>
+            </div>
+        </div>
+        <div class="order-block__left">
+            <ul class="order-tabs clearfix">
+                <li id="new-buyer-tab" class="active-tab">Новый покупатель</li>
+                <li id="old-buyer-tab">Покупал(а) раньше</li>
+            </ul>
+            <form method="post" action="" id="order_form" class="order_form">
+
+                <div class="new-buyer">
+                    <input type="text" placeholder="Фамилия Имя" id="surname">
+                    <input type="text" id="phone-number" placeholder="Номер телефона">
+                    <label for="email">Получите скидку и личный кабинет</label>
+                    <input type="text" placeholder="Email" id="email">
+                    <div class="email-status">для информации о статусе заказа</div>
+                    <fieldset>
+                    <legend>
+                        Адрес доставки:
+                    </legend>
+                        <select name="prop[5]" id="citySelect" onchange="order_form_reload()">
+                            <option value="0">-- Выберите регион (или обл.) --</option>
+                            <option value="14">Винницкая обл.</option>
+                            <option value="5">Днепропетровская обл.</option>
+                            <option value="7">Донецкая обл.</option>
+                            <option value="8">Запорожская обл.</option>
+                            <option value="3">Киевская обл.</option>
+                            <option value="10">Криворожская обл.</option>
+                            <option value="13">Луганская обл.</option>
+                            <option value="9">Львовская обл.</option>
+                            <option value="12">Мариупольская обл.</option>
+                            <option value="11">Николаевская обл.</option>
+                            <option value="6">Одесская обл.</option>
+                            <option value="18">Полтавская обл.</option>
+                            <option value="15">Республика Крым</option>
+                            <option value="16">Севастополь</option>
+                            <option value="4">Харьковская обл.</option>
+                            <option value="17">Херсонская обл.</option>
+                            <option value="20">Черкасская обл.</option>
+                            <option value="19">Черниговская обл.</option>
+                        </select>
+                    <input type="text" name="prop[6]" placeholder="Город" id="city">
+                    <textarea class="" name="prop[7]" rows="3">Введите свой адрес</textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
+
+                </div>
+                <div class="old-buyer">
+                    <input type="text" placeholder="Ваше имя" id="name">
+                    <input type="text" id="phone-number" placeholder="Ваш телефон">
+                    <input type="password" name="password" id="password-cart" placeholder="Пароль">
+                    <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="page-inner">
+        <div class="order-block__cart clearfix">
+            <div class="cart-product">
+                <div class="cart-product__image"><img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt=""></div>
+                <div class="cart-product__name"><a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a></div>
+                <div class="cart-product__quantity">
+                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
+                    <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
+                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
+                </div>
+            </div>
+            <div class="cart-product">
+                <div class="cart-product__image"><img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt=""></div>
+                <div class="cart-product__name"><a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a></div>
+                <div class="cart-product__quantity">
+                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
+                    <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
+                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
+                </div>
+            </div>
+
+            <div class="order-total-sum">
+                Итого без доставки: <span>12 304 грн</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(".cart-product__delete_checkbox-item").on("click",function(){
+            var ppBlock = $(this).parent().parent().find('.popup-back');
+            ppBlock.show();
+            ppBlock.parent().addClass("in-tr-background");
+        });
+        $(".close-popup").on("click",function(){
+            $(".page-cart__delete_checkbox-item").show();
+            $(this).parent().hide();
+            $(this).parent().parent().removeClass("in-tr-background");
+        });
+    </script>
+</body>
+</html>

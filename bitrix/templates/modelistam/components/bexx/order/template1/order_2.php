@@ -4,9 +4,9 @@
 
 
 <?//PM-10?>
-<input type="hidden" name="customer_type" value="1"> 
-<input type="hidden" name="delivery_system" value="1"> 
-<input type="hidden" name="pay_system" value="1"> 
+<input type="hidden" name="customer_type" value="1">
+<input type="hidden" name="delivery_system" value="1">
+<input type="hidden" name="pay_system" value="1">
 <?//PM-10?>
 
 <?if (is_array($arResult['PROFILES'])):?>
@@ -43,7 +43,6 @@
                             </td>
                         </tr>
                         */?>
-
                         <tr>
                             <td colspan="2">
                                 <?//PM-10?>

@@ -1,6 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
-IncludeTemplateLangFile(__FILE__);
+    IncludeTemplateLangFile(__FILE__);
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,6 @@ IncludeTemplateLangFile(__FILE__);
     echo '<meta http-equiv="Content-Type" content="text/html; charset='.LANG_CHARSET.'"'.(true ? ' /':'').'>'."\n";
     ?>
     <link type="image/ico" rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/images/favicon.ico" />
-
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/jquery.fancybox.css" />
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/flexslider.css" />
@@ -27,11 +25,9 @@ IncludeTemplateLangFile(__FILE__);
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
     <?$APPLICATION->ShowCSS(true, true)?>
-
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/owl.carousel.css" />
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/css/owl.transitions.css" />
-
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/jquery.slicknav.min.js"></script>
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/jquery.mousewheel-3.0.6.pack.js"></script>
@@ -44,7 +40,6 @@ IncludeTemplateLangFile(__FILE__);
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/rater/jquery.rateit.min.js"></script>
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/hoverIntent.minified.js"></script>
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/jquery.gritter.js"></script>
-
     <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery/3d/spritespin.js"></script>
 
     <?//=$APPLICATION->GetHeadScripts(); // Дополнительные скрипты в head ?>
@@ -54,7 +49,6 @@ IncludeTemplateLangFile(__FILE__);
     $APPLICATION->ShowHeadScripts();
     ?>
     <?$APPLICATION->IncludeFile("includes/init-socials.php");?>
-
 </head>
 
 <?//PST-9?>
@@ -62,7 +56,6 @@ IncludeTemplateLangFile(__FILE__);
 <span id="dynamic_globals">
 <?//PST-9?>
 <?
-
 // Получаем содержимое корзины для текущего пользователя
 /*if (CModule::IncludeModule("sale")) {
     $arCartContent = array();
@@ -79,18 +72,14 @@ IncludeTemplateLangFile(__FILE__);
         }
     }
 }
-
 $GLOBALS['cart_content'] = $arCartContent; // Глобализация шагает по планете
 $GLOBALS['wishlist_content'] = $arWishlistContent; // Глобализация шагает по планете*/
-
 $template_path = str_replace("\\", "/", substr(dirname(__FILE__), strlen($_SERVER['DOCUMENT_ROOT']))); // Путь к текущему шаблону
-
 ?>
 <?//PST-9?>
 </span>
 <?\Bitrix\Main\Page\Frame::getInstance()->finishDynamicWithID("dynamic_globals", "");?>
 <?//PST-9?>
-
 <?
 $template_path = str_replace("\\", "/", substr(dirname(__FILE__), strlen($_SERVER['DOCUMENT_ROOT']))); // Путь к текущему шаблону
 
@@ -144,14 +133,11 @@ if ($isOrderPage) {
 ?>
 
 <body class="default <?php echo $bodyClasses;?>">
-
     <div id="panel-wrap"><?if ($USER->isAdmin()) $APPLICATION->GetPanel();?></div>
     <div id="fb-root"></div>
-
     <?if ($isHome):?>
         <div class="bg-front-items"></div>
     <?endif;?>
-
 <div id="page-wrapper">
     <div class="page-header-wrapper">
         <?if (!$isCart && !$isOrderPage):?>
@@ -221,7 +207,6 @@ if ($isOrderPage) {
         <?endif;?>
         <div class="page-header-wrapper__inner">
             <div id="header" class="header">
-
                 <div class="header__container i-clearfix">
                     <?if (!$isCart && !$isOrderPage):?>
                     <div class="header__logo">
@@ -236,10 +221,10 @@ if ($isOrderPage) {
                     <?endif;?>
                     <?if ($isCart || $isOrderPage):?>
                     <div class="header__logo logo-cart">
-                        <?$APPLICATION->IncludeFile("includes/logo-cart.php");?>
-                        <!--<div class="header__logo__descr">
-                            <?//$APPLICATION->IncludeFile("includes/logo-descr.php");?>
-                        </div>-->
+                    <?$APPLICATION->IncludeFile("includes/logo-cart.php");?>
+                    <!--<div class="header__logo__descr">
+                    <?//$APPLICATION->IncludeFile("includes/logo-descr.php");?>
+                     </div>-->
                         <div class = "navigation-items">
                             <ul class="nav-items-list">
                                 <li class="nav-items-item"><i></i><span class="cart-border">Ваш заказ</span></li>
@@ -273,7 +258,6 @@ if ($isOrderPage) {
                                 </div>
                                 <?//$APPLICATION->IncludeFile("includes/work-hours.php");?>
                             </div>-->
-
                         </div>
                         <div class="search-block">
                             <div class="search-block__bottom">
@@ -332,7 +316,6 @@ if ($isOrderPage) {
                             }
                         }
                 });
-
             </script>
             <script>
                 $(".main-catalog-link").mouseover(function(){
