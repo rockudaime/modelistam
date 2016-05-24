@@ -119,8 +119,23 @@
 
 
 //  Корзина right
+.cart-mobile-opener{
+	display: block;
+	background: url(images/ui-cart-white.png) 5px 50% no-repeat,  url(images/ui-icon-arrow-menu-down.png) 95% 50% no-repeat;
+	background-color: #346CAB; 
+	padding: 15px 25px 15px 55px;
+	margin-bottom: 30px;
+	border-radius: 4px;
+	color: #fff;
+
+	span{
+		display: block;
+		font-weight: bold;
+	}
+}
 .order-block__cart{
     margin-bottom: 35px;
+    display: none;
 }
 .cart-product{
     padding: 35px 0 0;
@@ -338,7 +353,11 @@
     .order-block__cart{
         border: 1px solid #959595;
         border-radius: 4px;
+        display: block;
     }
+    .cart-mobile-opener{
+		display: none;
+	}
 
 }
 @media (min-width: 768px){
@@ -350,6 +369,7 @@
         width: 365px;
         float: right;
     }
+
     .cart-product__image{
         width: 150px;
     }
@@ -421,11 +441,12 @@
         float: right;
     }
     .cart-product__name{
-    	width: 380px;
+    	width: 285px;
 
     }
     .cart-product__recomended{
-	    	width: 240px;
+	   	width: 240px;
+		margin: -124px 65px 15px 0; 
 
    	}
    	.btn-cart-add {

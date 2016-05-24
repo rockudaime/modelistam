@@ -13,7 +13,9 @@
 <body>
     <div class="page-inner">
         <div class="order-block__right">
-
+            <div class="cart-mobile-opener">
+                Итого без доставки: <span>12 304 грн</span>
+            </div>
             <div class="order-block__cart clearfix">
 <!-- Начало товара в корзине -->
                 <div class="cart-product clearfix">
@@ -256,16 +258,21 @@
 
 
     <script>
-        $(".cart-product__delete_checkbox-item").on("click",function(){
+        $(".cart-product__delete_checkbox-item").on("click",function(e){
+            e.preventDefault();
             var ppBlock = $(this).parent().parent().find('.popup-back');
             ppBlock.show();
             ppBlock.parent().addClass("in-tr-background");
         });
-        $(".close-popup").on("click",function(){
+        $(".close-popup").on("click",function(e){
+            e.preventDefault();
             $(".page-cart__delete_checkbox-item").show();
             $(this).parent().hide();
             $(this).parent().parent().removeClass("in-tr-background");
         });
+        $('.cart-mobile-opener').on("click", function(e) {
+            $(".order-block__cart").slideToggle( "slow" );
+        })
     </script>
 </body>
 </html>
