@@ -1,3 +1,6 @@
+// Product Page script v 0.0.1
+// Табы на странице карточки товара. 
+
 // Данный скрипт создает раскрывающиеся табы для мобильного вида с основным содержимым
 // описание, отзывы, характеристики и т.д.
 
@@ -24,7 +27,7 @@ var itemMenuObj = {
         var blockid = $('#items-detal');
         var blockqw = $('#questions');
         var blockcon = $('#consultation');
-
+        var wWidth = $(window).width();
         var dataId;
         var currentBlock;
         var cssActiveLink = 'item-detail-menu-item-active';
@@ -39,14 +42,15 @@ var itemMenuObj = {
         blockcon.hide();
         console.log(wWidth);
         if (wWidth < 544){
-			  blockab.before('<h2>Описание</h2>');
-			  blockch.before('<h2>Характеристики</h2>');
-			  blockan.before('<h2>Отзывы</h2>');
-			  blockac.before('<h2>Аксессуары</h2>');
-			  blockid.before('<h2>Запчасти</h2>');
-			  blockqw.before('<h2>Вопросы и ответы</h2>');
-			  blockcon.before('<h2>Получить консультацию</h2>');
-			  $('.item-detail-menu  h2').click(function (event) {
+              blocks.hide();
+			  blockab.before('<h6>Описание</h6>');
+			  blockch.before('<h6>Характеристики</h6>');
+			  blockan.before('<h6>Отзывы</h6>');
+			  blockac.before('<h6>Аксессуары</h6>');
+			  blockid.before('<h6>Запчасти</h6>');
+			  blockqw.before('<h6>Вопросы и ответы</h6>');
+			  blockcon.before('<h6>Получить консультацию</h6>');
+			  $('.item-detail-menu  h6').click(function (event) {
 			        if(false == $(this).next().is(':visible')) {
 			          $('.item-detail-menu-container').slideUp(300);
 			      }
@@ -74,20 +78,20 @@ var itemMenuObj = {
     }
     }
 $(function() {
-    $('#about').css('color', 'red');
+    // $('#about').css('color', 'red');
      itemMenuObj.init();
 
 })
 
 
 
-var links = ['#about', '#charachteristic', '#acksesories', '#answers', '#items-detal', '#questions', '#consultation'];
+// var links = ['#about', '#charachteristic', '#acksesories', '#answers', '#items-detal', '#questions', '#consultation'];
 
-$('#about').hide();
-if (window.innerWidth < 550) {
-    links.forEach(function ( item, i, arr) {
-        console.log(item);
-        // $(item).hide();
-    });
-    console.log(window.innerWidth);
-}
+// $('#about').hide();
+// if (window.innerWidth < 550) {
+//     links.forEach(function ( item, i, arr) {
+//         console.log(item);
+//         // $(item).hide();
+//     });
+//     console.log(window.innerWidth);
+// }

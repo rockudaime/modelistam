@@ -295,5 +295,6 @@ if ($add_custom_h1) $APPLICATION->SetPageProperty("page_title_h1", "<h1 class='p
 <script src="<?=SITE_TEMPLATE_PATH?>/js/category_filter_button.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/sidebar_menu.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/delivery.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/product_page.js"></script>
 </body>
 </html>

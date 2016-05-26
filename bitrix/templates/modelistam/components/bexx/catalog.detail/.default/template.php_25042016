@@ -160,15 +160,20 @@ if ($_REQUEST['zapchasti']):?>
                             <div class="label-status label--sale">Распродажа</div>
                         <?elseif (strlen($arResult['PROPERTIES']['SPECIALOFFER']['VALUE'])):?>
                             <div class="label-status label--akciya">Aкция <i></i> </div>
+
+                        <?//MM-331?>
+                        <?//elseif(strlen($arResult['PROPERTIES']['featured']['VALUE'])):?>
+                        <?//if (MakeTimeStamp($arResult['PROPERTIES']['featured']['VALUE'])>time()):?>
+                        <?elseif ($arResult['BESTSELLER']==1):?>
+                            <div class="label-status label--hit">Топ продаж</div>
+                        <?//endif;?>
+                        <?//MM-331?>
+
                         <?//MM-330?>
                         <?//elseif (MakeTimeStamp($arResult['DATE_CREATE'])+86400*30>time()):?>
                         <?elseif($arResult['NEW']==1):?>
                         <?//MM-330?>
                             <div class="label-status label--new">Новинка</div>
-                        <?elseif(strlen($arResult['PROPERTIES']['featured']['VALUE'])):?>
-                            <?if (MakeTimeStamp($arResult['PROPERTIES']['featured']['VALUE'])>time()):?>
-                                <div class="label-status label--hit">Топ продаж</div>
-                            <?endif;?>
                         <?endif;?>
                     </div>
 
@@ -524,12 +529,12 @@ if ($_REQUEST['zapchasti']):?>
                         </div>-->
                         <?//VTL-5?>
 
-                    <div class="item-top-product">
-                            <?if ($arResult['PROPERTIES']['BEST_PRICE_GUARANTEE']['VALUE'] == 1):?>
+                        <div class="item-top-product">
+                            <? //if ($arResult['PROPERTIES']['BEST_PRICE_GUARANTEE']['VALUE'] == 1):?>
                                 <div class="best_price_guarantee">
                                     <i></i><span> Гарантия лучшей цены</span>
                                 </div>
-                            <?endif;?>
+                            <?//endif;?>
                             <?/* Есть в наличии? */?>
                             <div class="availability">
                                 <?if ($arResult['PROPERTIES']['availability']['VALUE'] == 'Нет в наличии'):?>
@@ -567,13 +572,28 @@ if ($_REQUEST['zapchasti']):?>
                         <div class="detail-main-buy-block">
                             <!-- Кнопка купить-->
                             <?if ($arResult['DISCOUNT_PRICE']> 0):?>
-                                <?if ($arResult['CATALOG_QUANTITY']>0):?>
+                                <? //if ($arResult['CATALOG_QUANTITY']>0):
+								if ($arResult['PROPERTIES']['availability']['VALUE'] == 'Есть в наличии'):
+								?>
 
                                     <div class="detail__price-container__buttons">
                                         <?if ($arResult['CATALOG_QUANTITY']>0 OR $arParams['ALLOW_BUY_NOT_EXISTING']=="Y"):?>
 
                                             <?//VTL-5?>
                                             <?if (count($arResult['OFFERS'])):?>
+											
+											
+											<div class="product-add-basket">
+												<form method="post" action="" id="product-order-form-<?= $arResult['ID'] ?>">
+													<input type="hidden" name="do" value="add2cart" />
+													<input type="hidden" name="qty" value="1" />
+													<input type="hidden" name="id" id="product-order-id-<?= $arResult['ID'] ?>" value="<?= $offer_id ? $offer_id : $arResult['ID'] ?>" />
+													<div id="product-order-<?= $arResult['ID'] ?>">
+														<a class="butt3 ajax-buy-product" href="<?= $arResult['ID'] ?>"><i></i><span>Купить</span></a>
+													</div>
+												</form>
+											</div>
+											
                                                 <div id="product-order-<?=$arResult['ID']?>" class="order-btn">
                                                     <a href="#product-order-<?=$arResult['ID']?>" id="basket-button" class="butt3 butt3--toCart" title="купить <?=$arResult['SECTION']['UF_ITEM_NAME']?> <?=$arResult['NAME']?>"><i></i><span>В корзину</span></a>
                                                 </div>
@@ -854,8 +874,6 @@ if ($_REQUEST['zapchasti']):?>
                     </div>
 
                 </div>
-
-                <!-- Rating block -->
                 <div class="rating-block">
                     <div class="rating-content">
                         <input type="hidden"
@@ -895,7 +913,6 @@ if ($_REQUEST['zapchasti']):?>
                         <?=$user_voted?"вы уже голосовали":""?>
                     </div>
                 </div>
-                <!-- End of Rating block (start at 858) -->
                <!-- <div class="product-static-block">
                     <?//$APPLICATION->IncludeFile("includes/product-static-block.php");?>
                 </div>-->
@@ -991,9 +1008,7 @@ if ($_REQUEST['zapchasti']):?>
                 <?endif;?>
 
             </div>
-            <!-- Здесь был product-right-block__inner-left -->
-		</div>
-        <div class="product-right-block__inner-left">
+            <div class="product-right-block__inner-left">
                 <div class="manufacturer">
                     Производитель: <?=$arResult['BRAND']['NAME']?>
                 </div>
@@ -1013,102 +1028,49 @@ if ($_REQUEST['zapchasti']):?>
                     <li class="left-bottom-item"><a href="/about/consultation/">Консультация</a></li>
                     <li class="left-bottom-item"><a href="/about/service/">Сервисный центр</a></li>
                 </ul>
-        </div>
-        <!-- end of  div.product-right-block__inner-left-->
+            </div>
+		</div>
 	</div>
 	<!--/.product-card-inner-->
   <div style="display: inline-block; width: 100%;">
   <div class="item-detail-menu">
-
-          <ul class="item-detail-menu-wrap">
-              <li class="item-detail-menu-item item-detail-menu-item-active">
-                  <a data-id="about" href="#" rel="#" class="ui-icon-tab-menu-item">О товаре</a>
-              </li>
-              <li class="item-detail-menu-item">
-                  <a data-id="charachteristic" href="#" rel="#" class="ui-icon-tab-menu-item">Характеристики</a>
-              </li>
-              <li class="item-detail-menu-item">
-                  <a data-id="answers" href="#" rel="#" class="ui-icon-tab-menu-item">Отзывы</a>
-              </li>
-              <li class="item-detail-menu-item">
-                  <a data-id="acksesories" href="#" rel="#" class="ui-icon-tab-menu-item">Аксесуары</a>
-              </li>
-              <li class="item-detail-menu-item">
-                  <a data-id="items-detal" href="#" rel="#" class="ui-icon-tab-menu-item">Запчасти</a>
-              </li>
-              <li class="item-detail-menu-item">
-                <span>Детальнее</span>
-                  <ul>
-                      <li class="item-detail-menu-item">
-                          <a data-id="questions" href="#" rel="#" class="ui-icon-tab-menu-item">Вопросы и ответы</a>
-                      </li>
-                      <li class="item-detail-menu-item">
-                          <a data-id="consultation" href="#" rel="#" class="ui-icon-tab-menu-item">Получить консультацию</a>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
-
-
-
+      <ul class="item-detail-menu-wrap">
+          <li class="item-detail-menu-item item-detail-menu-item-active">
+              <a data-id="about" href="#" rel="#" class="ui-icon-tab-menu-item">О товаре</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="charachteristic" href="#" rel="#" class="ui-icon-tab-menu-item">Характеристики</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="answers"href="#" rel="#" class="ui-icon-tab-menu-item">Отзывы</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="acksesories" href="#" rel="#" class="ui-icon-tab-menu-item">Аксесуары</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="items-detal" href="#" rel="#" class="ui-icon-tab-menu-item">Запчасти</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="questions" href="#" rel="#" class="ui-icon-tab-menu-item">Вопросы и ответы</a>
+          </li>
+          <li class="item-detail-menu-item">
+              <a data-id="consultation" href="#" rel="#" class="ui-icon-tab-menu-item">Получить консультацию</a>
+          </li>
+      </ul>
       <div id="about" class="item-detail-menu-container">
-        <!-- Начало блока видео -->
-        <div class="video-item-detail">
-            <?if (is_array($arResult['PROPERTIES']['video']['VALUE'])):?>
-                <div id="tab02" class="tab-holder tab-holder--video">
-                    <div class="detail__video">
-                        <?foreach($arResult['PROPERTIES']['video']['VALUE'] as $videoItem):?>
-                            <div class="detail__video__item">
-                                <?=htmlspecialchars_decode($videoItem);?>
-                            </div>
-                        <?endforeach;?>
-                    </div>
-                    <script>
-                        // By Chris Coyier & tweaked by Mathias Bynens
-                        $(function() {
-                            var $allVideos = $(".detail__video").find('iframe'),
-                                $fluidEl = $(".tab-holder--video");
-
-                            // Figure out and save aspect ratio for each video
-                            $allVideos.each(function() {
-                                $(this).data('aspectRatio', this.height / this.width)
-                                    // and remove the hard coded width/height
-                                    .removeAttr('height')
-                                    .removeAttr('width');
-                            });
-
-                            // When the window is resized
-                            // (You'll probably want to debounce this)
-                            $(window).resize(function() {
-                                var newWidth = $fluidEl.width();
-
-                                // Resize all videos according to their own aspect ratio
-                                $allVideos.each(function() {
-                                    var $el = $(this);
-                                    $el.width(newWidth).height(newWidth * $el.data('aspectRatio'));
-                                });
-                                // Kick off one resize to fix all videos on page load
-                            }).resize();
-
-                        });
-                    </script>
-                </div>
-            <?endif;?>
-        </div>
-        <!-- Конец блока видео -->
         <div id="product-bottom" class="product-bottom">
-              <?
-              $detail_text = $arResult['DETAIL_TEXT']?$arResult['DETAIL_TEXT']:$arResult['PREVIEW_TEXT'];
-              if (strlen(trim(strip_tags($detail_text)))):?>
-                  <div class="product-text-info-wrap description-container" id="about">
-                      <div class="product-text-info">
-                          <div class="product-text-info__title">О продукте</div>
-                          <div class="product-text-info__inner">
-                              <?=$detail_text;?>
-                          </div>
+          <?
+          $detail_text = $arResult['DETAIL_TEXT']?$arResult['DETAIL_TEXT']:$arResult['PREVIEW_TEXT'];
+          if (strlen(trim(strip_tags($detail_text)))):?>
+              <div class="product-text-info-wrap description-container" id="about">
+                  <div class="product-text-info">
+                      <div class="product-text-info__title">О продукте</div>
+                      <div class="product-text-info__inner">
+                          <?=$detail_text;?>
                       </div>
                   </div>
-              <?endif;?>
+              </div>
+          <?endif;?>
           <?
           $needDetailTabs = false;
           if (count($arResult['ITEM_PROPS']) > 0
@@ -1149,9 +1111,50 @@ if ($_REQUEST['zapchasti']):?>
                   </div>
               <?endif;?>
           </div>
-       </div><!-- end of .product-bottom -->
+       </div>
+        <div class="video-item-detail">
+              <?if (is_array($arResult['PROPERTIES']['video']['VALUE'])):?>
+                  <div id="tab02" class="tab-holder tab-holder--video">
+                      <div class="detail__video">
+                          <?foreach($arResult['PROPERTIES']['video']['VALUE'] as $videoItem):?>
+                              <div class="detail__video__item">
+                                  <?=htmlspecialchars_decode($videoItem);?>
+                              </div>
+                          <?endforeach;?>
+                      </div>
+                      <script>
+                          // By Chris Coyier & tweaked by Mathias Bynens
+                          $(function() {
+                              var $allVideos = $(".detail__video").find('iframe'),
+                                  $fluidEl = $(".tab-holder--video");
 
-    </div><!-- / .item-detail-menu-container -->
+                              // Figure out and save aspect ratio for each video
+                              $allVideos.each(function() {
+                                  $(this).data('aspectRatio', this.height / this.width)
+                                      // and remove the hard coded width/height
+                                      .removeAttr('height')
+                                      .removeAttr('width');
+                              });
+
+                              // When the window is resized
+                              // (You'll probably want to debounce this)
+                              $(window).resize(function() {
+                                  var newWidth = $fluidEl.width();
+
+                                  // Resize all videos according to their own aspect ratio
+                                  $allVideos.each(function() {
+                                      var $el = $(this);
+                                      $el.width(newWidth).height(newWidth * $el.data('aspectRatio'));
+                                  });
+                                  // Kick off one resize to fix all videos on page load
+                              }).resize();
+
+                          });
+                      </script>
+                  </div>
+              <?endif;?>
+          </div>
+      </div>
       <div id="charachteristic" class="item-detail-menu-container">
           <? if (count($arResult['ITEM_PROPS'])>0):?>
 
@@ -1274,12 +1277,10 @@ if ($_REQUEST['zapchasti']):?>
               </div>
           <?endif;?>
 
-      </div><!-- end of #characteristics -->
-
+      </div>
       <div id="answers" class="item-detail-menu-container">
-        4
-      </div><!-- end of #canswers -->
-
+        3
+      </div>
       <div id="acksesories" class="item-detail-menu-container">
           <!--Аксессуары к товару -->
           <div class="detail-accessories">
@@ -1318,8 +1319,7 @@ if ($_REQUEST['zapchasti']):?>
                   <?//endif;?>
               <?endif;?>
           </div>
-      </div><!-- end of #accessories -->
-
+      </div>
       <div id="items-detal" class="item-detail-menu-container">
           <?//MM-107?>
           <!--запчасти -->
@@ -1387,21 +1387,14 @@ if ($_REQUEST['zapchasti']):?>
           </div>
 
           <?//MM-99?>
-      </div><!-- end of #items-detail -->
-
+      </div>
       <div id="questions" class="item-detail-menu-container">
         6
-      </div><!-- end of #questions -->
-
+      </div>
       <div id="consultation" class="item-detail-menu-container">
         7
-      </div><!-- end of #consultation -->
-<!--     <script src="<?=SITE_TEMPLATE_PATH?>/js/easyResponsiveTabs.js"></script>
-    <script>
-         $('#demoTab').easyResponsiveTabs();
-    </script>
- -->
-  <script type="text/javascript">
+      </div>
+      <script type="text/javascript">
           BIS.itemMenuObj = {
               init: function() {
                   var self = this;
@@ -1460,7 +1453,7 @@ if ($_REQUEST['zapchasti']):?>
           $(function() {
               BIS.itemMenuObj.init();
           })
-      </script> 
+      </script>
   </div>
     <!--<div id="product-bottom" class="product-bottom">
         <div class="product-bottom__inner">
