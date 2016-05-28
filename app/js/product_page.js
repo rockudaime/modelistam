@@ -5,19 +5,18 @@
 // описание, отзывы, характеристики и т.д.
 
 
-var itemMenuObj = {
+var itemMenuObj = { // product_page
     init: function() {
         var self = this;
         var w = $(window);
         var wWidth = w.width();
         var minWidth = 640;
         var isMobile = false;
-
-        self.enableMobileLinks();
+        self.enableMobileLinks(wWidth);
     },
 
 
-    enableMobileLinks: function() {
+    enableMobileLinks: function(wWidth) {
         var links = $('.ui-icon-tab-menu-item');
         var blocks = $('.item-detail-menu-container');
         var blockab = $('#about');
@@ -27,7 +26,6 @@ var itemMenuObj = {
         var blockid = $('#items-detal');
         var blockqw = $('#questions');
         var blockcon = $('#consultation');
-        var wWidth = $(window).width();
         var dataId;
         var currentBlock;
         var cssActiveLink = 'item-detail-menu-item-active';
@@ -40,8 +38,8 @@ var itemMenuObj = {
         blockid.hide();
         blockqw.hide();
         blockcon.hide();
-        console.log(wWidth);
-        if (wWidth < 544){
+
+        if (wWidth < 768){
               blocks.hide();
 			  blockab.before('<h6>Описание</h6>');
 			  blockch.before('<h6>Характеристики</h6>');
@@ -76,7 +74,8 @@ var itemMenuObj = {
         blocks.show();
         links.off('click.mobile');
     }
-    }
+}
+
 $(function() {
     // $('#about').css('color', 'red');
      itemMenuObj.init();

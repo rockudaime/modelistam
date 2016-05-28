@@ -35,7 +35,7 @@ var updateLayout = debounce(function(e) {
 		var currentBlock;
 
 		blocks.hide();
-		$('#kyiv').show();
+		$('#deliveryKyiv').show();
 		links.on('click.mobile', function(e) {
 			if (wWidth < 545) {
 				if ($(this).closest('li').hasClass('delivery-active')){
@@ -71,7 +71,7 @@ window.addEventListener("resize", updateLayout, false);
 //         var self = this;
 //         var w = $(window);
 //         var wWidth = w.width();
-//         var minWidth = 640;
+//         var minWidth = 640; 
 //         var isMobile = false;
 //
 //         self.enableMobileLinks();

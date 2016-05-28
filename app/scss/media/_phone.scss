@@ -86,8 +86,7 @@
         margin: 0;
         width: 50px;
         height: 40px;
-        background: url("images/ui-icon-cart.png") no-repeat 10px 50%;
-        background-color: #FEF4CE;
+        background-position: 10px 50%;
         display: block;
         border: none;
         background-color: transparent;
@@ -415,8 +414,8 @@
             display: none;
         }
         .product-main-image{
-            width: 100%;
             padding: 0;
+            min-height: 225px;
         }
         .product-right-block{
             width: 100%;
@@ -492,31 +491,6 @@
             float: left;
             padding: 10px 10px 0 0;
         }
-        .item-detail-menu{
-            
-            h6{
-                font-size: 18px;
-                border: 1px solid #000;
-                font-family: OpenSans_Semibold, sans-serif; 
-                margin: 0;
-                margin-top: -1px;
-                padding: 15px 10px;
-                
-            }
-            h6:first-of-type{
-                border-top: 1px solid #000;
-                border-top-left-radius: 6px;
-                border-top-right-radius: 6px;
-            }
-            h6:last-of-type{
-                border-bottom-left-radius: 6px;
-                border-bottom-right-radius: 6px;
-            }
-            h6:hover{
-                background: #346cab;
-            }
-        }
-
 
         .item-detail-menu-item{
             display: block;

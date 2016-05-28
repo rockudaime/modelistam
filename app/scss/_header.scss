@@ -49,11 +49,14 @@
 }
 .toppest-menu li b {
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    background: url('images/ui-icon-login.png') no-repeat;
+    width: 35px;
+    height: 35px;
+    background: url('images/svg/Enter-user-default.svg') no-repeat;
     vertical-align: middle;
     margin-right: 13px;
+}
+.toppest-menu a:hover b{
+    background-image: url("images/svg/Enter-user-down.svg");
 }
 .toppest-menu a {
     text-decoration: none;
@@ -238,7 +241,7 @@
 }
 .work-hours i {
     display: inline-block;
-    background: url("images/ui-icon-work-hours.png") no-repeat;
+    background: url("images/svg/Clock-address.svg") no-repeat;
     width: 30px;
     height: 26px;
     margin-right: 2px;
@@ -318,7 +321,7 @@
 }
 .phones i{
     display: inline-block;
-    background: url("images/ui-icon-phone.png") no-repeat;
+    background: url("images/svg/Phone-address.svg") no-repeat;
     width: 30px;
     height: 26px;
     margin-right: 2px;
@@ -332,7 +335,7 @@
 }
 .skype i{
     display: inline-block;
-    background: url("images/ui-icon-skype.png") no-repeat;
+    background: url("images/svg/Skype-address.svg") no-repeat;
     width: 30px;
     height: 26px;
     margin-right: 2px;
@@ -382,7 +385,7 @@
     color: #000;
     float: right;
     font-weight: 600;
-    background: url("images/ui-icon-search-submit-active.png") no-repeat 0 2px;
+    background: url("images/svg/Search-menu.svg") no-repeat 0 2px;
 }
 #pull-search.active {
     background: url("images/ui-icon-search-submit-active.png") no-repeat 0 2px;
@@ -426,14 +429,14 @@
 }
 .search__submit {
     padding: 7px 30px 6px 20px;
-    background: #fff url("images/ui-icon-search-submit.png") no-repeat center;
+    background: #fff url("images/svg/Search-menu.svg") no-repeat center;
     color: transparent;
     text-indent: -9999em;
     border: none;
     border-radius: 3px;
 }
 .search__submit:hover {
-    background: #fff url("images/ui-icon-search-submit.png") no-repeat center;
+    background: #fff url("images/svg/Search-menu.svg") no-repeat center;
 }
 .top-cart {
     z-index: 1;
@@ -468,7 +471,7 @@
 }
 
 .cart-link-wrap {
-    background: url("images/ui-icon-cart.png") no-repeat 11px 10px;
+    background: url("images/svg/Cart-menu.svg") no-repeat 11px 10px;
     border: 1px solid #F0DA88;
     border-radius: 3px;
     color: #434343;
@@ -538,7 +541,7 @@
     // #padding: 5px 0 5px 0;
     width: 42px;
     height: 42px;
-    background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-top-wishlist_02.png") no-repeat center center;
+    background: url("images/svg/Heart-menu-default.svg") no-repeat center center;
 	    border: 1px #a8a8a8 solid;
     border-radius: 90%;
 	    margin-bottom: 2px;
@@ -561,7 +564,7 @@
     // #padding: 5px 0 5px 0;
     width: 42px;
     height: 42px;
-    background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-top-compare_02.png") no-repeat center center;
+    background: url("images/svg/Scale-menu-default.svg") no-repeat center center;
 	    border: 1px #a8a8a8 solid;
     border-radius: 90%;
 	    margin-left: 5px;
@@ -582,7 +585,6 @@
     text-decoration: underline;
     color: #777;
     display: block;
-    // #padding: 5px 0 5px 0;
     width: 42px;
     height: 42px;
     background: url("http://modelistam.com.ua/site_new/test_1/ui-icon-top-price_02.png") no-repeat center;
@@ -654,7 +656,7 @@
 .top-wishlist-link i{
     width: 42px;
     height: 31px;
-    background: url("images/ui-icon-wishlist.png") no-repeat center center;
+    background: url("images/svg/Heart-menu-default.svg") no-repeat center center;
     display: block;
     margin: 0 0 0 5px;
 }
@@ -662,7 +664,7 @@
     color: #32abed;
 }
 .top-wishlist-link:hover i{
-    background: url("images/ui-icon-wishlist-hover.png") no-repeat center center;
+    background: url("images/svg/Heart-menu-active.svg") no-repeat center center;
 }
 .top-wishlist-link-hovered i{
     background: url("images/ui-icon-wishlist-hover.png") no-repeat center center;

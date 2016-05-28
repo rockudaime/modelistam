@@ -28,7 +28,7 @@ gulp.task('sass', function () {
     .pipe(sass({errLogToConsole: true}))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 6 versions'],
             cascade: false
         }))
     .pipe(gulp.dest('dist'));
@@ -60,6 +60,7 @@ gulp.task('browsersync', function(cb) {
         }
     }, cb);
 });
+
 
 gulp.task('watch', function () {
  gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
