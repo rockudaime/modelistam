@@ -5322,11 +5322,12 @@ ul.dropdown > li > ul > li{
     vertical-align: middle;
     height: 35px;
     line-height: 35px;
-    padding-left: 5px;
+    padding-left: 0;
 }
 .catalog-icon{
     width: 35px;
     background: url(images/svg/List-menu-white.svg) no-repeat center center;
+    background-size: 75%;
 
 }
 .page-main-menu{

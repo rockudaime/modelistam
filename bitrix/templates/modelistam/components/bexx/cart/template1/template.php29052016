@@ -162,9 +162,25 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
     <form id="basket-form" method="post" action="">
     <?endif;?>
         <input type="hidden" name="do" value="send" id="hidden_do" />
+
+
         <div id="product-list" class="product-list">
+        <table class="table-order-product">
+    <?/*
+			<tr>
+                <th align="center">Фото</th>
+				<th align="center">Описание</th>
+                <th align="center">Размер</th>
+                <th align="center">Цвет</th>
+				<th>Кол-во</th>
+				<th>Сумма</th>
+                <th class="table-order__delete-cell"><!----></th>
+			</tr>
+            */?>
+
     <?$counter = 0;?>
     <?foreach ($arResult['CART_ITEMS'] as $item):?>
+
         <?
         //VTL-5
         $image = $arResult['ITEMS'][$item['PRODUCT_ID']]['DETAIL_PICTURE'];
@@ -176,41 +192,54 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
         }
         //VTL-5
         ?>
-        <?$counter++;?>
 
-<!-- Начало товара в корзине -->
-            <div class="cart-product clearfix">
-                <div class="cart-product__item-delete">
-                    <a href="#" class="cart-product__delete_checkbox-item"></a>
+        <?$counter++;?>
+        <tr>
+            <td class="table-order__cell-image">
+                <div class="page-cart-container-block">
+                    <div class="page-cart-item-image">
+                        <?//VTL-5?>
+                        <?if ($image>0):?>
+                            <a href="<?=$item['DETAIL_PAGE_URL']?>">
+                                <img alt="<?=$item['NAME']?>" title="<?=$item['NAME']?>" src="<?=MakeImage($image, array('wl'=>180, 'hl'=>140, 'q'=>100, 'zc'=>0, 'iar'=>0, 'far'=>"C"))?>" />
+                            </a>
+                        <?else:?>
+                            <img title="<?=$item['NAME']?>" class="adaptive-img" alt="<?=$item['NAME']?>" width="95" src="<?=SITE_TEMPLATE_PATH?>/images/no-photo.jpg" />
+                        <?endif;?>
+                        <?//VTL-5?>
+                    </div>
+                    <div class="page-cart-item-quantity">
+                        <a href="#" class="butt4 page-cart-item-quantity__add"> <i></i></a>
+                        <input class="page-cart-item-quantity__input" name="qty[<?=$item['ID']?>]" type="text" id="qty_<?=$item['ID']?>" size="2" maxlength="7" value="<?=format_qty($item['QUANTITY'])?>" readonly />
+                        <a href="#" class="butt4 page-cart-item-quantity__del" ><i></i> </a>
+                    </div>
                 </div>
-                <!-- Картинка -->
-                <div class="cart-product__image">
-                    <?//VTL-5?>
-                    <?if ($image>0):?>
-                    <a href="<?=$item['DETAIL_PAGE_URL']?>"><img alt="<?=$item['NAME']?>" title="<?=$item['NAME']?>" src="<?=MakeImage($image, array('wl'=>180, 'hl'=>140, 'q'=>100, 'zc'=>0, 'iar'=>0, 'far'=>"C"))?>" /></a>
-                    <?else:?>
-                    <img title="<?=$item['NAME']?>" class="adaptive-img" alt="<?=$item['NAME']?>" src="<?=SITE_TEMPLATE_PATH?>/images/no-photo.jpg" />
-                    <?endif;?>
-                    <?//VTL-5?>
-                </div> 
-                <!-- Конец картинки -->
-                <!-- Название товара -->
-                <div class="cart-product__name">
+            </td>
+
+            <td class="table-order__cell-name">
+                <div class="page-cart-item-name">
                     <a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a>
                 </div>
-                <!-- Конец названия товара -->
-                <!-- Кнопки добавления -->
-                <div class="cart-product__quantity">
-                    <a href="#" class="butt4 page-cart-item-quantity__add"> <i></i></a>
-                    <input class="page-cart-item-quantity__input" name="qty[<?=$item['ID']?>]" type="text" id="qty_<?=$item['ID']?>" size="2" maxlength="7" value="<?=format_qty($item['QUANTITY'])?>" readonly />
-                    <a href="#" class="butt4 page-cart-item-quantity__del" ><i></i></a>
-                    <span class="cart-product__price"><?=price($item['PRICE']*$item['QUANTITY'], $item['CURRENCY'])?></span>
+                <div class="page-cart-item-total">
+                    <?=price($item['PRICE']*$item['QUANTITY'], $item['CURRENCY'])?>
                 </div>
-                <!-- Конец кнопок добавления -->
+            </td>
+
+            <?/* VTL-7*/?>
+            <td class="table-order__cell-razmer">
+                <div class="td-content"><?=$item['PROPS_OFFERS']['RAZMER']['VALUE_PROPS']?></div>
+            </td>
+
+            <td class="table-order__cell-cvet">
+                <div class="td-content"><?=$item['PROPS_OFFERS']['CVET']['VALUE_PROPS']?></div>
+            </td>
+            <?/* VTL-7*/?>
+
+            <td class="table-order__cell-quantity">
                 <?//MM-107?>
+                <div style="margin-bottom: 15px;">
                     <?if ($arResult['COUNT_REQUIRE_PURCHASE'] > 0):?>
-                    <div class="cart-product__recomended">
-                        <h3>Рекомендуем к этому товару:</h3>
+                        <p class="title orange"><strong>Требуется докупить:</strong> <img align="baseline"/></p>
                         <?$APPLICATION->IncludeComponent("bitrix:news", "require_purchase", array(
                                 "IBLOCK_TYPE" => "info",
                                 "IBLOCK_ID" => "57360",
@@ -293,66 +322,75 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
                             ),
                             false
                         );?>
-                    </div><!-- end reccomended products -->
                     <?endif;?>
+                </div>
                 <?//MM-107?>
+            </td>
 
-                <!-- Кнопка + всплывающее окно для редактирования товаров в корзине -->
-                <div>
-                    <div class="popup-back">
-                        <div class="close-popup">
-                            <a href="#" rel="#" class="come-back"><i></i><span>Вернуть</span></a>
-                        </div>
-                        <? /* Ссылка отложить */?>
-                        <div id="product-wishlist-<?=$item['ID']?>" class="product-wishlist-block cart-wishlist-block">
-                            <a href="#product-wishlist-<?=$item['ID']?>"
-                               rel="<?=$arResult['AJAX_CALL_ID']?>"
-                               class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist"
-                               params="do=add2wishlist&id=<?=$offer_id?>"><i></i><span>В избранное</span>
-                            </a>
-                        </div>
-                        <div class="delete-detail-block">
-                            <a href="#" class="page-cart__delete_checkbox"><i></i><span>Удалить</span></a>
-                            <input type="checkbox" class="delete_checkbox" name="del[<?=$item['ID']?>]" value="1" />
-                        </div>
+            <td class="table-order__cell-total">
+
+            </td>
+
+            <td class="table-order__cell-delete">
+                <div class="page-cart-item-delete">
+                    <a href="#" class="page-cart__delete_checkbox-item"></a>
+                </div>
+            </td>
+            <td id="tr-background" style="padding: 16px 0 15px 0;">
+                <div class="popup-back">
+                    <div class="close-popup">
+                        <a href="#" rel="#" class="come-back"><i></i><span>Вернуть</span></a>
+                    </div>
+                    <script>
+                        $(".close-popup").on("click",function(){
+                            $(".page-cart__delete_checkbox-item").show()
+                            $(this).parent().parent().parent().removeClass("in-tr-background");
+                        });
+                    </script>
+                    <? /* Ссылка отложить */?>
+                    <div id="product-wishlist-<?=$item['ID']?>" class="product-wishlist-block cart-wishlist-block">
+                        <a href="#product-wishlist-<?=$item['ID']?>"
+                           rel="<?=$arResult['AJAX_CALL_ID']?>"
+                           class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist"
+                           params="do=add2wishlist&id=<?=$offer_id?>"><i></i><span>В избранное</span>
+                        </a>
+                    </div>
+                    <div class="delete-detail-block">
+                        <a href="#" class="page-cart__delete_checkbox"><i></i><span>Удалить</span></a>
+                        <input type="checkbox" class="delete_checkbox" name="del[<?=$item['ID']?>]" value="1" />
                     </div>
                 </div>
-                    <script>
-                        $(".cart-product__delete_checkbox-item").on("click",function(e){
-                            e.preventDefault();
-                            var ppBlock = $(this).parent().parent().find('.popup-back');
-                            ppBlock.show();
-                            ppBlock.parent().addClass("in-tr-background");
-                        });
-                        $(".close-popup").on("click",function(e){
-                            e.preventDefault();
-                            $(".page-cart__delete_checkbox-item").show();
-                            $(this).parent().hide();
-                            $(this).parent().parent().removeClass("in-tr-background");
-                        });
-                        $('.cart-mobile-opener').on("click", function(e) {
-                            $(".order-block__cart").slideToggle( "slow" );
-                        })
-                    </script>
-            </div>
-<!-- Конец товара в корзине -->
+            </td>
+        </tr>
     <?endforeach;?>
-            <div class="order-total-sum">
-                Итого без доставки: <span><?=price($arResult['TOTAL_PRICE'], $arResult['CURRENCY'])?></span>
-                <div class="button-make-order">
-                    <input class="butt3 butt3--big" type="submit" title="Заказать" onclick="$('#basket-form').submit();" value="Оформить заказ" id="send_order">
-                </div>
-            </div>
+    <script>
+        $(".page-cart__delete_checkbox-item").on("click",function(){
+            $(this).hide();
+            $(this).parent().parent().parent().addClass("in-tr-background");
+        });
+    </script>
+    </table>
 
-        <?if (count($arResult['CART_ITEMS']) >= 4):?>
-            <a href="#" class="cart-delete-all" onclick="if (confirm('Вы действительно хотите удалить все товары из корзины?')) {$('#hidden_do').val('deleteAll'); $('#basket-form').submit(); return false;} else { return false; }">Удалить все</a>
-        <?endif;?>
+    <div class="basket-bottom-block">
+        <div class="basket-total-price">
+            Итого без доставки: <span class="basket-total-price__inner"><?=price($arResult['TOTAL_PRICE'], $arResult['CURRENCY'])?></span>
         </div>
+        <div class="button-make-order">
+            <input class="butt3 butt3--big" type="submit" title="Заказать" onclick="$('#basket-form').submit();" value="Оформить заказ" id="send_order" />
+        </div>
+    </div>
+
+
+
+    <?if (count($arResult['CART_ITEMS']) >= 4):?>
+        <a href="#" class="cart-delete-all" onclick="if (confirm('Вы действительно хотите удалить все товары из корзины?')) {$('#hidden_do').val('deleteAll'); $('#basket-form').submit(); return false;} else { return false; }">Удалить все</a>
+    <?endif;?>
+    </div>
 
 
     <!-- block -->
     <?if ($arParams['AJAX_ENABLED']!="Y"):?>
-    </form>
+</form>
 <?endif;?>
     <?if ($arParams['AJAX_ENABLED']!="Y"):?>
         <?if (is_array($arResult['ACCESSORIES']) AND !empty($arResult['ACCESSORIES'])):?>
@@ -398,9 +436,9 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
                 <br class="clear" />
             </div>
         <?endif;?>
-</div>
+        </div>
 
-<?endif;?>
+    <?endif;?>
 
 <?else:?>
     <p class="text-large">У вас нет товаров для заказа</p>

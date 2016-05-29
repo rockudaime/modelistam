@@ -236,10 +236,11 @@ if ($isOrderPage) {
                     <?if ($isCart):?>
                         <div class="cart-contacts__content cart-contacts">
                             <div data-box="box-1" class="contacts__tabs__box">
-                                <div class="phone-header"> <span>(057)</span>755-15-00</div>
+                                <!-- <div class="phone-header"> <span>(057)</span>755-15-00</div>
                                 <div class="phone-header"> <span>(067)</span>144-27-27</div>
                                 <div class="phone-header"> <span>(066)</span>626-88-44</div>
-                                <div class="phone-header"> <span>(093)</span>002-25-88</div>
+                                <div class="phone-header"> <span>(093)</span>002-25-88</div> -->
+                                <div class="phone-header"> <span>(0 800)</span>210-525</div>
                             </div>
                             <div class="cart-contacts__callback">
                                 <a class="cart-contacts__callback-link" id="cart-callback-link" href="javascript:void(0)">перезвонить мне</a>

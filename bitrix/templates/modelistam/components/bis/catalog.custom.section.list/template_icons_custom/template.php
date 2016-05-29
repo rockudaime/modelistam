@@ -35,6 +35,7 @@ $this->setFrameMode(true);
     <li class="<?=$class?> dropdown__gen icons-catalog-menu__item">
         <div class="main-menu-item-primary0">
 		  <div class="main-menu-item-primary_two">
+                <span class="menu-mobile-icon"></span>
 		      <a href="<?=$sections_urls[$arSection['ID']]?>" class="dir dropdown__gen__link icons-catalog-menu__link"><span><?=Комплектующие?></span><i></i><img src="/upload/iblock/93c/93c1b6c6bba8387f5622d331783e3f4b.png" alt="" title="" style="top: -425px;"/></a>
 		  </div>
         </div>

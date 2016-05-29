@@ -125,8 +125,8 @@
 		width: 232px;
 	}
     #pull-search{
-        background-size: 75%;
-        margin: 7px 0 0 7px;
+
+        margin: 0 0 0 7px;
     }
     #pull-search > span {
         display: none;
@@ -227,6 +227,66 @@
         margin-top: 9px;
     }
     // конец кнопки бокового меню
+
+    // Основное меню сайта
+    .front-middle .front-left{
+        margin-top: 3px;
+        width: 100%;
+        position: static;
+        overflow: hidden;
+    }
+    .main-menu-item-primary{
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+    }
+    .menu-mobile-icon{
+        display: inline-block;
+        height: 34px;
+        width: 34px;
+        background: url(images/svg/Plus.svg) no-repeat 15px 50%;
+        margin: 0;
+        padding: 0 25px 0 0;
+        vertical-align: middle;
+    }
+    .icons-catalog-menu__link{
+        display: inline-block;
+        vertical-align: middle;
+        padding:0 25px 0 5px;
+
+    }
+    // .icons-catalog-menu__link{
+    //     background: url(images/svg/Plus.svg) no-repeat 15px 50%;
+    // }
+    .icon-hover-element-item .main-menu-item-primary_two .menu-mobile-icon{
+        background: url(images/svg/Minus.svg) no-repeat 15px 50%;
+    }
+    .icon-hover-element i, .icon-hover-element-level_2 i, .icon-hover-element-level_3 i, .icon-hover-element-level_0 i{
+        background: none;
+    }
+    ul.dropdown > li > ul{// выпадающее меню
+        position: static;
+        width: 100%;
+    }
+    .parent-inner-menu{
+        margin-left: 0;
+    }
+    .klm1, .klm2, .main-menu-item-primary1{
+        border-bottom: none;
+    }
+    .text-bold i{
+        background: none;
+    }
+    .dropdown-level_2 a,
+    .dropdown-level_3 a,
+    .dropdown-level_4 a,
+    .icons-catalog-menu__link-level_0{
+        padding-left: 55px;
+    }
+    .icons-catalog-menu__link img{
+        display: none;
+    }
+    // Конец основного меню сайта
 
     // =======================================
     // Конец стилей шапки mw: 544px
