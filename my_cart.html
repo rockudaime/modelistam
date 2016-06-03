@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="page-inner">
+
         <div class="order-block__right">
             <div class="cart-mobile-opener">
                 Итого без доставки: <span>12 304 грн</span>
@@ -172,18 +173,19 @@
                 <div class="order-total-sum">
                     Итого без доставки: <span>12 304 грн</span>
                 </div>
-            </div>
-        </div>
+            </div><!-- /.order-block__cart clearfix -->
+        </div><!-- /.order-block__right -->
+
+<!-- Блок оформления заказа -->
         <div class="order-block__left">
             <ul class="order-tabs clearfix">
                 <li id="new-buyer-tab" class="active-tab">Новый покупатель</li>
                 <li id="old-buyer-tab">Покупал(а) раньше</li>
             </ul>
             <form method="post" action="" id="order_form" class="order_form">
-
                 <div class="new-buyer">
-                    <input type="text" placeholder="Фамилия Имя" id="surname">
-                    <input type="text" id="phone-number" placeholder="Номер телефона">
+                    <input type="text" placeholder="Фамилия Имя" id="surname" class="required"  required="">
+                    <input type="text" id="phone-number" placeholder="Номер телефона" class="required" required="">
                     <label for="email">Получите скидку и личный кабинет</label>
                     <input type="text" placeholder="Email" id="email">
                     <div class="email-status">для информации о статусе заказа</div>
@@ -219,49 +221,53 @@
                     <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
 
                 </div>
+
                 <div class="old-buyer">
-                    <input type="text" placeholder="Ваше имя" id="name">
-                    <input type="text" id="phone-number" placeholder="Ваш телефон">
-                    <input type="password" name="password" id="password-cart" placeholder="Пароль">
+                    <p>Ваше имя: <span class="name"> Иван Петров</span></p>
+                    <p>Ваш email: <span class="email"> example@mail.com</span></p>
+                    <p>Ваш номер телефона: <span class="phone-number"> 0939392789</span></p>
+                    <p><a href="#" id="changeInfoLink">Изменить</a></p>
+                    <div class="change-info" style="display: none">
+                        <input type="text" placeholder="Фамилия Имя" id="surname" value="Петров Иван" hidden="">
+                        <input type="text" id="phone-number" placeholder="Номер телефона" value="0939392780" hidden="">
+                        <input type="text" placeholder="Email" id="email" value="example@mail.com" hidden="">
+                    </div>
+                    <fieldset>
+                    <legend>
+                        Адрес доставки:
+                    </legend>
+                        <select name="prop[5]" id="citySelect" onchange="order_form_reload()">
+                            <option value="0">-- Выберите регион (или обл.) --</option>
+                            <option value="14">Винницкая обл.</option>
+                            <option value="5">Днепропетровская обл.</option>
+                            <option value="7">Донецкая обл.</option>
+                            <option value="8">Запорожская обл.</option>
+                            <option value="3">Киевская обл.</option>
+                            <option value="10">Криворожская обл.</option>
+                            <option value="13">Луганская обл.</option>
+                            <option value="9">Львовская обл.</option>
+                            <option value="12">Мариупольская обл.</option>
+                            <option value="11">Николаевская обл.</option>
+                            <option value="6">Одесская обл.</option>
+                            <option value="18">Полтавская обл.</option>
+                            <option value="15">Республика Крым</option>
+                            <option value="16">Севастополь</option>
+                            <option value="4">Харьковская обл.</option>
+                            <option value="17">Херсонская обл.</option>
+                            <option value="20">Черкасская обл.</option>
+                            <option value="19">Черниговская обл.</option>
+                        </select>
+                    <input type="text" name="prop[6]" placeholder="Город" id="city">
+                    <textarea class="" name="prop[7]" rows="3">Введите свой адрес</textarea>
+                    </fieldset>
+
                     <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
-                </div>
             </form>
-        </div>
+        </div><!-- /.order-block__left -->
     </div>
-    <div class="page-inner">
-        <div class="order-block__cart clearfix">
-            <div class="cart-product">
-                <div class="cart-product__image"><img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt=""></div>
-                <div class="cart-product__name"><a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a></div>
-                <div class="cart-product__quantity">
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
-                    <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
-                </div>
-            </div>
-            <div class="cart-product">
-                <div class="cart-product__image"><img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt=""></div>
-                <div class="cart-product__name"><a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a></div>
-                <div class="cart-product__quantity">
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--del"><i></i></a>
-                    <input class="cart-product__quantity-input" name="qty[785]" type="text" id="qty_785" size="1" maxlength="7" value="1" readonly="">
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"><i></i></a>
-                </div>
-            </div>
-
-            <div class="order-total-sum">
-                Итого без доставки: <span>12 304 грн</span>
-                <div class="button-make-order">
-                <input class="butt3 butt3--big" type="submit" title="Заказать" onclick="$('#basket-form').submit();" value="Оформить заказ" id="send_order">
-            </div>
-            </div>
-            
-        </div>
-    </div>
-
-
-
     <script>
+        //  Стили для обработки всплывающего окна редактирования корзины
+        //  при нажатии на крестик в провом верхнем углу. 
         $(".cart-product__delete_checkbox-item").on("click",function(e){
             e.preventDefault();
             var ppBlock = $(this).parent().parent().find('.popup-back');
@@ -274,9 +280,26 @@
             $(this).parent().hide();
             $(this).parent().parent().removeClass("in-tr-background");
         });
+
+        // Открытие области корзины по клику в мобильном виде
         $('.cart-mobile-opener').on("click", function(e) {
             $(".order-block__cart").slideToggle( "slow" );
-        })
+        });
+        // Ссылка изменить для бывших покупателей
+        $('#changeInfoLink').on("click", function(e) {
+            e.preventDefault();
+            $(".change-info > input").removeAttr("hidden");
+            $(".change-info").slideToggle("slow");
+        });
+        // Табы для переключения форм в корзине
+        $(".order-tabs li").on("click", function(e) {
+            var blocks = $("#order_form > div");
+            var blockClass = "." + $(this).attr("id").slice(0, 9);
+            blocks.hide();
+            $(blockClass).show();
+            $(".order-tabs li").removeClass("active-tab");
+            $(this).addClass("active-tab");
+        });
     </script>
 </body>
 </html>

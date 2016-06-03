@@ -9,6 +9,7 @@ var jshint = require("gulp-jshint");
 var imagemin = require("gulp-imagemin");
 var browsersync = require('browser-sync');
 var compass = require('gulp-compass');
+var jade = require('gulp-jade');
 // CSS processing
 
 // gulp.task('compass', function() {
@@ -33,8 +34,19 @@ gulp.task('sass', function () {
         }))
     .pipe(gulp.dest('dist'));
 });
-
+// ***********************
+// HTML processing
+// ***********************
+gulp.task('jade', function() {
+    return gulp.src('app/jade/**/*.jade')
+        .pipe(jade({
+            pretty: true
+            })) 
+        .pipe(gulp.dest('.')); // указываем gulp куда положить скомпилированные HTML файлы
+});
+// ***********************
 // JavaScript processing
+// ***********************
 gulp.task('scripts', function() {
     gulp.src('app/js/**/*.js')
     .pipe(jshint())
@@ -43,30 +55,33 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('dist'))
 });
-
+// ***********************
 // Images processing
+// ***********************
 gulp.task('images', function() {
     return gulp.src('app/img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'));
 });
-
+// ***********************
 // Browser Syncronize
+// ***********************
 gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'cart_order.html'
+            index: 'cart.html'
         }
     }, cb);
 });
 
 
 gulp.task('watch', function () {
+ gulp.watch('app/jade/**/*.jade', ['jade', browsersync.reload]);
  gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
  gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
  gulp.watch('app/img/*', ['images', browsersync.reload]);
 });
 
 
-gulp.task('default', ['sass', 'scripts', 'images', 'browsersync', 'watch']);
+gulp.task('default', ['jade', 'sass', 'scripts', 'images', 'browsersync', 'watch']);

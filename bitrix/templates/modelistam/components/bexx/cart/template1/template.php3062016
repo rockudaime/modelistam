@@ -201,9 +201,9 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS'])>0) {
                 <!-- Конец названия товара -->
                 <!-- Кнопки добавления -->
                 <div class="cart-product__quantity">
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--add"> <i></i></a>
+                    <a href="#" class="butt4 page-cart-item-quantity__add"> <i></i></a>
                     <input class="page-cart-item-quantity__input" name="qty[<?=$item['ID']?>]" type="text" id="qty_<?=$item['ID']?>" size="2" maxlength="7" value="<?=format_qty($item['QUANTITY'])?>" readonly />
-                    <a href="#" class="cart-product__quantity-btn cart-product__quantity--del" ><i></i></a>
+                    <a href="#" class="butt4 page-cart-item-quantity__del" ><i></i></a>
                     <span class="cart-product__price"><?=price($item['PRICE']*$item['QUANTITY'], $item['CURRENCY'])?></span>
                 </div>
                 <!-- Конец кнопок добавления -->

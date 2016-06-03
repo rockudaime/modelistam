@@ -4,6 +4,21 @@
 // Данный скрипт создает раскрывающиеся табы для мобильного вида с основным содержимым
 // описание, отзывы, характеристики и т.д.
 
+(function ($) {
+'use strict';
+
+$.fn.scrollToSimple = function ($target) {
+
+    var pos = $target.position();
+    
+    var top = pos.top;     // position.top is relative to the scrollTop of the containing element
+
+             
+    $target.scrollTop(top);
+
+};
+})(jQuery);
+
 
 var itemMenuObj = { // product_page
     init: function() {
@@ -53,6 +68,7 @@ var itemMenuObj = { // product_page
 			          $('.item-detail-menu-container').slideUp(300);
 			      }
 			      $(this).next().slideToggle(300);
+                  $(window).scrollToSimple($(this));
 			  });
 			}
         links.on('click.mobile', function(e) {
