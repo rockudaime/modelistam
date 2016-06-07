@@ -10,13 +10,16 @@
     <script type="text/javascript" src="bitrix/templates/modelistam/js/jquery/jquery-1.9.1.min.js"></script>
 
 </head>
-<body>
-    <div class="page-inner">
-
+<body class="cart-page">
+    <div class="page-inner"> 
+    <!-- Основной контейнер определяет центрирование и ширину -->
+        <div class="cart-mobile-opener">
+            Итого без доставки: <span>12 304 грн</span>
+        </div>
         <div class="order-block__right">
-            <div class="cart-mobile-opener">
-                Итого без доставки: <span>12 304 грн</span>
-            </div>
+            <div class="cart-sale-offer">
+                <b>Хотите скидку 3%?</b> Добавьте в корзину товаров на 3000 грн
+            </div>           
             <div class="order-block__cart clearfix">
 <!-- Начало товара в корзине -->
                 <div class="cart-product clearfix">
@@ -47,7 +50,7 @@
 
                     <!-- Кнопка + всплывающее окно для редактирования товаров в корзине -->
                     
-                    <div>
+                    <div><!--  Этот див нужен для правильной работы скрипта -->
                         <div class="popup-back">
                             <div class="close-popup">
                                 <a href="#" rel="#" class="come-back"><i></i><span>Назад</span></a>
@@ -177,52 +180,86 @@
         </div><!-- /.order-block__right -->
 
 <!-- Блок оформления заказа -->
-        <div class="order-block__left">
+        <div class="order-block__left" id="orderBlock">
             <ul class="order-tabs clearfix">
                 <li id="new-buyer-tab" class="active-tab">Новый покупатель</li>
                 <li id="old-buyer-tab">Покупал(а) раньше</li>
             </ul>
-            <form method="post" action="" id="order_form" class="order_form">
-                <div class="new-buyer">
-                    <input type="text" placeholder="Фамилия Имя" id="surname" class="required"  required="">
+            
+            <div class="new-buyer">
+                <form method="post" action="" id="order_form" class="order_form">
+                    <input type="text" placeholder="Имя" id="surname" class="required"  required="">
                     <input type="text" id="phone-number" placeholder="Номер телефона" class="required" required="">
                     <label for="email">Получите скидку и личный кабинет</label>
                     <input type="text" placeholder="Email" id="email">
                     <div class="email-status">для информации о статусе заказа</div>
-                    <fieldset>
-                    <legend>
-                        Адрес доставки:
-                    </legend>
-                        <select name="prop[5]" id="citySelect" onchange="order_form_reload()">
-                            <option value="0">-- Выберите регион (или обл.) --</option>
-                            <option value="14">Винницкая обл.</option>
-                            <option value="5">Днепропетровская обл.</option>
-                            <option value="7">Донецкая обл.</option>
-                            <option value="8">Запорожская обл.</option>
-                            <option value="3">Киевская обл.</option>
-                            <option value="10">Криворожская обл.</option>
-                            <option value="13">Луганская обл.</option>
-                            <option value="9">Львовская обл.</option>
-                            <option value="12">Мариупольская обл.</option>
-                            <option value="11">Николаевская обл.</option>
-                            <option value="6">Одесская обл.</option>
-                            <option value="18">Полтавская обл.</option>
-                            <option value="15">Республика Крым</option>
-                            <option value="16">Севастополь</option>
-                            <option value="4">Харьковская обл.</option>
-                            <option value="17">Херсонская обл.</option>
-                            <option value="20">Черкасская обл.</option>
-                            <option value="19">Черниговская обл.</option>
-                        </select>
-                    <input type="text" name="prop[6]" placeholder="Город" id="city">
-                    <textarea class="" name="prop[7]" rows="3">Введите свой адрес</textarea>
-                    </fieldset>
-
+                    <input type="radio" id="deliveryByCompany" name="deliveryAndPayment"><label for="deliveryByCompany"><span><i></i></span>Доставка и Оплата</label>
+                    <div class="delivery-address">
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
+                                <option value="Новая Почта">Новая Почта</option>
+                                <option value="Укрпочта">Укрпочта</option>
+                                <option value="Курьер">Курьер</option>
+                            </select>
+                            
+                        </div>
+                        
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="citySelect" id="citySelect" onchange="order_form_reload()">
+                                <option value="0">-- Выберите регион (или обл.) --</option>
+                                <option value="14">Винницкая обл.</option>
+                                <option value="5">Днепропетровская обл.</option>
+                                <option value="7">Донецкая обл.</option>
+                                <option value="8">Запорожская обл.</option>
+                                <option value="3">Киевская обл.</option>
+                                <option value="10">Криворожская обл.</option>
+                                <option value="13">Луганская обл.</option>
+                                <option value="9">Львовская обл.</option>
+                                <option value="12">Мариупольская обл.</option>
+                                <option value="11">Николаевская обл.</option>
+                                <option value="6">Одесская обл.</option>
+                                <option value="18">Полтавская обл.</option>
+                                <option value="15">Республика Крым</option>
+                                <option value="16">Севастополь</option>
+                                <option value="4">Харьковская обл.</option>
+                                <option value="17">Херсонская обл.</option>
+                                <option value="20">Черкасская обл.</option>
+                                <option value="19">Черниговская обл.</option>
+                            </select>
+                            
+                        </div>
+                        
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="newPostWarehouse" id="newPostWarehouse">
+                                <option value="1">address 1</option>
+                                <option value="2">address 2</option>
+                                <option value="3">address 3</option>
+                                <option value="4">address 4</option>
+                            </select>
+                            
+                        </div>
+                        
+                        <p><b>Оплачу</b></p>
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="paymentMethods" id="paymentMethods">
+                                <option value="0">При получении</option>
+                                <option value="1">Безналичный расчет</option>
+                            </select>
+                            
+                        </div>
+                        
+                    </div>
+                    <input name="deliveryAndPayment" type="radio" id="fromStore"><label for="fromStore"><span><i></i></span>Заберу в магазине</label>
                     <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
-
-                </div>
-
-                <div class="old-buyer">
+                </form>
+            </div>
+            
+            <div class="old-buyer">
+                <form method="post" action="" id="order_form2" class="order_form">
                     <p>Ваше имя: <span class="name"> Иван Петров</span></p>
                     <p>Ваш email: <span class="email"> example@mail.com</span></p>
                     <p>Ваш номер телефона: <span class="phone-number"> 0939392789</span></p>
@@ -262,9 +299,11 @@
                     </fieldset>
 
                     <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
-            </form>
+                
+                </form>
+            </div>
         </div><!-- /.order-block__left -->
-    </div>
+    </div><!-- /.page-inner -->
     <script>
         //  Стили для обработки всплывающего окна редактирования корзины
         //  при нажатии на крестик в провом верхнем углу. 
@@ -283,7 +322,7 @@
 
         // Открытие области корзины по клику в мобильном виде
         $('.cart-mobile-opener').on("click", function(e) {
-            $(".order-block__cart").slideToggle( "slow" );
+            $(".order-block__right").slideToggle( "slow" );
         });
         // Ссылка изменить для бывших покупателей
         $('#changeInfoLink').on("click", function(e) {
@@ -293,13 +332,28 @@
         });
         // Табы для переключения форм в корзине
         $(".order-tabs li").on("click", function(e) {
-            var blocks = $("#order_form > div");
+            var blocks = $("#orderBlock > div");
             var blockClass = "." + $(this).attr("id").slice(0, 9);
             blocks.hide();
             $(blockClass).show();
             $(".order-tabs li").removeClass("active-tab");
             $(this).addClass("active-tab");
         });
+        // required input
+        var reqInput =  $('.required')
+        var timerId;
+
+        console.log(reqInput);
+
+        reqInput.on("blur" , function() {
+            if ($(this).val().length > 5) {
+                $(this).removeClass("required");
+                $(this).addClass("validated");
+            } else if ($(this).hasClass("required") === false) {
+                $(this).addClass("required");
+            }
+        });
+
     </script>
 </body>
 </html>

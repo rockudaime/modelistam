@@ -37,7 +37,7 @@
     box-sizing: border-box;
 }
 .order-block__right{
-
+    display: none;
 }
 
 .order-block__left{
@@ -79,12 +79,14 @@
     border: 1px solid #ebe0b9;
     box-sizing: border-box;
     padding: 10px 15px;
-    color: #777;
+    color: #000;
     font-size: 16px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
 
     input[type="text"],
     input[type="password"],
-    select,
+    .select-wrapper,
     textarea {
         width: 100%;
         box-sizing: border-box;
@@ -93,23 +95,26 @@
         border-radius: 4px;
         padding: 10px 15px;
         box-sizing: border-box;
-        border: 1px solid #777;
+        border: 2px solid #777;
+        // color: #777;
     }
     input.required{
-        background: #fff url(images/ui-icon-delete.png) no-repeat 95% 50%; 
+        background: #fff url(images/icon-asterix.png) no-repeat 95% 50%;
+        color: inherit;
     }
 
     input[type="text"]:focus,
+    input[type="text"]:hover,
     input[type="password"]:focus,
-    select:focus,
-    textarea:focus{
+    input[type="password"]:hover,
+    .select-wrapper:hover,
+    textarea:focus,
+    textarea:hover{
         border: 2px solid #4b80bb;
-        padding: 9px 14px;
         outline: none;
     }
-    fieldset{
-        padding-bottom: 0;
-        margin-bottom: 1em;
+    select{
+        background: #fff;
     }
     label[for='email']{
         color: #628d00;
@@ -117,6 +122,74 @@
         display: block;
         margin: 10px 0;
     }
+    input[type="radio"]{
+        position: absolute;
+        left: -9999px;
+    }
+    input[type="radio"] + label{
+        text-decoration: underline;
+        margin-bottom: 10px;
+        display: block;
+    }
+    input[type="radio"] + label > span{
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid #1581be;
+        background: #fff;
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0 15px 0 0;
+    }
+}
+// Select styles
+.order_form .select-wrapper {
+  position: relative;
+  padding: 0;
+  background: #fff;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 15px;
+  background: transparent;
+  border: 0;
+  appearance: none;            /* remove arrow        */
+  -webkit-appearance: none;    /* remove arrow Chrome */
+  -moz-appearance: none;       /* remove arrow FF     */
+}
+.select-wrapper select:focus{
+    border: none;
+    outline: none;
+}
+.select-wrapper select::-ms-expand{
+    display: none;             /* remove arrow IE     */
+}
+.select-arrow{
+    position: absolute;
+    z-index: -9999;
+    right: 4px;
+    bottom: 5px;
+    border: 8px solid;
+    border-color: white white #6C7231 white;
+    border-right: 0;
+}
+// end of select styles
+input[type="radio"]:checked + label > span > i{
+    display: inline-block;
+    border-radius: 50%;
+    background: #3b9dcd;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.delivery-address{
+    display: none;
+    transition: display 2s;
+}
+input[type="radio"]:checked + label + .delivery-address{
+    display: block;
 }
 .order-tabs{
     margin: 0;
@@ -130,10 +203,20 @@
         float: left;
         width: 50%;
         box-sizing: border-box;
-        padding: 8px 6px;
-        font: 14px OpenSans_Semibold;
+        padding: 15px;
+        font: 14px OpenSans_Regular, sans-serif;
         cursor: pointer;
+        color: #006caf;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
 
+        // span{
+        //     display: inline-block;
+        //     border-bottom: 1px dashed #006caf;
+        //     color: #006caf;
+        // }
 
     }
     .active-tab{
@@ -141,6 +224,8 @@
         background: #fffdf6;
         border: 1px solid #ebe0b9;
         border-bottom: 0;
+        text-decoration: none;
+        font: 14px OpenSans_Semibold, sans-serif;
     }
 }
 .email-status{
@@ -176,9 +261,17 @@
 		font-weight: bold;
 	}
 }
+.cart-sale-offer{
+    box-sizing: border-box;
+    padding: 15px 17px;
+    margin: 0 0 20px;
+    background: #fff4cd;
+    border: 1px solid #f9db84;
+    border-radius: 4px;
+    font: 15px OpenSans_regular;
+}
 .order-block__cart{
     margin-bottom: 35px;
-    display: none;
 }
 .cart-product{
     padding: 35px 0 0;
@@ -412,6 +505,7 @@
     .order-block__right{
         width: 54%;
         float: right;
+        display: block;
     }
     .order-block__cart{
         border: 1px solid #959595;
@@ -508,6 +602,10 @@
 	}
 }
 @media (min-width: 1200px){
+    .cart-page .page-inner{
+        padding: 0 15px 20px;
+        box-sizing: border-box;
+    }
     .order-block__left{
         width: 340px;
         float: left;

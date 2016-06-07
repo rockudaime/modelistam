@@ -24,6 +24,7 @@
         position: absolute;
         top: 0;
         right: 60px;
+        z-index: 99;
     }
     .toppest-menu li {
 		margin-top: 15px;
@@ -146,9 +147,9 @@
     // 	top: 102px;
 	// }
 
-	.front-middle .front-right {
-		display: none;
-	}
+	// .front-middle .front-right {
+	// 	display: none;
+	// }
 	.page-header-wrapper {
 	 	height: 165px;
 	}
@@ -254,6 +255,9 @@
         vertical-align: middle;
         padding:0 25px 0 5px;
 
+    }
+    ul.dropdown > li > ul, .parent-inner-menu__level2, .parent-inner-menu__level0 {
+        position: static;
     }
     // .icons-catalog-menu__link{
     //     background: url(images/svg/Plus.svg) no-repeat 15px 50%;
@@ -736,13 +740,24 @@
         width: 100%;
         height: 100%;
     }
-    .front-right{
+    .front-text{
         display: none;
     }
     // =======================================
     // Конец стилей блока с адресом mw: 544px
     // =======================================
+    .front-right{
+        display: block;
+    }
+    .front-right> .front-left {
+        display: block;
+        margin: 20px 0 0;
+        width: 100%;
 
+        .page-main-menu-wrap{
+            display: block;
+        }
+    }
 
     // *****************************
     // *       Стили ФУТЕРА        *

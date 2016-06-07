@@ -1,7 +1,27 @@
 doctype html
 head
 	title Hello world
-
+	link(rel='stylesheet', href="dist/template_styles.css")
+	meta(charset="utf-8")
 body
 	.first-div
-		p. Hello this is a paragraph
+		p.
+			Hello this is a paragraph
+			this is block paragraph
+			so it's content lays on 
+			many lines.
+	.second-div
+		p.
+			this is a second paragraph
+			this is a second paragraph
+	.third-div
+		ul 
+			li
+				a(href="#") First link
+			li
+				a(href="#") Second link
+			li
+				a(href="#") Third link
+			li
+				a(href="#") Fourth link
+		// end of ul
