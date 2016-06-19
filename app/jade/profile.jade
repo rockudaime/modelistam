@@ -1,0 +1,51 @@
+//- profile.jade
+
+extends ./personal-cabinet.jade
+
+block item
+	div.profile
+		h2 Профиль	
+		form.my-profile-form(action="/" name="profile-form")
+			div.my-signups.check-input
+				h2 Мои подписки
+				p Нажмите, чтобы включить или отменить
+				input#msSale(type="checkbox" checked)
+				label(for="msSale") Акции
+
+				input#msDiscount(type="checkbox")
+				label(for="msDiscount") Скидки
+
+				input#msBestsellers(type="checkbox")
+				label(for="msBestsellers") Хиты
+
+				input#msNew(type="checkbox")
+				label(for="msNew") Новинки
+
+				input#msReviews(type="checkbox")
+				label(for="msReviews") Обзоры
+
+			div.my-interests.check-input
+				h2 Мои интересы
+				p Отправляем рассылки и оповещения, связанные с увлечениями.  
+				p Без спама. 
+				p Нажмите, чтобы включить или отменить
+
+				each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
+					input(id=index type="checkbox")
+					label(for=index)=val
+
+			.birth-date-block
+						h3 Дата Рождения:
+						p
+							select(name="birth-day" id="birthDay")
+								- for (var x = 1; x < 32; x++)
+									option(value=x)=x
+							select(name="birth-month" id="birthMonth")
+								each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+									option(value=index)= val
+							select(name="birth-year" id="birthYear")
+								-for (var x = 2016; x>1939; x--)
+									option(value=x)= x
+							span#computed-age 0 лет
+							input(type="submit" value="Сохранить" class="buy-certificate-btn")
+			

@@ -29,7 +29,7 @@ gulp.task('sass', function () {
     .pipe(sass({errLogToConsole: true}))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-            browsers: ['last 6 versions'],
+            browsers: ['last 2 versions'],
             cascade: false
         }))
     .pipe(gulp.dest('dist'));
@@ -70,18 +70,20 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'cart.html'
-        }
+            index: 'profile.html'
+        },
+    reloadDelay: 300
+
     }, cb);
 });
 
 
 gulp.task('watch', function () {
- gulp.watch('app/jade/**/*.jade', ['jade', browsersync.reload]);
- gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
- gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
- gulp.watch('app/img/*', ['images', browsersync.reload]);
+    gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
+    gulp.watch('app/jade/**/*.jade', ['jade', browsersync.reload]);
+    gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
+    gulp.watch('app/img/*', ['images', browsersync.reload]);
 });
 
 
-gulp.task('default', ['jade', 'sass', 'scripts', 'images', 'browsersync', 'watch']);
+gulp.task('default', ['sass', 'jade', 'scripts', 'images', 'browsersync', 'watch']);

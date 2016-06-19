@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <title>My cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="bitrix/templates/modelistam/css/normalize.css" />
-    <link rel="stylesheet" href="dist/main.css">
-    <link rel="stylesheet" href="dist/cart.css">
-    <script type="text/javascript" src="bitrix/templates/modelistam/js/jquery/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="dist/normalize.css">
+    <link rel="stylesheet" href="dist/template_styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 <body class="cart-page">
@@ -27,7 +26,7 @@
                         <a href="#" class="cart-product__delete_checkbox-item"></a>
                     </div>
                     <div class="cart-product__image">
-                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                        <img src="dist/images/temporary/avto.jpeg" alt="">
                     </div>
                     <div class="cart-product__name">
                         <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
@@ -78,7 +77,7 @@
                         <a href="#" class="cart-product__delete_checkbox-item"></a>
                     </div>
                     <div class="cart-product__image">
-                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                        <img src="dist/images/temporary/avto.jpeg" alt="">
                     </div>
                     <div class="cart-product__name">
                         <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
@@ -92,7 +91,7 @@
 
                    <div class="cart-product__recomended clearfix">
                         <h3><i class="cart-special-offer">Комплект со скидкой 10%</i></h3>
-                        <img src="dist/images/cart-recomended.png" alt="">
+                        <img src="dist/images/temporary/cart-recomended.png" alt="">
                         <div class="cart-product__name">
                             <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
                         </div>
@@ -136,7 +135,7 @@
                         <a href="#" class="cart-product__delete_checkbox-item"></a>
                     </div>
                     <div class="cart-product__image">
-                        <img src="upload/iblock/745/745793615970624d7fe64bdf9d59df86_thumb_92c89067a8f05180.jpeg" alt="">
+                        <img src="dist/images/temporary/avto.jpeg" alt="">
                     </div>
                     <div class="cart-product__name">
                         <a href="#">Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603</a>
@@ -194,7 +193,7 @@
                     <input type="text" placeholder="Email" id="email">
                     <div class="email-status">для информации о статусе заказа</div>
                     <input type="radio" id="deliveryByCompany" name="deliveryAndPayment"><label for="deliveryByCompany"><span><i></i></span>Доставка и Оплата</label>
-                    <div class="delivery-address">
+                    <div class="delivery-address radio-toggle">
                         <div class="select-wrapper">
                             <div class="select-arrow"></div>
                             <select name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
@@ -208,7 +207,7 @@
                         <div class="select-wrapper">
                             <div class="select-arrow"></div>
                             <select name="citySelect" id="citySelect" onchange="order_form_reload()">
-                                <option value="0">-- Выберите регион (или обл.) --</option>
+                                <option selected="selected" value="0">Выберите регион (или обл.)</option>
                                 <option value="14">Винницкая обл.</option>
                                 <option value="5">Днепропетровская обл.</option>
                                 <option value="7">Донецкая обл.</option>
@@ -228,21 +227,20 @@
                                 <option value="20">Черкасская обл.</option>
                                 <option value="19">Черниговская обл.</option>
                             </select>
-                            
                         </div>
                         
                         <div class="select-wrapper">
                             <div class="select-arrow"></div>
                             <select name="newPostWarehouse" id="newPostWarehouse">
+                                <option selected="selected" value="0">Выберите адрес отделения</option>
                                 <option value="1">address 1</option>
                                 <option value="2">address 2</option>
                                 <option value="3">address 3</option>
                                 <option value="4">address 4</option>
                             </select>
-                            
                         </div>
                         
-                        <p><b>Оплачу</b></p>
+                        <p><b>Оплата</b></p>
                         <div class="select-wrapper">
                             <div class="select-arrow"></div>
                             <select name="paymentMethods" id="paymentMethods">
@@ -253,57 +251,127 @@
                         </div>
                         
                     </div>
-                    <input name="deliveryAndPayment" type="radio" id="fromStore"><label for="fromStore"><span><i></i></span>Заберу в магазине</label>
+                    <input name="deliveryAndPayment" type="radio" id="fromStore" checked="checked"><label for="fromStore"><span><i></i></span>Заберу в магазине</label>
+                    <div class="shop-address radio-toggle">
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="newPostWarehouse" id="newPostWarehouse">
+                                <option value="0" selected="selected">Выберите магазин</option>
+                                <option value="1">address 1</option>
+                                <option value="2">address 2</option>
+                                <option value="3">address 3</option>
+                                <option value="4">address 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <a href="#" class="contentToggleLink">Добавить примечание к заказу</a>
+                    <div class="order-comment">
+                        <textarea name="order-comment" id="orderComment" cols="30" rows="3"></textarea>
+                    </div>
+                    <input type="text" placeholder="Промокод (если есть)" name="promokod" id="promokod" class="promokod">
                     <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
                 </form>
             </div>
-            
+<!-- Старый или Зарегистрированный покупатель -->
             <div class="old-buyer">
                 <form method="post" action="" id="order_form2" class="order_form">
-                    <p>Ваше имя: <span class="name"> Иван Петров</span></p>
-                    <p>Ваш email: <span class="email"> example@mail.com</span></p>
-                    <p>Ваш номер телефона: <span class="phone-number"> 0939392789</span></p>
-                    <p><a href="#" id="changeInfoLink">Изменить</a></p>
-                    <div class="change-info" style="display: none">
-                        <input type="text" placeholder="Фамилия Имя" id="surname" value="Петров Иван" hidden="">
-                        <input type="text" id="phone-number" placeholder="Номер телефона" value="0939392780" hidden="">
-                        <input type="text" placeholder="Email" id="email" value="example@mail.com" hidden="">
+                    <div class="separator-block">
+                        <p>
+                            <b>Имя: </b>Иван Петров <br>
+                            <b>Тел: </b>0939392789 <br>
+                            <b>Email: </b>example@mail.com
+                        </p>
+                        <a href="#" class="contentToggleLink">Изменить мои данные</a>
+                        <div class="change-info">
+                            <input type="text" placeholder="Фамилия Имя" id="surname" value="Петров Иван" required="required" class="validated">
+                            <input type="text" id="phone-number" placeholder="Номер телефона" value="0939392780" required="required" class="validated">
+                            <input type="text" placeholder="Email" id="email" value="example@mail.com" required="required" class="validated">
+                        </div>
                     </div>
-                    <fieldset>
-                    <legend>
-                        Адрес доставки:
-                    </legend>
-                        <select name="prop[5]" id="citySelect" onchange="order_form_reload()">
-                            <option value="0">-- Выберите регион (или обл.) --</option>
-                            <option value="14">Винницкая обл.</option>
-                            <option value="5">Днепропетровская обл.</option>
-                            <option value="7">Донецкая обл.</option>
-                            <option value="8">Запорожская обл.</option>
-                            <option value="3">Киевская обл.</option>
-                            <option value="10">Криворожская обл.</option>
-                            <option value="13">Луганская обл.</option>
-                            <option value="9">Львовская обл.</option>
-                            <option value="12">Мариупольская обл.</option>
-                            <option value="11">Николаевская обл.</option>
-                            <option value="6">Одесская обл.</option>
-                            <option value="18">Полтавская обл.</option>
-                            <option value="15">Республика Крым</option>
-                            <option value="16">Севастополь</option>
-                            <option value="4">Харьковская обл.</option>
-                            <option value="17">Херсонская обл.</option>
-                            <option value="20">Черкасская обл.</option>
-                            <option value="19">Черниговская обл.</option>
-                        </select>
-                    <input type="text" name="prop[6]" placeholder="Город" id="city">
-                    <textarea class="" name="prop[7]" rows="3">Введите свой адрес</textarea>
-                    </fieldset>
-
-                    <input type="submit" value="Подтвердить заказ" class="btn btn-cart">
+                    <div class="separator-block">
+                        <h2>Доставка</h2>
+                        <div class="select-wrapper">
+                            <div class="select-arrow"></div>
+                            <select name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
+                                <option value="Новая Почта">Новая Почта</option>
+                                <option value="Укрпочта">Укрпочта</option>
+                                <option value="Курьер">Курьер</option>
+                            </select>
+                        </div>
+                        <p>
+                            <b>Служба доставки: </b>Новая Почта<br>
+                            <b>Город: </b>Киев<br>
+                            <b>Адрес: </b>Склад №9, ул. Голосеевская, 1 
+                        </p>
+                        <a href="#" class="contentToggleLink">Изменить адрес доставки</a>
+                        <div class="change-info">
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                                <select name="citySelect" id="citySelect" onchange="order_form_reload()">
+                                    <option value="0">Выберите регион (или обл.)</option>
+                                    <option value="14">Винницкая обл.</option>
+                                    <option value="5">Днепропетровская обл.</option>
+                                    <option value="7">Донецкая обл.</option>
+                                    <option value="8">Запорожская обл.</option>
+                                    <option value="3">Киевская обл.</option>
+                                    <option value="10">Криворожская обл.</option>
+                                    <option value="13">Луганская обл.</option>
+                                    <option value="9">Львовская обл.</option>
+                                    <option value="12">Мариупольская обл.</option>
+                                    <option value="11">Николаевская обл.</option>
+                                    <option value="6">Одесская обл.</option>
+                                    <option value="18">Полтавская обл.</option>
+                                    <option value="15">Республика Крым</option>
+                                    <option value="16">Севастополь</option>
+                                    <option value="4">Харьковская обл.</option>
+                                    <option value="17">Херсонская обл.</option>
+                                    <option value="20">Черкасская обл.</option>
+                                    <option value="19">Черниговская обл.</option>
+                                </select>
+                                
+                            </div>
+                            
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                                <select name="newPostWarehouse" id="newPostWarehouse">
+                                    <option value="1">address 1</option>
+                                    <option value="2">address 2</option>
+                                    <option value="3">address 3</option>
+                                    <option value="4">address 4</option>
+                                </select>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="separator-block">
+                        <h2>Оплата</h2>
+                        <p>При получении</p>
+                        <a href="#" class="contentToggleLink">Выбрать другой способ</a>
+                        <div class="change-info">
+                            <div class="select-wrapper">
+                                <div class="select-arrow"></div>
+                                <select name="paymentMethods" id="paymentMethods">
+                                    <option value="0">При получении</option>
+                                    <option value="1">Безналичный расчет</option>
+                                </select>
+                            
+                            </div>   
+                        </div>
+                    </div>
+                    <a href="#" class="contentToggleLink">Добавить примечание к заказу</a>
+                    <div class="order-comment">
+                        <textarea name="order-comment" id="orderComment" cols="30" rows="3"></textarea>
+                    </div>
+                    <input type="text" placeholder="Промокод (если есть)" name="promokod" id="promokod" class="promokod">
+                    
+                    <input type="submit" value="Подтвердить заказ" class="btn btn-cart"> 
                 
                 </form>
             </div>
         </div><!-- /.order-block__left -->
     </div><!-- /.page-inner -->
+
+
     <script>
         //  Стили для обработки всплывающего окна редактирования корзины
         //  при нажатии на крестик в провом верхнем углу. 
@@ -325,10 +393,10 @@
             $(".order-block__right").slideToggle( "slow" );
         });
         // Ссылка изменить для бывших покупателей
-        $('#changeInfoLink').on("click", function(e) {
+        $('.contentToggleLink').on("click", function(e) {
             e.preventDefault();
-            $(".change-info > input").removeAttr("hidden");
-            $(".change-info").slideToggle("slow");
+            // $(".change-info > input").removeAttr("hidden");
+            $(this).next().slideToggle("slow");
         });
         // Табы для переключения форм в корзине
         $(".order-tabs li").on("click", function(e) {
@@ -343,8 +411,6 @@
         var reqInput =  $('.required')
         var timerId;
 
-        console.log(reqInput);
-
         reqInput.on("blur" , function() {
             if ($(this).val().length > 5) {
                 $(this).removeClass("required");
@@ -353,7 +419,11 @@
                 $(this).addClass("required");
             }
         });
-
+        // Раскрытие поля для ввода комментария к заказу
+        $("#orderCommentLink").on("click", function(e){
+            e.preventDefault();
+            $("#orderComment").toggle();
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+doctype html
+html
+	head
+		title Personal cabinet
+		meta(charset="utf-8")
+		meta(lang="ru_RU")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+	body
+		.page-inner
+			// Основной контейнер
+			div.cab-navigation-block 
+				// Навигация по профилю	
+				ul
+					each val, index in {"economy-link":"Как сэкономить","orders-link": "Как заказать", "delivery-link": "Доставка и оплата", "recomend-link": "Рекомендации", "liked-link": "Избранное", "compare-link": "Сравнение", "help-link": "Поддержка", "wait-link": "Лист ожидания", "price-link": "Следить за ценой", "profile-link": "Профиль"}
+						li
+							a(href="#" class=index)=val
+								i
+			div.main-content(role="main")
+				// Сюда будут вставляться различные блоки
+				block item
+			
+			div.cab-info
+				div.cab-extra-info
+					.cab-discount
+						a(href="#") Статус &nbsp; 
+						| VIP
+						i
+						p Username, Ваша скидка – 3%
+						.discount-progress
+							ul
+								li 3%
+								- for (var x =1; x < 4; x++)
+									li= x*5 + "%"
+
+							progress(value=3 max=15)
+
+						div.want-discount Хотите скидку в 5%?
+						a.cab-buy-more(href="#") Докупите еще на 7 450 грн
+
+					.cab-manager.clearfix
+						img(src="dist/images/personal-cabinet/photo-manager.jpg")
+						p
+							b Ваш менеджер <br>
+							|Евгений <br>
+							|Никитенко
+						p 067-234-52-68 <br>
+							a(href="mailto:ev@modelistam.com.ua") ev@modelistam.com.ua
+						a.chat-btn(href="#") Онлайн чат
+					.certificate
+						a(href="#") Подарочные сертификаты
+						form(action="/" name="cab-certificate")
+							select
+								option(value="500") 500 грн
+								option(value="1000") 1000 грн
+								option(value="1500") 1500 грн
+							input.buy-certificate-btn(type="submit" value="Купить")
+				// Блок подписки
+				div.cab-signup 
+					h2.cab-signup-title Лучшие предложения
+					form.cab-signup-form(action="/" name="cab-signup-form")
+						p
+							input(type="checkbox" value="sale" id="chSale" checked)
+							label(for="chSale")
+								i.checkbox
+								span.label-link.sale-link Акции
+						p
+							input(type="checkbox" value="discount" id="chDiscount" )
+							label(for="chDiscount")
+								i.checkbox
+								span.label-link.discount-link Скидки
+						p
+							input(type="checkbox" value="bestsellers" id="chBestsellers" )
+							label(for="chBestsellers")
+								i.checkbox
+								span.label-link.bestsellers-link Хиты 
+						p
+							input(type="checkbox" value="new" id="chNew")
+							label(for="chNew")
+								i.checkbox
+								span.label-link.new-link Новинки 
+						p
+							input(type="checkbox" value="review" id="chReview")
+							label(for="chReview")
+								i.checkbox
+								span.label-link.review-link Обзоры
+
+						input.cab-signup-btn(type="submit" value="Следить за лучшими предложениями")
+
+						p Без спама <br> Отписка в любое время
+
+

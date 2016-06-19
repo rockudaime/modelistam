@@ -1,0 +1,491 @@
+// ****************************
+// *        Блок навигации слева    *
+// ****************************
+
+.cab-navigation-block{
+        border: 1px #dfdfdf solid;
+        border-radius: 2px; 
+}
+
+.cab-navigation-block ul{
+        list-style: none;
+}
+.cab-navigation-block li>a{
+        display: block;
+        padding: 12px 15px;
+        padding-left: 50px;
+        border-top: 1px #dfdfdf solid;
+        text-decoration: none;
+        color: #000;
+        font-family: OpenSans_Regular;
+        font-size: 16px;
+        font-weight: normal;
+        background-image: url("images/personal-cabinet/spritesheet.png");
+        background-repeat: no-repeat;
+}
+.cab-navigation-block li:first-child a{
+        border-top: none;
+}
+.active {
+        background-color: #fafafa;
+        font-family: OpenSans_Semibold;
+
+        i{
+                display: inline-block;
+                float: right;
+                width: 25px;
+                height: 25px;
+                background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -5px;
+        }
+}
+.cab-navigation-block li>a:hover{
+        background-color: #fafafa;
+        font-weight: bold;
+}
+.economy-link{
+        background-position: 5px -789px;
+}
+
+.orders-link{
+        background-position: 5px -247px;
+        &:hover,
+        &.active{
+                background-position: 5px -283px;
+        }
+}
+.delivery-link{
+        background-position: 5px -381px;
+
+        &:hover,
+        &.active{
+                background-position: 5px -417px;
+        }
+}
+
+.recomend-link{
+        background-position: 5px -716px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -752px;
+        }
+}
+
+.liked-link{
+        background-position: 5px -453px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -489px;
+        }
+}
+.compare-link{
+        background-position: 5px -824px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -860px;
+        }
+}
+.help-link{
+        background-position: 5px -896px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -932px;
+        }
+}
+.wait-link{
+        background-position: 5px -173px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -209px;
+        }
+}
+.price-link{
+        background-position: 5px -646px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -681px;
+        }
+}
+.profile-link{
+        background-position: 5px -968px;
+        
+        &:hover,
+        &.active{
+                background-position: 5px -1004px;
+        }
+}
+// Конец блока навигации
+
+// ****************************
+// *             Блок справа                *
+// ****************************
+.cab-info{
+    margin: 30px 0 0;
+}
+.cab-extra-info{
+    background: #fcfcfc;
+    border: 1px #dfdfdf solid;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.cab-discount, .cab-manager{
+    padding: 15px 15px 30px;
+    border-bottom: 1px #dfdfdf dashed;
+}
+.cab-discount a{
+    display: inline-block;
+    color: black;
+}
+.cab-discount i{
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat -2px -358px;
+}
+.cab-discount p{
+    margin: 10px 0 15px 0;
+}
+.discount-progress{
+    border: 2px #f0da88 solid;
+    border-radius: 10px;
+    background: #fff;
+}
+.discount-progress ul{
+    margin: 0;
+    padding: 10px 0 5px 45px;
+}
+.discount-progress li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 15px;
+}
+.discount-progress li:first-child{
+    font-weight: bold;
+}
+progress[value]{
+    -webkit-appearance: none;
+    appearance: none;
+
+    // background-color: #76972a;
+    border: 1px #777777 solid;
+    border-radius: 10px;
+    height: 12px;
+    width: 220px;
+    margin: 0 10px 10px;
+}
+progress[value]::-webkit-progress-bar {
+    background-color: #fff;
+    border: 0;
+    border-radius: 10px;
+}
+.want-discount {
+    color: #ce1e36;
+    margin: 20px 0 10px;
+    padding: 10px;
+    padding-left: 35px;
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -792px;
+}
+.cab-discount b{
+
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat 0 0;
+}
+.cab-buy-more{
+    width: 240px;
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat right -40px top -42px;
+}
+
+        /*Правый блок с информацией (Личный менеджер)*/
+.cab-manager{
+    // height: 220px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 30px 15px 15px;
+}
+.cab-manager p{
+    float: left;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 58%;
+}
+.cab-manager img{
+    float: right;
+    margin-right: 20px;
+}
+.chat-btn{
+    display: block;
+    float: right;
+    color: #76972a;
+    background: #fff;
+    border: 1px #76972a solid;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 100px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+        /*Правый блок с информацией (Сертификат)*/
+
+.certificate{
+    padding: 10px 15px 0;
+    padding-bottom: 20px;
+    background-color: #f0f0f0;
+}
+.certificate a{
+    display: inline-block;
+    padding: 10px 0 10px 35px;
+    color: #346cab;
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -617px;
+}
+.certificate form{
+
+}
+.certificate select{
+    width: 116px;
+    padding: 10px;
+    border: 1px #000 solid;
+    border-radius: 5px;
+    font-size: 15px;
+    background: #fff;
+}
+.buy-certificate-btn{
+    padding: 10px 20px;
+    margin-left: 10px;
+    color: white;
+    background: #76972a;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+        /*Правый блок с информацией (Лучшие предложения)*/
+
+.cab-signup{
+    padding: 15px;
+    padding-top: 100px;
+    border: 0;
+    border-radius: 10px;
+    background: #fef4ce url("images/personal-cabinet/icon-mail.png") no-repeat 50% 20px;
+}
+.cab-signup h2{
+    margin: 5px 0 15px;
+    font-size: 20px;
+}
+.cab-signup p,
+.cab-signup-form p{
+    margin: 0;
+}
+.cab-signup-form{
+    padding: 0;
+}
+.cab-signup-form input[type=checkbox]{
+    position: absolute;
+    left: -1000px;
+}
+.cab-signup-form .checkbox{
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border: 1px #000 solid;
+    border-radius: 3px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+input[type=checkbox]:checked + label > .checkbox{
+    background: #4b80bb url("images/personal-cabinet/spritesheet.png") no-repeat -5px -328px;
+}
+.label-link{
+    display: inline-block;
+    height: 28px;
+    width: 120px;
+    line-height: 18px;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    background: url("images/personal-cabinet/spritesheet.png") no-repeat    right -48px top -146px;
+    color: white;
+    cursor: pointer;
+}
+.sale-link{
+    background-color: #e53326;
+}
+.discount-link{
+    background-color: #eb9000;
+}
+.bestsellers-link{
+    background-color: #d65826;
+}
+.new-link{
+    background-color: #33955d;
+}
+.review-link{
+    background-color: #5182b9;
+}
+.cab-signup-btn{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 238px;
+    height: 65px;
+    line-height: 25px;
+    background: #76972a;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: normal;
+    cursor: pointer;
+}
+// ********************************
+// *           Profile page       *
+// ******************************** 
+    .profile{
+        margin-bottom: 25px;
+
+        h2{
+            margin-top: 0;
+        }
+        .birth-date-block,
+        .check-input{
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid #959595;
+            padding: 15px;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+        .buy-certificate-btn{
+            background-color: #d34f27;
+            box-sizing: border-box;
+
+            padding: 8px 15px 4px;
+        }
+    }
+    .check-input{
+
+        label{
+            display: inline-block;
+            box-sizing: border-box;
+            width: 170px;
+            border: 2px solid #c2c2c2;
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            font-size: 15px;
+        }
+
+        label:nth-of-type(3n){
+            margin-right: 0;
+        }
+
+        label:hover{
+            background-color: #fafafa;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]{
+            position: absolute;
+            left: -9999px;
+        }
+
+        input[type=checkbox]:checked + label{
+            font-weight: bold;
+            color: #76972a;
+            border-color: #76972a;
+            background: #fff url(images/svg/Cart-check.svg) no-repeat right 5px top 50%;
+        }
+    }
+
+// ********************************
+// *           Profile page       *
+// ********************************
+
+
+// ********************************
+//        Начало адаптивных стилей
+// ********************************
+
+@media (min-width: 544px) {
+
+}
+
+@media (min-width: 768px) {
+        .cab-navigation-block{
+            float: left;
+            width: 273px;
+            display: none;
+        }
+
+        .cab-info{
+            margin: 0 0;
+            width: 100%;
+        }
+        .cab-extra-info{
+            width: 60%;
+            float: left;
+            box-sizing: border-box;
+        }
+        .cab-signup{
+            width: 37%;
+            float: right;
+            box-sizing: border-box;
+        }
+
+        // Личный менеджер
+        .cab-manager p{
+            width: 50%;
+        }
+        
+}
+
+@media (min-width: 994px) {
+    .cab-navigation-block{
+        display: block;
+        margin-right: 10px;
+    }
+    .profile{
+        float: left;
+
+    }
+    .cab-info{
+        float: right;
+        width: 275px;
+
+    }
+    .cab-signup,
+    .cab-extra-info{
+        float: none;
+        width: 100%;
+    }
+    .chat-btn{
+            float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cab-navigation-block{
+        margin-right: 40px;
+    }
+    .profile{
+        width: 570px;
+    }
+    .cab-info{
+        margin-top: 45px;
+    }
+
+}

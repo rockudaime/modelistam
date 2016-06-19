@@ -68,8 +68,8 @@
 }
 .btn-cart{
     font-size: 18px;
-	font-family: OpenSans_Semibold;
-    color: #fff;
+	// font-family: OpenSans_Semibold;
+    color: #fff !important;
     background-color: #659812;
     border-color: #76972a;
 }
@@ -84,9 +84,18 @@
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 
+    p{
+        line-height: 25px;
+        margin-bottom: 12px;
+    }
+
+    .separator-block{
+        margin: 0 -15px 15px;
+        border-bottom: 1px dashed #c6c5c5;
+        padding: 0 15px;
+    }
     input[type="text"],
     input[type="password"],
-    .select-wrapper,
     textarea {
         width: 100%;
         box-sizing: border-box;
@@ -95,23 +104,49 @@
         border-radius: 4px;
         padding: 10px 15px;
         box-sizing: border-box;
-        border: 2px solid #777;
+        border: 1px solid #777;
         // color: #777;
     }
-    input.required{
-        background: #fff url(images/icon-asterix.png) no-repeat 95% 50%;
+    #orderCommentLink{
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+    .order-comment{
+        display: none;
+    }
+    input{
         color: inherit;
+        background-position: right 10px top 50%;
+        background-repeat: no-repeat;
+    }
+    input.validated{
+        background-image: url(images/ui-icon-avail-yes.png);
+        border: 1px solid green;
+    }
+    input.required{
+        background-image: url(images/icon-asterix.png);
+    }
+    input.promokod{
+        background-image: url(images/icon-question.png);
+        padding-right: 40px;
+    }
+    input.promokod:focus{
+        padding-right: 39px;
+    }
+    input:focus,
+    input:hover{
+        background-position: right 9px top 50%;
     }
 
     input[type="text"]:focus,
     input[type="text"]:hover,
     input[type="password"]:focus,
     input[type="password"]:hover,
-    .select-wrapper:hover,
     textarea:focus,
     textarea:hover{
         border: 2px solid #4b80bb;
         outline: none;
+        padding: 9px 14px;
     }
     select{
         background: #fff;
@@ -128,7 +163,7 @@
     }
     input[type="radio"] + label{
         text-decoration: underline;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         display: block;
     }
     input[type="radio"] + label > span{
@@ -143,38 +178,70 @@
         margin: 0 15px 0 0;
     }
 }
+.contentToggleLink{
+    display: block;
+    margin-bottom: 15px;
+}
+.change-info{
+    display: none;
+}
 // Select styles
-.order_form .select-wrapper {
-  position: relative;
-  padding: 0;
-  background: #fff;
+.select-wrapper{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 1px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #777;
+    outline: none;
+
+    &:hover{
+        border: 2px solid #4b80bb;
+        padding: 0;
+    }
+
+    select{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 15px;
+        height: 44px;
+        background: transparent;
+        border: 0;
+        appearance: none;            /* remove arrow        */
+        -webkit-appearance: none;    /* remove arrow chrome */
+        -moz-appearance: none;       /* remove arrow FF     */
+    }
+
+    &:hover select,
+    select:focus{
+        border: none;
+        outline: none;
+    }
+
+    select::-ms-expand{
+        display: none;             /* remove arrow IE     */
+    }
 }
 
-.select-wrapper select {
-  width: 100%;
-  padding: 10px 15px;
-  background: transparent;
-  border: 0;
-  appearance: none;            /* remove arrow        */
-  -webkit-appearance: none;    /* remove arrow Chrome */
-  -moz-appearance: none;       /* remove arrow FF     */
-}
-.select-wrapper select:focus{
-    border: none;
-    outline: none;
-}
-.select-wrapper select::-ms-expand{
-    display: none;             /* remove arrow IE     */
-}
+
+
 .select-arrow{
     position: absolute;
-    z-index: -9999;
-    right: 4px;
-    bottom: 5px;
-    border: 8px solid;
-    border-color: white white #6C7231 white;
-    border-right: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 100%;
+    background: #3b9dcd url(images/icon-select-arrow.png) no-repeat 50% 50%;
+    z-index: 0;
 }
+.select-wrapper:hover .select-arrow{
+    width: 50px;
+    bottom: 0;
+    right: -1px;
+}
+
 // end of select styles
 input[type="radio"]:checked + label > span > i{
     display: inline-block;
@@ -186,9 +253,11 @@ input[type="radio"]:checked + label > span > i{
 }
 .delivery-address{
     display: none;
-    transition: display 2s;
 }
-input[type="radio"]:checked + label + .delivery-address{
+.shop-address{
+    display: none;
+}
+input[type="radio"]:checked + label + .radio-toggle{
     display: block;
 }
 .order-tabs{
