@@ -5,13 +5,11 @@
       return {top:val.top + 30, left:val.left};
     });
 
-$("#parent2").mouseout(function(e)
-{
+$("#parent2").mouseout(function(event) {
  $("#parent1").removeClass("icon-hover-element-item_two");
 });
 
-$("#parent2").mousemove(function(e)
-{
+$("#parent2").mousemove(function(event) {
  $("#parent1").addClass("icon-hover-element-item_two");
 });
 
@@ -73,7 +71,7 @@ BIS.menuCustomModule = {
                 if (curUrl.indexOf(curItemUrl) != -1) {
                     $(this).addClass('active');
                 }
-            })
+            });
         },
         addCssClassForItems: function() {
             this.elems.itemsKlm1.has('.klm2').find('.dropdown-level_2').addClass('has-sub-menu');
@@ -84,16 +82,16 @@ BIS.menuCustomModule = {
                 curItem;
 
             self.elems.lisDesc.hoverIntent({
-                over: function(e) {
-                    e = e || window.event;
-                    related = e.relatedTarget || e.fromElement;
+                over: function(event) {
+                    event = event || window.event;
+                    related = event.relatedTarget || event.fromElement;
                     curItem = $(this);
 
                     try {
                         if (related.tagName == 'A' || related.tagName == 'LI'); {
                             self.elems.lisDesc.find('>ul').hide();
                         }
-                    } catch(e) {
+                    } catch(event) {
                         //nothing
                     }
 
@@ -109,8 +107,8 @@ BIS.menuCustomModule = {
             var self = this;
 
             self.elems.linksDesc.on({
-                'click': function(e) {
-                    e.preventDefault();
+                'click': function(event) {
+                    event.preventDefault();
                     $(this).parents('.dropdown__gen').find('>ul').toggle();
                 }
             });
@@ -119,15 +117,15 @@ BIS.menuCustomModule = {
             var sibling;
 
             this.elems.itemsKlm2.on({
-                'mouseenter': function(e) {
-                    sibling = $(e.currentTarget).siblings('.dropdown-level_2').addClass('active');
+                'mouseenter': function(event) {
+                    sibling = $(event.currentTarget).siblings('.dropdown-level_2').addClass('active');
                 },
                 'mouseleave': function() {
                     sibling.removeClass('active');
                 }
             });
         }
-    }
+    };
 
     //init menuCustomModule
     $(function() {

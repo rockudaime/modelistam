@@ -65,7 +65,7 @@ var itemMenuObj = { // product_page
 			  blockqw.before('<h6>Вопросы и ответы</h6>');
 			  blockcon.before('<h6>Получить консультацию</h6>');
 			  $('.item-detail-menu  h6').click(function (event) {
-			        if(false == $(this).next().is(':visible')) {
+			        if(false === $(this).next().is(':visible')) {
 			          $('.item-detail-menu-container').slideUp(300);
 			      }
 			      $(this).next().slideToggle(300);
@@ -86,7 +86,7 @@ var itemMenuObj = { // product_page
 
             currentBlock.show();
             $(this).parent('.item-detail-menu-item').addClass(cssActiveLink);
-        })
+        });
     },
     disableMobileLinks: function() {
         var links = $('.item-detail-menu-item');
@@ -95,7 +95,7 @@ var itemMenuObj = { // product_page
         blocks.show();
         links.off('click.mobile');
     }
-}
+};
 
 // block with address at the bottom of the every page
 var SalonObj = {

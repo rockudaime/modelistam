@@ -26,7 +26,7 @@
 .cab-navigation-block li:first-child a{
         border-top: none;
 }
-.active {
+.nav-active {
         background-color: #fafafa;
         font-family: OpenSans_Semibold;
 
@@ -372,8 +372,72 @@ input[type=checkbox]:checked + label > .checkbox{
             background-color: #d34f27;
             box-sizing: border-box;
 
-            padding: 8px 15px 4px;
+            padding: 10px 15px 10px;
         }
+    }
+    .my-profile-info{
+
+        &>div{
+            border: 1px solid #c2c2c2;
+            padding: 15px 100px 15px 58px;
+            margin-bottom: 16px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: 15px 10px;
+            border-radius: 2px;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #346cab;
+            cursor: pointer;
+        }
+    }
+
+    .pr-name{
+        background-image: url(images/svg/Enter-user-profile.svg);
+    }
+    .pr-phone{
+        background-image: url(images/personal-cabinet/ui-icon-personal-phone.png);
+    }
+    .pr-email{
+        background-image: url(images/personal-cabinet/ui-icon-personal-envelope.png);
+    }
+    .pr-password{
+        background-image: url(images/personal-cabinet/ui-icon-personal-lock.png);
+        background-position: 20px 50%;
+    }
+    .pr-change-links{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+
+        a{
+            display: inline-block;
+            
+            margin-left: 20px;
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+            padding-left: 20px;
+
+            span{
+                border-bottom: 1px dashed #abc4df;
+            }
+
+        }
+    }
+    .pr-change-info{
+        background-image: url(images/personal-cabinet/ui-icon-personal-edit.png);
+    }
+    .pr-add-info{
+        background-image: url(images/personal-cabinet/ui-icon-personal-add.png)
+    }
+    .pr-password{
+        a{
+            border-bottom: 1px dashed #abc4df;
+        }
+    }
+    .pr-hidden{
+        display: none;
     }
     .check-input{
 
@@ -389,9 +453,7 @@ input[type=checkbox]:checked + label > .checkbox{
             font-size: 15px;
         }
 
-        label:nth-of-type(3n){
-            margin-right: 0;
-        }
+        
 
         label:hover{
             background-color: #fafafa;
@@ -475,6 +537,7 @@ input[type=checkbox]:checked + label > .checkbox{
     .chat-btn{
             float: left;
     }
+
 }
 
 @media (min-width: 1200px) {
@@ -487,5 +550,13 @@ input[type=checkbox]:checked + label > .checkbox{
     .cab-info{
         margin-top: 45px;
     }
+
+    .check-input{
+        
+        label:nth-of-type(3n){
+            margin-right: 0;
+        }
+    }
+
 
 }

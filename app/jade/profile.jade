@@ -3,9 +3,40 @@
 extends ./personal-cabinet.jade
 
 block item
-	div.profile
+	div.profile.clearfix
 		h2 Профиль	
 		form.my-profile-form(action="/" name="profile-form")
+			div.my-profile-info
+				div.pr-name Алексей
+					div.pr-change-links
+						a.pr-change-info
+							span Изменить
+					.pr-hidden
+						input(type="text" name="name" value="Алексей")
+				div.pr-phone +380950639878
+					div.pr-change-links
+						a.pr-change-info 
+							span Изменить
+						a.pr-add-info
+							span Добавить номер
+					.pr-hidden
+						input(type="text" name="phoneNumber" value="+380950639878")
+				div.pr-phone +380950639878
+					div.pr-change-links
+						a.pr-change-info 
+							span Изменить
+						a.pr-add-info
+							span Добавить номер
+					.pr-hidden
+						input(type="text" name="phoneNumber" value="+380950639878")
+				div.pr-email test@testmail.com
+				div.pr-password
+					a Сменить пароль
+					div.pr-hidden
+						input(type="password" name="oldPassword" placeholder="Старый пароль")
+						input(type="password" name="newPassword" placeholder="Новый пароль")
+						input(type="password" name="newPassword2" placeholder="Повторите новый пароль")
+
 			div.my-signups.check-input
 				h2 Мои подписки
 				p Нажмите, чтобы включить или отменить
@@ -48,4 +79,24 @@ block item
 									option(value=x)= x
 							span#computed-age 0 лет
 							input(type="submit" value="Сохранить" class="buy-certificate-btn")
-			
+
+	script.
+		$(document).ready(function(){
+			'use strict';
+			var addLink = $(".pr-add-info");
+			var changeLink = $(".pr-change-info");
+
+			// Нажатие на ссылку "добавить номер" приводит к созданию нового блока с полем для ввода номера
+			addLink.on("click", function(event){
+				event.preventDefault();
+				$(this).parent().parent().after('<div class="pr-phone"><input type="text" name="phoneNumber" placeholder="Введите номер"><div class="pr-change-links"><a href="#" class="pr-delete-item">X</a></div></div> ');
+			});
+			changeLink.on("click", function(event) {
+				event.preventDefault();
+				$(this).parent().parent().find(".pr-hidden").slideToggle();
+			});
+			$(document.body).on("click",".pr-delete-item", function(event) {
+				event.preventDefault();
+				$(this).parent().parent().remove();	
+			});
+		});

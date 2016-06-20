@@ -1,0 +1,174 @@
+doctype html
+html
+	head
+		title Overview page
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+	body.overview-one
+		.page-inner
+			h1 Выбор радиоуправляемого внедорожника: серьезный подход к вопросу
+			.ov-main-content
+				.ov-article
+					img(src="" alt="some picture")
+					p.
+						Сегодня RC тачки достаточно доступны, разнообразны, универсальны. Машины класса оффроад можно катать абсолютно на любой пересеченной местности и ничто не остановит их: песок, снег, ямы, трамплины, лужи, камни, гравий. Развлекаться с ними можно везде: в закрытом помещении, на улице, на природе.
+					img(src="" alt="some picture")
+					p.
+						Мы выделим для Вас несколько преимуществ радиоуправляемых моделей внедорожников перед другими классами тачек:  
+						в среднем этот вид развивает скорость в пределах 50 км/ч, а некоторые представители гораздо большую;  
+						они пройдут там, куда никто не сможет добраться – это вездеходы с заглавной буквы;  
+						большинство моделей имеет радиус действия дистанционного пульта управления в районе 80 метров;  
+						автомодели обладают реалистичной колесной базой, могучим двигателем, профессиональной подвеской и настоящими маслонаполненными амортизаторами;  
+						отлично чувствуют себя на любом природном покрытии: травяном, асфальтовом или грунтовом! Для них нет границ! Также у Вас есть возможность устраивать гонки в закрытом помещении, предварительно продумывая и создавая специальную трассу с разными препятствиями. Естественно, уровень сложности и протяженность трассы можно будет легко откорректировать по желанию участников;  
+						Вы обладаете полным контролем над болидом – машина очень легко выполняет все Ваши команды благодаря установленной электронике высокой точности;  
+						Вы сможете с легкостью преобразить Вашу модель радиоуправляемого внедорожника при помощи наклеек или реклам на корпусе авто.  
+						А еще, каждый автомобиль обладает яркой индивидуальностью и персональными характеристиками.
+				// Блок со связанными товарами - related products
+				.alike-products.ov-alike-products
+					h3 Смотрите также
+					a Обзор сравнение лучших ралли
+					// Блок контейнер слайдера
+					.owl-carousel#owl-alike-products
+						// Item added to order
+						.item
+							img(src="dist/images/sample-airplane.jpg")
+							span.product-new Новинка
+							span.product-top Топ продаж
+							h3.product-carousel-title
+								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							span.old-price
+								del 1322 грн
+							span.sale-amount 3%
+							div.new-price 1255 грн 
+							a.btn.btn-submit.btn-product-order.u-ordered В корзине
+							.product-wishlist-block
+								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+
+						-for (var x=0; x<2; x++)
+							.item
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-new Новинка
+								span.product-top Топ продаж
+								h3.product-carousel-title
+									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+								span.old-price
+									del 1322 грн
+								span.sale-amount 3%
+								div.new-price 1255 грн 
+								a.btn.btn-submit.btn-product-order Купить 
+								.product-wishlist-block
+									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+
+						// Item added to wishlist
+						.item
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-top Топ продаж
+								h3.product-carousel-title
+									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+								div.product-carousel-price 1455 грн 
+								a.btn.btn-submit.btn-product-order Купить
+								.product-wishlist-block
+									a.wishlist-link.wished В избранном
+					.get-to-know
+						a.btn.u-ordered Ознакомиться с обзором
+				.ov-socials
+					.ov-video-related С этой публикацией связано
+						a.ov-video.video Видео
+						div.ov-share.share 
+							a Поделиться
+					.ov-tags теги
+						ul
+							-for(var x=0; x<5; x++)
+								li
+									a(href="#") Some tag	
+					.comments-block Content to be later
+			.ov-aside
+				.ov-signup
+					form.ov-signup-form(name="signup" action="/")
+						input(type="text" required placeholder="Email")
+						input(type="submit" value="Подписаться")
+					h2.ov-cat-heading Рубрики обзоров
+					ul.ov-cat
+						-for(var x=0; x<5; x++)
+							li
+								a(href="#") Some cat name
+				.ov-aside-content
+					h2.ov-similar-heading
+					.ov-similar-item
+						img(src="" alt="Some img")
+						span.item-new-overview Новинка
+							// Стили такие же как и для .product-new
+						span.item-anouncement-overview Анонс
+							// Стили такие же как и для .product-top
+						h3
+							a Краткий обзор наиболее популярных компаний, выпускающих R/C моде
+						p.
+							Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+					.ov-similar-item
+						img(src="" alt="Some img")
+						span.item-new-overview Новинка
+							// Стили такие же как и для .product-new
+						span.item-anouncement-overview Анонс
+							// Стили такие же как и для .product-top
+						h3
+							a Краткий обзор наиболее популярных компаний, выпускающих R/C моде
+						p.
+							Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.						
+				.ov-aside-content
+					h2.ov-video-heading.video Видео Планета Хобби
+					-for (var x=0; x<5; x++)
+						.ov-video-item
+							img(src="" alt="some image")
+							a Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+				.ov-aside-content.u-noborder
+					h2.ov-events-heading События
+					ul.ov-events
+					-for (var x=0; x<5; x++)
+						li
+							a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+
+
+	script.
+			$(document).ready(function() {
+ 
+				var owl = $("#owl-alike-products");
+				
+				owl.owlCarousel({
+				    loop:true,
+				    margin:10,
+				    navigationText: false,
+				    responsiveClass:true,
+				    responsive:{
+				    	0:{
+				    		items:1,
+				    		nav:true
+				    	},
+				        460:{
+				            items:2,
+				            nav:true
+				        },
+				        768:{
+				            items:3,
+				            nav:false
+				        },
+				        1000:{
+				            items:4,
+				            nav:true,
+				            loop:false
+				        },
+				        1200:{
+				            items:5,
+				            nav:true,
+				            loop:false
+				        }
+				    }
+				});
+			
+			
+			});
+

@@ -5,15 +5,18 @@ html
 		meta(charset="utf-8")
 		meta(lang="ru_RU")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		link(rel="stylesheet" href="dist/template_styles.css")
 		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 	body
 		.page-inner
 			// Основной контейнер
-			div.cab-navigation-block 
+			div.cab-navigation-block
 				// Навигация по профилю	
 				ul
+					li.index
+						a.nav-active(href="#") Lolipop
+							i
 					each val, index in {"economy-link":"Как сэкономить","orders-link": "Как заказать", "delivery-link": "Доставка и оплата", "recomend-link": "Рекомендации", "liked-link": "Избранное", "compare-link": "Сравнение", "help-link": "Поддержка", "wait-link": "Лист ожидания", "price-link": "Следить за ценой", "profile-link": "Профиль"}
 						li
 							a(href="#" class=index)=val
@@ -22,7 +25,7 @@ html
 				// Сюда будут вставляться различные блоки
 				block item
 			
-			div.cab-info
+			div.cab-info.clearfix
 				div.cab-extra-info
 					.cab-discount
 						a(href="#") Статус &nbsp; 

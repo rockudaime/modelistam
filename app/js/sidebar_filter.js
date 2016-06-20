@@ -29,16 +29,16 @@ $(function(){
 
 // Class for creating new Sliders
 function classSliderUI(slider, minValue, maxValue, curMin, curMax) {
-	var slider = $(slider);
+	slider = $(slider);
 	var parent = slider.siblings('.price-slider-parent');
 	var minInput = parent.find('.numeric-min');
 	var maxInput = parent.find('.numeric-max');
 
-	var minValue = parseInt(minValue);
-	var maxValue = parseInt(maxValue);
+	minValue = parseInt(minValue);
+	maxValue = parseInt(maxValue);
 
-	var curMin = parseInt(curMin) || minValue;
-	var curMax = parseInt(curMax) || maxValue;
+	curMin = parseInt(curMin) || minValue;
+	curMax = parseInt(curMax) || maxValue;
 
 
 	slider.slider({

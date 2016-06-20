@@ -8,11 +8,11 @@ $(".item:first").offset(function(i,val){
 });
 
 
-$("#parent2").mouseout(function(e) {
+$("#parent2").mouseout(function(event) {
     $("#parent1").removeClass("icon-hover-element-item_two");
 });
 
-$("#parent2").mousemove(function(e) {
+$("#parent2").mousemove(function(event) {
     $("#parent1").addClass("icon-hover-element-item_two");
 });
 
@@ -79,9 +79,9 @@ var menuCustomModule = {
             related,
             curItem;
         self.elems.lisDesc.hoverIntent({
-            over: function(e) {
-                e = e || window.event;
-                related = e.relatedTarget || e.fromElement;
+            over: function(event) {
+                event = event || window.event;
+                related = event.relatedTarget || event.fromElement;
                 curItem = $(this);
 
                 try {
@@ -104,8 +104,8 @@ var menuCustomModule = {
         var self = this;
 
         self.elems.linksDesc.on({
-            'click': function(e) {
-                e.preventDefault();
+            'click': function(event) {
+                event.preventDefault();
                 $(this).parents('.dropdown__gen').find('>ul').toggle();
             }
         });
@@ -113,8 +113,8 @@ var menuCustomModule = {
     hoverMenuChilds: function() {
         var sibling;
         this.elems.itemsKlm2.on({
-            'mouseenter': function(e) {
-                sibling = $(e.currentTarget).siblings('.dropdown-level_2').addClass('active');
+            'mouseenter': function(event) {
+                sibling = $(event.currentTarget).siblings('.dropdown-level_2').addClass('active');
             },
             'mouseleave': function() {
                 sibling.removeClass('active');
