@@ -12,6 +12,7 @@ block item
 						a.pr-change-info
 							span Изменить
 					.pr-hidden
+						p Введите новое имя в поле ниже:
 						input(type="text" name="name" value="Алексей")
 				div.pr-phone +380950639878
 					div.pr-change-links
@@ -20,6 +21,7 @@ block item
 						a.pr-add-info
 							span Добавить номер
 					.pr-hidden
+						p Введите новый номер в поле ниже:
 						input(type="text" name="phoneNumber" value="+380950639878")
 				div.pr-phone +380950639878
 					div.pr-change-links
@@ -94,6 +96,10 @@ block item
 			changeLink.on("click", function(event) {
 				event.preventDefault();
 				$(this).parent().parent().find(".pr-hidden").slideToggle();
+			});
+			$(".pr-password a").on("click", function(event){
+				event.preventDefault();
+				$(this).next(".pr-hidden").slideToggle();
 			});
 			$(document.body).on("click",".pr-delete-item", function(event) {
 				event.preventDefault();
