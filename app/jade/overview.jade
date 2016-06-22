@@ -1,0 +1,180 @@
+doctype html
+html
+	head
+		title Overview page
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+	body.overview-page
+		.page-inner
+			h1 Обзоры
+			.ovp-main-content
+				.ovp-head-block
+					ul.ov-cat
+						-for(var x=0; x<5; x++)
+							li
+								a(href="#") Some cat name
+					.ov-tags
+						ul
+							li теги
+							-for(var x=0; x<5; x++)
+								li
+									a(href="#") Some tag
+
+					.ovp-main-model
+						img(src="", alt="some image")
+						a.video-after Выходит на охоту ...
+
+				.ovp-contents
+					-for (var x=0; x<2;x++)
+						.ov-similar-item.clearfix
+							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							span.item-new-overview Новинка
+							span.item-anouncement-overview Анонс
+							h3
+								a Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+							p.
+								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+				// Блок со связанными товарами - related products
+				.alike-products.ov-alike-products
+					h3 Смотрите также
+					a Обзор сравнение лучших ралли
+					// Блок контейнер слайдера
+					.owl-carousel#owl-alike-products
+						// Item added to order
+						.item
+							img(src="dist/images/sample-airplane.jpg")
+							span.product-new Новинка
+							span.product-top Топ продаж
+							h3.product-carousel-title
+								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							span.old-price
+								del 1322 грн
+							span.sale-amount 3%
+							div.new-price 1255 грн 
+							a.btn.btn-submit.btn-product-order.u-ordered В корзине
+							.product-wishlist-block
+								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+
+						-for (var x=0; x<2; x++)
+							.item
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-new Новинка
+								span.product-top Топ продаж
+								h3.product-carousel-title
+									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+								span.old-price
+									del 1322 грн
+								span.sale-amount 3%
+								div.new-price 1255 грн 
+								a.btn.btn-submit.btn-product-order Купить 
+								.product-wishlist-block
+									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+
+						// Item added to wishlist
+						.item
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-top Топ продаж
+								h3.product-carousel-title
+									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+								div.product-carousel-price 1455 грн 
+								a.btn.btn-submit.btn-product-order Купить
+								.product-wishlist-block
+									a.wishlist-link.wished В избранном
+					.get-to-know
+						a.btn.u-ordered.ov-read-review-btn Ознакомиться с обзором
+				.ovp-contents
+					-for (var x=0; x<2;x++)
+						.ov-similar-item.clearfix
+							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							span.item-new-overview Новинка
+							span.item-anouncement-overview Анонс
+							h3
+								a Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+							p.
+								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+				.ovp-signup
+					h2 Я хочу быть в курсе последних событий по моделям
+					p Наше хобби - модели.
+					p Мы постоянно интересуемся...
+					form.ov-signup-form(name="signup" action="/")
+						input(type="text" required placeholder="Email")
+						input(type="submit" value="Подписаться")
+					p.signup-legend 1 раз в неделю. Отписаться можно в любое время
+			.ovp-aside
+				.ov-aside-content.clearfix
+					h2.ov-video-heading.video Видео Планета Хобби
+					-for (var x=0; x<5; x++)
+						.ov-video-item
+							img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
+							a Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+				.ov-aside-content.clearfix.u-noborder
+					h2.ov-events-heading События
+					ul.ov-events
+					-for (var x=0; x<5; x++)
+						li
+							a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+
+			div.ov-more-articles
+				h2 Нам есть что еще рассказать
+				ul
+					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
+						li 
+							a=value 
+							ul
+								li
+									a some article 1
+								li
+									a some article 2
+								li
+									a some article 3
+								li
+									a some article 4
+								li
+									a some article 5
+
+
+
+
+	script.
+			$(document).ready(function() {
+ 
+				var owl = $("#owl-alike-products");
+				
+				owl.owlCarousel({
+				    loop:true,
+				    margin:10,
+				    navigationText: false,
+				    responsiveClass:true,
+				    responsive:{
+				    	0:{
+				    		items:1,
+				    		nav:true
+				    	},
+				        460:{
+				            items:2,
+				            nav:true
+				        },
+				        768:{
+				            items:3,
+				            nav:false
+				        },
+				        1000:{
+				            items:4,
+				            nav:true,
+				            loop:false
+				        },
+				        1200:{
+				            items:5,
+				            nav:true,
+				            loop:false
+				        }
+				    }
+				});
+			
+			
+			});

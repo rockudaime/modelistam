@@ -1,0 +1,35 @@
+//- economy-item.jade
+
+extends ./personal-cabinet.jade
+
+block item
+	.economy-item.clearfix
+		h2 Как сэкономить
+		.ec-accordion-block
+			input.hide#hd-1(type="checkbox")
+			label(for="hd-1") Накопительная система скидок
+				i
+			div Описание накопительной системы скидок
+
+		.ec-accordion-block
+			input.hide#hd-2(type="checkbox")
+			label(for="hd-2") Правило 10/15%
+				i
+			div Описание Правило 10/15%
+
+		.ec-accordion-block
+			input.hide#hd-3(type="checkbox")
+			label(for="hd-3") Акции и специальные предложения
+				i
+			div Описание Акции и специальные предложения
+
+		.ec-accordion-block
+			input.hide#hd-4(type="checkbox")
+			label(for="hd-4") Гарантия низкой цены
+				i
+			div Описание Гарантия низкой цены
+		.ec-accordion-block
+			input.hide#hd-5(type="checkbox")
+			label(for="hd-5") Бонусы по партнерской программе
+				i
+			div Бонусы по партнерской программе

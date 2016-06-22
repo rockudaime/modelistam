@@ -3,7 +3,7 @@
 extends ./personal-cabinet.jade
 
 block item
-	div.profile.clearfix
+	div.profile-item.clearfix
 		h2 Профиль	
 		form.my-profile-form(action="/" name="profile-form")
 			div.my-profile-info
@@ -81,6 +81,7 @@ block item
 									option(value=x)= x
 							span#computed-age 0 лет
 							input(type="submit" value="Сохранить" class="buy-certificate-btn")
+		a.pr-delete-profile(href="#") Удалить профиль
 
 	script.
 		$(document).ready(function(){

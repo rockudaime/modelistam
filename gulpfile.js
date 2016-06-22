@@ -59,7 +59,7 @@ gulp.task('scripts', function() {
 // Images processing
 // ***********************
 gulp.task('images', function() {
-    return gulp.src('app/img/*')
+    return gulp.src('app/img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'));
 });
@@ -70,7 +70,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'profile.html'
+            index: 'overview-one.html'
         },
     reloadDelay: 300
 

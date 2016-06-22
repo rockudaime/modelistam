@@ -141,6 +141,7 @@
 	display: block;
 	width: 100%;
 	height: auto;
+	margin-top: 30px;
 
 	.item{
 		padding: 10px 20px;
@@ -149,6 +150,10 @@
 	.owl-item:last-child .item{
 		border: 0;
 	}
+
+}
+.owl-carousel .owl-stage-outer{
+		width: 99%;
 }
 .owl-nav{
 	position: absolute;

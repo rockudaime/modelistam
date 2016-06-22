@@ -14,10 +14,12 @@ html
 			h1 Выбор радиоуправляемого внедорожника: серьезный подход к вопросу
 			.ov-main-content
 				.ov-article
-					img(src="" alt="some picture")
+					p
+						img(src="dist/images/temporary/owerview-banner-big.jpg" alt="some picture")
 					p.
 						Сегодня RC тачки достаточно доступны, разнообразны, универсальны. Машины класса оффроад можно катать абсолютно на любой пересеченной местности и ничто не остановит их: песок, снег, ямы, трамплины, лужи, камни, гравий. Развлекаться с ними можно везде: в закрытом помещении, на улице, на природе.
-					img(src="" alt="some picture")
+					p
+						<iframe src="https://www.youtube.com/embed/j8jTy-9BEyM" frameborder="0" allowfullscreen></iframe>
 					p.
 						Мы выделим для Вас несколько преимуществ радиоуправляемых моделей внедорожников перед другими классами тачек:  
 						в среднем этот вид развивает скорость в пределах 50 км/ч, а некоторые представители гораздо большую;  
@@ -75,62 +77,72 @@ html
 								.product-wishlist-block
 									a.wishlist-link.wished В избранном
 					.get-to-know
-						a.btn.u-ordered Ознакомиться с обзором
+						a.btn.u-ordered.ov-read-review-btn Ознакомиться с обзором
 				.ov-socials
 					.ov-video-related С этой публикацией связано
 						a.ov-video.video Видео
 						div.ov-share.share 
 							a Поделиться
-					.ov-tags теги
+					.ov-tags
 						ul
+							li теги
 							-for(var x=0; x<5; x++)
 								li
-									a(href="#") Some tag	
+									a(href="#") Some long tag	
 					.comments-block Content to be later
-			.ov-aside
+			//- *******************
+			//- * Начало сайдбара *
+			//- *******************
+			.ov-aside.clearfix
 				.ov-signup
 					form.ov-signup-form(name="signup" action="/")
-						input(type="text" required placeholder="Email")
+						input(type="text" required placeholder="Эл. почта для рассылки")
 						input(type="submit" value="Подписаться")
 					h2.ov-cat-heading Рубрики обзоров
 					ul.ov-cat
 						-for(var x=0; x<5; x++)
 							li
-								a(href="#") Some cat name
-				.ov-aside-content
-					h2.ov-similar-heading
-					.ov-similar-item
-						img(src="" alt="Some img")
-						span.item-new-overview Новинка
-							// Стили такие же как и для .product-new
-						span.item-anouncement-overview Анонс
-							// Стили такие же как и для .product-top
-						h3
-							a Краткий обзор наиболее популярных компаний, выпускающих R/C моде
-						p.
-							Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
-					.ov-similar-item
-						img(src="" alt="Some img")
-						span.item-new-overview Новинка
-							// Стили такие же как и для .product-new
-						span.item-anouncement-overview Анонс
-							// Стили такие же как и для .product-top
-						h3
-							a Краткий обзор наиболее популярных компаний, выпускающих R/C моде
-						p.
-							Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.						
+								a(href="#") Some category name
+				.ov-aside-content.clearfix
+					h2.ov-similar-heading Похожие обзоры
+					-for (var x=0; x<2;x++)
+						.ov-similar-item.clearfix
+							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							span.item-new-overview Новинка
+							span.item-anouncement-overview Анонс
+							h3
+								a Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+							p.
+								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.					
 				.ov-aside-content
 					h2.ov-video-heading.video Видео Планета Хобби
-					-for (var x=0; x<5; x++)
+					-for (var x=0; x<4; x++)
 						.ov-video-item
-							img(src="" alt="some image")
+							img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
 							a Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
 				.ov-aside-content.u-noborder
 					h2.ov-events-heading События
 					ul.ov-events
-					-for (var x=0; x<5; x++)
-						li
-							a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+						-for (var x=0; x<5; x++)
+							li
+								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+			div.ov-more-articles
+				h2 Нам есть что еще рассказать
+				ul
+					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
+						li 
+							a=value 
+							ul
+								li
+									a some article 1
+								li
+									a some article 2
+								li
+									a some article 3
+								li
+									a some article 4
+								li
+									a some article 5
 
 
 	script.
@@ -153,16 +165,16 @@ html
 				            nav:true
 				        },
 				        768:{
-				            items:3,
+				            items:2,
 				            nav:false
 				        },
 				        1000:{
-				            items:4,
+				            items:3,
 				            nav:true,
 				            loop:false
 				        },
 				        1200:{
-				            items:5,
+				            items:3,
 				            nav:true,
 				            loop:false
 				        }

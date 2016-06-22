@@ -351,9 +351,26 @@ input[type=checkbox]:checked + label > .checkbox{
     cursor: pointer;
 }
 // ********************************
+// *   Economy profile page       *
+// ******************************** 
+.economy-item{
+    margin-bottom: 25px;
+
+    h2{
+        margin-top: 0;
+    }
+}
+.ec-accordion-block{
+    background: lightgrey;
+}
+// ================================
+// *   / Economy profile page       *
+// ================================
+
+// ********************************
 // *           Profile page       *
 // ******************************** 
-    .profile{
+    .profile-item{
         margin-bottom: 25px;
 
         h2{
@@ -555,8 +572,9 @@ input[type=checkbox]:checked + label > .checkbox{
     .cab-navigation-block{
         margin-right: 40px;
     }
-    .profile{
+    .main-content{
         width: 570px;
+        float: left;
     }
     .cab-info{
         margin-top: 45px;
