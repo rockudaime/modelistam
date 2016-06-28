@@ -4441,6 +4441,8 @@ table.cart-items tfoot td:first-child {
     background: #F5F5F5;
     border-radius: 2px;
     border: 1px solid #DFDFDF;
+    display: inline-block;
+    margin-bottom: 5px;
 }
 .pager__inner-elem a{
     color: $text-color;

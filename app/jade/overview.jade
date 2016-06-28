@@ -12,22 +12,22 @@ html
 	body.overview-page
 		.page-inner
 			h1 Обзоры
+			//- Блок с тегами и основным видео
 			.ovp-main-content
-				.ovp-head-block
+				.ovp-head-block.clearfix
 					ul.ov-cat
 						-for(var x=0; x<5; x++)
 							li
-								a(href="#") Some cat name
+								a(href="#") Category name
+					.ovp-main-model.clearfix
+						img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
+						a.video-after Выходит на охоту Sony 600TVL Super HAD board camera for FPV
 					.ov-tags
 						ul
 							li теги
 							-for(var x=0; x<5; x++)
 								li
 									a(href="#") Some tag
-
-					.ovp-main-model
-						img(src="", alt="some image")
-						a.video-after Выходит на охоту ...
 
 				.ovp-contents
 					-for (var x=0; x<2;x++)
@@ -88,7 +88,7 @@ html
 					.get-to-know
 						a.btn.u-ordered.ov-read-review-btn Ознакомиться с обзором
 				.ovp-contents
-					-for (var x=0; x<2;x++)
+					-for (var x=0; x<4;x++)
 						.ov-similar-item.clearfix
 							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
 							span.item-new-overview Новинка
@@ -105,6 +105,17 @@ html
 						input(type="text" required placeholder="Email")
 						input(type="submit" value="Подписаться")
 					p.signup-legend 1 раз в неделю. Отписаться можно в любое время
+				.nav-elems
+					span.pager__inner-elem.pager__inner-elem--current.strong(data-nav="1") 1
+					-for (var x=2; x<5; x++)
+						span.pager__inner-elem(data-nav=x)
+							a(href="#")=x
+					span &nbsp;→&nbsp;
+					span.pager__inner-elem(data-nav="55")
+						a(href="#") 55
+					span.pager__inner-elem
+						a.next-navigation(href="#") Следующая
+							i
 			.ovp-aside
 				.ov-aside-content.clearfix
 					h2.ov-video-heading.video Видео Планета Хобби
@@ -115,9 +126,9 @@ html
 				.ov-aside-content.clearfix.u-noborder
 					h2.ov-events-heading События
 					ul.ov-events
-					-for (var x=0; x<5; x++)
-						li
-							a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+						-for (var x=0; x<5; x++)
+							li
+								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
 
 			div.ov-more-articles
 				h2 Нам есть что еще рассказать
@@ -164,12 +175,12 @@ html
 				            nav:false
 				        },
 				        1000:{
-				            items:4,
+				            items:3,
 				            nav:true,
 				            loop:false
 				        },
 				        1200:{
-				            items:5,
+				            items:3,
 				            nav:true,
 				            loop:false
 				        }

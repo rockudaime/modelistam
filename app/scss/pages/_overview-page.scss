@@ -51,16 +51,22 @@
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 20px;
+
+    &>span{
+        display: block;
+        margin-bottom: 10px;
+    }
 }
 .ov-video-related a{
     display: inline-block;
     color: #346cab;
     text-decoration: underline;
 }
+
 .ov-video{
     background: url("images/ui-icon-bottom-video.png") no-repeat 0 0;
     padding-left: 30px;
-    margin: 0 0 10px 15px;
+    // margin: 0 0 10px 15px;
 }
 .ov-share{
     float: right;
@@ -68,7 +74,7 @@
     padding-left: 30px;
 }
 .ov-tags{
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     padding-top: 20px;
 }
 .ov-tags ul{
@@ -200,6 +206,15 @@
 .ov-video-item img{
     width: 100%;
 }
+.ov-aside{
+
+    .ov-aside-content{
+        display: none;
+    }
+    .ov-similar-review{
+        display: block;
+    }
+}
 .ov-aside-content{
     display: block;
     border-bottom: 1px #dfdfdf solid;
@@ -256,11 +271,222 @@
     margin-bottom: 15px;
 }
 
-/*=============Страница Overviews===================*/
-.ovp-head-block .ov-cat{
-    padding: 0;
+// ================ Comments ================
+
+.comment-add-new{
     margin-bottom: 20px;
 }
+.comment-avatar{
+    
+    display: inline-block;
+    width: 40px;
+    position: relative;
+    margin-right: 8px;
+    // margin-top: 4px;    
+    vertical-align: middle;
+
+    img{
+        border: 2px solid #fff;
+        border-radius: 2px;
+        box-shadow: 0 0 1px 1px #e6e6e6;
+    }
+    &>i{
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        bottom: 3px;
+        right: -1px;
+    }
+    .c-gplus{
+        background: url(images/overview-page/ov-comment-gplus.png) no-repeat;
+    }
+    .c-vk{
+        background: url(images/overview-page/ov-comment-vk.png) no-repeat;
+    }
+    .c-fb{
+        background: url(images/overview-page/ov-comment-fb.png) no-repeat;
+    }
+}
+
+.textarea-wrapper{
+    display: inline-block;
+    position: relative;
+    width: 82%;
+    vertical-align: top;
+
+    textarea{
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: normal;
+        border: 1px solid #c6c6c6;
+        border-radius: 4px;
+        box-shadow: 0 1px 5px 0 #c6c6c6 inset;
+        padding: 5px 45px 5px 15px;
+        box-sizing: border-box;
+
+    }
+    .u-placeholder-text{
+        color: #c6c6c6;
+        line-height: 28px;
+        white-space: nowrap;
+    }
+}
+
+.textarea-attachments{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    input[type="file"]{
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+    .attachments-btn{
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url(images/overview-page/ov-attachments-icon.png) no-repeat 50% 50%;
+        cursor: pointer;
+    }
+    
+}
+
+.comment-socials-block{
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+}
+
+ul.comment-social{
+    float: right;
+    width: 140px;
+
+    li{
+        margin-left: 15px;
+        display: inline-block;
+    }
+
+    a{
+        display: block;
+        padding-left: 20px;
+        color: #999;
+    }
+}
+.comment-sort{
+    float: left;
+    
+    &>li{
+        display: none;
+        position: relative;
+        cursor: pointer;
+    }
+    a{
+        color: #666;
+    }
+
+    &>li{
+        background: url(images/ui-arrow-menu.png) no-repeat right 5px top 10px;
+        padding-right: 15px;
+        color: #666;
+    }
+    &>li:hover ul{
+        display: block;
+    }
+    .active-link{
+        display: block;
+    }
+    li>ul{
+        display: none;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        background: #fff;
+        border: 1px solid #999;
+        padding: 5px 10px;
+        z-index: 3;
+    }
+}
+.comment-share{
+    background: url(images/overview-page/ov-share-comment.png) no-repeat 0 50%;
+
+}
+.comment-rss{
+    background: url(images/overview-page/ov-rss.png) no-repeat 0 50%;
+}
+.comment-signup{
+    background: url(images/overview-page/ov-signup-comment.png) no-repeat 0 50%;
+}
+.comment-item{
+    clear: both;
+}
+.comment-reply{
+    width: 92%;
+    float: right;
+}
+
+.comment-head{
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 4px;
+    position: relative;
+    width: 100%;
+    padding: 5px 5px 1px;
+    box-sizing: border-box;
+}
+.comment-author{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+.comment-rating{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+.comment-rate{
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px;
+    margin-left: 6px;
+}
+.rate-up{
+    background: url(images/overview-page/ov-comment-rate-up.png) no-repeat;
+}
+.rate-down{
+    background: url(images/overview-page/ov-comment-rate-down.png) no-repeat;
+}
+.comment-body{
+    padding: 5px 0;
+    margin-bottom: 20px;
+
+    p{
+        margin-bottom: 8px;
+    }
+}
+.comment-date{
+    color: #999;
+    font-style: italic;
+}
+
+// ****************************
+// *   Страница Overviews     *
+// ****************************
+
+.ovp-head-block{
+    .ov-cat{
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .ov-tags{
+        display: none;
+    }
+}
+
 .ovp-main-model{
     padding: 10px 0 30px;
     margin-bottom: 30px;
@@ -280,6 +506,7 @@
 }
 .ovp-signup{
     padding: 5px 10px;
+    margin-bottom: 35px;
     background: #fef4ce;
 
     form{
@@ -303,7 +530,19 @@
         font-size: 13px;
     }
 }
-/*=============Страница Overviews===================*/
+.ovp-main-content .pager__inner-elem{
+    margin-right: 6px;
+}
+.ovp-contents{
+  border-bottom: 1px solid #dfdfdf;
+}
+.no-border{
+  border: 0;
+}
+.ovp-aside{
+    display: none;
+}
+// =============Страница Overviews===================
 
 
 
@@ -325,6 +564,13 @@
         width: 40%;
         padding: 19px 0;
         margin-left: 10px;
+    }
+    .ov-video-related{
+        
+        &>span{
+            display: inline-block;
+            margin-right: 15px;
+        }
     }
     .ov-tags{
         padding-top: 0;
@@ -376,7 +622,15 @@
     .ov-more-articles>ul>li>ul{
         margin: 0;
     }
+    // comments
+    .textarea-wrapper {
+        width: 90%;
+    }
+    ul.comment-social{
+        width: auto;
+    }
 
+    // end of comments
 
     .ovp-signup{
 
@@ -409,6 +663,19 @@
     .ov-signup-form > input[type="submit"]{
         margin: 0;
         width: 100%;
+    }
+    .ovp-main-model{
+        background-color: #fff;
+    }
+    .ovp-signup form{
+        background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 0 50%;
+    }
+    .ovp-signup .signup-legend{
+        font-size: 15px;
+        margin-left: 100px;
+    }
+    .ovp-main-content .nav-elems{
+        margin-left: 0;
     }
 }
 
@@ -460,12 +727,66 @@
     .ov-more-articles > ul > li:nth-last-child(2){
         border-bottom: 0;
     }
+        // comments
+    .textarea-wrapper {
+        width: 668px;
+    }
+    // end of comments
+
+    .ovp-signup h2{
+        margin-bottom: 20px;
+      }
+      .ovp-signup p{
+        font-size: 20px;
+        margin-left: 170px;
+        margin-bottom: 0;
+      }
+      .ovp-signup{
+        background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 10px 50%;
+      }
+      .ovp-signup form{
+        padding: 15px 0 20px 170px;
+        background: none;
+        width: 40%;
+      }
+      .ovp-signup .ov-signup-form input[type=text]{
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      .ovp-signup .ov-signup-form input[type=submit]{
+        margin: 0;
+        width: 100%;
+      }
+      .ovp-signup .signup-legend{
+        display: inline-block;
+        width: 20%;
+        margin: -70px 90px 0 0;
+        float: right;
+      }
+      .ovp-main-content .nav-elems{
+        margin-bottom: 20px;
+      }
 }
 
 @media (min-width: 944px){
     .ov-article iframe{
         height: 517px;
     }
+    .ovp-aside{
+        display: block;
+    }
+    .ov-aside{
+
+    .ov-aside-content{
+            display: block;
+        }
+    }
+    // comments
+    .textarea-wrapper {
+        width: 888px;
+    }
+
+    // end of comments
 }
 
 @media (min-width: 1200px){
@@ -528,6 +849,9 @@
     .ov-more-articles>ul>li:last-child{
         border: 0;
     }
+    .ov-more-articles > ul > li:nth-child(2n){
+        border-right: 1px solid #dfdfdf;
+    }
     .ov-cat li{
         display: block;
     }
@@ -549,8 +873,124 @@
     .ov-events{
         padding-left: 0;
     }
-    .ov-more-articles > ul > li:nth-child(2n){
-        border-right: 1px solid #dfdfdf;
+        // comments
+    .textarea-wrapper {
+        width: 728px;
+    }
+
+    // end of comments
+
+    .ovp-head-block{
+        border: 1px solid #dfdfdf;
+        border-radius: 3px;
+        margin-bottom: 25px;
+        
+        .ov-cat{
+            float:left;
+            border: 1px solid #dfdfdf;
+            border-top: 0;
+            border-left: 0;
+            padding: 20px 15px;
+            width: 251px;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        .ov-tags{
+            display: block;
+            float:left;
+            padding: 20px 15px 15px;
+            border-right: 1px solid #dfdfdf;
+            width: 251px;
+            margin: 0;
+        }
+        .ov-tags li{
+            display: block;
+        }
+        .ov-tags li:first-child{
+            margin-bottom: 15px;
+        }
+
+        .ovp-main-model{
+            float: right;
+            width: 590px;
+            padding: 0 0 19px 0;
+            margin: 0;
+            border: 0;
+        }
+
+    }
+    .video-after{
+      display: inline-block;
+      padding-left: 15px;
+      background: url("images/overview-page/ov-video-icon.png") no-repeat 13% 85%;
+    }
+    .ovp-aside{
+        display: block;
+        float: right;
+        width: 25%;
+    }
+    .ovp-main-content{
+      float: left;
+      width: 875px;
+    }
+    .ovp-aside .ov-video-item{
+      width: 100%;
+    }
+    .ov-aside-content > h2{
+        line-height: 26px;
+    }
+    .ovp-aside .ov-video-heading{
+      margin-top: 0;
+    }
+    .ovp-contents .ov-similar-item{
+      display: inline-block;
+      width: 46%;
+      margin-right: 63px;
+    }
+    .ovp-contents .ov-similar-item:nth-child(2n){
+        margin-right: 0;
+    }
+    .ovp-contents .item-marg{
+      margin-right: 63px;
+    }
+    .ovp-signup{
+      padding: 20px;
+      background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 20px 45%;
+      background-size: 128px 128px;
+    }
+    .ovp-signup h2{
+      margin-bottom: 60px;
+    }
+    .ovp-signup p{
+      margin-left: 150px;
+    }
+    .ovp-signup form{
+      padding: 65px 0 0;
+      width: 100%;
+    }
+    .ovp-signup .ov-signup-form input[type=text]{
+      width: 35%;
+      margin: 0;
+      padding: 15px;
+    }
+    .ovp-signup .ov-signup-form input[type=submit]{
+      width: 35%;
+      margin-left: 20px;
+      padding: 18px;
+    }
+    .ovp-signup .signup-legend{
+      display: none;
+    }
+    .ovp-main-content .nav-elems{
+      border-top: 1px dashed #dfdfdf;
+      padding-top: 25px;
+    }
+    .ov-more-articles{
+      border: 0;
+    }
+    .ov-more-articles>ul>li:last-child{
+      border: 0;
     }
 
 }
