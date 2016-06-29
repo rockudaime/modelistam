@@ -1,0 +1,112 @@
+// delivery.scss
+
+.main-delivery-block{
+    border-bottom: 1px solid #afafaf;
+    padding: 0 0 20px 0;
+}
+.delivery-cities .delivery-cities-tabs{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+.delivery-city-link{
+    color: #32abed;
+    text-decoration: none;
+    border-bottom: 1px dashed #32abed;
+}
+.delivery-city-link:hover{
+    text-decoration: none;
+    color: #32abed;
+    cursor: pointer;
+}
+.delivery-information{
+    margin: 20px 0 0;
+}
+.delivery-service{
+    padding: 30px 0;
+    border-bottom: 1px dashed #afafaf;
+    clear: both;
+}
+.delivery-service *{
+    display: inline-block;
+}
+.delivery-service:last-child{
+    border-bottom: none;
+}
+.delivery-service > div > i{
+    width: 370px;
+    height: 200px;
+    background: url("images/curier.png") no-repeat left center;
+    float: left;
+}
+.delivery-service-info{
+    padding: 0 40px;
+    float: left;
+}
+.delivery-service-info div{
+    display: block;
+}
+.delivery-time{
+    padding: 0 0 20px;
+}
+.delivery-time h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    display: block;
+}
+.delivery-cost{
+    padding: 0 0 20px;
+}
+.delivery-cost span{
+    display: block;
+}
+.delivery-payment{
+    padding: 0 0 20px;
+}
+.delivery-payment > *{
+    display: block;
+}
+.delivery-payment h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+.delivery-service-desc{
+    width: 40%;
+}
+.delivery-service-desc span{
+    display: block;
+    padding: 0 0 20px;
+}
+.delivery-active a{
+    color: $text-color;
+    border-bottom: none;
+}
+.delivery-active a:hover{
+    color: $text-color;
+    text-decoration: none;
+}
+
+.delivery-service .delivery-service-info .delivery-cost > .delivery-work-hours i, .delivery-phone i, .delivery-skype i{
+    float: left;
+}
+.delivery-service .delivery-service-info .delivery-cost > .delivery-work-hours span{
+    display: inline-block;
+}
+.delivery-service .delivery-service-info .delivery-cost > .delivery-phone{
+    padding: 15px 0 0;
+}
+
+.service-img{
+    float: left;
+    @media (max-width: 1200px) {
+        width: 360px;
+
+        img {
+            width: 100%;
+        }
+    }
+    @media (max-width: 994px) {
+        display: none;
+    }
+}
+

@@ -471,6 +471,14 @@ ul.comment-social{
 .comment-date{
     color: #999;
     font-style: italic;
+    float: left;
+}
+.comment-reply-on-comment{
+    float: right;
+
+    a{
+        color: #999;
+    }
 }
 
 // ****************************

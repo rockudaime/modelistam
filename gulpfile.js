@@ -51,9 +51,9 @@ gulp.task('scripts', function() {
     gulp.src('app/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('all.js'))
+    // .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/js'))
 });
 // ***********************
 // Images processing
@@ -70,7 +70,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'overview-one.html'
+            index: 'delivery.html'
         },
     reloadDelay: 300
 

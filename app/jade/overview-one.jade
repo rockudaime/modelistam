@@ -123,7 +123,7 @@ html
 
 						.comments
 							-for (var x=0; x<5; x++)
-								.comment-item
+								.comment-item.clearfix
 									.comment-head
 										.comment-avatar
 											img(src="dist/images/overview-page/comment-default-avatar.png" alt="avatar")
@@ -138,7 +138,9 @@ html
 									.comment-body
 										p Some comment text, that was left here by some stranger
 										.comment-date 01-04-16
-							.comment-item.comment-reply
+										.comment-reply-on-comment
+											a(href="#") ответить
+							.comment-item.comment-reply.clearfix
 									.comment-head
 										.comment-avatar
 											img(src="dist/images/overview-page/comment-default-avatar.png" alt="avatar")
@@ -153,6 +155,8 @@ html
 									.comment-body
 										p Some comment text, that was left here by some stranger
 										.comment-date 01-04-16
+										.comment-reply-on-comment
+											a(href="#") ответить
 
 
 

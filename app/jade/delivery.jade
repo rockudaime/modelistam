@@ -1,0 +1,290 @@
+doctype html
+html
+	head
+		title Delivery and payment page
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="dist/js/pages/delivery-page.js")
+
+	body
+		.page-inner
+			h1 Доставка и оплата
+			.main-delivery-block.clearfix
+				ul.delivery-cities
+					li.delivery-cities-tabs.delivery-active.u-inline-block
+						a.delivery-city-link(data-id="deliveryKyiv" href="#" rel="#") Киев
+					li.delivery-cities-tabs.u-inline-block
+						a.delivery-city-link(data-id="deliveryKharkov" href="#" rel="#") Харьков
+					li.delivery-cities-tabs.u-inline-block
+						a.delivery-city-link(data-id="deliveryUkraine" href="#" rel="#") по Украние
+					li.delivery-cities-tabs.u-inline-block
+						a.delivery-city-link(data-id="deliveryCrimea" href="#" rel="#") в Крым 
+
+				// блоки с основной информацией
+
+				.delivery-information#deliveryKyiv
+					ul.delivery-companies.clearfix
+						li.delivery-service
+							.service-img(style="float: left;")
+								<img src="dist/images/delivery-page/courier.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Доставка курьером
+									span 1 день при наличии
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span Наличными курьеру
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span С 10 до 19 в рабочие дни.<br>В болишинстве случаев, если вы разместили заказ до 12:00 — мы доставим его в тот же день.
+								span Сотрудники магазина в ближайшее время свяжутся с вами, для уточнения подробностей.
+								span Оперативно доставим заказ и продемонстрируем целосность и комплектность товара.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/nova-poshta.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Новая Почта
+									span Отправление с пн-сб
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span При получении, на карточку
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span Доставка заказа производится в ближайшее к вам отделение. Выбрать отделение можно в корзине при оформлении заказа.
+								span Указать дату отправки можно в поле «Комментарий» при оформлении заказа или в телефонном режиме. 
+								span Оформленные и согласованные до 17:30 заказы можно забрать в отделении Новой Почты на следующий день.
+								span Конечная сумма к оплате с учетом доставки по Киеву отображается в корзине при оформлении заказа.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/samovivoz.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Самовывоз из салона
+								.delivery-cost
+									.salon-location
+										.location-main
+											i
+											a.salon-adress(href="#" rel="#") Киев ул. Трутенко, 10,<br> корпус А, офис 201
+									.delivery-work-hours
+										.work-hours
+											i
+											span пн-пт:
+											span 8:00 - 20:00
+									.delivery-phone
+										.phones
+											i
+											span.contacts-phones (044) 221-00-12
+									.delivery-skype
+										.skype
+											.skype-name
+												i
+												span.contacts-skype modelistam.kiev
+							.delivery-service-desc
+								span Зарезервировать можно по телефону или оформив заказ на сайте. 
+								span Купите на 2 000 грн и получите скидочный купон на следующую покупку в интернет-магазине.
+
+				.delivery-information#deliveryKharkov
+					ul.delivery-companies.clearfix
+						li.delivery-service
+							.service-img(style="float: left;")
+								<img src="dist/images/delivery-page/courier.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Доставка курьером
+									span 1 день при наличии
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span Наличными курьеру
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span С 10 до 19 в рабочие дни.<br>В болишинстве случаев, если вы разместили заказ до 12:00 — мы доставим его в тот же день.
+								span Сотрудники магазина в ближайшее время свяжутся с вами, для уточнения подробностей.
+								span Оперативно доставим заказ и продемонстрируем целосность и комплектность товара.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/nova-poshta.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Новая Почта
+									span Отправление с пн-сб
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span При получении, на карточку
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span Доставка заказа производится в ближайшее к вам отделение. Выбрать отделение можно в корзине при оформлении заказа.
+								span Указать дату отправки можно в поле «Комментарий» при оформлении заказа или в телефонном режиме. 
+								span Оформленные и согласованные до 17:30 заказы можно забрать в отделении Новой Почты на следующий день.
+								span Конечная сумма к оплате с учетом доставки по Киеву отображается в корзине при оформлении заказа.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/samovivoz.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Самовывоз из салона
+								.delivery-cost
+									.salon-location
+										.location-main
+											i
+											a.salon-adress(href="#" rel="#") Харьков ул. Сумская, 77/79
+									.delivery-work-hours
+										.work-hours
+											i
+											span пн-пт:
+											span 8:00 - 20:00
+									.delivery-phone
+										.phones
+											i
+											span.contacts-phones (044) 221-00-12
+									.delivery-skype
+										.skype
+											.skype-name
+												i
+												span.contacts-skype modelistam.kharkov
+							.delivery-service-desc
+								span Зарезервировать можно по телефону или оформив заказ на сайте. 
+								span Купите на 2 000 грн и получите скидочный купон на следующую покупку в интернет-магазине.
+
+				.delivery-information#deliveryUkraine
+					ul.delivery-companies.clearfix
+						li.delivery-service
+							.service-img(style="float: left;")
+								<img src="dist/images/delivery-page/courier.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Доставка курьером
+									span 1 день при наличии
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span Наличными курьеру
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span С 10 до 19 в рабочие дни.<br>В болишинстве случаев, если вы разместили заказ до 12:00 — мы доставим его в тот же день.
+								span Сотрудники магазина в ближайшее время свяжутся с вами, для уточнения подробностей.
+								span Оперативно доставим заказ и продемонстрируем целосность и комплектность товара.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/nova-poshta.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Новая Почта
+									span Отправление с пн-сб
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span При получении, на карточку
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span Доставка заказа производится в ближайшее к вам отделение. Выбрать отделение можно в корзине при оформлении заказа.
+								span Указать дату отправки можно в поле «Комментарий» при оформлении заказа или в телефонном режиме. 
+								span Оформленные и согласованные до 17:30 заказы можно забрать в отделении Новой Почты на следующий день.
+								span Конечная сумма к оплате с учетом доставки по Киеву отображается в корзине при оформлении заказа.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/samovivoz.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Самовывоз из салона
+								.delivery-cost
+									.delivery-work-hours
+										.work-hours
+											i
+											span пн-пт:
+											span 8:00 - 20:00
+									.delivery-phone
+										.phones
+											i
+											span.contacts-phones (044) 221-00-12
+									.delivery-skype
+										.skype
+											.skype-name
+												i
+												span.contacts-skype modelistam.kiev
+							.delivery-service-desc
+								span Зарезервировать можно по телефону или оформив заказ на сайте. 
+								span Купите на 2 000 грн и получите скидочный купон на следующую покупку в интернет-магазине.
+
+				.delivery-information#deliveryCrimea
+					ul.delivery-companies
+						li.delivery-service
+							.service-img(style="float: left;")
+								<img src="dist/images/delivery-page/courier.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Доставка курьером
+									span 1 день при наличии
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span Наличными курьеру
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span С 10 до 19 в рабочие дни.<br>В болишинстве случаев, если вы разместили заказ до 12:00 — мы доставим его в тот же день.
+								span Сотрудники магазина в ближайшее время свяжутся с вами, для уточнения подробностей.
+								span Оперативно доставим заказ и продемонстрируем целосность и комплектность товара.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/nova-poshta.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Новая Почта
+									span Отправление с пн-сб
+								.delivery-cost
+									span Бесплатно — от 2 000 грн
+									span До 2 000 грн — доставка 50 грн
+								.delivery-payment
+									h4 Оплата
+									span При получении, на карточку
+									a(href="#" rel="#") В кредит
+							.delivery-service-desc
+								span Доставка заказа производится в ближайшее к вам отделение. Выбрать отделение можно в корзине при оформлении заказа.
+								span Указать дату отправки можно в поле «Комментарий» при оформлении заказа или в телефонном режиме. 
+								span Оформленные и согласованные до 17:30 заказы можно забрать в отделении Новой Почты на следующий день.
+								span Конечная сумма к оплате с учетом доставки по Киеву отображается в корзине при оформлении заказа.
+						li.delivery-service
+							.service-img
+								<img src="dist/images/delivery-page/samovivoz.jpg" alt="placeholder+image">
+							.delivery-service-info
+								.delivery-time
+									h4 Самовывоз из салона
+								.delivery-cost
+									.delivery-work-hours
+										.work-hours
+											i
+											span пн-пт:
+											span 8:00 - 20:00
+									.delivery-phone
+										.phones
+											i
+											span.contacts-phones (044) 221-00-12
+									.delivery-skype
+										.skype
+											.skype-name
+												i
+												span.contacts-skype modelistam.kiev
+							.delivery-service-desc
+								span Зарезервировать можно по телефону или оформив заказ на сайте. 
+								span Купите на 2 000 грн и получите скидочный купон на следующую покупку в интернет-магазине. 
