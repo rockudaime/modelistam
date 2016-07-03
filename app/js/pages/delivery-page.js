@@ -20,10 +20,6 @@ var debounce = function(func, wait, immediate) {
 	};
 };
 
-$(function() {
-
-});
-
 
 var updateLayout = debounce(function(e) {
     	var wWidth = $(window).width();

@@ -1,22 +1,22 @@
 doctype html
-html
+html(lang="ru")
 	head
 		title Personal cabinet
 		meta(charset="utf-8")
-		meta(lang="ru_RU")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
 		link(rel="stylesheet" href="dist/normalize.css")
 		link(rel="stylesheet" href="dist/template_styles.css")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 	body
 		.page-inner
 			// Основной контейнер
-			div.cab-navigation-block
-				// Навигация по профилю	
-				ul
-					li.index
-						a.nav-active.economy-link(href="#") Как сэкономить
-							i
+			.cab-navigation-block
+				a.cab-nav-moblie-link(href="#") Меню
+				// Навигация по профилю
+				ul.cabinet-nav
+					// .nav-active - активный пункт меню
 					each val, index in {"economy-link":"Как сэкономить","orders-link": "Как заказать", "delivery-link": "Доставка и оплата", "recomend-link": "Рекомендации", "liked-link": "Избранное", "compare-link": "Сравнение", "help-link": "Поддержка", "wait-link": "Лист ожидания", "price-link": "Следить за ценой", "profile-link": "Профиль"}
 						li
 							a(href="#" class=index)=val
@@ -44,7 +44,7 @@ html
 						a.cab-buy-more(href="#") Докупите еще на 7 450 грн
 
 					.cab-manager.clearfix
-						img(src="dist/images/personal-cabinet/photo-manager.jpg")
+						img(src="dist/images/personal-cabinet/photo-manager.jpg" alt="manager")
 						p
 							b Ваш менеджер <br>
 							|Евгений <br>
@@ -93,5 +93,6 @@ html
 						input.cab-signup-btn(type="submit" value="Следить за лучшими предложениями")
 
 						p Без спама <br> Отписка в любое время
+		script(src="dist/js/pages/personal-cabinet.js")
 
 

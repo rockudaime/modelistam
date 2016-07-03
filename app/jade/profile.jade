@@ -5,7 +5,7 @@ extends ./personal-cabinet.jade
 block item
 	div.profile-item.clearfix
 		h2 Профиль	
-		form.my-profile-form(action="/" name="profile-form")
+		form.my-profile-form.clearfix(action="/" name="profile-form")
 			div.my-profile-info
 				div.pr-name Алексей
 					div.pr-change-links
@@ -57,6 +57,19 @@ block item
 				input#msReviews(type="checkbox")
 				label(for="msReviews") Обзоры
 
+			.profile-imporve-socials
+				h3 Позвольте помочь лучше подбирать товары
+				span Улучшите свой профиль с помощью:
+				a(href="#").fb-link
+				a(href="#").gplus-link
+				a(href="#").tw-link
+
+			.choose-gender
+				input.u-hidden-input(type="radio" name="gender" value="male" id="maleGender" checked)
+				label.choose-gender__male(for="maleGender") Мужчина
+				input.u-hidden-input(type="radio" name="gender" value="female" id="femaleGender")
+				label.choose-gender__female(for="femaleGender") Женщина
+
 			div.my-interests.check-input
 				h2 Мои интересы
 				p Отправляем рассылки и оповещения, связанные с увлечениями.  
@@ -67,20 +80,21 @@ block item
 					input(id=index type="checkbox")
 					label(for=index)=val
 
+
+
 			.birth-date-block
-						h3 Дата Рождения:
-						p
-							select(name="birth-day" id="birthDay")
-								- for (var x = 1; x < 32; x++)
-									option(value=x)=x
-							select(name="birth-month" id="birthMonth")
-								each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-									option(value=index)= val
-							select(name="birth-year" id="birthYear")
-								-for (var x = 2016; x>1939; x--)
-									option(value=x)= x
-							span#computed-age 0 лет
-							input(type="submit" value="Сохранить" class="buy-certificate-btn")
+				h3 Дата Рождения:
+				p
+					select(name="birth-day" id="birthDay")
+						- for (var x = 1; x < 32; x++)
+							option(value=x)=x
+					select(name="birth-month" id="birthMonth")
+						each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+							option(value=index)= val
+					select(name="birth-year" id="birthYear")
+						-for (var x = 2016; x>1939; x--)
+							option(value=x)= x
+					input(type="submit" value="Сохранить" class="save-btn")
 		a.pr-delete-profile(href="#") Удалить профиль
 
 	script.

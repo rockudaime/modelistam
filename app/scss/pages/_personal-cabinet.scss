@@ -1,16 +1,41 @@
+.main-content{
+    margin-bottom: 25px;
+}
+
 // ****************************
 // *        Блок навигации слева    *
 // ****************************
-
 .cab-navigation-block{
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+.cab-nav-moblie-link{
+    display: block;
+    padding: 10px 15px;
+    background: #1581be url(images/ui-icon-arrow-menu-down.png) no-repeat right 12px top 50%;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 1.125em;
+    font-weight: bold;
+}
+.cab-nav-moblie-link:hover{
+    color: #fff;
+}
+.cabinet-nav{
+    display: none;
+}
+
+.cabinet-nav{
         border: 1px #dfdfdf solid;
         border-radius: 2px; 
+        margin-bottom: 15px;
 }
 
-.cab-navigation-block ul{
+.cabinet-nav{
         list-style: none;
 }
-.cab-navigation-block li>a{
+.cabinet-nav li>a{
         display: block;
         padding: 12px 15px;
         padding-left: 50px;
@@ -23,7 +48,7 @@
         background-image: url("images/personal-cabinet/spritesheet.png");
         background-repeat: no-repeat;
 }
-.cab-navigation-block li:first-child a{
+.cabinet-nav li:first-child a{
         border-top: none;
 }
 .nav-active {
@@ -38,7 +63,7 @@
                 background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -5px;
         }
 }
-.cab-navigation-block li>a:hover{
+.cabinet-nav li>a:hover{
         background-color: #fafafa;
         font-weight: bold;
 }
@@ -122,7 +147,7 @@
 // Конец блока навигации
 
 // ****************************
-// *             Блок справа                *
+// *     Блок справа          *
 // ****************************
 .cab-info{
     margin: 30px 0 0;
@@ -385,12 +410,21 @@ input[type=checkbox]:checked + label > .checkbox{
             border-radius: 2px;
             margin-bottom: 15px;
         }
-        .buy-certificate-btn{
-            background-color: #d34f27;
-            box-sizing: border-box;
 
-            padding: 10px 15px 10px;
-        }
+    }
+    .save-btn{
+        width: 100%;
+        background-color: #d34f27;
+        box-sizing: border-box;
+        padding: 10px 15px 10px;
+        margin-top: 15px;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.125em;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
     .my-profile-info{
 
@@ -435,24 +469,29 @@ input[type=checkbox]:checked + label > .checkbox{
 
         a{
             display: inline-block;
-            
-            margin-left: 20px;
+            min-width: 14px;
+            min-height: 12px;
+            margin-left: 15px;
             background-repeat: no-repeat;
             background-position: 0 50%;
-            padding-left: 20px;
-
-            span{
-                border-bottom: 1px dashed #abc4df;
-            }
 
         }
+        span{
+            border-bottom: 1px dashed #abc4df;
+            display: none;
+        }
+
+
     }
     .pr-change-info{
         background-image: url(images/personal-cabinet/ui-icon-personal-edit.png);
     }
+
     .pr-add-info{
         background-image: url(images/personal-cabinet/ui-icon-personal-add.png)
+
     }
+
     .pr-password{
         a{
             border-bottom: 1px dashed #abc4df;
@@ -472,7 +511,7 @@ input[type=checkbox]:checked + label > .checkbox{
         label{
             display: inline-block;
             box-sizing: border-box;
-            width: 170px;
+            width: 100%;
             border: 2px solid #c2c2c2;
             border-radius: 3px;
             padding: 10px 15px;
@@ -500,27 +539,358 @@ input[type=checkbox]:checked + label > .checkbox{
             background: #fff url(images/svg/Cart-check.svg) no-repeat right 5px top 50%;
         }
     }
+.profile-imporve-socials{
+    background: #fffae8;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 
+    h3{
+        font-size: 17px;
+        margin-top: 0px;
+    }
+
+}
+.tw-link,
+.fb-link,
+.gplus-link{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+    // overflow: hidden;
+}
+.tw-link{
+    background: url(images/personal-cabinet/twitter-icon.png) no-repeat 0 0;
+}
+.gplus-link{
+    background: url(images/personal-cabinet/gplus-icon.png) no-repeat 0 0;
+}
+.fb-link{
+    background: url(images/personal-cabinet/fb-icon.png) no-repeat 0 0;
+}
+.tw-link:hover,
+.fb-link:hover,
+.gplus-link:hover{
+    background-position: 0 -40px;
+}
+.u-hidden-input{
+    position: absolute;
+    left: -9999px;
+}
+.choose-gender{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.choose-gender label{
+    display: inline-block;
+    border: 1px solid #777;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+label.choose-gender__male{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+label.choose-gender__female{
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-left: 0;
+    margin-left: -4px;
+}
+.choose-gender input:checked + label{
+    background: #51677d;
+    color: #fff;
+}
+
+.pr-delete-profile{
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+    color: #346cab;
+}
 // ********************************
 // *           Profile page       *
 // ********************************
 
+// ********************************
+// *        Waiting page          *
+// ********************************
+.profile-waiting-item{
+
+    h2{
+        margin-top: 0;
+    }
+}
+.delete-all{
+    text-align: right;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.delete-all__icon{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(images/personal-cabinet/delete-icon.png) no-repeat 0 0;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.delete-all__link{
+    color: #346cab;
+    border-bottom: 1px dashed #346cab;
+    text-decoration: none;
+}
+.delete-all__link:hover{
+    text-decoration: none;
+    color: #285587;
+    border-color: #285587;
+}
+
+// ожидаемый товар
+
+.w-good{
+    font-size: 16px;
+    padding: 65px 5px 30px;
+    position: relative;
+    font-family: OpenSans_Regular, sans-serif;
+    color: #151515;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eae9e7;
+
+    @media (min-width: 544px){
+        width: 50%;
+        float: left;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @media (min-width: 768px) {
+        width: 33.333%
+    }
+    @media (min-width: 994px){
+
+    }
+    @media (min-width: 1200px) {
+        width: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+        float: left;
+
+        &:nth-child(even) .w-good__wrapper{
+            border: 0;
+        }
+    }
+}
+
+.w-good__wrapper{
+    @media (min-width: 544px){
+        border-right: 1px solid #eae9e7;
+        margin-right: -30px;
+        padding-right: 30px;
+    }
+}
+.w-good--available{
+    background: #fffdf6;
+}
+.w-good__already-available{
+    box-sizing: border-box;
+    position: absolute;
+    top: 12px;
+    background: #fafff6 url(images/personal-cabinet/icon-check.png) no-repeat 10px 50%;
+    border: 1px solid #dcedc2;
+    padding: 9px 10px 11px 32px;
+    border-radius: 2px;
+    color: #568800;
+    font: 0.9375em OpenSans_Semibold, sans-serif;
+}
+.w-good__delete-good{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #dddddd url(images/personal-cabinet/icon-close.png) no-repeat center center;
+    border-radius: 2px;
+    position: absolute;
+    right: 5px;
+    top: 14px;
+
+    @media (min-width: 544px){
+        right: 0;
+        top: 47px;
+
+    }
+}
+.w-good__delete-good:hover{
+    background-color: #c3c3c3;
+    cursor: pointer;
+}
+.w-good__good-img{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.w-good__good-status{
+    min-height: 22px;
+}
+.w-good__status-new{
+    color: #008739;
+    font-size: 0.9375em;
+    margin-right: 10px;
+}
+.w-good__discount-amount{
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #f01834;
+}
+.w-good__good-title{
+    height: 4.5em;
+
+    @media (min-width: 544px){
+        height: 5.5em;
+    }
+
+    @media (min-width: 768px){
+        height: 7.5em;
+    }
+    @media(min-width: 994px){
+        height: 5.5em;
+    }
+}
+.w-good__good-link{
+    font-size: 0.9375em;
+    color: #151515;
+    font-weight: normal;
+}
+.w-good_good-link:hover{
+    text-decoration: underline;
+
+}
+
+.w-good__price{
+    font-size: 1.125em;
+    font-weight: bold;
+
+}
+.w-good__price-new{
+    font-weight: bold;
+    color: #f01834;
+    font-size: 1.25em;
+    margin-right: 20px;
+}
+.w-good__price-old{
+    font-size: 0.8125em;
+    text-decoration: line-through;
+
+}
+.w-good__buy-btn{
+    display: inline-block;
+    padding: 9px 13px;
+    background-color: #f24e1f;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+.w-good__buy-btn:hover{
+    background: #D34F27;
+    color: #fff;
+    text-decoration: none;
+}
+.w-good__buy-btn--disabled{
+    background: #A8A8A8;
+}
+.w-good__buy-btn--disabled:hover,
+.w-good__buy-btn--disabled:focus{
+    background: #A8A8A8;
+}
+.w-good__price-block{
+    margin-bottom: 20px;
+    height: 2em;
+}
+// ********************************
+// *    end of Waiting page       *
+// ********************************
+// ********************************
+// *    How save page       *
+// ********************************
+
+.e-heading{
+    border: 1px #959595 solid;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0 15px;
+    color: #151515;
+    background: #fff;
+    font-size: 1.0625em;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    height: 46px;
+    line-height: 46px;
+    white-space: nowrap;
+    font-weight: normal;
+}
+.e-heading:hover{
+    background-color: #fffae8;
+    font-weight: 700;
+}
+.e-heading__arrow{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 44px;
+    width: 44px;
+    background: #f6f6f6 url(images/ui-icon-personal-open-detail.png) no-repeat 50% 50%;
+    border-radius: 2px;
+}
+.e-accordion__text-item{
+    padding: 20px 15px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px #959595 solid;
+    border-top: 0;
+    margin-top: -15px;
+    display: none;
+    line-height: 1.5;
+}
+
+// ********************************
+// *    end of How save page       *
+// ********************************
 
 // ********************************
 //        Начало адаптивных стилей
 // ********************************
 
 @media (min-width: 544px) {
+    .cab-nav-moblie-link{
+        width: 160px;
+    }
+    .pr-change-links {
+        a{
+            padding-left: 20px;
+        }
 
+        span{
+            display: inline
+        }
+    }
+    .save-btn{
+        width: 120px;
+        margin: 0 0 0 10px;
+    }
+    .check-input label{
+        width: 170px;
+    }
 }
 
 @media (min-width: 768px) {
-        .cab-navigation-block{
-            float: left;
-            width: 273px;
-            display: none;
+        .cabinet-nav{
+            position: absolute;
+            z-index: 9999;
+            background: #fff;
         }
-
         .cab-info{
             margin: 0 0;
             width: 100%;
@@ -544,17 +914,40 @@ input[type=checkbox]:checked + label > .checkbox{
 }
 
 @media (min-width: 994px) {
-    .cab-navigation-block{
-        display: block;
-        margin-right: 10px;
-    }
+
     .profile{
         float: left;
 
     }
+    .chat-btn{
+        width: 125px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .cab-nav-moblie-link{
+        display: none;
+    }
+    .cab-navigation-block{
+        float: left;
+        width: 273px;
+        margin-right: 40px;
+
+    }
+    .cabinet-nav{
+        position: static;
+        display: block;
+    }
+    .main-content{
+        width: 570px;
+        float: left;
+    }
     .cab-info{
         float: right;
         width: 275px;
+         margin-top: 45px;
 
     }
     .cab-signup,
@@ -563,21 +956,8 @@ input[type=checkbox]:checked + label > .checkbox{
         width: 100%;
     }
     .chat-btn{
-            float: left;
-    }
-
-}
-
-@media (min-width: 1200px) {
-    .cab-navigation-block{
-        margin-right: 40px;
-    }
-    .main-content{
-        width: 570px;
         float: left;
-    }
-    .cab-info{
-        margin-top: 45px;
+        width: 100px;
     }
 
     .check-input{
