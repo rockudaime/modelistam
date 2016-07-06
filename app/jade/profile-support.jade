@@ -1,0 +1,88 @@
+// profile-support.jade
+
+extends ./personal-cabinet.jade
+
+block item
+	.support-item.clearfix
+		h2 Поддержка
+		ul.cab-support-tabs
+			li(data-id="forBuyers") Покупателям
+			li.cab-tab-active(data-id="forOwners") Владельцам
+
+		.info-block#forBuyers
+			ul.cab-support-faq
+				li
+					a(href="#") Как выбрать аксессуары?
+				li
+					a(href="#") Как узнать, когда товар будет в наличии?
+				li
+					a(href="#") Могу ли я вернуть товар?
+				li
+					a(href="#") Конфиденциальность
+
+			.cab-support-message
+				.support-message__message-item.support-message__message-item--manager
+					.support-message__header
+						span.support-message__name Алексей, Planeta Hobby
+						span.support-message__answer-date ответил 23 авг 2015
+					.support-message__text-block
+						p Здравствуйте, Кирилл. Мы уже подготовили товары к отправке. К сожалению, у нас не суммируются скидки.
+				a(href="#").support-message__open-link Открыть переписку
+				.support-message__hidden-block
+					.support-message__message-item.support-message__message-item--manager
+						.support-message__header
+							span.support-message__name Алексей, Planeta Hobby
+							span.support-message__answer-date ответил 22 авг 2015
+						.support-message__text-block
+							p Здравствуйте, Кирилл. А я вам отвечаю, что ваш вопрос очень важен для нас. Но мне нужно уточнить детали, и в скором времени я вам, конечно же, напишу.
+
+					.support-message__message-item
+						.support-message__header
+							span.support-message__name Алексей, Planeta Hobby
+							span.support-message__answer-date ответил 21 авг 2015
+						.support-message__text-block
+							p Здравствуйте, здесь я задаю какой-то свой вопрос. Бла бла, какие-то ньюансы. Бла бла бла бла бла...
+			
+			.cab-support-backcontact
+				p
+					b Вопросы, жалобы и пожелания. Не публикуется
+				form(method="post" action="/")
+					textarea(name="cab-support-askform" rows="7" cols="40") Например: Помогите подобрать аккумулятор на ДВС
+
+					.select-wrapper
+						.select-arrow
+						select.cab-support-askcategory
+							option(value="-1" disabled selected) Выберите категорию
+							option(value="question") Вопрос
+							option(value="complain") Жалоба
+					input(type="submit" class="cab-support-backcontact-btn" value="Отправить")
+					span Ответим в течение 3-4 дней
+
+
+
+
+		.info-block#forOwners
+			ul.cab-support-faq
+				li
+					a(href="#") Как выбрать аксессуары?
+				li
+					a(href="#") Как узнать, когда товар будет в наличии?
+				li
+					a(href="#") Могу ли я вернуть товар?
+				li
+					a(href="#") Конфиденциальность
+			
+			.cab-support-backcontact
+				p
+					b Вопросы, жалобы и пожелания. Не публикуется
+				form(method="post" action="/")
+					textarea(name="cab-support-askform" rows="7" cols="40") Например: Помогите подобрать аккумулятор на ДВС
+
+					.select-wrapper
+						.select-arrow
+						select.cab-support-askcategory
+							option(value="-1" disabled selected) Выберите категорию
+							option(value="question") Вопрос
+							option(value="complain") Жалоба
+					input(type="submit" class="cab-support-backcontact-btn" value="Отправить")
+					span Ответим в течение 3-4 дней

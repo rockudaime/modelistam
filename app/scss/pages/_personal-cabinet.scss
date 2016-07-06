@@ -860,6 +860,124 @@ label.choose-gender__female{
 // ********************************
 
 // ********************************
+// *        Support page          *
+// ********************************
+.cab-support-tabs{
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+    border: 1px #777777 solid;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 15px;
+
+    li{
+        display: inline-block;
+        margin-left: -4px;
+        padding: 14px 10px 12px;
+        cursor: pointer;
+    }
+
+    li:fitst-child{
+        border-right: 1px #777777 solid;
+    }
+}
+.cab-tab-active{
+    background: #51677d;
+    color: #fff;
+}
+.cab-support-faq li {
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.cab-support-faq a {
+    color: #346cab;
+    text-decoration: underline;
+}
+
+.cab-support-message {
+    
+    border: 1px #f0da88 solid;
+    border-radius: 5px;
+    background: #fffae8;
+    margin-top: 30px;
+}
+
+.support-message__message-item{
+    background: #fff;
+
+}
+
+.support-message__message-item--manager{
+    font-size: 1.2em;
+    color: #000;
+}
+.support-message__name{
+    font-weight: bold;
+}
+.support-message__header{
+    background: #fffae8;
+    padding: 10px 15px;
+}
+.support-message__answer-date{
+    color: #777777;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.support-message__text-block{
+    padding: 10px 15px;
+}
+.support-message__open-link{
+    display: inline-block;
+    color: #346cab;
+    margin: 0 10px 10px;
+    text-decoration: underline;
+}
+
+.support-message__hidden-block{
+    display: none;
+}
+
+.support-message__open-link:hover + .support-message__hidden-block{
+    display: block;
+}
+
+
+.cab-support-backcontact {
+    display: inline-block;
+    border: 1px #777777 solid;
+    border-radius: 5px;
+}
+
+.cab-support-backcontact textarea {
+    color: #777777;
+    font-size: 16px;
+    border: 1px #777777 solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.cab-support-backcontact-btn {
+    padding: 15px 90px;
+    color: white;
+    background: #76972a;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+// ================================
+// *     end of Support page      *
+// ================================
+// ********************************
 //        Начало адаптивных стилей
 // ********************************
 
