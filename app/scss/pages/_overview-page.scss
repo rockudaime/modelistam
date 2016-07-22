@@ -83,12 +83,12 @@
 .ov-tags li{
     display: inline-block;
     margin-right: 10px;
+    margin-bottom: 5px;
 }
 .ov-tags a{
     display: block;
     list-style: none;
-    margin: 0 5px 10px 0;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: 1px #cdcdcd solid;
     border-radius: 40px;
     font-size: 15px;
@@ -110,7 +110,7 @@
     background: #f9f9f9;
     padding: 20px 10px;
 }
-.ov-signup-form>input[type=text]{
+.ov-signup-form>input[type=email]{
     width: 89%;
     padding: 15px;
     margin-bottom: 15px;
@@ -141,7 +141,9 @@
     margin-bottom: 15px;
 }
 .ov-cat li>a{
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 2px solid #b6c6dc;
+    white-space: nowrap;
     color: #346cab;
     font-size: 16px;
     font-family: OpenSans_SemiBold;
@@ -169,6 +171,8 @@
 }
 .ov-similar-item{
     margin-bottom: 22px;
+    color: #000;
+    font-size: 15px;
 }
 .ov-similar-item img{
     width: 100%;
@@ -186,6 +190,8 @@
 }
 .ov-similar-item p{
     line-height: 25px;
+    color: #000;
+    font-size: 15px;
 }
 .ov-video-heading{
     font-family: OpenSans_SemiBold;
@@ -500,6 +506,7 @@ ul.comment-social{
 // ****************************
 
 .ovp-head-block{
+    margin-bottom: 30px;
     .ov-cat{
         padding: 0;
         margin-bottom: 0;
@@ -511,13 +518,14 @@ ul.comment-social{
 
 .ovp-main-model{
     padding: 10px 0 30px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     background: #f9f9f9;
     border-bottom: 1px #dfdfdf solid;
 }
 .ovp-main-model img{
     width: 100%;
     margin-bottom: 20px;
+    margin-right: -1px;
 }
 .video-after{
     font-size: 18px;
@@ -578,7 +586,7 @@ ul.comment-social{
     .ov-signup>form{
         padding: 20px 20px;
     }
-    .ov-signup-form>input[type=text]{
+    .ov-signup-form>input[type=email]{
         width: 50%;
         margin-bottom: 0;
     }
@@ -677,7 +685,7 @@ ul.comment-social{
             font-size: 13px;
         }
     }
-    .ov-signup-form > input[type="text"] {
+    .ov-signup-form > input[type="email"] {
         margin-bottom: 15px;
         width: 100%;
         box-sizing: border-box;
@@ -709,7 +717,7 @@ ul.comment-social{
         padding: 20px 100px;
         margin-bottom: 25px;
     }
-    .ov-signup-form>input[type=text]{
+    .ov-signup-form>input[type=email]{
         width: 50%;
         margin-bottom: 0;
     }
@@ -771,7 +779,7 @@ ul.comment-social{
         background: none;
         width: 40%;
       }
-      .ovp-signup .ov-signup-form input[type=text]{
+      .ovp-signup .ov-signup-form input[type=email]{
         margin-bottom: 10px;
         width: 100%;
       }
@@ -839,7 +847,7 @@ ul.comment-social{
         border: 1px #dfdfdf solid;
         border-radius: 3px;
     }
-    .ov-signup-form>input[type=text]{
+    .ov-signup-form>input[type=email]{
         width: 182px;
         margin-bottom: 0;
         padding: 10px;
@@ -905,7 +913,7 @@ ul.comment-social{
     .ovp-head-block{
         border: 1px solid #dfdfdf;
         border-radius: 3px;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
         
         .ov-cat{
             float:left;
@@ -921,21 +929,23 @@ ul.comment-social{
         .ov-tags{
             display: block;
             float:left;
-            padding: 20px 15px 15px;
+            padding: 10px 15px 15px;
             border-right: 1px solid #dfdfdf;
             width: 251px;
             margin: 0;
+            font-size: 15px;
         }
         .ov-tags li{
             display: block;
         }
         .ov-tags li:first-child{
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            color: #000;
         }
 
         .ovp-main-model{
             float: right;
-            width: 590px;
+            width: 591px;
             padding: 0 0 19px 0;
             margin: 0;
             border: 0;
@@ -991,12 +1001,12 @@ ul.comment-social{
       padding: 65px 0 0;
       width: 100%;
     }
-    .ovp-signup .ov-signup-form input[type=text]{
+    .ov-signup-form input[type=email]{
       width: 35%;
       margin: 0;
       padding: 15px;
     }
-    .ovp-signup .ov-signup-form input[type=submit]{
+    .ov-signup-form input[type=submit]{
       width: 35%;
       margin-left: 20px;
       padding: 18px;
