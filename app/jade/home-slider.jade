@@ -1,0 +1,76 @@
+doctype html
+html(lang="ru")
+	head
+		title slider
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+
+	body
+		.front-bg
+			.front-left some text here
+			.front-right(style="width:75%")
+				.front-gallery-block
+					.front-gallery-block__left
+						.front-wrapper-slider
+							// Slider-body starts here
+							.main-slider
+								.customNavigation
+									a.prev 
+									a.next 
+
+								.owl-carousel#owl-main-page-slider
+									.main-slider__item
+										img.main-slider__image(src="upload/iblock/545/54583d76f4962f81450b6572638d0b9f.png", alt="квадракоптеры")
+										.main-slider__desc
+											span.main-slider__good-price 516 грн
+											a.btn.main-slider__btn Посмотреть модель
+
+
+			
+							// slider ens here
+
+
+		script.
+			$(document).ready(function() {
+ 
+				var owl = $("#owl-main-page-slider");
+				
+				owl.owlCarousel({
+				    loop:true,
+				    margin:10,
+				    navigationText: true,
+				    nav: true,
+				    responsiveClass:true,
+				    responsive:{
+				    	0:{
+				    		items:1,
+				    		nav:true
+				    	},
+				        460:{
+				            items:1,
+				            nav:true
+				        },
+				        768:{
+				            items:1,
+				            nav:false
+				        },
+				        1000:{
+				            items:1,
+				            nav:true,
+				            loop:false
+				        },
+				        1200:{
+				            items:1,
+				            nav:true,
+				            loop:false
+				        }
+				    }
+				});
+			
+			
+			});

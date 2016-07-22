@@ -20,8 +20,9 @@ html
 							li
 								a(href="#") Category name
 					.ovp-main-model.clearfix
-						img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
-						a.video-after Выходит на охоту Sony 600TVL Super HAD board camera for FPV
+						a(href="#")
+							img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
+						a.video-after(href="#") Выходит на охоту Sony 600TVL Super HAD board camera for FPV
 					.ov-tags
 						ul
 							li теги
@@ -32,69 +33,74 @@ html
 				.ovp-contents
 					-for (var x=0; x<2;x++)
 						.ov-similar-item.clearfix
-							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
 							span.item-new-overview Новинка
 							span.item-anouncement-overview Анонс
 							h3
-								a Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
 							p.
 								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				// Блок со связанными товарами - related products
 				.alike-products.ov-alike-products
 					h3 Смотрите также
-					a Обзор сравнение лучших ралли
+					a(href="#") Обзор сравнение лучших ралли
 					// Блок контейнер слайдера
 					.owl-carousel#owl-alike-products
 						// Item added to order
 						.item
-							img(src="dist/images/sample-airplane.jpg")
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
 							span.product-new Новинка
 							span.product-top Топ продаж
 							h3.product-carousel-title
-								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
 							span.old-price
 								del 1322 грн
 							span.sale-amount 3%
 							div.new-price 1255 грн 
-							a.btn.btn-submit.btn-product-order.u-ordered В корзине
+							a.btn.btn-submit.btn-product-order.u-ordered(href="#") В корзине
 							.product-wishlist-block
-								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
 
 						-for (var x=0; x<2; x++)
 							.item
-								img(src="dist/images/sample-airplane.jpg")
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg")
 								span.product-new Новинка
 								span.product-top Топ продаж
 								h3.product-carousel-title
-									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+									a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
 								span.old-price
 									del 1322 грн
 								span.sale-amount 3%
 								div.new-price 1255 грн 
-								a.btn.btn-submit.btn-product-order Купить 
+								a.btn.btn-submit.btn-product-order(href="#") Купить 
 								.product-wishlist-block
-									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
 
 						// Item added to wishlist
 						.item
+							a(href="#")
 								img(src="dist/images/sample-airplane.jpg")
-								span.product-top Топ продаж
-								h3.product-carousel-title
-									a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-								div.product-carousel-price 1455 грн 
-								a.btn.btn-submit.btn-product-order Купить
-								.product-wishlist-block
-									a.wishlist-link.wished В избранном
+							span.product-top Топ продаж
+							h3.product-carousel-title
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							div.product-carousel-price 1455 грн 
+							a.btn.btn-submit.btn-product-order(href="#") Купить
+							.product-wishlist-block
+								a.wishlist-link.wished(href="#") В избранном
 					.get-to-know
 						a.btn.u-ordered.ov-read-review-btn Ознакомиться с обзором
 				.ovp-contents
 					-for (var x=0; x<4;x++)
 						.ov-similar-item.clearfix
-							img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
 							span.item-new-overview Новинка
 							span.item-anouncement-overview Анонс
 							h3
-								a Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
 							p.
 								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				.ovp-signup
@@ -121,8 +127,9 @@ html
 					h2.ov-video-heading.video Видео Планета Хобби
 					-for (var x=0; x<5; x++)
 						.ov-video-item
-							img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
-							a Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
+							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
 				.ov-aside-content.clearfix.u-noborder
 					h2.ov-events-heading События
 					ul.ov-events
@@ -135,18 +142,18 @@ html
 				ul
 					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
 						li 
-							a=value 
+							a(href="#")=value 
 							ul
 								li
-									a some article 1
+									a(href="#") some article 1
 								li
-									a some article 2
+									a(href="#") some article 2
 								li
-									a some article 3
+									a(href="#") some article 3
 								li
-									a some article 4
+									a(href="#") some article 4
 								li
-									a some article 5
+									a(href="#") some article 5
 
 
 

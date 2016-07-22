@@ -1,0 +1,96 @@
+// Content
+.d-delivery-item{
+	font-size: 16px;
+	background: #fff;
+	border-bottom: 1px #959595 dashed;
+	padding: 25px 0 21px;
+}
+
+.d-delivery-item:last-child{
+	border-bottom: 0;
+}
+
+// .d-delivery-item__radio-input:checked +.d-delivery-item__radio > .custom-radio__circle{
+// 	display: none;
+// }
+.d-delivery-item__checkbox{
+	margin-left: 54px;
+	@media (min-width: 768px){
+		margin-left: 70px;
+	}
+}
+.d-delivery-item__address{
+	padding-left: 54px;
+
+	@media (min-width: 544px){
+		width: 300px;
+	}
+	@media (min-width: 768px){
+		padding-left: 70px;
+
+	}
+}
+
+.delivery-item__address--new-post{
+	background: url(images/personal-cabinet/logo-new-post.png) no-repeat 0 0;
+	background-size: 41px;
+	overflow: show;
+
+
+	@media (min-width: 768px){
+		background-size: 51px;
+	}
+}
+
+
+
+.d-delivery-item__payment{
+	padding-left: 54px;
+
+	@media (min-width: 544px){
+		width: 300px;
+	}
+
+	@media (min-width: 768px){
+		padding-left: 70px;
+	}
+}
+
+.d-delivery-item__header{
+	margin-bottom: 15px;
+}
+.d-delivery-item__title{
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+
+}
+.d-delivery-item__title--ib{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	margin-right: 25px;
+	border-bottom: 1px dashed #434343;
+
+}
+
+.d-delivery-item__payment-details-link{
+	color: #777777;
+    font-size: 0.8125em;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.d-delivery-item__payment-details-link:hover{
+	color: #888888;
+}
+
+.d-delivery-form__submit{
+	text-align: center;
+}
+.btn-save{
+	width: auto;
+	margin-top: 25px;
+	display: inline-block;
+
+}

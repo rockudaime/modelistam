@@ -3,7 +3,10 @@
 extends ./personal-cabinet.jade
 
 block item
-	.support-item.clearfix
+	// ===========================
+	// Здесь начинается основной контент
+	section.support-item.clearfix
+		// Блок с контеном - support
 		h2 Поддержка
 		ul.cab-support-tabs
 			li(data-id="forBuyers") Покупателям
@@ -86,3 +89,7 @@ block item
 							option(value="complain") Жалоба
 					input(type="submit" class="cab-support-backcontact-btn" value="Отправить")
 					span Ответим в течение 3-4 дней
+
+	// Конец .support-item
+	// Здесь заканчивается основной контент
+	// ===========================

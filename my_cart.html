@@ -52,7 +52,7 @@
                     <div><!--  Этот див нужен для правильной работы скрипта -->
                         <div class="popup-back">
                             <div class="close-popup">
-                                <a href="#" rel="#" class="come-back"><i></i><span>Назад</span></a>
+                                <a href="#" rel="#" class="come-back"><i></i><span>Вернуть</span></a>
                             </div>
 
                             <? /* Ссылка отложить */?>
@@ -192,70 +192,78 @@
                     <label for="email">Получите скидку и личный кабинет</label>
                     <input type="text" placeholder="Email" id="email">
                     <div class="email-status">для информации о статусе заказа</div>
-                    <input type="radio" id="deliveryByCompany" name="deliveryAndPayment"><label for="deliveryByCompany"><span><i></i></span>Доставка и Оплата</label>
-                    <div class="delivery-address radio-toggle">
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
-                                <option value="Новая Почта">Новая Почта</option>
-                                <option value="Укрпочта">Укрпочта</option>
-                                <option value="Курьер">Курьер</option>
-                            </select>
-                            
+            <!-- Custom radio start -->
+                    <div class="custom-radio">
+                        <input type="radio" id="deliveryByCompany" name="deliveryAndPayment" class="custom-radio__input">
+                        <label for="deliveryByCompany" class="custom-radio__label"><span class="custom-radio__circle"><i class="custom-radio__circle-inner"></i></span>
+                          <h3 class="d-delivery-item__title d-delivery-item__title--ib">Доставка и Оплата</h3>
+                        </label>
+                        <div class="custom-radio__toggled-content">
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
+                                    <option value="Новая Почта">Новая Почта</option>
+                                    <option value="Укрпочта">Укрпочта</option>
+                                    <option value="Курьер">Курьер</option>
+                                </select>
+                            </div>
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="citySelect" id="citySelect" onchange="order_form_reload()">
+                                    <option selected="selected" value="0">Выберите регион (или обл.)</option>
+                                    <option value="14">Винницкая обл.</option>
+                                    <option value="5">Днепропетровская обл.</option>
+                                    <option value="7">Донецкая обл.</option>
+                                    <option value="8">Запорожская обл.</option>
+                                    <option value="3">Киевская обл.</option>
+                                    <option value="10">Криворожская обл.</option>
+                                    <option value="13">Луганская обл.</option>
+                                    <option value="9">Львовская обл.</option>
+                                    <option value="12">Мариупольская обл.</option>
+                                    <option value="11">Николаевская обл.</option>
+                                    <option value="6">Одесская обл.</option>
+                                    <option value="18">Полтавская обл.</option>
+                                    <option value="15">Республика Крым</option>
+                                    <option value="16">Севастополь</option>
+                                    <option value="4">Харьковская обл.</option>
+                                    <option value="17">Херсонская обл.</option>
+                                    <option value="20">Черкасская обл.</option>
+                                    <option value="19">Черниговская обл.</option>
+                                </select>
+                            </div>
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="newPostWarehouse" id="newPostWarehouse">
+                                    <option selected="selected" value="0">Выберите адрес отделения</option>
+                                    <option value="1">address 1</option>
+                                    <option value="2">address 2</option>
+                                    <option value="3">address 3</option>
+                                    <option value="4">address 4</option>
+                                </select>
+                            </div>
+
+                            <p><b>Оплата</b></p>
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="paymentMethods" id="paymentMethods">
+                                    <option value="0">При получении</option>
+                                    <option value="1">Безналичный расчет</option>
+                                </select>
+                            </div>
                         </div>
-                        
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="citySelect" id="citySelect" onchange="order_form_reload()">
-                                <option selected="selected" value="0">Выберите регион (или обл.)</option>
-                                <option value="14">Винницкая обл.</option>
-                                <option value="5">Днепропетровская обл.</option>
-                                <option value="7">Донецкая обл.</option>
-                                <option value="8">Запорожская обл.</option>
-                                <option value="3">Киевская обл.</option>
-                                <option value="10">Криворожская обл.</option>
-                                <option value="13">Луганская обл.</option>
-                                <option value="9">Львовская обл.</option>
-                                <option value="12">Мариупольская обл.</option>
-                                <option value="11">Николаевская обл.</option>
-                                <option value="6">Одесская обл.</option>
-                                <option value="18">Полтавская обл.</option>
-                                <option value="15">Республика Крым</option>
-                                <option value="16">Севастополь</option>
-                                <option value="4">Харьковская обл.</option>
-                                <option value="17">Херсонская обл.</option>
-                                <option value="20">Черкасская обл.</option>
-                                <option value="19">Черниговская обл.</option>
-                            </select>
-                        </div>
-                        
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="newPostWarehouse" id="newPostWarehouse">
-                                <option selected="selected" value="0">Выберите адрес отделения</option>
-                                <option value="1">address 1</option>
-                                <option value="2">address 2</option>
-                                <option value="3">address 3</option>
-                                <option value="4">address 4</option>
-                            </select>
-                        </div>
-                        
-                        <p><b>Оплата</b></p>
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="paymentMethods" id="paymentMethods">
-                                <option value="0">При получении</option>
-                                <option value="1">Безналичный расчет</option>
-                            </select>
-                            
-                        </div>
-                        
                     </div>
+            <!-- Custom radio end -->
+    
                     <input name="deliveryAndPayment" type="radio" id="fromStore" checked="checked"><label for="fromStore"><span><i></i></span>Заберу в магазине</label>
                     <div class="shop-address radio-toggle">
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="newPostWarehouse" id="newPostWarehouse">
+                        <div class="custom-select">
+                            <div class="custom-select__bg"></div>
+                            <div class="custom-select__arrow"></div>
+                            <select class="custom-select__select" name="newPostWarehouse" id="newPostWarehouse">
                                 <option value="0" selected="selected">Выберите магазин</option>
                                 <option value="1">address 1</option>
                                 <option value="2">address 2</option>
@@ -290,9 +298,10 @@
                     </div>
                     <div class="separator-block">
                         <h2>Доставка</h2>
-                        <div class="select-wrapper">
-                            <div class="select-arrow"></div>
-                            <select name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
+                        <div class="custom-select">
+                            <div class="custom-select__bg"></div>
+                            <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="deliveryCompany" id="deliveryCompany" onchange="order_form_reload()">
                                 <option value="Новая Почта">Новая Почта</option>
                                 <option value="Укрпочта">Укрпочта</option>
                                 <option value="Курьер">Курьер</option>
@@ -305,9 +314,10 @@
                         </p>
                         <a href="#" class="contentToggleLink">Изменить адрес доставки</a>
                         <div class="change-info">
-                            <div class="select-wrapper">
-                                <div class="select-arrow"></div>
-                                <select name="citySelect" id="citySelect" onchange="order_form_reload()">
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="citySelect" id="citySelect" onchange="order_form_reload()">
                                     <option value="0">Выберите регион (или обл.)</option>
                                     <option value="14">Винницкая обл.</option>
                                     <option value="5">Днепропетровская обл.</option>
@@ -328,18 +338,16 @@
                                     <option value="20">Черкасская обл.</option>
                                     <option value="19">Черниговская обл.</option>
                                 </select>
-                                
                             </div>
-                            
-                            <div class="select-wrapper">
-                                <div class="select-arrow"></div>
-                                <select name="newPostWarehouse" id="newPostWarehouse">
-                                    <option value="1">address 1</option>
-                                    <option value="2">address 2</option>
-                                    <option value="3">address 3</option>
-                                    <option value="4">address 4</option>
-                                </select>
-                                
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="newPostWarehouse" id="newPostWarehouse">
+                                        <option value="1">address 1</option>
+                                        <option value="2">address 2</option>
+                                        <option value="3">address 3</option>
+                                        <option value="4">address 4</option>
+                                    </select>
                             </div>
                         </div> 
                     </div>
@@ -348,14 +356,14 @@
                         <p>При получении</p>
                         <a href="#" class="contentToggleLink">Выбрать другой способ</a>
                         <div class="change-info">
-                            <div class="select-wrapper">
-                                <div class="select-arrow"></div>
-                                <select name="paymentMethods" id="paymentMethods">
+                            <div class="custom-select">
+                                <div class="custom-select__bg"></div>
+                                <div class="custom-select__arrow"></div>
+                                <select class="custom-select__select" name="paymentMethods" id="paymentMethods">
                                     <option value="0">При получении</option>
                                     <option value="1">Безналичный расчет</option>
                                 </select>
-                            
-                            </div>   
+                            </div>  
                         </div>
                     </div>
                     <a href="#" class="contentToggleLink">Добавить примечание к заказу</a>
@@ -412,7 +420,7 @@
         var timerId;
 
         reqInput.on("blur" , function() {
-            if ($(this).val().length > 5) {
+            if ($(this).val().length > 2) {
                 $(this).removeClass("required");
                 $(this).addClass("validated");
             } else if ($(this).hasClass("required") === false) {

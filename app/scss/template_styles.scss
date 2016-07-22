@@ -1,14 +1,17 @@
 @import "variables";
-@import "base";
-@import "header";
-@import "middle";
-@import "footer";
+@import "base/typography";
+@import "base/base";
+@import "layout/forms";
+@import "layout/header";
+@import "layout/middle";
+@import "layout/footer";
 // @import "w1000px";
 // @import "w799px";
 // @import "w320px";
 // @import "responsive_tabs";
 
 // Начало страниц
+@import "pages/home-page";
 @import "pages/cart";
 @import "pages/cart-thanks";
 @import "pages/personal-cabinet";

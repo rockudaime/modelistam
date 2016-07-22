@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 .overview-one h1{
-    font-family: OpenSans_Semibold, sans-serif;
+    font-family: OpenSans_SemiBold, sans-serif;
     line-height: 32px;
 }
 .ov-article{
@@ -41,7 +41,7 @@
     background: #76972a;
     padding: 15px 0;
     text-align: center;
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 20px;
 }
 .get-to-know a{
@@ -125,7 +125,7 @@
     border: none;
     border-radius: 3px;
     padding: 15px 0;
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 20px;
     color: white;
 }
@@ -144,7 +144,11 @@
     text-decoration: underline;
     color: #346cab;
     font-size: 16px;
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
+}
+.ov-cat li>a:hover{
+    text-decoration: underline;
+    color: #4B4B4B;
 }
 .item-new-overview,
 .item-anouncement-overview{
@@ -184,7 +188,7 @@
     line-height: 25px;
 }
 .ov-video-heading{
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 17px;
     line-height: 32px;
     background: url("images/ui-icon-bottom-video.png") no-repeat 0 0;
@@ -202,6 +206,10 @@
     text-decoration: underline;
     color: #346cab;
     margin: 15px 0 30px;
+}
+.ov-video-item a:hover{
+    text-decoration: underline;
+    color: #4B4B4B;
 }
 .ov-video-item img{
     width: 100%;
@@ -224,7 +232,7 @@
     float: left;
 }
 .ov-events-heading{
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 17px;
     line-height: 32px;
     background: url("images/ui-icon-bottom-event.png") no-repeat 0 0;
@@ -241,6 +249,9 @@
     text-decoration: underline;
     color: #346cab;
 }
+.ov-events li>a:hover{
+    color: #4B4B4B;
+}
 .ov-more-articles{
     padding: 15px 0;
     clear: both;
@@ -250,7 +261,7 @@
     display: none;
 }
 .ov-more-articles h2{
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 20px;
 }
 .ov-more-articles>ul>li{
@@ -260,8 +271,11 @@
     color: #346cab;
     text-decoration: underline;
 }
+.ov-more-articles a:hover{
+    color: #4B4B4B;
+}
 .ov-more-articles>ul>li>a{
-    font-family: OpenSans_Semibold;
+    font-family: OpenSans_SemiBold;
     font-size: 18px;
 }
 .ov-more-articles li>ul{
@@ -624,7 +638,7 @@ ul.comment-social{
         text-decoration: underline;
     }
     .ov-more-articles>ul>li>a{
-        font-family: OpenSans_Semibold;
+        font-family: OpenSans_SemiBold;
         font-size: 18px;
     }
     .ov-more-articles>ul>li>ul{

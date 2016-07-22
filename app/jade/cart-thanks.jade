@@ -1,7 +1,6 @@
 doctype html
-html
+html(lang="ru")
 	head
-		meta(lang="ru_RU")
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title Cart thanks page
@@ -13,13 +12,15 @@ html
 	body.cart-thanks
 		.page-inner
 			h2.thanks-for-buying Спасибо за покупку, Алексей
-			p В течении 15 минут наш менеджер свяжется с Вами для уточнения деталей заказа.
-			p
-				a(href="#" class="my-order-link") Мой заказ №100500
+			.c-padder
+				p В течении 15 минут наш менеджер свяжется с Вами для уточнения деталей заказа.
+				p
+					a(href="#" class="my-order-link") Мой заказ — 3456
 		section.questionnaire-gift
 			.page-inner
-				h3 Позвольте нам сделать для вас подарок
-				p Укажите свой день рождения и гарантировано получите сюрприз	
+				.c-padder
+					h3 Позвольте нам сделать для вас подарок
+					p Укажите свой день рождения и гарантировано получите сюрприз	
 				form.questionaire-form(action="/")
 					.sex-block
 						input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
@@ -27,23 +28,24 @@ html
 						input(type="radio" name="sex" value="female" id="femaleSex")
 						label(for="femaleSex") 
 					.birth-date-block
-						p День Рождения:
-						p
-							select(name="birth-day" id="birthDay")
+						h3 Дата рождения:
+						.select-date
+							select.select-date__select(name="birth-day" id="birthDay")
 								- for (var x = 1; x < 32; x++)
 									option(value=x)=x
-							select(name="birth-month" id="birthMonth")
+							select.select-date__select(name="birth-month" id="birthMonth")
 								each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
 									option(value=index)= val
-							select(name="birth-year" id="birthYear")
+							select.select-date__select(name="birth-year" id="birthYear")
 								-for (var x = 2016; x>1939; x--)
 									option(value=x)= x
 							span#computed-age 0 лет
-						p 
-							select(name="hobby" id="hobby")
+						.select-hobby 
+							select.select-date__select(name="hobby" id="hobby")
 								each val, index in ["Какие увлечения?", "Самолеты", "Автомобили", "Квадракоптеры", "Танки", "Катера"]
 									option(value=index)= val
-					input(type="submit" class="btn btn-submit")
+					.submit-block
+						input(type="submit" class="btn btn-submit" value="Отправить анкету")
 		// Блок со связанными товарами - related products
 		.page-inner
 			section.alike-products
@@ -53,7 +55,8 @@ html
 				.owl-carousel#owl-alike-products
 					// Item added to order
 					.item
-						img(src="dist/images/sample-airplane.jpg")
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg")
 						span.product-new Новинка
 						span.product-top Топ продаж
 						h3.product-carousel-title
@@ -61,14 +64,16 @@ html
 						span.old-price
 							del 1322 грн
 						span.sale-amount 3%
-						div.new-price 1255 грн 
+						div.new-price 1255 грн
 						a.btn.btn-submit.btn-product-order.u-ordered Добавлено в заказ
 						.product-wishlist-block
-							a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+							a.top-wishlist-link.wishlist-link.ajax_link_main_catalog 
+								span.wishlist-link__text В избранное
 
 					-for (var x=0; x<2; x++)
 						.item
-							img(src="dist/images/sample-airplane.jpg")
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
 							span.product-new Новинка
 							span.product-top Топ продаж
 							h3.product-carousel-title
@@ -79,27 +84,44 @@ html
 							div.new-price 1255 грн 
 							a.btn.btn-submit.btn-product-order Дозаказать 
 							.product-wishlist-block
-								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog 
+									span.wishlist-link__text В избранное
 
 					.item
-							img(src="dist/images/sample-airplane.jpg")
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
 							span.product-new Новинка
 							h3.product-carousel-title
 								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
 							div.product-carousel-price 1455 грн 
 							a.btn.btn-submit.btn-product-order Дозаказать
 							.product-wishlist-block
-								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog В избранное
+								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog 
+									span.wishlist-link__text В избранное
 					// Item added to wishlist
 					.item
-							img(src="dist/images/sample-airplane.jpg")
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
 							span.product-top Топ продаж
 							h3.product-carousel-title
 								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
 							div.product-carousel-price 1455 грн 
 							a.btn.btn-submit.btn-product-order Дозаказать
 							.product-wishlist-block
-								a.wishlist-link.wished В избранном
+								a.wishlist-link.wished 
+									span.wishlist-link__text В избранном
+					// Item added to wishlist
+					.item
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+							span.product-top Топ продаж
+							h3.product-carousel-title
+								a Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							div.product-carousel-price 1455 грн 
+							a.btn.btn-submit.btn-product-order Дозаказать
+							.product-wishlist-block
+								a.wishlist-link.wished 
+									span.wishlist-link__text В избранном
 
 
 		script.
@@ -112,28 +134,33 @@ html
 				    margin:10,
 				    navigationText: false,
 				    responsiveClass:true,
+				    pagination: true,
 				    responsive:{
-				    	0:{
-				    		items:1,
-				    		nav:true
-				    	},
+				    	//- 0:{
+				    	//- 	items:1,
+				    	//- 	nav:true
+				    	//- },
 				        460:{
 				            items:2,
-				            nav:true
+				            nav: false
 				        },
 				        768:{
 				            items:3,
-				            nav:false
+				            nav:false,
+				            paginatioin: true
 				        },
-				        1000:{
+				        994:{
 				            items:4,
 				            nav:true,
-				            loop:false
+				            loop:false,
+				            paginatioin: false
+
 				        },
 				        1200:{
 				            items:5,
 				            nav:true,
-				            loop:false
+				            loop:false,
+				            paginatioin: false
 				        }
 				    }
 				});
@@ -142,37 +169,38 @@ html
 			});
 
 		script(type='text/javascript').
-			var today = new Date();
-			console.log(today);
-			var dd = today.getDate();
-			var mm = today.getMonth(); //January is 0!
-			var yyyy = today.getFullYear();
-			var age = document.getElementById("computed-age");
-			var birthYear = document.getElementById("birthYear").value;
-			var birthMonth = document.getElementById("birthMonth").value;
-			var birthDay = document.getElementById("birthDay").value;
-			console.log(dd + "/" + mm + "/" + yyyy);
-			document.getElementById("birthYear").onchange = function() {
-				birthYear = document.getElementById("birthYear").value;
-				if (mm > birthMonth) {
-					age.innerHTML = (yyyy - birthYear) + " лет";
-				} else if (mm == birthMonth) {
-					if (dd >= birthDay) {
+			window.onload = function(){
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth(); //January is 0!
+				var yyyy = today.getFullYear();
+				var age = document.getElementById("computed-age");
+				var birthYear = document.getElementById("birthYear").value;
+				var birthMonth = document.getElementById("birthMonth").value;
+				var birthDay = document.getElementById("birthDay").value;
+
+				document.getElementById("birthYear").onchange = function() {
+					birthYear = document.getElementById("birthYear").value;
+					if (mm > birthMonth) {
 						age.innerHTML = (yyyy - birthYear) + " лет";
+					} else if (mm == birthMonth) {
+						if (dd >= birthDay) {
+							age.innerHTML = (yyyy - birthYear) + " лет";
+						} else {
+							age.innerHTML = (yyyy - birthYear - 1) + " лет";
+						}
 					} else {
 						age.innerHTML = (yyyy - birthYear - 1) + " лет";
 					}
-				} else {
-					age.innerHTML = (yyyy - birthYear - 1) + " лет";
 				}
-				console.log(age);
+				document.getElementById("birthMonth").onchange = function() {
+					birthMonth = document.getElementById("birthMonth").value;
+				}
+				document.getElementById("birthDay").onchange = function() {
+					birthDay = document.getElementById("birthDay").value;
+				}
 			}
-			document.getElementById("birthMonth").onchange = function() {
-				birthMonth = document.getElementById("birthMonth").value;
-			}
-			document.getElementById("birthDay").onchange = function() {
-				birthDay = document.getElementById("birthDay").value;
-			}
+			
 						
 
 

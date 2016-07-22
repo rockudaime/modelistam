@@ -1,5 +1,19 @@
+@import "profile/delivery";
+
 .main-content{
     margin-bottom: 25px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.input-field{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 1px solid #777;
 }
 
 // ****************************
@@ -37,35 +51,47 @@
 }
 .cabinet-nav li>a{
         display: block;
-        padding: 12px 15px;
+        padding: 12px 50px;
         padding-left: 50px;
         border-top: 1px #dfdfdf solid;
         text-decoration: none;
         color: #000;
-        font-family: OpenSans_Regular;
+        font-family: OpenSans;
         font-size: 16px;
         font-weight: normal;
         background-image: url("images/personal-cabinet/spritesheet.png");
         background-repeat: no-repeat;
+        position: relative;
+
+        i{
+            position: absolute;
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            top: 50%;
+            right: 20px;
+            margin-top: -13px;
+        }
 }
 .cabinet-nav li:first-child a{
         border-top: none;
 }
 .nav-active {
         background-color: #fafafa;
-        font-family: OpenSans_Semibold;
+        font-family: OpenSans_SemiBold;
 
         i{
-                display: inline-block;
-                float: right;
-                width: 25px;
-                height: 25px;
-                background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -5px;
+               
+                
         }
 }
 .cabinet-nav li>a:hover{
         background-color: #fafafa;
         font-weight: bold;
+
+        i{
+            background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -5px;
+        }
 }
 .economy-link{
         background-position: 5px -789px;
@@ -223,38 +249,75 @@ progress[value]::-webkit-progress-bar {
 .cab-buy-more{
     width: 240px;
     background: url("images/personal-cabinet/spritesheet.png") no-repeat right -40px top -42px;
+    text-decoration: underline;
 }
-
+.cab-buy-more:hover{
+    font-weight: 700;
+}
         /*Правый блок с информацией (Личный менеджер)*/
 .cab-manager{
     // height: 220px;
     border-radius: 10px;
     font-size: 15px;
     padding: 30px 15px 15px;
+    position: relative;
+    color: #000;
 }
-.cab-manager p{
-    float: left;
-    margin: 0;
-    margin-bottom: 10px;
-    width: 58%;
+.cab-manager__photo{
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    max-width: 90px;
+
+    @media (min-width: 1200px) {
+        right: 15px;
+    }
 }
-.cab-manager img{
-    float: right;
-    margin-right: 20px;
+.cab-manager__title{
+    margin: 0 0 6px;
+    font: normal 1em OpenSans_SemiBold, sans-serif;
+}
+.cab-manager__name{
+    margin-bottom: 3px;
+}
+.cab-manager__last-name{
+    margin: 0 0 12px;
+}
+.cab-manager__phone{
+    margin-bottom: 3px;
+}
+.cab-manager__email{
+
+    @media (min-width: 544px) {
+        margin-bottom: 15px;
+    }
+}
+.cab-manager__email a{
+    text-decoration: underline;
+    color: #000;
 }
 .chat-btn{
-    display: block;
+    display: inline-block;
+    clear: both;
     float: right;
     color: #76972a;
     background: #fff;
     border: 1px #76972a solid;
-    border-radius: 10px;
-    padding: 10px 15px;
-    width: 100px;
+    border-radius: 3px;
+    padding: 9px 16px;
+    width: auto;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
-    margin: 15px 0;
+    margin: 10px 0 15px;
+
+    @media (min-width: 544px){
+        margin-top: -25px;
+    }
+    @media (min-width: 1200px) {
+        margin-top: 0;
+        float: none;
+    }
 }
 
         /*Правый блок с информацией (Сертификат)*/
@@ -267,8 +330,12 @@ progress[value]::-webkit-progress-bar {
 .certificate a{
     display: inline-block;
     padding: 10px 0 10px 35px;
-    color: #346cab;
+    color: #32abed;
     background: url("images/personal-cabinet/spritesheet.png") no-repeat -5px -617px;
+    text-decoration: underline;
+}
+.certificate a:hover{
+    color:#346cab;
 }
 .certificate form{
 
@@ -327,6 +394,9 @@ progress[value]::-webkit-progress-bar {
     border-radius: 3px;
     margin-right: 15px;
     vertical-align: middle;
+}
+.cab-signup-form .checkbox:hover{
+    cursor: pointer;
 }
 input[type=checkbox]:checked + label > .checkbox{
     background: #4b80bb url("images/personal-cabinet/spritesheet.png") no-repeat -5px -328px;
@@ -394,7 +464,9 @@ input[type=checkbox]:checked + label > .checkbox{
 
 // ********************************
 // *           Profile page       *
-// ******************************** 
+// ********************************
+
+
     .profile-item{
         margin-bottom: 25px;
 
@@ -539,6 +611,14 @@ input[type=checkbox]:checked + label > .checkbox{
             background: #fff url(images/svg/Cart-check.svg) no-repeat right 5px top 50%;
         }
     }
+
+.mob-hidden{
+    display: none;
+
+    @media (min-width: 544px){
+        display: block;
+    }
+}
 .profile-imporve-socials{
     background: #fffae8;
     padding: 20px 15px;
@@ -654,7 +734,7 @@ label.choose-gender__female{
     font-size: 16px;
     padding: 65px 5px 30px;
     position: relative;
-    font-family: OpenSans_Regular, sans-serif;
+    font-family: OpenSans, sans-serif;
     color: #151515;
     box-sizing: border-box;
     border-bottom: 1px solid #eae9e7;
@@ -702,7 +782,7 @@ label.choose-gender__female{
     padding: 9px 10px 11px 32px;
     border-radius: 2px;
     color: #568800;
-    font: 0.9375em OpenSans_Semibold, sans-serif;
+    font: 0.9375em OpenSans_SemiBold, sans-serif;
 }
 .w-good__delete-good{
     display: block;
@@ -713,6 +793,7 @@ label.choose-gender__female{
     position: absolute;
     right: 5px;
     top: 14px;
+    cursor: pointer;
 
     @media (min-width: 544px){
         right: 0;
@@ -727,6 +808,10 @@ label.choose-gender__female{
 .w-good__good-img{
     text-align: center;
     margin-bottom: 20px;
+    overflow: hidden;
+}
+.w-good__good-img img{
+    max-width: 100%;
 }
 .w-good__good-status{
     min-height: 22px;
@@ -780,6 +865,14 @@ label.choose-gender__female{
     font-size: 0.8125em;
     text-decoration: line-through;
 
+}
+.w-good__buy{
+    height: auto;
+    overflow: hidden;
+
+    @media (min-width: 544px) {
+        height: 2.75em;
+    }
 }
 .w-good__buy-btn{
     display: inline-block;
@@ -1037,10 +1130,6 @@ label.choose-gender__female{
         float: left;
 
     }
-    .chat-btn{
-        width: 125px;
-    }
-
 }
 
 @media (min-width: 1200px) {
@@ -1061,6 +1150,8 @@ label.choose-gender__female{
     .main-content{
         width: 570px;
         float: left;
+        border-bottom: none;
+
     }
     .cab-info{
         float: right;
@@ -1072,10 +1163,6 @@ label.choose-gender__female{
     .cab-extra-info{
         float: none;
         width: 100%;
-    }
-    .chat-btn{
-        float: left;
-        width: 100px;
     }
 
     .check-input{

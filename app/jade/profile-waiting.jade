@@ -14,7 +14,8 @@ block item
 					.w-good__already-available Уже в продаже
 					i.w-good__delete-good
 					.w-good__good-img
-						img(src="dist/images/temporary/avto.jpeg", alt="some image")
+						a(href="#")
+							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.w-good__good-status
 						span.w-good__status-new Новинка
 						span.w-good__discount-amount -20%
@@ -24,43 +25,63 @@ block item
 						// span.w-good__price
 						span.w-good__price-new 600 грн
 						span.w-good__price-old 785 грн
-					a.w-good__buy-btn(href="#") Купить
+					.w-good__buy
+						a.w-good__buy-btn(href="#") Купить
 
 			.w-good
 				.w-good__wrapper
 					i.w-good__delete-good
 					.w-good__good-img
-						img(src="dist/images/temporary/avto.jpeg", alt="some image")
+						a(href="#")
+							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.w-good__good-status
 					h3.w-good__good-title
 						a.w-good__good-link Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и...
 					.w-good__price-block
 						span.w-good__price 1123 грн
-					a.w-good__buy-btn.w-good__buy-btn--disabled Купить
+					.w-good__buy
 			.w-good
 				.w-good__wrapper
 					i.w-good__delete-good
 					.w-good__good-img
-						img(src="dist/images/temporary/avto.jpeg", alt="some image")
+						a(href="#")
+							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.w-good__good-status
 					h3.w-good__good-title
 						a.w-good__good-link Самолет Hubsan Spy Hawk H301F 843 мм 2.4 adsfas 3 item
 					.w-good__price-block
 						span.w-good__price 1123 грн
-					a.w-good__buy-btn.w-good__buy-btn--disabled Купить
+					.w-good__buy
 
 			.w-good
 				.w-good__wrapper
 					i.w-good__delete-good
 					.w-good__good-img
-						img(src="dist/images/temporary/avto.jpeg", alt="some image")
+						a(href="#")
+							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.w-good__good-status
 					h3.w-good__good-title
 						a.w-good__good-link Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и...
 					.w-good__price-block
 						span.w-good__price 1123 грн
-					a.w-good__buy-btn.w-good__buy-btn--disabled Купить
+					.w-good__buy
 
-
-
+	script(src="js/base/base-functions.js")
+	script.
+		var ellipsis = function(obj, len) {
+			var text = obj.innerHTML;
+			if (text.length > len) {
+				text = text.slice(0, len - 3) + '...'; 
+				obj.innerHTML = text;
+			}
+		}
+		window.onload = function() {
+			var title = document.querySelectorAll('.w-good__good-link') || 1;
+			if (title !== 1)
+			{
+				for (var i=0; i<title.length; i++) {
+					ellipsis(title[i], 55);
+				}
+			}
+		}
 

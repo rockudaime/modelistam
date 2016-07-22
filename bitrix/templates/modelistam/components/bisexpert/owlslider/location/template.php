@@ -20,7 +20,7 @@
 
 <?if (count($arResult['ITEMS']) > 0):?>
 	<table class="owl-main-wrap">
-		<tr>
+		<tr>     
 			<td class="owl-main-wrap__inner">
 				<div id="owl-carousel-<?=$arParams['SPECIAL_CODE'];?>" class="owl-carousel <?if ($arParams['RESPONSIVE']=='Y') echo 'owl-theme--responsive';?> <?if ($arParams['NAVIGATION_TYPE']=='arrows') echo 'owl-theme--arrows';?> <?if ($arParams['IMAGE_CENTER']=='Y') echo 'owl-theme--center';?>">
 					<?foreach($arResult['ITEMS'] as $item):?>
@@ -77,6 +77,7 @@
                             <?endif;?>
 						</div>
 					<?endforeach;?>
+
 				</div>
                 <?if ($arParams['DISABLE_LINK_DEV'] != 'Y'):?>
                     <a target="_blank" class="owl-dev-link" href="http://bis-expert.com/"><?=GetMessage('BISEXPERT_OWLSLIDER_DEV_LINK');?></a>
@@ -90,7 +91,7 @@
             $(function() {
                 var owl = $('#owl-carousel-<?=$arParams['SPECIAL_CODE'];?>');
 
-                owl.owlCarousel({
+                 owl.owlCarousel({
                     // Most important owl features
                     items : "<?=$arParams['SCROLL_COUNT']?>",
                     itemsCustom : false,
@@ -99,6 +100,8 @@
                     itemsTablet: [768,2],
                     itemsTabletSmall: false,
                     itemsMobile : [479,1],
+                    nav: true,
+                    navigationText: false,
 
                     <?if ($arParams['SCROLL_COUNT']==1):?>
                     singleItem: true,
@@ -272,6 +275,13 @@
                     }).resize();
                 }
             })
+              // Custom Navigation Events
+              $(".next").click(function(){
+                owl.trigger('owl.next');
+              })
+              $(".prev").click(function(){
+                owl.trigger('owl.prev');
+              });
         }(jQuery));
     </script>
 <?endif;?>
