@@ -25,10 +25,25 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'OpenSans_ExtraBold';
+    src: url('fonts/OpenSans-Extrabold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 @font-face {
     font-family: 'OpenSans_Italic';
     src: url('fonts/OpenSans-Italic.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans_Light';
+    src: url('fonts/OpenSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }

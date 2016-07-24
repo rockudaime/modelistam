@@ -4,17 +4,18 @@ html
 		title Overview page
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
 		link(rel="stylesheet" href="dist/normalize.css")
 		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 	body.overview-page
 		.page-inner
 			h1 Обзоры
 			//- Блок с тегами и основным видео
-			.ovp-main-content
-				.ovp-head-block.clearfix
+			main.ovp-main-content
+				section.ovp-head-block.clearfix
 					ul.ov-cat
 						-for(var x=0; x<5; x++)
 							li
@@ -30,7 +31,7 @@ html
 								li
 									a(href="#") Some tag
 
-				.ovp-contents
+				section.ovp-contents
 					-for (var x=0; x<2;x++)
 						.ov-similar-item.clearfix
 							a(href="#")
@@ -42,57 +43,77 @@ html
 							p.
 								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				// Блок со связанными товарами - related products
-				.alike-products.ov-alike-products
-					h3 Смотрите также
-					a(href="#") Обзор сравнение лучших ралли
-					// Блок контейнер слайдера
-					.owl-carousel#owl-alike-products
-						// Item added to order
-						.item
+				section.overview-comparison
+					h3.overview-comparison__heading Обзор-сравнение лучших ралли
+					
+					
+					.o-compared-item.clearfix
+						.o-compared-item__photo
 							a(href="#")
 								img(src="dist/images/sample-airplane.jpg")
-							span.product-new Новинка
-							span.product-top Топ продаж
-							h3.product-carousel-title
-								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-							span.old-price
-								del 1322 грн
-							span.sale-amount 3%
-							div.new-price 1255 грн 
-							a.btn.btn-submit.btn-product-order.u-ordered(href="#") В корзине
-							.product-wishlist-block
-								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
-
-						-for (var x=0; x<2; x++)
-							.item
-								a(href="#")
-									img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 1
+						.o-compared-item__content
+							.o-compared-item__product-status
 								span.product-new Новинка
-								span.product-top Топ продаж
-								h3.product-carousel-title
-									a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-								span.old-price
-									del 1322 грн
-								span.sale-amount 3%
-								div.new-price 1255 грн 
-								a.btn.btn-submit.btn-product-order(href="#") Купить 
-								.product-wishlist-block
-									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
+							h3.o-compared-item__heading
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__current-price 1255 грн
+						
+							.o-compared-item__buy 
+								a.o-buy-btn.u-incart-btn(href="#") В корзине
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#")
+										span.o-wishlist__text В избранное
 
-						// Item added to wishlist
-						.item
+					.o-compared-item.clearfix
+						.o-compared-item__photo
 							a(href="#")
 								img(src="dist/images/sample-airplane.jpg")
-							span.product-top Топ продаж
-							h3.product-carousel-title
+								span.product-compared-place 2
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.product-top Топ продаж
+							h3.o-compared-item__heading
 								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-							div.product-carousel-price 1455 грн 
-							a.btn.btn-submit.btn-product-order(href="#") Купить
-							.product-wishlist-block
-								a.wishlist-link.wished(href="#") В избранном
-					.get-to-know
-						a.btn.u-ordered.ov-read-review-btn Ознакомиться с обзором
-				.ovp-contents
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#") 
+										span.o-wishlist__text В избранное
+
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 3
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.o-compared-item__product-discount -20%
+							h3.o-compared-item__heading
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link.o-wished(href="#")
+										span.o-wishlist__text В избранном
+
+					//.get-to-know
+					footer.overview-comparison__footer
+						a.o-read-overview-btn(title="Нажми, чтобы увидеть новый обзор " href="#") Ознакомиться с обзором
+
+
+				section.ovp-contents
 					-for (var x=0; x<4;x++)
 						.ov-similar-item.clearfix
 							a(href="#")
@@ -103,15 +124,18 @@ html
 								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
 							p.
 								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
-				.ovp-signup
-					h2 Я хочу быть в курсе последних событий по моделям
-					p Наше хобби - модели.
-					p Мы постоянно интересуемся...
-					form.ov-signup-form(name="signup" action="/")
-						input(type="email" required placeholder="Эл. почта")
-						input(type="submit" value="Подписаться")
-					p.signup-legend 1 раз в неделю. Отписаться можно в любое время
-				.nav-elems
+				section.o-signup
+					h2.o-signup__heading Я хочу быть в курсе последних событий по моделям
+					.o-signup__content
+						p.o-signup__description
+							| Наше хобби - модели.<br>
+							| Мы постоянно интересуемся...
+						form.o-signup-form(name="signup" action="/")
+							input.form-control.o-signup-form__input(type="email" required placeholder="Эл. почта" pattern=".*@.*[.][a-z]*")
+							input.o-signup-form__submit(type="submit" value="Следить за рассылками")
+						p.o-signup-legend 1 раз в неделю. Отписаться можно в любое время
+
+				section.nav-elems
 					span.pager__inner-elem.pager__inner-elem--current.strong(data-nav="1") 1
 					-for (var x=2; x<5; x++)
 						span.pager__inner-elem(data-nav=x)
@@ -122,77 +146,56 @@ html
 					span.pager__inner-elem
 						a.next-navigation(href="#") Следующая
 							i
-			.ovp-aside
-				.ov-aside-content.clearfix
+			aside.ovp-aside
+				section.ov-aside-content.clearfix
 					h2.ov-video-heading.video Видео Планета Хобби
 					-for (var x=0; x<5; x++)
 						.ov-video-item
 							a(href="#")
 								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
 							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
-				.ov-aside-content.clearfix.u-noborder
+				section.ov-aside-content.clearfix.u-noborder
 					h2.ov-events-heading События
 					ul.ov-events
 						-for (var x=0; x<5; x++)
 							li
 								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
 
-			div.ov-more-articles
-				h2 Нам есть что еще рассказать
-				ul
+			section.ov-more-articles
+				h2.ov-more-articles__heading Нам есть что еще рассказать
+				ul.o-more
 					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
-						li 
-							a(href="#")=value 
-							ul
-								li
-									a(href="#") some article 1
-								li
-									a(href="#") some article 2
-								li
-									a(href="#") some article 3
-								li
-									a(href="#") some article 4
-								li
-									a(href="#") some article 5
+						li.o-more__category
+							a.o-more__category-link.o-more__link(href="#")=value 
+							ul.o-more__items
+								li.o-more__item
+									a.o-more__link(href="#") some article 1
+								li.o-more__item
+									a.o-more__link(href="#") some article 2
+								li.o-more__item
+									a.o-more__link(href="#") some article 3
+								li.o-more__item
+									a.o-more__link(href="#") some article 4
+								li.o-more__item
+									a.o-more__link(href="#") some article 5
 
 
 
 
 	script.
 			$(document).ready(function() {
- 
-				var owl = $("#owl-alike-products");
+				var el = document.querySelectorAll('.o-compared-item__heading a');
+				function ellipsis(obj, len) {
+					var text = obj.innerHTML;
+					if (text.length > len) {
+						text = text.slice(0, len - 3) + '&hellip;'; 
+						obj.innerHTML = text;
+					}
+				}
 				
-				owl.owlCarousel({
-				    loop:true,
-				    margin:10,
-				    navigationText: false,
-				    responsiveClass:true,
-				    responsive:{
-				    	0:{
-				    		items:1,
-				    		nav:true
-				    	},
-				        460:{
-				            items:2,
-				            nav:true
-				        },
-				        768:{
-				            items:3,
-				            nav:false
-				        },
-				        1000:{
-				            items:3,
-				            nav:true,
-				            loop:false
-				        },
-				        1200:{
-				            items:3,
-				            nav:true,
-				            loop:false
-				        }
-				    }
-				});
+				for (var i = 0; i < el.length; i++){
+					ellipsis(el[i], 70);
+				}
 			
 			
 			});

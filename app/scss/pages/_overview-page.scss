@@ -10,6 +10,17 @@
     border-bottom: 1px #dfdfdf dashed;
     padding-bottom: 35px;
     margin-bottom: 30px;
+    font: normal 15px OpenSans, sans-serif;
+    line-height: 25px;
+}
+.ov-article p{
+    margin: 0 0 15px;
+}
+.ov-article i,
+.ov-article em{
+    font-style: normal !important;
+    font-weight: normal;
+    font-family: OpenSans_Italic;
 }
 .ov-article p>img{
     width: 100%;
@@ -24,7 +35,7 @@
     margin-left: 15px;
 }
 .ov-article li{
-    margin-bottom: 18px;
+    margin-bottom: 5px;
     padding-left: 15px;
 }
 .get-to-know{
@@ -142,15 +153,17 @@
 }
 .ov-cat li>a{
     text-decoration: none;
+    display: inline;
     border-bottom: 2px solid #b6c6dc;
-    white-space: nowrap;
+    // white-space: nowrap;
     color: #346cab;
     font-size: 16px;
     font-family: OpenSans_SemiBold;
 }
 .ov-cat li>a:hover{
-    text-decoration: underline;
+    text-decoration: none;
     color: #4B4B4B;
+    border-bottom: 0;
 }
 .item-new-overview,
 .item-anouncement-overview{
@@ -186,7 +199,7 @@
     font-weight: normal;
 }
 .ov-similar-item h3{
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
 }
 .ov-similar-item p{
     line-height: 25px;
@@ -258,39 +271,124 @@
 .ov-events li>a:hover{
     color: #4B4B4B;
 }
+// .ov-more-articles{
+//     padding: 15px 0;
+//     clear: both;
+//     border: 1px solid #dfdfdf;
+//     border-left: 0;
+//     border-right: 0;
+//     display: none;
+// }
+// .ov-more-articles__heading{
+//     font-family: OpenSans_SemiBold;
+//     font-size: 20px;
+// }
+
+// .ov-more-articles>ul>li{
+//     display: block;
+// }
+// .ov-more-articles a{
+//     color: #346cab;
+//     text-decoration: none;
+//     border-bottom: 1px solid #9eb4d2;
+// }
+// .ov-more-articles a:hover{
+//     color: #4B4B4B;
+// }
+// .ov-more-articles>ul>li>a{
+//     font-family: OpenSans_SemiBold;
+//     font-size: 18px;
+// }
+// .ov-more-articles li>ul{
+//     padding-top: 15px;
+// }
+// .ov-more-articles li{
+//     margin-bottom: 15px;
+// }
+
+// ================ More articles ===============
 .ov-more-articles{
-    padding: 15px 0;
+    padding: 0;
     clear: both;
     border: 1px solid #dfdfdf;
     border-left: 0;
     border-right: 0;
     display: none;
 }
-.ov-more-articles h2{
+.ov-more-articles__heading{
     font-family: OpenSans_SemiBold;
     font-size: 20px;
+    color: #151515;
 }
-.ov-more-articles>ul>li{
-    display: block;
+.o-more{
+    
 }
-.ov-more-articles a{
-    color: #346cab;
-    text-decoration: underline;
-}
-.ov-more-articles a:hover{
-    color: #4B4B4B;
-}
-.ov-more-articles>ul>li>a{
-    font-family: OpenSans_SemiBold;
-    font-size: 18px;
-}
-.ov-more-articles li>ul{
-    padding-top: 15px;
-}
-.ov-more-articles li{
-    margin-bottom: 15px;
+.o-more__category{
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    border: 1px solid #dfdfdf;
+    border-left: 0;
+    border-top: 0;
+    padding-left: 15px;
+
+    @media (min-width: 768px) {
+        padding: 15px 15px 25px 15px;
+    }
+    @media (min-width: 1200px) {
+        padding: 15px 0 10px 15px;
+    }
 }
 
+.o-more__link{
+    color: #346cab;
+    text-decoration: none;
+    border-bottom: 1px solid #5882b6;
+    
+    font: normal 16px OpenSans, sans-serif;
+    line-height: 25px;
+}
+.o-more__category-link{
+    font: normal 18px OpenSans_SemiBold, sans-serif;
+    border-bottom: 1px solid #9eb4d2;
+    line-height: 0px;
+    box-shadow: 0 1px 0 0 #c1cee1;
+}
+
+.o-more__link:hover{
+    text-decoration: none;
+}
+.o-more__items{
+    margin: 0;
+    margin-top: 15px;
+}
+.o-more__item{
+    margin-bottom: 10px;
+}
+.o-more__item:last-child{
+    margin-bottom: 0;
+}
+// @media (min-width: 544px) {
+//     .ov-more-articles>ul>li{
+//         display: inline-block;
+//         width: 45%;
+//         border: 1px solid #dfdfdf;
+//         border-left: 0;
+//         border-top: 0;
+//         padding-left: 15px;
+//     }
+//     .ov-more-articles a{
+//         color: #346cab;
+//         text-decoration: underline;
+//     }
+//     .ov-more-articles>ul>li>a{
+//         font-family: OpenSans_SemiBold;
+//         font-size: 18px;
+//     }
+//     .ov-more-articles>ul>li>ul{
+//         margin: 0;
+//     }
+// }
 // ================ Comments ================
 
 .comment-add-new{
@@ -517,15 +615,15 @@ ul.comment-social{
 }
 
 .ovp-main-model{
-    padding: 10px 0 30px;
+    padding: 10px 15px 30px;
     // margin-bottom: 30px;
     background: #f9f9f9;
     border-bottom: 1px #dfdfdf solid;
+    margin: 0 -15px;
 }
 .ovp-main-model img{
     width: 100%;
     margin-bottom: 20px;
-    margin-right: -1px;
 }
 .video-after{
     font-size: 18px;
@@ -534,37 +632,143 @@ ul.comment-social{
     background: url("images/overview-page/ov-video-icon.png") no-repeat 100% 0;
     padding-right: 35px;
 }
-.ovp-signup{
-    padding: 5px 10px;
+
+// signup block
+
+.o-signup{
+    padding: 30px 15px;
+    margin: 0 -15px;
     margin-bottom: 35px;
     background: #fef4ce;
 
-    form{
-        padding: 100px 0 15px;
-        background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 50% 0;
-    }
-
-    h2{
-        font-family: OpenSans_Bold;
-        font-size: 20px;
-        line-height: 26px;
-        margin: 0;
-    }
-    p{
-        font-family: OpenSans;
-        font-size: 16px;
-        line-height: 18px;
-        margin: 10px 0;
-    }
-    .signup-legend{
-        font-size: 13px;
+    @media (min-width: 994px) {
+        margin: 0 0 35px;
+        padding: 25px;
     }
 }
+
+.o-signup__heading{
+    font: normal 20px OpenSans_Bold, sans-serif;
+    margin: 0 0 5px;
+    color: #000;
+    line-height: 28px;
+
+    @media (min-width: 768px) {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+}
+.o-signup__content{
+
+    @media (min-width: 768px) {
+        padding-left: 180px;
+        background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 0;
+        background: none;
+    }
+}
+.o-signup__description{
+    font: normal 18px OpenSans, sans-serif;
+    color: #000;
+    line-height: 28px;
+
+    @media (min-width: 768px) {
+        font: normal 25px OpenSans_Light, sans-serif;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 42px 0;
+        padding-left: 180px;
+        background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
+    }
+}
+.o-signup-form{
+    background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 50% 0 no-repeat;
+    background-size: 148px;
+    padding-top: 167px;
+
+    @media (min-width: 768px) {
+        background-image: none;
+        padding-top: 0;
+        width: 300px;
+        display: inline-block;
+        margin-right: 24px;
+    }
+    @media (min-width: 1200px) {
+        display: block;
+        width: 100%;
+    }
+}
+
+input.o-signup-form__input{
+    height: 51px;
+    margin-bottom: 13px;
+    background-image: none;
+    font: normal 16px OpenSans;
+    @media (min-width: 1200px) {
+        display: inline-block;
+        width: 295px;
+        vertical-align: top;
+        margin: 0;
+        margin-right: 24px;
+    }
+}
+.o-signup-form__submit{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font: normal 20px OpenSans_SemiBold;
+    background-color: #346cab;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    padding: 12px 0;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 1200px) {
+        display: inline-block;
+        width: 295px;
+        vertical-align: top;
+    }
+}
+
+.o-signup-form__submit:hover,
+.o-signup-form__submit:focus{
+    background-color: #2e619b;
+}
+
+.o-signup-legend{
+    margin: 0;
+    font: normal 15px OpenSans_Light;
+    color: #000;
+
+    @media (min-width: 768px) {
+        width: 150px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+
+// end of signup block
 .ovp-main-content .pager__inner-elem{
     margin-right: 6px;
 }
 .ovp-contents{
   border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 25px;
 }
 .no-border{
   border: 0;
@@ -583,18 +787,18 @@ ul.comment-social{
     .ov-article iframe{
         height: 295px;
     }
-    .ov-signup>form{
-        padding: 20px 20px;
-    }
-    .ov-signup-form>input[type=email]{
-        width: 50%;
-        margin-bottom: 0;
-    }
-    .ov-signup-form>input[type=submit]{
-        width: 40%;
-        padding: 19px 0;
-        margin-left: 10px;
-    }
+    // .ov-signup>form{
+    //     padding: 20px 20px;
+    // }
+    // .ov-signup-form>input[type=email]{
+    //     width: 50%;
+    //     margin-bottom: 0;
+    // }
+    // .ov-signup-form>input[type=submit]{
+    //     width: 40%;
+    //     padding: 19px 0;
+    //     margin-left: 10px;
+    // }
     .ov-video-related{
         
         &>span{
@@ -612,9 +816,9 @@ ul.comment-social{
         display: inline-block;
         margin-right: 35px;
     }
-    .ov-signup {
-            margin-bottom: 0;
-    }
+    // .ov-signup {
+    //         margin-bottom: 0;
+    // }
     .ov-aside-content h2{
         margin-left: -5px;
         padding-left: 37px;
@@ -633,25 +837,7 @@ ul.comment-social{
     .ov-events{
         padding-left: 33px;
     }
-    .ov-more-articles>ul>li{
-        display: inline-block;
-        width: 45%;
-        border: 1px solid #dfdfdf;
-        border-left: 0;
-        border-top: 0;
-        padding-left: 15px;
-    }
-    .ov-more-articles a{
-        color: #346cab;
-        text-decoration: underline;
-    }
-    .ov-more-articles>ul>li>a{
-        font-family: OpenSans_SemiBold;
-        font-size: 18px;
-    }
-    .ov-more-articles>ul>li>ul{
-        margin: 0;
-    }
+    
     // comments
     .textarea-wrapper {
         width: 90%;
@@ -662,48 +848,48 @@ ul.comment-social{
 
     // end of comments
 
-    .ovp-signup{
+    // .ovp-signup{
 
-        form{
-            padding: 10px 0 0 100px;
-            background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 10px 50%;
-        }
+    //     form{
+    //         padding: 10px 0 0 100px;
+    //         background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 10px 50%;
+    //     }
 
-        h2{
-            font-family: OpenSans_Bold;
-            font-size: 20px;
-            line-height: 26px;
-            margin: 0;
-        }
-        p{
-            font-family: OpenSans;
-            font-size: 16px;
-            line-height: 18px;
-            margin: 10px 0;
-        }
-        .signup-legend{
-            font-size: 13px;
-        }
-    }
-    .ov-signup-form > input[type="email"] {
-        margin-bottom: 15px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .ov-signup-form > input[type="submit"]{
-        margin: 0;
-        width: 100%;
-    }
+    //     h2{
+    //         font-family: OpenSans_Bold;
+    //         font-size: 20px;
+    //         line-height: 26px;
+    //         margin: 0;
+    //     }
+    //     p{
+    //         font-family: OpenSans;
+    //         font-size: 16px;
+    //         line-height: 18px;
+    //         margin: 10px 0;
+    //     }
+    //     .signup-legend{
+    //         font-size: 13px;
+    //     }
+    // }
+    // .ov-signup-form > input[type="email"] {
+    //     margin-bottom: 15px;
+    //     width: 100%;
+    //     box-sizing: border-box;
+    // }
+    // .ov-signup-form > input[type="submit"]{
+    //     margin: 0;
+    //     width: 100%;
+    // }
     .ovp-main-model{
         background-color: #fff;
     }
-    .ovp-signup form{
-        background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 0 50%;
-    }
-    .ovp-signup .signup-legend{
-        font-size: 15px;
-        margin-left: 100px;
-    }
+    // .ovp-signup form{
+    //     background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 0 50%;
+    // }
+    // .ovp-signup .signup-legend{
+    //     font-size: 15px;
+    //     margin-left: 100px;
+    // }
     .ovp-main-content .nav-elems{
         margin-left: 0;
     }
@@ -713,19 +899,19 @@ ul.comment-social{
     .ov-article iframe{
         height: 393px;
     }
-    .ov-signup>form{
-        padding: 20px 100px;
-        margin-bottom: 25px;
-    }
-    .ov-signup-form>input[type=email]{
-        width: 50%;
-        margin-bottom: 0;
-    }
-    .ov-signup-form>input[type=submit]{
-        width: 40%;
-        padding: 19px 0;
-        margin-left: 15px;
-    }
+    // .ov-signup>form{
+    //     padding: 20px 100px;
+    //     margin-bottom: 25px;
+    // }
+    // .ov-signup-form>input[type=email]{
+    //     width: 50%;
+    //     margin-bottom: 0;
+    // }
+    // .ov-signup-form>input[type=submit]{
+    //     width: 40%;
+    //     padding: 19px 0;
+    //     margin-left: 15px;
+    // }
     .ov-similar-item img{
         float: left;
         width: 40%;
@@ -763,36 +949,36 @@ ul.comment-social{
     }
     // end of comments
 
-    .ovp-signup h2{
-        margin-bottom: 20px;
-      }
-      .ovp-signup p{
-        font-size: 20px;
-        margin-left: 170px;
-        margin-bottom: 0;
-      }
-      .ovp-signup{
-        background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 10px 50%;
-      }
-      .ovp-signup form{
-        padding: 15px 0 20px 170px;
-        background: none;
-        width: 40%;
-      }
-      .ovp-signup .ov-signup-form input[type=email]{
-        margin-bottom: 10px;
-        width: 100%;
-      }
-      .ovp-signup .ov-signup-form input[type=submit]{
-        margin: 0;
-        width: 100%;
-      }
-      .ovp-signup .signup-legend{
-        display: inline-block;
-        width: 20%;
-        margin: -70px 90px 0 0;
-        float: right;
-      }
+    // .ovp-signup h2{
+    //     margin-bottom: 20px;
+    //   }
+    //   .ovp-signup p{
+    //     font-size: 20px;
+    //     margin-left: 170px;
+    //     margin-bottom: 0;
+    //   }
+    //   .ovp-signup{
+    //     background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 10px 50%;
+    //   }
+    //   .ovp-signup form{
+    //     padding: 15px 0 20px 170px;
+    //     background: none;
+    //     width: 40%;
+    //   }
+    //   .ovp-signup .ov-signup-form input[type=email]{
+    //     margin-bottom: 10px;
+    //     width: 100%;
+    //   }
+    //   .ovp-signup .ov-signup-form input[type=submit]{
+    //     margin: 0;
+    //     width: 100%;
+    //   }
+    //   .ovp-signup .signup-legend{
+    //     display: inline-block;
+    //     width: 20%;
+    //     margin: -70px 90px 0 0;
+    //     float: right;
+    //   }
       .ovp-main-content .nav-elems{
         margin-bottom: 20px;
       }
@@ -838,31 +1024,31 @@ ul.comment-social{
     .ov-article iframe{
         height: 393px;
     }
-    .ov-signup>form{
-        padding: 15px;
-        margin-bottom: 23px;
-        border: none;
-    }
-    .ov-signup{
-        border: 1px #dfdfdf solid;
-        border-radius: 3px;
-    }
-    .ov-signup-form>input[type=email]{
-        width: 182px;
-        margin-bottom: 0;
-        padding: 10px;
-        font-size: 15px;
-    }
-    .ov-signup-form>input[type=submit]{
-        width: 120px;
-        padding: 12px;
-        margin-left: 10px;
-        font-size: 15px;
-    }
-    .ov-signup h2,
-    .ov-signup ul{
-        margin-left: 15px;
-    }
+    // .ov-signup>form{
+    //     padding: 15px;
+    //     margin-bottom: 23px;
+    //     border: none;
+    // }
+    // .ov-signup{
+    //     border: 1px #dfdfdf solid;
+    //     border-radius: 3px;
+    // }
+    // .ov-signup-form>input[type=email]{
+    //     width: 182px;
+    //     margin-bottom: 0;
+    //     padding: 10px;
+    //     font-size: 15px;
+    // }
+    // .ov-signup-form>input[type=submit]{
+    //     width: 120px;
+    //     padding: 12px;
+    //     margin-left: 10px;
+    //     font-size: 15px;
+    // }
+    // .ov-signup h2,
+    // .ov-signup ul{
+    //     margin-left: 15px;
+    // }
     .ov-video-item{
         padding-right: 20px;
     }
@@ -885,9 +1071,9 @@ ul.comment-social{
     .ov-cat li{
         display: block;
     }
-    .ov-signup{
-        margin-bottom: 25px;
-    }
+    // .ov-signup{
+    //     margin-bottom: 25px;
+    // }
     .ov-similar-item img{
         width: 100%;
         margin-bottom: 15px;
@@ -979,6 +1165,7 @@ ul.comment-social{
       display: inline-block;
       width: 46%;
       margin-right: 63px;
+      vertical-align: top;
     }
     .ovp-contents .ov-similar-item:nth-child(2n){
         margin-right: 0;
@@ -986,34 +1173,34 @@ ul.comment-social{
     .ovp-contents .item-marg{
       margin-right: 63px;
     }
-    .ovp-signup{
-      padding: 20px;
-      background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 20px 45%;
-      background-size: 128px 128px;
-    }
-    .ovp-signup h2{
-      margin-bottom: 60px;
-    }
-    .ovp-signup p{
-      margin-left: 150px;
-    }
-    .ovp-signup form{
-      padding: 65px 0 0;
-      width: 100%;
-    }
-    .ov-signup-form input[type=email]{
-      width: 35%;
-      margin: 0;
-      padding: 15px;
-    }
-    .ov-signup-form input[type=submit]{
-      width: 35%;
-      margin-left: 20px;
-      padding: 18px;
-    }
-    .ovp-signup .signup-legend{
-      display: none;
-    }
+    // .ovp-signup{
+    //   padding: 20px;
+    //   background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 20px 45%;
+    //   background-size: 128px 128px;
+    // }
+    // .ovp-signup h2{
+    //   margin-bottom: 60px;
+    // }
+    // .ovp-signup p{
+    //   margin-left: 150px;
+    // }
+    // .ovp-signup form{
+    //   padding: 65px 0 0;
+    //   width: 100%;
+    // }
+    // .ov-signup-form input[type=email]{
+    //   width: 35%;
+    //   margin: 0;
+    //   padding: 15px;
+    // }
+    // .ov-signup-form input[type=submit]{
+    //   width: 35%;
+    //   margin-left: 20px;
+    //   padding: 18px;
+    // }
+    // .ovp-signup .signup-legend{
+    //   display: none;
+    // }
     .ovp-main-content .nav-elems{
       border-top: 1px dashed #dfdfdf;
       padding-top: 25px;
@@ -1025,4 +1212,281 @@ ul.comment-social{
       border: 0;
     }
 
+}
+
+
+
+
+// Compared items block
+
+.overview-comparison{
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 30px;
+
+}
+.overview-comparison * {
+    box-sizing: border-box;
+}
+.overview-comparison__heading{
+    font: normal 20px OpenSans_SemiBold;
+    color: #000;
+    line-height: 26px;
+    margin: 0 0 5px;
+}
+.overview-comparison__link{
+    display: block;
+    width: 100%;
+    color: #346cab;
+    font: normal 15px OpenSans, sans-serif;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+.overview-comparison__footer{
+    background: #fffdf6;
+    padding: 20px 0;
+    text-align: center;
+}
+.o-compared-item{
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+
+    @media (min-width: 768px){
+        display: inline-block;
+        float: none;
+        width: 32.9%;
+        vertical-align: top;
+        border-bottom: 0;
+        border-right: 1px solid #e1e1e1;
+    }
+}
+.o-compared-item:last-of-type{
+    border-bottom: 0;
+    
+    @media (min-width: 768px){
+        border-right: 0;
+    }
+
+}
+.o-compared-item__photo{
+    width: 32.9%;
+    //margin-right: 10px;
+    float: left;
+    padding: 20px 0;
+
+    @media (min-width: 768px){
+        float: none;
+        padding: 0 30px;
+        width: 100%;
+        
+    }
+}
+.o-compared-item__photo a{
+    display: inline-block;
+    position: relative;
+}
+.o-compared-item__photo img{
+    max-width: 100%;
+    // border: 1px solid #c1c1c1;
+}
+
+.product-compared-place{
+    display: none;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 8px;
+    right: -14px;
+    background-color: yellow;
+    background: url(images/overview-page/rate-star.png) no-repeat 0 0;
+    font: normal 15px OpenSans_ExtraBold;
+    color: #5d2f12;
+    line-height: 32px;
+
+    @media (min-width: 544px){
+        display: inline-block;
+    }
+}
+
+.o-compared-item__content{
+    float: right;
+    width: 64%;
+
+    @media (min-width: 768px){
+        float: none;
+        padding: 0 30px;
+        width: 100%;
+    }
+}
+
+.o-compared-item__heading{
+    color: #151515;
+    font: normal 15px OpenSans;
+    line-height: 21px;
+
+}
+.o-compared-item__heading a{
+    color: inherit;
+    font: inherit;
+}
+.o-compared-item__heading a:hover{
+    text-decoration: underline;
+}
+.o-read-overview-btn{
+    display: inline-block;
+    padding: 15px 20px;
+    font: normal 20px OpenSans_SemiBold, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    background: #76972a;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.o-compared-item__price{
+    display: inline-block;
+    vertical-align: middle;
+    width: 55%;
+    @media (min-width: 544px) {
+        width: 40%;
+    }
+
+    @media (min-width: 768px){
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 30px;
+    }
+}
+.o-compared-item__new-price{
+    margin: 0;
+    color: #dc364d;
+    font: normal 20px OpenSans_SemiBold, sans-serif;
+    @media (min-width: 768px){
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+    }
+}
+.o-compared-item__old-price{
+    color: #777777;
+    font: normal 13px OpenSans, sans-serif;
+    vertical-align: middle;
+}
+.o-compared-item__product-discount{
+    color: #dc364d;
+    font: normal 18px OpenSans_SemiBold, sans-serif;
+    margin-top: -4px;
+}
+
+.o-compared-item__current-price{
+    color: #151515;
+    font: normal 18px OpenSans_SemiBold, sans-serif;
+}
+.o-compared-item__buy{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.o-buy-btn{
+    background: #d34f27 url(images/svg/Cart-button-white.svg) no-repeat 50% 50%;
+    background-size: 25px;
+    color: #fff;
+    width: 51px;
+    height: 40px;
+    font: 16px OpenSans_SemiBold, sans-serif;
+    display: inline-block;
+    clear: both;
+    text-indent: -9999px;
+    border-radius: 3px;
+
+    @media (min-width: 544px) {
+        text-indent: 0;
+        width: auto;
+        height: auto;
+        padding: 9px 13px;
+        background-image: none;
+        margin-right: 15px;
+    }
+
+    @media (min-width: 994px) {
+        margin-bottom: 15px;
+    }
+}
+
+.o-buy-btn:hover{
+    background-color: #c03911;
+    color: #fff;
+    text-decoration: none;
+}
+.u-incart-btn{
+    background-color: #76972a;
+}
+.u-incart-btn:hover{
+    background-color: #6c8c23;
+}
+.o-compared-item__wishlist{
+    display: none;
+
+    @media (min-width: 544px) {
+        display: inline-block;
+        text-indent: -9999px;
+        height: 35px;
+        width: 35px;
+    }
+
+    @media (min-width: 994px) {
+        display: block;
+        text-indent: 0;
+        width: auto;
+
+    }
+}
+.o-wishlist-link{
+    display: block;
+    background: url(images/svg/Heart-menu-default.svg) no-repeat left center;
+    padding: 0;
+    padding-left: 40px;
+    margin: 0 0 -5px 0; 
+    height: 35px;
+    min-width: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    color: #a8a8a8;
+    text-decoration: none;
+}
+
+.o-wishlist-link:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #D34F27;
+    background-image: url("images/svg/Heart-menu-down.svg");
+}
+
+.o-wishlist__text{
+    border-bottom: 1px dashed #a8a8a8;
+}
+.o-wishlist-link:hover .o-wishlist__text{
+    border-color: #D34F27;
+}
+.o-wished {
+    color: #006caf;
+    background: url("images/svg/Heart-menu-active.svg") no-repeat left center;
+    @media (min-width: 994px){
+        background: url("images/svg/Heart-menu-default-darker.svg") no-repeat left center;
+    }
+   
+}
+
+.o-wished .o-wishlist__text{
+    border-bottom: 1px dashed #006caf;
+}
+
+.o-read-overview-btn:hover{
+    background: #6c8c23;
+    color: #fff;
+    text-decoration: none;
 }

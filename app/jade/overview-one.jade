@@ -13,73 +13,95 @@ html
 		.page-inner
 			h1 Выбор радиоуправляемого внедорожника: серьезный подход к вопросу
 			.ov-main-content
-				.ov-article
+				article.ov-article
 					p
 						img(src="dist/images/temporary/owerview-banner-big.jpg" alt="some picture")
 					p.
-						Сегодня RC тачки достаточно доступны, разнообразны, универсальны. Машины класса оффроад можно катать абсолютно на любой пересеченной местности и ничто не остановит их: песок, снег, ямы, трамплины, лужи, камни, гравий. Развлекаться с ними можно везде: в закрытом помещении, на улице, на природе.
+						<em>Сегодня RC тачки достаточно доступны, разнообразны, универсальны. Машины класса оффроад можно катать абсолютно на любой пересеченной местности и ничто не остановит их: песок, снег, ямы, трамплины, лужи, камни, гравий. Развлекаться с ними можно везде: в закрытом помещении, на улице, на природе.</em>
 					p
 						<iframe src="https://www.youtube.com/embed/j8jTy-9BEyM" frameborder="0" allowfullscreen></iframe>
-					p.
-						Мы выделим для Вас несколько преимуществ радиоуправляемых моделей внедорожников перед другими классами тачек:  
-						в среднем этот вид развивает скорость в пределах 50 км/ч, а некоторые представители гораздо большую;  
-						они пройдут там, куда никто не сможет добраться – это вездеходы с заглавной буквы;  
-						большинство моделей имеет радиус действия дистанционного пульта управления в районе 80 метров;  
-						автомодели обладают реалистичной колесной базой, могучим двигателем, профессиональной подвеской и настоящими маслонаполненными амортизаторами;  
-						отлично чувствуют себя на любом природном покрытии: травяном, асфальтовом или грунтовом! Для них нет границ! Также у Вас есть возможность устраивать гонки в закрытом помещении, предварительно продумывая и создавая специальную трассу с разными препятствиями. Естественно, уровень сложности и протяженность трассы можно будет легко откорректировать по желанию участников;  
-						Вы обладаете полным контролем над болидом – машина очень легко выполняет все Ваши команды благодаря установленной электронике высокой точности;  
-						Вы сможете с легкостью преобразить Вашу модель радиоуправляемого внедорожника при помощи наклеек или реклам на корпусе авто.  
-						А еще, каждый автомобиль обладает яркой индивидуальностью и персональными характеристиками.
+					p Мы выделим для Вас несколько преимуществ радиоуправляемых моделей внедорожников перед другими классами тачек:
+						ul  
+							li в среднем этот вид развивает скорость в пределах 50 км/ч, а некоторые представители гораздо большую;  
+							li они пройдут там, куда никто не сможет добраться – это вездеходы с заглавной буквы;  
+							li большинство моделей имеет радиус действия дистанционного пульта управления в районе 80 метров;  
+							li автомодели обладают реалистичной колесной базой, могучим двигателем, профессиональной подвеской и настоящими маслонаполненными амортизаторами;  
+					p отлично чувствуют себя на любом природном покрытии: травяном, асфальтовом или грунтовом! Для них нет границ! Также у Вас есть возможность устраивать гонки в закрытом помещении, предварительно продумывая и создавая специальную трассу с разными препятствиями. Естественно, уровень сложности и протяженность трассы можно будет легко откорректировать по желанию участников;  
+					p Вы обладаете полным контролем над болидом – машина очень легко выполняет все Ваши команды благодаря установленной электронике высокой точности;  
+					p Вы сможете с легкостью преобразить Вашу модель радиоуправляемого внедорожника при помощи наклеек или реклам на корпусе авто.
+					p А еще, каждый автомобиль обладает яркой индивидуальностью и персональными характеристиками.
+					
+
+						
 				// Блок со связанными товарами - related products
-				.alike-products.ov-alike-products
-					h3 Смотрите также
-					a Обзор сравнение лучших ралли
-					// Блок контейнер слайдера
-					.owl-carousel#owl-alike-products
-						// Item added to order
-						.item
+				section.overview-comparison
+					h3.overview-comparison__heading Смотрите также
+					a(href="#").overview-comparison__link Обзор-сравнение лучших ралли
+					
+					
+					.o-compared-item.clearfix
+						.o-compared-item__photo
 							a(href="#")
-								img(src="dist/images/sample-airplane.jpg" alt="sample")
-							span.product-new Новинка
-							span.product-top Топ продаж
-							h3.product-carousel-title
-								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-							span.old-price
-								del 1322 грн
-							span.sale-amount 3%
-							div.new-price 1255 грн 
-							a.btn.btn-submit.btn-product-order.u-ordered(href="#") В корзине
-							.product-wishlist-block
-								a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
-
-						-for (var x=0; x<2; x++)
-							.item
-								a(href="#")
-									img(src="dist/images/sample-airplane.jpg" alt="sample")
-								span.product-new Новинка
-								span.product-top Топ продаж
-								h3.product-carousel-title
-									a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-								span.old-price
-									del 1322 грн
-								span.sale-amount 3%
-								div.new-price 1255 грн 
-								a.btn.btn-submit.btn-product-order(href="#") Купить 
-								.product-wishlist-block
-									a.top-wishlist-link.wishlist-link.ajax_link_main_catalog(href="#") В избранное
-
-						// Item added to wishlist
-						.item
 								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 1
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.product-new Новинка
+							h3.o-compared-item__heading
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__current-price 1255 грн
+						
+							.o-compared-item__buy 
+								a.o-buy-btn.u-incart-btn(href="#") В корзине
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#")
+										span.o-wishlist__text В избранное
+
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 2
+						.o-compared-item__content
+							.o-compared-item__product-status
 								span.product-top Топ продаж
-								h3.product-carousel-title
-									a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
-								div.product-carousel-price 1455 грн 
-								a.btn.btn-submit.btn-product-order(href="#") Купить
-								.product-wishlist-block
-									a.wishlist-link.wished(href="#") В избранном
-					.get-to-know
-						a.btn.u-ordered.ov-read-review-btn(href="#") Ознакомиться с обзором
+							h3.o-compared-item__heading
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#") 
+										span.o-wishlist__text В избранное
+
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 3
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.o-compared-item__product-discount -20%
+							h3.o-compared-item__heading
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link.o-wished(href="#")
+										span.o-wishlist__text В избранном
+					//.get-to-know
+					footer.overview-comparison__footer
+						a.o-read-overview-btn(title="Нажми, чтобы увидеть новый обзор " href="#") Ознакомиться с обзором
 				.ov-socials
 					.ov-video-related 
 							span С этой публикацией связано
@@ -205,7 +227,7 @@ html
 							li
 								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
 			div.ov-more-articles
-				h2 Нам есть что еще рассказать
+				h2.ov-more-articles__heading Нам есть что еще рассказать
 				ul
 					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
 						li 
@@ -226,7 +248,7 @@ html
 		script.
 			$(document).ready(function() {
  
-				var owl = $("#owl-alike-products"); 
+				//- var owl = $("#owl-alike-products"); 
 				var form = $("#commentForm")
 				var textarea = $(".commenttext");
 				var inputContent;
@@ -252,36 +274,36 @@ html
 				});
 				
 				
-				owl.owlCarousel({
-				    loop:true,
-				    margin:10,
-				    navigationText: false,
-				    responsiveClass:true,
-				    responsive:{
-				    	0:{
-				    		items:1,
-				    		nav:true
-				    	},
-				        460:{
-				            items:2,
-				            nav:true
-				        },
-				        768:{
-				            items:2,
-				            nav:false
-				        },
-				        1000:{
-				            items:3,
-				            nav:true,
-				            loop:false
-				        },
-				        1200:{
-				            items:3,
-				            nav:true,
-				            loop:false
-				        }
-				    }
-				});
+				//- owl.owlCarousel({
+				//-     loop:true,
+				//-     margin:10,
+				//-     navigationText: false,
+				//-     responsiveClass:true,
+				//-     responsive:{
+				//-     	0:{
+				//-     		items:1,
+				//-     		nav:true
+				//-     	},
+				//-         460:{
+				//-             items:2,
+				//-             nav:true
+				//-         },
+				//-         768:{
+				//-             items:2,
+				//-             nav:false
+				//-         },
+				//-         1000:{
+				//-             items:3,
+				//-             nav:true,
+				//-             loop:false
+				//-         },
+				//-         1200:{
+				//-             items:3,
+				//-             nav:true,
+				//-             loop:false
+				//-         }
+				//-     }
+				//- });
 			
 			
 			});
