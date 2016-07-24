@@ -8,7 +8,7 @@
 .ov-article{
     line-height: 25px;
     border-bottom: 1px #dfdfdf dashed;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
     margin-bottom: 30px;
     font: normal 15px OpenSans, sans-serif;
     line-height: 25px;
@@ -112,41 +112,104 @@
 .comments-block{
     margin-bottom: 25px;
 }
+.ov-signup-wrapper{
+    
+    @media (min-width: 1200px){
+        border: 1px solid #dfdfdf;
+        border-radius: 2px;
+    }
+    
+}
+// Signup form of overview-one page
 .ov-signup{
     margin-bottom: 25px;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    @media (min-width: 1200px){
+        border: none;
+    }
 }
-.ov-signup>form{
-    border: 1px #dfdfdf solid;
+.ov-signup *{
+    box-sizing: border-box;
+}
+.ov-signup-form{
+    
     border-radius: 2px;
     background: #f9f9f9;
     padding: 20px 10px;
+
+    @media (min-width: 768px) {
+        padding: 20px 100px;
+    }
+    @media (min-width: 1200px) {
+        padding: 20px 15px;
+    }
 }
-.ov-signup-form>input[type=email]{
-    width: 89%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px #777777 solid;
-    border-radius: 3px;
-    color: #777777;
-    font-size: 16px;
-}
-.ov-signup-form>input[type=submit]{
+input.ov-signup-form__input{
     width: 100%;
+    height: 51px;
+    margin-bottom: 17px;
+    font-size: 16px;
+    background-image: none;
+    @media (min-width: 768px) {
+        display: inline-block;
+        width: 295px;
+        margin: 0;
+        margin-right: 15px;
+        vertical-align: top;
+    }
+    @media (min-width: 994px) {
+        width: 400px;
+    }
+    @media (min-width: 1200px) {
+        width: 220px;
+        height: 42px;
+        font-size: 15px;
+    }
+}
+input.ov-signup-form__submit{
+    width: 100%;
+    height: 51px;
+    line-height: 51px;
+    padding: 0 15px;
     background: #346cab;
     border: none;
     border-radius: 3px;
-    padding: 15px 0;
     font-family: OpenSans_SemiBold;
     font-size: 20px;
     color: white;
+    @media (min-width: 768px) {
+        display: inline-block;
+        width: auto;
+    }
+    @media (min-width: 1200px) {
+        font-size: 15px;
+        height: 42px;
+        line-height: 42px;
+        padding: 0 10px;
+    }
+}
+
+// end of signup form
+
+.ov-cat-wrapper{
+    padding-left: 35px;
+
+    @media(min-width: 1200px){
+        padding-left: 49px;
+    }
+    
 }
 .ov-cat-heading{
     font-size: 17px;
     background: url("images/overview-page/ov-list.png") no-repeat 0 0;
-    padding-left: 30px;
+    padding-left: 35px;
+
+    margin-left: -35px;
 }
-.ov-cat{
-    padding-left: 30px;
+.ov-cat-heading a{
+    font-family: OpenSans_SemiBold, sans-serif;
+    color: #454446;
 }
 .ov-cat li{
     margin-bottom: 15px;
@@ -179,8 +242,13 @@
 .ov-similar-heading{
     font-size: 17px;
     background: url("images/ui-iconn-bottom-list.png") no-repeat 0 0;
-    padding-left: 30px;
+    padding-left: 35px;
     margin-bottom: 25px;
+}
+
+.ov-similar-heading a{
+    font-family: OpenSans_SemiBold;
+    color: #454446;
 }
 .ov-similar-item{
     margin-bottom: 22px;
@@ -213,18 +281,23 @@
     background: url("images/ui-icon-bottom-video.png") no-repeat 0 0;
     padding-left: 30px;
 }
+.ov-video-heading a{
+    color: #454446;
+}
 .ov-video-item{
     display: inline-block;
+    vertical-align: top;
     float: left;
     box-sizing: border-box;
     width: 50%;
     padding-right: 5px;
+    margin-bottom: 25px;
 }
 .ov-video-item a{
     display: block;
     text-decoration: underline;
     color: #346cab;
-    margin: 15px 0 30px;
+    margin: 0 0 10px;
 }
 .ov-video-item a:hover{
     text-decoration: underline;
@@ -242,6 +315,10 @@
         display: block;
     }
 }
+
+.ov-similar-review .ov-similar-item{
+    font-family: OpenSans_Light;
+}
 .ov-aside-content{
     display: block;
     border-bottom: 1px #dfdfdf solid;
@@ -256,6 +333,9 @@
     line-height: 32px;
     background: url("images/ui-icon-bottom-event.png") no-repeat 0 0;
     padding-left: 30px;
+}
+.ov-events-heading a{
+    color: #454446;
 }
 .ov-events{
     padding-left: 20px;
@@ -314,42 +394,70 @@
     border-left: 0;
     border-right: 0;
     display: none;
+    margin-bottom: 45px;
+    
+    @media (min-width: 768px) {
+        display: block;
+    }
+    @media (min-width: 1200px) {
+        border-top: 0;
+    }
 }
 .ov-more-articles__heading{
     font-family: OpenSans_SemiBold;
     font-size: 20px;
     color: #151515;
 }
+.ov-more-articles__heading a{
+    font-family: OpenSans_SemiBold;
+    font-size: 20px;
+    color: #151515;
+}
 .o-more{
+    margin-bottom: 50px;
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
     
 }
 .o-more__category{
+    box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    width: 45%;
+    width: 50%;
     border: 1px solid #dfdfdf;
     border-left: 0;
     border-top: 0;
     padding-left: 15px;
 
     @media (min-width: 768px) {
-        padding: 15px 15px 25px 15px;
+        padding: 15px 15px 25px 30px;
     }
+
     @media (min-width: 1200px) {
-        padding: 15px 0 10px 15px;
+        padding: 0 20px 0 30px;
+        display: inline-block;
+        width: 25%;
+        border-right: 1px solid #dfdfdf;
+        border-bottom: 0;
     }
 }
 
+.o-more__category:last-child{
+    border: 0;
+}
 .o-more__link{
     color: #346cab;
-    text-decoration: none;
-    border-bottom: 1px solid #5882b6;
+    text-decoration: underline;
+    // border-bottom: 1px solid #5882b6;
     
     font: normal 16px OpenSans, sans-serif;
     line-height: 25px;
 }
 .o-more__category-link{
     font: normal 18px OpenSans_SemiBold, sans-serif;
+    text-decoration: none;
     border-bottom: 1px solid #9eb4d2;
     line-height: 0px;
     box-shadow: 0 1px 0 0 #c1cee1;
@@ -357,6 +465,8 @@
 
 .o-more__link:hover{
     text-decoration: none;
+    border-bottom: 0;
+    box-shadow: none;
 }
 .o-more__items{
     margin: 0;
@@ -787,18 +897,6 @@ input.o-signup-form__input{
     .ov-article iframe{
         height: 295px;
     }
-    // .ov-signup>form{
-    //     padding: 20px 20px;
-    // }
-    // .ov-signup-form>input[type=email]{
-    //     width: 50%;
-    //     margin-bottom: 0;
-    // }
-    // .ov-signup-form>input[type=submit]{
-    //     width: 40%;
-    //     padding: 19px 0;
-    //     margin-left: 10px;
-    // }
     .ov-video-related{
         
         &>span{
@@ -816,9 +914,6 @@ input.o-signup-form__input{
         display: inline-block;
         margin-right: 35px;
     }
-    // .ov-signup {
-    //         margin-bottom: 0;
-    // }
     .ov-aside-content h2{
         margin-left: -5px;
         padding-left: 37px;
@@ -848,48 +943,9 @@ input.o-signup-form__input{
 
     // end of comments
 
-    // .ovp-signup{
-
-    //     form{
-    //         padding: 10px 0 0 100px;
-    //         background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 10px 50%;
-    //     }
-
-    //     h2{
-    //         font-family: OpenSans_Bold;
-    //         font-size: 20px;
-    //         line-height: 26px;
-    //         margin: 0;
-    //     }
-    //     p{
-    //         font-family: OpenSans;
-    //         font-size: 16px;
-    //         line-height: 18px;
-    //         margin: 10px 0;
-    //     }
-    //     .signup-legend{
-    //         font-size: 13px;
-    //     }
-    // }
-    // .ov-signup-form > input[type="email"] {
-    //     margin-bottom: 15px;
-    //     width: 100%;
-    //     box-sizing: border-box;
-    // }
-    // .ov-signup-form > input[type="submit"]{
-    //     margin: 0;
-    //     width: 100%;
-    // }
     .ovp-main-model{
         background-color: #fff;
     }
-    // .ovp-signup form{
-    //     background: #fef4ce url("images/ui-icon-personal-subscribe.png") no-repeat 0 50%;
-    // }
-    // .ovp-signup .signup-legend{
-    //     font-size: 15px;
-    //     margin-left: 100px;
-    // }
     .ovp-main-content .nav-elems{
         margin-left: 0;
     }
@@ -899,19 +955,6 @@ input.o-signup-form__input{
     .ov-article iframe{
         height: 393px;
     }
-    // .ov-signup>form{
-    //     padding: 20px 100px;
-    //     margin-bottom: 25px;
-    // }
-    // .ov-signup-form>input[type=email]{
-    //     width: 50%;
-    //     margin-bottom: 0;
-    // }
-    // .ov-signup-form>input[type=submit]{
-    //     width: 40%;
-    //     padding: 19px 0;
-    //     margin-left: 15px;
-    // }
     .ov-similar-item img{
         float: left;
         width: 40%;
@@ -929,17 +972,17 @@ input.o-signup-form__input{
         display: inline-block;
         width: 25%;
     }
-    .ov-more-articles{
-        display: block;
-    }
-    .ov-more-articles > ul > li{
-        margin: 0;
-    }
+    // .ov-more-articles{
+    //     display: block;
+    // }
+    // .ov-more-articles > ul > li{
+    //     margin: 0;
+    // }
     .ov-more-articles > ul > li:nth-child(2n){
         border-right: 0;
         margin-right: 0;
     }
-    .ov-more-articles > ul > li:nth-last-child(1),
+    // .ov-more-articles > ul > li:nth-last-child(1),
     .ov-more-articles > ul > li:nth-last-child(2){
         border-bottom: 0;
     }
@@ -949,42 +992,12 @@ input.o-signup-form__input{
     }
     // end of comments
 
-    // .ovp-signup h2{
-    //     margin-bottom: 20px;
-    //   }
-    //   .ovp-signup p{
-    //     font-size: 20px;
-    //     margin-left: 170px;
-    //     margin-bottom: 0;
-    //   }
-    //   .ovp-signup{
-    //     background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 10px 50%;
-    //   }
-    //   .ovp-signup form{
-    //     padding: 15px 0 20px 170px;
-    //     background: none;
-    //     width: 40%;
-    //   }
-    //   .ovp-signup .ov-signup-form input[type=email]{
-    //     margin-bottom: 10px;
-    //     width: 100%;
-    //   }
-    //   .ovp-signup .ov-signup-form input[type=submit]{
-    //     margin: 0;
-    //     width: 100%;
-    //   }
-    //   .ovp-signup .signup-legend{
-    //     display: inline-block;
-    //     width: 20%;
-    //     margin: -70px 90px 0 0;
-    //     float: right;
-    //   }
       .ovp-main-content .nav-elems{
-        margin-bottom: 20px;
+        margin-bottom: 45px;
       }
 }
 
-@media (min-width: 944px){
+@media (min-width: 994px){
     .ov-article iframe{
         height: 517px;
     }
@@ -1008,57 +1021,33 @@ input.o-signup-form__input{
 @media (min-width: 1200px){
     .ov-main-content{
         float: left;
-        width: 65%;
+        width: 710px;
     }
     .ov-aside{
         float: right;
-        width: 33%;
+        width: 420px;
     }
     .ov-aside-content{
-        padding-left: 46px;
+        padding-left: 50px;
     }
     .ov-aside-content h2{
-        margin-left: -33px;
-        padding-left: 30px;
+        margin-left: -35px;
+        padding-left: 35px;
     }
     .ov-article iframe{
         height: 393px;
     }
-    // .ov-signup>form{
-    //     padding: 15px;
-    //     margin-bottom: 23px;
-    //     border: none;
-    // }
-    // .ov-signup{
-    //     border: 1px #dfdfdf solid;
-    //     border-radius: 3px;
-    // }
-    // .ov-signup-form>input[type=email]{
-    //     width: 182px;
-    //     margin-bottom: 0;
-    //     padding: 10px;
-    //     font-size: 15px;
-    // }
-    // .ov-signup-form>input[type=submit]{
-    //     width: 120px;
-    //     padding: 12px;
-    //     margin-left: 10px;
-    //     font-size: 15px;
-    // }
-    // .ov-signup h2,
-    // .ov-signup ul{
-    //     margin-left: 15px;
-    // }
+
     .ov-video-item{
         padding-right: 20px;
     }
-    .ov-more-articles>ul>li{
-        display: inline-block;
-        width: 22%;
-        border-right: 1px solid #dfdfdf;
-        border-bottom: 0;
-        padding-left: 30px;
-    }
+    // .ov-more-articles>ul>li{
+    //     display: inline-block;
+    //     width: 22%;
+    //     border-right: 1px solid #dfdfdf;
+    //     border-bottom: 0;
+    //     padding-left: 30px;
+    // }
     .ov-more-articles>ul>li:first-child{
         padding-left: 0;
     }
@@ -1071,9 +1060,7 @@ input.o-signup-form__input{
     .ov-cat li{
         display: block;
     }
-    // .ov-signup{
-    //     margin-bottom: 25px;
-    // }
+
     .ov-similar-item img{
         width: 100%;
         margin-bottom: 15px;
@@ -1132,7 +1119,7 @@ input.o-signup-form__input{
         .ovp-main-model{
             float: right;
             width: 591px;
-            padding: 0 0 19px 0;
+            padding: 0 0 7px 0;
             margin: 0;
             border: 0;
         }
@@ -1173,41 +1160,13 @@ input.o-signup-form__input{
     .ovp-contents .item-marg{
       margin-right: 63px;
     }
-    // .ovp-signup{
-    //   padding: 20px;
-    //   background: #fef4ce url("images/overview-page/ui-icon-personal-subscribe-big.png") no-repeat 20px 45%;
-    //   background-size: 128px 128px;
-    // }
-    // .ovp-signup h2{
-    //   margin-bottom: 60px;
-    // }
-    // .ovp-signup p{
-    //   margin-left: 150px;
-    // }
-    // .ovp-signup form{
-    //   padding: 65px 0 0;
-    //   width: 100%;
-    // }
-    // .ov-signup-form input[type=email]{
-    //   width: 35%;
-    //   margin: 0;
-    //   padding: 15px;
-    // }
-    // .ov-signup-form input[type=submit]{
-    //   width: 35%;
-    //   margin-left: 20px;
-    //   padding: 18px;
-    // }
-    // .ovp-signup .signup-legend{
-    //   display: none;
-    // }
     .ovp-main-content .nav-elems{
       border-top: 1px dashed #dfdfdf;
       padding-top: 25px;
     }
-    .ov-more-articles{
-      border: 0;
-    }
+    // .ov-more-articles{
+    //   border: 0;
+    // }
     .ov-more-articles>ul>li:last-child{
       border: 0;
     }
@@ -1216,13 +1175,15 @@ input.o-signup-form__input{
 
 
 
-
+// ****************************************************************************
+// ****************************************************************************
 // Compared items block
+
 
 .overview-comparison{
     border-bottom: 1px solid #dfdfdf;
     margin-bottom: 30px;
-
+    font-size: 15px !important;
 }
 .overview-comparison * {
     box-sizing: border-box;
@@ -1286,7 +1247,7 @@ input.o-signup-form__input{
     position: relative;
 }
 .o-compared-item__photo img{
-    max-width: 100%;
+    width: 100%;
     // border: 1px solid #c1c1c1;
 }
 
@@ -1326,13 +1287,19 @@ input.o-signup-form__input{
     font: normal 15px OpenSans;
     line-height: 21px;
 
+    @media (min-width: 768px){
+        height: 60px;
+        overflow: hidden;
+    }
+
 }
 .o-compared-item__heading a{
     color: inherit;
     font: inherit;
 }
 .o-compared-item__heading a:hover{
-    text-decoration: underline;
+    text-decoration: none;
+    color: #346cab;
 }
 .o-read-overview-btn{
     display: inline-block;
@@ -1424,6 +1391,10 @@ input.o-signup-form__input{
 }
 .u-incart-btn{
     background-color: #76972a;
+    background-image: url(images/svg/Cart-check-white.svg);
+    @media (min-width: 544px) {
+        background-image: none;
+    }
 }
 .u-incart-btn:hover{
     background-color: #6c8c23;
