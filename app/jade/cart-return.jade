@@ -70,7 +70,9 @@ block order-block
 						textarea.form-control#orderComment(name="orderComment", cols="30", rows="3")
 
 				.form-group.promokod-hint(data-title="Подсказка по промокоду")
-					input.form-control.order-form__promokod(type="text" name="promokod" data-id="promokod" placeholder="промо-код (если есть)" title="Введите в поле вромокод, если он у вас есть для получения скидки")
+						input.form-control.order-form__promokod(type="text" name="promokod" data-id="promokod" placeholder="промо-код (если есть)" title="Введите в поле вромокод, если он у вас есть для получения скидки")
+						.promokod-icon
+						.promokod-info Это попап окно с информацией по поводу промокода
 
 				.order-form__hidden
 					input(type="hidden" value="1" maxlength="7" id="qty_1" name="productQuantity")

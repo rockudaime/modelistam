@@ -95,6 +95,7 @@ $(document).ready(function(){
 			// totalPrice += parseInt(prices[i].innerHTML.replace(/[^0-9]/, ''));
 		}
 		document.querySelector('.order-total-sum span').innerHTML = splitSum(totalPrice) + ' грн';
+		document.querySelector('.cart-mobile-opener span').innerHTML = splitSum(totalPrice) + ' грн';
 	}
 
 	function splitSum(s){
@@ -117,11 +118,39 @@ $(document).ready(function(){
 	}
 
 	
-	console.log(splitSum('30.35'));
-	console.log(splitSum('300000000'));
-	console.log(splitSum('12346'));
-	
-	
-	
 });
 
+
+// Ограничение количества знаков в комплектном товаре
+
+
+$(document).ready(function() {
+	if (document.querySelector('.product-set__good-name a')){
+		var el = document.querySelectorAll('.product-set__good-name a');
+		function ellipsis(obj, len) {
+			var text = obj.innerHTML;
+			if (text.length > len) {
+				text = text.slice(0, len - 3) + '&hellip;'; 
+				obj.innerHTML = text;
+			}
+		}
+		
+		for (var i = 0; i < el.length; i++){
+			ellipsis(el[i], 40);
+		}
+	}
+});
+
+// promokod
+
+$(document).ready(function() {
+	if (document.querySelector('.promokod-icon')){
+		var el = document.querySelector('.promokod-icon');
+		el.addEventListener('click', function() {
+			$('.promokod-info').fadeIn('slow');
+			setTimeout(function() { 
+				$('.promokod-info').fadeOut();
+			}, 1500);
+		});
+	}
+});
