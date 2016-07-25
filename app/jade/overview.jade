@@ -12,7 +12,7 @@ html
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 	body.overview-page
 		.page-inner
-			h1 Обзоры
+			h1 Обзоры 
 			//- Блок с тегами и основным видео
 			main.ovp-main-content
 				section.ovp-head-block.clearfix
@@ -34,8 +34,9 @@ html
 				section.ovp-contents
 					-for (var x=0; x<2;x++)
 						.ov-similar-item.clearfix
-							a(href="#")
-								img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							.ov-similar-item__img
+								a(href="#")
+									img(src="dist/images/temporary/avto.jpeg")
 							span.item-new-overview Новинка
 							span.item-anouncement-overview Анонс
 							h3
@@ -43,14 +44,14 @@ html
 							p.
 								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				// Блок со связанными товарами - related products
-				section.overview-comparison
-					h3.overview-comparison__heading Обзор-сравнение лучших ралли
+				section.overview-comparison.ovp-oc
+					h3.overview-comparison__heading.ovp-oc__heading Обзор-сравнение лучших ралли
 					
 					
 					.o-compared-item.clearfix
 						.o-compared-item__photo
 							a(href="#")
-								img(src="dist/images/sample-airplane.jpg")
+								img(src="dist/images/temporary/avto.jpeg")
 								span.product-compared-place 1
 						.o-compared-item__content
 							.o-compared-item__product-status
@@ -192,21 +193,21 @@ html
 
 
 
-
-	script.
-			$(document).ready(function() {
-				var el = document.querySelectorAll('.o-compared-item__heading a');
-				function ellipsis(obj, len) {
-					var text = obj.innerHTML;
-					if (text.length > len) {
-						text = text.slice(0, len - 3) + '&hellip;'; 
-						obj.innerHTML = text;
-					}
-				}
+	script(src="dist/js/pages/overview.js")
+	//- script.
+	//- 		$(document).ready(function() {
+	//- 			var el = document.querySelectorAll('.o-compared-item__heading a');
+	//- 			function ellipsis(obj, len) {
+	//- 				var text = obj.innerHTML;
+	//- 				if (text.length > len) {
+	//- 					text = text.slice(0, len - 3) + '&hellip;'; 
+	//- 					obj.innerHTML = text;
+	//- 				}
+	//- 			}
 				
-				for (var i = 0; i < el.length; i++){
-					ellipsis(el[i], 65);
-				}
+	//- 			for (var i = 0; i < el.length; i++){
+	//- 				ellipsis(el[i], 65);
+	//- 			}
 			
 			
-			});
+	//- 		});

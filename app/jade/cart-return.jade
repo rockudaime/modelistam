@@ -1,303 +1,81 @@
-doctype html
-html(lang="ru")
-	head
-		title Personal cabinet
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		link(rel="stylesheet" href="dist/normalize.css")
-		link(rel="stylesheet" href="dist/template_styles.css")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-	body.cart-page
-		.page-inner
-			.order-block
-				.cart-mobile-opener Итого без доставки: <span>12 304 грн</span>
-					// кнопка раскрытия корзины для мобильной версии
+extends ./cart-constructor.jade
 
-				.order-block__right
-					// содержимое корзины
-					.cart-sale-offer
-						b Хотите скидку 3%? 
-						|  Добавьте в корзину товаров на 3000 грн
-					.order-block__cart.clearfix
-						// Корзина
+block order-block
 
-						// Начало товара
-						.cart-product.clearfix
+	// ************************************************
+	// Начало блока с формой заказа
 
-							a.cart-product__item-delete(href="#")
-							.cart-product__image
-								a(href="#")
-									img(src="dist/images/temporary/avto.jpeg", alt="some description")
-							.cart-product__name
-								a(href="#") Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603
-							.cart-product__quantity
-								a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del
-									i
-								span.cart-product__quantity-field 1 шт
-								a.cart-product__quantity-btn.cart-product__quantity--add(href="#" data-product="qty_1")
-									i
-								span.cart-product__price 12 045 грн
-							// Сопутствующие товары
-							.recomended-goods
-								h3.recomended-goods__heading Рекомендуем к этому товару:
-								ul.recomended-goods__list
-									li.recomended-goods__item
-										a(href="#") Батарейки
-									li.recomended-goods__item
-										a(href="#") Аккумуляторы
-									li.recomended-goods__item
-										a(href="#") Сумки
-							// Конец сопутствующих товаров
+	.order-block__left#orderBlock
 
-							// Всплывающий блок редактирования товара
-							div
-								.popup-back
-									.close-popup
-										a(href="#" rel="#").come-back
-											i
-											span Вернуть
-									.product-wishlist-block.cart-wishlist-block
-										a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-											i
-											span В избранное
-									.delete-detail-block
-										a(href="#").page-cart__delete_checkbox
-											i
-											span Удалить
-										input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
-						// Конец товара
+		// start of old-buyer or logged in buyer
+		.old-buyer-return
+			form.order-form(method="post" action="" id="orderFormOld")
+				.order-form__separator
+					
+					.buyer-info
+						span.buyer-info__item Алексей
+						span.buyer-info__item +38 067 777-77-77
+						span.buyer-info__item alexey@mysite.com
 
+					a.contentToggleLink.cotentToggleLink--nb(href="#") Изменить мои данные
+					.change-info
+						// Имя
+						.form-group
+							input.form-control.inp-required(type="text" minlength="3" placeholder="Имя" name="Name" required id="name" value="Алексей")
+						// Телефон
+						.form-group
+							input.inp-required#phone-number.form-control(type="tel" name="Tel" required pattern="0[0-9]{9}|[+]{0,1}38{0,1}[ -]{0,1}0[0-9 -]{9,13}" placeholder="Моб. телефон" title="0хх-ххх-хх-хх,\n0хх ххх хх хх,\n0xxxxxxxxx,\n+38 0хх ххх-хх-хх" value="+38 067 777-77-77")
+						// Email
+						.form-group
+							input.form-control(type="email" placeholder="Эл. почта" data-id="email" pattern=".*@.*[.].*" value="alexey@mysite.com")
+				.order-form__separator
+					h3.order-form__heading Доставка
+					.form-group
+						select.custom-select(name="deliveryCompany" data-id="deliveryCompany")
+							option(value="new post") Новая Почта
+							option(value="ukrpost") Укрпочта
+							option(value="courier") Курьером
+					
+					.buyer-info
+						span.buyer-info__item Новая Почта
+						span.buyer-info__item Киев
+						span.buyer-info__item Склад №9, ул. Голосеевская, 1
 
-						// Начало товара
-						.cart-product.clearfix
-
-							a.cart-product__item-delete(href="#")
-							.cart-product__image
-								a(href="#")
-									img(src="dist/images/temporary/avto.jpeg", alt="some description")
-							.cart-product__name
-								a(href="#") Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603
-							.cart-product__quantity
-								a(href="#" data-product="qty_2").cart-product__quantity-btn.cart-product__quantity--del
-									i
-								span.cart-product__quantity-field 1 шт
-								a.cart-product__quantity-btn.cart-product__quantity--add(href="#" data-product="qty_2")
-									i
-								span.cart-product__price 12 045 грн
-							// Комплект с товаром
-							.product-set
-								h3.product-set__heading Комплект со скидкой 10%
-								img.product-set__good-photo(src="dist/images/temporary/cart-recomended.png", alt="recomended good")
-								.product-set__good-name
-									a(href="#") Аккумулятор Hubsan Li-Po 3,7В 380 мАч...
-								.product-set__price
-									.product-set__price-new 300 грн
-									.product-set__price-old
-										del 330грн
-									a.product-set__btn-add(href="#") Добавить
-
-
-
-							// Всплывающий блок редактирования товара
-							div
-								.popup-back
-									.close-popup
-										a(href="#" rel="#").come-back
-											i
-											span Вернуть
-									.product-wishlist-block.cart-wishlist-block
-										a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-											i
-											span В избранное
-									.delete-detail-block
-										a(href="#").page-cart__delete_checkbox
-											i
-											span Удалить
-										input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
-						// Конец товара
-
-						// Начало товара
-						.cart-product.clearfix
-
-							a.cart-product__item-delete(href="#")
-							.cart-product__image
-								a(href="#")
-									img(src="dist/images/temporary/avto.jpeg", alt="some description")
-							.cart-product__name
-								a(href="#") Монстр Traxxas E-Revo Brushed с аккумуляторами TRA5603
-							.cart-product__quantity
-								a(href="#" data-product="qty_3").cart-product__quantity-btn.cart-product__quantity--del
-									i
-								span.cart-product__quantity-field 1 шт
-								a.cart-product__quantity-btn.cart-product__quantity--add(href="#" data-product="qty_3")
-									i
-								span.cart-product__price 12 045 грн
-									
-
-							// Всплывающий блок редактирования товара
-							div
-								.popup-back
-									.close-popup
-										a(href="#" rel="#").come-back
-											i
-											span Вернуть
-									.product-wishlist-block.cart-wishlist-block
-										a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-											i
-											span В избранное
-									.delete-detail-block
-										a(href="#").page-cart__delete_checkbox
-											i
-											span Удалить
-										input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
-						// Конец товара
-
-						.order-total-sum Итого без доставки: 
-							span  12 304 грн
-				// end of .order-block__right
-
-				// ************************************************
-				// Начало блока с формой заказа
-
-				.order-block__left#orderBlock
-
-					// start of old-buyer or logged in buyer
-					.old-buyer(style="display: block;")
-						form.order-form(method="post" action="" id="orderFormOld")
-							.order-form__separator
-								
-								.buyer-info
-									span.buyer-info__item Алексей
-									span.buyer-info__item +38 067 777-77-77
-									span.buyer-info__item alexey@mysite.com
-
-								a.contentToggleLink.cotentToggleLink--nb(href="#") Изменить мои данные
-								.change-info
-									// Имя
-									.form-group
-										input.form-control.inp-required(type="text" minlength="3" placeholder="Имя" name="Name" required id="name" value="Алексей")
-									// Телефон
-									.form-group
-										input.inp-required#phone-number.form-control(type="tel" name="Tel" required pattern="0[0-9]{9}|[+]{0,1}38{0,1}[ -]{0,1}0[0-9 -]{9,13}" placeholder="Моб. телефон" title="0хх-ххх-хх-хх,\n0хх ххх хх хх,\n0xxxxxxxxx,\n+38 0хх ххх-хх-хх" value="+38 067 777-77-77")
-									// Email
-									.form-group
-										input.form-control(type="email" placeholder="Эл. почта" data-id="email" pattern=".*@.*[.].*" value="alexey@mysite.com")
-							.order-form__separator
-								h3.order-form__heading Доставка
-								.form-group
-									select.custom-select(name="deliveryCompany" data-id="deliveryCompany")
-										option(value="new post") Новая Почта
-										option(value="ukrpost") Укрпочта
-										option(value="courier") Курьером
-								
-								.buyer-info
-									span.buyer-info__item Новая Почта
-									span.buyer-info__item Киев
-									span.buyer-info__item Склад №9, ул. Голосеевская, 1
-
-								a.contentToggleLink.cotentToggleLink--nb(href="#") Изменить адрес доставки
-								.change-info
-									.form-group
-										select.custom-select(name="city" data-id="city")
-											option(value="1") Харьков
-											option(value="2") Львов
-											option(value="0" selected) Киев
-									.form-group
-										select.custom-select(name="address" data-id="address")
-											option(value="0") Склад №9, ул. Ак. Грушевского 12
-											option(value="1" selected) Склад №9, ул. Голосеевская, 1
-											option(value="2") Склад №101, ул. Ак. Грушевского 13254
-							.order-form__separator
-								h3.order-form__heading Оплата
-								.buyer-info
-									span.buyer-info__item При получении
-								a.contentToggleLink.cotentToggleLink--nb(href="#") Выбрать другой способ
-								.change-info
-									.form-group
-										select.custom-select(name="paymentMethod" data-id="paymentMethod")
-											option(value="0" selected) При получении
-											option(value="1") Безналичный расчет
-						
-							a.contentToggleLink(href="#") Добавить примечание к заказу
-							.order-comment
-								.form-group
-									textarea.form-control#orderComment(name="orderComment", cols="30", rows="3")
-
-							.form-group.promokod-hint(data-title="Подсказка по промокоду")
-								input.form-control.order-form__promokod(type="text" name="promokod" data-id="promokod" placeholder="промо-код (если есть)" title="Введите в поле вромокод, если он у вас есть для получения скидки")
-
-							.order-form__hidden
-								input(type="hidden" value="1" maxlength="7" id="qty_1" name="productQuantity")
-								input(type="hidden" value="1" maxlength="7" id="qty_2" name="productQuantity")
-								input(type="hidden" value="1" maxlength="7" id="qty_3" name="productQuantity")
-
-
-							input.btn.btn-cart(type="submit" value="Подтвердить заказ")
-
-
-
-
-
-
-
-			// end of .order block
-		script.
-
-			//  Стили для обработки всплывающего окна редактирования корзины
-			//  при нажатии на крестик в провом верхнем углу. 
-			$(".cart-product__item-delete").on("click",function(e){
-				e.preventDefault();
-				var ppBlock = $(this).parent().find('.popup-back');
-				ppBlock.show();
-				ppBlock.parent().addClass("in-tr-background");
-			});
-			$(".close-popup").on("click",function(e){
-				e.preventDefault();
-				$(".page-cart__delete_checkbox-item").show();
-				$(this).parent().hide();
-				$(this).parent().parent().removeClass("in-tr-background");
-			});
-
-			// Открытие области корзины по клику в мобильном виде
-			$('.cart-mobile-opener').on("click", function(e) {
-				$(".order-block__right").slideToggle( "slow" );
-			});
-			// Ссылка изменить для бывших покупателей
-			$('.contentToggleLink').on("click", function(e) {
-				e.preventDefault();
-			// $(".change-info > input").removeAttr("hidden");
-			$(this).next().slideToggle("slow");
-			});
-
+					a.contentToggleLink.cotentToggleLink--nb(href="#") Изменить адрес доставки
+					.change-info
+						.form-group
+							select.custom-select(name="city" data-id="city")
+								option(value="1") Харьков
+								option(value="2") Львов
+								option(value="0" selected) Киев
+						.form-group
+							select.custom-select(name="address" data-id="address")
+								option(value="0") Склад №9, ул. Ак. Грушевского 12
+								option(value="1" selected) Склад №9, ул. Голосеевская, 1
+								option(value="2") Склад №101, ул. Ак. Грушевского 13254
+				.order-form__separator
+					h3.order-form__heading Оплата
+					.buyer-info
+						span.buyer-info__item При получении
+					a.contentToggleLink.cotentToggleLink--nb(href="#") Выбрать другой способ
+					.change-info
+						.form-group
+							select.custom-select(name="paymentMethod" data-id="paymentMethod")
+								option(value="0" selected) При получении
+								option(value="1") Безналичный расчет
 			
-			// Раскрытие поля для ввода комментария к заказу
-			$("#orderCommentLink").on("click", function(e){
-				e.preventDefault();
-				$("#orderComment").toggle();
-			})
+				a.contentToggleLink(href="#") Добавить примечание к заказу
+				.order-comment
+					.form-group
+						textarea.form-control#orderComment(name="orderComment", cols="30", rows="3")
 
-			var select = document.querySelectorAll('.custom-select__select');
-			for (var i of select) {
-				console.log(i.text)
-				if(i.value.length > 15){
+				.form-group.promokod-hint(data-title="Подсказка по промокоду")
+					input.form-control.order-form__promokod(type="text" name="promokod" data-id="promokod" placeholder="промо-код (если есть)" title="Введите в поле вромокод, если он у вас есть для получения скидки")
 
-					i.value = i.value.slice(0,12) + '...';
-				}
-				console.log(i.value);
-				}
-			var productId;
-			$('.cart-product__quantity--add').on('click', function(e){
-				e.preventDefault();
-				console.log(this);
-				productId = this.dataset.product;
-				console.log($('#' + productId).val());
-				$('#' + productId).val(parseInt($('#' + productId).val()) + 1);
-				
-				$('this').prev().html($('#' + productId).val() + ' шт');
-				//- console.log($('#' + productId).val());
-			});
+				.order-form__hidden
+					input(type="hidden" value="1" maxlength="7" id="qty_1" name="productQuantity")
+					input(type="hidden" value="1" maxlength="7" id="qty_2" name="productQuantity")
+					input(type="hidden" value="1" maxlength="7" id="qty_3" name="productQuantity")
 
 
-
+				input.btn.btn-cart(type="submit" value="Подтвердить заказ")

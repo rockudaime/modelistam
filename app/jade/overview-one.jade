@@ -13,7 +13,7 @@ html
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 	body.overview-one
 		.page-inner
-			h1 Выбор радиоуправляемого внедорожника: серьезный подход к вопросу
+			h1 Выбор радиоуправляемого внедорожника: серьезный подход к вопросу 
 			main.ov-main-content
 				article.ov-article
 					p
@@ -90,7 +90,7 @@ html
 							.o-compared-item__product-status
 								span.o-compared-item__product-discount -20%
 							h3.o-compared-item__heading
-								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205 sfgggfg ;'k;'ljlkjlkjkljss
+								a(href="#") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205 some additionel text to truncate
 							.o-compared-item__price
 								div.o-compared-item__new-price 1255 грн
 								span.o-compared-item__old-price
@@ -107,9 +107,10 @@ html
 				section.ov-socials
 					.ov-video-related 
 							span С этой публикацией связано
-							a.ov-video.video(href="#") Видео
-							div.ov-share.share 
-								a(href="#") Поделиться
+							a.ov-video.video(href="#") видео
+							div.ov-share 
+								a(href="#")
+									span.bb-dashed Поделиться
 					.ov-tags
 						ul
 							li теги
@@ -254,51 +255,51 @@ html
 								li.o-more__item
 									a.o-more__link(href="#") FrSky telemetry dashboard and sensor hub (part 1)
 
-
-		script.
-			$(document).ready(function() {
+		script(src="dist/js/pages/overview.js")
+		//- script.
+		//- 	$(document).ready(function() {
  
-				//- var owl = $("#owl-alike-products"); 
-				var form = $("#commentForm")
-				var textarea = $(".commenttext");
-				var inputContent;
-				textarea.blur(function() {
-					inputContent = $(this).val();
-					if (inputContent === "") {
-						$(this).val("Оставьте свой комментарий ...");
-						$(this).addClass("u-placeholder-text");
-					}
-				});
-				textarea.focus(function(){
-					inputContent = $(this).val();
-					if (inputContent == "Оставьте свой комментарий ..."){
-						$(this).val("");
-						$(this).removeClass("u-placeholder-text");
-					}
-				});
-				textarea.keydown(function (e) {
-					if (!e.shiftKey && e.keyCode == 13){
-						form.submit();
-					}
+		//- 		//- var owl = $("#owl-alike-products"); 
+		//- 		var form = $("#commentForm")
+		//- 		var textarea = $(".commenttext");
+		//- 		var inputContent;
+		//- 		textarea.blur(function() {
+		//- 			inputContent = $(this).val();
+		//- 			if (inputContent === "") {
+		//- 				$(this).val("Оставьте свой комментарий ...");
+		//- 				$(this).addClass("u-placeholder-text");
+		//- 			}
+		//- 		});
+		//- 		textarea.focus(function(){
+		//- 			inputContent = $(this).val();
+		//- 			if (inputContent == "Оставьте свой комментарий ..."){
+		//- 				$(this).val("");
+		//- 				$(this).removeClass("u-placeholder-text");
+		//- 			}
+		//- 		});
+		//- 		textarea.keydown(function (e) {
+		//- 			if (!e.shiftKey && e.keyCode == 13){
+		//- 				form.submit();
+		//- 			}
 
-				});
+		//- 		});
 			
-			});
-		script.
-			$(document).ready(function() {
-				var el = document.querySelectorAll('.o-compared-item__heading a');
-				function ellipsis(obj, len) {
-					var text = obj.innerHTML;
-					if (text.length > len) {
-						text = text.slice(0, len - 3) + '&hellip;'; 
-						obj.innerHTML = text;
-					}
-				}
+		//- 	});
+		//- script.
+		//- 	$(document).ready(function() {
+		//- 		var el = document.querySelectorAll('.o-compared-item__heading a');
+		//- 		function ellipsis(obj, len) {
+		//- 			var text = obj.innerHTML;
+		//- 			if (text.length > len) {
+		//- 				text = text.slice(0, len - 3) + '&hellip;'; 
+		//- 				obj.innerHTML = text;
+		//- 			}
+		//- 		}
 				
-				for (var i = 0; i < el.length; i++){
-					ellipsis(el[i], 65);
-				}
+		//- 		for (var i = 0; i < el.length; i++){
+		//- 			ellipsis(el[i], 65);
+		//- 		}
 			
 			
-			});
+		//- 	});
 

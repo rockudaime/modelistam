@@ -59,7 +59,7 @@
     color: white;
 }
 .ov-video-related{
-    font-size: 16px;
+    font-size: 15px;
     line-height: 26px;
     margin-bottom: 20px;
 
@@ -83,6 +83,17 @@
     float: right;
     background: url("images/overview-page/ov-share-icon.png") no-repeat 0 0;
     padding-left: 30px;
+}
+.ov-share a{
+    
+    text-decoration: none;
+
+}
+.ov-share a:hover{
+    text-decoration: none;
+}
+.bb-dashed{
+    border-bottom: 1px dashed #abc4df;
 }
 .ov-tags{
     margin-bottom: 35px;
@@ -255,9 +266,16 @@ input.ov-signup-form__submit{
     color: #000;
     font-size: 15px;
 }
+
+.ov-similar-item__img{
+    margin-bottom: 20px; 
+    height: 275px;
+    line-height: 275px;
+    overflow: hidden;
+}
 .ov-similar-item img{
     width: 100%;
-    margin-bottom: 20px;
+
 }
 .ov-similar-item h3 > a{
     color: #346cab;
@@ -307,6 +325,7 @@ input.ov-signup-form__submit{
     width: 100%;
 }
 .ov-aside{
+    font-size: 15px;
 
     .ov-aside-content{
         display: none;
@@ -877,7 +896,7 @@ input.o-signup-form__input{
     margin-right: 6px;
 }
 .ovp-contents{
-  border-bottom: 1px solid #dfdfdf;
+  // border-bottom: 1px solid #dfdfdf;
   margin-bottom: 25px;
 }
 .no-border{
@@ -885,6 +904,7 @@ input.o-signup-form__input{
 }
 .ovp-aside{
     display: none;
+    font-size: 15px;
 }
 // =============Страница Overviews===================
 
@@ -1078,7 +1098,7 @@ input.o-signup-form__input{
     }
         // comments
     .textarea-wrapper {
-        width: 728px;
+        width: 658px;
     }
 
     // end of comments
@@ -1185,6 +1205,7 @@ input.o-signup-form__input{
     margin-bottom: 30px;
     font-size: 15px !important;
 }
+
 .overview-comparison * {
     box-sizing: border-box;
 }
@@ -1194,6 +1215,7 @@ input.o-signup-form__input{
     line-height: 26px;
     margin: 0 0 5px;
 }
+
 .overview-comparison__link{
     display: block;
     width: 100%;
@@ -1234,21 +1256,29 @@ input.o-signup-form__input{
     //margin-right: 10px;
     float: left;
     padding: 20px 0;
+    // overflow: hidden;
 
     @media (min-width: 768px){
         float: none;
+        height: 156px;
         padding: 0 30px;
         width: 100%;
-        
+        line-height: 156px; 
+        text-align: center;              
     }
 }
 .o-compared-item__photo a{
     display: inline-block;
     position: relative;
+    // vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
 }
 .o-compared-item__photo img{
-    width: 100%;
-    // border: 1px solid #c1c1c1;
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid #c1c1c1;
 }
 
 .product-compared-place{
@@ -1460,4 +1490,23 @@ input.o-signup-form__input{
     background: #6c8c23;
     color: #fff;
     text-decoration: none;
+}
+
+
+.ovp-oc{
+    border-top: 1px solid #dfdfdf;
+    padding-top: 25px;
+    @media (min-width: 1200px) {
+        border: 1px solid #959595;
+        border-radius: 2px;
+        padding-top: 18px;
+    }
+    
+}
+
+.ovp-oc__heading {
+
+    @media (min-width: 1200px) {
+        display: none;
+    }
 }

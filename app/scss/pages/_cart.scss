@@ -301,6 +301,10 @@ input.order-form__promokod:focus{
 
 .old-buyer{
     display: none;
+    background: #fffdf6;
+    border: 1px solid #ebe0b9;
+    box-sizing: border-box;
+    padding: 25px 15px 10px;
     // font-size: 14px;
 
     // span{
@@ -373,13 +377,20 @@ input.order-form__promokod:focus{
     clear: both;
 	margin-bottom: 15px;
 	padding-left: 10px;
-    input{
-        border: none;
-        outline: none;
-        text-align: center;
-        font-size: 20px;
-        vertical-align: top;
-    }
+    // input{
+    //     border: none;
+    //     outline: none;
+    //     text-align: center;
+    //     font-size: 20px;
+    //     vertical-align: top;
+    // }
+}
+.cart-product__quantity-field{
+    color: #0d0d0d;
+    font: normal 20px OpenSans_SemiBold, sans-serif;
+    text-align: center;
+    padding: 0 10px;
+    vertical-align: middle;
 }
 .cart-product__quantity-btn{
     border: 1px solid #4B80BB;
@@ -413,15 +424,13 @@ input.order-form__promokod:focus{
     clear: both;
 
     @media (min-width: 994px){
-       border-radius: 2px;
-       position: absolute;
-       top: 32px;
-       right: 50px;
-       width: 170px;
+
     }
 
     @media (min-width: 1200px){
-        width: 240px;
+        border-radius: 2px;
+        position: absolute;
+        width: 250px;
         right: 70px;
         top: 32px;
         padding: 15px 20px;
@@ -433,7 +442,7 @@ input.order-form__promokod:focus{
     font: normal 15px OpenSans;
     color: #151515;
 
-    @media (min-width: 994px){
+    @media (min-width: 1200px){
         margin-bottom: 10px;
     }
 }
@@ -446,7 +455,7 @@ input.order-form__promokod:focus{
     display: inline-block;
     margin-right: 10px;
 
-    @media (min-width: 994px){
+    @media (min-width: 1200px){
         display: block;
     }
 }
@@ -465,19 +474,13 @@ input.order-form__promokod:focus{
     box-sizing: border-box;
     clear: both;
 
-    @media (min-width: 994px){
+    @media (min-width: 1200px){
        border-radius: 2px;
        position: absolute;
        top: 32px;
-       right: 50px;
-       width: 170px;
-    }
-
-    @media (min-width: 1200px){
-        width: 240px;
-        right: 70px;
-        top: 32px;
-        padding: 15px 20px;
+       right: 70px;
+       width: 250px;
+       padding: 15px 20px;
     }
 }
 
@@ -485,15 +488,74 @@ input.order-form__promokod:focus{
 .product-set__heading{
     font: normal 15px OpenSans, sans-serif;
     color: #bf001a;
-    margin: 0 0 10px;
+    margin: 0;
 }
 
+.product-set__warn{
+    font: normal 15px OpenSans_Bold, sans-serif;
+    color: #000;
+    margin: 0 0 10px;
+}
 
 
 .product-set__good-photo{
     float: left;
     max-width: 65px;
     margin-right: 10px;
+
+    @media (min-width: 994px) {
+        margin-right: 20px;
+    }
+
+    @media (min-width: 1200px) {
+        margin-right: 10px;
+    }
+}
+
+.product-set__good-name{
+    height: 30px;
+    font: normal 13px OpenSans, sans-serif;
+
+    @media (min-width: 1200px) {
+        height: 60px;
+    }
+}
+.product-set__good-name a{
+    color: #0d0d0d;
+
+}
+
+.product-set__bottom{
+    
+    @media (min-width: 1200px) {
+        clear: both;
+    }
+}
+.product-set__price{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.product-set__price-new{
+    color: #ce1e36;
+    font: 20px OpenSans_Bold;
+}
+.product-set__price-new i{
+    font-size: 15px;
+    font-style: normal;
+}
+.product-set__price-old{
+    font: 13px OpenSans;
+    color: #777777;
+}
+.product-set__btn-add{
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #76972a;
+    padding: 7px 12px;
+    border-radius: 2px;
+    font: 17px OpenSans_SemiBold;
 }
 // end of product set block
 .cart-product__recomended{
@@ -555,13 +617,15 @@ input.order-form__promokod:focus{
 	
 }
 .order-total-sum{
-    background: #fef4ce;
+    background: #fffdf6;
     color: #000;
-    font: 16px OpenSans_SemiBold, sans-serif;
+    font: normal 20px OpenSans_SemiBold, sans-serif;
     padding: 15px;
     span{
-        color: #bf001a;
-        font: 18px OpenSans_SemiBold, sans-serif;
+        color: #df0014;
+        font: 22px OpenSans_Bold, sans-serif;
+        // margin-left: 10px;
+        white-space: nowrap;
     }
 }
 
@@ -808,9 +872,7 @@ input.order-form__promokod:focus{
     	float: left;
     }
 
-    .cart-product{
-        padding-bottom: 15px;
-    }
+    
 
 	.cart-product__recomended{
 	    	float: right;
@@ -861,6 +923,10 @@ input.order-form__promokod:focus{
         width: 800px;
         float: right;
     }
+    .cart-product{
+        padding-bottom: 40px;
+    }
+
     .cart-product__name{
     	width: 285px;
 

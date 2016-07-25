@@ -27,6 +27,7 @@
 .questionnaire-gift{
 	background: #fffdf6;
 	padding: 0 0 20px;
+	margin-bottom: 30px;
 
 	h3{
 		font: 18px OpenSans_SemiBold, sans-serif;
@@ -157,6 +158,11 @@
 	display: block;
 	clear: both;
 }
+.btn-submit:hover{
+	text-decoration: none;
+	color: #fff;
+	background-color: #c03911;
+}
 .sex-block{
 	margin-bottom: 10px;
 
@@ -191,11 +197,26 @@
 // Стили для карусели со схожими товарами
 .alike-products{
 	display: none;
-	margin-bottom: 35px;
+	margin-bottom: 55px;
 
 	@media (min-width: 544px){
 		display: block;
 	}
+}
+.alike-products__header{
+	font: normal 15px OpenSans, sans-serif;
+	color: #151515;
+	display: none;
+
+	@media (min-width: 994px) {
+		display: block;
+	}
+
+}
+.alike-products__heading{
+	font: normal 20px OpenSans_SemiBold, sans-serif;
+	color: #151515;
+	margin: 0 0 5px;
 }
 
 .product-new,
@@ -251,9 +272,11 @@
 	width: auto;
 }
 .u-ordered{
-	background-color: #7bae2a !important;
+	background-color: #7bae2a;
 }
-
+.u-ordered:hover{
+	background-color: #76972a;
+}
 
 #owl-alike-products{
 	display: block;
