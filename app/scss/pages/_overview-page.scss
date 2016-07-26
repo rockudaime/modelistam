@@ -419,9 +419,20 @@ input.ov-signup-form__submit{
         display: block;
     }
     @media (min-width: 1200px) {
-        border-top: 0;
+        padding-top: 20px;
+        // border-top: 0;
     }
 }
+
+
+.ovp-more-articles{
+
+    @media (min-width: 1200px) {
+         border-top: 0;
+         padding-top: 0;
+    }
+}
+
 .ov-more-articles__heading{
     font-family: OpenSans_SemiBold;
     font-size: 20px;
@@ -898,6 +909,8 @@ input.o-signup-form__input{
 .ovp-contents{
   // border-bottom: 1px solid #dfdfdf;
   margin-bottom: 25px;
+  // display: flex;
+  // flex-wrap: wrap;
 }
 .no-border{
   border: 0;
@@ -1278,7 +1291,7 @@ input.o-signup-form__input{
     vertical-align: middle;
     max-width: 100%;
     max-height: 100%;
-    border: 1px solid #c1c1c1;
+    // border: 1px solid #c1c1c1;
 }
 
 .product-compared-place{

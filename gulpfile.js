@@ -70,7 +70,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'cart.html'
+            index: 'overview.html'
         },
     reloadDelay: 300
 

@@ -7,8 +7,10 @@ block order-block
 
 	.order-block__left#orderBlock
 			ul.order-tabs.clearfix
-				li.active-tab#new-buyer-tab Новый покупатель
-				li#old-buyer-tab Покупал(а) раньше
+				li.active-tab#new-buyer-tab
+					span Новый покупатель
+				li#old-buyer-tab
+					span Покупал(а) раньше
 
 			.new-buyer
 				form.order-form(method="post" action="" id="orderFormNew")
@@ -20,7 +22,7 @@ block order-block
 						input#phone-number.form-control(type="tel" name="Tel" required pattern="0[0-9]{9}|[+]{0,1}38{0,1}[ -]{0,1}0[0-9 -]{9,13}" placeholder="Моб. телефон" title="0хх-ххх-хх-хх,\n0хх ххх хх хх,\n0xxxxxxxxx,\n+38 0хх ххх-хх-хх")
 					// Email
 					.form-group
-						label(for="email") Получите скидку и личный кабинет
+						label.order-form__label(for="email") Получите скидку и личный кабинет
 						input.form-control(type="email" placeholder="Эл. почта" data-id="email" id="email" pattern=".*@.*[.].*")
 						.text-muted для информации о статусе заказа
 					// custom radion input
