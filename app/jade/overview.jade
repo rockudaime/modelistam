@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title Overview page
+		title Overview
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -21,8 +21,9 @@ html
 							li
 								a(href="#") Category name
 					.ovp-main-model.clearfix
-						a(href="#")
-							img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
+						.ovp-main-model__img
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
 						a.video-after(href="#") Выходит на охоту Sony 600TVL Super HAD board camera for FPV
 					.ov-tags
 						ul
@@ -30,7 +31,7 @@ html
 							-for(var x=0; x<6; x++)
 								li
 									a(href="#") Some tag
-
+				//- Блок с превью к обзорам
 				section.ovp-contents
 					-for (var x=0; x<2;x++)
 						.ov-similar-item.clearfix
@@ -41,8 +42,9 @@ html
 							span.item-anouncement-overview Анонс
 							h3
 								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
-							p.
-								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+							.ov-similar-item__preview-text
+								p.
+									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				// Блок со связанными товарами - related products
 				section.overview-comparison.ovp-oc
 					h3.overview-comparison__heading.ovp-oc__heading Обзор-сравнение лучших ралли
@@ -113,18 +115,20 @@ html
 					footer.overview-comparison__footer
 						a.o-read-overview-btn(title="Нажми, чтобы увидеть новый обзор " href="#") Ознакомиться с обзором
 
-
+				//- Блок с превью к обзорам
 				section.ovp-contents
 					-for (var x=0; x<4;x++)
 						.ov-similar-item.clearfix
-							a(href="#")
-								img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							.ov-similar-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
 							span.item-new-overview Новинка
 							span.item-anouncement-overview Анонс
 							h3
 								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
-							p.
-								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+							.ov-similar-item__preview-text
+								p.
+									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 				section.o-signup
 					h2.o-signup__heading Я хочу быть в курсе последних событий по моделям
 					.o-signup__content
@@ -147,23 +151,30 @@ html
 					span.pager__inner-elem
 						a.next-navigation(href="#") Следующая
 							i
+			// Начало сайдбара
 			aside.ovp-aside
+				// Блок с видео-обзорами
 				section.ov-aside-content.clearfix
 					h2.ov-video-heading.video 
 						a(href="#") Видео Планета Хобби
-					-for (var x=0; x<5; x++)
+					-for (var x=0; x<2; x++)
 						.ov-video-item
-							a(href="#")
-								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
-							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
-					.ov-video-item
-							a(href="#")
-								img(src="dist/images/temporary/avto.jpeg" alt="some image")
+							.ovp-video-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
 							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
 					.ov-video-item
+						.ovp-video-item__img
+							a(href="#")
+								img(src="dist/images/temporary/avto.jpeg" alt="some image")
+						a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+					.ov-video-item
+						.ovp-video-item__img
 							a(href="#")
 								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
-							a(href="#" title="Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+						a(href="#" title="Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+
+				// Блок события
 				section.ov-aside-content.clearfix.u-noborder
 					h2.ov-events-heading 
 						a(href="#") События
@@ -171,7 +182,9 @@ html
 						-for (var x=0; x<5; x++)
 							li
 								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+			// Конец сайдбара
 
+			// Блок нам есть что рассказать
 			section.ov-more-articles.ovp-more-articles
 				h2.ov-more-articles__heading
 					a(href="#") Нам есть что еще рассказать

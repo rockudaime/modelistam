@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		title Overview page
+		title Overview-one
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -192,7 +192,7 @@ html
 			// Начало сайдбара
 			aside.ov-aside.clearfix
 				// Блок подписки
-				.ov-signup-wrapper
+				section.ov-signup-wrapper
 					.ov-signup
 						form.ov-signup-form(name="signup" action="/")
 							input.form-control.ov-signup-form__input(type="text" required placeholder="Эл. почта для рассылки" pattern=".*@.*[.][a-z]+")
@@ -205,33 +205,37 @@ html
 								li
 									a(href="#") Some category name
 				// Блок с похожими обзорами
-				.ov-aside-content.ov-similar-review.clearfix
+				section.ov-aside-content.ov-similar-review.clearfix
 					h2.ov-similar-heading
 						a(href="#") Похожие обзоры
 					-for (var x=0; x<2;x++)
 						.ov-similar-item.clearfix
-							a(href="#")
-								img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							.ov-similar-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
 							span.item-new-overview Новинка
 							span.item-anouncement-overview Анонс
 							h3
 								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
-							p.
-								Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+							.ov-similar-item__preview-text
+								p.
+									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 
 				// Блок с видео-обзорами
-				.ov-aside-content.clearfix
+				section.ov-aside-content.clearfix
 					h2.ov-video-heading.video
 						a(href="#") Видео Планета Хобби
-					-for (var x=0; x<4; x++)
+					-for (var x=0; x<3; x++)
 						.ov-video-item
-							a(href="#")
-								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
+							.ov-video-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
 							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
 					.ov-video-item
+						.ov-video-item__img
 							a(href="#")
 								img(src="dist/images/temporary/avto.jpeg" alt="some image")
-							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+						a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
 				// Блок с событиями
 				.ov-aside-content.u-noborder.clearfix
 					h2.ov-events-heading
@@ -240,7 +244,7 @@ html
 						-for (var x=0; x<5; x++)
 							li
 								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
-			div.ov-more-articles
+			section.ov-more-articles
 				h2.ov-more-articles__heading
 					a(href="#")	Нам есть что еще рассказать
 				ul.o-more
