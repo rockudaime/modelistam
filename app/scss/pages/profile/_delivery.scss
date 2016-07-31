@@ -1,33 +1,30 @@
 // Content
 .d-delivery-item{
-	font-size: 16px;
+	font-size: 16px; 
 	background: #fff;
-	border-bottom: 1px #959595 dashed;
-	padding: 25px 0 21px;
+	border-top: 1px #959595 dashed;
+	padding: 5px 0 21px;
 }
 
-.d-delivery-item:last-child{
-	border-bottom: 0;
-}
+// .d-delivery-item:last-child{
+// 	border-bottom: 0;
+// }
 
 // .d-delivery-item__radio-input:checked +.d-delivery-item__radio > .custom-radio__circle{
 // 	display: none;
 // }
 .d-delivery-item__checkbox{
 	margin-left: 54px;
-	@media (min-width: 768px){
+	@media (min-width: 544px){
 		margin-left: 70px;
 	}
 }
 .d-delivery-item__address{
 	padding-left: 54px;
+	max-width: 300px;
 
 	@media (min-width: 544px){
-		width: 300px;
-	}
-	@media (min-width: 768px){
 		padding-left: 70px;
-
 	}
 }
 
@@ -35,7 +32,6 @@
 	background: url(images/personal-cabinet/logo-new-post.png) no-repeat 0 0;
 	background-size: 41px;
 	overflow: show;
-
 
 	@media (min-width: 768px){
 		background-size: 51px;
@@ -46,43 +42,44 @@
 
 .d-delivery-item__payment{
 	padding-left: 54px;
+	max-width: 300px;
 
 	@media (min-width: 544px){
-		width: 300px;
-	}
-
-	@media (min-width: 768px){
 		padding-left: 70px;
 	}
 }
 
 .d-delivery-item__header{
-	margin-bottom: 15px;
+	margin-bottom: 13px;
 }
 .d-delivery-item__title{
 	font-size: 1em;
 	margin: 0;
+	margin-right: 12px;
 	padding: 0;
+	font: 16px OpenSans_SemiBold;
+	color: #151515;
+	display: inline-block;
+	// vertical-align: middle;
 
 }
 .d-delivery-item__title--ib{
-	display: inline-block;
-	vertical-align: middle;
-	margin: 0;
-	margin-right: 25px;
+	
 	border-bottom: 1px dashed #434343;
-
 }
 
 .d-delivery-item__payment-details-link{
 	color: #777777;
-    font-size: 0.8125em;
-    text-decoration: underline;
+    font: normal 13px OpenSans, sans-serif;
+    text-decoration: none;
     white-space: nowrap;
+    border-bottom: 1px solid #777;
+    vertical-align: baseline;
 }
 
 .d-delivery-item__payment-details-link:hover{
-	color: #888888;
+	color: #000;
+	text-decoration: none;
 }
 
 .d-delivery-form__submit{
@@ -93,4 +90,47 @@
 	margin-top: 25px;
 	display: inline-block;
 
+}
+
+.d-main-delivery{
+	display: flex;
+	margin-bottom: 10px;
+
+	& *{
+		box-sizing: border-box;
+	}
+
+	&__logo{
+		width: 42px;
+		display: inline-block;
+		vertical-align: top;
+
+		@media (min-width: 544px){
+			width: 51px;
+		}
+
+		& img{
+			width: 100%;
+		}
+	}
+
+	&__content{
+		padding-left: 19px;
+		display: inline-block;
+	}
+
+	&__title{
+		display: inline-block;
+		margin: 0 12px 13px 0;
+		font: normal 17px OpenSans_SemiBold, sans-serif;
+		color: #151515;
+	}
+
+	&__address{
+		max-width: 300px;
+	}
+
+	&__payment{
+		max-width: 300px;
+	}
 }

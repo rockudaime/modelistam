@@ -1,5 +1,3 @@
-@import "profile/delivery";
-
 .main-content{
     margin-bottom: 25px;
     border-bottom: 1px solid #e2e2e2;
@@ -35,6 +33,8 @@
 }
 .cab-nav-moblie-link:hover{
     color: #fff;
+    background-color: #2e619b;
+    text-decoration: none;
 }
 .cabinet-nav{
     display: none;
@@ -346,7 +346,11 @@ progress[value]::-webkit-progress-bar {
     border: 1px #000 solid;
     border-radius: 5px;
     font-size: 15px;
-    background: #fff;
+    background: #fff url(images/personal-cabinet/select-arrow-cabinet.png) no-repeat right 12px top 50%;
+    // remove the arrow
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 .buy-certificate-btn{
     padding: 10px 20px;
