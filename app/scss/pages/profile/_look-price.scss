@@ -1,6 +1,6 @@
 .l-good{
     font-size: 16px;
-    padding: 77px 5px 30px;
+    padding: 77px 5px 20px;
     position: relative;
     font-family: OpenSans, sans-serif;
     color: #151515;
@@ -33,6 +33,66 @@
     }
 }
 
+.l-good--your-price{
+    background: #fefdf6;
+}
+
+.l-good__header-title{
+    font: 15px OpenSans, sans-serif;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.l-good__buy-your-price{
+    box-sizing: border-box;
+    background: #fafff6 url(images/personal-cabinet/icon-check.png) no-repeat 10px 50%;
+    border: 1px solid #dcedc2;
+    padding: 5px 10px 6px 32px;
+    border-radius: 2px;
+    color: #568820;
+    font: 15px OpenSans_Bold, sans-serif;
+    margin-bottom: 5px;
+
+
+    @media (min-width: 768px){
+        background-position: 3px 50%;
+        padding: 5px 4px 6px 22px;
+    }
+
+    @media (min-width: 994px){
+        background-position: 10px 50%;
+        padding: 5px 10px 6px 32px;
+    }
+}
+.l-good__your-price{
+    margin-right: 15px;
+}
+
+.l-good__change-your-price{
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding-left: 18px;
+}
+
+.l-good__change-your-price a{
+    font: 15px OpenSans, sans-serif;
+    color: #346cab;
+    border-bottom: 1px dashed #abc4df;
+    text-decoration: none;
+}
+
+.l-good__change-your-price a:hover{
+    text-decoration: none;
+
+}
+.l-good__change-your-price--edit{
+    background-image: url(images/personal-cabinet/ui-icon-personal-edit.png);
+}
+.l-good__change-your-price--set{
+    background-image: url(images/personal-cabinet/set-price-icon.png);
+    padding-left: 24px;
+}
 .l-good__wrapper{
     @media (min-width: 544px){
         border-right: 1px solid #eae9e7;
@@ -44,6 +104,16 @@
     background: #fffdf6;
 }
 
+.l-good__header{
+    position: absolute;
+    top: 14px;
+    left: 5px;
+
+    @media (min-width: 544px){
+        left: 30px;
+        top: 5px;
+    }
+}
 
 .l-good__delete-good{
     display: block;
@@ -53,8 +123,13 @@
     border-radius: 2px;
     position: absolute;
     right: 5px;
-    top: 14px;
+    top: 70px;
     cursor: pointer;
+
+    &:hover{
+        background-color: #c3c3c3;
+        cursor: pointer;
+    }
 
     @media (min-width: 544px){
         right: 0;
@@ -68,6 +143,7 @@
     line-height: 180px;
     font-size: 0;
     text-align: center;
+    margin-bottom: 20px;
 
 
     img{
@@ -77,6 +153,21 @@
     }
 }
 
+.l-good__good-status{
+    margin-bottom: 15px;
+    height: 22px;
+    overflow: hidden;
+}
+.l-good__status-top{
+    font: 15px Opensans, sans-serif;
+    color: #da761c;
+}
+
+.l-good__discount-amount{
+    font-size: 18px;
+    font-weight: bold;
+    color: #f01834;
+}
 
 .l-good__good-title{
     font: 15px/21px OpenSans, sans-serif;
@@ -92,4 +183,59 @@
             color: #346cab;
         }
     }
+}
+
+.l-good__price-block{
+    height: 35px;
+}
+
+.l-good__price{
+    color: #151515;
+    font: 18px OpenSans_Semibold, sans-serif;
+    margin-right: 15px;
+}
+.l-good__price--new{
+    font-weight: bold;
+    color: #f01834;
+    font-size: 1.25em;
+    margin-right: 20px;
+}
+
+.l-good__price-change{
+    font: 15px OpenSans, sans-serif;
+    padding-left: 15px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+.l-good__price-change--up{
+    color: #c84903;
+    background-image: url(images/personal-cabinet/price-up-arrow.png);
+}
+
+.l-good__price-change--down{
+    color: #568800;
+    background-image: url(images/personal-cabinet/price-down-arrow.png);
+}
+
+.l-good__buy-btn{
+    display: inline-block;
+    padding: 9px 13px;
+    background-color: #f24e1f;
+    border-radius: 4px;
+    color: #fff;
+    font: 16px OpenSans_Semibold, sans-serif;
+    text-align: center;
+    margin-bottom: 7px;
+
+    &:hover{
+        background: #D34F27;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.l-good__promo{
+    font: 15px OpenSans_SemiBold, sans-serif;
+    color: #c84911;
 }

@@ -4,12 +4,19 @@ extends ./personal-cabinet.jade
 
 block item
 	section.profile-look-price.clearfix
-		h1 Лист ожидания
+		h1 Следить за ценой
 		.delete-all
 			i.delete-all__icon
 			a.delete-all__link(href="#") удалить все товары
 		section.looked-prices
-			.l-good.l-good--your-price
+			// Блок с товарами
+			.l-good
+				// Индивидуальный товар
+				.l-good__header
+					.l-good__header-title Ваша цена:
+					span.l-good__your-price 600 грн
+					span.l-good__change-your-price.l-good__change-your-price--edit
+						a(href="#") изменить
 				.l-good__wrapper
 
 					i.l-good__delete-good
@@ -17,53 +24,59 @@ block item
 						a(href="#")
 							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.l-good__good-status
-						span.l-good__status-top Топ продаж
-						span.l-good__discount-amount -20%
+
 					h3.l-good__good-title
 						a Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и...
 					.l-good__price-block
 						// span.w-good__price
-						span.l-good__price-new 600 грн
-						span.l-good__price-old 785 грн
+						span.l-good__price 600 грн
+						span.l-good__price-change.l-good__price-change--up +50 грн
 					.l-good__buy
-						a.w-good__buy-btn(href="#") Купить
+						a.l-good__buy-btn(href="#") Купить
 			.l-good.l-good--your-price
+				.l-good__header
+					.l-good__buy-your-price Купите по вашей цене
+					span.l-good__your-price 2555 грн
+					span.l-good__change-your-price.l-good__change-your-price--edit
+						a(href="#") изменить
 				.l-good__wrapper
-
 					i.l-good__delete-good
 					.l-good__good-img
 						a(href="#")
 							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.l-good__good-status
 						span.l-good__status-top Топ продаж
-						span.l-good__discount-amount -20%
 					h3.l-good__good-title
 						a Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и...
 					.l-good__price-block
 						// span.w-good__price
-						span.l-good__price-new 600 грн
-						span.l-good__price-old 785 грн
+						span.l-good__price--new 600 грн
+						span.l-good__price-change.l-good__price-change--down -75 грн
 					.l-good__buy
-						a.w-good__buy-btn(href="#") Купить
-			.l-good.l-good--your-price
-				.l-good__wrapper
+						a.l-good__buy-btn(href="#") Купить сейчас
+					.l-good__promo Promo код 4523
 
+			.l-good
+				.l-good__header
+					.l-good__header-title Ваша цена:
+					span.l-good__change-your-price.l-good__change-your-price--set
+						a(href="#") установить
+				.l-good__wrapper
 					i.l-good__delete-good
 					.l-good__good-img
 						a(href="#")
 							img(src="dist/images/temporary/avto.jpeg", alt="some image")
 					.l-good__good-status
-						span.l-good__status-top Топ продаж
 						span.l-good__discount-amount -20%
 					h3.l-good__good-title
 						a Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и...
 					.l-good__price-block
 						// span.w-good__price
-						span.l-good__price-new 600 грн
-						span.l-good__price-old 785 грн
+						span.l-good__price--new 600 грн
+						span.l-good__price-change.l-good__price-change--down -75 грн
 					.l-good__buy
-						a.w-good__buy-btn(href="#") Купить
-			.l-good.l-good--your-price
+						a.l-good__buy-btn(href="#") Купить за 2555 грн
+			.l-good
 				.l-good__wrapper
 
 					i.l-good__delete-good
@@ -80,4 +93,4 @@ block item
 						span.l-good__price-new 600 грн
 						span.l-good__price-old 785 грн
 					.w-good__buy
-						a.w-good__buy-btn(href="#") Купить
+						a.l-good__buy-btn(href="#") Купить
