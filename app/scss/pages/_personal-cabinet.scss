@@ -319,7 +319,11 @@ progress[value]::-webkit-progress-bar {
         float: none;
     }
 }
-
+.chat-btn:hover{
+    color: #76972a;
+    text-decoration: none;
+    background-color: #f9fef4;
+}
         /*Правый блок с информацией (Сертификат)*/
 
 .certificate{
@@ -342,10 +346,14 @@ progress[value]::-webkit-progress-bar {
 }
 .certificate select{
     width: 116px;
-    padding: 10px;
+    heigth: 38px;
+    padding: 0 30px 0 10px;
+    line-height: 38px;
+    box-sizing: border-box;
     border: 1px #000 solid;
     border-radius: 5px;
     font-size: 15px;
+    cursor: pointer;
     background: #fff url(images/personal-cabinet/select-arrow-cabinet.png) no-repeat right 12px top 50%;
     // remove the arrow
     -webkit-appearance: none;
@@ -353,18 +361,25 @@ progress[value]::-webkit-progress-bar {
     appearance: none;
 }
 .buy-certificate-btn{
-    padding: 10px 20px;
+    width: 105px;
     margin-left: 10px;
     color: white;
     background: #76972a;
     border-radius: 5px;
     font-weight: bolder;
     font-size: 17px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    box-sizing: border-box;
     border: none;
     outline: none;
     cursor: pointer;
 }
 
+.buy-certificate-btn:hover{
+    background-color: #6b8925;
+}
         /*Правый блок с информацией (Лучшие предложения)*/
 
 .cab-signup{
@@ -448,6 +463,9 @@ input[type=checkbox]:checked + label > .checkbox{
     font-weight: bold;
     white-space: normal;
     cursor: pointer;
+}
+.cab-signup-btn:hover{
+    background-color: #6b8925;
 }
 // ********************************
 // *   Economy profile page       *
