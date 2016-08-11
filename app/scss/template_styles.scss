@@ -1,25 +1,26 @@
-@import "variables";
-@import "base/typography";
-@import "base/base";
-@import "layout/forms";
-@import "layout/header";
-@import "layout/middle";
-@import "layout/footer";
+@import 'variables';
+@import 'base/typography';
+@import 'base/base';
+@import 'layout/forms';
+@import 'layout/header';
+@import 'layout/middle';
+@import 'layout/footer';
 // @import "w1000px";
 // @import "w799px";
 // @import "w320px";
 // @import "responsive_tabs";
 
 // Начало страниц
-@import "pages/home-page";
-@import "pages/cart";
-@import "pages/cart-thanks";
-@import "pages/profile";
-@import "pages/overview-page";
-@import "pages/delivery-page";
-@import "pages/category-components";
+@import 'pages/home-page';
+@import 'pages/cart';
+@import 'pages/cart-thanks';
+@import 'pages/profile';
+@import 'pages/overview-page';
+@import 'pages/delivery-page';
+@import 'pages/category-components';
+@import 'pages/product';
 
 // Media queries
-@import "media/desktop";
-@import "media/tablet";
-@import "media/phone";
+@import 'media/desktop';
+@import 'media/tablet';
+@import 'media/phone';

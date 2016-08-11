@@ -157,6 +157,24 @@ $text-color: #151515;
         left: 30px;
     }
 }
+.l-good__change-block{
+    position: absolute;
+    
+    border: 5px solid rgba(75, 128, 187, 0.75);
+    border-radius: 5px;
+    top: 5px;
+    left: 0;
+}
+.l-change-form{
+    background-color: #fef4ce;
+}
+.l-change-form__input{
+    width: 60%;
+}
+.l-change-form__btn{
+    width: 40%;
+}
+
 
 .l-good__delete-good
 {

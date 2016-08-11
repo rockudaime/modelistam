@@ -1,9 +1,11 @@
 // Content
-.d-delivery-item{
-	font-size: 16px; 
-	background: #fff;
-	border-top: 1px #959595 dashed;
-	padding: 5px 0 21px;
+.d-delivery-item {
+    font-size: 16px;
+
+    padding: 5px 0 21px;
+
+    border-top: 1px #959595 dashed;
+    background: #fff;
 }
 
 // .d-delivery-item:last-child{
@@ -13,124 +15,124 @@
 // .d-delivery-item__radio-input:checked +.d-delivery-item__radio > .custom-radio__circle{
 // 	display: none;
 // }
-.d-delivery-item__checkbox{
-	margin-left: 54px;
-	@media (min-width: 544px){
-		margin-left: 70px;
-	}
+.d-delivery-item__checkbox {
+    margin-left: 54px;
+    @media (min-width: 544px) {
+        margin-left: 70px;
+    }
 }
-.d-delivery-item__address{
-	padding-left: 54px;
-	max-width: 300px;
-
-	@media (min-width: 544px){
-		padding-left: 70px;
-	}
-}
-
-.delivery-item__address--new-post{
-	background: url(images/personal-cabinet/logo-new-post.png) no-repeat 0 0;
-	background-size: 41px;
-	overflow: show;
-
-	@media (min-width: 768px){
-		background-size: 51px;
-	}
+.d-delivery-item__address {
+    max-width: 300px;
+    padding-left: 54px;
+    @media (min-width: 544px) {
+        padding-left: 70px;
+    }
 }
 
+.delivery-item__address--new-post {
+    overflow: show;
 
-
-.d-delivery-item__payment{
-	padding-left: 54px;
-	max-width: 300px;
-
-	@media (min-width: 544px){
-		padding-left: 70px;
-	}
+    background: url(images/personal-cabinet/logo-new-post.png) no-repeat 0 0;
+    background-size: 41px;
+    @media (min-width: 768px) {
+        background-size: 51px;
+    }
 }
 
-.d-delivery-item__header{
-	margin-bottom: 13px;
-}
-.d-delivery-item__title{
-	font-size: 1em;
-	margin: 0;
-	margin-right: 12px;
-	padding: 0;
-	font: 16px OpenSans_SemiBold;
-	color: #151515;
-	display: inline-block;
-	// vertical-align: middle;
 
-}
-.d-delivery-item__title--ib{
-	
-	border-bottom: 1px dashed #434343;
+
+.d-delivery-item__payment {
+    max-width: 300px;
+    padding-left: 54px;
+    @media (min-width: 544px) {
+        padding-left: 70px;
+    }
 }
 
-.d-delivery-item__payment-details-link{
-	color: #777777;
+.d-delivery-item__header {
+    margin-bottom: 13px;
+}
+.d-delivery-item__title {
+    font: 16px OpenSans_SemiBold;
+
+    display: inline-block;
+
+    margin: 0;
+    margin-right: 12px;
+    padding: 0;
+
+    color: #151515;
+    // vertical-align: middle;
+}
+.d-delivery-item__title--ib {
+    border-bottom: 1px dashed #434343;
+}
+
+.d-delivery-item__payment-details-link {
     font: normal 13px OpenSans, sans-serif;
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 1px solid #777;
+
     vertical-align: baseline;
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: #777;
+    border-bottom: 1px solid #777;
 }
 
-.d-delivery-item__payment-details-link:hover{
-	color: #000;
-	text-decoration: none;
+.d-delivery-item__payment-details-link:hover {
+    text-decoration: none;
+
+    color: #000;
 }
 
-.d-delivery-form__submit{
-	text-align: center;
+.d-delivery-form__submit {
+    text-align: center;
 }
-.btn-save{
-	width: auto;
-	margin-top: 25px;
-	display: inline-block;
+.btn-save {
+    display: inline-block;
 
+    width: auto;
+    margin-top: 25px;
 }
 
-.d-main-delivery{
-	display: flex;
-	margin-bottom: 10px;
+.d-main-delivery {
+    display: flex;
 
-	& *{
-		box-sizing: border-box;
-	}
+    margin-bottom: 10px;
+    & * {
+        box-sizing: border-box;
+    }
+    &__logo {
+        display: inline-block;
 
-	&__logo{
-		width: 42px;
-		display: inline-block;
-		vertical-align: top;
+        width: 42px;
 
-		@media (min-width: 544px){
-			width: 51px;
-		}
+        vertical-align: top;
+        @media (min-width: 544px) {
+            width: 51px;
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    &__content {
+        display: inline-block;
 
-		& img{
-			width: 100%;
-		}
-	}
+        padding-left: 19px;
+    }
+    &__title {
+        font: normal 17px OpenSans_SemiBold, sans-serif;
 
-	&__content{
-		padding-left: 19px;
-		display: inline-block;
-	}
+        display: inline-block;
 
-	&__title{
-		display: inline-block;
-		margin: 0 12px 13px 0;
-		font: normal 17px OpenSans_SemiBold, sans-serif;
-		color: #151515;
-	}
+        margin: 0 12px 13px 0;
 
-	&__address{
-		max-width: 300px;
-	}
-
-	&__payment{
-		max-width: 300px;
-	}
+        color: #151515;
+    }
+    &__address {
+        max-width: 300px;
+    }
+    &__payment {
+        max-width: 300px;
+    }
 }

@@ -1,0 +1,76 @@
+doctype html
+html(lang="ru")
+	head
+		title Personal cabinet
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/pages/product.js")
+	body
+		.page-inner
+			section.product-card
+				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+				.product-card__header
+					.product-card__image-block
+						.product-card__main-image
+							img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
+						.product-card__gallery.gallery-product
+							.gallery-product__item
+								img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
+							.gallery-product__item
+								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+							.gallery-product__item
+								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+							.gallery-product__item
+								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+
+					.product-card__buy-block.product-info
+						.product-feature.product-feature--best-price Гарантия лучшей цены
+						div(style="margin-bottom: 15px;")
+							span.product-info__status.product-info__status--available Есть в наличии
+							span.product-info__code Код: 193878
+						form(action="" name="product-buy" id="productCardBuy")
+							ul.product-info__set-option.set-option-product.clearfix
+								li.set-option-product__item
+									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
+									label.set-option-product__label(for="productWithoutSet") Без набора
+										span.tip-btn
+										div.tip-content Это подсказка для этого блока
+
+								li.set-option-product__item
+									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
+									label.set-option-product__label(for="productWithSet") С набором
+
+							.product-info__color.color-product-info
+								.color-product-info__choosed
+									span(style="background: white").color-product-info__color-label
+									| Белый
+								.color-product-info__colors.product-colors
+									.product-colors__item
+										input.product-colors__radio(type="radio" name="productColors" id="colorWhite")
+										label(for="colorWhite")
+											span(style="background: white").color-product-info__color-label
+											| Белый
+										input.product-colors__radio(type="radio" name="productColors" id="colorRed")
+										label(for="colorRed")
+											span(style="background: red").color-product-info__color-label
+											| Красный
+
+
+
+								
+
+
+
+ 
+
+						
+
+
+
+					.product-card__info-block
+
