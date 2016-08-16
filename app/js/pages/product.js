@@ -112,6 +112,37 @@ $(document).ready(function() {
 		})
 	}
 
+	// video elements on page
+	function videoInit(){
+		var videos = $('.video-tab');
+		var videosBlock = $('.about-product__video');
+		videosBlock.append('<ul class="tabs-control">');
+		var ul = $('.tabs-control');
+		ul.append('<li class="tabs-control__item"><a class="tabs-nav tabs-nav--active" href="#" data-nav="1">1</a></li>');
+		for (var i = 2; i <= videos.length; i++) {
+			ul.append('<li class="tabs-control__item"><a class="tabs-nav" href="#" data-nav="' + parseInt(i) + '">' + parseInt(i) + '</a></li>');
+		}
+
+		videos.addClass('video-tab--hidden');
+		$(videos[0]).removeClass('video-tab--hidden');
+	}
+
+	videoInit();
+	$('.tabs-control').on('click', function(e){
+		e.preventDefault();
+		var link = $(e.target);
+		var videos = $('.video-tab');
+		if (link.data("nav")){
+			var videoTab = $('.video-tab').filter('[data-order=' +link.data("nav") + ']');
+			console.log(link.data("nav"));
+			videos.addClass('video-tab--hidden');
+			videoTab.removeClass('video-tab--hidden');
+			$('.tabs-nav').removeClass('tabs-nav--active');
+			link.addClass('tabs-nav--active');
+		}
+		
+	});
+
 
 	
 });

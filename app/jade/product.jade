@@ -145,8 +145,19 @@ html(lang="ru")
 					// 1 таб - О товаре
 					div.item-detail__mobile-menu-item.mobile-menu-item--active О товаре
 					article#about.details-product__detail-item.item-detail.about-product.clearfix.item-detail--active
-						section.about-product__video.
-							<iframe src="https://www.youtube.com/embed/UlIHuxD7RPY" frameborder="0" allowfullscreen="" style="width: 490px; height: 367.5px;"></iframe>
+						section.about-product__video
+							ul.videos-tabs
+								li.video-tab.video-tab--hidden(data-order="1").
+									<iframe src="https://www.youtube.com/embed/UlIHuxD7RPY" frameborder="0" allowfullscreen="" style="width: 490px; height: 367.5px;"></iframe>
+								li.video-tab(data-order="2").
+									<iframe width="494" height="301" src="https://www.youtube.com/embed/ztHNNW7QFyE" frameborder="0" allowfullscreen></iframe>
+								li.video-tab(data-order="3").
+									<iframe width="494" height="301" src="https://www.youtube.com/embed/ztHNNW7QFyE" frameborder="0" allowfullscreen></iframe>
+							//- ul.tabs-control
+							//- 	li.tabs-control__item
+							//- 		a.tabs-nav(href="#" data-nav="1") 1
+							//- 	li.tabs-control__item
+							//- 		a.tabs-nav.tabs-nav--active(href="#" data-nav="2") 2
 							
 						section.about-product__text
 							h2.item-detail__title Описание

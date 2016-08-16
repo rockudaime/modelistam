@@ -762,10 +762,7 @@ div.shop-info__work-time{
         list-style: decimal outside;
         padding-left: 17px;
     }
-    li{
-        padding-left: 5px;
-    }
-
+    
     &--active{
         display: block;
     }
@@ -799,16 +796,62 @@ div.shop-info__work-time{
 }
 // About product block
 
-.about-product{
-
+.about-product__text{
+    
+    li{
+            padding-left: 5px;
+        }
 }
 .about-product__video{
     text-align: center;
+    margin: 0 auto;
     margin-bottom: 25px;
+    max-width: 470px;
+
     @media(min-width: 1200px){
         float: right;
         margin-left: 35px;
     }
+}
+.video-tabs{
+    
+}
+.video-tab{
+    display: block;
+}
+.video-tab--hidden{
+    display: none;
+
+}
+.tabs-control{
+    text-align: left;
+}
+.tabs-control__item{
+    display: inline-block;
+    margin-right: 10px;
+}
+.tabs-nav{
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    padding: 0;
+    color: #000;
+    font-size: 16px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+
+    &--active{
+        background-color: #346cab;
+        color: #fffafa;
+
+    }
+
+    
 }
 
 .about-product__text{
