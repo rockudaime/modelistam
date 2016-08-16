@@ -14,21 +14,24 @@ html(lang="ru")
 		.page-inner
 			section.product-card
 				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-				.product-card__header
+				section.product-card__header
+					// Блок, который содержит информацию по товару: картинки, цену, производителя и т.д
 					.product-card__image-block
+						// Блок с изображениями товара
 						.product-card__main-image
-							img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
+							img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
 						.product-card__gallery.gallery-product
-							.gallery-product__item
+							.gallery-product__item.gallery-product__item--active
 								img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
 							.gallery-product__item
-								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+								img(src="dist/images/temporary/product-main-img.jpg", alt="some image")
 							.gallery-product__item
-								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+								img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
 							.gallery-product__item
 								img(src="dist/images/temporary/avto.jpeg", alt="some image")
 
 					.product-card__buy-block.product-info
+						// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
 						.product-feature.product-feature--best-price Гарантия лучшей цены
 						div(style="margin-bottom: 15px;")
 							span.product-info__status.product-info__status--available Есть в наличии
@@ -44,33 +47,261 @@ html(lang="ru")
 								li.set-option-product__item
 									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
 									label.set-option-product__label(for="productWithSet") С набором
-
+							
 							.product-info__color.color-product-info
-								.color-product-info__choosed
+								| Цвета:
+								.color-product-info__choosed-color
 									span(style="background: white").color-product-info__color-label
-									| Белый
 								.color-product-info__colors.product-colors
 									.product-colors__item
-										input.product-colors__radio(type="radio" name="productColors" id="colorWhite")
-										label(for="colorWhite")
-											span(style="background: white").color-product-info__color-label
+										input.product-colors__radio(type="radio" name="productColors" id="color-1" value="white" checked)
+										label(for="color-1")
+											span(style="background-color: white").color-product-info__color-label
 											| Белый
-										input.product-colors__radio(type="radio" name="productColors" id="colorRed")
-										label(for="colorRed")
-											span(style="background: red").color-product-info__color-label
+									.product-colors__item
+										input.product-colors__radio(type="radio" name="productColors" value="red" id="color-2")
+										label(for="color-2")
+											span(style="background-color: red").color-product-info__color-label
 											| Красный
+									.product-colors__item
+										input.product-colors__radio(type="radio" name="productColors" value="yellow" id="color-3")
+										label(for="color-3")
+											span(style="background-color: yellow").color-product-info__color-label
+											| Желтый
+							div.product-info__buy-block
+								.product-info__price-block
+									span.product-info__price-new.new-price 3 160
+										i.new-price__sm  грн
+									span.product-info__price-old 3 500 грн
+								input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
+
+							
+						ul.product-info__buy-options.p-buy-options
+							li.p-buy-options__heading Другие варианты покупки:
+								ul.p-buy-options__inner
+									li.p-buy-options__option
+										a(href="#") Со скидкой
+									li.p-buy-options__option
+										a(href="#") В кредит
+									li.p-buy-options__option
+										a(href="#") Быстрая покупка
+						.product-info__actions
+							.personal-actions
+								.personal-actions__action.action-personal.action-personal--wishlist
+									i
+									span.action-personal__title Отложить
+								.personal-actions__action.action-personal.action-personal--compare
+									i
+									span.action-personal__title Сравнить
+								.personal-actions__action.action-personal.action-personal--watch-price
+									i
+									span.action-personal__title Следить за ценой
+							.rateit-block
+								.rateit__range
+									.rateit__selected
+										.rateit__hover
+								|  на базе 122 оценок
+									
+
+					aside.product-card__shop-info.shop-info
+						.product-manufacturer Производитель:
+							a(href="#")  HSP Racing
+						.product-warranty Гарантия: 24 мес
+						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
+						ul.shop-info__pages
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Доставка и оплата
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Возврат и обмен
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Гарантия качества
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Сервисный центр
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Консультация
+
+				section.product-card__details.details-product
+					// Блок который содержит детали по товару: описание, характеристики, отзывы и т.д
+					.details-product__menu-wrapper
+						ul.details-product__menu.menu-details
+							// Меню по табам
+							li.menu-details__item
+								a.menu-details__link.menu-details__link--active(href="#" data-id="about") О товаре
+							li.menu-details__item
+								a.menu-details__link(href="#" data-id="characteristics") Характеристики
+							li.menu-details__item
+								a.menu-details__link(href="#" data-id="comments") Отзывы
+							li.menu-details__item
+								a.menu-details__link(href="#" data-id="accessories") Аксессуары
+							li.menu-details__item
+								a.menu-details__link(href="#" data-id="repairParts") Запчасти
+							li.menu-details__item
+								span.menu-details__tablet-toggler Детальнее
+								ul.menu-details__tablet-toggled
+									li.menu-details__item
+										a.menu-details__link(href="#" data-id="questionsAndAnswers") Вопросы и ответы
+									li.menu-details__item
+										a.menu-details__link(href="#" data-id="consulting") Получить консультацию
+					// 1 таб - О товаре
+					div.item-detail__mobile-menu-item.mobile-menu-item--active О товаре
+					article#about.details-product__detail-item.item-detail.about-product.clearfix.item-detail--active
+						section.about-product__video.
+							<iframe src="https://www.youtube.com/embed/UlIHuxD7RPY" frameborder="0" allowfullscreen="" style="width: 490px; height: 367.5px;"></iframe>
+							
+						section.about-product__text
+							h2.item-detail__title Описание
+							p Улыбчивый планер станет отличным другом для мальчишек и девчонок. Пенолет Smily имеет довольно необычную форму.
+							p.
+								Выполнен он в форме круга, как и положено смайлику, однако у него есть свой нос с пропеллером и хвост для улучшенной аэродинамики. На верхней стороне корпуса нарисована улыбательная мордашка.
+							p.
+								Материал планера Smily очень прочный и легкий, а самое главное – неубиваемый. Это пенистый Flexipor/EPP, который стойко перенесет любые испытательные взлеты и падения. Несмотря на необычную форму, модель достаточно быстра и маневренна. С ней можно выполнять различные трюки, в том числе и элементы высшего пилотажа.
+							p.
+								Пенолет Smily идеально подходит для развлекательных полетов, а также для использования в гордских условиях. С ним необязательно искать огромное поле, так как он достаточно компактен.
+							h2 Характеристики
+							table.product-characteristics
+								tbody
+									tr.characteristic
+										td.characteristic-name Класс модели
+										td.characteristic-value Багги
+									tr.characteristic
+										td.characteristic-name Масштаб
+										td.characteristic-value 1/10
+									tr.characteristic
+										td.characteristic-name Материал 
+										td.characteristic-value Пластик
+									tr.characteristic
+										td.characteristic-name Комплектация модели
+										td.characteristic-value Полная (RTR, RTF)
+							h2 Комплектация
+							ol
+								li Полностью собранная модель самолёта Spy Hawk с видеокамерой
+								li Пульт управления
+								li Li-Po аккумулятор 7.4v 450mAh
+								li Зарядное устройство
+								li Инструкция
+
+					// 2 таб - характеристики
+					div.item-detail__mobile-menu-item Характеристики
+					article#characteristics.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Характеристики
+						table.product-characteristics
+							tbody
+								tr.characteristic
+									td.characteristic-name Класс модели
+									td.characteristic-value Багги
+								tr.characteristic
+									td.characteristic-name Масштаб
+									td.characteristic-value 1/10
+								tr.characteristic
+									td.characteristic-name Материал 
+									td.characteristic-value Пластик
+								tr.characteristic
+									td.characteristic-name Комплектация модели
+									td.characteristic-value Полная (RTR, RTF)
+								tr.characteristic
+									td.characteristic-name Класс модели
+									td.characteristic-value Багги
+								tr.characteristic
+									td.characteristic-name Масштаб
+									td.characteristic-value 1/10
+								tr.characteristic
+									td.characteristic-name Материал 
+									td.characteristic-value Пластик
+								tr.characteristic
+									td.characteristic-name Комплектация модели
+									td.characteristic-value Полная (RTR, RTF) 
+								tr.characteristic
+									td.characteristic-name Класс модели
+									td.characteristic-value Багги
+								tr.characteristic
+									td.characteristic-name Масштаб
+									td.characteristic-value 1/10
+								tr.characteristic
+									td.characteristic-name Материал 
+									td.characteristic-value Пластик
+								tr.characteristic
+									td.characteristic-name Комплектация модели
+									td.characteristic-value Полная (RTR, RTF)
+	
+					// 3 таб - отзывы
+					div.item-detail__mobile-menu-item Отзывы
+					section#comments.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Отзывы
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam totam numquam amet tenetur corrupti ea, eveniet! Ratione quasi accusantium obcaecati porro nemo, qui, placeat, dolorem molestias deleniti earum repellendus aspernatur?
+
+					// 4 таб - Аксессуары
+					div.item-detail__mobile-menu-item Аксессуары
+					section#accessories.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Аксессуары
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ipsam saepe non soluta nisi praesentium aliquid consequuntur, quos quibusdam inventore deleniti quasi nulla, illo quis tenetur commodi rem velit cum.
+
+					// 5 таб - Запчасты
+					div.item-detail__mobile-menu-item Запчасти
+					section#repairParts.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Запчасти
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas quasi, ipsa amet eius numquam unde odio quo, aut reprehenderit, consectetur! Optio autem cupiditate totam, excepturi, iure aspernatur vero minus.
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dignissimos voluptate nisi at fugit quos sit reprehenderit quaerat vitae dicta aspernatur, corporis consequatur animi quas iure, ea tempora fugiat. Adipisci.
+
+					// 6 таб - вопросы и ответы
+					div.item-detail__mobile-menu-item Вопросы и ответы
+					article#questionsAndAnswers.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Вопросы и ответы
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
+
+					// 7 таб - Получить консультацию
+					div.item-detail__mobile-menu-item Получить консультацию
+					article#consulting.details-product__detail-item.item-detail.characteristics-product
+						h2.item-detail__title Получить консультацию
+						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
+
+				section.product-card__need-to-purchase.purchase-product
+					h2.purchase-product__title Требуется докупить (не входит в комплекцию)
+					.purchase-product__products.products-purchase
+						.products-purchase__item.purchase-item
+							.purchase-item__img
+								a(href="#")
+									img(src="dist/images/temporary/need-product2.jpg", alt="some image")
+							.purchase-item__desc
+								.purshase-item__name
+									a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
+								.purchase-item__category
+									a(href="#") Батарейки
+							form.purshase-item__form.purchase-form(action="/")
+								input.purchase-form__qty(type="number" value="1" min="0" name="prod-qty")
+								span.purchase-item__price
+									b 24
+									|  грн
+								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+						.products-purchase__item.purchase-item
+							.purchase-item__img
+								a(href="#")
+									img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+							.purchase-item__desc
+								.purshase-item__name
+									a(href="#") Батарейка Duracell AAA LR03
+								.purchase-item__category
+									a(href="#") Батарейки
+							form.purshase-item__form.purchase-form(action="/")
+								input.purchase-form__qty(type="number" value="1" min="0")
+								span.purchase-item__price 
+									b 1 124
+									|  грн
+								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+						.products-purchase__item.purchase-item
+							.purchase-item__img
+								a(href="#")
+									img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+							.purchase-item__desc
+								.purshase-item__name
+									a(href="#") Батарейка FUJITSU (2шт.)
+								.purchase-item__category
+									a(href="#") Батарейки
+							form.purshase-item__form.purchase-form(action="/")
+								input.purchase-form__qty(type="number" value="1" min="0")
+								span.purchase-item__price 
+									b 156
+									|  грн
+								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 
 
-
-								
-
-
-
- 
-
-						
-
-
-
-					.product-card__info-block
 
