@@ -317,7 +317,7 @@ input.ov-signup-form__submit:focus{
     color: #346cab;
     font-size: 20px;
     line-height: 32px;
-    font-family: OpenSans__Light, sans-serif;
+    font-family: OpenSans_Light, sans-serif;
     font-weight: normal;
 }
 .ov-similar-item h3{
@@ -1552,9 +1552,9 @@ input.o-signup-form__input{
 .o-wished {
     color: #006caf;
     background: url("images/svg/Heart-menu-active.svg") no-repeat left center;
-    @media (min-width: 994px){
-        background: url("images/svg/Heart-menu-default-darker.svg") no-repeat left center;
-    }
+    // @media (min-width: 994px){
+    //     background: url("images/svg/Heart-menu-default-darker.svg") no-repeat left center;
+    // }
    
 }
 

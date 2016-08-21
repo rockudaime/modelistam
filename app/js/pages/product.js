@@ -41,7 +41,7 @@ $(document).ready(function() {
 		
 
 	// });
-	console.log($('input:radio[name=productColors]'));
+
 	$('.product-colors__radio').change(function(){
 		var color;
 		if ($(this).prop('checked', true)){
@@ -73,6 +73,9 @@ $(document).ready(function() {
 	
 
 	// Меню для навигации по табам (в мобильном виде - аккордеон)
+	// .menu-details - меню - ul список ссылок для навигации по табам
+	// .menu-details__link - отдельный элемент меню
+	// .item-detail - блоки с содержимым табов
 	$('.menu-details').on('click', function(e){
 		e.preventDefault();
 		var link = e.target;
@@ -91,7 +94,9 @@ $(document).ready(function() {
 		}
 		
 	});
+
 	// Аккордеон для мобильного вида (все что меньше 768 пикселей в ширину)
+	// Если ширина изначально выше, а потом уменьшается до этого размера, то не будет работать.
 	if(wWidth<= 768) {
 		$('.item-detail__mobile-menu-item').on('click', function(e) {
 			var tabs = $('.item-detail');
@@ -115,34 +120,74 @@ $(document).ready(function() {
 	// video elements on page
 	function videoInit(){
 		var videos = $('.video-tab');
-		var videosBlock = $('.about-product__video');
-		videosBlock.append('<ul class="tabs-control">');
-		var ul = $('.tabs-control');
-		ul.append('<li class="tabs-control__item"><a class="tabs-nav tabs-nav--active" href="#" data-nav="1">1</a></li>');
-		for (var i = 2; i <= videos.length; i++) {
-			ul.append('<li class="tabs-control__item"><a class="tabs-nav" href="#" data-nav="' + parseInt(i) + '">' + parseInt(i) + '</a></li>');
+		if (videos.length > 1){
+			var videosBlock = $('.about-product__video');
+			videosBlock.append('<ul class="tabs-control">');
+			var ul = $('.tabs-control');
+			ul.append('<li class="tabs-control__item"><a class="tabs-nav tabs-nav--active" href="#" data-nav="1">1</a></li>');
+			for (var i = 2; i <= videos.length; i++) {
+				ul.append('<li class="tabs-control__item"><a class="tabs-nav" href="#" data-nav="' + parseInt(i) + '">' + parseInt(i) + '</a></li>');
+			}
+
+			videos.addClass('video-tab--hidden');
+			$(videos[0]).removeClass('video-tab--hidden');
 		}
 
-		videos.addClass('video-tab--hidden');
-		$(videos[0]).removeClass('video-tab--hidden');
+		$('.tabs-control').on('click', function(e){
+			e.preventDefault();
+			var link = $(e.target);
+			var videos = $('.video-tab');
+			if (link.data("nav")){
+				var videoTab = $('.video-tab').filter('[data-order=' +link.data("nav") + ']');
+				console.log(link.data("nav"));
+				videos.addClass('video-tab--hidden');
+				videoTab.removeClass('video-tab--hidden');
+				$('.tabs-nav').removeClass('tabs-nav--active');
+				link.addClass('tabs-nav--active');
+			}
+			
+		});
+		
 	}
 
 	videoInit();
-	$('.tabs-control').on('click', function(e){
-		e.preventDefault();
-		var link = $(e.target);
-		var videos = $('.video-tab');
-		if (link.data("nav")){
-			var videoTab = $('.video-tab').filter('[data-order=' +link.data("nav") + ']');
-			console.log(link.data("nav"));
-			videos.addClass('video-tab--hidden');
-			videoTab.removeClass('video-tab--hidden');
-			$('.tabs-nav').removeClass('tabs-nav--active');
-			link.addClass('tabs-nav--active');
-		}
-		
-	});
+	
+		var owl = $(".owl-carousel");
+	
+		owl.owlCarousel({
+		    loop: false,
+		    margin:0,
+		    navigationText: false,
+		    // responsiveClass:true,
+		    pagination: true,
+		    responsive:{
+		    	 0:{
+		    	 	items:1,
+		    	 	nav:false
+		    	 },
+		        544:{
+		            items:2,
+		            nav: false
+		        },
+		        768:{
+		            items:3,
+		            nav:false,
+		            paginatioin: true
+		        },
+		        994:{
+		            items:4,
+		            nav:true,
+		            loop:false,
+		            paginatioin: false
 
-
+		        },
+		        1200:{
+		            items:5,
+		            nav:true,
+		            loop:false,
+		            paginatioin: false
+		        }
+		    }
+		});
 	
 });

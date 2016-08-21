@@ -1,19 +1,23 @@
 doctype html
 html(lang="ru")
 	head
-		title Personal cabinet
+		title Product
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
 		link(rel="stylesheet" href="dist/normalize.css")
 		link(rel="stylesheet" href="dist/template_styles.css")
+		
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		script(src="dist/js/pages/product.js")
 	body
 		.page-inner
 			section.product-card
 				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+				// Шапка товара с основной информацией для покупки
 				section.product-card__header
 					// Блок, который содержит информацию по товару: картинки, цену, производителя и т.д
 					.product-card__image-block
@@ -21,11 +25,11 @@ html(lang="ru")
 						.product-card__main-image
 							img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
 						.product-card__gallery.gallery-product
-							.gallery-product__item.gallery-product__item--active
+							.gallery-product__item
 								img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
 							.gallery-product__item
 								img(src="dist/images/temporary/product-main-img.jpg", alt="some image")
-							.gallery-product__item
+							.gallery-product__item.gallery-product__item--active
 								img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
 							.gallery-product__item
 								img(src="dist/images/temporary/avto.jpeg", alt="some image")
@@ -36,7 +40,7 @@ html(lang="ru")
 						div(style="margin-bottom: 15px;")
 							span.product-info__status.product-info__status--available Есть в наличии
 							span.product-info__code Код: 193878
-						form(action="" name="product-buy" id="productCardBuy")
+						form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
 							ul.product-info__set-option.set-option-product.clearfix
 								li.set-option-product__item
 									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
@@ -47,7 +51,7 @@ html(lang="ru")
 								li.set-option-product__item
 									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
 									label.set-option-product__label(for="productWithSet") С набором
-							
+							// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
 							.product-info__color.color-product-info
 								| Цвета:
 								.color-product-info__choosed-color
@@ -74,6 +78,8 @@ html(lang="ru")
 										i.new-price__sm  грн
 									span.product-info__price-old 3 500 грн
 								input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
+								//- span.mobile-buy-option 
+								//- 	a(href="#fast_buy").fastbuy-link Быстрая покупка
 
 							
 						ul.product-info__buy-options.p-buy-options
@@ -82,9 +88,9 @@ html(lang="ru")
 									li.p-buy-options__option
 										a(href="#") Со скидкой
 									li.p-buy-options__option
-										a(href="#") В кредит
-									li.p-buy-options__option
-										a(href="#") Быстрая покупка
+										a#followbuyCreditProduct-link(href="#") В кредит
+									li.p-buy-options__option.fastbuy-link
+										a(href="#fast_buy") Быстрая покупка
 						.product-info__actions
 							.personal-actions
 								.personal-actions__action.action-personal.action-personal--wishlist
@@ -119,7 +125,7 @@ html(lang="ru")
 								a.shop-info__page-link(href="#") Сервисный центр
 							li.shop-info__page
 								a.shop-info__page-link(href="#") Консультация
-
+				// Тело с детальным описанием, характеристиками и доп. блоками
 				section.product-card__details.details-product
 					// Блок который содержит детали по товару: описание, характеристики, отзывы и т.д
 					.details-product__menu-wrapper
@@ -147,7 +153,7 @@ html(lang="ru")
 					article#about.details-product__detail-item.item-detail.about-product.clearfix.item-detail--active
 						section.about-product__video
 							ul.videos-tabs
-								li.video-tab.video-tab--hidden(data-order="1").
+								li.video-tab(data-order="1").
 									<iframe src="https://www.youtube.com/embed/UlIHuxD7RPY" frameborder="0" allowfullscreen="" style="width: 490px; height: 367.5px;"></iframe>
 								li.video-tab(data-order="2").
 									<iframe width="494" height="301" src="https://www.youtube.com/embed/ztHNNW7QFyE" frameborder="0" allowfullscreen></iframe>
@@ -190,6 +196,55 @@ html(lang="ru")
 								li Li-Po аккумулятор 7.4v 450mAh
 								li Зарядное устройство
 								li Инструкция
+
+						section.product-card__need-to-purchase.purchase-product
+							h2.purchase-product__title Требуется докупить (не входит в комплекцию)
+							.purchase-product__products.products-purchase
+								.products-purchase__item.purchase-item
+									.purchase-item__img
+										a(href="#")
+											img(src="dist/images/temporary/need-product2.jpg", alt="some image")
+									.purchase-item__desc
+										.purchase-item__name
+											a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
+										.purchase-item__category
+											a(href="#") Батарейки
+									form.purchase-item__form.purchase-form(action="/")
+										input.purchase-form__qty(type="number" value="1" min="0" name="prod-qty")
+										span.purchase-item__price
+											b 24
+											|  грн
+										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+								.products-purchase__item.purchase-item
+									.purchase-item__img
+										a(href="#")
+											img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+									.purchase-item__desc
+										.purchase-item__name
+											a(href="#") Батарейка Duracell AAA LR03
+										.purchase-item__category
+											a(href="#") Батарейки
+									form.purchase-item__form.purchase-form(action="/")
+										input.purchase-form__qty(type="number" value="1" min="0")
+										span.purchase-item__price 
+											b 1 124
+											|  грн
+										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+								.products-purchase__item.purchase-item
+									.purchase-item__img
+										a(href="#")
+											img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+									.purchase-item__desc
+										.purchase-item__name
+											a(href="#") Батарейка FUJITSU (2шт.)
+										.purchase-item__category
+											a(href="#") Батарейки
+									form.purchase-item__form.purchase-form(action="/")
+										input.purchase-form__qty(type="number" value="1" min="0" pattern="[0-9]+")
+										span.purchase-item__price 
+											b 156
+											|  грн
+										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 
 					// 2 таб - характеристики
 					div.item-detail__mobile-menu-item Характеристики
@@ -243,8 +298,7 @@ html(lang="ru")
 					// 4 таб - Аксессуары
 					div.item-detail__mobile-menu-item Аксессуары
 					section#accessories.details-product__detail-item.item-detail.characteristics-product
-						h2.item-detail__title Аксессуары
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ipsam saepe non soluta nisi praesentium aliquid consequuntur, quos quibusdam inventore deleniti quasi nulla, illo quis tenetur commodi rem velit cum.
+						
 
 					// 5 таб - Запчасты
 					div.item-detail__mobile-menu-item Запчасти
@@ -264,55 +318,322 @@ html(lang="ru")
 					article#consulting.details-product__detail-item.item-detail.characteristics-product
 						h2.item-detail__title Получить консультацию
 						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
+					
+					// Начало секции с аксессуарами
+					section.accessories
+						h2.accessories__heading <strong>Аксессуары</strong> к Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+						// Tab 1
+						div.item-detail__mobile-menu-item Аккумуляторы
+						.details-product__detail-item.item-detail.accessories__item
+							.owl-carousel
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item1.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--top Топ продаж
+											h3.similar-product__heading
+												a(href="#") Аккумулятор Hubsan Li-Po 7,4В 450 мАч 2S
+											.similar-product__price
+												span.product-price--current 288
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--incart(href="#") В корзине
+												.similar-product__wishlist
+													a.o-wishlist-link.o-wished(href="#")
+														span.o-wishlist__text В избранном
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item2.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--new Новинка
+											h3.similar-product__heading
+												a(href="#") Мини трагги WL-Toys Speed Racing 1:32 красный RTR
+											.similar-product__price
+												span.product-price--current 556
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item3.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--new Новинка
+												span.product-status.product-status--discount -10%
+											h3.similar-product__heading
+												a(href="#") Передатчик Hubsan H301C-09 для планера Spy Hawk 2.4GHz
+											.similar-product__price
+												span.product-price--new 600
+													span.product-price__text--small грн
+												span.product-price--old 785 грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item4.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												// no status
+											h3.similar-product__heading
+												a(href="#") Плата видеомодуля планера Hubsan Spy Hawk H301C
+											.similar-product__price
+												span.product-price--current 600 
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item5.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												// no status
+											h3.similar-product__heading
+												a(href="#") Сервопривод планера Hubsan Spy Hawk
+											.similar-product__price
+												span.product-price--current 338
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+						// Tab 2
+						div.item-detail__mobile-menu-item Сумки
+						.details-product__detail-item.item-detail.accessories__item
+							.owl-carousel
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item1.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--top Топ продаж
+											h3.similar-product__heading
+												a(href="#") Аккумулятор Hubsan Li-Po 7,4В 450 мАч 2S
+											.similar-product__price
+												span.product-price--current 288
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--incart(href="#") В корзине
+												.similar-product__wishlist
+													a.o-wishlist-link.o-wished(href="#")
+														span.o-wishlist__text В избранном
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item2.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--new Новинка
+											h3.similar-product__heading
+												a(href="#") Мини трагги WL-Toys Speed Racing 1:32 красный RTR
+											.similar-product__price
+												span.product-price--current 556
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item3.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												span.product-status.product-status--new Новинка
+												span.product-status.product-status--discount -10%
+											h3.similar-product__heading
+												a(href="#") Передатчик Hubsan H301C-09 для планера Spy Hawk 2.4GHz
+											.similar-product__price
+												span.product-price--new 600
+													span.product-price__text--small грн
+												span.product-price--old 785 грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item4.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												// no status
+											h3.similar-product__heading
+												a(href="#") Плата видеомодуля планера Hubsan Spy Hawk H301C
+											.similar-product__price
+												span.product-price--current 600 
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+								.similar-product
+									.similar-product__inner
+										.similar-product__photo
+											a(href="#")
+												img(src="dist/images/temporary/product/item5.jpg", alt="image")
+										.similar-product__content
+											.similar-product__product-status
+												// no status
+											h3.similar-product__heading
+												a(href="#") Сервопривод планера Hubsan Spy Hawk
+											.similar-product__price
+												span.product-price--current 338
+													span.product-price__text--small грн
+											.similar-product__buy
+												a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+												.similar-product__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+				
+				// Начало дополнительных блоков: похожие товары, вы смотрели и т.д.
+				section.additional-blocks
+					// Похожие товары
+					h2.additional-blocks__heading С этой моделью также смотрят
+					.similar-products-block.clearfix#owl-similar-products.owl-carousel
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										span.product-status.product-status--new Новинка
+									h3.similar-product__heading
+										a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+									.similar-product__price
+										span.product-price--current 5 025 
+											span.product-price__text--small грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--incart(href="#") В корзине
+										.similar-product__wishlist
+											a.o-wishlist-link.o-wished(href="#")
+												span.o-wishlist__text В избранном
 
-				section.product-card__need-to-purchase.purchase-product
-					h2.purchase-product__title Требуется докупить (не входит в комплекцию)
-					.purchase-product__products.products-purchase
-						.products-purchase__item.purchase-item
-							.purchase-item__img
-								a(href="#")
-									img(src="dist/images/temporary/need-product2.jpg", alt="some image")
-							.purchase-item__desc
-								.purshase-item__name
-									a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
-								.purchase-item__category
-									a(href="#") Батарейки
-							form.purshase-item__form.purchase-form(action="/")
-								input.purchase-form__qty(type="number" value="1" min="0" name="prod-qty")
-								span.purchase-item__price
-									b 24
-									|  грн
-								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-						.products-purchase__item.purchase-item
-							.purchase-item__img
-								a(href="#")
-									img(src="dist/images/temporary/need-product1.jpg", alt="some image")
-							.purchase-item__desc
-								.purshase-item__name
-									a(href="#") Батарейка Duracell AAA LR03
-								.purchase-item__category
-									a(href="#") Батарейки
-							form.purshase-item__form.purchase-form(action="/")
-								input.purchase-form__qty(type="number" value="1" min="0")
-								span.purchase-item__price 
-									b 1 124
-									|  грн
-								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-						.products-purchase__item.purchase-item
-							.purchase-item__img
-								a(href="#")
-									img(src="dist/images/temporary/need-product1.jpg", alt="some image")
-							.purchase-item__desc
-								.purshase-item__name
-									a(href="#") Батарейка FUJITSU (2шт.)
-								.purchase-item__category
-									a(href="#") Батарейки
-							form.purshase-item__form.purchase-form(action="/")
-								input.purchase-form__qty(type="number" value="1" min="0")
-								span.purchase-item__price 
-									b 156
-									|  грн
-								input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										span.product-status.product-status--new Новинка
+										span.product-status.product-status--discount -10%
+										
+									h3.similar-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									.similar-product__price
+										span.product-price--new 2600 
+											span.product-price__text--small грн
+										span.product-price--old 2785 грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+										.similar-product__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
 
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										span.product-status.product-status--top Топ продаж
+										span.product-status.product-status--discount -10%
+									h3.similar-product__heading
+										a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+									.similar-product__price
+										span.product-price--new 896 
+											span.product-price__text--small грн
+										span.product-price--old 1024 грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+										.similar-product__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										
+									h3.similar-product__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.similar-product__price
+										.product-price.product-price--current 1024 грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+										.similar-product__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										
+									h3.similar-product__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.similar-product__price
+										.product-price.product-price--current 1024 грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+										.similar-product__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.similar-product
+							.similar-product__inner
+								.similar-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.similar-product__content
+									.similar-product__product-status
+										
+									h3.similar-product__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.similar-product__price
+										.product-price.product-price--current 1024 грн
+									.similar-product__buy
+										a.product-btn.similar-product__btn.similar-product__btn--buy(href="#") Купить
+										.similar-product__wishlist
+											a.o-wishlist-link.o-wished(href="#")
+												span.o-wishlist__text В избранном
 
 
