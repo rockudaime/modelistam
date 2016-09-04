@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		title Product
+		title Waiting product
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -14,17 +14,17 @@ html(lang="ru")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		script(src="dist/js/pages/product.js")
 		// add fancybox
-		link(rel="stylesheet", href="dist/css/fancybox/jquery.fancybox.css?v=2.1.5")
-		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
-		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
-		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		link(rel="stylesheet", href="dist/fancybox/source/jquery.fancybox.css?v=2.1.5")
+		script(src="dist/fancybox/source/jquery.fancybox.js?v=2.1.5")
+		link(rel="stylesheet", href="dist/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
+		script(src="dist/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
 		
 
 	body
 		.page-inner
 			section.product-card
 				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-				// h1.product-card__title.product-card__title--sale Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
 
 				// Шапка товара с основной информацией для покупки
 				section.product-card__header
@@ -37,78 +37,52 @@ html(lang="ru")
 
 						.product-card__gallery.gallery-product
 							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								a.link-to-images(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk")
 									img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
 							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								a.link-to-images(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk")
 									img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
 							.gallery-product__item.gallery-product__item--active
-								// ссылка активного элемента не содержит класса .fancybox-thumbs
-								a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk")
 									img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
 							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								a.link-to-images(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk")
 									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
-						// Вывод всех изображений во всплывающем окне
-						// В этот блок добавляются все изображения, что не вошли в основные 4 штуки.
-						.product-card__all-images
+						//- // Вывод всех изображений во всплывающем окне
+						//- .product-card__all-images
 
-								a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
-									img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg"  data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+						//- 			img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
 
 					.product-card__buy-block.product-info
 						// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
-						.product-feature.product-feature--best-price Гарантия лучшей цены
+						//.product-feature.product-feature--best-price Гарантия лучшей цены
 						// .product-feature.product-feature--order Товар под заказ
-						div.product-group
-							span.product-info__status.product-info__status--available Есть в наличии
-							//span.product-info__status.product-info__status--not-available Нет в наличии
-							//span.product-info__status.product-info__status--waiting Ожидается
+						.product-group.product-group--waiting
+							//- span.product-info__status.product-info__status--available Есть в наличии
+							//- span.product-info__status.product-info__status--not-available Нет в наличии
+							span.product-info__status.product-info__status--waiting Ожидается
 							span.product-info__code Код:&nbsp;TM503018-T86
 						form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
-							ul.product-info__set-option.set-option-product.clearfix
-								li.set-option-product__item
-									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
-									label.set-option-product__label(for="productWithoutSet") Без набора
-										span.tip-btn
-										div.tip-content Это подсказка для этого блока
-
-								li.set-option-product__item
-									input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
-									label.set-option-product__label(for="productWithSet") С набором
-							// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
-							.product-info__color.color-product-info
-								| Цвета:
-								.color-product-info__choosed-color
-									span(style="background: white").color-product-info__color-label
-								.color-product-info__colors.product-colors
-									.product-colors__item
-										input.product-colors__radio(type="radio" name="productColors" id="color-1" value="white" checked)
-										label(for="color-1")
-											span(style="background-color: white").color-product-info__color-label
-											| Белый
-									.product-colors__item
-										input.product-colors__radio(type="radio" name="productColors" value="red" id="color-2")
-										label(for="color-2")
-											span(style="background-color: red").color-product-info__color-label
-											| Красный
-									.product-colors__item
-										input.product-colors__radio(type="radio" name="productColors" value="yellow" id="color-3")
-										label(for="color-3")
-											span(style="background-color: yellow").color-product-info__color-label
-											| Желтый
 							div.product-info__buy-block
 								.product-info__price-block
-									// span.product-info__price-current 3 160
-									// 	i.price__sm  грн
-									span.product-info__price-new.new-price 3 160
+									span.product-info__price-current 3 160
 										i.price__sm  грн
-									span.product-info__price-old 3 500 грн
-								input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
-								//input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
-								//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
-								span.mobile-buy-option
-									a(href="#fast_buy").fastbuy-link Быстрая покупка
+							
+							input.product-input.form-control(type="text" name="contact" placeholder="Эл. почта или телефон")
+							//input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
+							//input.product-btn.product-btn--inform
+							//input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
+							input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
+
 
 							
 						ul.product-info__buy-options.p-buy-options
@@ -118,7 +92,7 @@ html(lang="ru")
 										a(href="#") Со скидкой
 									li.p-buy-options__option
 										a#followbuyCreditProduct-link(href="#") В кредит
-									li.p-buy-options__option
+									li.p-buy-options__option.fastbuy-link
 										a(href="#fast_buy") Быстрая покупка
 						.product-info__actions
 							.personal-actions
@@ -162,25 +136,150 @@ html(lang="ru")
 						ul.details-product__menu.menu-details
 							// Меню по табам
 							li.menu-details__item
-								a.menu-details__link.menu-details__link--active(href="#" data-target="about") О товаре
+								a.menu-details__link.menu-details__link--active(href="#" data-id="about") О товаре
 							li.menu-details__item
-								a.menu-details__link(href="#" data-target="characteristics") Характеристики
+								a.menu-details__link(href="#" data-id="characteristics") Характеристики
 							li.menu-details__item
-								a.menu-details__link(href="#" data-target="comments") Отзывы
+								a.menu-details__link(href="#" data-id="comments") Отзывы
 							li.menu-details__item
-								a.menu-details__link(href="#" data-target="accessories") Аксессуары
+								a.menu-details__link(href="#" data-id="accessories") Аксессуары
 							li.menu-details__item
-								a.menu-details__link(href="#" data-target="repairParts") Запчасти
+								a.menu-details__link(href="#" data-id="repairParts") Запчасти
 							li.menu-details__item
 								span.menu-details__tablet-toggler Детальнее
 								ul.menu-details__tablet-toggled
 									li.menu-details__item
-										a.menu-details__link(href="#" data-target="questionsAndAnswers") Вопросы и ответы
+										a.menu-details__link(href="#" data-id="questionsAndAnswers") Вопросы и ответы
 									li.menu-details__item
-										a.menu-details__link(href="#" data-target="consulting") Получить консультацию
+										a.menu-details__link(href="#" data-id="consulting") Получить консультацию
+					
+
+					// ----------------------------
+					// Ниже без изменений
+					// ----------------------------
+
 					// 1 таб - О товаре
 					div.item-detail__mobile-menu-item.mobile-menu-item--active О товаре
 					article#about.details-product__detail-item.item-detail.about-product.clearfix.item-detail--active
+						section.about-product__similar-products
+							// Похожие товары в наличии
+							h2.additional-blocks__heading Похожие товары в наличии
+							.similar-products-block.clearfix#owl-similar-products.owl-carousel
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												span.product-status.product-status--new Новинка
+											h3.product-preview-item__heading
+												a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+											.product-preview-item__price
+												span.product-price--current 5 025 
+													span.product-price__text--small грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+												.product-preview-item__wishlist
+													a.o-wishlist-link.o-wished(href="#")
+														span.o-wishlist__text В избранном
+
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												span.product-status.product-status--new Новинка
+												span.product-status.product-status--discount -10%
+												
+											h3.product-preview-item__heading
+												a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+											.product-preview-item__price
+												span.product-price--new 2600 
+													span.product-price__text--small грн
+												span.product-price--old 2785 грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+												.product-preview-item__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												span.product-status.product-status--top Топ продаж
+												span.product-status.product-status--discount -10%
+											h3.product-preview-item__heading
+												a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+											.product-preview-item__price
+												span.product-price--new 896 
+													span.product-price__text--small грн
+												span.product-price--old 1024 грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+												.product-preview-item__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												
+											h3.product-preview-item__heading
+												a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+											.product-preview-item__price
+												.product-price.product-price--current 1024 грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+												.product-preview-item__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												
+											h3.product-preview-item__heading
+												a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+											.product-preview-item__price
+												.product-price.product-price--current 1024 грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+												.product-preview-item__wishlist
+													a.o-wishlist-link(href="#")
+														span.o-wishlist__text В избранное
+
+								.product-preview-item
+									.product-preview-item__inner
+										.product-preview-item__photo
+											a(href="#")
+												img(src="dist/images/sample-airplane.jpg", alt="image")
+										.product-preview-item__content
+											.product-preview-item__product-status
+												
+											h3.product-preview-item__heading
+												a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+											.product-preview-item__price
+												.product-price.product-price--current 1024 грн
+											.product-preview-item__buy
+												a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+												.product-preview-item__wishlist
+													a.o-wishlist-link.o-wished(href="#")
+														span.o-wishlist__text В избранном
 						section.about-product__video
 							ul.videos-tabs
 								li.video-tab(data-order="1").
@@ -873,124 +972,4 @@ html(lang="ru")
 															span.o-wishlist__text В избранное
 				
 				// Начало дополнительных блоков: похожие товары, вы смотрели и т.д.
-				section.additional-blocks
-					// Похожие товары
-					h2.additional-blocks__heading С этой моделью также смотрят
-					.similar-products-block.clearfix#owl-similar-products.owl-carousel
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--new Новинка
-									h3.product-preview-item__heading
-										a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-									.product-preview-item__price
-										span.product-price--current 5 025 
-											span.product-price__text--small грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-										.product-preview-item__wishlist
-											a.o-wishlist-link.o-wished(href="#")
-												span.o-wishlist__text В избранном
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--new Новинка
-										span.product-status.product-status--discount -10%
-										
-									h3.product-preview-item__heading
-										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-									.product-preview-item__price
-										span.product-price--new 2600 
-											span.product-price__text--small грн
-										span.product-price--old 2785 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--top Топ продаж
-										span.product-status.product-status--discount -10%
-									h3.product-preview-item__heading
-										a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
-									.product-preview-item__price
-										span.product-price--new 896 
-											span.product-price__text--small грн
-										span.product-price--old 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link.o-wished(href="#")
-												span.o-wishlist__text В избранном
-
-
+				

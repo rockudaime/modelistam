@@ -1,0 +1,130 @@
+doctype html
+html(lang="ru")
+	head
+		title Product
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/pages/product.js")
+		// add fancybox
+		link(rel="stylesheet", href="dist/fancybox/source/jquery.fancybox.css?v=2.1.5")
+		script(src="dist/fancybox/source/jquery.fancybox.js?v=2.1.5")
+		link(rel="stylesheet", href="dist/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
+		script(src="dist/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		
+
+	body
+		.page-inner
+			section.product-card
+				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+				// h1.product-card__title.product-card__title--sale Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
+				// Шапка товара с основной информацией для покупки
+				section.product-card__header
+					// Блок, который содержит информацию по товару: картинки, цену, производителя и т.д
+					.product-card__image-block
+						// Блок с изображениями товара
+						.product-card__main-image
+							a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+
+						.product-card__gallery.gallery-product
+							.gallery-product__item
+								a.link-to-images(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk")
+									img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
+							.gallery-product__item
+								a.link-to-images(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk")
+									img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
+							.gallery-product__item.gallery-product__item--active
+								a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk")
+									img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
+							.gallery-product__item
+								a.link-to-images(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk")
+									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+						//- // Вывод всех изображений во всплывающем окне
+						//- .product-card__all-images
+
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg"  data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+						//- 			img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
+
+					.product-card__buy-block.product-info
+						// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
+						//- .product-feature.product-feature--best-price Гарантия лучшей цены
+						// .product-feature.product-feature--order Товар под заказ
+						.product-group.product-group--reserve
+							//- span.product-info__status.product-info__status--available Есть в наличии
+							//- span.product-info__status.product-info__status--not-available Нет в наличии
+							//- span.product-info__status.product-info__status--waiting Ожидается
+							span.product-info__code Код:&nbsp;TM503018-T86
+						form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
+							.product-info__price-block
+								span.product-info__no-price Цена не установлена
+								div Cообщим, как только появится цена 
+										//- i.price__sm  грн
+							input.product-input.form-control(type="text" name="contact" placeholder="Эл. почта или телефон")
+							input.product-input.form-control(type="text" name="name" placeholder="Как Вас зовут")
+							//input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
+							//input.product-btn.product-btn--inform
+							input.product-btn.product-btn--reserve(type="submit" value="Зарезервировать" role="button")
+							//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
+
+
+							
+						ul.product-info__buy-options.p-buy-options
+							li.p-buy-options__heading Другие варианты покупки:
+								ul.p-buy-options__inner
+									li.p-buy-options__option
+										a(href="#") Со скидкой
+									li.p-buy-options__option
+										a#followbuyCreditProduct-link(href="#") В кредит
+									li.p-buy-options__option.fastbuy-link
+										a(href="#fast_buy") Быстрая покупка
+						.product-info__actions
+							.personal-actions
+								.personal-actions__action.action-personal.action-personal--wishlist
+									i
+									span.action-personal__title Отложить
+								.personal-actions__action.action-personal.action-personal--compare
+									i
+									span.action-personal__title Сравнить
+								.personal-actions__action.action-personal.action-personal--watch-price
+									i
+									span.action-personal__title Следить за ценой
+							.rateit-block
+								.rateit__range
+									.rateit__selected
+										.rateit__hover
+								|  на базе 122 оценок
+									
+
+					aside.product-card__shop-info.shop-info
+						.product-manufacturer Производитель:
+							a(href="#")  HSP Racing
+						.product-warranty Гарантия: 24 мес
+						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
+						ul.shop-info__pages
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Доставка и оплата
+							li.shop-info__page
+								a.shop-info__page-link(href="#") Возврат и обмен
+							li.shop-info__page.mobile-hidden
+								a.shop-info__page-link(href="#") Гарантия качества
+							li.shop-info__page.mobile-hidden
+								a.shop-info__page-link(href="#") Сервисный центр
+							li.shop-info__page.mobile-hidden
+								a.shop-info__page-link(href="#") Консультация

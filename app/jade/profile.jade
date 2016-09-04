@@ -97,13 +97,13 @@ block item
 					h3 Дата рождения:
 					p Укажите дату для напоминаний о специальных предложениях ко Дню рождения
 					.select-date
-						select(name="birth-day" id="birthDay")
+						select.select-date__select(name="birth-day" id="birthDay")
 							- for (var x = 1; x < 32; x++)
 								option(value=x)=x
-						select(name="birth-month" id="birthMonth")
+						select.select-date__select(name="birth-month" id="birthMonth")
 							each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
 								option(value=index)= val
-						select(name="birth-year" id="birthYear")
+						select.select-date__select(name="birth-year" id="birthYear")
 							-for (var x = 2016; x>1939; x--)
 								option(value=x)= x
 						span#computed-age 0 лет
