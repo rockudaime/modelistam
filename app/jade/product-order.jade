@@ -1,97 +1,43 @@
-doctype html
-html(lang="ru")
-	head
-		title Product
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
-		link(rel="stylesheet" href="dist/normalize.css")
-		link(rel="stylesheet" href="dist/template_styles.css")
-		
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
-		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		script(src="dist/js/pages/product.js")
-	body
-		.page-inner
-			section.product-card
-				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-				// Шапка товара с основной информацией для покупки
-				section.product-card__header
-					// Блок, который содержит информацию по товару: картинки, цену, производителя и т.д
-					.product-card__image-block
-						// Блок с изображениями товара
-						.product-card__main-image
-							img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
-						.product-card__gallery.gallery-product
-							.gallery-product__item
-								img(src="dist/images/temporary/owerview-banner-big.jpg", alt="some image")
-							.gallery-product__item
-								img(src="dist/images/temporary/product-main-img.jpg", alt="some image")
-							.gallery-product__item.gallery-product__item--active
-								img(src="dist/images/temporary/product-main-img-desc.jpg", alt="some image")
-							.gallery-product__item
-								img(src="dist/images/temporary/avto.jpeg", alt="some image")
+extend product-page.jade
 
-					.product-card__buy-block.product-info
-						// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
-						// .product-feature.product-feature--best-price Гарантия лучшей цены
-						.product-feature.product-feature--order Товар под заказ
-						div(style="margin-bottom: 15px;")
-							//span.product-info__status.product-info__status--available Есть в наличии
-							span.product-info__code Код: 193878
-						form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
+block title
+	title Product - order
 
-							div.product-info__buy-block
-								.product-info__price-block
-									span.product-info__price-current 3 160
-										i.price__sm  грн
-									//span.product-info__price-new.new-price 3 160
-										i.price__sm  грн
-									//span.product-info__price-old 3 500 грн
-								input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
-								span.mobile-buy-option 
-									a(href="#fast_order").fastbuy-link Быстрый заказ
 
-							
-						ul.product-info__buy-options.p-buy-options
-							li.p-buy-options__option
-								a(href="#make_order") Быстрый заказ
+block buy-block
+	// блок с информацией для заказа\покупки
+	.product-card__buy-block.product-info
+		.product-feature.product-feature--order Товар под заказ
+		div(style="margin-bottom: 15px;")
+			span.product-info__code Код: 193878
+		form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
 
-						.product-info__actions
-							.personal-actions
-								.personal-actions__action.action-personal.action-personal--wishlist
-									i
-									span.action-personal__title Отложить
-								.personal-actions__action.action-personal.action-personal--compare
-									i
-									span.action-personal__title Сравнить
-								.personal-actions__action.action-personal.action-personal--watch-price
-									i
-									span.action-personal__title Следить за ценой
-							.rateit-block
-								.rateit__range
-									.rateit__selected
-										.rateit__hover
-								|  на базе 122 оценок
-									
+			div.product-info__buy-block
+				.product-info__price-block
+					span.product-info__price-current 3 160
+						i.price__sm  грн
+				input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
+				span.mobile-buy-option 
+					a(href="#fast_order").fastbuy-link Быстрый заказ
 
-					aside.product-card__shop-info.shop-info
-						.product-manufacturer Производитель:
-							a(href="#")  HSP Racing
-						.product-warranty Гарантия: 24 мес
-						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
-						ul.shop-info__pages
-							li.shop-info__page
-								a.shop-info__page-link(href="#") Доставка и оплата
-							li.shop-info__page
-								a.shop-info__page-link(href="#") Возврат и обмен
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Гарантия качества
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Сервисный центр
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Консультация
-				// Тело с детальным описанием, характеристиками и доп. блоками
-				
+		ul.product-info__buy-options.p-buy-options
+			li.p-buy-options__option
+				a(href="#make_order") Быстрый заказ
+
+		.product-info__actions
+			.personal-actions
+				.personal-actions__action.action-personal.action-personal--wishlist
+					i
+					span.action-personal__title Отложить
+				.personal-actions__action.action-personal.action-personal--compare
+					i
+					span.action-personal__title Сравнить
+				.personal-actions__action.action-personal.action-personal--watch-price
+					i
+					span.action-personal__title Следить за ценой
+			.rateit-block
+				.rateit__range
+					.rateit__selected
+						.rateit__hover
+				|  на базе 122 оценок
+	// конец блока с информацией для заказа\покупки	

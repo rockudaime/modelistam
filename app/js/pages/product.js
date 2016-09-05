@@ -136,8 +136,11 @@ $(document).ready(function() {
 		$('.accessories').hide();
 		tabs.removeClass('item-detail--active');
 		links.removeClass('menu-details__link--active');
-		$('.menu-details__link[data-id="characteristics"]').addClass('menu-details__link--active');
+		$('.menu-details__link[data-target="characteristics"]').addClass('menu-details__link--active');
 		tab.addClass('item-detail--active');
+		$root.animate({
+		        scrollTop: tab.offset().top
+		}, 500);
 	});
 	/**
 	*

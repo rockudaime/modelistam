@@ -1,130 +1,168 @@
-doctype html
-html(lang="ru")
-	head
-		title Product - Outstock
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
-		link(rel="stylesheet" href="dist/normalize.css")
-		link(rel="stylesheet" href="dist/template_styles.css")
-		
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
-		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		script(src="dist/js/pages/product.js")
-		// add fancybox
-		link(rel="stylesheet", href="dist/fancybox/source/jquery.fancybox.css?v=2.1.5")
-		script(src="dist/fancybox/source/jquery.fancybox.js?v=2.1.5")
-		link(rel="stylesheet", href="dist/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
-		script(src="dist/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
-		
+extend product-page.jade
 
-	body
-		.page-inner
-			section.product-card
-				h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-				// h1.product-card__title.product-card__title--sale Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+block title
+	title Product - Outstock
 
-				// Шапка товара с основной информацией для покупки
-				section.product-card__header
-					// Блок, который содержит информацию по товару: картинки, цену, производителя и т.д
-					.product-card__image-block
-						// Блок с изображениями товара
-						.product-card__main-image
-							a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-								img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+block buy-block
+	// блок с информацией для заказа\покупки
+	.product-card__buy-block.product-info
+		.product-feature.product-feature--best-price Гарантия лучшей цены
+		.product-group
+			span.product-info__status.product-info__status--not-available Нет в наличии
+			span.product-info__code Код:&nbsp;TM503018-T86
+		form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
+			div.product-info__buy-block
+				.product-info__price-block
+					span.product-info__price-current 3 160
+						i.price__sm  грн		
+			input.product-input.form-control(type="text" name="contact" placeholder="Эл. почта или телефон")
+			input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
 
-						.product-card__gallery.gallery-product
-							.gallery-product__item
-								a.link-to-images(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk")
-									img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
-							.gallery-product__item
-								a.link-to-images(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk")
-									img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
-							.gallery-product__item.gallery-product__item--active
-								a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk")
-									img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
-							.gallery-product__item
-								a.link-to-images(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk")
-									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
-						//- // Вывод всех изображений во всплывающем окне
-						//- .product-card__all-images
+		ul.product-info__buy-options.p-buy-options
+			li.p-buy-options__heading Другие варианты покупки:
+				ul.p-buy-options__inner
+					li.p-buy-options__option
+						a(href="#") Со скидкой
+					li.p-buy-options__option
+						a#followbuyCreditProduct-link(href="#") В кредит
+					li.p-buy-options__option.fastbuy-link
+						a(href="#fast_buy") Быстрая покупка
+		.product-info__actions
+			.personal-actions
+				.personal-actions__action.action-personal.action-personal--wishlist
+					i
+					span.action-personal__title Отложить
+				.personal-actions__action.action-personal.action-personal--compare
+					i
+					span.action-personal__title Сравнить
+				.personal-actions__action.action-personal.action-personal--watch-price
+					i
+					span.action-personal__title Следить за ценой
+			.rateit-block
+				.rateit__range
+					.rateit__selected
+						.rateit__hover
+				|  на базе 122 оценок
+	// конец блока с информацией для заказа\покупки	
 
-						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" data-fancybox-group="thumb" rel="group")
-						//- 			img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
-						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg"  data-fancybox-group="thumb" rel="group")
-						//- 			img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
-						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-						//- 			img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
-						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" data-fancybox-group="thumb" rel="group")
-						//- 			img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
-						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
-						//- 			img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
+block specific-page-block
+	// секция "Похожие товары в наличии"
+	section.about-product__similar-products
+		h2.additional-blocks__heading Похожие товары в наличии
+		.similar-products-block.clearfix#owl-similar-products.owl-carousel
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+						h3.product-preview-item__heading
+							a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+						.product-preview-item__price
+							span.product-price--current 5 025 
+								span.product-price__text--small грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+							.product-preview-item__wishlist
+								a.o-wishlist-link.o-wished(href="#")
+									span.o-wishlist__text В избранном
 
-					.product-card__buy-block.product-info
-						// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
-						.product-feature.product-feature--best-price Гарантия лучшей цены
-						// .product-feature.product-feature--order Товар под заказ
-						.product-group
-							//- span.product-info__status.product-info__status--available Есть в наличии
-							span.product-info__status.product-info__status--not-available Нет в наличии
-							//- span.product-info__status.product-info__status--waiting Ожидается
-							span.product-info__code Код:&nbsp;TM503018-T86
-						form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
-							div.product-info__buy-block
-								.product-info__price-block
-									span.product-info__price-current 3 160
-										i.price__sm  грн
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.product-status.product-status--discount -10%
 							
-							input.product-input.form-control(type="text" name="contact" placeholder="Эл. почта или телефон")
-							//input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
-							//input.product-btn.product-btn--inform
-							//input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
-							input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
+						h3.product-preview-item__heading
+							a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+						.product-preview-item__price
+							span.product-price--new 2600 
+								span.product-price__text--small грн
+							span.product-price--old 2785 грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+							.product-preview-item__wishlist
+								a.o-wishlist-link(href="#")
+									span.o-wishlist__text В избранное
 
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--top Топ продаж
+							span.product-status.product-status--discount -10%
+						h3.product-preview-item__heading
+							a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+						.product-preview-item__price
+							span.product-price--new 896 
+								span.product-price__text--small грн
+							span.product-price--old 1024 грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+							.product-preview-item__wishlist
+								a.o-wishlist-link(href="#")
+									span.o-wishlist__text В избранное
 
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
 							
-						ul.product-info__buy-options.p-buy-options
-							li.p-buy-options__heading Другие варианты покупки:
-								ul.p-buy-options__inner
-									li.p-buy-options__option
-										a(href="#") Со скидкой
-									li.p-buy-options__option
-										a#followbuyCreditProduct-link(href="#") В кредит
-									li.p-buy-options__option.fastbuy-link
-										a(href="#fast_buy") Быстрая покупка
-						.product-info__actions
-							.personal-actions
-								.personal-actions__action.action-personal.action-personal--wishlist
-									i
-									span.action-personal__title Отложить
-								.personal-actions__action.action-personal.action-personal--compare
-									i
-									span.action-personal__title Сравнить
-								.personal-actions__action.action-personal.action-personal--watch-price
-									i
-									span.action-personal__title Следить за ценой
-							.rateit-block
-								.rateit__range
-									.rateit__selected
-										.rateit__hover
-								|  на базе 122 оценок
-									
+						h3.product-preview-item__heading
+							a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+						.product-preview-item__price
+							.product-price.product-price--current 1024 грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+							.product-preview-item__wishlist
+								a.o-wishlist-link(href="#")
+									span.o-wishlist__text В избранное
 
-					aside.product-card__shop-info.shop-info
-						.product-manufacturer Производитель:
-							a(href="#")  HSP Racing
-						.product-warranty Гарантия: 24 мес
-						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
-						ul.shop-info__pages
-							li.shop-info__page
-								a.shop-info__page-link(href="#") Доставка и оплата
-							li.shop-info__page
-								a.shop-info__page-link(href="#") Возврат и обмен
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Гарантия качества
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Сервисный центр
-							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Консультация
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							
+						h3.product-preview-item__heading
+							a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+						.product-preview-item__price
+							.product-price.product-price--current 1024 грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+							.product-preview-item__wishlist
+								a.o-wishlist-link(href="#")
+									span.o-wishlist__text В избранное
+
+			.product-preview-item
+				.product-preview-item__inner
+					.product-preview-item__photo
+						a(href="#")
+							img(src="dist/images/sample-airplane.jpg", alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							
+						h3.product-preview-item__heading
+							a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+						.product-preview-item__price
+							.product-price.product-price--current 1024 грн
+						.product-preview-item__buy
+							a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+							.product-preview-item__wishlist
+								a.o-wishlist-link.o-wished(href="#")
+									span.o-wishlist__text В избранном
+	// конец секции "Похожие товары в наличии"

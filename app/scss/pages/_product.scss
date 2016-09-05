@@ -1021,7 +1021,7 @@ div.shop-info__work-time {
     margin-bottom: 45px;
 
     @media (min-width: 994px) {
-        padding-top: 20px;
+        // padding-top: 20px;
     }
 }
 #characteristicsLink{
@@ -1720,5 +1720,129 @@ div.shop-info__work-time {
     p{
         font: 15px/25px 'OpenSans';
         margin-bottom: 15px;
+    }
+}
+
+
+
+// product-set page
+// set block
+
+.product-wset{
+    display: none;
+
+
+    @media (min-width: 994px) {
+        display: block;
+        border: 1px solid #76a035;
+        border-radius: 3px;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    p{margin: 0;}
+
+    &__header{
+        margin-bottom: 15px;
+        font: 20px 'OpenSans_Semibold';
+    }
+
+    &__heading{
+        display: inline-block;
+        margin: 0 25px 0 0;
+        font: 20px 'OpenSans_Semibold';
+    }
+    &__desc{
+        display: inline-block;
+        color: #d34f27;
+        margin: 0;
+        padding-right: 15px;
+        background: url("images/product-set-arrow.png") no-repeat right 0 top 50%;
+        font: 20px 'OpenSans_Semibold';
+    }
+
+
+    &__set, &__total-price{
+        display: inline-block;
+        vertical-align: top;
+
+    }
+
+    &__total-price{
+        width: 175px;
+        margin-top: 40px;
+
+        @media (min-width: 1200px) {
+            width: 230px;
+        }
+    }
+
+    &__price-new:before{
+        content: "= ";
+        font: 25px OpenSans_semibold;
+        color: #777777;
+        vertical-align: middle;
+    }
+
+    &__price-old{
+        display: block;
+        margin-left: 24px;
+        margin-bottom: 15px;
+    }
+
+    &__price-sm{
+        font: 15px 'OpenSans';
+    }
+
+
+}
+
+.product-wset-item{
+    width: 140px;
+    display: inline-block;
+    position: relative;
+    margin-right: 40px;
+    padding: 0;
+    vertical-align: top;
+
+    @media (min-width: 1200px) {
+        width: 165px;
+        margin-right: 65px;
+    }
+
+    &:after{
+        position: absolute;
+        content:"+";
+        font: 35px 'OpenSans_Bold';
+        color: #c2c2c2;
+        top: 50px;
+        right: -34px;
+    }
+
+    &:last-child:after{
+        content:"";
+    }
+    &:last-child{
+        margin: 0 40px 0 0;
+    }
+
+
+    &__photo{
+        height: 150px;
+    }
+    &__heading{
+        height: 60px;
+    }
+
+}
+
+.product-wset-btn{
+    padding-right: 9px;
+    font-size: 15px;
+    background-image: none;
+    padding-left: 10px;
+
+    @media (min-width: 1200px) {
+        background-image: url('images/svg/Cart-button-white.svg');
+        padding-left: 45px;
     }
 }

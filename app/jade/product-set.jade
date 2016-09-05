@@ -1,18 +1,16 @@
 extend product-page.jade
 
 block title
-	title Product - sale
-
-block page-heading
-	// заголовок страницы акций
-	h1.product-card__title.product-card__title--sale Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+	title Product - Set
 
 block buy-block
 	// блок с информацией для заказа\покупки
 	.product-card__buy-block.product-info
-		.product-feature.product-feature--sale Осталось: 5 ч : 20 мин : 11 сек
-		div(style="margin-bottom: 15px;")
-			span.product-info__status.product-info__status--available Есть в наличии
+		.product-feature.product-feature--best-price Гарантия лучшей цены
+		div.product-group
+
+			span.product-info__status.product-info__status--not-available Нет в наличии
+
 			span.product-info__code Код:&nbsp;TM503018-T86
 		form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
 			ul.product-info__set-option.set-option-product.clearfix
@@ -55,7 +53,6 @@ block buy-block
 				span.mobile-buy-option
 					a(href="#fast_buy").fastbuy-link Быстрая покупка
 
-			
 		ul.product-info__buy-options.p-buy-options
 			li.p-buy-options__heading Другие варианты покупки:
 				ul.p-buy-options__inner
@@ -63,8 +60,8 @@ block buy-block
 						a(href="#") Со скидкой
 					li.p-buy-options__option
 						a#followbuyCreditProduct-link(href="#") В кредит
-					li.p-buy-options__option.fastbuy-link
-						a.fastbuy-link-mobile(href="#fast_buy") Быстрая покупка
+					li.p-buy-options__option
+						a(href="#fast_buy") Быстрая покупка
 		.product-info__actions
 			.personal-actions
 				.personal-actions__action.action-personal.action-personal--wishlist
@@ -81,17 +78,66 @@ block buy-block
 					.rateit__selected
 						.rateit__hover
 				|  на базе 122 оценок
-	// конец блока с информацией для заказа\покупки	
+	// конец блока с информацией для заказа\покупки
 
 block specific-page-block
-	// секция с условиями акции
-	section.sale-announce.clearfix
-		.sale-announce__description
-			h2.sale-announce__heading Ежегодная акция «Ночь покупок»
-			p.
-				С 23:00 7 августа, пятницы, по 06:00 8 августа 2015, субботы ищите на сайте скидки  до -50% на радиоуправляемые модели самолетов с видеокамерой на борту.
-			p.
-				Спешите! Такие скидки лишь раз в году.
-		.sale-announce__btn-block
-			a.sale-announce__btn(href="#") Акционные товары
-	// конец секции с условиями акции
+	// секция "Вместе дешевле"
+	section.product-wset.clearfix
+		.product-wset__header
+			h2.product-wset__heading Дешевле в комплекте
+			p.product-wset__desc Экономия 850 грн
+		.product-wset__set
+			// товар 1 
+			.product-preview-item.product-wset-item
+				.product-preview-item__photo.product-wset-item__photo
+					a(href="#")
+						img(src="dist/images/temporary/product/item3.jpg", alt="some item image")
+				.product-preview-item__content
+					h3.product-preview-item__heading.product-wset-item__heading
+						a(href="#") Эта модель
+					.product-preview-item__price
+						span.product-price--new 113 500
+							span.product-price__text--small  грн
+						span.product-price--old 113 685 грн
+			// товар 2
+			.product-preview-item.product-wset-item
+				.product-preview-item__photo.product-wset-item__photo
+					a(href="#")
+						img(src="dist/images/temporary/product/item2.jpg", alt="some item image")
+				.product-preview-item__content
+					h3.product-preview-item__heading.product-wset-item__heading
+						a(href="#") Аккумулятор Hubsan Li-Po 7,4В 450 мАч 2S
+					.product-preview-item__price
+						span.product-price--new 280
+							span.product-price__text--small  грн
+						span.product-price--old 310 грн
+			// товар 3
+			.product-preview-item.product-wset-item
+				.product-preview-item__photo.product-wset-item__photo
+					a(href="#")
+						img(src="dist/images/temporary/product/item3.jpg", alt="some item image")
+				.product-preview-item__content
+					h3.product-preview-item__heading.product-wset-item__heading
+						a(href="#") Передатчик Hubsan H301C-09 для планера Spy Hawk 2.4GHz
+					.product-preview-item__price
+						span.product-price--new 600
+							span.product-price__text--small  грн
+						span.product-price--old 785 грн
+			// товар 4
+			.product-preview-item.product-wset-item
+				.product-preview-item__photo.product-wset-item__photo
+					a(href="#")
+						img(src="dist/images/temporary/product/item5.jpg", alt="some item image")
+				.product-preview-item__content
+					h3.product-preview-item__heading.product-wset-item__heading
+						a(href="#") Сервопривод планера Hubsan Spy Hawk
+					.product-preview-item__price
+						span.product-price--new 320
+							span.product-price__text--small  грн
+						span.product-price--old 355 грн
+		.product-wset__total-price
+			span.product-info__price-new.product-wset__price-new 113 1610
+				i.price__sm.product-wset__price-sm  грн
+			span.product-info__price-old.product-wset__price-old 113 500 грн
+			a(href="#").product-btn.product-btn--buy.product-wset-btn Купить комплект
+	// Конец секции "Вместе дешевле"
