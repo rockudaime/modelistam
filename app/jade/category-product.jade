@@ -1,0 +1,346 @@
+doctype html
+html(lang="ru")
+	head
+		block title
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		// script(src="dist/js/pages/product.js")
+		// add fancybox
+		link(rel="stylesheet", href="dist/css/fancybox/jquery.fancybox.css?v=2.1.5")
+		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
+		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
+		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		script(src="dist/js/pages/category-product.js")
+
+	body
+		.page-inner
+			h1 Самолеты для FPV и съемки
+			
+			section.category-content
+				ul.catalog-top-menu
+					li.catalog-top-menu__item
+						a.catalog-top-menu__link.top-menu-choice-item(href='/info/howtochoice', rel='#')
+							i
+							span Как выбрать
+					li.catalog-top-menu__item
+						a.catalog-top-menu__link.top-menu-present-item(href='/info/ongift', rel='#')
+							i
+							span На подарок
+					li.catalog-top-menu__item
+						a.catalog-top-menu__link.top-menu-views-item(href='/info/overviews', rel='#')
+							i
+							span Обзоры
+					li.catalog-top-menu__item
+						a.catalog-top-menu__link.top-menu-video-item(href='/info/video', rel='#')
+							i
+							span Видео
+					li.catalog-top-menu__item
+						a.catalog-top-menu__link.top-menu-accesories-item(href='/info/accesories', rel='#')
+							i
+							span Аксессуары
+				.catalog-view-changer
+					a.view-changer-link.view-changer-link--active(title='Показать блоками', href='?view=block', data-view="block")
+						span.icon-view-block
+							i
+							i
+							i
+							i
+					a.view-changer-link(title='Показать списком', href='?view=list', data-view="list")
+						span.icon-view-list
+							i
+							i
+							i
+				.mobile-filter-links.clearfix
+					.filter-link Подбор 
+					.sort-link Сортировать
+				form#sort-form(method='get', action='/catalog/avtomobili')
+					input#sort-order(type='hidden', name='sort', value='')
+					input#paging(type='hidden', name='p', value='')
+					.sort.sort-main-block
+						#product-sort-simple.product-sort-simple
+							.product-sort-simple__inner
+								b Сортировать:
+								a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
+								a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
+								a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
+				.category-content__products
+					.category-product
+						.category-product__inner
+							.category-product__header
+								.category-product__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.category-product__product-status
+									span.product-status.product-status--top Топ продаж
+									.category-product__product-info
+										span.category-product__product-comments
+											a(href="#") 3
+										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+							.category-product__content
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+								span.category-product__availaible В наличии
+							.category-product__content-right
+								.category-product__price
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy.category-product__btn--buy-noavail(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link.cp-wished(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link.cp-compared(href="#", title="добавить к сравнению")
+										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+							.category-product__hidden-content
+									.category-product__gallery
+										ul.cp-gallery
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+										.cp-gallery__items-qty +3
+									.category-product__characteristics
+										ul
+											li с пультом управления
+											li литий ионный аккумулятор
+											li автономное время - 3ч
+									.category-product__rating
+										table
+											tr
+												td
+													span.star 1
+												td
+													div
+														a(href="#") Обзор сравнение
+													.rateit-block
+														.rateit__range
+															.rateit__selected
+																.rateit__hover
+
+					.category-product
+						.category-product__inner
+							.category-product__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.category-product__content
+								.category-product__product-status
+									span.product-status.product-status--discount -10%
+									.category-product__product-info
+										span.category-product__product-comments
+											a(href="#") 0
+										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+									
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								.category-product__price
+									span.product-price--new 2600 
+										span.product-price__text--small грн
+									span.product-price--old 2785 грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#")
+										a.category-product__product-link.cp-compare-link(href="#")
+										a.category-product__product-link.cp-watch-price-link(href="#")
+								.category-product__hidden-content
+									.category-product__gallery
+										ul.cp-gallery
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+										.cp-gallery__items-qty +3
+									.category-product__characteristics
+										ul
+											li с пультом управления
+											li литий ионный аккумулятор
+											li автономное время - 3ч
+									.category-product__rating
+										table
+											tr
+												td
+													span.star 1
+												td
+													div
+														a(href="#") Обзор сравнение
+													.rateit-block
+														.rateit__range
+															.rateit__selected
+																.rateit__hover
+
+
+					.category-product
+						.category-product__inner
+							.category-product__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.category-product__content
+								.category-product__product-status
+									span.product-status.product-status--new Новинка
+									.category-product__product-info
+										span.category-product__product-comments
+											a(href="#") 16
+										span.product-info__code.category-product__product-code Код:&nbsp;TM503018-T86
+									
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								.category-product__price
+									span.product-price--new 2600 
+										span.product-price__text--small грн
+									span.product-price--old 2785 грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link.cp-wished(href="#")
+										a.category-product__product-link.cp-compare-link.cp-compared(href="#")
+										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#")
+					.category-product
+						.category-product__inner
+							.category-product__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.category-product__content
+								.category-product__product-status
+									span.product-status.product-status--new Новинка
+									span.product-status.product-status--discount -10%
+									
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								.category-product__price
+									span.product-price--new 2600 
+										span.product-price__text--small грн
+									span.product-price--old 2785 грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#")
+										a.category-product__product-link.cp-compare-link(href="#")
+										a.category-product__product-link.cp-watch-price-link(href="#")
+
+					.category-product
+						.category-product__inner
+							.category-product__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.category-product__content
+								.category-product__product-status
+									span.product-status.product-status--new Новинка
+									span.product-status.product-status--discount -10%
+									
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								.category-product__price
+									span.product-price--new 2600 
+										span.product-price__text--small грн
+									span.product-price--old 2785 грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#")
+										a.category-product__product-link.cp-compare-link(href="#")
+										a.category-product__product-link.cp-watch-price-link(href="#")
+				// блок навигации
+				.catalog-bottom-pager
+					.pager-main-block
+						.catalog-nav
+							.nav-elems
+								span.pager__inner-elem.pager__inner-elem--current.strong 1
+								span.pager__inner-elem(data-nav='2')
+									a(href='/catalog/avtomobili?page=2&view=block') 2
+								span.pager__inner-elem(data-nav='3')
+									a(href='/catalog/avtomobili?page=3&view=block') 3
+								|       →  
+								span.pager__inner-elem(data-nav='55')
+									a(href='/catalog/avtomobili?page=55&view=block') 55
+							a.pmb-black.next-navigation(href='/catalog/avtomobili?page=2&view=block')
+								| Следующая
+								i
+				// конец блока навигации
+			
+
+			// начало сайдбара с фильтром
+			aside.category-sidebar
+				section.sidebar-filter
+					form#filter-form(method="get" action="/catalog/avtomobili?view=list")
+						.product-filter
+							.filter-header
+								.filter-total-amount
+									strong Найдено: 1298
+							.filter-values-block
+								a.filter-delete(href="#")
+									i
+									span Удалить фильтры
+						.product-filter
+							.filter-header Цена
+							.filter-values-block
+								.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all#price-slider
+									.ui-slider-range.ui-widget-header.ui-corner-all(style="left: 0; width: 100%;")
+									a.ui-slider-handle.ui-state-default.ui-corner-all(href="#" style="left: 0;")
+									a.ui-slider-handle.ui-state-default.ui-corner-all(href="#" style="left: 100%;")
+						.product-filter
+							.filter-header
+								strong Бренд
+								span.filterToggler.icon-up(onclick="if ($(this).hasClass('icon-down')) {$(this).removeClass('icon-down').addClass('icon-up'); $('#product-filter-values-583').slideUp('fast');	} else { $(this).removeClass('icon-up').addClass('icon-down'); $('#product-filter-values-583').slideDown('fast')}")
+							#product-filter-values-583.filter-values-block.a-1(style='display: block;')
+								#prop-filter-600000162.prop-filter
+									input#prop_600000162(type='hidden', value='600000162', name='Brand[]', disabled='disabled')
+									.float-left.checkbox-black(onclick='set_filter(600000162)')
+									.product-filter-link.article
+										a(href='/catalog/avtomobili?Brand=600000162&view=list') HSP Racing
+										em (96)
+									.clear
+								#prop-filter-600000046.prop-filter
+									input#prop_600000046(type='hidden', value='600000046', name='Brand[]', disabled='disabled')
+									.float-left.checkbox-black(onclick='set_filter(600000046)')
+									.product-filter-link.article
+										a(href='/catalog/avtomobili?Brand=600000046&view=list') Tamiya
+										em (40)
+									.clear
+								#prop-filter-600000048.prop-filter
+									input#prop_600000048(type='hidden', value='600000048', name='Brand[]', disabled='disabled')
+									.float-left.checkbox-black(onclick='set_filter(600000048)')
+									.product-filter-link.article
+										a(href='/catalog/avtomobili?Brand=600000048&view=list') Kyosho
+										em (347)
+									.clear
+				section.category-viewed-products
+					h2.category-viewed-products__heading Вы смотрели
+					ul
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+										
+			// конец сайдбара с фильтром

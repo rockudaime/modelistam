@@ -12,12 +12,18 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		script(src="dist/js/pages/product.js")
+		script(src="dist/js/vendor/editable-select/jquery-editable-select.js")
+		link(rel="stylesheet", href="dist/css/editable-select/editable-select.css") 
+		
 		// add fancybox
 		link(rel="stylesheet", href="dist/css/fancybox/jquery.fancybox.css?v=2.1.5")
 		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
 		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
 		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		
+		// main script
+		script(src="dist/js/pages/product.js")
+
 		
 
 	body
@@ -50,6 +56,9 @@ html(lang="ru")
 							.gallery-product__item
 								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+							.gallery-product__item
+								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
 						// Вывод всех изображений во всплывающем окне
 						// В этот блок добавляются все изображения, что не вошли в основные 4 штуки.
 						.product-card__all-images
@@ -79,6 +88,7 @@ html(lang="ru")
 				// Тело с детальным описанием, характеристиками и доп. блоками
 				section.product-card__details.details-product
 					// Блок который содержит детали по товару: описание, характеристики, отзывы и т.д
+					block product-set-block
 					.details-product__menu-wrapper
 						ul.details-product__menu.menu-details
 							// Меню по табам
@@ -158,69 +168,72 @@ html(lang="ru")
 						section.product-card__need-to-purchase.purchase-product
 							h2.purchase-product__title Требуется докупить (не входит в комплекцию)
 							.purchase-product__products.products-purchase
-								.products-purchase__item.purchase-item
-									.purchase-item__img
-										a(href="#")
-											img(src="dist/images/temporary/need-product2.jpg", alt="some image")
-									.purchase-item__desc
-										.purchase-item__name
-											a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
-										.purchase-item__category
-											a(href="#") Батарейки
-									form.purchase-item__form.purchase-form(action="/")
-										select.purchase-form__qty(name="prod-qty")
-											option(value="1") 1
-											option(value="2") 2
-											option(value="3") 3
-											option(value="5") 5
-											option(value="7") 7
-											option(value="10") 10
-										span.purchase-item__price
-											b 24
-											|  грн
-										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-								.products-purchase__item.purchase-item
-									.purchase-item__img
-										a(href="#")
-											img(src="dist/images/temporary/need-product1.jpg", alt="some image")
-									.purchase-item__desc
-										.purchase-item__name
-											a(href="#") Батарейка Duracell AAA LR03
-										.purchase-item__category
-											a(href="#") Батарейки
-									form.purchase-item__form.purchase-form(action="/")
-										select.purchase-form__qty(name="prod-qty")
-											option(value="1") 1
-											option(value="2") 2
-											option(value="3") 3
-											option(value="5") 5
-											option(value="7") 7
-											option(value="10") 10
-										span.purchase-item__price 
-											b 1 124
-											|  грн
-										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-								.products-purchase__item.purchase-item
-									.purchase-item__img
-										a(href="#")
-											img(src="dist/images/temporary/need-product1.jpg", alt="some image")
-									.purchase-item__desc
-										.purchase-item__name
-											a(href="#") Батарейка FUJITSU (2шт.)
-										.purchase-item__category
-											a(href="#") Батарейки
-									form.purchase-item__form.purchase-form(action="/")
-										select.purchase-form__qty(name="prod-qty")
-											option(value="1") 1
-											option(value="2") 2
-											option(value="3") 3
-											option(value="5") 5
-											option(value="7") 7
-											option(value="10") 10
-										span.purchase-item__price 
-											b 156
-											|  грн
-										input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+								.products-purchase__category-items
+									.products-purchase__item.purchase-item
+										.purchase-item__img
+											a(href="#")
+												img(src="dist/images/temporary/need-product2.jpg", alt="some image")
+										.purchase-item__desc
+											.purchase-item__name
+												a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
+											.purchase-item__category
+												a(href="#") Батарейки
+										form.purchase-item__form.purchase-form(action="/")
+											select.purchase-form__qty(name="prod-qty")
+												option(value="1" selected) 1
+												option(value="2") 2
+												option(value="3") 3
+												option(value="5") 5
+												option(value="7") 7
+												option(value="10") 10
+											span.purchase-item__price
+												b 24
+												|  грн
+											input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+									a(href="#") Показать все батарейки
+									.products-purchase__collapsed-items
+										.products-purchase__item.purchase-item
+											.purchase-item__img
+												a(href="#")
+													img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+											.purchase-item__desc
+												.purchase-item__name
+													a(href="#") Батарейка Duracell AAA LR03
+												.purchase-item__category
+													a(href="#") Батарейки
+											form.purchase-item__form.purchase-form(action="/")
+												select.purchase-form__qty(name="prod-qty")
+													option(value="1" selected) 1
+													option(value="2") 2
+													option(value="3") 3
+													option(value="5") 5
+													option(value="7") 7
+													option(value="10") 10
+												span.purchase-item__price 
+													b 1 124
+													|  грн
+												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
+										.products-purchase__item.purchase-item
+											.purchase-item__img
+												a(href="#")
+													img(src="dist/images/temporary/need-product1.jpg", alt="some image")
+											.purchase-item__desc
+												.purchase-item__name
+													a(href="#") Батарейка FUJITSU (2шт.)
+												.purchase-item__category
+													a(href="#") Батарейки
+											form.purchase-item__form.purchase-form(action="/")
+												select.purchase-form__qty(name="prod-qty")
+													option(value="1" selected) 1
+													option(value="2") 2
+													option(value="3") 3
+													option(value="5") 5
+													option(value="7") 7
+													option(value="10") 10
+												span.purchase-item__price 
+													b 156
+													|  грн
+												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 
 					// 2 таб - характеристики
 					div.item-detail__mobile-menu-item Характеристики
@@ -276,8 +289,8 @@ html(lang="ru")
 					section#accessories.details-product__detail-item.item-detail
 						.accessories-tab__menu.clearfix
 							ul.tabs-menu.clearfix
-								li.tabs-menu__item.tabs-menu__item--active(data-tabid="actab1" role="button") Сумки
-								li.tabs-menu__item(data-tabid="actab2" role="button") Аккумуляторы
+								li.tabs-menu__item.tabs-menu__item--active(data-tabid="actab1") Сумки
+								li.tabs-menu__item(data-tabid="actab2") Аккумуляторы
 
 						.accessories-tabs.accessories__tabs
 							// Tab 1
@@ -597,8 +610,8 @@ html(lang="ru")
 						h2.accessories__heading <strong>Аксессуары</strong> к Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 						.accessories__tabs-menu
 							ul.tabs-menu.clearfix
-								li.tabs-menu__item.tabs-menu__item--active(data-tabid="tab1" role="button") Аккумуляторы
-								li.tabs-menu__item(data-tabid="tab2" role="button") Сумки
+								li.tabs-menu__item.tabs-menu__item--active(data-tabid="tab1") Аккумуляторы
+								li.tabs-menu__item(data-tabid="tab2") Сумки
 
 						.accessories__tabs
 							// Tab 1
@@ -916,4 +929,50 @@ html(lang="ru")
 											a.o-wishlist-link.o-wished(href="#")
 												span.o-wishlist__text В избранном
 
+			.product-add-popup
+				.product-add
+					.product-add__header
+						h2.product-add__title Добавлен в 
+							a(href="#")  корзину
+						a.product-add__close#productAddCloseBtn
+					form.pa-fast-order__form
+						.product-add__content
 
+							.product-add__added
+								.product-add__description
+									.product-add__img
+										a(href="#")
+											img(src="dist/images/temporary/product/item2.jpg", alt="some image")
+									.product-add__name
+										a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+									.cart-product__quantity.product-add__quantity
+										a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del.product-add__quantity-btn
+											i
+										input(type="number" value="2" min="1" name="productAddQuantity" data-product="qty_1" data-product-price="120045.5").product-add__quantity-field.cart-product__quantity-field
+										span.product-add__quantity-field-label шт
+										a.cart-product__quantity-btn.cart-product__quantity--add.product-add__quantity-btn(href="#" data-product="qty_1")
+											i
+										span.cart-product__price.product-add__price 120 045.5 грн
+						.product-add__fast-order.pa-fast-order.clearfix
+							.pa-fast-order__title Быстрый заказ
+							
+							.order-form__hidden
+								input(type="hidden" value="2" id="qty_1" name="productQuantity")
+							.form-group
+								input(type="text" placeholder="Телефон или эл. почта" name="Contacts" required).pa-fast-order__field.form-control
+							.form-group
+								input(type="text" placeholder="Имя" name="Name" required).pa-fast-order__field.form-control
+							.form-group
+								input(type="submit" value="Подтвердить заказ" ).pa-fast-order__form-btn
+					.product-add__footer.clearfix
+						a(href="#").product-add__backshop#productAddCloseLink
+							span Вернуться к покупкам
+
+
+			.popup-css#delivery
+				.popup-css__content
+					h4 Доставка в города
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
+					p
+						a(href="#") Подробнее

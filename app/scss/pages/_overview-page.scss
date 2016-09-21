@@ -131,7 +131,7 @@
 }
 .ov-signup-wrapper{
     
-    @media (min-width: 1200px){
+    @media (min-width: 1235px){
         border: 1px solid #dfdfdf;
         border-radius: 2px;
     }
@@ -142,7 +142,7 @@
     margin-bottom: 25px;
     border: 1px solid #dfdfdf;
     border-radius: 2px;
-    @media (min-width: 1200px){
+    @media (min-width: 1235px){
         border: none;
     }
 }
@@ -158,7 +158,7 @@
     @media (min-width: 768px) {
         padding: 20px 100px;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         padding: 20px 15px;
     }
 }
@@ -178,7 +178,7 @@ input.ov-signup-form__input{
     @media (min-width: 994px) {
         width: 400px;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         width: 220px;
         height: 42px;
         font-size: 15px;
@@ -199,7 +199,7 @@ input.ov-signup-form__submit{
         display: inline-block;
         width: auto;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         font-size: 15px;
         height: 42px;
         line-height: 42px;
@@ -215,7 +215,7 @@ input.ov-signup-form__submit:focus{
 .ov-cat-wrapper{
     padding-left: 35px;
 
-    @media(min-width: 1200px){
+    @media(min-width: 1235px){
         padding-left: 49px;
     }
     
@@ -290,7 +290,7 @@ input.ov-signup-form__submit:focus{
         margin-right: 22px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         margin-right: 0;
     }
     
@@ -307,7 +307,7 @@ input.ov-signup-form__submit:focus{
     }
 }
 .ov-similar-review .ov-similar-item__img{
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         height: 252px;
         line-height: 252px;
         width: 370px;
@@ -360,7 +360,7 @@ input.ov-signup-form__submit:focus{
 
 }
 .ov-video-item__img{
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         height: 100px;
         line-height: 100px;
     }
@@ -398,7 +398,7 @@ input.ov-signup-form__submit:focus{
 }
 
 .ov-similar-review .ov-similar-item{
-     @media (min-width: 1200px) {
+     @media (min-width: 1235px) {
         margin-bottom: 10px;
      }
 }
@@ -482,7 +482,7 @@ input.ov-signup-form__submit:focus{
     @media (min-width: 768px) {
         display: block;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         padding-top: 20px;
         // border-top: 0;
     }
@@ -491,7 +491,7 @@ input.ov-signup-form__submit:focus{
 
 .ovp-more-articles{
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
          border-top: 0;
          padding-top: 0;
     }
@@ -529,7 +529,7 @@ input.ov-signup-form__submit:focus{
         padding: 15px 15px 25px 30px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         padding: 0 20px 0 30px;
         display: inline-block;
         width: 25%;
@@ -829,7 +829,7 @@ ul.comment-social{
     margin-bottom: 20px;
     text-align: center;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         height: 330px;
         line-height: 330px;
     }
@@ -839,7 +839,7 @@ ul.comment-social{
     max-width: 100%;
     vertical-align: middle;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         max-height: 100%;
     }
 }
@@ -883,7 +883,7 @@ ul.comment-social{
         background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         padding: 0;
         background: none;
     }
@@ -898,7 +898,7 @@ ul.comment-social{
         margin-bottom: 20px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         padding: 42px 0;
         padding-left: 180px;
         background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
@@ -916,7 +916,7 @@ ul.comment-social{
         display: inline-block;
         margin-right: 24px;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         display: block;
         width: 100%;
     }
@@ -927,7 +927,7 @@ input.o-signup-form__input{
     margin-bottom: 13px;
     background-image: none;
     font: normal 16px OpenSans;
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         display: inline-block;
         width: 295px;
         vertical-align: top;
@@ -953,7 +953,7 @@ input.o-signup-form__input{
         margin-bottom: 0;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         display: inline-block;
         width: 295px;
         vertical-align: top;
@@ -975,7 +975,7 @@ input.o-signup-form__input{
         display: inline-block;
         vertical-align: bottom;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         display: none;
     }
 }
@@ -1119,7 +1119,7 @@ input.o-signup-form__input{
     // end of comments
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1235px){
     .ov-main-content{
         float: left;
         width: 710px;
@@ -1572,7 +1572,7 @@ input.o-signup-form__input{
 .ovp-oc{
     border-top: 1px solid #dfdfdf;
     padding-top: 25px;
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         border: 1px solid #959595;
         border-radius: 2px;
         padding-top: 18px;
@@ -1582,7 +1582,7 @@ input.o-signup-form__input{
 
 .ovp-oc__heading {
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         display: none;
     }
 }

@@ -290,7 +290,7 @@ progress[value]::-webkit-progress-bar {
     right: 28px;
 
     max-width: 90px;
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         right: 15px;
     }
 }
@@ -339,7 +339,7 @@ progress[value]::-webkit-progress-bar {
     @media (min-width: 544px) {
         margin-top: -25px;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         float: none;
 
         margin-top: 0;
@@ -838,7 +838,7 @@ label.choose-gender__female {
     }
     @media (min-width: 994px) {
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1235px) {
         float: left;
 
         width: 50%;
@@ -1263,7 +1263,7 @@ label.choose-gender__female {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1235px) {
     .cab-nav-moblie-link {
         display: none;
     }

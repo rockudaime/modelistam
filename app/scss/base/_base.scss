@@ -20,6 +20,14 @@ body {
     color: #434343;
     min-width: 320px;
 }
+
+body.modal-open {
+    // overflow: hidden;
+    // position:fixed;
+    // width: 100%;
+    
+}
+
 a {
     color: #32abed;
     text-decoration: none;

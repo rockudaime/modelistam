@@ -14,38 +14,19 @@ block buy-block
 			//span.product-info__status.product-info__status--not-available Нет в наличии
 			//span.product-info__status.product-info__status--waiting Ожидается
 			span.product-info__code Код:&nbsp;TM503018-T86
-		form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
+		form(action="/" name="product-buy" id="productCardBuy" class="product-card__order-form")
 			ul.product-info__set-option.set-option-product.clearfix
 				li.set-option-product__item
 					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
 					label.set-option-product__label(for="productWithoutSet") Без набора
 						span.tip-btn
-						div.tip-content Это подсказка для этого блока
+						span.tip-content Это подсказка для этого блока
+							a(href="http://google.ru") Google
 
 				li.set-option-product__item
 					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
 					label.set-option-product__label(for="productWithSet") С набором
 			// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
-			.product-info__color.color-product-info
-				| Цвета:
-				.color-product-info__choosed-color
-					span(style="background: white").color-product-info__color-label
-				.color-product-info__colors.product-colors
-					.product-colors__item
-						input.product-colors__radio(type="radio" name="productColors" id="color-1" value="white" checked)
-						label(for="color-1")
-							span(style="background-color: white").color-product-info__color-label
-							| Белый
-					.product-colors__item
-						input.product-colors__radio(type="radio" name="productColors" value="red" id="color-2")
-						label(for="color-2")
-							span(style="background-color: red").color-product-info__color-label
-							| Красный
-					.product-colors__item
-						input.product-colors__radio(type="radio" name="productColors" value="yellow" id="color-3")
-						label(for="color-3")
-							span(style="background-color: yellow").color-product-info__color-label
-							| Желтый
 			div.product-info__buy-block
 				.product-info__price-block
 					// span.product-info__price-current 3 160
@@ -53,9 +34,9 @@ block buy-block
 					span.product-info__price-new.new-price 3 160
 						i.price__sm  грн
 					span.product-info__price-old 3 500 грн
-				input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
-				//input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
-				//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении" role="button")
+				input.product-btn.product-btn--buy(type="submit" value="Купить")
+				//input.product-btn.product-btn--order(type="submit" value="Заказать")
+				//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении")
 				span.mobile-buy-option
 					a(href="#fast_buy").fastbuy-link Быстрая покупка
 
@@ -68,7 +49,7 @@ block buy-block
 					li.p-buy-options__option
 						a#followbuyCreditProduct-link(href="#") В кредит
 					li.p-buy-options__option
-						a(href="#fast_buy") Быстрая покупка
+						a(href="#fast_buy").fastbuy-link Быстрая покупка
 		.product-info__actions
 			.personal-actions
 				.personal-actions__action.action-personal.action-personal--wishlist
@@ -77,7 +58,7 @@ block buy-block
 				.personal-actions__action.action-personal.action-personal--compare
 					i
 					span.action-personal__title Сравнить
-				.personal-actions__action.action-personal.action-personal--watch-price
+				.personal-actions__action.action-personal.action-personal--watch-price.action-personal--selected
 					i
 					span.action-personal__title Следить за ценой
 			.rateit-block
