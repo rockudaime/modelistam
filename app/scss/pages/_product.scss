@@ -1631,6 +1631,15 @@ div.shop-info__work-time {
 
         color: #f01834;
     }
+    &--sale {
+        font: 15px 'OpenSans_Semibold';
+        display: inline-block;
+        margin-right: 13px;
+        padding: 3px 30px 3px 7px;
+        color: #d9450a;
+        border-radius: 2px;
+        background: url(images/product-card-light-arrow.png) right 7px top 10px no-repeat #faeeb4;
+    }
 }
 .product-price--current {
     font: 18px OpenSans_SemiBold;

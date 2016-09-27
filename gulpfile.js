@@ -82,7 +82,7 @@ gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
     gulp.watch('app/jade/**/*.jade', ['jade', browsersync.reload]);
     gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
-    gulp.watch('app/img/*', ['images', browsersync.reload]);
+    // gulp.watch('app/img/*', ['images', browsersync.reload]);
 });
 
 
