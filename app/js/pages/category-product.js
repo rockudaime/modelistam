@@ -96,10 +96,39 @@ $(function(){
 	};
 
 
-	// filters block
 
+
+	// Просто анимация звездочек рейтинга
+	var rating = 0; // в эту переменную записывается выбранный рейтинг числа от 1 до 5
+
+	$('.rateit__range').on('mousemove', function(e){
+		var parentOffset = $(this).offset(); 
+	   	var relX = e.pageX - parentOffset.left;
+		$('.rateit__hover').css('width', relX + 'px');
+	});
+	$('.rateit__range').on('click', function(e){
+		var parentOffset = $(this).offset(); 
+	   	var relX = e.pageX - parentOffset.left;
+	   	rating = Math.abs(Math.ceil(relX / parseInt($(this).width()) * 5));
+	   	$('.rateit__selected').css('width', rating * 17 + 'px');
+
+	});
+	$('.rateit__range').on('mouseleave', function(e){
+		$('.rateit__hover').css('width', '0');
+	});
+});
+
+$(function(){
+	
+	var sidebar = $('.sidebar-filter');
+	var filterLink = $('.filter-link');
+	var filterHeader = $('.filter-header');
+
+	// раскрытие дополнительных элементов в фильтре
 	$('.additional-filters').on('click', function(e) {
 		var toggler;
+		console.log('clicked');
+		console.log(e.target.parentNode.nodeName);
 		if (e.target.parentNode.nodeName === 'SPAN') {
 			toggler = $(e.target.parentNode);
 		} else if (e.target.nodeName === 'SPAN') {
@@ -113,13 +142,6 @@ $(function(){
 		}
 		
 	});
-});
-
-$(function(){
-	
-	var sidebar = $('.sidebar-filter');
-	var filterLink = $('.filter-link');
-	var filterHeader = $('.filter-header');
 
 	// close sidebar filter by clicking on empty space
 	$(document).mouseup(function (e)

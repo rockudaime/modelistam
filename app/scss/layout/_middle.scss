@@ -3515,25 +3515,7 @@ table.title-search-result td.title-search-separator, table.title-search-result t
     color: #fff;
     border-color: #fff;
 }
-.filter-delete > * {
-    display: inline-block;
-}
-.filter-delete i{
-    height: 16px;
-    width: 25px;
-    overflow: hidden;
-    background: url("images/ui-icon-filter-delete.png") no-repeat scroll 0 0;
-    cursor: pointer;
-    margin: 0 4px -2px;
-}
-.filter-delete span{
-    color: $text-color;
-    text-decoration: none;
-    border-bottom: 1px dashed #AFAFAF;
-}
-.filter-delete:hover{
-    text-decoration: none;
-}
+
 .compare-link-parent {
     overflow: hidden;
 }

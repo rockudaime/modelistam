@@ -489,6 +489,9 @@
     }
     &__product-status {
         margin: 10px 0;
+        @media (min-width: 544px) {
+            height: 56px;
+        }
         .product-status {
             line-height: 26px;
 
@@ -526,20 +529,18 @@
         font: 15px/21px 'OpenSans';
 
         margin: 0 0 15px;
-        &:hover {
-            a {
-                text-decoration: none;
-
-                color: #10567a;
-            }
-        }
         @media (min-width: 544px) {
             overflow: hidden;
 
             height: 65px;
         }
-        a {
+        & > a {
             color: #151515;
+        }
+        & > a:hover {
+            text-decoration: none;
+
+           color: #10567a;
         }
     }
     &__price {
@@ -900,6 +901,11 @@
         }
         &__product-comments {
             margin-left: 30px;
+
+            & > a:hover {
+                text-decoration: none;
+                color: #d34f27;
+            }
         }
         &__product-code {
             display: block;
@@ -1004,6 +1010,42 @@
             background-color: #c03911;
         }
     }
+}
+
+.filter-delete > * {
+    display: inline-block;
+}
+.filter-delete i{
+    height: 16px;
+    width: 31px;
+    overflow: hidden;
+    background: url("images/ui-icon-filter-delete.png") no-repeat scroll 0 0;
+    cursor: pointer;
+    margin: 0 -1px -2px;
+}
+.filter-delete span{
+    color: $text-color;
+    text-decoration: none;
+    border-bottom: 1px dashed #AFAFAF;
+}
+.filter-delete:hover{
+    text-decoration: none;
+}
+.filter-value {
+    margin-bottom: 10px;
+
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.filter-value-delete {
+    font: 14px 'OpenSans';
+    display: inline-block;
+    padding-left: 29px;
+    background: url(images/product-close-icon.png) no-repeat 0 50%;
+    background-size: 13px 13px;
+    color: #000;
 }
 
 .product-filter {
