@@ -104,17 +104,17 @@ $(function(){
 	$('.rateit__range').on('mousemove', function(e){
 		var parentOffset = $(this).offset(); 
 	   	var relX = e.pageX - parentOffset.left;
-		$('.rateit__hover').css('width', relX + 'px');
+		$(this).find('.rateit__hover').css('width', relX + 'px');
 	});
 	$('.rateit__range').on('click', function(e){
 		var parentOffset = $(this).offset(); 
 	   	var relX = e.pageX - parentOffset.left;
 	   	rating = Math.abs(Math.ceil(relX / parseInt($(this).width()) * 5));
-	   	$('.rateit__selected').css('width', rating * 17 + 'px');
+	   	$(this).find('.rateit__selected').css('width', rating * 17 + 'px');
 
 	});
 	$('.rateit__range').on('mouseleave', function(e){
-		$('.rateit__hover').css('width', '0');
+		$(this).find('.rateit__hover').css('width', '0');
 	});
 });
 

@@ -1054,7 +1054,7 @@ div.shop-info__work-time {
     }
 }
 .item-detail__mobile-menu-item {
-    font: 18px OpenSans_Semibold, sans-serif;
+    font: 18px OpenSans_SemiBold, sans-serif;
 
     margin: 0;
     margin-top: -2px;
@@ -1284,7 +1284,7 @@ div.shop-info__work-time {
     width: 110px;
     padding-left: 30px;
     b {
-        font: 18px OpenSans_Semibold;
+        font: 18px OpenSans_SemiBold;
     }
 }
 // Accessories tab
@@ -1355,7 +1355,7 @@ div.shop-info__work-time {
             padding-right: 130px;
         }
         strong {
-            font-family: OpenSans_Semibold;
+            font-family: OpenSans_SemiBold;
         }
     }
     &__item {
@@ -1415,7 +1415,7 @@ div.shop-info__work-time {
 
     margin-bottom: 45px;
     &__heading {
-        font: 18px OpenSans_Semibold;
+        font: 18px OpenSans_SemiBold;
 
         margin: 15px 0 20px;
 
@@ -1632,7 +1632,7 @@ div.shop-info__work-time {
         color: #f01834;
     }
     &--sale {
-        font: 15px 'OpenSans_Semibold';
+        font: 15px 'OpenSans_SemiBold';
         display: inline-block;
         margin-right: 13px;
         padding: 3px 30px 3px 7px;
@@ -1660,6 +1660,12 @@ div.shop-info__work-time {
     text-decoration: line-through;
 
     color: #777;
+}
+
+.product-price--noprice {
+    color: #777;
+    font: 15px OpenSans_SemiBold;
+
 }
 
 .product-price__text--small {
@@ -1705,7 +1711,7 @@ div.shop-info__work-time {
         }
     }
     &__heading {
-        font-family: OpenSans_semibold;
+        font-family: OpenSans_SemiBold;
         font-size: 20px;
 
         margin: 0;
@@ -1766,19 +1772,19 @@ div.shop-info__work-time {
         margin: 0;
     }
     &__header {
-        font: 20px 'OpenSans_Semibold';
+        font: 20px 'OpenSans_SemiBold';
 
         margin-bottom: 15px;
     }
     &__heading {
-        font: 20px 'OpenSans_Semibold';
+        font: 20px 'OpenSans_SemiBold';
 
         display: inline-block;
 
         margin: 0 25px 0 0;
     }
     &__desc {
-        font: 20px 'OpenSans_Semibold';
+        font: 20px 'OpenSans_SemiBold';
 
         display: inline-block;
 
@@ -1802,7 +1808,7 @@ div.shop-info__work-time {
         }
     }
     &__price-new:before {
-        font: 25px OpenSans_semibold;
+        font: 25px OpenSans_SemiBold;
 
         content: '= ';
         vertical-align: middle;
@@ -2116,7 +2122,7 @@ div.shop-info__work-time {
         margin-bottom: 15px;
     }
     &__form-btn {
-        font-family: OpenSans_semibold;
+        font-family: OpenSans_SemiBold;
         font-size: 18px;
         line-height: 42px;
 

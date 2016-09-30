@@ -188,6 +188,7 @@
     width: 14px;
     height: 14px;
     margin: 0 2px 2px 0;
+    border-radius: 1px;
 
     background: #4b80bb;
     // background: #dbdbdb;
@@ -369,7 +370,7 @@
     box-sizing: border-box;
     width: 100%;
     height: auto;
-    margin-top: 35px;
+    margin-top: 30px;
 
     border-bottom: 1px solid #e1e1e1;
     background: #fff;
@@ -386,9 +387,9 @@
         height: 465px;
     }
     @media (min-width: 994px) {
-        width: 50%;
-        max-width: 50%;
-        height: 450px;
+        width: 320px;
+        max-width: 320px;
+        height: 475px;
         &:nth-child(2n) {
             .category-product__inner {
                 border-color: transparent;
@@ -398,11 +399,7 @@
             .category-product__inner {
                 position: absolute;
                 z-index: 10;
-                top: -5px;
-                right: 0;
-                left: -1px;
 
-                padding-top: 4px;
                 padding-bottom: 30px;
 
                 border: 1px solid #4b80bb !important;
@@ -413,8 +410,14 @@
             .category-product__product-links {
                 display: inline-block;
             }
-            .category-product__hidden-content {
+            .category-product__hidden-content,
+            .category-product__photo-rank-star {
                 display: block;
+            }
+
+            .category-product__price {
+                margin-bottom: 15px;
+                height: auto;
             }
         }
     }
@@ -423,7 +426,7 @@
         max-width: 302px;
         &:nth-child(2n) {
             .category-product__inner {
-                border-color: #eaeaea;
+                border-right-color: #eaeaea;
             }
         }
         &:nth-child(3n) {
@@ -438,17 +441,32 @@
 
         content: '';
     }
-    &--show-btn {
+    &--show-btn { // кнопка показать товары, которых нет в наличии
         padding: 0;
         padding-right: 2px;
 
         border: 0;
     }
+
+    &--noavail { // товары, которых нет в наличии
+        .category-product__photo {
+            opacity: 0.6;
+        }
+        .product-price--current {
+            color: #777;
+        }
+
+    }
+
+
     &__inner {
         margin-bottom: 35px;
         padding: 0 30px;
+        padding-top: 5px;
         @media (min-width: 544px) {
-            border-right: 1px solid #eaeaea;
+            border: 1px solid transparent;
+            border-right-color: #eaeaea;
+
         }
     }
     &__photo {
@@ -485,6 +503,7 @@
             position: absolute;
             top: -2px;
             right: -12px;
+            display: none;
         }
     }
     &__product-status {
@@ -545,9 +564,9 @@
     }
     &__price {
         overflow: hidden;
-
-        height: 25px;
-        margin-bottom: 15px;
+        min-height: 25px;
+        height: 46px;
+        // margin-bottom: 15px;
     }
     &__btn {
         font-size: 16px;
@@ -588,7 +607,8 @@
                 background-color: #ac3411;
             }
         }
-        &--waiting {
+        &--waiting,
+        &--show-similar {
             background: #c03911; //url(images/ui-icon-info.png) no-repeat 12px 50%;
             font-size: 15px;
             white-space: normal;
@@ -831,10 +851,15 @@
         height: 220px;
         &:hover {
             .category-product__inner {
-                padding-top: 19px;
             }
             .category-product__hidden-content {
                 display: none;
+            }
+            .category-product__rating {
+                display: inline-block;
+            }
+            .category-product__price {
+                margin-bottom: 10px;
             }
         }
         @media (min-width: 1235px) {
@@ -897,6 +922,7 @@
             }
         }
         &__price {
+            height: auto;
             margin-bottom: 10px;
         }
         &__product-comments {
@@ -921,12 +947,14 @@
             display: inline-block;
 
             margin-right: 7px;
+            height: 45px;
+            vertical-align: middle;
             a {
                 margin-right: 8px;
             }
         }
         &__rating {
-            display: inline-block;
+           display: none;
 
             vertical-align: middle;
         }

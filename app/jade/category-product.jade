@@ -82,7 +82,7 @@ html(lang="ru")
 							| Показать товары, которых нет в наличии
 				section.category-content__products
 					// product 1
-					.category-product
+					.category-product.category-product--noavail
 						.category-product__inner
 							.category-product__header
 								.category-product__photo
@@ -105,7 +105,7 @@ html(lang="ru")
 									span.product-price--current 13 600 
 										span.product-price__text--small грн
 								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy.category-product__btn--buy-noavail(href="#") Купить
+									a.product-btn.category-product__btn.category-product__btn--show-similar(href="#") Показать аналолги
 									.category-product__product-links
 										a.category-product__product-link.cp-wishlist-link.cp-wished(href="#", title="отложить")
 										a.category-product__product-link.cp-compare-link.cp-compared(href="#", title="добавить к сравнению")
@@ -165,9 +165,7 @@ html(lang="ru")
 								// cp-status дублируется второй раз для отображения списком
 							.category-product__content-right
 								.category-product__price
-									span.product-price--new 2600 
-										span.product-price__text--small грн
-									span.product-price--old 2785 грн
+									span.product-price--noprice Цена не установлена
 								.category-product__buy
 									a.product-btn.category-product__btn.category-product__btn--pre-order(href="#") Заказать
 									.category-product__product-links
@@ -594,6 +592,7 @@ html(lang="ru")
 								.category-product__price
 									span.product-price--new 2600 
 										span.product-price__text--small грн
+									br
 									span.product-price--old 2785 грн
 								.category-product__buy
 									a.product-btn.category-product__btn.category-product__btn--buy.category-product__btn--buy-avail(href="#") Купить
@@ -903,7 +902,7 @@ html(lang="ru")
 									span.product-price--current 133 700 
 										span.product-price__text--small грн
 								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy(href="#") В корзине
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
 									.category-product__product-links
 										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
 										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
@@ -963,7 +962,7 @@ html(lang="ru")
 									span.product-price--current 78 350 
 										span.product-price__text--small грн
 								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy(href="#") В корзине
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
 									.category-product__product-links
 										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
 										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
