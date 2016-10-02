@@ -976,3 +976,82 @@ html(lang="ru")
 					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
 					p
 						a(href="#") Подробнее
+			.popup-outer(style="display: block;")
+				.popup-b#bestPricePopup
+					h2.popup-b__heading Гарантия лучшей цены
+					.popup-b__content
+						p.
+							Если вы нашли этот товар дешевле, мы продадим вам его по той цене.
+						p.
+							Укажите ссылку на товар с ценой при оформлении заказа в поле Комментарии к заказу и после проверки менеджер изменит цену в вашем заказе.
+					a.popup-b__more(href="#") Подробнее
+					a.popup-b__close(href="#")
+
+				.popup-b#deliveryPopup
+					h2.popup-b__heading Доставка по городам
+					.popup-b__content
+						p.
+							Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p.
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+					a.popup-b__more(href="#") Подробнее
+					a.popup-b__close(href="#")
+
+				.popup-b.popup-bcart
+					.popup-bcart__
+					h2.popup-b__heading.popup-b__heading--cart В корзине 5 товаров
+					a.popup-b__close(href="#")
+					form.popup-bcart__form(action="/" method="get")
+						.popup-bcart__content
+							.bcart-product.clearfix
+								span.bcart-product__sticker Ожидается
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+							.bcart-product.clearfix
+								// span.bcart-product__sticker Ожидается
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+							.bcart-product.clearfix
+								span.bcart-product__sticker Предварительный заказ
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+							.bcart-product.clearfix
+								span.bcart-product__sticker Под заказ
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
+
+
+
+
+						// Всплывающий блок редактирования товара
+						div 
+							.popup-back
+								.close-popup
+									a(href="#" rel="#").come-back
+										i
+										span Вернуть
+								.product-wishlist-block.cart-wishlist-block
+									a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
+										i
+										span В избранное
+								.delete-detail-block
+									a(href="#").page-cart__delete_checkbox
+										i
+										span Удалить
+									input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
+
+
+
+
+						.popup-bcart__footer
+							a.popup-b__back(href="#") Вернуться назад
+

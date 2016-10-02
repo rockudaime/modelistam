@@ -1617,9 +1617,11 @@ div.shop-info__work-time {
 
 .product-status {
     font: 15px OpenSans, sans-serif;
+
+    margin-right: 15px;
+
     white-space: nowrap;
     text-decoration: none;
-    margin-right: 15px;
     &--new {
         color: #008739;
     }
@@ -1633,9 +1635,12 @@ div.shop-info__work-time {
     }
     &--sale {
         font: 15px 'OpenSans_SemiBold';
+
         display: inline-block;
+
         margin-right: 13px;
         padding: 3px 30px 3px 7px;
+
         color: #d9450a;
         border-radius: 2px;
         background: url(images/product-card-light-arrow.png) right 7px top 10px no-repeat #faeeb4;
@@ -1663,9 +1668,9 @@ div.shop-info__work-time {
 }
 
 .product-price--noprice {
-    color: #777;
     font: 15px OpenSans_SemiBold;
 
+    color: #777;
 }
 
 .product-price__text--small {
@@ -2043,28 +2048,31 @@ div.shop-info__work-time {
         }
     }
     &__quantity-field {
-        border: 0;
-        outline: 0;
-        max-width: 35px;
         width: auto;
+        max-width: 35px;
         padding: 0;
         padding-right: 4px;
+
         text-align: right;
-        
-        &:focus, &:hover{
+
+        border: 0;
+        outline: 0;
+        &:focus,
+        &:hover {
             outline: 1px solid #ccc;
         }
-
     }
     &__quantity-field-label {
-        color: #0d0d0d;
         font: 20px OpenSans_SemiBold, sans-serif;
-        text-align: center;
-        padding: 0 10px 0 0;
-        vertical-align: middle;
-    }
 
-    &__quantity-btn{
+        padding: 0 10px 0 0;
+
+        text-align: center;
+        vertical-align: middle;
+
+        color: #0d0d0d;
+    }
+    &__quantity-btn {
         vertical-align: middle;
     }
     // &__add-btn{
@@ -2072,6 +2080,7 @@ div.shop-info__work-time {
     // }
     &__price {
         margin-left: 15px;
+
         vertical-align: middle;
     }
     &__footer {
@@ -2160,9 +2169,10 @@ input.pa-fast-order__field {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    /* display: none; <- Crashes Chrome on hover */
+
+    -webkit-appearance: none;
 }
 
 // ***********************************
@@ -2170,38 +2180,183 @@ input::-webkit-inner-spin-button {
 
 
 .popup-css {
+    font-size: 16px;
+
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 25%;
-    -webkit-transform-style: preserve-3d;
--webkit-transform: translate(-50%,-50%);
--webkit-font-smoothing: subpixel-antialiased;
 
+    display: none;
 
     box-sizing: border-box;
-    max-width: 505px;
+    width: 25%;
     width: 100%;
+    max-width: 505px;
     margin: 0 auto;
     padding: 15px 20px;
 
-    transform-style: preserve-3d;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 
     border: 1px solid #b8b8b8;
     border-radius: 5px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .35);
-    font-size: 16px;
 
+    -webkit-transform-style: preserve-3d;
+    -webkit-font-smoothing: subpixel-antialiased;
+            transform-style: preserve-3d;
     h4 {
         font-family: 'OpenSans_SemiBold';
         font-size: 1.155em;
-        margin-bottom: 0.5em;
+
+        margin-bottom: .5em;
+
         -webkit-font-smoothing: subpixel-antialiased;
     }
-
     p {
         -webkit-font-smoothing: subpixel-antialiased;
     }
+}
+
+
+
+// ========================================= NEW POPUPs =====================================
+.popup-outer {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    overflow: hidden;
+
+    background-color: rgba(255, 255, 255, .2);
+}
+.popup-b {
+    font: 14px/24px OpenSans;
+
+    position: relative;
+
+    display: none;
+
+    box-sizing: border-box;
+    width: 65%;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 23px 125px 25px 34px;
+
+    color: #151515;
+    border: 10px solid rgba(75, 128, 187, .75);
+    border-radius: 18px;
+    background: white;
+    background-clip: padding-box;
+    &__heading {
+        font: 20px 'OpenSans_SemiBold';
+
+        margin: 0 0 11px;
+        &--cart {
+            padding-left: 48px;
+
+            background: url(images/product-cart-icon.png) no-repeat 0 0;
+            margin-bottom: 20px;
+        }
+    }
+    &__content {
+        margin-bottom: 13px;
+        p {
+            margin: 0 0 10px;
+        }
+    }
+    &__more {
+        font-size: 16px;
+
+        color: #346cab;
+    }
+    &__close {
+        position: absolute;
+        top: 24px;
+        right: 25px;
+
+        display: block;
+
+        width: 30px;
+        height: 30px;
+
+        cursor: pointer;
+
+        background: url(images/product-close-icon.png) no-repeat 0 0;
+        background-size: 30px;
+    }
+}
+
+.popup-bcart {
+    display: block;
+    padding-right: 80px;
+    padding-bottom: 40px;
+    max-width: 830px;
+
+    &__form {
+        border-top: 1px dashed #c2c2c2;
+        margin: 0 -80px 0 -34px;
+        padding: 0 80px 0 34px;
+    }
+
+    &__content {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+.bcart-product {
+    position: relative;
+    border-bottom: 1px solid #eaeaea;
+    padding: 35px 0 20px;
+    // background: red;
+
+    &__sticker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #afafaf;
+        color: #fff;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 17px;
+        font: 15px 'OpenSans_Semibold';
+        padding: 6px 21px 7px 16px;
+    }
+
+    &__delete {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: #dddddd url(images/personal-cabinet/icon-close.png) no-repeat center center;
+        border-radius: 2px;
+        position: absolute;
+        right: 0;
+        top: 24px;
+        cursor: pointer;
+    }
+
+    &__img {
+        width: 110px;
+        margin-right: 20px;
+        float: left;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+    }
+
+    &__name {
+        font: 14px 'OpenSans';
+        color: #111;
+        padding-right: 135px;
+    }
+
+
 }

@@ -27,6 +27,26 @@ block buy-block
 					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
 					label.set-option-product__label(for="productWithSet") С набором
 			// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
+			.product-info__color.color-product-info
+				| Цвета:
+				.color-product-info__choosed-color
+					span(style="background: white").color-product-info__color-label
+				.color-product-info__colors.product-colors
+					.product-colors__item
+						input.product-colors__radio(type="radio" name="productColors" id="color-1" value="white" checked)
+						label(for="color-1")
+							span(style="background-color: white").color-product-info__color-label
+							| Белый
+					.product-colors__item
+						input.product-colors__radio(type="radio" name="productColors" value="red" id="color-2")
+						label(for="color-2")
+							span(style="background-color: red").color-product-info__color-label
+							| Красный
+					.product-colors__item
+						input.product-colors__radio(type="radio" name="productColors" value="yellow" id="color-3")
+						label(for="color-3")
+							span(style="background-color: yellow").color-product-info__color-label
+							| Желтый
 			div.product-info__buy-block
 				.product-info__price-block
 					// span.product-info__price-current 3 160

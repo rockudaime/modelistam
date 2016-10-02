@@ -1,5 +1,26 @@
 $(document).ready(function() {
 	var wWidth = $(window).width();
+	// < ==============================================
+	// Выбор цвета
+	var colorsBlock = $('.product-colors');
+	var choosenColor = $('.color-product-info__choosed-color span');
+	// Обработка выпадающего меню с опцией выбора цвета
+	$('.color-product-info__choosed-color').on('click', function(e) {
+		e.preventDefault();
+		colorsBlock.toggle();
+	});
+
+
+	$('.product-colors__radio').change(function(){
+		var color;
+		if ($(this).prop('checked', true)){
+			color = $(this).parent().find('.color-product-info__color-label').css('background-color');
+			choosenColor.css('background-color', color);
+			colorsBlock.fadeOut();
+		}
+	});
+
+	// ============================================= />
 
 	// Просто анимация звездочек рейтинга
 	var rating = 0; // в эту переменную записывается выбранный рейтинг числа от 1 до 5
@@ -474,3 +495,30 @@ function getPriceString (price) {
 
     return price.join('.');
 }
+
+
+
+// ========================= Popups new ==================
+$(function () {
+	function MyPopup (selector) {
+		this.popup = $(selector);
+		this.closeLink = this.popup.find('.popup-b__close');
+		this.wrapper = this.popup.parent();
+	}
+
+	MyPopup.prototype.init = function () {
+		var that = this;
+		this.closeLink.on('click', function(e) {
+			e.preventDefault();
+			that.wrapper.fadeOut();
+
+		})
+	}
+
+	var bestPricePopup = new MyPopup('#bestPricePopup');
+	var deliveryPopup = new MyPopup('#deliveryPopup');
+	bestPricePopup.init();
+	deliveryPopup.init();
+
+});
+
