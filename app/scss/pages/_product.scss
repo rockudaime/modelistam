@@ -10,6 +10,9 @@
         margin-bottom: 35px;
     }
 }
+h1.product-card__title {
+    margin-bottom: 25px;
+}
 // .product-card__image-block - Блок с изображениями товара
 .product-card__image-block {
     float: left;
@@ -33,6 +36,7 @@
 
 .product-card__main-image {
     font-size: 0;
+    position: relative;
     line-height: 280px;
 
     width: 100%;
@@ -138,7 +142,53 @@ a.link-to-images {
 .gallery-product__item--active {
     border-color: #b1b1b1;
 }
+// стикеры на главное изображение
+.product-img-stickers {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    z-index: 1;
+}
 
+.product-img-sticker {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 2px;
+    padding: 5px 14px 5px 10px;
+    background: #ccc;
+    color: #fff;
+    font: 15px 'OpenSans_Light';
+    margin-right: 8px;
+    position: relative;
+    
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -13px;
+        left: 0;
+        border: 15px solid transparent;
+        border-top: 0px solid transparent;
+        border-right: 0px solid transparent;
+        border-left: 13px solid #772720;
+        z-index: -1;
+    }
+
+    &--new {
+        background-color: #81bc26;
+        &:after {
+            border-left-color: #76a035;
+        }
+    }
+
+    &--top {
+        background-color: #e37d22;
+        &:after {
+            border-left-color: #c76016;
+        }
+    }
+}
 // Блок с выбором опций и кнопкой купить
 
 .product-card__buy-block.product-info {
@@ -148,13 +198,13 @@ a.link-to-images {
         position: relative;
 
         width: 244px;
-        padding: 17px 10px 10px;
+        padding: 0 10px 10px;
 
         background: #fffae8;
     }
     @media (min-width: 994px) {
         width: 336px;
-        padding: 17px 20px 10px;
+        padding: 0 20px 10px;
     }
     @media (min-width: 1235px) {
         // padding: 17px 20px 10px;
@@ -164,18 +214,21 @@ a.link-to-images {
 
 .product-feature {
     font: 15px OpenSans, sans-serif;
-    line-height: 38px;
+    line-height: 32px;
 
     display: none;
 
     box-sizing: border-box;
     max-width: 230px;
-    height: 38px;
+    height: 32px;
     margin-bottom: 7px;
     padding-left: 38px;
+    cursor: pointer;
 
     color: #fff;
-    border-radius: 20px;
+    border-radius: 18px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
     background-repeat: no-repeat;
     background-position: 12px 50%;
     @media (min-width: 768px) {
@@ -340,7 +393,7 @@ a.link-to-images {
 
     display: none;
 
-    width: 100px;
+    width: 70px;
 
     vertical-align: bottom;
     @media (min-width: 994px) {
@@ -538,7 +591,7 @@ a.link-to-images {
     margin-bottom: 8px;
 }
 .product-group {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .product-group--waiting {
     margin-bottom: 30px;
@@ -2243,25 +2296,31 @@ input::-webkit-inner-spin-button {
     display: none;
 
     box-sizing: border-box;
-    width: 65%;
+    width: 90%;
     max-width: 800px;
     margin: 100px auto;
-    padding: 23px 125px 25px 34px;
+    padding: 23px 55px 25px 20px;
 
     color: #151515;
     border: 10px solid rgba(75, 128, 187, .75);
     border-radius: 18px;
     background: white;
     background-clip: padding-box;
+
+    @media (min-width: 768px) {
+        width: 80%;
+        max-width: 800px;
+        padding: 23px 125px 25px 34px;
+    }
     &__heading {
         font: 20px 'OpenSans_SemiBold';
 
         margin: 0 0 11px;
         &--cart {
+            margin-bottom: 20px;
             padding-left: 48px;
 
             background: url(images/product-cart-icon.png) no-repeat 0 0;
-            margin-bottom: 20px;
         }
     }
     &__content {
@@ -2278,7 +2337,7 @@ input::-webkit-inner-spin-button {
     &__close {
         position: absolute;
         top: 24px;
-        right: 25px;
+        right: 15px;
 
         display: block;
 
@@ -2289,74 +2348,192 @@ input::-webkit-inner-spin-button {
 
         background: url(images/product-close-icon.png) no-repeat 0 0;
         background-size: 30px;
+
+        @media (min-width: 768px) {
+            right: 25px;
+        }
+    }
+
+    &__back {
+        color: #346cab;
+        font: 17px 'OpenSans_SemiBold';
+        background: url('images/product-arrow-icon.png') no-repeat 0 50%;
+        padding-left: 25px;
+        display: inline-block;
+        margin-top: 35px;
     }
 }
 
 .popup-bcart {
-    display: block;
+    // display: block;
+
+    max-width: 830px;
     padding-right: 80px;
     padding-bottom: 40px;
-    max-width: 830px;
-
     &__form {
-        border-top: 1px dashed #c2c2c2;
         margin: 0 -80px 0 -34px;
         padding: 0 80px 0 34px;
+
+        border-top: 1px dashed #c2c2c2;
+    }
+    &__content {
+        height: 565px;
+        width: 700px;
+    }
+    &__footer {
+        border-top: 1px solid #eaeaea;
+        // margin-top: -1px;
+        clear: both;
     }
 
-    &__content {
-        overflow-x: hidden;
-        overflow-y: auto;
+    &__fr {
+        float: right;
+
+        box-sizing: border-box;
+        padding: 20px 25px;
+
+        border-radius: 1px;
+        background: #fef4ce;
+        text-align: right;
+    }
+    &__total {
+        font: 16px 'OpenSans_SemiBold';
+
+        color: #151515;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &__total-price {
+        font-size: 22px;
+    }
+    // submit button at bottom of the popup
+    &__submit {
+        font: 18px 'OpenSans_SemiBold';
+
+        padding: 12px 20px;
+        margin-left: 40px;
+
+        color: #fff;
+        border: 0;
+        border-radius: 4px;
+        outline: 0;
+        background: #659913;
+        vertical-align: middle;
     }
 }
 
 .bcart-product {
     position: relative;
-    border-bottom: 1px solid #eaeaea;
-    padding: 35px 0 20px;
-    // background: red;
 
+    padding: 35px 0 20px;
+
+    border-bottom: 1px solid #eaeaea;
+    // background: red;
     &__sticker {
+        font: 15px 'OpenSans_SemiBold';
+
         position: absolute;
         top: 0;
         left: 0;
-        background: #afafaf;
+
+        padding: 6px 21px 7px 16px;
+
         color: #fff;
         border-top-left-radius: 5px;
         border-bottom-right-radius: 17px;
-        font: 15px 'OpenSans_Semibold';
-        padding: 6px 21px 7px 16px;
+        background: #afafaf;
     }
-
     &__delete {
+        position: absolute;
+        top: 24px;
+        right: 0;
+
         display: block;
+
         width: 30px;
         height: 30px;
-        background: #dddddd url(images/personal-cabinet/icon-close.png) no-repeat center center;
-        border-radius: 2px;
-        position: absolute;
-        right: 0;
-        top: 24px;
-        cursor: pointer;
-    }
 
+        cursor: pointer;
+
+        border-radius: 2px;
+        background: #ddd url(images/personal-cabinet/icon-close.png) no-repeat center center;
+
+        &:hover {
+            background-color: #ccc;
+        }
+    }
     &__img {
+        float: left;
+        font-size: 0px;
+
         width: 110px;
         margin-right: 20px;
-        float: left;
-        text-align: center;
 
+        text-align: center;
         img {
             max-width: 100%;
+
             border: 1px solid #ccc;
         }
     }
-
     &__name {
         font: 14px 'OpenSans';
-        color: #111;
+
         padding-right: 135px;
+
+        a {
+            color: #111;
+        }
+    }
+    &__controls {
+        clear: right;
+        float: right;
+    }
+    &__qty {
+        border: 0;
+        outline: 0;
+        display: inline-block;
+        width: auto;
+        margin-right: 15px;
+    }
+    &__qty-label{
+        font: 16px OpenSans;
+    }
+    &__pprice {
+        font-family: OpenSans_SemiBold;
+
+    }
+}
+
+.u-control {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    background: url(images/icon-controls.png) no-repeat 0 0;
+    
+
+    &--add {
+        background-position: 0 0;
+        margin-right: 40px;
+        cursor: pointer;
     }
 
+    &--del-active {
+        background-position: 0 -17px;
+        cursor: pointer;
+    }
+    &--del {
+        background-position: 0 -34px;
+        margin-right: 13px;
+    }
+}
 
+.popup-bcredit {
+    padding-right: 40px;
+    max-width: 880px;
+
+    &__content {
+        padding-right: 70px;
+    }
 }

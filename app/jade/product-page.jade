@@ -12,6 +12,8 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/vendor/jquery.custom-scrollbar.js")
+		link(rel="stylesheet", href="dist/css/custom-scrollbar/custom-scrollbar.css")
 		script(src="dist/js/vendor/editable-select/jquery-editable-select.js")
 		link(rel="stylesheet", href="dist/css/editable-select/editable-select.css") 
 		
@@ -41,6 +43,9 @@ html(lang="ru")
 						.product-card__main-image
 							a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 								img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+							.product-img-stickers
+								span.product-img-sticker.product-img-sticker--new Новинка
+								span.product-img-sticker.product-img-sticker--top Топ продаж
 
 						.product-card__gallery.gallery-product
 							.gallery-product__item
@@ -976,7 +981,7 @@ html(lang="ru")
 					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
 					p
 						a(href="#") Подробнее
-			.popup-outer(style="display: block;")
+			.popup-outer
 				.popup-b#bestPricePopup
 					h2.popup-b__heading Гарантия лучшей цены
 					.popup-b__content
@@ -996,37 +1001,87 @@ html(lang="ru")
 							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 					a.popup-b__more(href="#") Подробнее
 					a.popup-b__close(href="#")
-
-				.popup-b.popup-bcart
+				// Попап корзины (при добавлении товара в корзину или заказ, предзаказ)
+				.popup-b.popup-bcart.clearfix
 					.popup-bcart__
 					h2.popup-b__heading.popup-b__heading--cart В корзине 5 товаров
 					a.popup-b__close(href="#")
 					form.popup-bcart__form(action="/" method="get")
-						.popup-bcart__content
+						.popup-bcart__content.modern-skin 
 							.bcart-product.clearfix
 								span.bcart-product__sticker Ожидается
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+									a(href="#")
+										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name
+									a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-123")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-123" value="1")
+										span.bcart-product__qty-label 1
+										|  шт
+									span.u-control.u-control--add(data-target="prod-123")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|  грн
 							.bcart-product.clearfix
 								// span.bcart-product__sticker Ожидается
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
 									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-124")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-124" value="1")
+										span.bcart-product__qty-label 1
+										|  шт
+									span.u-control.u-control--add(data-target="prod-124")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|  грн
 							.bcart-product.clearfix
 								span.bcart-product__sticker Предварительный заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
 									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-125")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-125" value="10")
+										span.bcart-product__qty-label 1
+										|  шт
+									span.u-control.u-control--add(data-target="prod-125")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|  грн
 							.bcart-product.clearfix
 								span.bcart-product__sticker Под заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
 									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-126")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-126" value="1")
+										span.bcart-product__qty-label 1
+										|  шт
+									span.u-control.u-control--add(data-target="prod-126")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|  грн
 
 
 
@@ -1053,5 +1108,31 @@ html(lang="ru")
 
 
 						.popup-bcart__footer
-							a.popup-b__back(href="#") Вернуться назад
+							a.popup-b__back(href="#") Вернуться к покупкам
+							.popup-bcart__fr
+								span.popup-bcart__total Итого 
+									span.popup-bcart__total-price 1285 
+									|  грн
+								input.popup-bcart__submit(type="submit" value="Подтвердить заказ")
+
+
+				// Попап "купить в рассрочку" при нажатии ссылки купить в кредит
+				.popup-b.popup-bcredit.clearfix
+					h2.popup-b__heading Купить в рассрочку
+					.popup-b__content.popup-bcredit__content
+						p.
+							Выбирайте выгодные для вас условия рассрочки (3, 6 или 10 платежей) и выплачивайте стоимость покупки равными частями.
+						p.
+							Подготовьте ксерокопию паспорта и ИНН и отправляйтесь за своим товаром. На пункте выдачи подпишите договор о рассрочке, оплатив первую часть.
+						p.
+							Остальные платежи, начиная со следующего месяца, вы сможете оплатить в любом отделении банка.  Суммы платежей, указанные ниже, окончательны.
+						p
+							strong Оформление рассрочки возможно для любого товара и по всей территории Украины
+					form
+						.popup-bcart__footer
+								a.popup-b__back(href="#") Вернуться к покупкам
+								.popup-bcart__fr
+									input.popup-bcart__submit(type="submit" value="Оформить рассрочку")
+					a.popup-b__close(href="#")
+
 

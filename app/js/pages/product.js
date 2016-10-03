@@ -108,7 +108,7 @@ $(document).ready(function() {
 
 
 	function tabsHandler(tabsMenuContainerClass, tabsClass) {
-		return function () {
+		return function (event) {
 			var tabLinks = $(tabsMenuContainerClass + ' .tabs-menu__item');
 			var tabLink = $(event.target);
 			var tab = $('#' + tabLink.data('tabid'));
@@ -500,25 +500,73 @@ function getPriceString (price) {
 
 // ========================= Popups new ==================
 $(function () {
-	function MyPopup (selector) {
-		this.popup = $(selector);
-		this.closeLink = this.popup.find('.popup-b__close');
-		this.wrapper = this.popup.parent();
+	// function MyPopup (selector) {
+	// 	this.popup = $(selector);
+	// 	this.closeLink = this.popup.find('.popup-b__close');
+	// 	this.wrapper = this.popup.parent();
+	// }
+
+	// MyPopup.prototype.init = function () {
+	// 	var that = this;
+	// 	this.closeLink.on('click', function(e) {
+	// 		e.preventDefault();
+	// 		that.wrapper.fadeOut();
+
+	// 	})
+	// }
+	// MyPopup.prototype.show = function () {
+	// 	this.popup.show();
+	// 	this.wrapper.fadeIn();
+	// }
+
+	// var bestPricePopup = new MyPopup('#bestPricePopup');
+	// var deliveryPopup = new MyPopup('#deliveryPopup');
+	// console.log(bestPricePopup);
+	// bestPricePopup.init();
+	// deliveryPopup.init();
+
+	$('.product-feature--best-price').on('click',function () {
+		var bestPricePopup = $('#bestPricePopup');
+	 	bestPricePopup.show();
+	 	bestPricePopup.parent().fadeIn();
+	});
+
+	var mypopup = {
+		closeLink: $('.popup-b__close'),
+		wrapper: $('.popup-outer')
 	}
 
-	MyPopup.prototype.init = function () {
-		var that = this;
-		this.closeLink.on('click', function(e) {
-			e.preventDefault();
-			that.wrapper.fadeOut();
+	mypopup.closeLink.on('click', function (e) {
+		e.preventDefault();
+		$(this).parent().fadeOut();
+		mypopup.wrapper.fadeOut();
+	});
 
-		})
-	}
+	mypopup.wrapper.on('click', function(e) {
+		e.stopPropagation();
+		if ($(e.target).hasClass('popup-outer')) {
+			mypopup.wrapper.children().fadeOut();
+			mypopup.wrapper.fadeOut();
+		}
+	});
 
-	var bestPricePopup = new MyPopup('#bestPricePopup');
-	var deliveryPopup = new MyPopup('#deliveryPopup');
-	bestPricePopup.init();
-	deliveryPopup.init();
+	$('.popup-bcart__content').customScrollbar();
+	// Нажатие кнопи "Куаить" открывает попап
+	$('#submitOrderBtn').on('click', function(e) {
+		e.preventDefault();
+		var popup = $('.popup-bcart');
+
+		popup.show();
+		popup.parent().fadeIn();
+	});
+	// Нажатие ссылки купить в кредит
+	$('#followbuyCreditProduct-link').on('click', function (e) {
+		e.preventDefault();
+		var popup = $('.popup-bcredit');
+
+		popup.show();
+		popup.parent().fadeIn();
+	});
 
 });
 

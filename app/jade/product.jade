@@ -7,7 +7,7 @@ block buy-block
 	// блок с информацией для заказа\покупки	
 	.product-card__buy-block.product-info
 		// Блок с основной информацией для заказа товара и кнопкой купить: цена, цвет, код товара и т.д.
-		.product-feature.product-feature--best-price Гарантия лучшей цены
+		.product-feature.product-feature--best-price(title="узнать подробности") Гарантия лучшей цены
 		// .product-feature.product-feature--order Товар под заказ
 		div.product-group
 			span.product-info__status.product-info__status--available Есть в наличии
@@ -15,17 +15,6 @@ block buy-block
 			//span.product-info__status.product-info__status--waiting Ожидается
 			span.product-info__code Код:&nbsp;TM503018-T86
 		form(action="/" name="product-buy" id="productCardBuy" class="product-card__order-form")
-			ul.product-info__set-option.set-option-product.clearfix
-				li.set-option-product__item
-					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
-					label.set-option-product__label(for="productWithoutSet") Без набора
-						span.tip-btn
-						span.tip-content Это подсказка для этого блока
-							a(href="http://google.ru") Google
-
-				li.set-option-product__item
-					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
-					label.set-option-product__label(for="productWithSet") С набором
 			// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
 			.product-info__color.color-product-info
 				| Цвета:
@@ -47,6 +36,18 @@ block buy-block
 						label(for="color-3")
 							span(style="background-color: yellow").color-product-info__color-label
 							| Желтый
+			ul.product-info__set-option.set-option-product.clearfix
+				li.set-option-product__item
+					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
+					label.set-option-product__label(for="productWithoutSet") Без набора
+						span.tip-btn
+						span.tip-content Это подсказка для этого блока
+							a(href="http://google.ru") Google
+
+				li.set-option-product__item
+					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
+					label.set-option-product__label(for="productWithSet") С набором
+			
 			div.product-info__buy-block
 				.product-info__price-block
 					// span.product-info__price-current 3 160
@@ -54,7 +55,7 @@ block buy-block
 					span.product-info__price-new.new-price 3 160
 						i.price__sm  грн
 					span.product-info__price-old 3 500 грн
-				input.product-btn.product-btn--buy(type="submit" value="Купить")
+				input.product-btn.product-btn--buy#submitOrderBtn(type="submit" value="Купить")
 				//input.product-btn.product-btn--order(type="submit" value="Заказать")
 				//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении")
 				span.mobile-buy-option
@@ -81,6 +82,7 @@ block buy-block
 				.personal-actions__action.action-personal.action-personal--watch-price.action-personal--selected
 					i
 					span.action-personal__title Следить за ценой
+			a(href="#").category-product__review-link Обзор-сравнение
 			.rateit-block
 				.rateit__range
 					.rateit__selected
