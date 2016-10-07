@@ -550,8 +550,8 @@ $(function () {
 		}
 	});
 
-	$('.popup-bcart__content').customScrollbar();
-	// Нажатие кнопи "Куаить" открывает попап
+	// $('.popup-bcart__content').customScrollbar();
+	// Нажатие кнопки "Купить" открывает попап
 	$('#submitOrderBtn').on('click', function(e) {
 		e.preventDefault();
 		var popup = $('.popup-bcart');
@@ -562,11 +562,26 @@ $(function () {
 	// Нажатие ссылки купить в кредит
 	$('#followbuyCreditProduct-link').on('click', function (e) {
 		e.preventDefault();
-		var popup = $('.popup-bcredit');
+		var popup = $('#askPopup');
 
 		popup.show();
 		popup.parent().fadeIn();
 	});
+
+	// обработка выбора срока рассрочки
+	$('.popup-bcredit__cond').on('click', function(e) {
+		e.preventDefault();
+		var target = $(e.target);
+		var tr = target.parents('tr');
+
+		if (tr.prop("tagName")) {
+			$(this).find('tr').removeClass('r-active');
+			tr.addClass('r-active');
+			tr.find('input[type=radio]').prop("checked", true);
+		} else {
+			console.log('no');
+		}
+	})
 
 });
 
