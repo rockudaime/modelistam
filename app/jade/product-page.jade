@@ -69,27 +69,27 @@ html(lang="ru")
 						// В этот блок добавляются все изображения, что не вошли в основные 4 штуки.
 						.product-card__all-images
 
-								a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
+								a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"    data-fancybox-group="thumb" rel="group")
 									img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
 					
 					block buy-block
 
 					aside.product-card__shop-info.shop-info
 						.product-manufacturer Производитель:
-							a(href="#")  HSP Racing
+							a(href="#")    HSP Racing
 						.product-warranty Гарантия: 24 мес
 						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
 						ul.shop-info__pages
 							li.shop-info__page
-								a.shop-info__page-link(href="#") Доставка и оплата
+								a.shop-info__page-link.popup-open-link(href='#', data-popup-target='deliveryPopup') Доставка и оплата
 							li.shop-info__page
-								a.shop-info__page-link(href="#") Возврат и обмен
+								a.shop-info__page-link.popup-open-link(href='#', data-popup-target='returnAndChangePopup') Возврат и обмен
 							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Гарантия качества
+								a.shop-info__page-link.popup-open-link(href='#', data-popup-target='qualityGuaranteePopup') Гарантия качества
 							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Сервисный центр
+								a.shop-info__page-link.popup-open-link(href='#', data-popup-target='serviceCenterPopup') Сервисный центр
 							li.shop-info__page.mobile-hidden
-								a.shop-info__page-link(href="#") Консультация
+								a.shop-info__page-link.popup-open-link(href='#', data-popup-target='consultationPopup') Консультация
 
 				// Тело с детальным описанием, характеристиками и доп. блоками
 				section.product-card__details.details-product
@@ -194,7 +194,7 @@ html(lang="ru")
 												option(value="10") 10
 											span.purchase-item__price
 												b 24
-												|  грн
+												|    грн
 											input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 									a(href="#") Показать все батарейки
 									.products-purchase__collapsed-items
@@ -217,7 +217,7 @@ html(lang="ru")
 													option(value="10") 10
 												span.purchase-item__price 
 													b 1 124
-													|  грн
+													|    грн
 												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 										.products-purchase__item.purchase-item
 											.purchase-item__img
@@ -238,7 +238,7 @@ html(lang="ru")
 													option(value="10") 10
 												span.purchase-item__price 
 													b 156
-													|  грн
+													|    грн
 												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 
 					// 2 таб - характеристики
@@ -288,7 +288,27 @@ html(lang="ru")
 					div.item-detail__mobile-menu-item Отзывы
 					section#comments.details-product__detail-item.item-detail.characteristics-product
 						h2.item-detail__title Отзывы
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam totam numquam amet tenetur corrupti ea, eveniet! Ratione quasi accusantium obcaecati porro nemo, qui, placeat, dolorem molestias deleniti earum repellendus aspernatur?
+							span.comments-amount (1)
+						header.qaa__header
+							p Успели купить?
+								a.qaa__target-link.popup-open-link(href="#", data-popup-target="commentPopup") Оставьте отзыв
+
+						.qaa__comments
+							.p-comment.clearfix
+								.p-comment__info
+									.p-comment__author-avatar
+										img(src="", alt="uset avatar")
+									.p-comment__author-name Руслан
+									.p-comment__date 20.05.2016
+								.p-comment__content
+									.p-comment__text
+										.p-comment__question
+											p Для каких телефонов подходит (только ифон или можно андроид)?
+
+										// ответ на вопрос
+										.p-comment__answer
+											h3 Ответ Planeta Hobby:
+											p Производитель не гарантирует корректную работу для устройств на ОС Андроид. Так что мы рекомендуем использовать устройства на АйОС.
 
 					// 4 таб - Аксессуары
 					div.item-detail__mobile-menu-item Аксессуары
@@ -596,8 +616,8 @@ html(lang="ru")
 					div.item-detail__mobile-menu-item Запчасти
 					section#repairParts.details-product__detail-item.item-detail
 						h2.item-detail__title Запчасти
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas quasi, ipsa amet eius numquam unde odio quo, aut reprehenderit, consectetur! Optio autem cupiditate totam, excepturi, iure aspernatur vero minus.
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dignissimos voluptate nisi at fugit quos sit reprehenderit quaerat vitae dicta aspernatur, corporis consequatur animi quas iure, ea tempora fugiat. Adipisci.
+						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas quasi, ipsa amet eius numquam unde odio quo, aut reprehenderit, consectetur! Optio autem cupiditate totam, excepturi, iure aspernatur vero minus.
+						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dignissimos voluptate nisi at fugit quos sit reprehenderit quaerat vitae dicta aspernatur, corporis consequatur animi quas iure, ea tempora fugiat. Adipisci.
 
 					// 6 таб - вопросы и ответы
 					div.item-detail__mobile-menu-item Вопросы и ответы
@@ -606,7 +626,7 @@ html(lang="ru")
 							span.comments-amount (1)
 						header.qaa__header
 							p Есть вопрос? 
-								a.qaa__target-link(href="#" data-target-popup="askPopup") Спросить
+								a.qaa__target-link.popup-open-link(href="#", data-popup-target="askPopup") Спросить
 
 						.qaa__comments
 							.p-comment.clearfix
@@ -633,7 +653,7 @@ html(lang="ru")
 					div.item-detail__mobile-menu-item Получить консультацию
 					article#consulting.details-product__detail-item.item-detail
 						h2.item-detail__title Получить консультацию
-						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
+						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
 					
 					// Начало секции с аксессуарами (нижний блок аксессуаров)
 					section#accessories-bottom.accessories
@@ -959,30 +979,185 @@ html(lang="ru")
 											a.o-wishlist-link.o-wished(href="#")
 												span.o-wishlist__text В избранном
 
-			.product-add-popup
-				.product-add
-					.product-add__header
-						h2.product-add__title Добавлен в 
-							a(href="#")  корзину
-						a.product-add__close#productAddCloseBtn
-					form.pa-fast-order__form
-						.product-add__content
+			//- .product-add-popup
+			//- 	.product-add
+			//- 		.product-add__header
+			//- 			h2.product-add__title Добавлен в 
+			//- 				a(href="#")    корзину
+			//- 			a.product-add__close#productAddCloseBtn
+			//- 		form.pa-fast-order__form
+			//- 			.product-add__content
 
-							.product-add__added
-								.product-add__description
-									.product-add__img
+			//- 				.product-add__added
+			//- 					.product-add__description
+			//- 						.product-add__img
+			//- 							a(href="#")
+			//- 								img(src="dist/images/temporary/product/item2.jpg", alt="some image")
+			//- 						.product-add__name
+			//- 							a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+			//- 						.cart-product__quantity.product-add__quantity
+			//- 							a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del.product-add__quantity-btn
+			//- 								i
+			//- 							input(type="number" value="2" min="1" name="productAddQuantity" data-product="qty_1" data-product-price="120045.5").product-add__quantity-field.cart-product__quantity-field
+			//- 							span.product-add__quantity-field-label шт
+			//- 							a.cart-product__quantity-btn.cart-product__quantity--add.product-add__quantity-btn(href="#" data-product="qty_1")
+			//- 								i
+			//- 							span.cart-product__price.product-add__price 120 045.5 грн
+			//- 			.product-add__fast-order.pa-fast-order.clearfix
+			//- 				.pa-fast-order__title Быстрый заказ
+							
+			//- 				.order-form__hidden
+			//- 					input(type="hidden" value="2" id="qty_1" name="productQuantity")
+			//- 				.form-group
+			//- 					input(type="text" placeholder="Телефон или эл. почта" name="Contacts" required).pa-fast-order__field.form-control
+			//- 				.form-group
+			//- 					input(type="text" placeholder="Имя" name="Name" required).pa-fast-order__field.form-control
+			//- 				.form-group
+			//- 					input(type="submit" value="Подтвердить заказ" ).pa-fast-order__form-btn
+			//- 		.product-add__footer.clearfix
+			//- 			a(href="#").product-add__backshop#productAddCloseLink
+			//- 				span Вернуться к покупкам
+
+			// Начало попапов один контейнер для всех попапов
+			.popup-outer
+
+				// Попап корзины (при добавлении товара в корзину или заказ, предзаказ)
+				section.popup-b.popup-bcart#cartPopup.clearfix
+					.popup-b__header.popup-b__header--dbb
+						h2.popup-b__heading.popup-b__heading--cart В корзине 5 товаров
+					a.popup-b__close(href="#")
+					
+					form.popup-bcart__form(action="/" method="get")
+						.popup-bcart__content
+							.popup-bcart__set
+								.popup-bcart__set-sticker Набор
+								// 1й товар
+								.bcart-product.clearfix
+									.bcart-product__img
 										a(href="#")
-											img(src="dist/images/temporary/product/item2.jpg", alt="some image")
-									.product-add__name
-										a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-									.cart-product__quantity.product-add__quantity
-										a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del.product-add__quantity-btn
-											i
-										input(type="number" value="2" min="1" name="productAddQuantity" data-product="qty_1" data-product-price="120045.5").product-add__quantity-field.cart-product__quantity-field
-										span.product-add__quantity-field-label шт
-										a.cart-product__quantity-btn.cart-product__quantity--add.product-add__quantity-btn(href="#" data-product="qty_1")
-											i
-										span.cart-product__price.product-add__price 120 045.5 грн
+											img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+									h2.bcart-product__name
+										a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+									.bcart-product__controls
+										span.bcart-product__pprice
+											.product-price--old 130 200 грн
+											.product-price--current 128 182
+												span.product-price__text--small грн
+								// 2й товар
+								.bcart-product.clearfix
+									.bcart-product__img
+										a(href="#")
+											img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+									h2.bcart-product__name
+										a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+									.bcart-product__controls
+
+										span.bcart-product__pprice
+											.product-price--old 22 450 грн
+											.product-price--current 17 169
+												span.product-price__text--small грн
+								// 3й товар
+								.bcart-product.clearfix
+									.bcart-product__img
+										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+									h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+
+									.bcart-product__controls
+										span.bcart-product__pprice
+											.product-price--old 345 грн
+											.product-price--current 256
+												span.product-price__text--small грн
+								.popup-bcart__set-footer.clearfix
+									.bcart-product__controls
+										span.u-control.u-control--del(data-target="prod-126")
+										span.bcart-product__qty
+											input(type="hidden" name="product-qty" id="prod-126" value="1")
+											span.bcart-product__qty-label 1
+											|    шт
+										span.u-control.u-control--add(data-target="prod-126")
+
+										span.bcart-product__pprice
+											.product-price--old 135 684 грн
+											.product-price--new 125 500
+												span.product-price__text--small    грн
+
+								a.bcart-product__delete(href="#")
+							// 1й товар вне комплекта
+							.bcart-product.clearfix
+								span.bcart-product__sticker Под заказ
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-126")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-126" value="1")
+										span.bcart-product__qty-label 1
+										|    шт
+									span.u-control.u-control--add(data-target="prod-126")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|    грн
+
+						// Всплывающий блок редактирования товара
+						div 
+							.popup-back
+								.close-popup
+									a(href="#" rel="#").come-back
+										i
+										span Вернуть
+								.product-wishlist-block.cart-wishlist-block
+									a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
+										i
+										span В избранное
+								.delete-detail-block
+									a(href="#").page-cart__delete_checkbox
+										i
+										span Удалить
+									input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
+
+						.popup-bcart__footer.popup-b__footer.clearfix
+							// footer right block
+							.popup-bcart__fright
+								span.popup-bcart__total Итого 
+									span.popup-bcart__total-price 123 856 
+									|  грн
+								input.popup-bcart__submit(type="submit" value="Подтвердить заказ")
+							// footer left block
+							.popup-bcart__fleft
+								a.popup-b__back(href="#") Вернуться к покупкам
+
+				// Попап "Быстрая покупка"
+				section.popup-b.popup-bcart#quickOrder.clearfix
+					.popup-b__header.popup-b__header--dbb
+						h2.popup-b__heading.popup-b__heading--cart Добавлен в корзину
+					a.popup-b__close(href="#")
+					
+					form.popup-bcart__form(action="/" method="get")
+						.popup-bcart__content
+							.bcart-product.clearfix
+								span.bcart-product__sticker Под заказ
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-126")
+									span.bcart-product__qty
+										input(type="hidden" name="product-qty" id="prod-126" value="1")
+										span.bcart-product__qty-label 1
+										|    шт
+									span.u-control.u-control--add(data-target="prod-126")
+
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|    грн
 						.product-add__fast-order.pa-fast-order.clearfix
 							.pa-fast-order__title Быстрый заказ
 							
@@ -999,279 +1174,65 @@ html(lang="ru")
 							span Вернуться к покупкам
 
 
-			.popup-css#delivery
-				.popup-css__content
-					h4 Доставка в города
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quo temporibus assumenda laborum, magni harum dolore, consequuntur maxime cumque, impedit vel reprehenderit hic facilis doloremque vero non veniam officia. Odit.
-					p
-						a(href="#") Подробнее
-			.popup-outer
-				section.popup-b#bestPricePopup
-					h2.popup-b__heading Гарантия лучшей цены
-					.popup-b__content
-						p.
-							Если вы нашли этот товар дешевле, мы продадим вам его по той цене.
-						p.
-							Укажите ссылку на товар с ценой при оформлении заказа в поле Комментарии к заказу и после проверки менеджер изменит цену в вашем заказе.
-					a.popup-b__more(href="#") Подробнее
-					a.popup-b__close(href="#")
 
-				section.popup-b#deliveryPopup
-					h2.popup-b__heading Доставка по городам
-					.popup-b__content
-						p.
-							Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
-						p.
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-					a.popup-b__more(href="#") Подробнее
-					a.popup-b__close(href="#")
-				// Попап корзины (при добавлении товара в корзину или заказ, предзаказ)
-				section.popup-b.popup-bcart.clearfix
-					h2.popup-b__heading.popup-b__heading--cart В корзине 5 товаров
-					a.popup-b__close(href="#")
-					form.popup-bcart__form(action="/" method="get")
-						.popup-bcart__content
-							.popup-bcart__set
-								.popup-bcart__set-sticker Комплект
-								.bcart-product.clearfix
-									a.bcart-product__delete(href="#")
-									.bcart-product__img
-										a(href="#")
-											img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-									h2.bcart-product__name
-										a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-									.bcart-product__controls
-
-										span.bcart-product__pprice
-											span.product-price--current 128 182
-											|  грн
-								.bcart-product.clearfix
-									a.bcart-product__delete(href="#")
-									.bcart-product__img
-										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-									h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-									.bcart-product__controls
-
-										span.bcart-product__pprice
-											span.product-price--current 11 827
-											|  грн
-								.bcart-product.clearfix
-									a.bcart-product__delete(href="#")
-									.bcart-product__img
-										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-									h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-									.bcart-product__controls
-										span.bcart-product__pprice
-											span.product-price--current 1182
-											|  грн
-							.bcart-product.clearfix
-								span.bcart-product__sticker Под заказ
-								a.bcart-product__delete(href="#")
-								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-
-								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-126")
-									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-126" value="1")
-										span.bcart-product__qty-label 1
-										|  шт
-									span.u-control.u-control--add(data-target="prod-126")
-
-									span.bcart-product__pprice
-										span.product-price--current 1182
-										|  грн
-
-						// Всплывающий блок редактирования товара
-						div 
-							.popup-back
-								.close-popup
-									a(href="#" rel="#").come-back
-										i
-										span Вернуть
-								.product-wishlist-block.cart-wishlist-block
-									a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-										i
-										span В избранное
-								.delete-detail-block
-									a(href="#").page-cart__delete_checkbox
-										i
-										span Удалить
-									input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
-
-
-
-
-						.popup-bcart__footer
-							a.popup-b__back(href="#") Вернуться к покупкам
-							.popup-bcart__fr
-								span.popup-bcart__total Итого 
-									span.popup-bcart__total-price 1285 
-									|  грн
-								input.popup-bcart__submit(type="submit" value="Подтвердить заказ")
-
-				// Попап корзины с добавленным комплектом
-				section.popup-b.popup-bcart.clearfix
-					h2.popup-b__heading.popup-b__heading--cart В корзине 5 товаров
-					a.popup-b__close(href="#")
-					form.popup-bcart__form(action="/" method="get")
-						.popup-bcart__content
-							.bcart-product.clearfix
-								span.bcart-product__sticker Ожидается
-								a.bcart-product__delete(href="#")
-								.bcart-product__img
-									a(href="#")
-										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name
-									a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-123")
-									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-123" value="1")
-										span.bcart-product__qty-label 1
-										|  шт
-									span.u-control.u-control--add(data-target="prod-123")
-
-									span.bcart-product__pprice
-										span.product-price--current 128 182
-										|  грн
-							.bcart-product.clearfix
-								// span.bcart-product__sticker Ожидается
-								a.bcart-product__delete(href="#")
-								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-124")
-									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-124" value="1")
-										span.bcart-product__qty-label 1
-										|  шт
-									span.u-control.u-control--add(data-target="prod-124")
-
-									span.bcart-product__pprice
-										span.product-price--current 11 827
-										|  грн
-							.bcart-product.clearfix
-								span.bcart-product__sticker Предварительный заказ
-								a.bcart-product__delete(href="#")
-								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
-
-								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-125")
-									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-125" value="10")
-										span.bcart-product__qty-label 1
-										|  шт
-									span.u-control.u-control--add(data-target="prod-125")
-
-									span.bcart-product__pprice
-										span.product-price--current 1182
-										|  грн
-							.bcart-product.clearfix
-								span.bcart-product__sticker Под заказ
-								a.bcart-product__delete(href="#")
-								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-
-								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-126")
-									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-126" value="1")
-										span.bcart-product__qty-label 1
-										|  шт
-									span.u-control.u-control--add(data-target="prod-126")
-
-									span.bcart-product__pprice
-										span.product-price--current 1182
-										|  грн
-
-						// Всплывающий блок редактирования товара
-						div 
-							.popup-back
-								.close-popup
-									a(href="#" rel="#").come-back
-										i
-										span Вернуть
-								.product-wishlist-block.cart-wishlist-block
-									a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-										i
-										span В избранное
-								.delete-detail-block
-									a(href="#").page-cart__delete_checkbox
-										i
-										span Удалить
-									input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
-
-
-
-
-						.popup-bcart__footer
-							a.popup-b__back(href="#") Вернуться к покупкам
-							.popup-bcart__fr
-								span.popup-bcart__total Итого 
-									span.popup-bcart__total-price 1285 
-									|  грн
-								input.popup-bcart__submit(type="submit" value="Подтвердить заказ")
 				// Попап "купить в рассрочку" при нажатии ссылки купить в кредит
-				section.popup-b.popup-bcredit.clearfix
-					h2.popup-b__heading Купить в рассрочку
+				section.popup-b.popup-bcredit#creditPopup.clearfix
+					.popup-b__header
+						h2.popup-b__heading Купить в рассрочку
 					.popup-b__content.popup-bcredit__content
 						p.
 							Выбирайте выгодные для вас условия рассрочки (3, 6 или 10 платежей) и выплачивайте стоимость покупки равными частями.
 						p.
 							Подготовьте ксерокопию паспорта и ИНН и отправляйтесь за своим товаром. На пункте выдачи подпишите договор о рассрочке, оплатив первую часть.
 						p.
-							Остальные платежи, начиная со следующего месяца, вы сможете оплатить в любом отделении банка.  Суммы платежей, указанные ниже, окончательны.
+							Остальные платежи, начиная со следующего месяца, вы сможете оплатить в любом отделении банка.    Суммы платежей, указанные ниже, окончательны.
 						p
 							strong Оформление рассрочки возможно для любого товара и по всей территории Украины 
-					.popup-bcredit__announce  Рассрочка оформляется на стоимость товара 
-						span  12 100 
+					.popup-bcredit__announce    Рассрочка оформляется на стоимость товара 
+						span    12&nbsp;100&nbsp;
 						| грн
 					form(name="productCredit" method="get" action="/")
-						.popup-bcredit__cond-wrapper
-							table.popup-bcredit__cond
-								caption Общая стоимость товара
-								tr.r-active
-									td
-										input.custom-radio__input#creditOption-1(type="radio" name="paymentsAmount" value="3" checked)
-										label.custom-radio__label-b(for="creditOption-1")
-											span.custom-radio__circle-b
-											|  Три платежа
-									td 3 платежa по 4 481 грн
-									td 13 443 грн
-								tr
-									td
-										input.custom-radio__input#creditOption-2(type="radio" name="paymentsAmount" value="6")
-										label.custom-radio__label-b(for="creditOption-2")
-											span.custom-radio__circle-b
-											|  Шесть платежей
-									td 6 платежей по 2 520 грн
-									td 15 120 грн
-								tr
-									td
-										input.custom-radio__input#creditOption-3(type="radio" name="paymentsAmount" value="10")
-										label.custom-radio__label-b(for="creditOption-3")
-											span.custom-radio__circle-b
-											|  Десять платежей
-									td 10 платежей по 1 728 грн
-									td 17 443 грн
+						table.popup-bcredit__cond
+							caption Общая стоимость товара
+							tr.r-active
+								td
+									input.custom-radio__input#creditOption-1(type="radio" name="paymentsAmount" value="3" checked)
+									label.custom-radio__label-b(for="creditOption-1")
+										span.custom-radio__circle-b
+										|    Три платежа
+								td.r-desctop 3 платежa по 4&nbsp;481&nbsp;грн
+								td
+									.r-mobile x4 481
+									span.popup-bcredit__total-sum 13 443 грн
+							tr
+								td
+									input.custom-radio__input#creditOption-2(type="radio" name="paymentsAmount" value="6")
+									label.custom-radio__label-b(for="creditOption-2")
+										span.custom-radio__circle-b
+										|    Шесть платежей
+								td.r-desctop 6 платежей по 2&nbsp;520&nbsp;грн
+								td
+									.r-mobile x2 520
+									span.popup-bcredit__total-sum 15 120 грн
+							tr
+								td
+									input.custom-radio__input#creditOption-3(type="radio" name="paymentsAmount" value="10")
+									label.custom-radio__label-b(for="creditOption-3")
+										span.custom-radio__circle-b
+										|    Десять платежей
+								td.r-desctop 10 платежей по 1 728 грн
+								td
+									.r-mobile x1 728
+									span.popup-bcredit__total-sum 17 443 грн
 
 					
-						.popup-bcart__footer
+						.popup-bcart__footer.popup-b__footer.clearfix
+							// footer right block
+							.popup-bcart__fright
+								input.popup-bcart__submit(type="submit" value="Оформить рассрочку")
+							// footer left block
+							.popup-bcart__fleft
 								a.popup-b__back(href="#") Вернуться к покупкам
-								.popup-bcart__fr
-									input.popup-bcart__submit(type="submit" value="Оформить рассрочку")
 					a.popup-b__close(href="#")
 
 				// попап "добавить комментарий"
@@ -1318,8 +1279,8 @@ html(lang="ru")
 
 				// попап "задать вопрос"
 				section.popup-b.popup-bcomment.clearfix#askPopup
-					.popup-bcomment__header
-						h2.popup-b__heading Вопрос по товару самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+					.popup-b__header.popup-b__header--dbb
+						h2.popup-b__heading Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 					form.popup-bcomment__form(action="/" name="comment" method="post")
 						.popup-bcomment__row
 							.popup-bcomment__fl
@@ -1334,6 +1295,83 @@ html(lang="ru")
 								input#commentEmail.popup-bcomment__text-input(type="email" name="email" required placeholder="ivanpetrov@gmail.com")
 							input.popup-bcomment__submit(type="submit" value="СПРОСИТЬ")
 					a.popup-b__close(href="#")
+
+				// ----------------------------------------------------------
+				// ----------------- Статичные попапы -----------------------
+
+				// Гарантия лучшей цены
+				section.popup-b#bestPricePopup
+					.popup-b__header
+						h2.popup-b__heading Гарантия лучшей цены
+					.popup-b__content
+						p.
+							Если вы нашли этот товар дешевле, мы продадим вам его по той цене.
+						p.
+							Укажите ссылку на товар с ценой при оформлении заказа в поле Комментарии к заказу и после проверки менеджер изменит цену в вашем заказе.
+						a.popup-b__more(href="#") Подробнее
+					a.popup-b__close(href="#")
+				// Доставка и оплата
+				section.popup-b#deliveryPopup
+					.popup-b__header
+						h2.popup-b__heading Доставка по городам
+					.popup-b__content
+						p.
+							Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p.
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href="#") Подробнее
+					a.popup-b__close(href="#")
+				// Купить со скидкой
+				section#withDiscountPopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Купить со скидкой
+					.popup-b__content
+						p Купите товар со скидкой, если у вас есть промокод.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Возврат и обмен
+				section#returnAndChangePopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Возврат и обмен
+					.popup-b__content
+						p Если товар имеет дефект, то вы можете вернуть его в установленый законом срок.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Гарантия качества
+				section#qualityGuaranteePopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Гарантия качества
+					.popup-b__content
+						p Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Консультация
+				section#consultationPopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Консультация
+					.popup-b__content
+						p Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Сервисный центр
+				section#serviceCenterPopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Сервисный центр
+					.popup-b__content
+						p Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Конец статичных попапов
 
 
 

@@ -554,19 +554,19 @@ $(function () {
 	// Нажатие кнопки "Купить" открывает попап
 	$('#submitOrderBtn').on('click', function(e) {
 		e.preventDefault();
-		var popup = $('.popup-bcart');
+		var popup = $('#cartPopup');
 
 		popup.show();
 		popup.parent().fadeIn();
 	});
-	// Нажатие ссылки купить в кредит
-	$('#followbuyCreditProduct-link').on('click', function (e) {
-		e.preventDefault();
-		var popup = $('#askPopup');
+	// // Нажатие ссылки купить в кредит
+	// $('#followbuyCreditProduct-link').on('click', function (e) {
+	// 	e.preventDefault();
+	// 	var popup = $('#askPopup');
 
-		popup.show();
-		popup.parent().fadeIn();
-	});
+	// 	popup.show();
+	// 	popup.parent().fadeIn();
+	// });
 
 	// обработка выбора срока рассрочки
 	$('.popup-bcredit__cond').on('click', function(e) {
@@ -581,7 +581,20 @@ $(function () {
 		} else {
 			console.log('no');
 		}
-	})
+	});
+
+	$('.popup-open-link').on('click', function(e) {
+		e.preventDefault();
+		var targetId = this.dataset.popupTarget;
+		var popup = $('#' + targetId);
+		console.log('clicked');
+		console.log(popup);
+
+		popup.show();
+		popup.parent().fadeIn();
+	});
+
+
 
 });
 
