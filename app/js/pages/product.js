@@ -533,14 +533,12 @@ $(function () {
 
 	var mypopup = {
 		closeLink: $('.popup-b__close'),
+		backLink: $('.popup-b__back'),
 		wrapper: $('.popup-outer')
 	}
 
-	mypopup.closeLink.on('click', function (e) {
-		e.preventDefault();
-		$(this).parent().fadeOut();
-		mypopup.wrapper.fadeOut();
-	});
+	mypopup.closeLink.on('click', closePopupHandler);
+	mypopup.backLink.on('click', closePopupHandler);
 
 	mypopup.wrapper.on('click', function(e) {
 		e.stopPropagation();
@@ -550,6 +548,11 @@ $(function () {
 		}
 	});
 
+	function closePopupHandler (e) {
+		e.preventDefault();
+		mypopup.wrapper.children().fadeOut();
+		mypopup.wrapper.fadeOut();
+	}
 	// $('.popup-bcart__content').customScrollbar();
 	// Нажатие кнопки "Купить" открывает попап
 	$('#submitOrderBtn').on('click', function(e) {

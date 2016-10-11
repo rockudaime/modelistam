@@ -36,13 +36,13 @@ block buy-block
 						label(for="color-3")
 							span(style="background-color: yellow").color-product-info__color-label
 							| Желтый
+			// Блок с опцией выбора набора
 			ul.product-info__set-option.set-option-product.clearfix
 				li.set-option-product__item
 					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
 					label.set-option-product__label(for="productWithoutSet") Без набора
-						span.tip-btn
-						span.tip-content Это подсказка для этого блока
-							a(href="http://google.ru") Google
+						// a.tip-btn.popup-open-link(href="#", data-popup-target="setInfoPopup")
+						// ^ эта подсказка была удалена в новом варианте дизайна
 
 				li.set-option-product__item
 					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
@@ -58,8 +58,9 @@ block buy-block
 				input.product-btn.product-btn--buy#submitOrderBtn(type="submit" value="Купить")
 				//input.product-btn.product-btn--order(type="submit" value="Заказать")
 				//input.product-btn.product-btn--inform(type="submit" value="Сообщить о поступлении")
-				span.mobile-buy-option
-					a(href="#fast_buy").fastbuy-link Быстрая покупка
+				//- span.mobile-buy-option
+				//- 	a(href="#fast_buy").fastbuy-link Быстрая покупка
+				//- ^ нет в новой версии дизайна
 
 			
 		ul.product-info__buy-options.p-buy-options
@@ -70,7 +71,10 @@ block buy-block
 					li.p-buy-options__option
 						a.popup-open-link(href="#", data-popup-target='creditPopup') В кредит
 					li.p-buy-options__option
-						a.popup-open-link(href="#fast_buy", data-popup-target='quickOrder').fastbuy-link Быстрая покупка
+						.p-buy-options__table-show
+							span.p-buy-options__table-show-title еще
+							span.p-buy-options__table-hidden
+								a.popup-open-link(href="#fast_buy", data-popup-target='quickOrder').fastbuy-link Быстрая покупка
 		.product-info__actions
 			.personal-actions
 				.personal-actions__action.action-personal.action-personal--wishlist
@@ -82,10 +86,11 @@ block buy-block
 				.personal-actions__action.action-personal.action-personal--watch-price.action-personal--selected
 					i
 					span.action-personal__title Следить за ценой
-			a(href="#").category-product__review-link Обзор-сравнение
-			.rateit-block
-				.rateit__range
-					.rateit__selected
-						.rateit__hover
-				|  на базе 122 оценок
+			div.product-info__rating-block
+				a(href="#").category-product__review-link Обзор-сравнение
+				.rateit-block
+					.rateit__range
+						.rateit__selected
+							.rateit__hover
+					|  на базе 122 оценок
 	// конец блока с информацией для заказа\покупки

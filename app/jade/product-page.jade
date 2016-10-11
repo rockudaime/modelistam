@@ -3,7 +3,7 @@ html(lang="ru")
 	head
 		block title
 		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
 		link(rel="stylesheet" href="dist/normalize.css")
@@ -49,34 +49,51 @@ html(lang="ru")
 								span.product-img-sticker.product-img-sticker--top Топ продаж
 
 						.product-card__gallery.gallery-product
-							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-									img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
-							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-									img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
-							.gallery-product__item.gallery-product__item--active
-								// ссылка активного элемента не содержит класса .fancybox-thumbs
-								a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-									img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
-							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
-							.gallery-product__item
-								a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-									img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
-						// Вывод всех изображений во всплывающем окне
-						// В этот блок добавляются все изображения, что не вошли в основные 4 штуки.
-						.product-card__all-images
+							a.gallery-product__control.gallery-product__control--up(href="#")
+							a.gallery-product__control.gallery-product__control--down.gallery-product__control--active(href="#")
+							.gallery-product__content
+								.gallery-product__item
+									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
+								.gallery-product__item
+									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
+								.gallery-product__item.gallery-product__item--active
+									// ссылка активного элемента не содержит класса .fancybox-thumbs
+									a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
+								.gallery-product__item
+									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+								.gallery-product__item
+									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+							.colors-block-table
+								span Цвета
+								.product-colors__item
+									label(for="color-1")
+										span(style="background-color: white").color-product-info__color-label
+										| Белый
+								.product-colors__item
+									label(for="color-2")
+										span(style="background-color: red").color-product-info__color-label
+										| Красный
+								.product-colors__item
+									label(for="color-3")
+										span(style="background-color: yellow").color-product-info__color-label
+										| Желтый
+						//- // Вывод всех изображений во всплывающем окне
+						//- // В этот блок добавляются все изображения, что не вошли в основные 4 штуки.
+						//- .product-card__all-images
 
-								a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"    data-fancybox-group="thumb" rel="group")
-									img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
+						//- 		a.fancybox-thumbs(href="dist/images/temporary/big-images/5_b.jpeg"  data-fancybox-group="thumb" rel="group")
+						//- 			img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
 					
 					block buy-block
 
 					aside.product-card__shop-info.shop-info
 						.product-manufacturer Производитель:
-							a(href="#")    HSP Racing
+							a(href="#")  HSP Racing
 						.product-warranty Гарантия: 24 мес
 						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
 						ul.shop-info__pages
@@ -129,10 +146,10 @@ html(lang="ru")
 								li.video-tab(data-order="3").
 									<iframe width="494" height="301" src="https://www.youtube.com/embed/ztHNNW7QFyE" frameborder="0" allowfullscreen></iframe>
 							//- ul.tabs-control
-							//- 	li.tabs-control__item
-							//- 		a.tabs-nav(href="#" data-nav="1") 1
-							//- 	li.tabs-control__item
-							//- 		a.tabs-nav.tabs-nav--active(href="#" data-nav="2") 2
+							//-         li.tabs-control__item
+							//-                 a.tabs-nav(href="#" data-nav="1") 1
+							//-         li.tabs-control__item
+							//-                 a.tabs-nav.tabs-nav--active(href="#" data-nav="2") 2
 							
 						section.about-product__text
 							h2.item-detail__title Описание
@@ -194,7 +211,7 @@ html(lang="ru")
 												option(value="10") 10
 											span.purchase-item__price
 												b 24
-												|    грн
+												|  грн
 											input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 									a(href="#") Показать все батарейки
 									.products-purchase__collapsed-items
@@ -217,7 +234,7 @@ html(lang="ru")
 													option(value="10") 10
 												span.purchase-item__price 
 													b 1 124
-													|    грн
+													|  грн
 												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 										.products-purchase__item.purchase-item
 											.purchase-item__img
@@ -238,7 +255,7 @@ html(lang="ru")
 													option(value="10") 10
 												span.purchase-item__price 
 													b 156
-													|    грн
+													|  грн
 												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
 
 					// 2 таб - характеристики
@@ -289,26 +306,188 @@ html(lang="ru")
 					section#comments.details-product__detail-item.item-detail.characteristics-product
 						h2.item-detail__title Отзывы
 							span.comments-amount (1)
-						header.qaa__header
-							p Успели купить?
-								a.qaa__target-link.popup-open-link(href="#", data-popup-target="commentPopup") Оставьте отзыв
-
-						.qaa__comments
-							.p-comment.clearfix
-								.p-comment__info
-									.p-comment__author-avatar
-										img(src="", alt="uset avatar")
-									.p-comment__author-name Руслан
-									.p-comment__date 20.05.2016
-								.p-comment__content
-									.p-comment__text
-										.p-comment__question
-											p Для каких телефонов подходит (только ифон или можно андроид)?
-
-										// ответ на вопрос
-										.p-comment__answer
-											h3 Ответ Planeta Hobby:
-											p Производитель не гарантирует корректную работу для устройств на ОС Андроид. Так что мы рекомендуем использовать устройства на АйОС.
+						#mneniyapro_feeddata
+							.clear
+							#mneniya-head
+								.mp-head-left.mp-floatl(itemscope='', itemtype='http://data-vocabulary.org/Review-aggregate')
+									span.mp-title Средний рейтинг:
+									.mp-total-score-wraper
+										span(itemprop='itemreviewed', style='display:none;') Метательный планер Miniprop Felix iQ (F8060)
+										.mp-total-score
+											div(style='width:60%')
+										.mp-floatl.mp-total-score-text
+											span.mp-total-score-val(itemprop='rating', itemscope='', itemtype='http://data-vocabulary.org/Rating')
+												| "
+												span(itemprop='average') 3
+												| "
+											|        на основании 
+											span
+												span(itemprop='votes') 6
+												|        отзывов
+										.clear
+									.mp-total-reccomend
+										span.mp-total-recommend-val 67%
+										|        покупателей рекомендуют этот товар
+									.mp-calltoaction
+										span Успели купить?
+										a.addformlink.big-link.popup-open-link(data-popup-target="commentPopup", href='#', data-animation='fade') Оставить отзыв
+								.mp-head-right.mp-floatl
+									span.mp-title Распределение рейтингов:
+									table.mp-rating-details
+										tbody
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:100%')
+												td.mp-bar
+													.mp-strip5(title='17%', style='width:17%')
+												td.mp-count (1)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:80%')
+												td.mp-bar
+													.mp-strip4(title='33%', style='width:33%')
+												td.mp-count (2)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:60%')
+												td.mp-bar
+													.mp-strip3(title='17%', style='width:17%')
+												td.mp-count (1)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:40%')
+												td.mp-bar
+													.mp-strip2(title='0%', style='width:0%')
+												td.mp-count (0)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:20%')
+												td.mp-bar
+													.mp-strip1(title='33%', style='width:33%')
+												td.mp-count (2)
+								.clear
+								.mp-head-left.mp-floatl
+									span.mp-reviews-title Отзывы о товаре:
+								.mp-head-right.mp-floatl
+									.mp-proof
+										a.mp-logol-link(href='//mneniya.pro/trustmark/', target='_blank')
+											img.mp-logo(src='//dev.mneniya.pro/images/logo.png', title='Отзывы покупателей собраны независимым сервисом Mneniya.Pro', alt='Отзывы покупателей собраны независимым сервисом Mneniya.Pro')
+										span гарантирует достоверность отзывов
+								.clear
+							ul.mp-rating-items
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/375eec20ee9271f036e8e8e66caee356?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:20%')
+										.mp-rating-head
+											.mp-rating-author-name Дмитрий
+											.mp-rating-date 09.06.2016
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Кусок пинопласта за 600 грн...
+											.mp-rating-pros
+												.mp-plus Нравится детям
+											.mp-rating-cons
+												.mp-minus Отломился кусочек между пазами руля.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/3f283f3f1e496846c4f8ed9e608bb3d8?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:60%')
+										.mp-rating-head
+											.mp-rating-author-name Олександр Генералов
+											.mp-rating-date 16.05.2016
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-pros
+												.mp-plus Небольшая цена, ударостойкий
+											.mp-rating-cons
+												.mp-minus
+													| У планера крыло не аэродинамическое, на поверхности крыла какие-то звездочки непонятно зачем.
+										.mp-i-recommend Я рекомендую этот товар другим!
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/29651e4826979cc838b144a188577049?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:20%')
+										.mp-rating-head
+											.mp-rating-author-name Александр
+											.mp-rating-date 18.08.2015
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Купил сыну этот планер Miniprop Felix iQ. Вышли поиграть на стадионе. Играли около часа. При очередном приземлении на траву крыло сламалось на 2 равных части. Место разлома - в зажатой корпусом части - там, где при нормальном качестве материала, ломаться в принципе не должно. Эта игрушка недолговечна, поэтому не стоит таких денег.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/94c7ac6376ca483be4e3b87213915d7c?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:100%')
+										.mp-rating-head
+											.mp-rating-author-name Наталья
+											.mp-rating-date 15.05.2015
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Очень интересная штука, увлекательная. Удобная в использовании, безопасная для ребенка, потому как легкая без острых углов. Даже если на площадке попадет в других детей - беды не будет. Сыну 5 лет, увлекается самолетами, ему очень понравилась игрушка. Это будет оригинальный подарок (не такой как у всех) для наших друзей. Спасибо
+										.mp-i-recommend Я рекомендую этот товар другим!
+										.mp-rating-customer-comment
+											b Комментарий Planeta Hobby:
+											br
+											|             Добрый день. Спасибо Вам за обратную связь. Нам очень приятно, что Вы остались довольны покупкой в нашем интернет-магазине. Желаем Вам удачных полетов. 
+											br
+											| С Уважением, интернет-магазин Planeta Hobby.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:80%')
+										.mp-rating-head
+											.mp-rating-author-name Алексей
+											.mp-rating-date 14.01.2015
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Купил такой планер своему малому летом 2013го. Пользовались до осени 2014го пока сын с мамой не потерял хвостовой стабилизатор. Кстати его можно переставлять на 2 режима полета - прямо, по кругу (мертвая петля). Модель просто НЕУБИВЕМАЯ. За 1 год эксплуатации счесан нос, и то, падал на все что угодно - грунтовку, траву, асфальт. Всем рекомендую!
+										.mp-i-recommend Я рекомендую этот товар другим!
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:80%')
+										.mp-rating-head
+											.mp-rating-author-name George
+											.mp-rating-date 31.10.2013
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Метательный планер просто идеален для активного отдыха в парке на пляже на стадионе в огороде:)
+												br
+												| купил такой своим детям 4 и 6 лет, дети терзают его уже три месяца, качество материала наивысшего качества, у нашей семьи был полнейший восторг!
+												br
+												| Однозначно стоит своих денег, рекомендую!
+										.mp-i-recommend Я рекомендую этот товар другим!
 
 					// 4 таб - Аксессуары
 					div.item-detail__mobile-menu-item Аксессуары
@@ -616,34 +795,36 @@ html(lang="ru")
 					div.item-detail__mobile-menu-item Запчасти
 					section#repairParts.details-product__detail-item.item-detail
 						h2.item-detail__title Запчасти
-						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas quasi, ipsa amet eius numquam unde odio quo, aut reprehenderit, consectetur! Optio autem cupiditate totam, excepturi, iure aspernatur vero minus.
-						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dignissimos voluptate nisi at fugit quos sit reprehenderit quaerat vitae dicta aspernatur, corporis consequatur animi quas iure, ea tempora fugiat. Adipisci.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas quasi, ipsa amet eius numquam unde odio quo, aut reprehenderit, consectetur! Optio autem cupiditate totam, excepturi, iure aspernatur vero minus.
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dignissimos voluptate nisi at fugit quos sit reprehenderit quaerat vitae dicta aspernatur, corporis consequatur animi quas iure, ea tempora fugiat. Adipisci.
 
 					// 6 таб - вопросы и ответы
 					div.item-detail__mobile-menu-item Вопросы и ответы
 					article#questionsAndAnswers.details-product__detail-item.item-detail.qaa
 						h2.item-detail__title Вопросы и ответы 
 							span.comments-amount (1)
-						header.qaa__header
-							p Есть вопрос? 
-								a.qaa__target-link.popup-open-link(href="#", data-popup-target="askPopup") Спросить
+						#mneniyapro_qnadata
+							.clear
+							#mneniya-qna-head
+								.mp-calltoaction
+									span Есть вопрос?
+									a.addformlink.big-link.popup-open-link(data-popup-target='askPopup', href='#', data-animation='fade') Спросить
+							ul.mp-rating-items
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/d8ac75d7fbe20d0320412a9ebadb66f3?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-head
+											.mp-rating-author-name Евгений Билитюк
+											.mp-rating-date 05.11.2015
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Что делать если при запуске машинки и пульта машинка начинает ехать сама по себе на максимальной скорости ?
+										.mp-rating-customer-comment
+											b Ответ Planeta Hobby:
+											br
+											| Добрый день. Причин может быть много (от заводского брака до сбоя настроек). Вам стоит обратиться в магазин к специалистам по ремонту и обслуживанию моделей.
 
-						.qaa__comments
-							.p-comment.clearfix
-								.p-comment__info
-									.p-comment__author-avatar
-										img(src="", alt="uset avatar")
-									.p-comment__author-name Руслан
-									.p-comment__date 20.05.2016
-								.p-comment__content
-									.p-comment__text
-										.p-comment__question
-											p Для каких телефонов подходит (только ифон или можно андроид)?
-
-										// ответ на вопрос
-										.p-comment__answer
-											h3 Ответ Planeta Hobby:
-											p Производитель не гарантирует корректную работу для устройств на ОС Андроид. Так что мы рекомендуем использовать устройства на АйОС.
 
 
 
@@ -653,7 +834,7 @@ html(lang="ru")
 					div.item-detail__mobile-menu-item Получить консультацию
 					article#consulting.details-product__detail-item.item-detail
 						h2.item-detail__title Получить консультацию
-						p    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quam eligendi quasi, culpa quis sunt, illo, quae, odio odit placeat dolores enim vitae officia itaque! Soluta officiis dolores, molestiae rerum!
 					
 					// Начало секции с аксессуарами (нижний блок аксессуаров)
 					section#accessories-bottom.accessories
@@ -980,43 +1161,43 @@ html(lang="ru")
 												span.o-wishlist__text В избранном
 
 			//- .product-add-popup
-			//- 	.product-add
-			//- 		.product-add__header
-			//- 			h2.product-add__title Добавлен в 
-			//- 				a(href="#")    корзину
-			//- 			a.product-add__close#productAddCloseBtn
-			//- 		form.pa-fast-order__form
-			//- 			.product-add__content
+			//-         .product-add
+			//-                 .product-add__header
+			//-                         h2.product-add__title Добавлен в 
+			//-   a(href="#")  корзину
+			//-                         a.product-add__close#productAddCloseBtn
+			//-                 form.pa-fast-order__form
+			//-                         .product-add__content
 
-			//- 				.product-add__added
-			//- 					.product-add__description
-			//- 						.product-add__img
-			//- 							a(href="#")
-			//- 								img(src="dist/images/temporary/product/item2.jpg", alt="some image")
-			//- 						.product-add__name
-			//- 							a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-			//- 						.cart-product__quantity.product-add__quantity
-			//- 							a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del.product-add__quantity-btn
-			//- 								i
-			//- 							input(type="number" value="2" min="1" name="productAddQuantity" data-product="qty_1" data-product-price="120045.5").product-add__quantity-field.cart-product__quantity-field
-			//- 							span.product-add__quantity-field-label шт
-			//- 							a.cart-product__quantity-btn.cart-product__quantity--add.product-add__quantity-btn(href="#" data-product="qty_1")
-			//- 								i
-			//- 							span.cart-product__price.product-add__price 120 045.5 грн
-			//- 			.product-add__fast-order.pa-fast-order.clearfix
-			//- 				.pa-fast-order__title Быстрый заказ
+			//-   .product-add__added
+			//-           .product-add__description
+			//-                   .product-add__img
+			//-                           a(href="#")
+			//-     img(src="dist/images/temporary/product/item2.jpg", alt="some image")
+			//-                   .product-add__name
+			//-                           a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+			//-                   .cart-product__quantity.product-add__quantity
+			//-                           a(href="#" data-product="qty_1").cart-product__quantity-btn.cart-product__quantity--del.product-add__quantity-btn
+			//-     i
+			//-                           input(type="number" value="2" min="1" name="productAddQuantity" data-product="qty_1" data-product-price="120045.5").product-add__quantity-field.cart-product__quantity-field
+			//-                           span.product-add__quantity-field-label шт
+			//-                           a.cart-product__quantity-btn.cart-product__quantity--add.product-add__quantity-btn(href="#" data-product="qty_1")
+			//-     i
+			//-                           span.cart-product__price.product-add__price 120 045.5 грн
+			//-                         .product-add__fast-order.pa-fast-order.clearfix
+			//-   .pa-fast-order__title Быстрый заказ
 							
-			//- 				.order-form__hidden
-			//- 					input(type="hidden" value="2" id="qty_1" name="productQuantity")
-			//- 				.form-group
-			//- 					input(type="text" placeholder="Телефон или эл. почта" name="Contacts" required).pa-fast-order__field.form-control
-			//- 				.form-group
-			//- 					input(type="text" placeholder="Имя" name="Name" required).pa-fast-order__field.form-control
-			//- 				.form-group
-			//- 					input(type="submit" value="Подтвердить заказ" ).pa-fast-order__form-btn
-			//- 		.product-add__footer.clearfix
-			//- 			a(href="#").product-add__backshop#productAddCloseLink
-			//- 				span Вернуться к покупкам
+			//-   .order-form__hidden
+			//-           input(type="hidden" value="2" id="qty_1" name="productQuantity")
+			//-   .form-group
+			//-           input(type="text" placeholder="Телефон или эл. почта" name="Contacts" required).pa-fast-order__field.form-control
+			//-   .form-group
+			//-           input(type="text" placeholder="Имя" name="Name" required).pa-fast-order__field.form-control
+			//-   .form-group
+			//-           input(type="submit" value="Подтвердить заказ" ).pa-fast-order__form-btn
+			//-                 .product-add__footer.clearfix
+			//-                         a(href="#").product-add__backshop#productAddCloseLink
+			//-   span Вернуться к покупкам
 
 			// Начало попапов один контейнер для всех попапов
 			.popup-outer
@@ -1075,13 +1256,13 @@ html(lang="ru")
 										span.bcart-product__qty
 											input(type="hidden" name="product-qty" id="prod-126" value="1")
 											span.bcart-product__qty-label 1
-											|    шт
+											|  шт
 										span.u-control.u-control--add(data-target="prod-126")
 
 										span.bcart-product__pprice
 											.product-price--old 135 684 грн
 											.product-price--new 125 500
-												span.product-price__text--small    грн
+												span.product-price__text--small  грн
 
 								a.bcart-product__delete(href="#")
 							// 1й товар вне комплекта
@@ -1097,12 +1278,12 @@ html(lang="ru")
 									span.bcart-product__qty
 										input(type="hidden" name="product-qty" id="prod-126" value="1")
 										span.bcart-product__qty-label 1
-										|    шт
+										|  шт
 									span.u-control.u-control--add(data-target="prod-126")
 
 									span.bcart-product__pprice
 										span.product-price--current 1182
-										|    грн
+										|  грн
 
 						// Всплывающий блок редактирования товара
 						div 
@@ -1126,7 +1307,7 @@ html(lang="ru")
 							.popup-bcart__fright
 								span.popup-bcart__total Итого 
 									span.popup-bcart__total-price 123 856 
-									|  грн
+									| грн
 								input.popup-bcart__submit(type="submit" value="Подтвердить заказ")
 							// footer left block
 							.popup-bcart__fleft
@@ -1152,12 +1333,12 @@ html(lang="ru")
 									span.bcart-product__qty
 										input(type="hidden" name="product-qty" id="prod-126" value="1")
 										span.bcart-product__qty-label 1
-										|    шт
+										| шт
 									span.u-control.u-control--add(data-target="prod-126")
 
 									span.bcart-product__pprice
 										span.product-price--current 1182
-										|    грн
+										| грн
 						.product-add__fast-order.pa-fast-order.clearfix
 							.pa-fast-order__title Быстрый заказ
 							
@@ -1170,8 +1351,7 @@ html(lang="ru")
 							.form-group
 								input(type="submit" value="Подтвердить заказ" ).pa-fast-order__form-btn
 					.product-add__footer.clearfix
-						a(href="#").product-add__backshop#productAddCloseLink
-							span Вернуться к покупкам
+						a.popup-b__back(href="#") Вернуться к покупкам
 
 
 
@@ -1185,11 +1365,11 @@ html(lang="ru")
 						p.
 							Подготовьте ксерокопию паспорта и ИНН и отправляйтесь за своим товаром. На пункте выдачи подпишите договор о рассрочке, оплатив первую часть.
 						p.
-							Остальные платежи, начиная со следующего месяца, вы сможете оплатить в любом отделении банка.    Суммы платежей, указанные ниже, окончательны.
+							Остальные платежи, начиная со следующего месяца, вы сможете оплатить в любом отделении банка.  Суммы платежей, указанные ниже, окончательны.
 						p
 							strong Оформление рассрочки возможно для любого товара и по всей территории Украины 
-					.popup-bcredit__announce    Рассрочка оформляется на стоимость товара 
-						span    12&nbsp;100&nbsp;
+					.popup-bcredit__announce  Рассрочка оформляется на стоимость товара 
+						span  12&nbsp;100&nbsp;
 						| грн
 					form(name="productCredit" method="get" action="/")
 						table.popup-bcredit__cond
@@ -1199,7 +1379,7 @@ html(lang="ru")
 									input.custom-radio__input#creditOption-1(type="radio" name="paymentsAmount" value="3" checked)
 									label.custom-radio__label-b(for="creditOption-1")
 										span.custom-radio__circle-b
-										|    Три платежа
+										|  Три платежа
 								td.r-desctop 3 платежa по 4&nbsp;481&nbsp;грн
 								td
 									.r-mobile x4 481
@@ -1209,7 +1389,7 @@ html(lang="ru")
 									input.custom-radio__input#creditOption-2(type="radio" name="paymentsAmount" value="6")
 									label.custom-radio__label-b(for="creditOption-2")
 										span.custom-radio__circle-b
-										|    Шесть платежей
+										|  Шесть платежей
 								td.r-desctop 6 платежей по 2&nbsp;520&nbsp;грн
 								td
 									.r-mobile x2 520
@@ -1219,7 +1399,7 @@ html(lang="ru")
 									input.custom-radio__input#creditOption-3(type="radio" name="paymentsAmount" value="10")
 									label.custom-radio__label-b(for="creditOption-3")
 										span.custom-radio__circle-b
-										|    Десять платежей
+										|  Десять платежей
 								td.r-desctop 10 платежей по 1 728 грн
 								td
 									.r-mobile x1 728
@@ -1239,33 +1419,54 @@ html(lang="ru")
 				section.popup-b.popup-bcomment#commentPopup.clearfix
 					.popup-bcomment__header
 						h2.popup-b__heading Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-					form.popup-bcomment__form(action="/" name="comment" method="post")
+					form.popup-bcomment__form#reviewform(action method="post")
+						input(type='hidden', name='producturl', value='http://modelistam.com.ua/kvadrokopter-syma-x5sw-kameroi-p-31298/')
+						input(type='hidden', name='customerid', value='090BF0F9-E3E6-033A-176E-F813CCAF')
+						input(type='hidden', name='sendingqueueid', value='')
+						input(type='hidden', name='productuid', value='31298')
+						input(type='hidden', name='productname', value='Квадрокоптер Syma X5SW с FPV Wi-Fi камерой и 6-осевым гироскопом')
+						input#rate(type='hidden', name='rate', value='')
+						input(type='hidden', name='customerurl', value='http://modelistam.com.ua')
 						.popup-bcomment__row
 							.popup-bcomment__hf
 								label(for="productPros") Достоинства:
-								textarea#productPros
+								textarea#productPros(name="pros", rows="5")
 							.popup-bcomment__hf
 								label(for="productCons") Недостатки:
-								textarea#productCons
+								textarea#productCons(name="cons", rows="5")
 						.popup-bcomment__row
 							.popup-bcomment__fl
 								label(for="productComment") Комментарий:
-								textarea#productPros
+								textarea#productPros(name="feedback", rows="10")
 						.popup-bcomment__row
-							.popup-bcomment__rating
+							.popup-bcomment__rating.clearfix
 								p Оцените товар*:
-								.rateit-block
-									.rateit__range
-										.rateit__selected
-											.rateit__hover
+								.mp-rate-block
+									div
+										span.star-rating-control
+											.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+												a(title='1') 1
+											.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+												a(title='2') 2
+											.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+												a(title='3') 3
+											.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+												a(title='4') 4
+											.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+												a(title='5') 5
+										input.star.star-rating-applied(name='star1', type='radio', value='1', style='display: none;')
+										input.star.star-rating-applied(name='star1', type='radio', value='2', style='display: none;')
+										input.star.star-rating-applied(name='star1', type='radio', value='3', style='display: none;')
+										input.star.star-rating-applied(name='star1', type='radio', value='4', style='display: none;')
+										input.star.star-rating-applied(name='star1', type='radio', value='5', style='display: none;')
 							.popup-bcomment__share
 								p Рекомендуете ли вы этот товар другим покупателям?
 								ul.share-options.clearfix
 									li.share-options__item
-										input#shareOptionYes.custom-radio__input(type="radio" value="yes" name="recomendProduct" checked)
+										input#shareOptionYes.custom-radio__input(type="radio" value="true" name="recomend" checked)
 										label.custom-radio__tab-label.share-options__tab(for="shareOptionYes") Да
 									li.share-options__item
-										input#shareOptionNo.custom-radio__input(type="radio" value="no" name="recomendProduct")
+										input#shareOptionNo.custom-radio__input(type="radio" value="false" name="recomend")
 										label.custom-radio__tab-label.share-options__tab(for="shareOptionNo") Нет
 						.popup-bcomment__footer
 							.popup-bcomment__name
@@ -1282,6 +1483,12 @@ html(lang="ru")
 					.popup-b__header.popup-b__header--dbb
 						h2.popup-b__heading Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 					form.popup-bcomment__form(action="/" name="comment" method="post")
+						input(type='hidden', name='producturl', value='http://modelistam.com.ua/kvadrokopter-syma-x5sw-kameroi-p-31298/')
+						input(type='hidden', name='customerid', value='090BF0F9-E3E6-033A-176E-F813CCAF')
+						input(type='hidden', name='productuid', value='31298')
+						input(type='hidden', name='productname', value='Квадрокоптер Syma X5SW с FPV Wi-Fi камерой и 6-осевым гироскопом')
+						input#rate(type='hidden', name='rate', value='')
+						input(type='hidden', name='customerurl', value='http://modelistam.com.ua')
 						.popup-bcomment__row
 							.popup-bcomment__fl
 								label(for="productQuestion") Ваш вопрос:
@@ -1367,6 +1574,16 @@ html(lang="ru")
 						h2.popup-b__heading Сервисный центр
 					.popup-b__content
 						p Если вы нашли этот товар дешевле, мы доставим вам его по той цене.
+						p
+							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						a.popup-b__more(href='#') Подробнее
+					a.popup-b__close(href='#')
+				// Сервисный центр
+				section#setInfoPopup.popup-b
+					.popup-b__header
+						h2.popup-b__heading Купить комплект
+					.popup-b__content
+						p Покупая товар в комплекте вы экономите, т.к. получаете дополнительную скидку.
 						p
 							| Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 						a.popup-b__more(href='#') Подробнее
