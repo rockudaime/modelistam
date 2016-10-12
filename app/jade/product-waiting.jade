@@ -20,11 +20,14 @@ block buy-block
 			li.p-buy-options__heading Другие варианты покупки:
 				ul.p-buy-options__inner
 					li.p-buy-options__option
-						a(href="#") Со скидкой
+						a.popup-open-link(href="#", data-popup-target='withDiscountPopup') Со скидкой
 					li.p-buy-options__option
-						a#followbuyCreditProduct-link(href="#") В кредит
-					li.p-buy-options__option.fastbuy-link
-						a(href="#fast_buy") Быстрая покупка
+						a.popup-open-link(href="#", data-popup-target='creditPopup') В кредит
+					li.p-buy-options__option
+						.p-buy-options__table-show
+							span.p-buy-options__table-show-title еще
+							span.p-buy-options__table-hidden
+								a.popup-open-link(href="#fast_buy", data-popup-target='quickOrder').fastbuy-link Быстрая покупка
 		.product-info__actions
 			.personal-actions
 				.personal-actions__action.action-personal.action-personal--wishlist

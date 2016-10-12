@@ -50,7 +50,7 @@ html(lang="ru")
 
 						.product-card__gallery.gallery-product
 							a.gallery-product__control.gallery-product__control--up(href="#")
-							a.gallery-product__control.gallery-product__control--down.gallery-product__control--active(href="#")
+							a.gallery-product__control.gallery-product__control--down(href="#")
 							.gallery-product__content
 								.gallery-product__item
 									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
@@ -199,8 +199,8 @@ html(lang="ru")
 										.purchase-item__desc
 											.purchase-item__name
 												a(href="#") Батарейки 1.2 B, LR6/2B "АА" x 2шт. (Sanyo, LR6/2B)
-											.purchase-item__category
-												a(href="#") Батарейки
+											//- .purchase-item__category
+											//- 	a(href="#") Батарейки
 										form.purchase-item__form.purchase-form(action="/")
 											select.purchase-form__qty(name="prod-qty")
 												option(value="1" selected) 1
@@ -213,7 +213,7 @@ html(lang="ru")
 												b 24
 												|  грн
 											input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-									a(href="#") Показать все батарейки
+									
 									.products-purchase__collapsed-items
 										.products-purchase__item.purchase-item
 											.purchase-item__img
@@ -222,8 +222,8 @@ html(lang="ru")
 											.purchase-item__desc
 												.purchase-item__name
 													a(href="#") Батарейка Duracell AAA LR03
-												.purchase-item__category
-													a(href="#") Батарейки
+												//- .purchase-item__category
+												//- 	a(href="#") Батарейки
 											form.purchase-item__form.purchase-form(action="/")
 												select.purchase-form__qty(name="prod-qty")
 													option(value="1" selected) 1
@@ -243,8 +243,8 @@ html(lang="ru")
 											.purchase-item__desc
 												.purchase-item__name
 													a(href="#") Батарейка FUJITSU (2шт.)
-												.purchase-item__category
-													a(href="#") Батарейки
+												//- .purchase-item__category
+												//- 	a(href="#") Батарейки
 											form.purchase-item__form.purchase-form(action="/")
 												select.purchase-form__qty(name="prod-qty")
 													option(value="1" selected) 1
@@ -257,7 +257,11 @@ html(lang="ru")
 													b 156
 													|  грн
 												input.product-btn.product-btn--buy.purchase-item__btn(type="submit" value="В корзину")
-
+									// ссылка раскрывает (показывает содержимое) предыдущего блока
+									a.products-purchase__show-link(href="#")
+										span.show-collapsed Показать
+										span.show-open Скрыть
+										|  все батарейки
 					// 2 таб - характеристики
 					div.item-detail__mobile-menu-item Характеристики
 					article#characteristics.details-product__detail-item.item-detail.characteristics-product
@@ -1265,6 +1269,21 @@ html(lang="ru")
 												span.product-price__text--small  грн
 
 								a.bcart-product__delete(href="#")
+								// Всплывающий блок редактирования товара
+								div.popup-back-wrapper
+									.popup-back.popup-bcart__product-back
+										.close-popup
+											a(href="#" rel="#").come-back
+												i
+												span Вернуть
+										.product-wishlist-block.cart-wishlist-block
+											a(href="#" class="top-wishlist-link wishlist-link cart-wishlist")
+												i
+												span В избранное
+										.delete-detail-block
+											a(href="#").page-cart__delete_checkbox
+												i
+												span Удалить
 							// 1й товар вне комплекта
 							.bcart-product.clearfix
 								span.bcart-product__sticker Под заказ
@@ -1284,23 +1303,23 @@ html(lang="ru")
 									span.bcart-product__pprice
 										span.product-price--current 1182
 										|  грн
+								// Всплывающий блок редактирования товара
+								div.popup-back-wrapper
+									.popup-back.popup-bcart__product-back
+										.close-popup
+											a(href="#" rel="#").come-back
+												i
+												span Вернуть
+										.product-wishlist-block.cart-wishlist-block
+											a(href="#" class="top-wishlist-link wishlist-link cart-wishlist")
+												i
+												span В избранное
+										.delete-detail-block
+											a(href="#").page-cart__delete_checkbox
+												i
+												span Удалить
 
-						// Всплывающий блок редактирования товара
-						div 
-							.popup-back
-								.close-popup
-									a(href="#" rel="#").come-back
-										i
-										span Вернуть
-								.product-wishlist-block.cart-wishlist-block
-									a(href="#product-wishlist-" rel="<?=$arResult['AJAX_CALL_ID']?>" class="top-wishlist-link wishlist-link ajax_link_main_catalog cart-wishlist" params="do=add2wishlist&id=<?=$offer_id?>")
-										i
-										span В избранное
-								.delete-detail-block
-									a(href="#").page-cart__delete_checkbox
-										i
-										span Удалить
-									input(type="checkbox" name="del[<?=$item['ID']?>]" value="1").delete_checkbox
+						
 
 						.popup-bcart__footer.popup-b__footer.clearfix
 							// footer right block
@@ -1339,6 +1358,21 @@ html(lang="ru")
 									span.bcart-product__pprice
 										span.product-price--current 1182
 										| грн
+								// Всплывающий блок редактирования товара
+								div.popup-back-wrapper
+									.popup-back.popup-bcart__product-back
+										.close-popup
+											a(href="#" rel="#").come-back
+												i
+												span Вернуть
+										.product-wishlist-block.cart-wishlist-block
+											a(href="#" class="top-wishlist-link wishlist-link cart-wishlist")
+												i
+												span В избранное
+										.delete-detail-block
+											a(href="#").page-cart__delete_checkbox
+												i
+												span Удалить
 						.product-add__fast-order.pa-fast-order.clearfix
 							.pa-fast-order__title Быстрый заказ
 							

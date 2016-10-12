@@ -16,13 +16,11 @@ block buy-block
 				.product-info__price-block
 					span.product-info__price-current 3 160
 						i.price__sm  грн
-				input.product-btn.product-btn--order(type="submit" value="Заказать" role="button")
-				span.mobile-buy-option 
-					a(href="#fast_order").fastbuy-link Быстрый заказ
-
+				input.product-btn.product-btn--order#submitOrderBtn(type="submit" value="Заказать" role="button")
+				
 		ul.product-info__buy-options.p-buy-options
 			li.p-buy-options__option
-				a(href="#make_order") Быстрый заказ
+				a.popup-open-link.fastbuy-link(href="#fast_buy", data-popup-target='quickOrder') Быстрый заказ
 
 		.product-info__actions
 			.personal-actions

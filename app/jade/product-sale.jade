@@ -11,20 +11,10 @@ block buy-block
 	// блок с информацией для заказа\покупки
 	.product-card__buy-block.product-info
 		.product-feature.product-feature--sale Осталось: 5 ч : 20 мин : 11 сек
-		div(style="margin-bottom: 15px;")
+		div.product-group
 			span.product-info__status.product-info__status--available Есть в наличии
 			span.product-info__code Код:&nbsp;TM503018-T86
 		form(action="" name="product-buy" id="productCardBuy" class="product-card__order-form")
-			ul.product-info__set-option.set-option-product.clearfix
-				li.set-option-product__item
-					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
-					label.set-option-product__label(for="productWithoutSet") Без набора
-						span.tip-btn
-						div.tip-content Это подсказка для этого блока
-
-				li.set-option-product__item
-					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
-					label.set-option-product__label(for="productWithSet") С набором
 			// Блок выбора цвета, выбор цвета в через радио кнопку. Показ цвета через инлайновый стиль спану.
 			.product-info__color.color-product-info
 				| Цвета:
@@ -46,25 +36,37 @@ block buy-block
 						label(for="color-3")
 							span(style="background-color: yellow").color-product-info__color-label
 							| Желтый
+			// Блок с опцией выбора набора
+			ul.product-info__set-option.set-option-product.clearfix
+				li.set-option-product__item
+					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="0" id="productWithoutSet")
+					label.set-option-product__label(for="productWithoutSet") Без набора
+						// a.tip-btn.popup-open-link(href="#", data-popup-target="setInfoPopup")
+						// ^ эта подсказка была удалена в новом варианте дизайна
+
+				li.set-option-product__item
+					input.set-option-product__radio.radio-hidden(type="radio" name="productSet" value="1" id="productWithSet" checked)
+					label.set-option-product__label(for="productWithSet") С набором
 			div.product-info__buy-block
 				.product-info__price-block
 					span.product-info__price-new.new-price 3 160
 						i.price__sm  грн
 					span.product-info__price-old 3 500 грн
 				input.product-btn.product-btn--buy(type="submit" value="Купить" role="button")
-				span.mobile-buy-option
-					a(href="#fast_buy").fastbuy-link Быстрая покупка
 
 			
 		ul.product-info__buy-options.p-buy-options
 			li.p-buy-options__heading Другие варианты покупки:
 				ul.p-buy-options__inner
 					li.p-buy-options__option
-						a(href="#") Со скидкой
+						a.popup-open-link(href="#", data-popup-target='withDiscountPopup') Со скидкой
 					li.p-buy-options__option
-						a#followbuyCreditProduct-link(href="#") В кредит
-					li.p-buy-options__option.fastbuy-link
-						a.fastbuy-link-mobile(href="#fast_buy") Быстрая покупка
+						a.popup-open-link(href="#", data-popup-target='creditPopup') В кредит
+					li.p-buy-options__option
+						.p-buy-options__table-show
+							span.p-buy-options__table-show-title еще
+							span.p-buy-options__table-hidden
+								a.popup-open-link(href="#fast_buy", data-popup-target='quickOrder').fastbuy-link Быстрая покупка
 		.product-info__actions
 			.personal-actions
 				.personal-actions__action.action-personal.action-personal--wishlist
