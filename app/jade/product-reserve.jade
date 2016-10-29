@@ -31,7 +31,7 @@ block buy-block
 								a.popup-open-link(href="#fast_buy", data-popup-target='quickOrder').fastbuy-link Быстрая покупка
 		.product-info__actions
 			.personal-actions
-				.personal-actions__action.action-personal.action-personal--wishlist
+				.personal-actions__action.action-personal.action-personal--wishlist.action-personal--selected
 					i
 					span.action-personal__title Отложить
 				.personal-actions__action.action-personal.action-personal--compare
@@ -40,11 +40,13 @@ block buy-block
 				.personal-actions__action.action-personal.action-personal--watch-price
 					i
 					span.action-personal__title Следить за ценой
-			.rateit-block
-				.rateit__range
-					.rateit__selected
-						.rateit__hover
-				|  на базе 122 оценок
+			div.product-info__rating-block
+				a(href="#").category-product__review-link Обзор-сравнение
+				.rateit-block
+					.rateit__range
+						.rateit__selected
+							.rateit__hover
+					|  на базе 122 оценок
 	// конец блока с информацией для заказа\покупки
 
 block specific-page-block

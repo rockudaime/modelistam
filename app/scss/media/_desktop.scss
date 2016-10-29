@@ -88,9 +88,7 @@
     //     display: none;
     // }
 
-    .catalog-top-menu__link{
-        padding: 0 8px;
-    }
+
     // .product-inner{
     //     padding: 5px 10px;
     // }
@@ -667,6 +665,7 @@
    .catalog-top-menu__item{
        box-sizing: border-box;
        width: 140px;
+       padding-bottom: 8px;
    }
    .catalog-top-menu__link{
        padding: 0;

@@ -4620,57 +4620,7 @@ ul.dropdown > li > ul > li{
     display: inline-block;
     margin: 0 10px 0 0;
 }
-.catalog-top-menu__item{
-    display: inline-block;
-}
-.catalog-top-menu__item:first-child .catalog-top-menu__link{
-    padding-left: 0;
-}
-.catalog-top-menu__link{
-    padding: 0 28px;
-    display: inline-flex;
-    color: #151515;
-    text-decoration: none;
 
-    i {
-        width: 25px;
-        height: 24px;
-        display: inline-block;
-        margin: 0 10px 0 0;
-    }
-
-    span {
-        border-bottom: 1px solid #afafaf;
-        display: inline-block;
-        vertical-align: middle;
-        height: 20px;
-    }
-}
-.top-menu-choice-item i{
-    background: url("images/ui-icon-catalog-choise.png") no-repeat 94% center;
-    width: 24px;
-}
-.top-menu-accesories-item i{
-    background: url("images/ui-icon-catalog-accesories.png") no-repeat 94% center;
-}
-.top-menu-video-item i{
-    background: url("images/ui-icon-bottom-video.png") no-repeat 94% center;
-}
-.top-menu-views-item i{
-    background: url("images/ui-iconn-bottom-list.png") no-repeat 94% center;
-}
-.top-menu-present-item i{
-    background: url("images/ui-icon-catalog-present.png") no-repeat 94% center;
-}
-.catalog-top-menu__link:hover{
-    text-decoration: none;
-    color: #d34f27;
-    cursor: pointer;
-
-    span {
-        border-bottom: 0;
-    }
-}
 
 .brands-catalog .brands-container__content{
     width: 100%;

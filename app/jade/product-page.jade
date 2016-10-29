@@ -10,6 +10,7 @@ html(lang="ru")
 		link(rel="stylesheet" href="dist/template_styles.css")
 		
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		//- script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		//- script(src="dist/js/vendor/jquery.custom-scrollbar.js")
@@ -27,6 +28,11 @@ html(lang="ru")
 		// main script
 		script(src="dist/js/pages/product.js")
 
+		// rating mneniya.pro
+		script(src="//dev.mneniya.pro/jquery.rating.pack.js")
+			
+
+
 		
 
 	body
@@ -42,8 +48,8 @@ html(lang="ru")
 					.product-card__image-block
 						// Блок с изображениями товара
 						.product-card__main-image
-							a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-								img(src="dist/images/temporary/big-images/3_b.jpeg", alt="some image")
+							a.link-to-images(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk")
+								img(src="dist/images/temporary/big-images/1_b.jpeg", alt="some image")
 							.product-img-stickers
 								span.product-img-sticker.product-img-sticker--new Новинка
 								span.product-img-sticker.product-img-sticker--top Топ продаж
@@ -52,22 +58,22 @@ html(lang="ru")
 							a.gallery-product__control.gallery-product__control--up(href="#")
 							a.gallery-product__control.gallery-product__control--down(href="#")
 							.gallery-product__content
-								.gallery-product__item
-									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+								.gallery-product__item.gallery-product__item--active
+									a.link-to-images(href="dist/images/temporary/big-images/1_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 										img(src="dist/images/temporary/thumbnails/1_s.jpeg", alt="some image")
 								.gallery-product__item
-									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+									a.link-to-images(href="dist/images/temporary/big-images/2_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 										img(src="dist/images/temporary/thumbnails/2_s.jpeg", alt="some image")
-								.gallery-product__item.gallery-product__item--active
+								.gallery-product__item
 									// ссылка активного элемента не содержит класса .fancybox-thumbs
 									a.link-to-images(href="dist/images/temporary/big-images/3_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 										img(src="dist/images/temporary/thumbnails/3_s.jpeg", alt="some image")
 								.gallery-product__item
-									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+									a.link-to-images(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
 										img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
 								.gallery-product__item
-									a.link-to-images.fancybox-thumbs(href="dist/images/temporary/big-images/4_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
-										img(src="dist/images/temporary/thumbnails/4_s.jpeg", alt="some image")
+									a.link-to-images(href="dist/images/temporary/big-images/5_b.jpeg" title="Самолет Hubsan Spy Hawk" data-fancybox-group="thumb")
+										img(src="dist/images/temporary/thumbnails/5_s.jpeg", alt="some image")
 							.colors-block-table
 								span Цвета
 								.product-colors__item
@@ -93,7 +99,7 @@ html(lang="ru")
 
 					aside.product-card__shop-info.shop-info
 						.product-manufacturer Производитель:
-							a(href="#")  HSP Racing
+							a.popup-open-link(href="#" data-popup-target="galleryPopup")  HSP Racing
 						.product-warranty Гарантия: 24 мес
 						.shop-info__work-time <a href="/about/shop/">Магазин</a> открыт до 21
 						ul.shop-info__pages
@@ -850,7 +856,7 @@ html(lang="ru")
 
 						.accessories__tabs
 							// Tab 1
-							div.item-detail__mobile-menu-item Аккумуляторы
+							div.item-detail__mobile-menu-item.mobile-menu-item--active Аккумуляторы
 
 							.item-detail.item-detail--active.accessories__item#tab1
 								.owl-carousel
@@ -1246,8 +1252,10 @@ html(lang="ru")
 								// 3й товар
 								.bcart-product.clearfix
 									.bcart-product__img
-										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-									h2.bcart-product__name Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
+										a(href="#")
+											img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+									h2.bcart-product__name
+										a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
 
 									.bcart-product__controls
 										span.bcart-product__pprice
@@ -1289,16 +1297,18 @@ html(lang="ru")
 								span.bcart-product__sticker Под заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+									a(href="#")
+										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name
+									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 
 								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-126")
+									span.u-control.u-control--del(data-target="prod-127")
 									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-126" value="1")
+										input(type="hidden" name="product-qty" id="prod-127" value="1")
 										span.bcart-product__qty-label 1
 										|  шт
-									span.u-control.u-control--add(data-target="prod-126")
+									span.u-control.u-control--add(data-target="prod-127")
 
 									span.bcart-product__pprice
 										span.product-price--current 1182
@@ -1333,7 +1343,7 @@ html(lang="ru")
 								a.popup-b__back(href="#") Вернуться к покупкам
 
 				// Попап "Быстрая покупка"
-				section.popup-b.popup-bcart#quickOrder.clearfix
+				section.popup-b.popup-bcart.popup-bquick-order#quickOrder.clearfix
 					.popup-b__header.popup-b__header--dbb
 						h2.popup-b__heading.popup-b__heading--cart Добавлен в корзину
 					a.popup-b__close(href="#")
@@ -1344,16 +1354,18 @@ html(lang="ru")
 								span.bcart-product__sticker Под заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
-									img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
-								h2.bcart-product__name Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+									a(href="#")
+										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name
+									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 
 								.bcart-product__controls
-									span.u-control.u-control--del(data-target="prod-126")
+									span.u-control.u-control--del(data-target="prod-128")
 									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-126" value="1")
+										input(type="hidden" name="product-qty" id="prod-128" value="1")
 										span.bcart-product__qty-label 1
 										| шт
-									span.u-control.u-control--add(data-target="prod-126")
+									span.u-control.u-control--add(data-target="prod-128")
 
 									span.bcart-product__pprice
 										span.product-price--current 1182
@@ -1451,7 +1463,7 @@ html(lang="ru")
 
 				// попап "добавить комментарий"
 				section.popup-b.popup-bcomment#commentPopup.clearfix
-					.popup-bcomment__header
+					.popup-b__header.popup-b__header--dbb
 						h2.popup-b__heading Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 					form.popup-bcomment__form#reviewform(action method="post")
 						input(type='hidden', name='producturl', value='http://modelistam.com.ua/kvadrokopter-syma-x5sw-kameroi-p-31298/')
@@ -1471,10 +1483,10 @@ html(lang="ru")
 						.popup-bcomment__row
 							.popup-bcomment__fl
 								label(for="productComment") Комментарий:
-								textarea#productPros(name="feedback", rows="10")
+								textarea#productComment(name="feedback", rows="10")
 						.popup-bcomment__row
 							.popup-bcomment__rating.clearfix
-								p Оцените товар*:
+								p.rate_text Оцените товар*:
 								.mp-rate-block
 									div
 										span.star-rating-control
@@ -1504,10 +1516,10 @@ html(lang="ru")
 										label.custom-radio__tab-label.share-options__tab(for="shareOptionNo") Нет
 						.popup-bcomment__footer
 							.popup-bcomment__name
-								label(for="commentName") Ваше имя*:
+								label(for="commentName").name-title Ваше имя*:
 								input#commentName.popup-bcomment__text-input(type="text" required name="name" placeholder="Иван Петров")
 							.popup-bcomment__email
-								label(for="commentEmail") Ваш email*:
+								label(for="commentEmail").email-title Ваш email*:
 								input#commentEmail.popup-bcomment__text-input(type="email" name="email" required placeholder="ivanpetrov@gmail.com")
 							input.popup-bcomment__submit(type="submit" value="ДОБАВИТЬ ОТЗЫВ")
 					a.popup-b__close(href="#")
@@ -1521,7 +1533,7 @@ html(lang="ru")
 						input(type='hidden', name='customerid', value='090BF0F9-E3E6-033A-176E-F813CCAF')
 						input(type='hidden', name='productuid', value='31298')
 						input(type='hidden', name='productname', value='Квадрокоптер Syma X5SW с FPV Wi-Fi камерой и 6-осевым гироскопом')
-						input#rate(type='hidden', name='rate', value='')
+						input#rate2(type='hidden', name='rate', value='')
 						input(type='hidden', name='customerurl', value='http://modelistam.com.ua')
 						.popup-bcomment__row
 							.popup-bcomment__fl
@@ -1529,13 +1541,36 @@ html(lang="ru")
 								textarea#productQuestion
 						.popup-bcomment__footer
 							.popup-bcomment__name
-								label(for="commentName") Ваше имя*:
-								input#commentName.popup-bcomment__text-input(type="text" required name="name" placeholder="Иван Петров")
+								label(for="commentName2") Ваше имя*:
+								input#commentName2.popup-bcomment__text-input(type="text" required name="name" placeholder="Иван Петров")
 							.popup-bcomment__email
-								label(for="commentEmail") Ваш email*:
-								input#commentEmail.popup-bcomment__text-input(type="email" name="email" required placeholder="ivanpetrov@gmail.com")
+								label(for="commentEmail2") Ваш email*:
+								input#commentEmail2.popup-bcomment__text-input(type="email" name="email" required placeholder="ivanpetrov@gmail.com")
 							input.popup-bcomment__submit(type="submit" value="СПРОСИТЬ")
 					a.popup-b__close(href="#")
+				// Попап галереи
+				section.popup-b.popup-gallery.clearfix#galleryPopup
+					a.popup-b__close(href="#")
+					.popup-b__header.popup-gallery__header.clearfix
+						h2.popup-b__heading.popup-gallery__heading Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+						.popup-gallery__price-block
+							span.product-price.product-price--current 3 170 грн
+							a.product-btn.product-btn--buy.popup-gallery__btn Купить
+					.popup-gallery__content.clearfix
+						.popup-gallery__nav
+							.nav-prev.disabled
+							.nav-next
+						.popup-gallery__main-image
+							// добавляется автоматически при первом вызове попапа
+						a.popup-gallery__bigger-link(href="#") Увеличить фото
+					.popup-gallery__all-images
+						// добавляется автоматически при первом вызове попапа
+
+				#fullImagePopup.full-image-popup.popup-b.clearfix
+					a.popup-b__close(href="#")
+
+
+						
 
 				// ----------------------------------------------------------
 				// ----------------- Статичные попапы -----------------------
