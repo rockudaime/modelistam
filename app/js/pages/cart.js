@@ -42,7 +42,7 @@ $(this).next().slideToggle("slow");
 $("#orderCommentLink").on("click", function(e){
 	e.preventDefault();
 	$("#orderComment").toggle();
-})
+});
 
 
 var select = document.querySelectorAll('.custom-select__select');
@@ -124,16 +124,16 @@ $(document).ready(function(){
 
 
 $(document).ready(function() {
-	if (document.querySelector('.product-set__good-name a')){
-		var el = document.querySelectorAll('.product-set__good-name a');
-		function ellipsis(obj, len) {
-			var text = obj.innerHTML;
-			if (text.length > len) {
-				text = text.slice(0, len - 3) + '&hellip;'; 
-				obj.innerHTML = text;
-			}
+	function ellipsis(obj, len) {
+		var text = obj.innerHTML;
+		if (text.length > len) {
+			text = text.slice(0, len - 3) + '&hellip;'; 
+			obj.innerHTML = text;
 		}
-		
+	}
+	
+	if (document.querySelector('.product-set__good-name a')){
+		var el = document.querySelectorAll('.product-set__good-name a');		
 		for (var i = 0; i < el.length; i++){
 			ellipsis(el[i], 40);
 		}

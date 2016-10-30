@@ -8,8 +8,7 @@ var uglify = require("gulp-uglify");
 var jshint = require("gulp-jshint");
 var imagemin = require("gulp-imagemin");
 var browsersync = require('browser-sync');
-var compass = require('gulp-compass');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 // CSS processing
 
 // gulp.task('compass', function() {
@@ -37,9 +36,9 @@ gulp.task('sass', function () {
 // ***********************
 // HTML processing
 // ***********************
-gulp.task('jade', function() {
-    return gulp.src('app/jade/category-product.jade') //('app/jade/**/*.jade')
-        .pipe(jade({
+gulp.task('pug', function() {
+    return gulp.src('app/pug/category-product.pug') //('app/jade/**/*.jade')
+        .pipe(pug({
             pretty: true
             })) 
         .pipe(gulp.dest('.')); // указываем gulp куда положить скомпилированные HTML файлы
@@ -48,7 +47,7 @@ gulp.task('jade', function() {
 // JavaScript processing
 // ***********************
 gulp.task('scripts', function() {
-    gulp.src('app/js/**/*.js')
+    gulp.src('app/js/pages/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     // .pipe(concat('all.js'))
@@ -80,10 +79,10 @@ gulp.task('browsersync', function(cb) {
 
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
-    gulp.watch('app/jade/**/*.jade', ['jade', browsersync.reload]);
+    gulp.watch('app/pug/**/*.pug', ['pug', browsersync.reload]);
     gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
     // gulp.watch('app/img/*', ['images', browsersync.reload]);
 });
 
 
-gulp.task('default', ['sass', 'jade', 'scripts', 'images', 'browsersync', 'watch']);
+gulp.task('default', ['sass', 'pug', 'scripts', 'images', 'browsersync', 'watch']);

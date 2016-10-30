@@ -13,7 +13,7 @@ $(document).ready(function() {
 		for (var i = 0; i < object_arr.length; i++){
 			ellipsis(object_arr[i], len);
 		}
-	}
+	};
 
 	if (document.querySelector('.l-good__good-title a')){
 		myTruncate(document.querySelectorAll('.l-good__good-title a'), 78);

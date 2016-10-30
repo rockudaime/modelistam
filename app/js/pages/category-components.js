@@ -45,7 +45,7 @@ $(document).ready(function(){
 		wWidth = $(window).width();
 		if(wWidth < 544) {
 			myTruncate(document.querySelectorAll('.component-item__name a'), 27);
-		};
+		}
 
 		if (wWidth > 768){
 			accContent.css('display', 'block');
@@ -55,7 +55,7 @@ $(document).ready(function(){
 	
 	if(wWidth < 544) {
 		myTruncate(document.querySelectorAll('.component-item__name a'), 27);
-	};
+	}
 
 	
 

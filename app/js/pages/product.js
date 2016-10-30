@@ -117,7 +117,7 @@ $(document).ready(function() {
 			tab.show();
 			tabLinks.removeClass('tabs-menu__item--active');
 			tabLink.addClass('tabs-menu__item--active');
-		}
+		};
 	}
 
 
@@ -175,7 +175,7 @@ $(document).ready(function() {
 				}
 			});
 		}
-	}
+	};
 	productPageVideosObj.init();
 
 	// Init the carousel sliders on the page
@@ -244,7 +244,7 @@ $(document).ready(function() {
 	if (wWidth >= 1235){
 		if (gallery.outerHeight() < galleryContent.outerHeight()) {
 			$('.gallery-product__control--down').addClass('gallery-product__control--active');
-		};
+		}
 
 		$('.gallery-product__control--down').on('click', function(e) {
 			e.preventDefault();
@@ -327,14 +327,14 @@ $(document).ready(function() {
 					$(this).addClass('gallery-product__item--active');
 					self.handleNavLinks();
 				}
-			};
+			}
 			$('.popup-gallery__nav').on('click', navLinksClickHandler);
 			// обработка кликов на иконки навигации по картинкам
 			function navLinksClickHandler(e) {
 				e.preventDefault();
 				var activeImage, imgHref;
 				if (!$(e.target).hasClass('disabled')) {
-					activeImage = self.galleryImages.filter('.gallery-product__item--active')
+					activeImage = self.galleryImages.filter('.gallery-product__item--active');
 					if ($(e.target).hasClass('nav-next') && !$(e.target).hasClass('disabled')) {
 						self.galleryImages.removeClass('gallery-product__item--active');
 						activeImage.next().addClass('gallery-product__item--active');
@@ -518,7 +518,7 @@ $(function () {
 		closeLink: $('.popup-b__close'),
 		backLink: $('.popup-b__back'),
 		wrapper: $('.popup-outer')
-	}
+	};
 
 	mypopup.closeLink.on('click', closePopupHandler);
 	mypopup.backLink.on('click', closePopupHandler);
@@ -597,14 +597,14 @@ $(document).ready(function () {
 		var pros = $('textarea[name="pros"]').val().length;
 		var cons = $('textarea[name="cons"]').val().length;
 		var text = $('textarea[name="feedback"]').val().length;
-		if(pros == 0 && cons == 0 && text == 0)
+		if(pros === 0 && cons === 0 && text === 0)
 		{
 			e.preventDefault();
 			alert('Заполните пожалуйста хотя бы одно из полей: "Достоинства", "Недостатки" или "Комментарий"');
 		}
 		
 		var rate = $('.star-rating-on').length;
-		if(rate==0)
+		if(rate === 0)
 		{
 			e.preventDefault();
 			$('.rate_text').css('color','red');
@@ -612,7 +612,7 @@ $(document).ready(function () {
 		$('#rate').attr('value',rate);
 		
 		var name = $('input[name="name"]').val().length;
-		if(name==0)
+		if(name === 0)
 		{
 			e.preventDefault();
 			$('.name-title').css('color','red');

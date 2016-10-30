@@ -64,11 +64,11 @@ window.onload = function(){
 		} else {
 			age.innerHTML = (yyyy - birthYear - 1) + " лет";
 		}
-	}
+	};
 	document.getElementById("birthMonth").onchange = function() {
 		birthMonth = document.getElementById("birthMonth").value;
-	}
+	};
 	document.getElementById("birthDay").onchange = function() {
 		birthDay = document.getElementById("birthDay").value;
-	}
-}
+	};
+};

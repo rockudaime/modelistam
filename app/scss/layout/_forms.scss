@@ -244,6 +244,10 @@ textarea.form-control {
 .custom-checkbox:checked + .custom-checkbox__label > .custom-checkbox__box {
     background: #4b80bb url('images/personal-cabinet/icon-checked.png') no-repeat center center;;
 }
+// .custom-checkbox:focus + .custom-checkbox__label > .custom-checkbox__box {
+//     border-color: #346cab;
+// }
+
 // Custom select item
 
 .custom-select {

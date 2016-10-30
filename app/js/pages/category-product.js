@@ -22,7 +22,7 @@ $(function(){
 				productObj.rightBlock = $(productObj.product.find('.category-product__content-right'));
 				productObj.comments = $(productObj.product.find('.category-product__product-comments'));
 				productObj.links = $(productObj.product.find('.category-product__product-links'));
-				productObj.rating = $(productObj.product.find('.category-product__rating'))
+				productObj.rating = $(productObj.product.find('.category-product__rating'));
 				self.products.push($.extend(true, {}, productObj));
 			}
 			return self;
@@ -68,7 +68,7 @@ $(function(){
 			localStorage.listFlag = JSON.stringify(isListFlag);
 		}
 
-	}
+	};
 	// process clicks on the change layout links
 	var links = $('.view-changer-link');
 	links.on('click', function(e){
@@ -93,7 +93,7 @@ $(function(){
 	// display list view if settings set on list by user (checking in local storage)
 	if (isListFlag && $(window).width() > 1234) {
 		categoryLayoutObj.displayList();
-	};
+	}
 
 
 
@@ -193,7 +193,7 @@ $(function(){
 		e.preventDefault();
 
 		filterPopup.fadeOut();
-	})
+	});
 
 
 
@@ -211,7 +211,7 @@ $(function(){
 			timeout = setTimeout(later, wait);
 			if (callNow) func.apply(context, args);
 		};
-	};
+	}
 
 });
 
