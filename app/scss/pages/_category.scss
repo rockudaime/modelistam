@@ -308,7 +308,7 @@
 .category-content {
     overflow: hidden;
 
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
     @media (min-width: 994px) {
         float: right;
         overflow: visible;
@@ -319,7 +319,7 @@
         float: right;
 
         width: 900px;
-        padding-bottom: 35px;
+        // padding-bottom: 35px;
     }
     &__products {
         margin-bottom: 20px;
@@ -511,7 +511,7 @@
     @media (min-width: 1235px) {
         width: 33.33333%;
         max-width: 302px;
-        height: 460px;
+        height: 455px;
         &:nth-child(2n) {
             .category-product__inner {
                 border-right-color: #eaeaea;
@@ -554,7 +554,7 @@
             border-right-color: #eaeaea;
         }
         @media (min-width: 1235px) {
-            height: 405px;
+            height: 433px;
             margin-bottom: 0;
         }
     }
@@ -609,6 +609,7 @@
 
             white-space: nowrap;
             text-overflow: ellipsis;
+            margin: 5px 0;
         }
         .product-status {
             line-height: 26px;
@@ -640,6 +641,9 @@
 
             color: #346cab;
         }
+        &:hover a {
+            text-decoration: none;
+        }
     }
     &__product-code {
         display: inline-block;
@@ -657,6 +661,9 @@
             overflow: hidden;
 
             height: 65px;
+        }
+        @media (min-width: 1235px) {
+            margin-bottom: 15px;
         }
         & > a {
             color: #151515;
@@ -820,7 +827,9 @@
         color: #151515;
     }
 }
-
+.cp-list-visible {
+    display: none;
+}
 .cp-status {
     font: 15px 'OpenSans_SemiBold';
 
@@ -931,6 +940,7 @@
         width: 47.5%;
         height: 120px;
         margin-right: 5%;
+        margin-bottom: 10px;
         &:nth-child(2n) {
             margin-right: 0;
         }
@@ -1084,7 +1094,7 @@
             & > a:hover {
                 text-decoration: none;
 
-                color: #d34f27;
+                // color: #d34f27;
             }
         }
         &__product-code {
@@ -1143,6 +1153,9 @@
             border-right: 0;
             border-left: 0;
         }
+    }
+    .cp-list-visible {
+        display: inline;
     }
 }
 

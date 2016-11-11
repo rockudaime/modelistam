@@ -27,14 +27,14 @@ $(document).ready(function() {
 
 	$('.rateit__range').on('mousemove', function(e){
 		var parentOffset = $(this).offset(); 
-	   	var relX = e.pageX - parentOffset.left;
+		var relX = e.pageX - parentOffset.left;
 		$('.rateit__hover').css('width', relX + 'px');
 	});
 	$('.rateit__range').on('click', function(e){
 		var parentOffset = $(this).offset(); 
-	   	var relX = e.pageX - parentOffset.left;
-	   	rating = Math.abs(Math.ceil(relX / parseInt($(this).width()) * 5));
-	   	$('.rateit__selected').css('width', rating * 17 + 'px');
+		var relX = e.pageX - parentOffset.left;
+		rating = Math.abs(Math.ceil(relX / parseInt($(this).width()) * 5));
+		$('.rateit__selected').css('width', rating * 17 + 'px');
 
 	});
 	$('.rateit__range').on('mouseleave', function(e){
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	
 
 
-    // *********************** ТАБЫ И НАВИГАЦИЯ *******************
+	// *********************** ТАБЫ И НАВИГАЦИЯ *******************
 		// Меню для навигации по табам в десктопном\планшетном виде
 		// .menu-details - меню - ul список ссылок для навигации по табам
 		// .menu-details__link - отдельный элемент меню
@@ -94,7 +94,7 @@ $(document).ready(function() {
 			link.removeClass('mobile-menu-item--active');
 		}
 		$root.animate({
-		        scrollTop: tab.offset().top
+				scrollTop: tab.offset().top
 		}, 500);
 		
 	});
@@ -134,7 +134,7 @@ $(document).ready(function() {
 		$('.menu-details__link[data-target="characteristics"]').addClass('menu-details__link--active');
 		tab.addClass('item-detail--active');
 		$root.animate({
-		        scrollTop: tab.offset().top
+				scrollTop: tab.offset().top
 		}, 500);
 	});
 
@@ -182,39 +182,39 @@ $(document).ready(function() {
 	var owl = $(".owl-carousel");
 
 	owl.owlCarousel({
-	    loop: false,
-	    margin:0,
-	    navigationText: false,
-	    // responsiveClass:true,
-	    pagination: true,
-	    responsive:{
-	    	 0:{
-	    	 	items:1,
-	    	 	nav:false
-	    	 },
-	        544:{
-	            items:2,
-	            nav: false
-	        },
-	        768:{
-	            items:3,
-	            nav:false,
-	            paginatioin: true
-	        },
-	        994:{
-	            items:4,
-	            nav:true,
-	            loop:false,
-	            paginatioin: false
+		loop: false,
+		margin:0,
+		navigationText: false,
+		// responsiveClass:true,
+		pagination: true,
+		responsive:{
+			 0:{
+				items:1,
+				nav:false
+			 },
+			544:{
+				items:2,
+				nav: false
+			},
+			768:{
+				items:3,
+				nav:false,
+				paginatioin: true
+			},
+			994:{
+				items:4,
+				nav:true,
+				loop:false,
+				paginatioin: false
 
-	        },
-	        1200:{
-	            items:5,
-	            nav:true,
-	            loop:false,
-	            paginatioin: false
-	        }
-	    }
+			},
+			1200:{
+				items:5,
+				nav:true,
+				loop:false,
+				paginatioin: false
+			}
+		}
 	});
 
 
@@ -510,8 +510,8 @@ $(function () {
 
 	$('.product-feature--best-price').on('click',function () {
 		var bestPricePopup = $('#bestPricePopup');
-	 	bestPricePopup.show();
-	 	bestPricePopup.parent().fadeIn();
+		bestPricePopup.show();
+		bestPricePopup.parent().fadeIn();
 	});
 
 	var mypopup = {

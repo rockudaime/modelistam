@@ -4,6 +4,7 @@
 }
 .owl-carousel .owl-stage-outer{
 		width: 99%;
+		width: calc(100% - 2px);
 }
 .owl-nav{
 	position: absolute;

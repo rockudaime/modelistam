@@ -29,6 +29,9 @@ input:required:valid {
 :-ms-input-placeholder {
     color: #777;
 }
+::placeholder {
+    color: #777;
+}
 
 label {
     display: inline-block;

@@ -1,0 +1,382 @@
+doctype html
+html(lang="ru")
+	head
+		title Category
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/pages/category.js")
+	body
+		.page-inner
+			h1.category-pagetitle Катера. 
+				span Порекомендуем, что выбрать. Всегда есть аксессуары. Надежный сервис
+			section.category-menu-mobile.clearfix
+				a.category-menu-back-link Все категории
+				.filter-link Катера
+			section.category-content
+				section.category-slider.page-slider-container
+					.page-slider.owl-category-slider.owl-carousel
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 2 800
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 13 600
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 13 600
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 13 600
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 13 600
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+						.page-slide
+							img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							.page-slide__desc
+								.product-price--current 13 600
+									span.product-price__text--small  грн
+								a.page-slide__btn(href="#") Посмотреть модель
+					// Кнопки перехода по слайдам. Порядок кнопок должен соответствовать порядку слайдов.
+					.owl-controls.page-slider__controls
+						.owl-dots#customDots
+							.custom-dot(title="Электрокатера") Электрокатера
+							.custom-dot(title="Подводные лодки") Подводные лодки
+							.custom-dot(title="Модели яхт") Модели яхт
+							.custom-dot(title="Катера с электродвигателем") Катера с электродвигателем
+							.custom-dot(title="Лодки с бензиновым двигателем") Лодки с бензиновым двигателем
+							.custom-dot(title="Модели яхт") Модели яхт
+				section.category-content__categories.clearfix
+					-for(x=0; x<5; x++)
+						.categories-pitem
+							.categories-pitem__inner
+								.categories-pitem__img
+									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+								.categories-pitem__inner-content
+									h2.categories-pitem__heading
+										a(href="#") Электрокатера
+									ul.categories-menu
+										li.category-menu__item
+											a(href="#") Мини, электро 
+										li.category-menu__item
+											a(href="#") С электродвигателем 
+										li.category-menu__item
+											a(href="#") С двс двигателем
+										li.category-menu__item
+											a(href="#") С бензиновым двигателем
+									.categories-pitem__more
+										a(href="#").categories-pitem__more-link
+											span Больше категорий
+					.categories-pitem
+							.categories-pitem__inner
+								.categories-pitem__img
+									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+								.categories-pitem__inner-content
+									h2.categories-pitem__heading 
+										a(href="#") Подводные лодки
+									ul.categories-menu
+										li.category-menu__item
+											a(href="#") Мини, электро 
+										li.category-menu__item
+											a(href="#") С электродвигателем 
+
+									.categories-pitem__more
+										a(href="#").categories-pitem__more-link
+											span Больше категорий
+					.categories-pitem
+							.categories-pitem__inner
+								.categories-pitem__img
+									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+								.categories-pitem__inner-content
+									h2.categories-pitem__heading
+										a(href="#") Катера для рыбалки
+									ul.categories-menu
+										li.category-menu__item
+											a(href="#") Мини, электро 
+										li.category-menu__item
+											a(href="#") С электродвигателем 
+
+									.categories-pitem__more
+										a(href="#").categories-pitem__more-link
+											span Больше категорий
+					.categories-pitem
+							.categories-pitem__inner
+								.categories-pitem__img
+									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+								.categories-pitem__inner-content
+									h2.categories-pitem__heading
+										a(href="#") Модели яхт
+									ul.categories-menu
+										li.category-menu__item
+											a(href="#") Мини, электро 
+										li.category-menu__item
+											a(href="#") С электродвигателем 
+
+				section.additional-blocks
+					// Популярные товары
+					h2.additional-blocks__heading Популярные товары
+					.popular-products-block.clearfix#owl-popular-products.owl-carousel
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										span.product-status.product-status--new Новинка
+									h3.product-preview-item__heading
+										a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+									.product-preview-item__price
+										span.product-price--current 5 025 
+											span.product-price__text--small грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+										.product-preview-item__wishlist
+											a.o-wishlist-link.o-wished(href="#")
+												span.o-wishlist__text В избранном
+
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										span.product-status.product-status--new Новинка
+										span.product-status.product-status--discount -10%
+										
+									h3.product-preview-item__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									.product-preview-item__price
+										span.product-price--new 2600 
+											span.product-price__text--small грн
+										span.product-price--old 2785 грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+										.product-preview-item__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										span.product-status.product-status--top Топ продаж
+										span.product-status.product-status--discount -10%
+									h3.product-preview-item__heading
+										a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+									.product-preview-item__price
+										span.product-price--new 896 
+											span.product-price__text--small грн
+										span.product-price--old 1024 грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+										.product-preview-item__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										
+									h3.product-preview-item__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.product-preview-item__price
+										.product-price.product-price--current 1024 грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+										.product-preview-item__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										
+									h3.product-preview-item__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.product-preview-item__price
+										.product-price.product-price--current 1024 грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+										.product-preview-item__wishlist
+											a.o-wishlist-link(href="#")
+												span.o-wishlist__text В избранное
+
+						.product-preview-item
+							.product-preview-item__inner
+								.product-preview-item__photo
+									a(href="#")
+										img(src="dist/images/sample-airplane.jpg", alt="image")
+								.product-preview-item__content
+									.product-preview-item__product-status
+										
+									h3.product-preview-item__heading
+										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+									.product-preview-item__price
+										.product-price.product-price--current 1024 грн
+									.product-preview-item__buy
+										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+										.product-preview-item__wishlist
+											a.o-wishlist-link.o-wished(href="#")
+												span.o-wishlist__text В избранном
+
+			// начало сайдбара с меню по категориям
+			aside.category-sidebar
+				section.category-sidebar-menu.category-menu
+					.category-menu__item.mobile-hidden
+						a.category-menu-back-link(href="#") Все категории
+					.category-menu__item.category-menu__heading.mobile-hidden Катера
+					.category-menu__item
+						.subcategory
+							a(href="#") Электрокатера
+
+						ul.category-menu__subcategories.sub-menu
+							li
+								a(href="#") Мини, электро
+							li
+								a(href="#") С электродвигателем
+								ul.sub-menu.sub-menu-2
+									li
+										a(href="#") На батарейках
+									li
+										a(href="#") На аккумуляторах
+							li
+								a(href="#") С двс двигателем 
+							li
+								a(href="#") С бензиновым двигателем
+
+					.category-menu__item
+						.subcategory
+							a(href="#") Катера для рыбалки
+						ul.category-menu__subcategories.sub-menu
+							li
+								a(href="#") Мини, электро
+							li
+								a(href="#") С электродвигателем
+								ul.sub-menu.sub-menu-2
+									li
+										a(href="#") На батарейках
+									li
+										a(href="#") На аккумуляторах
+							li
+								a(href="#") С двс двигателем 
+							li
+								a(href="#") С бензиновым двигателем
+					.category-menu__item
+						.subcategory
+							a(href="#") Подводные лодки
+						ul.category-menu__subcategories.sub-menu
+							li
+								a(href="#") Мини, электро
+							li
+								a(href="#") С электродвигателем
+								ul.sub-menu.sub-menu-2
+									li
+										a(href="#") На батарейках
+									li
+										a(href="#") На аккумуляторах
+							li
+								a(href="#") С двс двигателем 
+							li
+								a(href="#") С бензиновым двигателем
+
+					.category-menu__item
+						.subcategory
+							a(href="#") Модели яхт 
+						ul.category-menu__subcategories.sub-menu
+							li
+								a(href="#") Мини, электро
+							li
+								a(href="#") С электродвигателем
+								ul.sub-menu.sub-menu-2
+									li
+										a(href="#") На батарейках
+									li
+										a(href="#") На аккумуляторах
+							li
+								a(href="#") С двс двигателем 
+							li
+								a(href="#") С бензиновым двигателем
+						
+
+
+
+				// end if section .sidebar-filter
+				section.category-viewed-products
+					h2.category-viewed-products__heading Вы смотрели
+					ul
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+						li.category-viewed-products__item
+							a(href="#", title="avto model that you looked for")
+								img(src="dist/images/temporary/avto.jpeg", alt="some img")
+				// /end of section .category-viewed-products
+										
+			// конец сайдбара с меню по категориям
+			// начало секции с брендами для данной категории
+			section.brands-block
+				h2.brands-block__heading Катера для рыбалки по брендам
+				ul.brands-list.item-detail.item-detail--active
+					li.brands-list__item
+						a(href="#") Pilotage
+					li.brands-list__item
+						a(href="#") Brio
+					li.brands-list__item
+						a(href="#") Himoto
+					li.brands-list__item
+						a(href="#") HSP
+					li.brands-list__item
+						a(href="#") Maverick
+					li.brands-list__item
+						a(href="#") Pilotage
+					li.brands-list__item
+						a(href="#") Brio
+				.brands-block__links
+					a(href="#").brands-block__link.brands-block__link--accessories
+						span Аксессуары
+					a(href="#").brands-block__link.brands-block__link--maintenance
+						span Обслуживание
+					a(href="#").brands-block__link.brands-block__link--howtochoose
+						span Как выбрать
+
