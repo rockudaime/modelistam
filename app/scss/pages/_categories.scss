@@ -21,7 +21,7 @@
     margin-bottom: 25px;
 
     color: #346cab;
-    border-top: 1px solid #eaeaea;
+    // border-top: 1px solid #eaeaea;
 
     flex-wrap: wrap;
     @media (min-width: 994px) {
@@ -394,6 +394,8 @@
         }
     }
     &__controls {
+    	position: relative;
+    	overflow: hidden;
         @media (min-width: 768px) {
             border-top: 3px solid #4b80bb;
         }
@@ -403,11 +405,15 @@
             text-align: center;
             @media (min-width: 768px) {
                 display: flex;
+                flex-wrap: nowrap;
+                overflow: hidden;
 
                 padding: 0;
+                transition: margin-left .25s ease-in;
             }
             // justify-content: space-around;
         }
+
         .custom-dot {
             display: inline-block;
 
@@ -445,7 +451,7 @@
                 border-bottom-left-radius: 3px;
                 background-color: #f3f3f3;
 
-                flex: 0 3 265px;
+                flex: 0 0 30%;
             }
             &:hover {
                 cursor: pointer;
@@ -462,6 +468,35 @@
                 }
             }
         }
+    }
+    &__more-btn {
+    	// display: none;
+    	@media (min-width: 768px) {
+			position: absolute;
+	    	width: 9%;
+	    	background: #f3f3f3;
+	    	height: 43px;
+	    	top: 0;
+	    	right: 0;
+	    	line-height: 43px;
+	    	text-align: center;
+	    	border-bottom-right-radius: 3px;   
+            border-bottom-left-radius: 3px;
+            cursor: pointer;
+
+	    	i {
+	    		display: inline-block;
+	    		width: 8px;
+	    		height: 8px;
+	    		background: #cfcfcf;
+	    		vertical-align: middle;
+	    		border-radius: 50%;
+	    		margin-right: 3px;
+	    		&:last-child{
+	    			margin: 0;
+	    		}
+	    	}
+    	}
     }
 }
 .page-slide {
@@ -537,7 +572,7 @@
 
 .popular-products-block {
     @media (min-width: 768px) {
-        border-bottom: 1px solid #e1e1e1;
+        // border-bottom: 1px solid #e1e1e1;
     }
     .product-preview-item {
         padding-bottom: 20px;
@@ -567,6 +602,18 @@
             border: 0;
         }
     }
+}
+.owl-custom-scrollbar-wrapper {
+	padding-top: 2px;
+	border-top: 1px solid #e1e1e1;
+	overflow: hidden;
+}
+.owl-custom-scrollbar {
+	background-color: #7b7b7b;
+	height: 5px;
+	border-radius: 2px;
+	transition: margin 0.05s ease;
+
 }
 
 //****************** BRANDS BLOCK ********************
