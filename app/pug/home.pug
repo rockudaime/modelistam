@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		block title
+		title Главная страница
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -13,12 +13,725 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		// script(src="dist/js/pages/product.js")
-		// add fancybox
+		// add fancybox - on product page
 		link(rel="stylesheet", href="dist/css/fancybox/jquery.fancybox.css?v=2.1.5")
 		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
 		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
 		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
-		script(src="dist/js/pages/category-product.js")
+		script(src="dist/js/pages/home.js")
 	body
 		header.main-header
+			.header-top-info
+				.container
+					a(name="top")
+					a.header-logo(href="#", title="Planeta Hobby")
+						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+					.header-phone
+						span.header-phone__number 0 800 218-817 
+						span.header-phone__description  Бесплатно по Украине
+						a(href="#").header-phone__callback.callback-link перезвонить мне
+					.header-nav
+						ul.for-customer
+							li.for-customer__btn 
+								span Покупателю
+								ul.for-customer__menu
+									li
+										a(href="#") Акции
+									li
+										a(href="#") Скидки
+									li
+										a(href="#") Дисконтная программа
+						ul.header-nav-links
+							li.header-nav-links__item
+								a(href="#") Дисконтная программа
+							li.header-nav-links__item
+								a(href="#") Доставка и оплата
+							li.header-nav-links__item
+								a(href="#") Контакты
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Гарантия
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Сервисный центр
+
+					
+					// Корзина, видна только в мобильном виде до 768 пикселей
+					a(href="#").mobile-cart-link
+						span.header-link-indicator.mobile-cart-link__indicator 12
+					a(href="#", title="Войти в личный кабинет").header-profile-link
+						span Войти в личный кабинет
+					
+			.header-stripe
+				.container
+					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
+					button.header-menu-link.header-menu-link--active
+						i.header-menu-link__icon
+						| меню
+					// Поиск
+					form.header-search
+						.container
+							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
+							input.header-search__submit(type="submit", value="")
+					// персональные ссылки
+					.header-personal.clearfix
+						.header-personal__links
+							a.header-personal__item.active(href="#")
+								i.header-personal__icon.header-personal__icon--wishlist
+									span.header-link-indicator.header-personal__indicator 3
+								| Желания
+							a.header-personal__item(href="#")
+								i.header-personal__icon.header-personal__icon--compare
+									span.header-link-indicator.header-personal__indicator 0
+								| Сравнение
+							a.header-personal__item(href="#")
+								i.header-personal__icon.header-personal__icon--watch-price
+									span.header-link-indicator.header-personal__indicator 0
+								| Цены
+							a.header-personal__item.active(href="#")
+								i.header-personal__icon.header-personal__icon--waiting
+									span.header-link-indicator.header-personal__indicator 12
+								| Ожидание
+						.header-personal__popups
+							// Попап Ожидания
+							.header-popup.header-popup-waiting.active
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--waiting
+									.header-popup__text
+										h2.header-popup__title Список ожиданий
+										p Здесь собраны ожидаемые Вами товары
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы проверить ожидаемые товары, 
+										a(href="#")  авторизуйтесь
+							// Попап Желания
+							.header-popup.header-popup-wishlist
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--wishlist
+									.header-popup__text
+										h2.header-popup__title Список желаний
+										p Запомните товар, который вам понравился, добавив его в список желаний.
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы добавить товар в список желаний, 
+										a(href="#")  авторизуйтесь
+
+							// Попап Сравнение
+							.header-popup.header-popup-compare
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--compare
+									.header-popup__text
+										h2.header-popup__title Сравнение товаров
+										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы сравнить товар добавленный ранее, 
+										a(href="#")  авторизуйтесь
+
+							// Попап Цены
+							.header-popup.header-popup-watch-price
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--watch-price
+									.header-popup__text
+										h2.header-popup__title Следить за ценой
+										p Следить за ценой понравившегося товара очень просто
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Если у вас уже есть отслеживаемые товары, 
+										a(href="#")  авторизуйтесь
+
+					// Иконка для раскрытия формы поиска в мобильном виде
+					span.mobile-search-link
+					// Корзина
+					a(href="#").header-cart
+						span.header-link-indicator.header-cart__indicator 10
+						span.header-cart__total 142 458
+							i.header-cart__total--text-smaller  грн
+
+		// Конец шапки сайта
+		.popup-outer
+			section.popup-b.popup-login
+				header
+					h2.popup-login__title Вход
+					a(href="#").popup-login__reg-link Регистрация
+				form(action="/", method="POST", name="login").login-form
+					
+					label(for="email").login-form__label E-mail
+					input(type="email", required).login-form__input.form-control
+					
+					label(for="email").login-form__label Пароль
+					input(type="password", required).login-form__input.form-control
+
+					.form-group
+						input(type="checkbox", id="forgotPassword").custom-checkbox
+						label(for="forgotPassword").custom-checkbox__label.login-form__label
+							span.custom-checkbox__box.login-form__checkbox-box 
+							|  Запомнить меня
+					.form-group
+						input(type="submit", value="Войти").btn.login-form__btn
+						a(href="#").login-form__reminder-link Забыли пароль?
+				.social-login
+					h2.social-login__title Вход через социальные сети
+					ul.social-login__links.clearfix
+						li.social-login__link.social-login__link--fb
+							a(href="#")
+						li.social-login__link.social-login__link--vk
+							a(href="#")
+						li.social-login__link.social-login__link--gp
+							a(href="#")
+
+				a.popup-b__close(href="#")
+
+		main
+			.container
+				// начало основного меню
+				.home-top-left
+					nav.main-nav.main-nav-home
+						// класс main-nav-home  - только для главной страницы
+						.main-nav__top-links
+							a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
+							a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
+						ul.main-nav__menu
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Автомобили
+									ul.main-nav__menu-2
+										li.main-nav__link.main-nav__link-2l
+											a(href="#") С двс
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Самолеты
+									ul.main-nav__menu-2
+										li.main-nav__link.main-nav__link-2l
+											a(href="#") С двс
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Вертолеты
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Квадракоптеры
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Авиамодели
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Катера и яхты
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Танки
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Мотоциклы
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Другая техника
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Копмплектующие
+							li.main-nav__link.main-nav__link-1l
+								a(href="#") Производители 
+									
+
+				.home-top-right
+					// Слайдер с баннерами
+					section.home-slider-container
+						.page-slider.home-slider.owl-carousel
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 2 800
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 13 600
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 13 600
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 13 600
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 13 600
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 13 600
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+						.home-slider__dots-wrapper
+							.home-slider__dots#customDots
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+
+					// Ссылки на медиа контент сайта
+					.media-links.media-top-links
+						a.media-link.media-top-link(href="#")
+							i.media-review-icon.media-icon
+							span Обзоры
+						a.media-link.media-top-link(href="#")
+							i.media-article-icon.media-icon
+							span Статьи
+						a.media-link.media-top-link(href="#")
+							i.media-news-icon.media-icon
+							span Новости
+						a.media-link.media-top-link(href="#")
+							i.media-events-icon.media-icon
+							span События
+						a.media-link.media-top-link(href="#")
+							i.media-video-icon.media-icon
+							span Видео
+
+					// Блок с напоминанием о содержимом корзины
+					.incart-reminder
+						
+						span.incart-reminder__text
+							a(href="#") В корзине
+							|  12 товаров на
+							b  124 400
+							|  грн 
+
+						a(href="#").btn.incart-reminder__btn Оформить заказ
+				.home-middle
+					// Просмотренные товары
+					section.viewed
+						header.viewed-heading
+							h2.home-title.viewed-title Вы смотрели
+							a.viewed-delete-link
+								span очистить историю
+						.recent-goods-slider.slider
+
+					section.new-goods
+						h2.home-title.new-goods-title Новинки
+
+					section.popular-goods
+						h2.home-title.popular-goods-title Популярные товары
+					// Миниатюры категорий
+					section.home-catalog.clearfix
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/quadro.jpg")
+								.home-catalog-item__title Квадрокоптеры
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/tank.jpg")
+								.home-catalog-item__title Танки
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/boats.jpg")
+								.home-catalog-item__title Катера и яхты
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/avia.jpg")
+								.home-catalog-item__title Авиамодели
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/moto.jpg")
+								.home-catalog-item__title Мотоциклы
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/avto.jpg")
+								.home-catalog-item__title Автомобили
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/accum.jpg")
+								.home-catalog-item__title Аккумуляторы
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/chargers.jpg")
+								.home-catalog-item__title Зарядные устройства
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/fuel.jpg")
+								.home-catalog-item__title Топливо и жидкости
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/radio.jpg")
+								.home-catalog-item__title Радиоуправление
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/fpv.jpg")
+								.home-catalog-item__title FPV оборудование
+						.home-catalog-item
+							a(href="#").home-catalog-link
+								.home-catalog-item__image
+									img(src="dist/images/catalog-miniatures/parts.jpg")
+								.home-catalog-item__title Запчасти
+						
+					// Топ по брендам
+					section.top-brands
+						h2.home-title.top-brands__title Топ по брендам
+
+						.top-brands__inner.clearfix
+							.top-brands__mob-menu-select ТОП 10
+							ul.top-brands-menu
+								li.top-brands-menu__item.active(tabindex="0", data-id="top10")
+									span ТОП 10
+								li.top-brands-menu__item(tabindex="0", data-id="topavia")
+									span Авиа
+								li.top-brands-menu__item(tabindex="0", data-id="topquadro")
+									span Квадракоптеры
+								li.top-brands-menu__item(tabindex="0", data-id="topships")
+									span Корабли 
+								li.top-brands-menu__item(tabindex="0", data-id="topparts")
+									span Комплектующие
+							.top-brands-content
+								.top-brands-content__item.active#top10
+									a(href="#").top-brands-content__link TOP 10
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+								.top-brands-content__item#topavia
+									a(href="#").top-brands-content__link AVIA
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+								.top-brands-content__item#topquadro
+									a(href="#").top-brands-content__link QUADRO
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+								.top-brands-content__item#topships
+									a(href="#").top-brands-content__link SHIPS
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+								.top-brands-content__item#topparts
+									a(href="#").top-brands-content__link PARTS
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+									a(href="#").top-brands-content__link Brio
+									a(href="#").top-brands-content__link Himoto
+									a(href="#").top-brands-content__link Pilotage
+
+					// Медиа и соц.сети
+					section.home-media-social.clearfix
+						.media-content
+							.media-links.media-content__tabs-menu
+								a.media-link.media-content__tab-link.active(href="#", data-id="reviews")
+									i.media-review-icon.media-icon
+									span Обзоры
+								a.media-link.media-content__tab-link(href="#")
+									i.media-article-icon.media-icon
+									span Статьи
+								a.media-link.media-content__tab-link(href="#")
+									i.media-news-icon.media-icon
+									span Новости
+								a.media-link.media-content__tab-link(href="#")
+									i.media-events-icon.media-icon
+									span События
+								a.media-link.media-content__tab-link(href="#")
+									i.media-video-icon.media-icon
+									span Видео
+
+							.media-tabs
+								.media-tab#reviews
+									p.
+										Hitec северокорейс   кая компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+
+						.social-groups
+							.social-groups__links
+								h2.social-groups__title Обсуждения
+								a(href="#").social-link.social-link-facebook
+								a(href="#").social-link.social-link-vk
+								a(href="#").social-link.social-link-twitter
+								a(href="#").social-link.social-link-youtube
+								a(href="#").social-link.social-link-google
+		// Начало нижней части сайта с адресами магазинов (префутера) 
+		section.prefooter
+			.container
+				h2.prefooter__heading Добро пожаловать в наши салоны
+				.prefooter__description
+					p Закажите на 20 000 грн и заберите товар в любом салоне
+					p Получите <strong>скидочный купон на следующую покупку</strong> в интернет-магазине
+				//- .store-address-tabs-menu__item.store-address-tabs-menu__item--active.u-mobile(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
+				ul.store-address-tabs-menu
+					li.store-address-tabs-menu__item.store-address-tabs-menu__item--active(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
+					li.store-address-tabs-menu__item(tabindex="0", data-id="#KievLesnaya") <i></i> <span>Киев, м. Лесная</span>
+					li.store-address-tabs-menu__item(tabindex="0", data-id="#KharkovSumskaya") <i></i> <span>Харьков, ул. Сумская</span>
+				.stores-wrapper
+					.store.store--active.clearfix#KievVasilkovskaya
+						.store__heading Салон и сервисный центр <br> м. Васильковская, ул. Михаила Максимовича 10, корп. А, офис 201
+						.store-contacts
+							.store-contacts__item
+								i.store-contacts__icon.clock-icon
+								| пн-пт: 9-17   сб-вс: ТЦ «Дарынок» 10-20
+							.store-contacts__item
+								i.store-contacts__icon.phone-icon
+								| (044) 224-61-00 
+							.store-contacts__item
+								i.store-contacts__icon.skype-icon
+								| modelistam.kiev
+						.store__visual.clearfix
+							.store-gallery
+								.store-gallery__main-image
+									a(href="#")
+											img(src="dist/images/temporary/footer/footer-gallery/big1.jpg", alt="store in kiyv")
+								.store-gallery__miniatures
+									.store-gallery__miniatures-inner
+										.store-gallery__miniature.store-gallery__miniature--active
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/map.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+
+							.store-map
+								img(src="dist/images/temporary/footer/map.jpg")
+
+
+
+
+					.store#KievLesnaya.clearfix
+						.store__heading Салон и сервисный центр <br> м. Лесная, ул. Беломорская, 1, ТЦ «Дарынок», корп. «ТриД», 3 эт., торговое место ДС 30
+						.store-contacts
+							.store-contacts__item
+								i.store-contacts__icon.clock-icon
+								| пн-вс: 10-20
+							.store-contacts__item
+								i.store-contacts__icon.phone-icon
+								| (044) 224-61-00 
+							.store-contacts__item
+								i.store-contacts__icon.skype-icon
+								| modelistam.kiev
+						.store__visual.clearfix
+							.store-gallery
+								.store-gallery__main-image
+									a(href="#")
+											img(src="dist/images/temporary/footer/footer-gallery/big1.jpg", alt="store in kiyv")
+								.store-gallery__miniatures
+									.store-gallery__miniatures-inner
+										.store-gallery__miniature.store-gallery__miniature--active
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/map.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+
+							.store-map
+								img(src="dist/images/temporary/footer/map.jpg")
+
+					.store#KharkovSumskaya.clearfix
+						.store__heading Салон и сервисный центр <br> м. Университет, ул. Сумская 77/79 возле парка им. Горького
+						.store-contacts
+							.store-contacts__item
+								i.store-contacts__icon.clock-icon
+								| пн-пт: 10-19   сб: 10-16   вс: Выходной
+							.store-contacts__item
+								i.store-contacts__icon.phone-icon
+								| (057) 755-15-00
+							.store-contacts__item
+								i.store-contacts__icon.skype-icon
+								| modelistam.kharkov
+						.store__visual.clearfix
+							.store-gallery
+								.store-gallery__main-image
+									a(href="#")
+											img(src="dist/images/temporary/footer/footer-gallery/big1.jpg", alt="store in kharkov")
+								.store-gallery__miniatures
+									.store-gallery__miniatures-inner
+										.store-gallery__miniature.store-gallery__miniature--active
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kharkov")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/magazin-planeta-hobby-kharkov-1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kharkov")
+										.store-gallery__miniature
+											a(href="dist/images/temporary/footer/footer-gallery/magazin-planeta-hobby-kharkov-2.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kharkov")
+
+							.store-map
+								img(src="dist/images/temporary/footer/map.jpg")
+
+				.prefooter__about
+					p.
+						Компания «Planeta Hobby» — ведущая украинская компания, которая работает на рынке радиоуправляемых моделей с 2007 года.
+					p.
+						Основа нашего бизнеса заключается в ответственности перед каждым клиентом, обеспечении вас исключительно качественными и современными товарами передовых всемирно известных брендов, высоким и оперативным уровнем техническогобслуживания.
+					p.
+						Изо дня в день высокопрофессиональная команда открывает для вас двери в инновационное будущее. Мы постоянно смотрим вперед и расширяем ассортимент не только продукции, но и услуг, чтобы ваше хобби приносило максимальное удовольствие и помогало по-настоящему расслабиться от ежедневных забот.
+				ul.prefooter__delivery-cities
+					li.prefooter__delivery-cities-heading Доставляем товары в города:
+					li
+						b Киев
+					li Чернигов
+					li
+						b Харьков
+					li Черкассы
+					li
+						b Одесса
+					li Житомир
+					li
+						b Днепропетровск
+					li Суммы
+					li Запорожье
+					li Хмельницкий
+					li Львов
+					li Ровно
+					li Кривой Рог
+					li Кировоград
+					li Николаев
+					li Черновцы
+					li Винница
+					li Кременчуг
+					li Луцк
+					li Ивано-Франковск
+					li Полтава
+					li Тернополь
+
+				// signup block
+				.h-signup
+
+					p.h-signup__heading Получайте только акции и важные новости
+					form.h-signup__form
+						input.h-signup__email-input(type="email", placeholder="Эл.почта для рассылки", required)
+						input.h-signup__submit(type="submit", value="Держите в курсе")
+					p.h-signup__form-caption 1 раз в неделю. Без спама
+
+		// Начало основного футера сайта
+		footer.main-footer
+			.container
+				.footer-nav-wrapper.clearfix
+					.footer-nav.footer-nav--categories
+						h2.main-footer__heading Всегда в наличии
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Автомобили
+							li.footer-nav__link
+								a(href="#") Квадракоптеры
+							li.footer-nav__link
+								a(href="#") Самолеты
+							li.footer-nav__link
+								a(href="#") Вертолеты
+							li.footer-nav__link
+								a(href="#") Яхты
+							li.footer-nav__link
+								a(href="#") Аксессуары
+					.footer-nav.footer-nav--info
+						h2.main-footer__heading Ваши покупки
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Вопросы и ответы 
+							li.footer-nav__link
+								a(href="#") Оплата и доставка 
+							li.footer-nav__link
+								a(href="#") Гарантия
+							li.footer-nav__link
+								a(href="#") Условия использования сайта
+						.footer-payment-methods
+							p Принимаем к оплате
+							img(src="dist/images/payment-methods.png", alt="методы оплаты виза, мастеркард, приватбанк")
+					.footer-nav.footer-nav--site-links
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Блог
+							li.footer-nav__link
+								a(href="#") Новости и события 
+							li.footer-nav__link
+								a(href="#") О компании 
+							li.footer-nav__link
+								a(href="#") Вакансии 
+
+				.main-footer__contacts.clearfix
+					.footer-contact-info
+						h2.main-footer__heading Киев
+						.footer-contact-info__schedule
+							span.footer-contact-info__icon.footer-contact-info__icon--schedule
+							| пн-пт: 9-20, сб: 10-20
+						.footer-contact-info__phone
+							span.footer-contact-info__icon.footer-contact-info__icon--phone
+							| (044) 221-61-00
+						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+
+						.footer-contact-info__country-phone
+							p 0 800 218-817
+							p.footer-contact-info__desc Бесплатно по Украине
+
+					.footer-contact-info
+						h2.main-footer__heading Харьков
+						.footer-contact-info__schedule
+							span.footer-contact-info__icon.footer-contact-info__icon--schedule
+							| пн-пт: 9-20, сб: 10-20
+						.footer-contact-info__phone
+							span.footer-contact-info__icon.footer-contact-info__icon--phone
+							| (057) 755-15-00
+						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+				.main-footer__socials
+					p Следите за нами в соцсетях
+					a(href="#", title="Facebook", target="_blank").footer-socials-link.fb-social-link
+					a(href="#", title="Vkontakte", target="_blank").footer-socials-link.vk-social-link
+					a(href="#", title="Youtube", target="_blank").footer-socials-link.youtube-social-link
+
+
+				a(href="#top").footer-up-link
+					span.footer-up-link__icon
+					| Вверх
 			

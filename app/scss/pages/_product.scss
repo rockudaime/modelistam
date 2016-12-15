@@ -1058,7 +1058,7 @@ a.link-to-images {
 .shop-info {
     font: 15px OpenSans_Light, sans-serif;
 
-    width: 100%;
+    // width: 100%;
 
     color: #151515;
     @media (min-width: 768px) {
@@ -2717,128 +2717,6 @@ input::-webkit-inner-spin-button {
 
 
 // ========================================= NEW POPUPs =====================================
-.popup-outer {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    display: none;
-    overflow: hidden;
-    overflow-y: auto;
-
-    background-color: rgba(255, 255, 255, .2);
-    text-align: center;
-}
-.popup-b {
-    font: 14px/24px OpenSans;
-
-    position: relative;
-
-    display: none;
-
-    box-sizing: border-box;
-    margin: 0 auto 50px;
-    text-align: left;
-    // max-width: 800px;
-    // padding: 23px 55px 25px 20px;
-    // padding: 20px 0 25px;
-
-    color: #151515;
-    background: white;
-    box-shadow: 0 3px 9px 1px rgba(0, 0, 0, .4);
-    @media (min-width: 544px) {
-        max-width: 550px;
-
-        border: 10px solid rgba(75, 128, 187, .75);
-        border-radius: 18px;
-        background-clip: padding-box;
-    }
-    @media (min-width: 768px) {
-        width: 95%;
-        max-width: 800px;
-        // padding: 23px 125px 25px 34px;
-        margin: 50px auto 0;
-    }
-    &__header {
-        padding: 23px 50px 15px 17px;
-        @media (min-width: 768px) {
-            padding-right: 90px;
-            padding-left: 30px;
-        }
-        &--dbb {
-            margin-bottom: 10px;
-            padding-bottom: 25px;
-
-            border-bottom: 1px dashed #c2c2c2;
-        }
-    }
-    &__heading {
-        font: 20px 'OpenSans_SemiBold';
-
-        margin: 0;
-        // padding-right: 55px;
-        // padding-left: 20px;
-        &--cart {
-            // margin-bottom: 20px;
-            padding-left: 48px;
-
-            background: url(images/product-cart-icon.png) no-repeat 0 0;
-        }
-    }
-    &__content,
-    &__footer {
-        padding: 0 27px 15px 17px;
-    }
-    &__content {
-        margin-bottom: 10px;
-        @media (min-width: 768px) {
-            padding-left: 30px;
-        }
-        p {
-            margin: 0 0 10px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-    &__more {
-        font-size: 16px;
-
-        color: #346cab;
-    }
-    &__close {
-        position: absolute;
-        top: 24px;
-        right: 15px;
-
-        display: block;
-
-        width: 30px;
-        height: 30px;
-
-        cursor: pointer;
-
-        background: url(images/product-close-icon.png) no-repeat 0 0;
-        background-size: 30px;
-        @media (min-width: 768px) {
-            right: 25px;
-        }
-    }
-    &__back {
-        font: 17px 'OpenSans_SemiBold';
-
-        display: inline-block;
-
-        padding-left: 25px;
-
-        color: #346cab;
-        background: url('images/product-arrow-icon.png') no-repeat 0 50%;
-        // margin-top: 35px;
-    }
-}
 
 .popup-bcart {
     max-width: 830px;

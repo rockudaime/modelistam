@@ -1,0 +1,457 @@
+.main-nav-home {
+	@media (min-width: 1235px) {
+		position: static;
+		display: block;
+		margin-top: 0;
+		margin-left: 0;
+
+		.main-nav__top-links {
+			background: #fff;
+		}
+	}
+	
+}
+
+.home-top-left {
+	@media (min-width: 1235px) {
+		display: block;
+		float: left;
+	}
+}
+
+// start of home slider
+.home-top-right {
+	@media (min-width: 1235px) {
+		width: 872px;
+		float: right;
+	}
+}
+.home-slider-container {
+	margin-bottom: 29px;
+	
+}
+.home-slider {
+    margin-bottom: 6px;
+
+    &__dots-wrapper {
+        font-size: 0;
+
+        overflow: hidden;
+
+        height: 40px;
+
+        background: #fff;
+    }
+    &__dots {
+    	white-space: nowrap;
+    }
+
+    &__custom-dot {
+        display: inline-block;
+        cursor: pointer;
+
+        height: 40px;
+        width: 80px;
+        margin-right: 8px;
+
+        opacity: .5;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active {
+        	opacity: 1;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+.home-slider.page-slider {
+	.owl-nav {
+    	.owl-prev:hover, .owl-next:hover {
+    		padding: 0 10px 0 28px;
+    	}
+    }
+}
+
+
+
+// Блок с ссылками на медиа контент сайта
+.media-top-links {
+	display: none;
+	font-size: 16px;
+
+	@media (min-width: 1235px) {
+		display: block;
+		margin-bottom: 27px;
+	}
+}
+.media-top-link {
+	margin-right: 67px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover, &:focus {
+		span {
+			border-color: #151515;
+		}
+	}
+
+	span {
+		border-bottom: 1px solid #d4d4d4;
+	}
+}
+// Блок с напоминанием о содержимом корзины (в корзине n товаров на сумму N)
+.incart-reminder {
+	background: #f6f6f6;
+	
+
+	padding: 7px 5px 16px 15px;
+	
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 2px 2px 0 0 #d9d9d9;
+	margin:0 -10px 30px;
+
+	@media (min-width: 544px) {
+		display: inline-block;
+		padding: 11px 19px 12px 19px;
+		text-align: left;
+		margin: 0 0 30px;
+	}
+	&__text {
+		display: inline-block;
+		font-size: 18px;
+		vertical-align: middle;
+		a {
+			text-decoration: none;
+			color: #00619c;
+			border-bottom: 1px solid #ccd7e2;
+			display: inline-block;
+			line-height: 19px;
+		}
+
+	}
+	
+	&__btn {
+		width: auto;
+		background: #d34f27;
+		color: #fff;
+		
+		margin-top: 15px;
+		padding: 7px 17px;
+
+		@media (min-width: 544px) {
+			margin-top: 0;
+			margin-left: 12px;
+		}
+		@media (min-width: 768px) {
+
+		}
+
+		&:hover, &:focus {
+			background-color: #cb3d12;
+		}
+	}
+}
+
+
+.home-middle {
+	clear: both;
+}
+.home-title {
+	font: 18px 'OpenSans';
+	margin-top: 0;
+	color: #000;
+}
+.viewed {
+	color: #000;
+
+}
+
+.viewed-title {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.viewed-delete-link {
+	color: #777;
+	
+	background: url('images/icon-delete.png') 0 5px no-repeat;
+	padding-left: 19px;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		color: #9a0000;
+		
+		background-position: 0 -15px;
+
+		span {
+			border-color: #a17a7a;
+		}
+	}
+
+	span {
+		border-bottom: 1px dashed #a7a7a7;
+		display: inline-block;
+		line-height: 15px;
+	}
+}
+
+// Миниатюры категорий
+.home-catalog {
+	margin-bottom: 30px;
+}
+.home-catalog-item {
+	float: left;
+	min-width: 160px;
+	width: 50%;
+	height: 100px;
+	text-align: center;
+	margin-bottom: 11px;
+
+	@media (min-width: 544px) {
+		width: 33%;
+	}
+
+	@media (min-width: 768px) {
+		width: 25%;
+		margin-bottom: 18px;
+	}
+	@media (min-width: 1235px) {
+		margin-bottom: 11px;
+		width: 16.66666%;
+	}
+
+	&__image {
+		height: 60px;
+		line-height: 60px;
+		font-size: 0;
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+			vertical-align: middle;
+		}
+	}
+}
+
+.home-catalog-link {
+	display: inline-block;
+	height: 100px;
+	width: 160px;
+	border: 1px solid #e1e1e1;
+	border-radius: 3px;
+	padding: 5px 0;
+	box-sizing: border-box;
+	color: #151515;
+	font: 14px 'OpenSans';
+
+	@media (min-width: 544px) {
+		width: 170px;
+	}
+
+	&:hover, &:focus {
+		border-color: #d34f27;
+		color: #346cab;
+		text-decoration: none;
+	}
+}
+// Топ по брендам
+
+.top-brands {
+	color: #000;
+	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+
+	@media (min-width: 768px) {
+		padding-bottom: 30px;
+	} 
+
+	@media (min-width: 1235px) {
+		
+	}
+
+	&__title {
+		margin-bottom: 8px;
+	}
+
+	&__content {
+
+	}
+
+	&__mob-menu-select {
+		font: 16px 'OpenSans';
+		border: 1px solid #777;
+		padding: 10px 12px;
+		border-radius: 3px;
+		outline: 0;
+		margin-bottom: 15px;
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+
+}
+
+.top-brands-menu{
+	width: 270px;
+	float: left;
+	overflow: hidden;
+	display: none;
+
+	@media (min-width: 768px) {
+		margin-right: 68px;
+		display: block;
+	}
+	@media (min-width: 1235px) {
+		margin-right: 100px;
+	}
+
+	&__item {
+		color: #151515;
+		font-size: 15px;
+		padding: 10px 15px;
+
+		span {
+			border-bottom: 1px dashed #a8a8a8;
+			display: inline-block;
+			white-space: nowrap;
+			line-height: 15px;
+		}
+
+		&:hover, &:focus {
+			cursor: pointer;
+			outline: 0;
+		}
+
+		&.active {
+			background: #d5e8f3;
+			position: relative;
+
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				right: -35px;
+				top: 0;
+
+				border: 20px solid #fff;	border-left: 15px solid #d5e8f3;
+				width: 15px;
+
+			}
+		}
+
+	}
+}
+
+.top-brands-content {
+
+	@media (min-width: 768px) {
+		margin-left: 338px;
+	}
+	@media (min-width: 1235px) {
+		margin-left: 370px;
+	}
+
+	&__item {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width: 150px;
+		margin-right: 15px;
+		color: #346cab;
+		
+		padding: 10px 0;
+		font-size: 16px;
+
+		@media (min-width: 768px) {
+			
+			margin-right: 46px;
+		}
+
+		&:hover, &:focus {
+			text-decoration: none;
+			color: #d34f27;
+		}
+	}
+}
+
+// Media and social section
+
+.home-media-social {
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 45px;
+	padding-bottom: 35px;
+}
+
+.media-content {
+	margin-bottom: 15px;
+
+	@media (min-width: 1235px) {
+		float: left;
+		width: 770px;
+	}
+
+	&__tabs-menu{
+		display: none;
+
+		@media (min-width: 768px) {
+			display: block;
+		}
+	}
+
+	&__tab-link {
+		font-size: 16px;
+
+		@media (min-width: 768px) {
+			margin-right: 8px;
+			padding: 8px 18px 7px 15px;
+		}
+
+		&.active {
+			border: 1px solid #e1e1e1;
+			border-radius: 3px;
+
+			span {
+				border: 0;
+			}
+		}
+
+		span {
+			border-bottom: 1px dashed #a8a8a8;
+			line-height: 15px;
+			display: inline-block;
+		}
+	}
+}
+
+
+
+.social-groups {
+	@media (min-width: 1235px) {
+		width: 370px;
+		float: right;
+	}
+
+	// title
+	&__title {
+		margin: 0;
+		font: 18px 'OpenSans';
+		padding: 8px 0 7px;
+		display: inline-block;
+	}
+}

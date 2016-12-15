@@ -205,12 +205,12 @@
 // ************************************************************
 // *           Страница сравнения товаров                     *
 // ************************************************************
-    .compare-page__item__image-block{
-        float: none;
-        margin: 0;
-        max-width: 100%;
-        padding-right: 30px;
-    }
+    // .compare-page__item__image-block{
+    //     float: none;
+    //     margin: 0;
+    //     max-width: 100%;
+    //     padding-right: 30px;
+    // }
 
 
     // ==================================================
@@ -220,20 +220,20 @@
 // *   Стили блока с адрессом который идет перед футером     *
 // ************************************************************
 
-    .location-galery-main {
-        width: 49%;
-    }
-    .location-map-main {
-        width: 49%;
+    // .location-galery-main {
+    //     width: 49%;
+    // }
+    // .location-map-main {
+    //     width: 49%;
 
-    }
+    // }
 
-    .location-top-info .location-adress,
-    .location-top-info .top-work-hours,
-    .location-top-info .top-phone,
-    .location-top-info .top-skype{
-        margin: 0 3px;
-    }
+    // .location-top-info .location-adress,
+    // .location-top-info .top-work-hours,
+    // .location-top-info .top-phone,
+    // .location-top-info .top-skype{
+    //     margin: 0 3px;
+    // }
 
 
     // =======================================
@@ -243,41 +243,41 @@
 // ***********************
 // *   Стили ФУТЕРА     *
 // ***********************
-    #footer{
-        padding: 40px 0 20px;
-    }
-    #footer .info-menu{
-        padding: 0;
-    }
-    .footer-links{
-        width: 550px;
-    }
-    .footer-items,
-    .footer-info,
-    .information{
-        width: 160px;
-    }
-    .footer__contacts{
-        float: right;
-        margin: 0;
-        width: 180px;
-    }
+    // #footer{
+    //     padding: 40px 0 20px;
+    // }
+    // #footer .info-menu{
+    //     padding: 0;
+    // }
+    // .footer-links{
+    //     width: 550px;
+    // }
+    // .footer-items,
+    // .footer-info,
+    // .information{
+    //     width: 160px;
+    // }
+    // .footer__contacts{
+    //     float: right;
+    //     margin: 0;
+    //     width: 180px;
+    // }
 
 
     /*-----------------------
      Styles for Cart Page
      ----------------------- */
 
-    .cart-page .header__middle,
-    .order-page .header__middle{
-        float: right;
-        width: 20%;
-    }
-    .cart-page .header,
-    .order-page .header{
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-    }
+    // .cart-page .header__middle,
+    // .order-page .header__middle{
+    //     float: right;
+    //     width: 20%;
+    // }
+    // .cart-page .header,
+    // .order-page .header{
+    //     padding-bottom: 5px;
+    //     margin-bottom: 15px;
+    // }
     /*-----------------------
      End of the Cart Page
      ----------------------- */
@@ -305,201 +305,202 @@
     .front-bg,
     .front-category-wrap,
     #footer{
-        max-width: 720px;
+        max-width: 768px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .front-bg{
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
+    .front-bg,
+    .page-inner{
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 //****************************************
 // *           Стили шапки               *
 //****************************************
-    .header__middle-inner {
-        display: none;
-    }
-    #search {
-        width: 190px;
-        top: -7px;
-        left: -34px;
-    }
-    .search .search__q-input {
-        width: 140px;
-        min-width: 140px;
-        padding: 9px 0px 0px 0px;
-    }
+ //    .header__middle-inner {
+ //        display: none;
+ //    }
+ //    #search {
+ //        width: 190px;
+ //        top: -7px;
+ //        left: -34px;
+ //    }
+ //    .search .search__q-input {
+ //        width: 140px;
+ //        min-width: 140px;
+ //        padding: 9px 0px 0px 0px;
+ //    }
 
-    .search__submit {
-        padding: 7px 11px 6px 14px;
-        margin: 0;
-    }
+ //    .search__submit {
+ //        padding: 7px 11px 6px 14px;
+ //        margin: 0;
+ //    }
 
-    .search_focused .search__submit {
-        padding: 7px 7px 6px 16px;
-        margin: 0;
-    }
+ //    .search_focused .search__submit {
+ //        padding: 7px 7px 6px 16px;
+ //        margin: 0;
+ //    }
 
-    .client-link{
-		    width: 104px;
-        font-size: 12px;
-    background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 100% center;
-    padding: 0px 0px 3px 0px;
-    //  #   display: none;
-    }
-	.top-client {
-		margin: 3px 0px 0px 27px;
-	}
-    .client-link span{
-		border-bottom: 1px solid #afafaf;
-        // #text-decoration: underline;
-        color: #0d0d0d;
-        font-size: 15px;
-    }
-    .client-link:hover{
+ //    .client-link{
+	// 	    width: 104px;
+ //        font-size: 12px;
+ //    background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 100% center;
+ //    padding: 0px 0px 3px 0px;
+ //    //  #   display: none;
+ //    }
+	// .top-client {
+	// 	margin: 3px 0px 0px 27px;
+	// }
+ //    .client-link span{
+	// 	border-bottom: 1px solid #afafaf;
+ //        // #text-decoration: underline;
+ //        color: #0d0d0d;
+ //        font-size: 15px;
+ //    }
+ //    .client-link:hover{
 
-        // #background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 94% center;
-    }
-    .client-link:hover span{
-		border-bottom: none;
-        text-decoration: none;
-        color: #D34F27;
-        cursor: pointer;
-    }
-    .contacts__content{
-        width: auto;
-        margin: 3px 0 0;
-        float: left;
-    }
-    .contacts__tabs-link{
-        margin: 3px 7px 0;
-    }
-    .head_phones_select{
-        font-size: 11px;
-    }
-    .head_phones_select-city{
-        border: none;
-        padding: 7px 0;
-        font-size: 11px;
-    }
-    .contacts__callback{
-        font-size: 11px;
-    }
-    .response-menu li{
-        // #padding: 4px 8px 0px 0px;
-		padding: 4px 0px 0px 22px;
-    }
-	 .response-menu li:first-child{
-        // padding: 4px 8px 0px 22px;
-    }
+ //        // #background: url("images/ui-icon-arrow-menu-down-tablet.png") no-repeat 94% center;
+ //    }
+ //    .client-link:hover span{
+	// 	border-bottom: none;
+ //        text-decoration: none;
+ //        color: #D34F27;
+ //        cursor: pointer;
+ //    }
+ //    .contacts__content{
+ //        width: auto;
+ //        margin: 3px 0 0;
+ //        float: left;
+ //    }
+ //    .contacts__tabs-link{
+ //        margin: 3px 7px 0;
+ //    }
+ //    .head_phones_select{
+ //        font-size: 11px;
+ //    }
+ //    .head_phones_select-city{
+ //        border: none;
+ //        padding: 7px 0;
+ //        font-size: 11px;
+ //    }
+ //    .contacts__callback{
+ //        font-size: 11px;
+ //    }
+ //    .response-menu li{
+ //        // #padding: 4px 8px 0px 0px;
+	// 	padding: 4px 0px 0px 22px;
+ //    }
+	//  .response-menu li:first-child{
+ //        // padding: 4px 8px 0px 22px;
+ //    }
 
-    .header__phones-top-menu{
-        display: block;
-    }
-	.phone-header span {
-		font-size: 16px;
-	}
-	.contacts__callback {
-		margin: 0px 0px 0;
-	}
-	.toppest-menu ul {
-		padding: 3px 6px;
-	}
-	.page-header-wrapper {
-		padding: 0px 16px;
-	}
-	.contacts__content {
-		padding-left: 0px;
-	}
-	.logo-main{
-		width: 150px;
-	}
-	.page-header-wrapper__inner {
-		padding: 40px 1px 0px 0px;
-	}
-	.head_color {
-		background: url("http://modelistam.com.ua/site_new/test_1/head_color_bg_02.png") #F6F6F6 repeat-x center;
-		margin: -130px 0 12px;
-		height: 108px;
-	}
-    .toppest-menu li b {
-        display: none;
-    }
-    .login-text_sm{
-        display: inline-block;
-    }
-    .login-text_full{
-        display: none;
-    }
+ //    .header__phones-top-menu{
+ //        display: block;
+ //    }
+	// .phone-header span {
+	// 	font-size: 16px;
+	// }
+	// .contacts__callback {
+	// 	margin: 0px 0px 0;
+	// }
+	// .toppest-menu ul {
+	// 	padding: 3px 6px;
+	// }
+	// .page-header-wrapper {
+	// 	padding: 0px 16px;
+	// }
+	// .contacts__content {
+	// 	padding-left: 0px;
+	// }
+	// .logo-main{
+	// 	width: 150px;
+	// }
+	// .page-header-wrapper__inner {
+	// 	padding: 40px 1px 0px 0px;
+	// }
+	// .head_color {
+	// 	background: url("http://modelistam.com.ua/site_new/test_1/head_color_bg_02.png") #F6F6F6 repeat-x center;
+	// 	margin: -130px 0 12px;
+	// 	height: 108px;
+	// }
+ //    .toppest-menu li b {
+ //        display: none;
+ //    }
+ //    .login-text_sm{
+ //        display: inline-block;
+ //    }
+ //    .login-text_full{
+ //        display: none;
+ //    }
 
-	.top-links-menu {
-		top: 113px;
-	}
-	.header-cart-link i{
-		background: url("images/svg/Cart-menu.svg") no-repeat;
-		width: 34px;
-		height: 35px;
-		display: block;
-	}
-	.top-cart-block{
-		float: right;
-	}
-	    .header-wishlist-link i{
-        background: url("images/svg/Heart-menu-default.svg") no-repeat left center;
-        margin: 0 0 7px 6px;
-        width: 37px;
-        height: 25px;
-		border: none;
+	// .top-links-menu {
+	// 	top: 113px;
+	// }
+	// .header-cart-link i{
+	// 	background: url("images/svg/Cart-menu.svg") no-repeat;
+	// 	width: 34px;
+	// 	height: 35px;
+	// 	display: block;
+	// }
+	// .top-cart-block{
+	// 	float: right;
+	// }
+	//     .header-wishlist-link i{
+ //        background: url("images/svg/Heart-menu-default.svg") no-repeat left center;
+ //        margin: 0 0 7px 6px;
+ //        width: 37px;
+ //        height: 25px;
+	// 	border: none;
 
-    }
-    .top-wishlist-block:hover .header-wishlist-link i{
-        background: url("images/svg/Heart-menu-active.svg") no-repeat left center;
-		border: none;
+ //    }
+ //    .top-wishlist-block:hover .header-wishlist-link i{
+ //        background: url("images/svg/Heart-menu-active.svg") no-repeat left center;
+	// 	border: none;
 
-    }
-    .header-compare-link i{
-        background: url("images/svg/Scale-menu-default.svg") no-repeat left center;
-        margin: 0 0 7px 10px;
-        width: 37px;
-        height: 25px;
-		border: none;
-    }
-    .top-compare-block:hover .header-compare-link i{
-        background: url("images/svg/Scale-active.svg") no-repeat left center;
-		border: none;
-    }
-    .header-price-link i{
-    background: url("images/svg/Money-menu-default.svg") no-repeat left center;
-        margin: 0 0 0 7px;
-        width: 37px;
-        height: 33px;
-		border: none;
+ //    }
+ //    .header-compare-link i{
+ //        background: url("images/svg/Scale-menu-default.svg") no-repeat left center;
+ //        margin: 0 0 7px 10px;
+ //        width: 37px;
+ //        height: 25px;
+	// 	border: none;
+ //    }
+ //    .top-compare-block:hover .header-compare-link i{
+ //        background: url("images/svg/Scale-active.svg") no-repeat left center;
+	// 	border: none;
+ //    }
+ //    .header-price-link i{
+ //    background: url("images/svg/Money-menu-default.svg") no-repeat left center;
+ //        margin: 0 0 0 7px;
+ //        width: 37px;
+ //        height: 33px;
+	// 	border: none;
 
-    }
-    .top-price-block:hover .header-price-link i{
-        background: url("images/svg/Money-menu-active.svg") no-repeat left center;
-		border: none;
+ //    }
+ //    .top-price-block:hover .header-price-link i{
+ //        background: url("images/svg/Money-menu-active.svg") no-repeat left center;
+	// 	border: none;
 
-    }
-    .header-waiting-link i{
-    //  #   background: url("images/ui-icon-waiting.png") no-repeat left center;
-        margin: 0 0 5px 10px;
-        width: 37px;
-        height: 23px;
-		border: none;
-    }
-    .top-waiting-block:hover .header-waiting-link i{
-        background: url("images/ui-icon-waiting-hover.png") no-repeat left center;
-		border: none;
-    }
-    .cart-link-wrap {
-        display: none;
-    }
-	.top-cart-block{
-		    margin-left: 30px;
-	}
+ //    }
+ //    .header-waiting-link i{
+ //    //  #   background: url("images/ui-icon-waiting.png") no-repeat left center;
+ //        margin: 0 0 5px 10px;
+ //        width: 37px;
+ //        height: 23px;
+	// 	border: none;
+ //    }
+ //    .top-waiting-block:hover .header-waiting-link i{
+ //        background: url("images/ui-icon-waiting-hover.png") no-repeat left center;
+	// 	border: none;
+ //    }
+ //    .cart-link-wrap {
+ //        display: none;
+ //    }
+	// .top-cart-block{
+	// 	    margin-left: 30px;
+	// }
     // .header-cart-link i {
     //     background: url("images/svg/Cart-menu.svg") no-repeat;
     //     width: 34px;
@@ -513,107 +514,107 @@
 // ********************************************
 // *        Главная страница сайта            *
 // ********************************************
-    .home-page .front-left{
-        display: none;
-    }
-    .mobile-menu{
-        // display: block;
-        // position: static;
+    // .home-page .front-left{
+    //     display: none;
+    // }
+    // .mobile-menu{
+    //     // display: block;
+    //     // position: static;
 
-    }
+    // }
 
-    .mobile-menu .main-catalog-link-mobile{
-        // float: left;
-        // display: block;
-        // color: #fff;
-        // font-size: 16px;
-        // font-weight: 600;
-        // margin-right: 10px;
-        // background: #4B80BB url("images/ui-icon-arrow-menu-down.png") no-repeat 94% center;
-        // padding: 6px 30px 6px 12px;
-        // border-radius: 3px;
-    }
-    .home-page .front-middle .front-right{
-        width: 100%;
-    }
-    .brand-categories{
-        width: 200px;
-    }
-    .brand-active {
-        background: url(images/ui-icon-brand-active.png) -70px 0 no-repeat;
-    }
-    // вы смотрели + в корзине
-    .how-many-items .items-in-cart span{
-        margin-top: -60px;
-    }
-    .poly-items__item .product-wishlist-block{
-        width: 40%;
-        float: right;
-    }
-    .poly-items__item .product-wishlist-block a > div{
-        display: none;
-    }
-    .poly-items__item .product-wishlist-block .top-wishlist-link{
-        padding: 11px 0;
-    }
-    .poly-items__item .product-wishlist-block{
-        width: 30%;
-    }
-    .home-page .product-add-basket{
-        padding: 0;
-        width: 70%;
-    }
+    // .mobile-menu .main-catalog-link-mobile{
+    //     // float: left;
+    //     // display: block;
+    //     // color: #fff;
+    //     // font-size: 16px;
+    //     // font-weight: 600;
+    //     // margin-right: 10px;
+    //     // background: #4B80BB url("images/ui-icon-arrow-menu-down.png") no-repeat 94% center;
+    //     // padding: 6px 30px 6px 12px;
+    //     // border-radius: 3px;
+    // }
+    // .home-page .front-middle .front-right{
+    //     width: 100%;
+    // }
+    // .brand-categories{
+    //     width: 200px;
+    // }
+    // .brand-active {
+    //     background: url(images/ui-icon-brand-active.png) -70px 0 no-repeat;
+    // }
+    // // вы смотрели + в корзине
+    // .how-many-items .items-in-cart span{
+    //     margin-top: -60px;
+    // }
+    // .poly-items__item .product-wishlist-block{
+    //     width: 40%;
+    //     float: right;
+    // }
+    // .poly-items__item .product-wishlist-block a > div{
+    //     display: none;
+    // }
+    // .poly-items__item .product-wishlist-block .top-wishlist-link{
+    //     padding: 11px 0;
+    // }
+    // .poly-items__item .product-wishlist-block{
+    //     width: 30%;
+    // }
+    // .home-page .product-add-basket{
+    //     padding: 0;
+    //     width: 70%;
+    // }
 
-    .home-page .brands-container__content{
-        width: 500px;
-    }
-    .home-page  .brand-list div.brand-item{
-        width: 160px;
-        padding: 6px 0;
-    }
+    // .home-page .brands-container__content{
+    //     width: 500px;
+    // }
+    // .home-page  .brand-list div.brand-item{
+    //     width: 160px;
+    //     padding: 6px 0;
+    // }
 
-    .poly-items__item .butt2{
-        padding: 7px 12px;
-    }
+    // .poly-items__item .butt2{
+    //     padding: 7px 12px;
+    // }
 
 
-    // news and groups
-    .news-content{
-        width: 100%;
-    }
-    .front-follow{
-        float: none;
-        width: 100%;
-        text-align: center;
-    }
-    .news-and-socials .front-follow__title,
-    .news-and-socials .socials-container{
-        display: none !important;
-    }
-    .news_item__img-wrap{
-        width: 290px;
-    }
+    // // news and groups
+    // .news-content{
+    //     width: 100%;
+    // }
+    // .front-follow{
+    //     float: none;
+    //     width: 100%;
+    //     text-align: center;
+    // }
+    // .news-and-socials .front-follow__title,
+    // .news-and-socials .socials-container{
+    //     display: none !important;
+    // }
+    // .news_item__img-wrap{
+    //     width: 290px;
+    // }
 
-    .footer__socials > li{
-        margin: 0 12px 4px 0;
-    }
-    .footer__socials > li:last-child{
-        margin-right: 0;
-    }
+    // .footer__socials > li{
+    //     margin: 0 12px 4px 0;
+    // }
+    // .footer__socials > li:last-child{
+    //     margin-right: 0;
+    // }
 
-    .front-menu-list li{
-        width: 22%;
-        vertical-align: top;
-    }
-    .category-top-items-wrap .category-top-items-block{
-        width: 49%;
-    }
-    .category-top-items-block div.poly-items{
+    // .front-menu-list li{
+    //     width: 22%;
+    //     vertical-align: top;
+    // }
+    // .category-top-items-wrap .category-top-items-block{
+    //     width: 49%;
+    // }
+    // .category-top-items-block div.poly-items{
 
-    }
-    .poly-items__inner__inner-category{
-        padding-bottom: 10px;
-    }
+    // }
+    // .poly-items__inner__inner-category{
+    //     padding-bottom: 10px;
+    // }
 
 
 
@@ -952,25 +953,25 @@
 //***********************
 // *   Стили ФУТЕРА     *
 //***********************
-    #footer{
-        padding: 40px 20px 20px;
-    }
-    #footer .info-menu{
-        padding: 0;
-    }
-    .footer-links{
-        width: 100%;
-    }
-    .footer-items,
-    .footer-info,
-    .information{
-        width: 250px;
-    }
-    .footer__contacts{
-        float: left;
-        margin: 15px 0 10px 0;
-        width: 250px;
-    }
+    // #footer{
+    //     padding: 40px 20px 20px;
+    // }
+    // #footer .info-menu{
+    //     padding: 0;
+    // }
+    // .footer-links{
+    //     width: 100%;
+    // }
+    // .footer-items,
+    // .footer-info,
+    // .information{
+    //     width: 250px;
+    // }
+    // .footer__contacts{
+    //     float: left;
+    //     margin: 15px 0 10px 0;
+    //     width: 250px;
+    // }
     // ====================
     // Конец стилей футера mw: 992px
     // ====================

@@ -23,72 +23,72 @@
 // ***********************
 // *   Стили шапки      *
 // ***********************
-		.toppest-menu {
-				clear: both;
-				margin: 0;
-				position: absolute;
-				top: 15px;
-				right: 0;
-		}
-		.toppest-menu li b {
-				display: block;
-		}
-		.toppest-menu li {
-				margin-right: -31px;
-		}
-		.top-menu-left-text{
-				display: none;
-		}
+	// 	.toppest-menu {
+	// 			clear: both;
+	// 			margin: 0;
+	// 			position: absolute;
+	// 			top: 15px;
+	// 			right: 0;
+	// 	}
+	// 	.toppest-menu li b {
+	// 			display: block;
+	// 	}
+	// 	.toppest-menu li {
+	// 			margin-right: -31px;
+	// 	}
+	// 	.top-menu-left-text{
+	// 			display: none;
+	// 	}
 
 
 
-		.search-block {
-				display: none;
-		}
+	// 	.search-block {
+	// 			display: none;
+	// 	}
 
-		.search .search__q-input {
-		width: 140px;
-		min-width: 140px;
-		padding: 13px 0px 0px 0px;
-	}
-		#search {
-				width: 190px;
-		}
-		.about_t{
-				display: none;
-		}
-		#pull-search {
-			 display: block;
-	 }
-	 .login-text_sm {
-			 display: none;
-	}
+	// 	.search .search__q-input {
+	// 	width: 140px;
+	// 	min-width: 140px;
+	// 	padding: 13px 0px 0px 0px;
+	// }
+	// 	#search {
+	// 			width: 190px;
+	// 	}
+	// 	.about_t{
+	// 			display: none;
+	// 	}
+	// 	#pull-search {
+	// 		 display: block;
+	//  }
+	//  .login-text_sm {
+	// 		 display: none;
+	// }
 
-	 .contacts_t{
-			 display: none;
-	}
-	 .head_color {
-			 margin: -114px 0 12px;
-	}
-	 .header__middle{
-			 width:initial;
-	}
-		// end of header styles
+	//  .contacts_t{
+	// 		 display: none;
+	// }
+	//  .head_color {
+	// 		 margin: -114px 0 12px;
+	// }
+	//  .header__middle{
+	// 		 width:initial;
+	// }
+	// 	// end of header styles
 
-		.catalog-content, #catalog-container{
-				padding-bottom: 0;
-		}
-		.content-tabs-catalog{
-				display: none;
-		}
-		.front-bottom-wrap{
-				padding-top: 10px;
-				border-top: 1px solid #d6dbdf;
-		}
+	// 	.catalog-content, #catalog-container{
+	// 			padding-bottom: 0;
+	// 	}
+	// 	.content-tabs-catalog{
+	// 			display: none;
+	// 	}
+	// 	.front-bottom-wrap{
+	// 			padding-top: 10px;
+	// 			border-top: 1px solid #d6dbdf;
+	// 	}
 
-	 .description__bottom__right{
-			 right: 0;
-	}
+	//  .description__bottom__right{
+	// 		 right: 0;
+	// }
 
 	 // =======================================
 	 // Конец стилей шапки mw: 767px
@@ -104,41 +104,41 @@
 // ********************************************
 // *        Главная страница сайта            *
 // ********************************************
-		.home-page .brands-container__content{
-				width: 318px;
-		}
-		.home-page .brand-list div.brand-item{
-				width: 155px;
-		}
-		.news-list{
-				padding: 0;
-		}
-		.news-post{
-				width: 55%;
-		}
-		.news_item__img-wrap{
-				width: 45%;
-		}
+		// .home-page .brands-container__content{
+		// 		width: 318px;
+		// }
+		// .home-page .brand-list div.brand-item{
+		// 		width: 155px;
+		// }
+		// .news-list{
+		// 		padding: 0;
+		// }
+		// .news-post{
+		// 		width: 55%;
+		// }
+		// .news_item__img-wrap{
+		// 		width: 45%;
+		// }
 
-		div.items-text-detail {
-				display: none;
-		}
-		.news-main{
-				background: none;
-				padding: 0 25px;
-		}
-		// вы смотрели + в корзине
+		// div.items-text-detail {
+		// 		display: none;
+		// }
+		// .news-main{
+		// 		background: none;
+		// 		padding: 0 25px;
+		// }
+		// // вы смотрели + в корзине
 
-		.items-in-cart {
-				width: 63%;
-		}
-		.poly-items__item .product-wishlist-block {
-				width: 23%;
-		}
-		.home-page .product-add-basket{
-				padding: 0;
-				width: 77%;
-		}
+		// .items-in-cart {
+		// 		width: 63%;
+		// }
+		// .poly-items__item .product-wishlist-block {
+		// 		width: 23%;
+		// }
+		// .home-page .product-add-basket{
+		// 		padding: 0;
+		// 		width: 77%;
+		// }
 		// .mobile-menu{
 		// 	display: block;
 		// 	position: static;
@@ -363,27 +363,27 @@
 		// ****************************
 		// *      Стили ФУТЕРА        *
 		// ****************************
-		.footer-items,
-		.footer-info{
-				width: 35%;
-				margin: 0;
-		}
-		.information{
-				width: 30%;
-		}
-	 .footer__contacts{
-			 float: left;
-			 margin-left: 0;
-			 width: 35%;
-	 }
-	 #footer {
-			 padding: 10px;
-	 }
+		// .footer-items,
+		// .footer-info{
+		// 		width: 35%;
+		// 		margin: 0;
+		// }
+		// .information{
+		// 		width: 30%;
+		// }
+	 // .footer__contacts{
+		// 	 float: left;
+		// 	 margin-left: 0;
+		// 	 width: 35%;
+	 // }
+	 // #footer {
+		// 	 padding: 10px;
+	 // }
 
-	 .footer-catalog,
-	 .footer-menu {
-			 width: 48%;
-	 }
+	 // .footer-catalog,
+	 // .footer-menu {
+		// 	 width: 48%;
+	 // }
 
 }
 

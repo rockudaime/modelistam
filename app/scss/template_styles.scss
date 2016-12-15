@@ -3,7 +3,7 @@
 @import 'base/base';
 @import 'layout/forms';
 @import 'layout/header';
-@import 'layout/middle';
+// @import 'layout/middle';
 @import 'layout/footer';
 // @import "w1000px";
 // @import "w799px";
@@ -11,7 +11,7 @@
 // @import "responsive_tabs";
 @import 'vendor/owl-carousel';
 // Начало страниц
-@import 'pages/home-page';
+@import 'pages/home';
 @import 'pages/cart';
 @import 'pages/cart-thanks';
 @import 'pages/profile';

@@ -13,6 +13,7 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 		script(src="dist/js/pages/category.js")
+		//- script(src="dist/js/components/pageSlider.js")
 	body
 		.page-inner
 			h1.category-pagetitle Катера. 
@@ -59,8 +60,9 @@ html(lang="ru")
 								.product-price--current 13 600
 									span.product-price__text--small  грн
 								a.page-slide__btn(href="#") Посмотреть модель
-					// Кнопки перехода по слайдам. Порядок кнопок должен соответствовать порядку слайдов.
+					
 					.owl-controls.page-slider__controls
+						// Кнопки перехода по слайдам. Порядок кнопок должен соответствовать порядку слайдов.
 						.owl-dots#customDots
 							.custom-dot(title="Электрокатера") Электрокатера
 							.custom-dot(title="Подводные лодки") Подводные лодки
@@ -68,10 +70,6 @@ html(lang="ru")
 							.custom-dot(title="Катера с электродвигателем") Катера с электродвигателем
 							.custom-dot(title="Лодки с бензиновым двигателем") Лодки с бензиновым двигателем
 							.custom-dot(title="Модели яхт") Модели яхт
-						.page-slider__more-btn
-							i
-							i
-							i
 				section.category-content__categories.clearfix
 					-for(x=0; x<5; x++)
 						.categories-pitem
@@ -96,7 +94,7 @@ html(lang="ru")
 					.categories-pitem
 							.categories-pitem__inner
 								.categories-pitem__img
-									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+									img(src="dist/images/temporary/category/component12.jpg", alt="some image")
 								.categories-pitem__inner-content
 									h2.categories-pitem__heading 
 										a(href="#") Подводные лодки
@@ -112,7 +110,7 @@ html(lang="ru")
 					.categories-pitem
 							.categories-pitem__inner
 								.categories-pitem__img
-									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+									img(src="dist/images/temporary/category/component13.jpg", alt="some image")
 								.categories-pitem__inner-content
 									h2.categories-pitem__heading
 										a(href="#") Катера для рыбалки
@@ -128,7 +126,7 @@ html(lang="ru")
 					.categories-pitem
 							.categories-pitem__inner
 								.categories-pitem__img
-									img(src="dist/images/temporary/category/component15.jpg", alt="some image")
+									img(src="dist/images/temporary/category/component14.jpg", alt="some image")
 								.categories-pitem__inner-content
 									h2.categories-pitem__heading
 										a(href="#") Модели яхт
@@ -150,6 +148,8 @@ html(lang="ru")
 								.product-preview-item__content
 									.product-preview-item__product-status
 										span.product-status.product-status--new Новинка
+										span.category-product__product-comments
+											a(href="#") 16
 										span(class="product-info__code") Код:&nbsp;HSP-94107Pro
 									h3.product-preview-item__heading
 										a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
@@ -170,6 +170,8 @@ html(lang="ru")
 								.product-preview-item__content
 									.product-preview-item__product-status
 										span.product-status.product-status--new Новинка
+										span.category-product__product-comments
+											a(href="#") 16
 										span.product-status.product-status--discount -10%
 										
 									h3.product-preview-item__heading
@@ -212,6 +214,9 @@ html(lang="ru")
 										img(src="dist/images/sample-airplane.jpg", alt="image")
 								.product-preview-item__content
 									.product-preview-item__product-status
+										span.category-product__product-comments
+											a(href="#") 16
+										span(class="product-info__code") Код:&nbsp;HSP-94107Pro
 										
 									h3.product-preview-item__heading
 										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black

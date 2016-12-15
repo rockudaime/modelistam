@@ -37,7 +37,7 @@ gulp.task('sass', function () {
 // HTML processing
 // ***********************
 gulp.task('pug', function() {
-    return gulp.src('app/pug/category.pug') //('app/jade/**/*.jade')
+    return gulp.src('app/pug/home.pug') //('app/jade/**/*.jade')
         .pipe(pug({
             pretty: true
             })) 
@@ -47,12 +47,12 @@ gulp.task('pug', function() {
 // JavaScript processing
 // ***********************
 gulp.task('scripts', function() {
-    gulp.src('app/js/pages/*.js')
+    gulp.src('app/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     // .pipe(concat('all.js'))
     // .pipe(uglify())
-    .pipe(gulp.dest('dist/js/pages'))
+    .pipe(gulp.dest('dist/js/'))
 });
 // ***********************
 // Images processing
@@ -69,7 +69,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'category.html'
+            index: 'home.html'
         },
     reloadDelay: 300
 
@@ -79,7 +79,7 @@ gulp.task('browsersync', function(cb) {
 
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
-    gulp.watch('app/pug/category.pug', ['pug', browsersync.reload]);
+    gulp.watch('app/pug/home.pug', ['pug', browsersync.reload]);
     gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
     // gulp.watch('app/img/*', ['images', browsersync.reload]);
 });

@@ -1,10 +1,10 @@
-input:required {
+.required:required {
     background-image: url(images/icon-asterix.png);
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
 }
 
-input:required:valid {
+.required:required:valid {
     padding: 12px 15px;
 
     border: 1px solid #659812;
@@ -38,25 +38,7 @@ label {
 
     margin-bottom: 8px;
 }
-input.form-control {
-    font-family: OpenSans, sans-serif;
-    font-size: 1em;
-    line-height: 42px;
-
-    display: block;
-
-    box-sizing: border-box;
-    width: 100%;
-    height: 42px;
-    padding: 1px 15px;
-
-    letter-spacing: 0;
-
-    color: #000;
-    border: 1px solid #787878;
-    border-radius: 4px;
-    background-color: #fff;
-}
+input.form-control,
 textarea.form-control {
     font-family: OpenSans, sans-serif;
     font-size: 1em;
@@ -65,14 +47,24 @@ textarea.form-control {
 
     box-sizing: border-box;
     width: 100%;
-    max-width: 100%;
-    max-height: 100px;
-    padding: 12px 15px;
 
     color: #000;
     border: 1px solid #787878;
     border-radius: 4px;
     background-color: #fff;
+}
+input.form-control {
+    line-height: 42px;
+
+    height: 42px;
+    padding: 1px 15px;
+
+    letter-spacing: 0;
+}
+textarea.form-control {
+    max-width: 100%;
+    max-height: 100px;
+    padding: 12px 15px;
 }
 .form-control:focus,
 .form-control:hover {
@@ -122,18 +114,20 @@ textarea.form-control {
 
     display: inline-block;
 
-    padding-left: 30px;
     margin-bottom: 0;
+    padding-left: 30px;
 
     cursor: pointer;
 }
 
 .custom-radio__tab-label {
-	display: block;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	margin: 0;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    cursor: pointer;
 }
 
 .custom-radio__circle {
@@ -164,12 +158,12 @@ textarea.form-control {
     box-sizing: border-box;
     width: 20px;
     height: 20px;
-
     margin-top: -10px;
+
+    vertical-align: center;
 
     border: 1px solid #7a7a7a;
     border-radius: 50%;
-    vertical-align: center;
 }
 .custom-radio__circle-inner {
     display: none;
@@ -187,7 +181,7 @@ textarea.form-control {
     display: inline-block;
 }
 .custom-radio__input:checked + .custom-radio__label-b .custom-radio__circle-b {
-	border: 5px solid #659913;
+    border: 5px solid #659913;
 }
 .custom-radio__toggled-content {
     display: none;
