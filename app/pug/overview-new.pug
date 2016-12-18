@@ -1,0 +1,390 @@
+doctype html
+html
+	head
+		title Overview new
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+	body.overview-page
+		header.main-header
+			.header-top-info
+				.container
+					a(name="top")
+					a.header-logo(href="#", title="Planeta Hobby")
+						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+					.header-phone
+						span.header-phone__number 0 800 218-817 
+						span.header-phone__description  Бесплатно по Украине
+						a(href="#").header-phone__callback.callback-link перезвонить мне
+					.header-nav
+						ul.for-customer
+							li.for-customer__btn 
+								span Покупателю
+								ul.for-customer__menu
+									li
+										a(href="#") Акции
+									li
+										a(href="#") Скидки
+									li
+										a(href="#") Дисконтная программа
+						ul.header-nav-links
+							li.header-nav-links__item
+								a(href="#") Дисконтная программа
+							li.header-nav-links__item
+								a(href="#") Доставка и оплата
+							li.header-nav-links__item
+								a(href="#") Контакты
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Гарантия
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Сервисный центр
+
+					
+					// Корзина, видна только в мобильном виде до 768 пикселей
+					a(href="#").mobile-cart-link
+						span.header-link-indicator.mobile-cart-link__indicator 12
+					a(href="#", title="Войти в личный кабинет").header-profile-link
+						span Войти в личный кабинет
+					
+			.header-stripe
+				.container
+					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
+					button.header-menu-link.header-menu-link--active
+						i.header-menu-link__icon
+						| меню
+					// Поиск
+					form.header-search
+						.container
+							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
+							input.header-search__submit(type="submit", value="")
+					// персональные ссылки
+					.header-personal.clearfix
+						.header-personal__links
+							a.header-personal__item.active(href="#")
+								i.header-personal__icon.header-personal__icon--wishlist
+									span.header-link-indicator.header-personal__indicator 3
+								| Желания
+							a.header-personal__item(href="#")
+								i.header-personal__icon.header-personal__icon--compare
+									span.header-link-indicator.header-personal__indicator 0
+								| Сравнение
+							a.header-personal__item(href="#")
+								i.header-personal__icon.header-personal__icon--watch-price
+									span.header-link-indicator.header-personal__indicator 0
+								| Цены
+							a.header-personal__item.active(href="#")
+								i.header-personal__icon.header-personal__icon--waiting
+									span.header-link-indicator.header-personal__indicator 12
+								| Ожидание
+						.header-personal__popups
+							// Попап Ожидания
+							.header-popup.header-popup-waiting.active
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--waiting
+									.header-popup__text
+										h2.header-popup__title Список ожиданий
+										p Здесь собраны ожидаемые Вами товары
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы проверить ожидаемые товары, 
+										a(href="#")  авторизуйтесь
+							// Попап Желания
+							.header-popup.header-popup-wishlist
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--wishlist
+									.header-popup__text
+										h2.header-popup__title Список желаний
+										p Запомните товар, который вам понравился, добавив его в список желаний.
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы добавить товар в список желаний, 
+										a(href="#")  авторизуйтесь
+
+							// Попап Сравнение
+							.header-popup.header-popup-compare
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--compare
+									.header-popup__text
+										h2.header-popup__title Сравнение товаров
+										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы сравнить товар добавленный ранее, 
+										a(href="#")  авторизуйтесь
+
+							// Попап Цены
+							.header-popup.header-popup-watch-price
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--watch-price
+									.header-popup__text
+										h2.header-popup__title Следить за ценой
+										p Следить за ценой понравившегося товара очень просто
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Если у вас уже есть отслеживаемые товары, 
+										a(href="#")  авторизуйтесь
+
+					// Иконка для раскрытия формы поиска в мобильном виде
+					span.mobile-search-link
+					// Корзина
+					a(href="#").header-cart
+						span.header-link-indicator.header-cart__indicator 10
+						span.header-cart__total 142 458
+							i.header-cart__total--text-smaller  грн
+		// Конец шапки сайта
+
+		.popup-outer
+			section.popup-b.popup-login
+				header
+					h2.popup-login__title Вход
+					a(href="#").popup-login__reg-link Регистрация
+				form(action="/", method="POST", name="login").login-form
+					
+					label(for="email").login-form__label E-mail
+					input(type="email", required).login-form__input.form-control
+					
+					label(for="email").login-form__label Пароль
+					input(type="password", required).login-form__input.form-control
+
+					.form-group
+						input(type="checkbox", id="forgotPassword").custom-checkbox
+						label(for="forgotPassword").custom-checkbox__label.login-form__label
+							span.custom-checkbox__box.login-form__checkbox-box 
+							|  Запомнить меня
+					.form-group
+						input(type="submit", value="Войти").btn.login-form__btn
+						a(href="#").login-form__reminder-link Забыли пароль?
+				.social-login
+					h2.social-login__title Вход через социальные сети
+					ul.social-login__links.clearfix
+						li.social-login__link.social-login__link--fb
+							a(href="#")
+						li.social-login__link.social-login__link--vk
+							a(href="#")
+						li.social-login__link.social-login__link--gp
+							a(href="#")
+
+				a.popup-b__close(href="#")
+
+		.container
+			h1 Обзоры 
+			//- Блок с тегами и основным видео
+			main.ovp-main-content
+				section.ovp-head-block.clearfix
+					ul.ov-cat
+						-for(var x=0; x<5; x++)
+							li
+								a(href="#") Category name
+					.ovp-main-model.clearfix
+						.ovp-main-model__img
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-small-2.jpg", alt="some image")
+						a.video-after(href="#") Выходит на охоту Sony 600TVL Super HAD board camera for FPV
+					.ov-tags
+						ul
+							li теги
+							-for(var x=0; x<6; x++)
+								li
+									a(href="#") Some tag
+				//- Блок с превью к обзорам
+				section.ovp-contents
+					-for (var x=0; x<2;x++)
+						.ov-similar-item.clearfix
+							.ov-similar-item__img
+								a(href="#")
+									img(src="dist/images/temporary/avto.jpeg")
+							span.item-new-overview Новинка
+							span.item-anouncement-overview Анонс
+							h3
+								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+							.ov-similar-item__preview-text
+								p.
+									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+				// Блок со связанными товарами - related products
+				section.overview-comparison.ovp-oc
+					h3.overview-comparison__heading.ovp-oc__heading Обзор-сравнение лучших ралли
+					
+					
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/temporary/avto.jpeg")
+								span.product-compared-place 1
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.product-new Новинка
+							h3.o-compared-item__heading
+								a(href="#" title="Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__current-price 1255 грн
+						
+							.o-compared-item__buy 
+								a.o-buy-btn.u-incart-btn(href="#") В корзине
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#")
+										span.o-wishlist__text В избранное
+
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 2
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.product-top Топ продаж
+							h3.o-compared-item__heading
+								a(href="#" title="Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205") Планер Nine Eagles Sky Climber 3G Autopilot RTF, 2008 мм NE250205
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link(href="#") 
+										span.o-wishlist__text В избранное
+
+					.o-compared-item.clearfix
+						.o-compared-item__photo
+							a(href="#")
+								img(src="dist/images/sample-airplane.jpg")
+								span.product-compared-place 3
+						.o-compared-item__content
+							.o-compared-item__product-status
+								span.o-compared-item__product-discount -20%
+							h3.o-compared-item__heading
+								a(href="#" title="Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz) (TW-757987)") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz) (TW-757987)
+							.o-compared-item__price
+								div.o-compared-item__new-price 1255 грн
+								span.o-compared-item__old-price
+									del 1322 грн
+								
+							.o-compared-item__buy 
+								a.o-buy-btn(href="#") Купить
+								.o-compared-item__wishlist
+									a.o-wishlist-link.o-wished(href="#")
+										span.o-wishlist__text В избранном
+
+					//.get-to-know
+					footer.overview-comparison__footer
+						a.o-read-overview-btn(title="Нажми, чтобы увидеть новый обзор " href="#") Ознакомиться с обзором
+
+				//- Блок с превью к обзорам
+				section.ovp-contents
+					-for (var x=0; x<4;x++)
+						.ov-similar-item.clearfix
+							.ov-similar-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-small-2.jpg" alt="Some img")
+							span.item-new-overview Новинка
+							span.item-anouncement-overview Анонс
+							h3
+								a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+							.ov-similar-item__preview-text
+								p.
+									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+				section.o-signup
+					h2.o-signup__heading Я хочу быть в курсе последних событий по моделям
+					.o-signup__content
+						p.o-signup__description
+							| Наше хобби - модели.<br>
+							| Мы постоянно интересуемся...
+						form.o-signup-form(name="signup" action="/")
+							input.form-control.o-signup-form__input(type="email" required placeholder="Эл. почта" pattern=".*@.*[.][a-z]+")
+							input.o-signup-form__submit(type="submit" value="Следить за рассылками")
+						p.o-signup-legend 1 раз в неделю. Отписаться можно в любое время
+
+				section.nav-elems
+					span.pager__inner-elem.pager__inner-elem--current.strong(data-nav="1") 1
+					-for (var x=2; x<5; x++)
+						span.pager__inner-elem(data-nav=x)
+							a(href="#")=x
+					span &nbsp;→&nbsp;
+					span.pager__inner-elem(data-nav="55")
+						a(href="#") 55
+					span.pager__inner-elem
+						a.next-navigation(href="#") Следующая
+							i
+			// Начало сайдбара
+			aside.ovp-aside
+				// Блок с видео-обзорами
+				section.ov-aside-content.clearfix
+					h2.ov-video-heading.video 
+						a(href="#") Видео Планета Хобби
+					-for (var x=0; x<2; x++)
+						.ov-video-item
+							.ovp-video-item__img
+								a(href="#")
+									img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
+							a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+					.ov-video-item
+						.ovp-video-item__img
+							a(href="#")
+								img(src="dist/images/temporary/avto.jpeg" alt="some image")
+						a(href="#") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+					.ov-video-item
+						.ovp-video-item__img
+							a(href="#")
+								img(src="dist/images/temporary/overview-banner-video.jpg" alt="some image")
+						a(href="#" title="Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV") Обзор квадрокоптера Nine Eagles Galaxy Visitor 6 FPV квадрокоптера Nine Eagles Galaxy Visitor 6 FPV
+
+				// Блок события
+				section.ov-aside-content.clearfix.u-noborder
+					h2.ov-events-heading 
+						a(href="#") События
+					ul.ov-events
+						-for (var x=0; x<5; x++)
+							li
+								a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+			// Конец сайдбара
+
+			// Блок нам есть что рассказать
+			section.ov-more-articles.ovp-more-articles
+				h2.ov-more-articles__heading
+					a(href="#") Нам есть что еще рассказать
+				ul.o-more
+					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
+						li.o-more__category
+							a.o-more__category-link.o-more__link(href="#")=value 
+							ul.o-more__items
+								li.o-more__item
+									a.o-more__link(href="#") some article 1
+								li.o-more__item
+									a.o-more__link(href="#") some article 2
+								li.o-more__item
+									a.o-more__link(href="#") some article 3
+								li.o-more__item
+									a.o-more__link(href="#") some article 4
+								li.o-more__item
+									a.o-more__link(href="#") some article 5
+
+
+
+	script(src="dist/js/pages/overview.js")
+	//- script.
+	//- 		$(document).ready(function() {
+	//- 			var el = document.querySelectorAll('.o-compared-item__heading a');
+	//- 			function ellipsis(obj, len) {
+	//- 				var text = obj.innerHTML;
+	//- 				if (text.length > len) {
+	//- 					text = text.slice(0, len - 3) + '&hellip;'; 
+	//- 					obj.innerHTML = text;
+	//- 				}
+	//- 			}
+				
+	//- 			for (var i = 0; i < el.length; i++){
+	//- 				ellipsis(el[i], 65);
+	//- 			}
+			
+			
+	//- 		});

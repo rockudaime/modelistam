@@ -11,7 +11,9 @@
     background-image: url(images/ui-icon-avail-yes.png);
     background-position: right 10px top 50%;
 }
-
+.required:required:invalid {
+    border-color: #c03911;
+}
 ::-webkit-input-placeholder {
     color: #777;
 }
@@ -66,6 +68,11 @@ textarea.form-control {
     max-height: 100px;
     padding: 12px 15px;
 }
+
+input.invalid {
+    border-color: #c03911;
+}
+
 .form-control:focus,
 .form-control:hover {
     padding: 0 14px;
@@ -240,6 +247,9 @@ textarea.form-control {
 }
 .custom-checkbox:checked + .custom-checkbox__label > .custom-checkbox__box {
     background: #4b80bb url('images/personal-cabinet/icon-checked.png') no-repeat center center;;
+}
+.custom-checkbox:focus + .custom-checkbox__label > .custom-checkbox__box {
+    border-color: #4b80bb;
 }
 // .custom-checkbox:focus + .custom-checkbox__label > .custom-checkbox__box {
 //     border-color: #346cab;

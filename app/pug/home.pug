@@ -18,7 +18,9 @@ html(lang="ru")
 		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
 		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
 		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/home.js")
+
 	body
 		header.main-header
 			.header-top-info
@@ -57,7 +59,7 @@ html(lang="ru")
 					// Корзина, видна только в мобильном виде до 768 пикселей
 					a(href="#").mobile-cart-link
 						span.header-link-indicator.mobile-cart-link__indicator 12
-					a(href="#", title="Войти в личный кабинет").header-profile-link
+					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
 						span Войти в личный кабинет
 					
 			.header-stripe
@@ -72,27 +74,27 @@ html(lang="ru")
 							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
 							input.header-search__submit(type="submit", value="")
 					// персональные ссылки
-					.header-personal.clearfix
-						.header-personal__links
-							a.header-personal__item.active(href="#")
+					.header-personal
+						.header-personal__links.clearfix
+							a.header-personal__item.active(href="#", data-id="popupWishlist")
 								i.header-personal__icon.header-personal__icon--wishlist
 									span.header-link-indicator.header-personal__indicator 3
 								| Желания
-							a.header-personal__item(href="#")
+							a.header-personal__item(href="#", data-id="popupCompare")
 								i.header-personal__icon.header-personal__icon--compare
 									span.header-link-indicator.header-personal__indicator 0
 								| Сравнение
-							a.header-personal__item(href="#")
+							a.header-personal__item(href="#", data-id="popupWatchPrice")
 								i.header-personal__icon.header-personal__icon--watch-price
 									span.header-link-indicator.header-personal__indicator 0
 								| Цены
-							a.header-personal__item.active(href="#")
+							a.header-personal__item.active(href="#", data-id="popupWaiting")
 								i.header-personal__icon.header-personal__icon--waiting
 									span.header-link-indicator.header-personal__indicator 12
 								| Ожидание
 						.header-personal__popups
 							// Попап Ожидания
-							.header-popup.header-popup-waiting.active
+							.header-popup.header-popup-waiting#popupWaiting
 								.header-popup__main.clearfix
 									span.header-popup-icon.header-popup-icon--waiting
 									.header-popup__text
@@ -102,9 +104,9 @@ html(lang="ru")
 								// Блок, который виден незарегистрированному пользователю
 								.header-popup__unlogin
 									p Чтобы проверить ожидаемые товары, 
-										a(href="#")  авторизуйтесь
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 							// Попап Желания
-							.header-popup.header-popup-wishlist
+							.header-popup.header-popup-wishlist#popupWishlist
 								.header-popup__main.clearfix
 									span.header-popup-icon.header-popup-icon--wishlist
 									.header-popup__text
@@ -114,10 +116,10 @@ html(lang="ru")
 								// Блок, который виден незарегистрированному пользователю
 								.header-popup__unlogin
 									p Чтобы добавить товар в список желаний, 
-										a(href="#")  авторизуйтесь
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 
 							// Попап Сравнение
-							.header-popup.header-popup-compare
+							.header-popup.header-popup-compare#popupCompare
 								.header-popup__main.clearfix
 									span.header-popup-icon.header-popup-icon--compare
 									.header-popup__text
@@ -127,10 +129,10 @@ html(lang="ru")
 								// Блок, который виден незарегистрированному пользователю
 								.header-popup__unlogin
 									p Чтобы сравнить товар добавленный ранее, 
-										a(href="#")  авторизуйтесь
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 
 							// Попап Цены
-							.header-popup.header-popup-watch-price
+							.header-popup.header-popup-watch-price#popupWatchPrice
 								.header-popup__main.clearfix
 									span.header-popup-icon.header-popup-icon--watch-price
 									.header-popup__text
@@ -140,7 +142,7 @@ html(lang="ru")
 								// Блок, который виден незарегистрированному пользователю
 								.header-popup__unlogin
 									p Если у вас уже есть отслеживаемые товары, 
-										a(href="#")  авторизуйтесь
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 
 					// Иконка для раскрытия формы поиска в мобильном виде
 					span.mobile-search-link
@@ -149,10 +151,10 @@ html(lang="ru")
 						span.header-link-indicator.header-cart__indicator 10
 						span.header-cart__total 142 458
 							i.header-cart__total--text-smaller  грн
-
 		// Конец шапки сайта
+
 		.popup-outer
-			section.popup-b.popup-login
+			section.popup-b.popup-login#popupLogin
 				header
 					h2.popup-login__title Вход
 					a(href="#").popup-login__reg-link Регистрация
@@ -170,17 +172,18 @@ html(lang="ru")
 							span.custom-checkbox__box.login-form__checkbox-box 
 							|  Запомнить меня
 					.form-group
+						.login-form__invalid-data Неправильный логин или пароль
 						input(type="submit", value="Войти").btn.login-form__btn
 						a(href="#").login-form__reminder-link Забыли пароль?
 				.social-login
 					h2.social-login__title Вход через социальные сети
 					ul.social-login__links.clearfix
 						li.social-login__link.social-login__link--fb
-							a(href="#")
+							a(href="#", title="facebook")
 						li.social-login__link.social-login__link--vk
-							a(href="#")
+							a(href="#", title="vkontakte")
 						li.social-login__link.social-login__link--gp
-							a(href="#")
+							a(href="#", title="google plus")
 
 				a.popup-b__close(href="#")
 
@@ -223,7 +226,7 @@ html(lang="ru")
 							li.main-nav__link.main-nav__link-1l
 								a(href="#") Производители 
 									
-
+				// Слайдер				
 				.home-top-right
 					// Слайдер с баннерами
 					section.home-slider-container
@@ -264,6 +267,30 @@ html(lang="ru")
 									.product-price--current 13 600
 										span.product-price__text--small  грн
 									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 2 800
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 2 800
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 2 800
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
+							.page-slide
+								img.page-slide__image(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.page-slide__desc
+									.product-price--current 2 800
+										span.product-price__text--small  грн
+									a.page-slide__btn(href="#") Посмотреть модель
 						.home-slider__dots-wrapper
 							.home-slider__dots#customDots
 								.home-slider__custom-dot
@@ -280,6 +307,13 @@ html(lang="ru")
 									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
 								.home-slider__custom-dot
 									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+								.home-slider__custom-dot
+									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
+							//- .home-slider__more
 
 					// Ссылки на медиа контент сайта
 					.media-links.media-top-links
@@ -301,7 +335,6 @@ html(lang="ru")
 
 					// Блок с напоминанием о содержимом корзины
 					.incart-reminder
-						
 						span.incart-reminder__text
 							a(href="#") В корзине
 							|  12 товаров на
@@ -316,13 +349,386 @@ html(lang="ru")
 							h2.home-title.viewed-title Вы смотрели
 							a.viewed-delete-link
 								span очистить историю
-						.recent-goods-slider.slider
+						.clearfix.owl-carousel#owl-viewed-products.popular-products-block
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+										.product-preview-item__price
+											span.product-price--current 5 025 
+												span.product-price__text--small грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span.product-status.product-status--discount -10%
+											
+										h3.product-preview-item__heading
+											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+										.product-preview-item__price
+											span.product-price--new 2600 
+												span.product-price__text--small грн
+											span.product-price--old 2785 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--top Топ продаж
+											span.product-status.product-status--discount -10%
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+										.product-preview-item__price
+											span.product-price--new 896 
+												span.product-price__text--small грн
+											span.product-price--old 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
+						
+
 
 					section.new-goods
 						h2.home-title.new-goods-title Новинки
+						.clearfix.owl-carousel#owl-new-products.popular-products-block
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+										.product-preview-item__price
+											span.product-price--current 5 025 
+												span.product-price__text--small грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
 
-					section.popular-goods
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span.product-status.product-status--discount -10%
+											
+										h3.product-preview-item__heading
+											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+										.product-preview-item__price
+											span.product-price--new 2600 
+												span.product-price__text--small грн
+											span.product-price--old 2785 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--top Топ продаж
+											span.product-status.product-status--discount -10%
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+										.product-preview-item__price
+											span.product-price--new 896 
+												span.product-price__text--small грн
+											span.product-price--old 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
+					// Популярные товары
+					section.popular-goods.home-goods-slider
 						h2.home-title.popular-goods-title Популярные товары
+						.clearfix.owl-carousel#owl-popular-products.popular-products-block
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+										.product-preview-item__price
+											span.product-price--current 5 025 
+												span.product-price__text--small грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span.product-status.product-status--discount -10%
+											
+										h3.product-preview-item__heading
+											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+										.product-preview-item__price
+											span.product-price--new 2600 
+												span.product-price__text--small грн
+											span.product-price--old 2785 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--top Топ продаж
+											span.product-status.product-status--discount -10%
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+										.product-preview-item__price
+											span.product-price--new 896 
+												span.product-price__text--small грн
+											span.product-price--old 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link(href="#")
+													span.o-wishlist__text В избранное
+
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.product-preview-item__price
+											.product-price.product-price--current 1024 грн
+										.product-preview-item__buy
+											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
+											.product-preview-item__wishlist
+												a.o-wishlist-link.o-wished(href="#")
+													span.o-wishlist__text В избранном
 					// Миниатюры категорий
 					section.home-catalog.clearfix
 						.home-catalog-item
@@ -391,8 +797,8 @@ html(lang="ru")
 						h2.home-title.top-brands__title Топ по брендам
 
 						.top-brands__inner.clearfix
-							.top-brands__mob-menu-select ТОП 10
-							ul.top-brands-menu
+							.top-brands__mob-menu-select.mobile-custom-select ТОП 10
+							ul.top-brands-menu.mobile-custom-options
 								li.top-brands-menu__item.active(tabindex="0", data-id="top10")
 									span ТОП 10
 								li.top-brands-menu__item(tabindex="0", data-id="topavia")
@@ -404,6 +810,7 @@ html(lang="ru")
 								li.top-brands-menu__item(tabindex="0", data-id="topparts")
 									span Комплектующие
 							.top-brands-content
+								// класс .active у видимого блока
 								.top-brands-content__item.active#top10
 									a(href="#").top-brands-content__link TOP 10
 									a(href="#").top-brands-content__link Brio
@@ -463,36 +870,70 @@ html(lang="ru")
 					// Медиа и соц.сети
 					section.home-media-social.clearfix
 						.media-content
-							.media-links.media-content__tabs-menu
-								a.media-link.media-content__tab-link.active(href="#", data-id="reviews")
+							.mobile-custom-select
+								a.media-link.media-content__link.active(href="#", title="Посмотреть все обзоры")
 									i.media-review-icon.media-icon
 									span Обзоры
-								a.media-link.media-content__tab-link(href="#")
+							.media-links.media-content__links.mobile-custom-options
+								// у активной ссылки есть класс active
+								a.media-link.media-content__link.active(href="#", title="Посмотреть все обзоры")
+									i.media-review-icon.media-icon
+									span Обзоры
+								a.media-link.media-content__link(href="#", title="Посмотреть все статьи")
 									i.media-article-icon.media-icon
 									span Статьи
-								a.media-link.media-content__tab-link(href="#")
+								a.media-link.media-content__link(href="#", title="Посмотреть все новости")
 									i.media-news-icon.media-icon
 									span Новости
-								a.media-link.media-content__tab-link(href="#")
+								a.media-link.media-content__link(href="#", title="Посмотреть все события")
 									i.media-events-icon.media-icon
 									span События
-								a.media-link.media-content__tab-link(href="#")
+								a.media-link.media-content__link(href="#", title="Посмотреть все видео")
 									i.media-video-icon.media-icon
 									span Видео
 
-							.media-tabs
-								.media-tab#reviews
-									p.
-										Hitec северокорейс   кая компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+							.media-content__content.clearfix
+								.overview-preview.overview-perview-home
+									.overview-preview__img
+										a(href="#")
+											img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
+									.overview-preview__content
+										.overview-preview__status
+											span.overview-status.overview-status--announce Анонс
+
+										h2.overview-preview__title
+											a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C моделей
+										.overview-preview__excerpt
+											//- excerpt - отрывок.
+											p.
+												Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
+								.overview-preview.overview-perview-home
+									.overview-preview__img
+										a(href="#")
+											img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
+									.overview-preview__content
+										h2.overview-preview__title
+											a(href="#") Багги или монстр? Как выбрать радиоуправляемую машину?
+										.overview-preview__excerpt
+											//- excerpt - отрывок.
+											p.
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
+
 
 						.social-groups
 							.social-groups__links
 								h2.social-groups__title Обсуждения
-								a(href="#").social-link.social-link-facebook
-								a(href="#").social-link.social-link-vk
-								a(href="#").social-link.social-link-twitter
-								a(href="#").social-link.social-link-youtube
-								a(href="#").social-link.social-link-google
+								a(href="#").social-link.social-link--facebook.active
+								a(href="#").social-link.social-link--vk
+								a(href="#").social-link.social-link--twitter
+								a(href="#").social-link.social-link--youtube
+								a(href="#").social-link.social-link--google
+							.social-groups__group
+								img(src='dist/images/temporary/facebook-group.jpg')
+
+
+		// ************************************************************************************
 		// Начало нижней части сайта с адресами магазинов (префутера) 
 		section.prefooter
 			.container
@@ -501,13 +942,15 @@ html(lang="ru")
 					p Закажите на 20 000 грн и заберите товар в любом салоне
 					p Получите <strong>скидочный купон на следующую покупку</strong> в интернет-магазине
 				//- .store-address-tabs-menu__item.store-address-tabs-menu__item--active.u-mobile(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
-				ul.store-address-tabs-menu
-					li.store-address-tabs-menu__item.store-address-tabs-menu__item--active(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
-					li.store-address-tabs-menu__item(tabindex="0", data-id="#KievLesnaya") <i></i> <span>Киев, м. Лесная</span>
-					li.store-address-tabs-menu__item(tabindex="0", data-id="#KharkovSumskaya") <i></i> <span>Харьков, ул. Сумская</span>
+				.mobile-custom-select.store-address-link <i></i> <span>Киев, м. Васильковская</span>
+				ul.store-address-tabs-menu.mobile-custom-options
+					li.store-address-tabs-menu__item.active.store-address-link(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
+					li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KievLesnaya") <i></i> <span>Киев, м. Лесная</span>
+					li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KharkovSumskaya") <i></i> <span>Харьков, ул. Сумская</span>
 				.stores-wrapper
 					.store.store--active.clearfix#KievVasilkovskaya
 						.store__heading Салон и сервисный центр <br> м. Васильковская, ул. Михаила Максимовича 10, корп. А, офис 201
+
 						.store-contacts
 							.store-contacts__item
 								i.store-contacts__icon.clock-icon
