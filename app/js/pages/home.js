@@ -272,22 +272,23 @@ $(function() {
 				nav:true,
 				loop:false,
 				paginatioin: false,
-				onTranslated: myCallback
+				onTranslated: myCallback,
+				onTranslate: myTranslateCallback
 			}
 		}
 	});
 
 	// scrollbar внизу блока с популярными товарами
-	if ($(window).width() > 767) {
-		var newDiv = document.createElement('div');
-		newDiv.classList.add("owl-custom-scrollbar-wrapper");
-		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-		var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
+	// if ($(window).width() > 767) {
+	// 	var newDiv = document.createElement('div');
+	// 	newDiv.classList.add("owl-custom-scrollbar-wrapper");
+	// 	newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
+	// 	var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
 
-		popularProductsSlider.append(newDiv);
-		var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
-		customScrollbar.css('width', scrollbarWidth + '%');
-	}
+	// 	popularProductsSlider.append(newDiv);
+	// 	var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
+	// 	customScrollbar.css('width', scrollbarWidth + '%');
+	// }
 	
 	function myCallback(event) {
 	    var transformMatrix = popularProductsSlider.find('.owl-stage').css('transform');
@@ -295,7 +296,11 @@ $(function() {
 		var x = matrix[12] || matrix[4];//translate x
 		var y = matrix[13] || matrix[5];//translate y
 
-		customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
+		// customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
+	}
+
+	function myTranslateCallback(event) {
+		console.log('Hello');
 	}
 
 

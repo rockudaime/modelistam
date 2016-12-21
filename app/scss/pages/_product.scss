@@ -1826,6 +1826,33 @@ a.products-purchase__show-link {
 
         padding-left: 25px;
     }
+    &__category {
+        font-size: 13px;
+        display: inline-block;
+        padding-right: 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+
+        @media (min-width: 768px) {
+            max-width: 200px;
+        }
+
+        @media (min-width: 994px) {
+            max-width: none;
+        }
+
+        a {
+            // display: inline-block;
+            padding: 5px 15px 5px 0;
+            background: url('images/category-arrow-right.png') no-repeat right 0 top 50%;
+            white-space: nowrap;
+            
+
+            // background-size: 13px;
+        }
+    }
     &__inner {
         padding-right: 2%;
         @media (min-width: 544px) {

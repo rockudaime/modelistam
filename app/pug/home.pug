@@ -65,7 +65,7 @@ html(lang="ru")
 			.header-stripe
 				.container
 					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
-					button.header-menu-link.header-menu-link--active
+					button.header-menu-link.active
 						i.header-menu-link__icon
 						| меню
 					// Поиск
@@ -193,38 +193,223 @@ html(lang="ru")
 				.home-top-left
 					nav.main-nav.main-nav-home
 						// класс main-nav-home  - только для главной страницы
+						//- j-menu-item - для работы скрипта
+						.main-nav__mobile-links
+							.main-nav__item
+								.main-nav-link.main-nav-link--wsub
+									a(href="#") Покупателю
+									.main-nav-link__btn <i></i><i></i>
+								.main-nav-submenu.main-nav-submenu--l1
+									.main-nav-submenu__item
+										.main-nav-link.main-nav-submenu__link
+											a(href="#") Акции
+									.main-nav-submenu__item
+										.main-nav-link.main-nav-submenu__link
+											a(href="#") Скидки
+									.main-nav-submenu__item
+										.main-nav-link.main-nav-submenu__link.main-nav-link--wsub
+											a(href="#") Дисконтная программа
+											
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Доставка и оплата
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Контакты
+							.main-nav__item
+								.main-nav-link
+									a(href="#") О нас
+
 						.main-nav__top-links
 							a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
 							a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
-						ul.main-nav__menu
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Автомобили
-									ul.main-nav__menu-2
-										li.main-nav__link.main-nav__link-2l
-											a(href="#") С двс
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Самолеты
-									ul.main-nav__menu-2
-										li.main-nav__link.main-nav__link-2l
-											a(href="#") С двс
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Вертолеты
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Квадракоптеры
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Авиамодели
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Катера и яхты
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Танки
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Мотоциклы
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Другая техника
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Копмплектующие
-							li.main-nav__link.main-nav__link-1l
-								a(href="#") Производители 
+						// Основная часть меню, которая содержит ссылки на категории
+						.main-nav__menu
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Автомобили
+									.main-nav-link__btn <i></i><i></i>
+								// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+								.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+									.main-nav-submenu.main-nav-submenu--l1
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Багги
+												.main-nav-link__btn <i></i><i></i>
+
+											.main-nav-submenu.main-nav-submenu--l3
+												h3.main-nav__submenu-heading Тип двигателя
+												.main-nav__submenu-content
+													.main-nav__link-3l
+														a(href="#") ДВС
+													.main-nav__link-3l
+														a(href="#") Электромотор
+												h3.main-nav__submenu-heading Привод
+												.main-nav__submenu-content
+													.main-nav__link-3l
+														a(href="#") 4WD полный
+													.main-nav__link-3l
+														a(href="#") 2WD задний
+												h3.main-nav__submenu-heading Масштаб
+												.main-nav__submenu-content
+													.main-nav__link-3l
+														a(href="#") 1:8
+													.main-nav__link-3l
+														a(href="#") 1:10
+													.main-nav__link-3l
+														a(href="#") 1:18
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Трагги
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Монстры
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Шорт-корс
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Краулеры
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Ралли
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Картинг
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Шоссейные (скоростные)
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Шоссейные (для дрифта)
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Трассовые
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Игрушки
+
+									
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Самолеты
+									.main-nav-link__btn <i></i><i></i>
+								.main-nav-submenu__wrapper
+									.main-nav-submenu.main-nav-submenu--l1.j-nav-submenu
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Для FPV и съемки
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С камерой
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Полный комплект
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Модели планеров
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Реактивные
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Вертолеты
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Квадракоптеры
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Авиамодели
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Катера и яхты
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Танки
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Мотоциклы
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Другая техника
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Копмплектующие
+									.main-nav-link__btn <i></i><i></i>
+								.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+									.main-nav-submenu.main-nav-submenu--l1
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Фото, видео
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Радиоуправление
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Аккумуляторы
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Зарядные устройства
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Электроника
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Двигатели
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Топливо
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Жидкости
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Запчасти
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l2
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Инструменты
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Болты
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Подшипники
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Кабели
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Аксессуары
+
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Производители
+						// Ссылки на медиа контент (.main-nav-home__media-links - класс для главной страницы)
+						.main-nav__media-links.main-nav-home__media-links
+							.main-nav-link.main-nav-media-link
+								a.media-link.media-top-link(href="#")
+									i.media-review-icon.media-icon
+									| Обзоры
+							.main-nav-link.main-nav-media-link
+								a.media-link.media-top-link(href="#")
+									i.media-article-icon.media-icon
+									| Статьи
+							.main-nav-link.main-nav-media-link
+								a.media-link.media-top-link(href="#")
+									i.media-news-icon.media-icon
+									| Новости
+							.main-nav-link.main-nav-media-link
+								a.media-link.media-top-link(href="#")
+									i.media-events-icon.media-icon
+									| События
+							.main-nav-link.main-nav-media-link
+								a.media-link.media-top-link(href="#")
+									i.media-video-icon.media-icon
+									| Видео
+
+
 									
 				// Слайдер				
 				.home-top-right
@@ -480,10 +665,12 @@ html(lang="ru")
 						h2.home-title.new-goods-title Новинки
 						.clearfix.owl-carousel#owl-new-products.popular-products-block
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Багги (1/8)
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product1.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--new Новинка
@@ -502,10 +689,12 @@ html(lang="ru")
 													span.o-wishlist__text В избранном
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Квадракоптер DJI Phantom
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product4.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--new Новинка
@@ -526,10 +715,12 @@ html(lang="ru")
 													span.o-wishlist__text В избранное
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера для рыбалки
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product2.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--top Топ продаж
@@ -547,10 +738,12 @@ html(lang="ru")
 													span.o-wishlist__text В избранное
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера с бензиновым двигателем
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product3.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.category-product__product-comments
@@ -568,6 +761,8 @@ html(lang="ru")
 													span.o-wishlist__text В избранное
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Багги
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
@@ -586,6 +781,8 @@ html(lang="ru")
 													span.o-wishlist__text В избранное
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера с бензиновым двигателем
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
