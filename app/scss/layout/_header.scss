@@ -772,15 +772,17 @@
     }
     // Непосредственно пункт меню
     &-link {
+
     	padding-left: 10px;
-    	height: 42px;
-    	line-height: 42px;
+    	
+    	line-height: 22px;
     	width: 100%;
     	position: relative;
     	box-sizing: border-box;
     	font-family: 'OpenSans_SemiBold';
 
     	a {
+    		padding: 9px 0;
     		display: block;
     		height: 100%;
     		width: 100%;
@@ -874,7 +876,6 @@
 	    			left: 100%;
 	    			width: 510px;
 	    			height: 100%;
-	    			background-color: red;
 	    		}
     		}
 
@@ -1050,9 +1051,11 @@
 
     }
     &-media-link {
-    	height: 36px;
-    	line-height: 36px;
     	font-family: 'OpenSans';
+
+    	a {
+    		padding: 6px 0 5px;
+    	}
     }
 }
 // Ссылки на медиа контент сайта
@@ -1089,6 +1092,9 @@
 
 .media-video-icon {
     background-position: -10px -750px ;
+}
+.media-choice-icon {
+	background: url('images/ui-icon-catalog-choise.png') no-repeat 0 0;
 }
 
 

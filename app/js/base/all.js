@@ -12,6 +12,7 @@ $(function(){
 		} else {
 			this.isDesctop = true;
 		}
+		this.menuBlock = $('.main-nav');
 		this.navLink = $('.main-nav-link');
 		this.submenuOpenBtn = $('.main-nav-link__btn');
 		this.menuItem = $('.main-nav__item');
@@ -52,6 +53,20 @@ $(function(){
 					}
 				}
 			}
+
+			$(document).mouseup(function (e)
+				{ 
+					if ($(window).width() < 1235 || !menu.menuBlock.hasClass('main-nav-home')){
+						if (!menu.menuBlock.is(e.target) // if the target of the click isn't the container...
+							&& menu.menuBlock.has(e.target).length === 0
+							&& !menu.headerBtn.is(e.target)) // ... nor a descendant of the container
+						{
+							menu.menuBlock.hide();
+							menu.headerBtn.removeClass('active');
+						}
+					}
+
+				});
 			
 
 			function mobileMenuHandler(e) {
@@ -72,17 +87,21 @@ $(function(){
 
 			function desctopMenuHandler(e) {
 				e.preventDefault();
-				var parentLink = $(this); //$($(this).children()[0]);
-				if (parentLink.hasClass('active') && !parentLink.hasClass('main-nav-submenu__link')) {
+				var link = $(this); //$($(this).children()[0]);
+				var isSubmenu2L = link.parent().parent().hasClass('main-nav-submenu--l2');
+				if(isSubmenu2L) {
+					return 0;
+				};
+				if (link.hasClass('active') && !link.hasClass('main-nav-submenu__link')) {
 					menu.navLink.removeClass('active');
-				} else if (parentLink.hasClass('active') && parentLink.hasClass('main-nav-submenu__link')){
+				} else if (link.hasClass('active') && link.hasClass('main-nav-submenu__link')){
 					$('.main-nav-submenu__link').removeClass('active');
-				} else if (parentLink.hasClass('main-nav-submenu__link')){
+				} else if (link.hasClass('main-nav-submenu__link')){
 					$('.main-nav-submenu__link').removeClass('active');
-					parentLink.addClass('active');
-				} else {
+					link.addClass('active');
+				} else{
 					menu.navLink.removeClass('active');
-					parentLink.addClass('active');
+					link.addClass('active');
 				}
 			} 
 		}
