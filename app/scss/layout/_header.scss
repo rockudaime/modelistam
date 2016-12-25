@@ -247,11 +247,26 @@
     }
 
     // подчеркивание текста
-    span {
-    	border-bottom: 1px dashed #d7d7d7;
+    & > span {
     	display: inline-block;
     	white-space: nowrap;
     	line-height: 15px;
+
+    	&:hover {
+    		border-bottom-color: #000;
+    	}
+    }
+
+    &--authorized {
+
+    	& > span {
+
+    	}
+    }
+
+    &__discount {
+    	color: red;
+    	font-style: normal;
     }
 }
 
@@ -659,7 +674,7 @@
     display: none;
     @media (min-width: 768px) {
         font: 18px 'OpenSans_SemiBold';
-        line-height: 64px;
+        // line-height: 64px;
 
         position: relative;
 
@@ -681,28 +696,66 @@
         margin-top: 11px;
     	padding: 0 10px 0 64px;
     	background-position: 11px 5px;
-    	line-height: 59px;
+    	// line-height: 59px;
     	height: 60px;
+    	width: 100px;
+
+    	&:after {
+	    	content: "В корзину";
+	    	display: block;
+	    	opacity: 0;
+	    	transition: 0;
+	    	background: url('images/ui-arrow-cart.png') no-repeat 100% 0;
+	    	position: absolute;
+	    	top: 5px;
+	    	padding-top: 10px;
+	    	left: 65px;
+	    }
+	    &:hover:after {
+	    	opacity: 1;
+	    	transition: opacity .25s ease;
+	    	color: #000;
+	    }
     }
     @media (min-width: 1235px) {
     	
     }
+
+    &:hover > span{
+    	display: none;
+    }
+
     &__indicator {
         position: absolute;
         top: 28px;
 	    left: 26px;
+
+
     }
     &__total {
         display: none;
         font-size: inherit;
         @media (min-width: 994px) {
             display: inline;
+            line-height: 59px;
         }
         &--text-smaller {
         	font: 15px 'OpenSans';
         }
 
     }
+
+    &__empty {
+	    font: 16px/23px 'OpenSans';
+	    margin-top: 6px;
+	    margin-left: 5px;
+	    display: none;
+	    @media (min-width: 994px) {
+            display: inline-block;
+        }
+    }
+
+
 }
 
 
@@ -721,7 +774,7 @@
 // }
 .main-nav {
     font: 16px 'OpenSans';
-    // display: none;
+    display: none;
 
     position: absolute;
     z-index: 9999;
@@ -736,6 +789,10 @@
     border-radius: 2px;
     background: #fff;
     padding: 10px 0 25px;
+
+    &:hover {
+    	box-shadow: 0 0 10px 0 #dbe1e4;
+    }
     @media (min-width: 768px) {
     	border: 1px solid #dae2e5;
     	padding-top: 0;
@@ -747,8 +804,17 @@
 	    	display: none;
 	    }
     }
+    @media (min-width: 994px) {
+    	margin-left: 0;
+    	margin-top: -20px;
+    }
     @media (min-width: 1235px) {
         width: 268px;
+        margin-top: -17px;
+
+        .media-link {
+        	padding-left: 8px;
+        }
     }
     // ССылки, которые видны только в мобильном виде (покупателю и т.д) те, что были в шапке
     &__mobile-links {
@@ -761,6 +827,11 @@
     		font-family: 'OpenSans';
     	}
     }
+    &__menu {
+    	@media (min-width: 1235px) {
+    		padding-bottom: 9px;
+    	}
+    }
 
     // Блок элемента меню, внутри него содержится пункт меню и его подменю
     &__item {
@@ -770,6 +841,7 @@
 			border-bottom: 0;
 		}
     }
+
     // Непосредственно пункт меню
     &-link {
 
@@ -785,8 +857,13 @@
     		padding: 9px 0;
     		display: block;
     		height: 100%;
-    		width: 100%;
+    		@media (min-width: 1235px) {
+    			padding: 6px 0 7px;
+	    		padding-left: 42px;
+	    	}
     	}
+
+
 
     	&__btn {
     		// .main-nav-link__btn
@@ -873,15 +950,20 @@
     			& + .main-nav-submenu__wrapper {
 	    			position: absolute;
 	    			top: -1px;
+	    			bottom: 0;
 	    			left: 100%;
-	    			width: 510px;
-	    			height: 100%;
+	    			// width: 517px;
+	    			// width: calc(768px - 251px);
+	    			// height: 100%;
+	    			background-size: cover;
+	    			box-shadow: 5px 0 10px 0 #dbe1e4;
 	    		}
     		}
 
     		@media (min-width: 1235px) {
     			& + .main-nav-submenu__wrapper {
-	    			width: 1000px;
+	    			width: 902px;
+	    			width: calc(1170px - 268px);
 	    		}
 	    		.main-nav-link__btn {
 	    			display: block;
@@ -898,7 +980,7 @@
 
     		@media (min-width: 1235px) {
     			& + .main-nav-submenu__wrapper {
-	    			width: 1000px;
+	    			width: 902px;
 	    		}
 	    		.main-nav-link__btn {
 	    			display: block;
@@ -906,6 +988,7 @@
     		}
     	}
     }
+
     &__link-3l {
 		font-size: 15px;
 		a {
@@ -971,6 +1054,10 @@
     	display: none;
     	font: 15px 'OpenSans';
 
+    	& & .main-nav-link__btn {
+    		display: none;
+    	}
+
     	&--l1 {
     		.main-nav-link {
     			padding-left: 25px;
@@ -999,6 +1086,7 @@
     		font-family: 'OpenSans';
     		a {
     			color: #000;
+    			padding-left: 0;
     		}
     	}
 
@@ -1021,7 +1109,7 @@
     			.main-nav-link {
     				padding-left: 15px;
     			}
-    			box-shadow: inset 3px 0px 4px #ecf0f3;
+    			// box-shadow: inset 3px 0px 4px #ecf0f3;
     		}
     		&--l2 {
 	    		.main-nav-link {
@@ -1036,6 +1124,12 @@
 	    		padding-left: 15px;
 	    		box-shadow: inset 3px 0px 4px #ecf0f3;
 	    	}
+    	}
+
+    	@media (min-width: 1235px) {
+    		& & .main-nav-link__btn {
+    			display: block;
+    		}
     	}
     }
 
@@ -1354,6 +1448,59 @@
 				background-position: -5px -50px;
 			}
 		}
+	}
+}
+
+
+.breadcrumbs {
+	display: none;
+	color: #000;
+	font: 15px 'OpenSans';
+
+	@media (min-width: 1235px) {
+		margin-bottom: 15px;
+		display: block;
+	}
+
+	&-item {
+		display: inline-block;
+		margin-right: 50px;
+		position: relative;
+		height: 34px;
+		padding: 5px 0;
+		vertical-align: baseline;
+		box-sizing: border-box;
+		color: inherit;
+		text-decoration: none;
+
+		
+
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			right: -40px;
+			top: 12px;
+			width: 25px;
+			height: 10px;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAYAAABblxXYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAACySURBVHjatFIxCoQwENwctiJp7ATJB/R5uRfEF9w9KZbBKm3SaGFzD4hjcycqFsceN7Cw7MAMw6wAQAyY3X4/kzdiIsaoLwx+Ex3Hkbz3+p30IJxdOX2Duq7JWkvzPOumaWKe5xsnABjnnOYIhxDo00lVVaSUIillx45/LnhZlu0mALDiT9Ok+74nKSW1bfsqiuJ5cGSMsdZiGAaklB4AzJ7PuPHLsiSlVHf1q+Ifz78OAJ2bgcxAsuFLAAAAAElFTkSuQmCC');
+			background-repeat: no-repeat;
+			
+		}
+
+		span {
+			border-bottom-color: #afafaf;
+		}
+	}
+
+	&-menu-btn {
+		font: 16px 'OpenSans_Semibold';
+		background: #1581be url('images/header-menu-down-icon.png') no-repeat right 12px top 50%;
+		max-width: 105px;
+		color: #fff;
+		text-align: left;
+		padding: 5px 30px 5px 10px;
+		box-sizing: border-box;
 	}
 }
 /* end of header.scss*/

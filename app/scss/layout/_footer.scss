@@ -1,10 +1,9 @@
-/* start of footer.scss*/
+/* start of footer.scss */
 
 // ============================ PREFOOTER ==================================
 .prefooter {
 	font: 16px/26px 'OpenSans', sans-serif;
 	color: #0d0d0d;
-	position: relative;
 
 	&__heading,
 	&__description {
@@ -69,6 +68,9 @@
 	}
 }
 // табы переключения адресов магазонов
+.stores-menu {
+	position: relative;
+}
 .store-address-tabs-menu {
 
 	margin-bottom: 5px;
@@ -78,7 +80,10 @@
     background-color: #fff;
     box-sizing: border-box;
     width: 100%;
-    border-bottom: 1px solid #777;
+    border: 1px solid #777;
+    border-top: 0;
+    border-radius: 3px;
+    padding-bottom: 10px;
 
 	&--opened {
 		.store-address-tabs-menu__item {
@@ -89,6 +94,7 @@
 		display: block;
 		position: static;
 		border: 0;
+		padding-bottom: 0;
 	}
 
 	&__item {
@@ -268,6 +274,7 @@
 		height: 230px;
 		text-align: center;
 		font-size: 0;
+		overflow: hidden;
 		@media (min-width: 768px) {
 			height: 208px;
 		}
@@ -275,12 +282,14 @@
 			height: 350px;
 		}
 		img {
-			max-width: 100%;
-			max-height: 100%;
+			// max-width: 100%;
+			// max-height: 100%;
+			width: 100%;
 		}
 	}
 	&__miniatures {
 		overflow: hidden;
+		position: relative
 	}
 	&__miniatures-inner {
 		white-space: nowrap;
@@ -332,6 +341,7 @@
 	border-bottom: 2px solid #d9d9d9;
 	border-radius: 3px;
 	clear: both;
+	overflow: hidden;
 	@media (min-width: 768px) {
 		margin: 0 0 40px;
 		padding: 20px 30px 20px;
@@ -671,12 +681,6 @@
 	}
 }
 
-
-
-
-
-
-
 .footer-up-link {
 	display: block;
 	text-align: center;
@@ -700,4 +704,4 @@
 		vertical-align: middle;
 	}
 }
-/* end of footer.scss*/
+/* end of footer.scss */

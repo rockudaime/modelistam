@@ -79,7 +79,7 @@ gulp.task('browsersync', function(cb) {
 
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', ['sass', browsersync.reload]);
-    gulp.watch('app/pug/home.pug', ['pug', browsersync.reload]);
+    gulp.watch('app/pug/*.pug', ['pug', browsersync.reload]);
     gulp.watch('app/js/**/*.js', ['scripts', browsersync.reload]);
     // gulp.watch('app/img/*', ['images', browsersync.reload]);
 });

@@ -34,8 +34,7 @@ a {
     cursor: pointer;
 }
 a:hover {
-    text-decoration: underline;
-    // color: #4B4B4B;
+    text-decoration: none;
 }
 a:link {
     outline: 0;
@@ -258,7 +257,7 @@ strong, b {
     padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
+    // overflow: hidden;
 
     &:after {
         display: table;
@@ -324,6 +323,13 @@ h2 {
 p {
     font: 1em/1.5 'OpenSans', sans-serif;
     margin: 0 0 18px;
+}
+
+span.bb-dashed {
+    border-bottom: 1px dashed #777;
+}
+span.bb-solid {
+    border-bottom: 1px solid #777;
 }
 /*--------------------------
  ^ end of _base.scss

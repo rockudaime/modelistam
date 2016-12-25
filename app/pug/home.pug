@@ -60,7 +60,9 @@ html(lang="ru")
 					a(href="#").mobile-cart-link
 						span.header-link-indicator.mobile-cart-link__indicator 12
 					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
-						span Войти в личный кабинет
+						span.bb-dashed.not-authorized Войти в личный кабинет
+						//span.authorized Алексей, 
+							i.header-profile-link__discount ваша скидка 3%
 					
 			.header-stripe
 				.container
@@ -147,8 +149,9 @@ html(lang="ru")
 					// Иконка для раскрытия формы поиска в мобильном виде
 					span.mobile-search-link
 					// Корзина
-					a(href="#").header-cart
-						span.header-link-indicator.header-cart__indicator 10
+					a(href="#", title="Перейти в корзину").header-cart
+						i.header-link-indicator.header-cart__indicator 10
+						//span.header-cart__empty Здесь пока ничего нет
 						span.header-cart__total 142 458
 							i.header-cart__total--text-smaller  грн
 		// Конец шапки сайта
@@ -386,12 +389,71 @@ html(lang="ru")
 							.main-nav__item
 								.main-nav-link
 									a(href="#") Катера и яхты
+									.main-nav-link__btn <i></i><i></i>
+								// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+								.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+									.main-nav-submenu.main-nav-submenu--l1
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Электрокатера
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Катера для рыбалки
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l2
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Мини, электро
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") С электродвигателем
+														.main-nav-link__btn <i></i><i></i>
+													.main-nav-submenu.main-nav-submenu--l3
+														h3.main-nav__submenu-heading Источник питания
+														.main-nav__submenu-content
+															.main-nav__link-3l
+																a(href="#") На батарейках
+															.main-nav__link-3l
+																a(href="#") На аккумуляторах
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") С двс двигателем
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") С бензиновым двигателем
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Подводные лодки
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Модели яхт
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a.media-link.media-top-link(href="#")
+													i.media-choice-icon.media-icon
+													| Как выбрать
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a.media-link.media-top-link(href="#")
+													i.media-review-icon.media-icon
+													| Обзоры
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a.media-link.media-top-link(href="#")
+													i.media-video-icon.media-icon
+													| Видео
 							.main-nav__item
 								.main-nav-link
 									a(href="#") Танки
 							.main-nav__item
 								.main-nav-link
 									a(href="#") Мотоциклы
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Коллекционные
+							.main-nav__item
+								.main-nav-link
+									a(href="#") Стендовые
 							.main-nav__item
 								.main-nav-link
 									a(href="#") Другая техника
@@ -433,6 +495,17 @@ html(lang="ru")
 												.main-nav-submenu__item
 													.main-nav-link.main-nav-submenu__link
 														a(href="#") Инструменты
+														.main-nav-link__btn <i></i><i></i>
+													.main-nav-submenu.main-nav-submenu--l2
+														.main-nav-submenu__item
+															.main-nav-link.main-nav-submenu__link
+																a(href="#") Отвертки
+														.main-nav-submenu__item
+															.main-nav-link.main-nav-submenu__link
+																a(href="#") Ключи
+														.main-nav-submenu__item
+															.main-nav-link.main-nav-submenu__link
+																a(href="#") Наборы инструментов
 												.main-nav-submenu__item
 													.main-nav-link.main-nav-submenu__link
 														a(href="#") Болты
@@ -611,14 +684,18 @@ html(lang="ru")
 											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
 										h3.product-preview-item__heading
 											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-										.product-preview-item__price
-											span.product-price--current 5 025 
+										.category-product__price
+											span.product-price--new 2600 
 												span.product-price__text--small грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+											span.product-price--old 2785 грн
+											//- span.product-price--current 13 600 
+											//- 	span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--waiting(href="#") Сообщить о поступлении
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+												a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
 
 							.product-preview-item
 								.product-preview-item__inner
@@ -634,15 +711,17 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-										.product-preview-item__price
-											span.product-price--new 2600 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-											span.product-price--old 2785 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__inner
@@ -659,11 +738,11 @@ html(lang="ru")
 											span.product-price--new 896 
 												span.product-price__text--small грн
 											span.product-price--old 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__inner
@@ -680,11 +759,11 @@ html(lang="ru")
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
 										.product-preview-item__price
 											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__inner
@@ -693,16 +772,17 @@ html(lang="ru")
 											img(src="dist/images/sample-airplane.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
+											span.cp-status.cp-status--available В наличии
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
 										.product-preview-item__price
 											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__inner
@@ -711,19 +791,24 @@ html(lang="ru")
 											img(src="dist/images/sample-airplane.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
+											span.cp-status.cp-status--available В наличии
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 						
 
-
+					// Секция Новинки
 					section.new-goods
 						h2.home-title.new-goods-title Новинки
 						.clearfix.owl-carousel#owl-new-products.popular-products-block
@@ -742,14 +827,17 @@ html(lang="ru")
 											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
 										h3.product-preview-item__heading
 											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-										.product-preview-item__price
-											span.product-price--current 5 025 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__category
@@ -767,15 +855,17 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-										.product-preview-item__price
-											span.product-price--new 2600 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-											span.product-price--old 2785 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__category
@@ -790,15 +880,17 @@ html(lang="ru")
 											span.product-status.product-status--discount -10%
 										h3.product-preview-item__heading
 											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
-										.product-preview-item__price
-											span.product-price--new 896 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-											span.product-price--old 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__category
@@ -815,13 +907,17 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__category
@@ -835,13 +931,17 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
 								.product-preview-item__category
@@ -855,13 +955,17 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 					// Популярные товары
 					section.popular-goods.home-goods-slider
 						h2.home-title.popular-goods-title Популярные товары
@@ -1202,11 +1306,12 @@ html(lang="ru")
 					p Закажите на 20 000 грн и заберите товар в любом салоне
 					p Получите <strong>скидочный купон на следующую покупку</strong> в интернет-магазине
 				//- .store-address-tabs-menu__item.store-address-tabs-menu__item--active.u-mobile(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
-				.mobile-custom-select.store-address-link <i></i> <span>Киев, м. Васильковская</span>
-				ul.store-address-tabs-menu.mobile-custom-options
-					li.store-address-tabs-menu__item.active.store-address-link(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
-					li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KievLesnaya") <i></i> <span>Киев, м. Лесная</span>
-					li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KharkovSumskaya") <i></i> <span>Харьков, ул. Сумская</span>
+				.stores-menu
+					.mobile-custom-select.store-address-link <i></i> <span>Киев, м. Васильковская</span>
+					ul.store-address-tabs-menu.mobile-custom-options
+						li.store-address-tabs-menu__item.active.store-address-link(tabindex="0", data-id="#KievVasilkovskaya") <i></i> <span>Киев, м. Васильковская</span>
+						li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KievLesnaya") <i></i> <span>Киев, м. Лесная</span>
+						li.store-address-tabs-menu__item.store-address-link(tabindex="0", data-id="#KharkovSumskaya") <i></i> <span>Харьков, ул. Сумская</span>
 				.stores-wrapper
 					.store.store--active.clearfix#KievVasilkovskaya
 						.store__heading Салон и сервисный центр <br> м. Васильковская, ул. Михаила Максимовича 10, корп. А, офис 201
@@ -1278,6 +1383,13 @@ html(lang="ru")
 										.store-gallery__miniature
 											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
 												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature.store-gallery__miniature--active
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+										.store-gallery__miniature.store-gallery__miniature--active
+											a(href="dist/images/temporary/footer/footer-gallery/big1.jpg")
+												img(src="dist/images/temporary/footer/footer-gallery/small1.jpg", alt="store in kiyv")
+									.store-gallery__more
 
 							.store-map
 								img(src="dist/images/temporary/footer/map.jpg")

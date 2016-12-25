@@ -313,12 +313,12 @@
         float: right;
         overflow: visible;
 
-        width: 640px;
+        width: 620px;
     }
     @media (min-width: 1235px) {
         float: right;
 
-        width: 900px;
+        width: 870px;
         // padding-bottom: 35px;
     }
     &__products {
@@ -389,11 +389,14 @@
 }
 // 2 compare link
 .cp-compare-link {
-    display: none;
+    display: inline-block;
 
     background-position: center -175px;
     &:hover {
         background-position: center -140px;
+    }
+    @media (min-width: 544px) {
+        display: none;
     }
     @media (min-width: 1235px) {
         display: inline-block;
@@ -470,7 +473,7 @@
         height: 465px;
     }
     @media (min-width: 994px) {
-        width: 320px;
+        width: 50%;
         max-width: 320px;
         height: 475px;
         &:nth-child(2n) {
@@ -679,6 +682,7 @@
 
         height: 30px;
         min-height: 25px;
+        margin-bottom: 5px;
         // margin-bottom: 15px;
         @media (min-width: 994px) {
             // .product-price--new,
@@ -732,7 +736,7 @@
             // font-size: 15px;
             line-height: 15px;
 
-            max-width: 160px;
+            max-width: 150px;
             padding-top: 4px;
             padding-left: 38px;
 
@@ -1430,10 +1434,65 @@ span.af-bb {
     display: inline-block;
 }
 .nav-elems {
-    margin: 0 0 0 5%;
+    margin: 0 0 0 2%;
     @media (min-width: 544px) {
         margin-left: 15%;
     }
+}
+.pager {
+    overflow: hidden;
+    color: #3a4044;
+}
+.catalog-bottom-pager {
+    overflow: hidden;
+    // padding: 21px 26px;
+    margin: 0 0 16px;
+    font-size: 16px;
+    /*border: 1px solid #e9e9e9;*/
+}
+.pager a{
+    /*text-decoration: underline;*/
+    padding: 0 2px;
+}
+.pager  a:hover,
+.catalog-bottom-pager a:hover {
+    text-decoration: none;
+}
+.pager-main-block {
+    color: #5a5a5a;
+    /*float: left;*/
+}
+.pager-bottom-block {
+    float: right;
+}
+
+.pager__inner-elem{
+    height: 40px;
+    width: 40px;
+    background: #F5F5F5;
+    border-radius: 2px;
+    border: 1px solid #DFDFDF;
+    display: inline-block;
+    margin: 0 5px;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.pager__inner-elem a{
+    color: $text-color;
+}
+.pager__inner-elem:hover{
+    color: #fff;
+    background: #346CAB;
+    cursor: pointer;
+}
+.pager__inner-elem:hover a{
+    text-decoration: none;
+    color: #fff;
+}
+.pager__inner-elem--current{
+    color: #fff;
+    background: #346CAB;
 }
 .pmb-black {
     font-family: 'OpenSans', sans-serif;

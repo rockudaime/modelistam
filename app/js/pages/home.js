@@ -46,35 +46,7 @@ $(function() {
 			mobileSelect.html($(this).html());
 		}
 	});
-	// переключение между адресами в футере сайта
-	var storesInfo = $('.store');
-
-	$('.store-address-tabs-menu__item').on('click', function(e) {
-		e.preventDefault();
-		var self = $(this);
-		$('.store-address-tabs-menu__item').removeClass('active');
-		storesInfo.removeClass('store--active');
-		self.addClass('active');
-		$(self.data("id")).addClass('store--active');
-
-		if ($(window).width() < 768) {
-			mobileSelect = self.parent().prev();
-			self.parent().hide();
-			mobileSelect.removeClass('active');
-			mobileSelect.html($(this).html());
-		}
-	});
-
-	$('.store-gallery__miniatures').on('click', function(e) {
-		e.preventDefault();
-		if (e.target.nodeName === "IMG") {
-			console.log($(e.target).parent().attr("href"));
-			$('.store-gallery__main-image img').attr("src", $(e.target).parent().attr("href"));
-			$(this).find('.store-gallery__miniature--active').removeClass('store-gallery__miniature--active');
-			$(e.target).parent().parent().addClass('store-gallery__miniature--active');
-		}
-	});
-
+	
 
 
 
@@ -89,8 +61,10 @@ $(function() {
  
 		nav : true, // Show next and prev buttons
 		navText: false,
+		autoplay: true,
+		loop: true,
 		pagination: true,
-		slideSpeed : 300,
+		slideSpeed : 2000,
 		paginationSpeed : 400,
 		dotsContainer: '#customDots',
 		
@@ -111,6 +85,7 @@ $(function() {
 			},
 		}
 	});
+
 	(function() {
 		var homeDotsOffset = 0;
 		var dots = $('.home-slider__custom-dot');
@@ -120,13 +95,11 @@ $(function() {
 		var wrapperWidth = ($(dots[0]).width() + 8) * dots.length - 8;
 		var moreBtn = document.createElement('div');
 		moreBtn.classList.add('home-slider__more');
-		console.log(moreBtn);
 		if (wrapperWidth > viewportWidth) {
 			wrapper.css('width', wrapperWidth + 'px');
 			viewportContainer.append(moreBtn);
 			$(moreBtn).on('click', function() {
 				if ($(this).hasClass('left')) {
-					console.log('hello');
 					homeDotsOffset -= viewportWidth;
 					if (homeDotsOffset < 0) {
 						homeDotsOffset = 0;
@@ -147,6 +120,7 @@ $(function() {
 			});
 		}
 		
+		dragElement(document.querySelector('.home-slider__dots'));
 	}());
 	
 
