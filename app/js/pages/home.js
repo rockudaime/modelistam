@@ -92,7 +92,7 @@ $(function() {
 		var wrapper = $('.home-slider__dots');
 		var viewportContainer = $('.home-slider__dots-wrapper');
 		var viewportWidth = viewportContainer.width();
-		var wrapperWidth = ($(dots[0]).width() + 8) * dots.length - 8;
+		var wrapperWidth = ($(dots[0]).width() + 7.766) * dots.length - 8;
 		var moreBtn = document.createElement('div');
 		moreBtn.classList.add('home-slider__more');
 		if (wrapperWidth > viewportWidth) {
