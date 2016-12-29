@@ -156,43 +156,9 @@ html(lang="ru")
 							i.header-cart__total--text-smaller  грн
 		// Конец шапки сайта
 
-		.popup-outer
-			section.popup-b.popup-login#popupLogin
-				header
-					h2.popup-login__title Вход
-					a(href="#").popup-login__reg-link Регистрация
-				form(action="/", method="POST", name="login").login-form
-					
-					label(for="email").login-form__label E-mail
-					input(type="email", required).login-form__input.form-control
-					
-					label(for="email").login-form__label Пароль
-					input(type="password", required).login-form__input.form-control
-
-					.form-group
-						input(type="checkbox", id="forgotPassword").custom-checkbox
-						label(for="forgotPassword").custom-checkbox__label.login-form__label
-							span.custom-checkbox__box.login-form__checkbox-box 
-							|  Запомнить меня
-					.form-group
-						.login-form__invalid-data Неправильный логин или пароль
-						input(type="submit", value="Войти").btn.login-form__btn
-						a(href="#").login-form__reminder-link Забыли пароль?
-				.social-login
-					h2.social-login__title Вход через социальные сети
-					ul.social-login__links.clearfix
-						li.social-login__link.social-login__link--fb
-							a(href="#", title="facebook")
-						li.social-login__link.social-login__link--vk
-							a(href="#", title="vkontakte")
-						li.social-login__link.social-login__link--gp
-							a(href="#", title="google plus")
-
-				a.popup-b__close(href="#")
-
 		main
 			.container
-				// начало основного меню
+				// Начало основного меню
 				.home-top-left
 					nav.main-nav.main-nav-home
 						// класс main-nav-home  - только для главной страницы
@@ -544,10 +510,8 @@ html(lang="ru")
 								a.media-link.media-top-link(href="#")
 									i.media-video-icon.media-icon
 									| Видео
+				// Конец основного меню
 
-
-									
-				// Слайдер				
 				.home-top-right
 					// Слайдер с баннерами
 					section.home-slider-container
@@ -635,6 +599,7 @@ html(lang="ru")
 								.home-slider__custom-dot
 									img(src="dist/images/temporary/category/category-banner-1.jpg", alt="some slider image")
 							//- .home-slider__more
+					// Конец слайдера с баннерами
 
 					// Ссылки на медиа контент сайта
 					.media-links.media-top-links
@@ -663,6 +628,7 @@ html(lang="ru")
 							|  грн 
 
 						a(href="#").btn.incart-reminder__btn Оформить заказ
+				// конец блока со слайдером
 				.home-middle
 					// Просмотренные товары
 					section.viewed
@@ -670,7 +636,8 @@ html(lang="ru")
 							h2.home-title.viewed-title Вы смотрели
 							a.viewed-delete-link
 								span очистить историю
-						.clearfix.owl-carousel#owl-viewed-products.popular-products-block
+						#owl-viewed-products.popular-products-block.clearfix.owl-carousel.custom-scrollbar
+							// .custom-scrollbar  - класс для отображения нижнего скроллбара. HTML код для него генеририуется в home.js
 							.product-preview-item
 								.product-preview-item__inner
 									.product-preview-item__photo
@@ -810,7 +777,7 @@ html(lang="ru")
 					// Секция Новинки
 					section.new-goods
 						h2.home-title.new-goods-title Новинки
-						.clearfix.owl-carousel#owl-new-products.popular-products-block
+						#owl-new-products.owl-carousel.popular-products-block.custom-scrollbar
 							.product-preview-item
 								.product-preview-item__category
 									a(href="#") Багги (1/8)
@@ -968,12 +935,14 @@ html(lang="ru")
 					// Популярные товары
 					section.popular-goods.home-goods-slider
 						h2.home-title.popular-goods-title Популярные товары
-						.clearfix.owl-carousel#owl-popular-products.popular-products-block
+						#owl-popular-products.clearfix.owl-carousel.popular-products-block.noborder
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Багги (1/8)
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product1.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--new Новинка
@@ -982,20 +951,25 @@ html(lang="ru")
 											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
 										h3.product-preview-item__heading
 											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-										.product-preview-item__price
-											span.product-price--current 5 025 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Квадракоптер DJI Phantom
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product4.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--new Новинка
@@ -1005,42 +979,50 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-										.product-preview-item__price
-											span.product-price--new 2600 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-											span.product-price--old 2785 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера для рыбалки
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product2.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.product-status.product-status--top Топ продаж
 											span.product-status.product-status--discount -10%
 										h3.product-preview-item__heading
 											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
-										.product-preview-item__price
-											span.product-price--new 896 
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
 												span.product-price__text--small грн
-											span.product-price--old 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера с бензиновым двигателем
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
-											img(src="dist/images/sample-airplane.jpg", alt="image")
+											img(src="dist/images/temporary/blocks/product3.jpg", alt="image")
 									.product-preview-item__content
 										.product-preview-item__product-status
 											span.category-product__product-comments
@@ -1049,15 +1031,21 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Багги
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
@@ -1067,15 +1055,21 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link(href="#")
-													span.o-wishlist__text В избранное
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 							.product-preview-item
+								.product-preview-item__category
+									a(href="#") Катера с бензиновым двигателем
 								.product-preview-item__inner
 									.product-preview-item__photo
 										a(href="#")
@@ -1085,15 +1079,19 @@ html(lang="ru")
 											
 										h3.product-preview-item__heading
 											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-										.product-preview-item__price
-											.product-price.product-price--current 1024 грн
-										.product-preview-item__buy
-											a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-											.product-preview-item__wishlist
-												a.o-wishlist-link.o-wished(href="#")
-													span.o-wishlist__text В избранном
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 					// Миниатюры категорий
-					section.home-catalog.clearfix
+					section.home-catalog
 						.home-catalog-item
 							a(href="#").home-catalog-link
 								.home-catalog-item__image
@@ -1294,7 +1292,39 @@ html(lang="ru")
 								a(href="#").social-link.social-link--google
 							.social-groups__group
 								img(src='dist/images/temporary/facebook-group.jpg')
+		.popup-outer
+			section.popup-b.popup-login#popupLogin
+				header
+					h2.popup-login__title Вход
+					a(href="#").popup-login__reg-link Регистрация
+				form(action="/", method="POST", name="login").login-form
+					
+					label(for="email").login-form__label E-mail
+					input(type="email", required).login-form__input.form-control
+					
+					label(for="email").login-form__label Пароль
+					input(type="password", required).login-form__input.form-control
 
+					.form-group
+						input(type="checkbox", id="forgotPassword").custom-checkbox
+						label(for="forgotPassword").custom-checkbox__label.login-form__label
+							span.custom-checkbox__box.login-form__checkbox-box 
+							|  Запомнить меня
+					.form-group
+						.login-form__invalid-data Неправильный логин или пароль
+						input(type="submit", value="Войти").btn.login-form__btn
+						a(href="#").login-form__reminder-link Забыли пароль?
+				.social-login
+					h2.social-login__title Вход через социальные сети
+					ul.social-login__links.clearfix
+						li.social-login__link.social-login__link--fb
+							a(href="#", title="facebook")
+						li.social-login__link.social-login__link--vk
+							a(href="#", title="vkontakte")
+						li.social-login__link.social-login__link--gp
+							a(href="#", title="google plus")
+
+				a.popup-b__close(href="#")
 
 		// ************************************************************************************
 		// Начало нижней части сайта с адресами магазинов (префутера) 

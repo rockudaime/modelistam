@@ -78,3 +78,32 @@
 .owl-dot.active{
 	border-color: #b1b1b1;
 }
+
+.owl-carousel.custom-scrollbar .owl-stage-outer {
+	border: 0;
+	margin-bottom: 0;
+}
+
+.owl-custom-scrollbar-wrapper {
+    overflow: hidden;
+
+    padding-top: 2px;
+
+    border-top: 1px solid #e1e1e1;
+}
+.owl-custom-scrollbar {
+    height: 5px;
+
+    transition: .25s;
+
+    border-radius: 2px;
+    background-color: #7b7b7b;
+}
+
+// .owl-carousel.popular-products-block .owl-stage-outer{
+
+// 	@media (min-width: 768px) {
+// 		margin-left: -24px;
+// 	}
+	
+// }

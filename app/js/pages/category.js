@@ -64,82 +64,6 @@ $(function() {
 $(document).ready(function() {
 	// var categorySlider = $(".owl-category-slider");	
 	var popularProductsSlider = $("#owl-popular-products");
- 
-	// categorySlider.owlCarousel({
- 
-	// 	nav : true, // Show next and prev buttons
-	// 	pagination: true,
-	// 	slideSpeed : 300,
-	// 	paginationSpeed : 400,
-	// 	dotsContainer: '#customDots',
-		
-	// 	// singleItem:true
- 
-	// 	// "singleItem:true" is a shortcut for:
-	// 	items : 1, 
-	// 	itemsDesktop : false,
-	// 	itemsDesktopSmall : false,
-	// 	itemsTablet: false,
-	// 	itemsMobile : false,
-	// 	onChanged: handleNavText,
-	// 	responsive:{
-	// 		0:{
-	// 			nav:false
-	// 		},
-	// 		768:{
-	// 			nav:true,
-	// 		},
-
-	// 	}
-	// });
-	// текст следующего слайда в управляющей кнопке
-	// var pageSliderContainer = $(".page-slider-container");
-	// var pageSliderContorls = pageSliderContainer.find('.page-slider__controls');
-	// var pageSliderNextLink = pageSliderContainer.find('.owl-next');
-	// var pageSliderPrevLink = pageSliderContainer.find('.owl-prev');
-	// var pageSliderMoreBtn = pageSliderContorls.find('.page-slider__more-btn');
-	// function pageSliderControlsInit () {
-	// 	var dotsContainer = pageSliderContorls.find('.owl-dots');
-	// 	var width = dotsContainer.find('.custom-dot').outerWidth();
-	// 	dotsContainer.children().css('flex-basis', width + 'px');
-	// 	dotsContainer.css('width', width * dotsContainer.children().length + 2 * dotsContainer.children().length);
-	// }
-	// if ($(window).width() > 767) {
-	// 	pageSliderControlsInit();
-	// }
-	// pageSliderNextLink.html(pageSliderContorls.find('.custom-dot.active').next().html());
-	// function handleNavText(e) {
-	// 	var pageSliderContainer = $(".page-slider-container");
-	// 	var pageSliderContorls = pageSliderContainer.find('.page-slider__controls');
-	// 	var pageSliderNextLink = pageSliderContainer.find('.owl-next');
-	// 	var pageSliderPrevLink = pageSliderContainer.find('.owl-prev');
-
-	// 	var nextElem = pageSliderContorls.find('.custom-dot.active').next();
-	// 	var prevElem = pageSliderContorls.find('.custom-dot.active').prev();
-	// 	if (nextElem.length !== 0) {
-	// 		pageSliderNextLink.html(pageSliderContorls.find('.custom-dot.active').next().html());
-	// 	}
-	// 	if (prevElem.length !== 0) {
-	// 		pageSliderPrevLink.html(pageSliderContorls.find('.custom-dot.active').prev().html());
-	// 	}
-
-	// }
-	// pageSliderMoreBtn.on('click', function(e) {
-	// 	var dotsContainer = pageSliderContorls.find('.owl-dots');
-	// 	var width = dotsContainer.find('.custom-dot').outerWidth();
-	// 	// dotsContainer.css('transform', 'translteX' + (-width * 3) + 'px');
-
-	// 	if ($(this).css('right') == "0px") {
-	// 		$(this).css('right', 'auto');
-	// 		dotsContainer.css('margin-left', (-width * 3 - 4 + $(this).width()) + 'px');
-	// 	} else {
-	// 		$(this).css('right', '0px');
-	// 		dotsContainer.css('margin-left', 0 + 'px');
-	// 	}
-		
-	// });
-
-	// end of category slider
 	popularProductsSlider.owlCarousel({
 		loop: false,
 		margin:0,
@@ -147,84 +71,84 @@ $(document).ready(function() {
 		
 		// responsiveclass:true,
 		pagination: false,
-		nav: false,
+		nav: true,
+		dots: false,
+
 		responsive:{
 			0:{
 				items:1,
-				nav:false,
+
 			},
 			544:{
 				items:2,
-				nav: false,
+
 			},
 			768:{
 				items:3,
-				nav: true,
-				dots: false,
-				pagination: false,
-				onTranslated: myCallback
+				// onTranslated: myCallback
 			},
 			994:{
-				items:3,
-				nav:true,
-				loop:false,
-				paginatioin: false,
-				onTranslated: myCallback
+				items:2,
+
 
 			},
 			1200:{
 				items:3,
-				nav:true,
-				loop:false,
-				paginatioin: false,
-				onTranslated: myCallback
+
 			}
 		}
 	});
+
+	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
+	var item;
+	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
+		item = owlSlidersWithScrollbar[i];
+		addCustomScrollbar(item);
+	}
 	// scrollbar внизу блока с популярными товарами
-	if ($(window).width() > 767) {
-		var newDiv = document.createElement('div');
-		newDiv.classList.add("owl-custom-scrollbar-wrapper");
-		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-		var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
+	// if ($(window).width() > 767) {
+	// 	var newDiv = document.createElement('div');
+	// 	newDiv.classList.add("owl-custom-scrollbar-wrapper");
+	// 	newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
+	// 	var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
 
-		popularProductsSlider.append(newDiv);
-		var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
-		customScrollbar.css('width', scrollbarWidth + '%');
-	}
+	// 	popularProductsSlider.append(newDiv);
+	// 	var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
+	// 	customScrollbar.css('width', scrollbarWidth + '%');
+	// }
 	
-	function myCallback(event) {
-	    var transformMatrix = popularProductsSlider.find('.owl-stage').css('transform');
-	    var matrix = transformMatrix.replace(/[^0-9\-.,]/g, '').split(',');
-		var x = matrix[12] || matrix[4];//translate x
-		var y = matrix[13] || matrix[5];//translate y
+	// function myCallback(event) {
+	//     var transformMatrix = popularProductsSlider.find('.owl-stage').css('transform');
+	//     var matrix = transformMatrix.replace(/[^0-9\-.,]/g, '').split(',');
+	// 	var x = matrix[12] || matrix[4];//translate x
+	// 	var y = matrix[13] || matrix[5];//translate y
 
-		customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
-	}
+	// 	customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
+	// }
 
-	function getTouches(event) {
-        if (event.touches !== undefined) {
-            return {
-                x : event.touches[0].pageX,
-                y : event.touches[0].pageY
-            };
-        }
+	// function getTouches(event) {
+ //        if (event.touches !== undefined) {
+ //            return {
+ //                x : event.touches[0].pageX,
+ //                y : event.touches[0].pageY
+ //            };
+ //        }
 
-        if (event.touches === undefined) {
-            if (event.pageX !== undefined) {
-                return {
-                    x : event.pageX,
-                    y : event.pageY
-                };
-            }
-            if (event.pageX === undefined) {
-                return {
-                    x : event.clientX,
-                    y : event.clientY
-                };
-            }
-        }
-    }
+ //        if (event.touches === undefined) {
+ //            if (event.pageX !== undefined) {
+ //                return {
+ //                    x : event.pageX,
+ //                    y : event.pageY
+ //                };
+ //            }
+ //            if (event.pageX === undefined) {
+ //                return {
+ //                    x : event.clientX,
+ //                    y : event.clientY
+ //                };
+ //            }
+ //        }
+ //    }
 });
 // page slider
 $(function() {

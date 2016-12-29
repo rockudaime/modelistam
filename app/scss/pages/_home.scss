@@ -12,6 +12,9 @@
         .main-nav__top-links {
             background: #fff;
         }
+        .main-nav__menu > .main-nav__item:nth-last-child(3){
+        	margin-top: 10px;
+        }
         &__media-links {
             display: none;
         }
@@ -203,6 +206,7 @@
     font: 18px 'OpenSans';
 
     margin-top: 0;
+    margin-bottom: 10px;
 
     color: #000;
 }
@@ -248,25 +252,37 @@
 // Миниатюры категорий
 .home-catalog {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (min-width: 1235px) {
+    	margin-bottom: 25px;
+    }
 }
 .home-catalog-item {
     float: left;
 
-    width: 50%;
-    min-width: 150px;
+    max-width: 170px;
+    min-width: 160px;
     height: 100px;
     margin-bottom: 11px;
 
     text-align: center;
     @media (min-width: 544px) {
-        width: 33%;
+        // width: 33%;
     }
     @media (min-width: 768px) {
-        width: 25%;
+        // width: 25%;
         margin-bottom: 18px;
     }
+
+    @media (min-width: 994px) {
+    	min-width: 185px;
+    }
     @media (min-width: 1235px) {
-        width: 16.66666%;
+        // width: 16.66666%;
+        min-width: 160px;
         margin-bottom: 11px;
     }
     &__image {
@@ -283,6 +299,13 @@
     }
 }
 
+.popular-goods.home-goods-slider{
+	margin-bottom: 20px;
+
+	& > .popular-products-block {
+		margin-bottom: 0;
+	}
+}
 .home-catalog-link {
     font: 14px 'OpenSans';
 
@@ -679,6 +702,7 @@
 
         width: 370px;
         margin-right: 30px;
+        margin-bottom: 47px;
         &:nth-child(2n) {
             margin-right: 0;
         }

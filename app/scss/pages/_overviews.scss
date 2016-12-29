@@ -1,0 +1,187 @@
+.overviews-pagetitle {
+    margin-bottom: 18px;
+}
+// блок содержит все анонсы обзоров (основной контент)
+.overviews-main {
+
+    @media (min-width: 1235px) {
+        width: 770px;
+        float: left;
+    }
+}
+
+.overview-sidebar {
+    
+    @media (min-width: 1235px) {
+        width: 370px;
+        float: right;
+    }
+
+    &__title {
+        color: #454446;
+        font-size: 17px;
+
+        span {
+            font-size: inherit;
+            border-color: #bababb;
+            display: inline-block;
+            line-height: 18px;
+        }
+    }
+}
+
+
+
+// signup block
+.o-signup {
+    margin: 0 -10px;
+    margin-bottom: 35px;
+    padding: 27px 10px 33px;
+
+    background: #fef4ce;
+    clear: both;
+    @media (min-width: 994px) {
+        margin: 0 0 35px;
+        padding: 25px;
+    }
+}
+
+.o-signup__heading {
+    font: normal 20px OpenSans_Bold, sans-serif;
+    line-height: 28px;
+
+    margin: 0 0 0;
+
+    color: #000;
+    @media (min-width: 768px) {
+        font-size: 25px;
+
+        margin-bottom: 20px;
+    }
+    @media (min-width: 1235px) {
+        margin-bottom: 17px;
+    }
+}
+.o-signup__content {
+    @media (min-width: 768px) {
+        padding-left: 180px;
+
+        background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
+    }
+    @media (min-width: 1235px) {
+        padding: 0;
+
+        background: none;
+    }
+}
+.o-signup__description {
+    font: normal 18px OpenSans, sans-serif;
+    line-height: 28px;
+
+    color: #000;
+    @media (min-width: 768px) {
+        font: normal 25px OpenSans_Light, sans-serif;
+
+        margin-bottom: 20px;
+    }
+    @media (min-width: 1235px) {
+        padding: 26px 0 44px;
+        padding-left: 149px;
+        background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 0 50% no-repeat;
+        background-size: 124px;
+        margin-bottom: 17px;
+    }
+}
+.o-signup-form {
+    padding-top: 173px;
+    background: url(images/overview-page/ui-icon-personal-subscribe-big.png) 37% 3px no-repeat;
+    background-size: 148px;
+    @media (min-width: 768px) {
+        display: inline-block;
+
+        width: 300px;
+        margin-right: 24px;
+        padding-top: 0;
+
+        background-image: none;
+    }
+    @media (min-width: 1235px) {
+        display: block;
+
+        width: 100%;
+    }
+}
+
+input.o-signup-form__input {
+    font: normal 16px OpenSans;
+
+    height: 51px;
+    margin-bottom: 13px;
+
+    background-image: none;
+    @media (min-width: 1235px) {
+        display: inline-block;
+        width: 294px;
+        margin: 0;
+        margin-right: 16px;
+        vertical-align: top;
+    }
+}
+.o-signup-form__submit {
+    font: normal 20px OpenSans_SemiBold;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 13px;
+    padding: 12px 0;
+
+    text-align: center;
+
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    background-color: #346cab;
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+    @media (min-width: 1235px) {
+        display: inline-block;
+
+        width: 295px;
+
+        vertical-align: top;
+    }
+}
+
+.o-signup-form__submit:hover,
+.o-signup-form__submit:focus {
+    background-color: #2e619b;
+}
+
+.o-signup-legend {
+    font: normal 15px OpenSans_Light;
+
+    margin: 0;
+
+    color: #000;
+    word-spacing: -1px;
+
+    @media (min-width: 544px) {
+        word-spacing: 0px;
+    }
+    @media (min-width: 768px) {
+        display: inline-block;
+
+        width: 150px;
+
+        vertical-align: bottom;
+    }
+    @media (min-width: 1235px) {
+        display: none;
+    }
+}
+
+// end of signup block

@@ -1,11 +1,4 @@
 $(function() {
-	// поиск в меню
-	$('.mobile-search-link').on('click', function(e) {
-		e.preventDefault();
-		var self = $(this);
-		self.toggleClass('active');
-		$('.header-search').slideToggle();
-	});
 	// мобильный селект, с выпадающим меню
 	$('.mobile-custom-select').on('click', function(e) {
 		e.preventDefault();
@@ -134,36 +127,29 @@ $(function() {
 		
 		// responsiveclass:true,
 		pagination: false,
-		nav: false,
+		nav: true,
+		dots: false,
+
 		responsive:{
 			0:{
 				items:1,
-				nav:false,
+
 			},
 			544:{
 				items:2,
-				nav: false,
+
 			},
 			768:{
 				items:3,
-				nav: true,
-				dots: false,
-				pagination: false,
 				onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				nav:true,
-				loop:false,
-				paginatioin: false,
 				onTranslated: myCallback
 
 			},
 			1200:{
 				items:4,
-				nav:true,
-				loop:false,
-				paginatioin: false,
 				onTranslated: myCallback
 			}
 		}
@@ -174,37 +160,26 @@ $(function() {
 		navigationtext: false,
 		
 		// responsiveclass:true,
-		pagination: false,
-		nav: false,
+		nav: true,
+		dots: false,
 		responsive:{
 			0:{
 				items:1,
-				nav:false,
 			},
 			544:{
 				items:2,
-				nav: false,
 			},
 			768:{
 				items:3,
-				nav: true,
-				dots: false,
-				pagination: false,
 				onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				nav:true,
-				loop:false,
-				paginatioin: false,
 				onTranslated: myCallback
 
 			},
 			1200:{
 				items:4,
-				nav:true,
-				loop:false,
-				paginatioin: false,
 				onTranslated: myCallback
 			}
 		}
@@ -215,39 +190,27 @@ $(function() {
 		navigationtext: false,
 		
 		// responsiveclass:true,
-		pagination: false,
-		nav: false,
+		nav: true,
+		dots: false,
 		responsive:{
 			0:{
 				items:1,
-				nav:false,
 			},
 			544:{
 				items:2,
-				nav: false,
 			},
 			768:{
 				items:3,
-				nav: true,
-				dots: false,
-				pagination: false,
 				onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				nav:true,
-				loop:false,
-				paginatioin: false,
 				onTranslated: myCallback
 
 			},
 			1200:{
 				items:4,
-				nav:true,
-				loop:false,
-				paginatioin: false,
-				onTranslated: myCallback,
-				onTranslate: myTranslateCallback
+				onTranslated: myCallback
 			}
 		}
 	});
@@ -276,6 +239,14 @@ $(function() {
 	function myTranslateCallback(event) {
 		console.log('Hello');
 	}
+
+	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
+	var item;
+	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
+		item = owlSlidersWithScrollbar[i];
+		addCustomScrollbar(item);
+	}
+
 
 
 });

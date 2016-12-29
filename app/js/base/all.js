@@ -128,6 +128,14 @@ $(function(){
 	}(window, document));
 
 	mainNav.init(); // инициализация всех обработчиков событий для меню
+
+	// поиск в меню
+	$('.mobile-search-link').on('click', function(e) {
+		e.preventDefault();
+		var self = $(this);
+		self.toggleClass('active');
+		$('.header-search').slideToggle();
+	});
 });
 
 
@@ -207,7 +215,57 @@ $(function () {
 
 });
 
+// ========================= Owl custom scrollbar ==================
 
+function addCustomScrollbar (owlContainer) {
+	'use strict';
+	var owlSlider = $(owlContainer);
+	var sliderItemWidth = owlSlider.find('.owl-item').width();
+	var owlNavNext = owlSlider.find('.owl-next');
+	var owlNavPrev = owlSlider.find('.owl-prev');
+	var scrollbar;
+	addScrollbar(owlSlider);
+	setScrollbarWidth (scrollbar, owlSlider);
+	
+	owlNavNext.on('click', function (e) {
+		setScrollbarOffset(scrollbar, owlSlider, sliderItemWidth);
+	});
+	owlNavPrev.on('click', function (e) {
+		setScrollbarOffset(scrollbar, owlSlider, -sliderItemWidth);
+	});
+
+
+
+	function addScrollbar($obj) {
+		var newDiv = document.createElement('div');
+		newDiv.classList.add("owl-custom-scrollbar-wrapper");
+		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
+
+		scrollbar = $(newDiv).find('.owl-custom-scrollbar');
+		$obj.append(newDiv);
+	}
+
+	function setScrollbarWidth (scrollbar, owlContainer) {
+		var scrollbarWidth = 100 / (owlContainer.find('.owl-stage').width()/owlContainer.width());
+		scrollbar.css('width', scrollbarWidth + '%');
+	}
+
+	function setScrollbarOffset (scrollbar, owlContainer, offset) {
+		var stage = owlContainer.find('.owl-stage');
+	    var matrix = stage.css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+		var x = matrix[12] || matrix[4];// предыдущий сдвиг
+		var newOffset = x - offset;
+		var stageWidth = stage.width(); // полная ширина контейнера с блоками товаров
+		if (-newOffset >= stageWidth) {
+			newOffset = x;
+		} else if (-newOffset <= 0) {
+			newOffset = 0;
+		}
+		var scrollbarOffset = 100 / (stageWidth / newOffset);
+
+		scrollbar.css('margin-left', - scrollbarOffset + '%');
+	}
+}
 
 // ================================= FOOTER =============================
 
@@ -245,6 +303,10 @@ $(function () {
 	for (var i = 0; i < footerGallery.length; i++) {
 		dragElement(footerGallery[i]);
 	}
+
+	$('.store-gallery__main-image').on('click', function(e) {
+		e.preventDefault();
+	})
 	
 	// function dragBlock($blockObj) {
 	// 	'use strict';
@@ -273,9 +335,7 @@ $(function () {
 	// 			$(this).css('transform', 'translate3d(-' + currentPosition + ',0,0)')
 	// 		});
 
-	// }
-
-	
+	// }	
 });
 	
 function dragElement(obj) {

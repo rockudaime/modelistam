@@ -1825,6 +1825,10 @@ a.products-purchase__show-link {
         float: left;
 
         padding-left: 25px;
+
+        .owl-item:first-child  &{
+            padding-left: 0;
+        }
     }
     &__category {
         font-size: 13px;
@@ -1854,9 +1858,10 @@ a.products-purchase__show-link {
         }
     }
     &__inner {
-        padding-right: 2%;
+        padding: 0 35px;
         @media (min-width: 544px) {
             padding-right: 25px;
+            padding-left: 0;
 
             border-right: 1px solid #e2e2e2;
         }
@@ -1869,7 +1874,7 @@ a.products-purchase__show-link {
 
         // width: 45%;
         height: 165px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
 
         text-align: center;
         @media (min-width: 544px) {
@@ -1880,7 +1885,7 @@ a.products-purchase__show-link {
             width: 100%;
             height: 165px;
             margin: 0;
-            margin-bottom: 15px;
+            margin-bottom: 22px;
         }
         img {
             max-width: 100%;

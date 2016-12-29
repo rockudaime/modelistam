@@ -1,0 +1,167 @@
+extends ./personal-cabinet.pug
+
+block item
+	div.profile-item.clearfix
+		h2 Профиль	
+		form.my-profile-form.clearfix(action="/" name="profile-form")
+			div.my-profile-info
+				div.pr-name Алексей
+					div.pr-change-links
+						a.pr-change-info
+							span Изменить
+					.pr-hidden
+						p Введите новое имя в поле ниже:
+						input(type="text" name="name" value="Алексей")
+				div.pr-phone +380950639878
+					div.pr-change-links
+						a.pr-change-info 
+							span Изменить
+						a.pr-add-info
+							span Добавить номер
+					.pr-hidden
+						p Введите новый номер в поле ниже:
+						input(type="text" name="phoneNumber" value="+380950639878")
+				div.pr-phone +380950639878
+					div.pr-change-links
+						a.pr-change-info 
+							span Изменить
+						a.pr-add-info
+							span Добавить номер
+					.pr-hidden
+						input(type="text" name="phoneNumber" value="+380950639878")
+				div.pr-email test@testmail.com
+					div.pr-change-links
+						a.pr-change-info 
+							span Изменить
+					.pr-hidden
+						p Введите новый email в поле ниже:
+						input(type="email" name="email" value="test@testmail.com")
+				div.pr-password
+					a Сменить пароль
+					div.pr-hidden
+						p 
+							label(for="oldPassword") Введите старый пароль:
+						input(type="password" name="oldPassword" id="oldPassword" placeholder="Старый пароль")
+						p 
+							label(for="newPassword") Введите новый пароль
+						input(type="password" name="newPassword" id="newPassword" placeholder="Новый пароль")
+						input(type="password" name="newPassword2" placeholder="Повторите новый пароль")
+
+			.mob-hidden
+				div.my-signups.check-input
+					h2 Мои подписки
+					p Нажмите, чтобы включить или отменить
+					input#msSale(type="checkbox" checked)
+					label(for="msSale") Акции
+
+					input#msDiscount(type="checkbox")
+					label(for="msDiscount") Скидки
+
+					input#msBestsellers(type="checkbox")
+					label(for="msBestsellers") Хиты
+
+					input#msNew(type="checkbox")
+					label(for="msNew") Новинки
+
+					input#msReviews(type="checkbox")
+					label(for="msReviews") Обзоры
+
+				.profile-imporve-socials
+					h3 Позвольте помочь лучше подбирать товары
+					span Улучшите свой профиль с помощью:
+					a(href="#").fb-link
+					a(href="#").gplus-link
+					a(href="#").tw-link
+
+				.choose-gender
+					input.u-hidden-input(type="radio" name="gender" value="male" id="maleGender" checked)
+					label.choose-gender__male(for="maleGender") Мужчина
+					input.u-hidden-input(type="radio" name="gender" value="female" id="femaleGender")
+					label.choose-gender__female(for="femaleGender") Женщина
+
+				div.my-interests.check-input
+					h2 Мои интересы
+					p Отправляем рассылки и оповещения, связанные с увлечениями.  
+					p Без спама. 
+					p Нажмите, чтобы включить или отменить
+
+					each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
+						input(id=index type="checkbox")
+						label(for=index)=val
+
+
+
+				.birth-date-block
+					h3 Дата рождения:
+					p Укажите дату для напоминаний о специальных предложениях ко Дню рождения
+					.select-date
+						select.select-date__select(name="birth-day" id="birthDay")
+							- for (var x = 1; x < 32; x++)
+								option(value=x)=x
+						select.select-date__select(name="birth-month" id="birthMonth")
+							each val,index in ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+								option(value=index)= val
+						select.select-date__select(name="birth-year" id="birthYear")
+							-for (var x = 2016; x>1939; x--)
+								option(value=x)= x
+						span#computed-age 0 лет
+						input(type="submit" value="Сохранить" class="save-btn")
+		a.pr-delete-profile(href="#") Удалить профиль
+
+	script.
+		$(document).ready(function(){
+			'use strict';
+			var addLink = $(".pr-add-info");
+			var changeLink = $(".pr-change-info");
+
+			// Нажатие на ссылку "добавить номер" приводит к созданию нового блока с полем для ввода номера
+			addLink.on("click", function(event){
+				event.preventDefault();
+				$(this).parent().parent().after('<div class="pr-phone"><input type="text" name="phoneNumber" placeholder="Введите номер"><div class="pr-change-links"><a href="#" class="pr-delete-item">X</a></div></div> ');
+			});
+			changeLink.on("click", function(event) {
+				event.preventDefault();
+				$(this).parent().parent().find(".pr-hidden").slideToggle();
+			});
+			$(".pr-password a").on("click", function(event){
+				event.preventDefault();
+				$(this).next(".pr-hidden").slideToggle();
+			});
+			$(document.body).on("click",".pr-delete-item", function(event) {
+				event.preventDefault();
+				$(this).parent().parent().remove();	
+			});
+
+
+			// age counter 
+
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth(); //January is 0!
+			var yyyy = today.getFullYear();
+			var age = document.getElementById("computed-age");
+			var birthYear = document.getElementById("birthYear").value;
+			var birthMonth = document.getElementById("birthMonth").value;
+			var birthDay = document.getElementById("birthDay").value;
+
+			document.getElementById("birthYear").onchange = function() {
+				birthYear = document.getElementById("birthYear").value;
+				if (mm > birthMonth) {
+					age.innerHTML = (yyyy - birthYear) + " лет";
+				} else if (mm == birthMonth) {
+					if (dd >= birthDay) {
+						age.innerHTML = (yyyy - birthYear) + " лет";
+					} else {
+						age.innerHTML = (yyyy - birthYear - 1) + " лет";
+					}
+				} else {
+					age.innerHTML = (yyyy - birthYear - 1) + " лет";
+				}
+			}
+			document.getElementById("birthMonth").onchange = function() {
+				birthMonth = document.getElementById("birthMonth").value;
+			}
+			document.getElementById("birthDay").onchange = function() {
+				birthDay = document.getElementById("birthDay").value;
+			}
+		});
