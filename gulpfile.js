@@ -37,7 +37,7 @@ gulp.task('sass', function () {
 // HTML processing
 // ***********************
 gulp.task('pug', function() {
-    return gulp.src('app/pug/overview-new.pug') //('app/jade/**/*.jade')
+    return gulp.src('app/pug/profile.pug') //('app/jade/**/*.jade')
         .pipe(pug({
             pretty: true
             })) 
@@ -69,7 +69,7 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'overview-new.html'
+            index: 'profile.html'
         },
     reloadDelay: 300
 
