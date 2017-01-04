@@ -492,13 +492,13 @@ html(lang="ru")
 								.birthday-block
 									.birthday-block__heading Вы родились:
 									.select-date
-										select.select-date__select(name="birth-day" id="birthDay")
+										select.select-date__select(name="birth-day", id="birthDay")
 											- for (var x = 1; x < 32; x++)
 												option(value=x)=x
-										select.select-date__select(name="birth-month" id="birthMonth")
+										select.select-date__select(name="birth-month",id="birthMonth")
 											each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
 												option(value=index)= val
-										select.select-date__select(name="birth-year" id="birthYear")
+										select.select-date__select(name="birth-year", id="birthYear")
 											-for (var x = 2016; x>1939; x--)
 												option(value=x)= x
 
@@ -517,34 +517,92 @@ html(lang="ru")
 
 						input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
 
-
-
-
 				aside.cabinet-sidebar
-					.cabinet-extra-info
-						.personal-status
-							a(href="#").personal-status__link
-								span.bb-solid Статус 
-							|  VIP
-							i.personal-status-icon.personal-status-icon--vip
-						
-						.personal-discount-label Алексей, Ваша скидка — 3%
-						.personal-discount
-							ul.personal-discount-list
-								li.active 3%
-								li 5%
-								li 10%
-								li 15%
-							.status-bar.discount-status-bar
-								.status-bar__progress.status-bar__progress--3
-								// for 5%  .status-bar__progress--5
-								// for 10% .status-bar__progress--10
-								// for 15% .status-bar__progress--15
-						.increase-discount
-							.increase-discount__title Хотите скидку в 5%?
-							a(href="#").increase-discount__link 
-								span Докупите еще на 7 450 грн
-								i.increase-discount__link-icon
+					section.cabinet-extra-info
+						.personal-discount-block
+							.personal-status
+								a(href="#").personal-status__link
+									span.bb-solid Статус 
+								|  VIP
+								i.personal-status-icon.personal-status-icon--vip
+							
+							.personal-discount-label Алексей, Ваша скидка — 3%
+							.personal-discount
+								ul.personal-discount-list
+									li.active 3%
+									li 5%
+									li 10%
+									li 15%
+								.status-bar.discount-status-bar
+									.status-bar__progress.status-bar__progress--3
+									// for 5%  .status-bar__progress--5
+									// for 10% .status-bar__progress--10
+									// for 15% .status-bar__progress--15
+							.increase-discount
+								.increase-discount__title Хотите скидку в 5%?
+								a(href="#").increase-discount__link 
+									span Докупите еще на 7 450 грн
+									i.increase-discount__link-icon
+						.personal-manager-block.clearfix
+							.personal-manager-block__left
+								h3.personal-manager__title Ваш менеджер
+								p.personal-manager__info.
+									Евгений<br>
+									Никитенко
+								p.personal-manager__info.
+									(067) 234-52-68<br>
+									<a mailto="ev@modelistam.com.ua">ev@modelistam.com.ua</a>
+							.personal-manager-block__right
+								img(src="dist/images/personal-cabinet/photo-manager.jpg").personal-manager__photo
+								a.chat-btn(href="#") Онлайн чат
+						.gift-certificate-block
+							.gift-certificate__link
+								a(href="#") Подарочные сертификаты
+							form.gift-certificate__form(action="/", method="POST")
+								select.gift-certificate__select
+									option(value="500") 500 грн
+									option(value="1000") 1000 грн
+									option(value="1500") 1500 грн
+								input.gift-certificate__btn.btn(type="submit" value="Купить")
+
+
+
+					section.cabinet-signup
+						.cabinet-signup__icon
+						form.cabinet-signup-form(method="POST", action="/")
+							h3.cabinet-signup__title Лучшие предложения
+							.cabinet-signup__options
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suStock")
+									label.custom-checkbox__label.cabinet-signup__label(for="suStock")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--stock Акции
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suDiscount")
+									label.custom-checkbox__label.cabinet-signup__label(for="suDiscount")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--discount Скидки
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suHits")
+									label.custom-checkbox__label.cabinet-signup__label(for="suHits")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--hits Хиты
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suNovelty")
+									label.custom-checkbox__label.cabinet-signup__label(for="suNovelty")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--novelty Новинки
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suOverviews")
+									label.custom-checkbox__label.cabinet-signup__label(for="suOverviews")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--overviews Обзоры
+							input.btn.cabinet-signup__btn(type="submit", value="Следить за лучшими предложениями")
+
+							p.cabinet-signup__legend.
+								Без спама.<br>
+								Отписка в любое время
+
 
 
 

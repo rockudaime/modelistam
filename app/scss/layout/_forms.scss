@@ -243,10 +243,12 @@ input.invalid {
 
     border: 1px #000 solid;
     border-radius: 3px;
+    box-sizing: border-box;
     background: #fff;
 }
 .custom-checkbox:checked + .custom-checkbox__label > .custom-checkbox__box {
-    background: #4b80bb url('images/personal-cabinet/icon-checked.png') no-repeat center center;;
+    background: #4b80bb url('images/personal-cabinet/icon-checked.png') no-repeat center center;
+    border-color: #4b80bb;
 }
 .custom-checkbox:focus + .custom-checkbox__label > .custom-checkbox__box {
     border-color: #4b80bb;
