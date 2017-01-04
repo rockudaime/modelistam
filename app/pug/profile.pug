@@ -443,10 +443,115 @@ html(lang="ru")
 							i.media-video-icon.media-icon
 							| Видео
 		// Контент страницы
-		.container
+		.container.personal-cabinet-content
 			aside.cabinet-menu-block
+				.mobile-custom-select.cabinet-menu__custom-select Профиль
 				nav.cabinet-menu
-					.mobile-custom-select.cabinet-menu__custom-select Профиль
+					a(href="#").cabinet-menu-link
+						i.cabinet-menu-link__icon.cabinet-menu-link__icon--save
+						| Как сэкономить
+					a(href="#").cabinet-menu-link
+						i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
+						| Мои заказы
+					a(href="#").cabinet-menu-link.active
+						i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
+						| Профиль 
+			.cabinet-content-block.clearfix
+				main.cabinet-main-content
+					h2.cabinet-title Профиль
+
+					form.profile-form(action method="POST")
+						.profile-field-group.profile-field-group--name
+							input.profile-form__input-field(type="text" value="Александра" placeholder="Имя")
+							input.profile-form__input-field(type="text" value="Романенко" placeholder="Фамилия")
+						.profile-field-group.profile-field-group--phone
+							input.profile-form__input-field(type="phone" value="096-878-8963" pattern="[\+\- 0-9]{6,}")
+						.profile-field-group.profile-field-group--email
+							input.profile-form__input-field.profile-form__input-field--full(type="email" value="romanenko@mail.ru")
+						.profile-field-group.profile-field-group--password
+							input.profile-form__input-field(type="password" placeholder="Новый пароль")
+							input.profile-form__input-field(type="password" placeholder="Повторите пароль")
+
+						.profile-socials
+							h3.profile-socials__title Позвольте помочь лучше подбирать товары
+							.profile-socials__links
+								span Улучшите свой профиль с помощью:
+								a(href="#").profile-socials__link.fb-link
+								a(href="#").profile-socials__link.gplus-link
+								a(href="#").profile-socials__link.tw-link
+
+						.profile-form-group.clearfix
+							h3.cabinet-title Дата рождения
+							p Для напоминаний о специальных предложениях ко Дню рождения
+							.sab-block
+								.sex-block
+									input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
+									label(for="maleSex") 
+									input(type="radio" name="sex" value="female" id="femaleSex")
+									label(for="femaleSex")
+								.birthday-block
+									.birthday-block__heading Вы родились:
+									.select-date
+										select.select-date__select(name="birth-day" id="birthDay")
+											- for (var x = 1; x < 32; x++)
+												option(value=x)=x
+										select.select-date__select(name="birth-month" id="birthMonth")
+											each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+												option(value=index)= val
+										select.select-date__select(name="birth-year" id="birthYear")
+											-for (var x = 2016; x>1939; x--)
+												option(value=x)= x
+
+						.profile-form-group.clearfix
+							h3.cabinet-title Ваши интересы
+							p.
+								Отправляем рассылки и оповещения, связанные с увлечениями. <br>  
+								Без спама.<br> 
+								Нажмите, чтобы включить или отменить
+
+
+						.profile-form-group.clearfix
+							h3.cabinet-title Мои подписки
+							p Нажмите, чтобы включить или отменить
+
+
+						input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
+
+
+
+
+				aside.cabinet-sidebar
+					.cabinet-extra-info
+						.personal-status
+							a(href="#").personal-status__link
+								span.bb-solid Статус 
+							|  VIP
+							i.personal-status-icon.personal-status-icon--vip
+						
+						.personal-discount-label Алексей, Ваша скидка — 3%
+						.personal-discount
+							ul.personal-discount-list
+								li.active 3%
+								li 5%
+								li 10%
+								li 15%
+							.status-bar.discount-status-bar
+								.status-bar__progress.status-bar__progress--3
+								// for 5%  .status-bar__progress--5
+								// for 10% .status-bar__progress--10
+								// for 15% .status-bar__progress--15
+						.increase-discount
+							.increase-discount__title Хотите скидку в 5%?
+							a(href="#").increase-discount__link 
+								span Докупите еще на 7 450 грн
+								i.increase-discount__link-icon
+
+
+
+
+
+					
+
 
 
 

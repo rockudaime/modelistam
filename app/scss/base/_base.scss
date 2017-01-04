@@ -1,21 +1,21 @@
 /*---------------------------------------
  start of _base.scss
 ----------------------------------------*/
-@font-face {
-    font-family: OpenSans_light; /* Имя шрифта */
-    src: url(fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
-}
+// @font-face {
+//     font-family: OpenSans_light; /* Имя шрифта */
+//     src: url(fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
+// }
 
-@font-face {
-    font-family: OpenSans_Semibold; /* Имя шрифта */
-    src: url(fonts/OpenSans-Semibold.ttf); /* Путь к файлу со шрифтом */
-}
+// @font-face {
+//     font-family: OpenSans_Semibold; /* Имя шрифта */
+//     src: url(fonts/OpenSans-Semibold.ttf); /* Путь к файлу со шрифтом */
+// }
 
 html, body {
     height: 100%;
 }
 body {
-    font: 14px  'OpenSans', Arial, Helvetica, sans-serif;
+    font: 14px  $main-font;
     font-weight: 400;
     color: #434343;
     min-width: 320px;
@@ -236,7 +236,7 @@ br.clear {
 // }
 strong, b {
     font-weight: normal;
-    font-family: 'OpenSans_Semibold', sans-serif;
+    font-family: $main-font-semibold;
 }
 .text-center {
     text-align: center;
@@ -293,7 +293,7 @@ strong, b {
     width: 100%;
     padding: 6px 12px;
     margin-bottom: 0;
-    font: 18px 'OpenSans';
+    font: 18px $main-font;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
@@ -313,15 +313,15 @@ strong, b {
 h1 {
     overflow: hidden;
     margin: 0 0 21px;
-    font: 20px 'OpenSans_SemiBold';
+    font: 20px $main-font-semibold;
     color: #151515;
 }
-h2 {
-    font: 20px 'OpenSans_SemiBold';
+h2, h3 {
+    font: 20px $main-font-semibold;
     margin-top: 0;
 }
 p {
-    font: 1em/1.5 'OpenSans', sans-serif;
+    font: 1em/1.5 $main-font;
     margin: 0 0 18px;
 }
 

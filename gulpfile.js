@@ -9,6 +9,7 @@ var jshint = require("gulp-jshint");
 var imagemin = require("gulp-imagemin");
 var browsersync = require('browser-sync');
 var pug = require('gulp-pug');
+var combineMq = require('gulp-combine-mq');
 // CSS processing
 
 // gulp.task('compass', function() {
@@ -31,6 +32,9 @@ gulp.task('sass', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
+    .pipe(combineMq({
+        beautify: true
+    }))
     .pipe(gulp.dest('dist'));
 });
 // ***********************

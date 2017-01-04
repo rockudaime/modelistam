@@ -83,51 +83,7 @@
 		font: 17px OpenSans, sans-serif;
 	}
 }
-.select-date{
-	
-	margin-bottom: 20px;
-	
 
-	@media (min-width: 768px) {
-		padding-left: 36px;
-		white-space: nowrap;
-		background: url(images/personal-cabinet/bth-calendar-icon.png) no-repeat 0 50%;
-	}
-}
-
-
-.select-date__select{
-		box-sizing: border-box;
-		border: 1px solid  #c3c3c3;
-		border-radius: 2px;
-		cursor: pointer;
-		outline: none;
-		box-shadow: none;
-		font: normal 15px OpenSans, sans-serif;
-		color: #0d0d0d;
-		background: #fff url(images/select-arrow-small.png) no-repeat right 6px top 55%;
-		padding: 7px 24px 7px 7px;
-
-		// remove the arrow
-		-webkit-appearance: none;
-	    -moz-appearance: none;
-	    appearance: none;
-
-	    @media (min-width: 544px){
-	    	padding: 10px 35px 10px 15px;
-	    	background-position: right 11px top 50%;
-	    	font-size: 17px;
-	    }
-
-	    @media (min-width: 768px){
-	    	padding: 3px 30px 3px 10px;
-	    	background-position: right 11px top 50%;
-	    }
-}
-
-.select-date__select:focus{
-	border-color: #4b80bb;
-}
 
 .select-hobby{
 	margin-bottom: 20px;
@@ -163,33 +119,7 @@
 	color: #fff;
 	background-color: #c03911;
 }
-.sex-block{
-	margin-bottom: 10px;
 
-	input{
-	    position: absolute;
-    	left: -9999px;
-	}
-	label{
-		display: inline-block;
-		width: 58px;
-		height: 58px;
-		background: url(images/icon-male-sprite.png) no-repeat 0 0;
-		cursor: pointer;
-		box-sizing: border-box;
-		border: 1px solid transparent;
-		border-radius: 4px;
-
-	}
-	input:checked + label{
-		border: 1px solid #6a8eb0;
-		background-position: 0 -57px;
-	}
-	#femaleSex + label{
-		background-image: url(images/icon-female-sprite.png);
-	}
-
-}
 #computed-age{
 	display: none;
 }
@@ -348,10 +278,10 @@
 			margin-right: 4px;
 		}
 	}
-	.sex-block{
-		width: 30%;
-		float: left;
-	}
+	// .sex-block{
+	// 	width: 30%;
+	// 	float: left;
+	// }
 	.questionaire-form{
 
 

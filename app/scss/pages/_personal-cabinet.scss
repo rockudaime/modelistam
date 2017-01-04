@@ -701,32 +701,8 @@ input[type=checkbox]:checked + label > .checkbox {
         margin-top: 0;
     }
 }
-.tw-link,
-.fb-link,
-.gplus-link {
-    display: inline-block;
 
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
 
-    vertical-align: middle;
-    // overflow: hidden;
-}
-.tw-link {
-    background: url(images/personal-cabinet/twitter-icon.png) no-repeat 0 0;
-}
-.gplus-link {
-    background: url(images/personal-cabinet/gplus-icon.png) no-repeat 0 0;
-}
-.fb-link {
-    background: url(images/personal-cabinet/fb-icon.png) no-repeat 0 0;
-}
-.tw-link:hover,
-.fb-link:hover,
-.gplus-link:hover {
-    background-position: 0 -40px;
-}
 .u-hidden-input {
     position: absolute;
     left: -9999px;
