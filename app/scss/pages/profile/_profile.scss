@@ -8,6 +8,8 @@
     }
 }
 .cabinet-menu-block {
+    margin-bottom: 31px;
+    position: relative;
     & * {
         box-sizing: border-box;
     }
@@ -16,18 +18,22 @@
 
         box-sizing: border-box;
         width: 270px;
+        margin-bottom: 0;
     }
 }
 // Cabinet menu
 .cabinet-menu {
     display: none;
-
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
     max-width: 360px;
 
     border: 1px solid #dfdfdf;
     border-radius: 2px;
     @media (min-width: 1235px) {
         display: block;
+        position: static;
     }
 }
 
@@ -112,6 +118,21 @@
 }
 
 // Cabinet content
+
+.cabinet-link {
+    font: 15px $main-font;
+    color: #346cab;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+
+    span {
+        border-bottom: 1px dashed #b6c6dc;
+        display: inline-block;
+        line-height: 16px;
+    }
+}
 .cabinet-content-block {
     @media (min-width: 1235px) {
         float: right;
@@ -122,7 +143,7 @@
 .cabinet-main-content {
     border-bottom: 1px solid #e1e1e1;
     margin-bottom: 30px;
-    padding-bottom: 75px;
+    padding-bottom: 30px;
 
     @media (min-width: 768px) {
         padding-bottom: 49px;
@@ -137,14 +158,21 @@
     }
 }
 .cabinet-title {
-    font: 20px/12px $main-font-semibold;
+    font: 20px/16px $main-font-semibold;
 
-    margin: 0 0 23px;
+    margin: 0 0 19px;
 
     color: #151515;
+
+    @media (min-width: 768px) {
+
+    }
+    @media (min-width: 1235px) {
+        margin-bottom: 21px;
+    }
 }
 h3.cabinet-title {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 // Sidebar with extra info
@@ -187,6 +215,13 @@ h3.cabinet-title {
     padding-bottom: 25px;
 
     border-bottom: 1px dashed #c2c2c2;
+
+    @media (min-width: 768px) {
+        padding-bottom: 16px;
+    }
+    @media (min-width: 1235px) {
+        padding-bottom: 27px;
+    }
 }
 
 .personal-status {
@@ -349,10 +384,19 @@ h3.cabinet-title {
 
 .personal-manager-block {
     padding-top: 24px;
-    padding-bottom: 25px;
+    padding-bottom: 31px;
     padding-left: 16px;
+    position: relative;
+    
 
     border-bottom: 1px dashed #c2c2c2;
+
+    @media (min-width: 768px) {
+        padding-top: 21px;
+    }
+    @media (min-width: 1235px) {
+        padding-top: 24px;
+    }
     &__left {
         float: left;
 
@@ -363,7 +407,7 @@ h3.cabinet-title {
 
         width: 50%;
 
-        text-align: center;
+        text-align: right;
     }
 }
 
@@ -386,17 +430,71 @@ h3.cabinet-title {
             line-height: 15px;
         }
     }
+
+    &__photo {
+        height: 90px;
+        width: 90px;
+        margin-right: 21px;
+
+        @media (min-width: 544px) {
+            margin-right: 24px;
+        }
+        @media (min-width: 1235px) {
+            margin-right: 0;
+        }
+    }
+}
+.chat-btn {
+    font: 15px/35px $main-font-bold;
+
+    display: inline-block;
+
+    height: 38px;
+    width: 122px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #76972a;
+    border: 1px #76972a solid;
+    border-radius: 3px;
+    background: #fff;
+    position: absolute;
+    right: 20px;
+    top: 133px;
+    @media (min-width: 544px) {
+        right: 20px;
+    }
+    @media (min-width: 1235px) {
+        position: static;
+    }
+
+    &:hover {
+    text-decoration: none;
+
+    color: #76972a;
+    background-color: #f9fef4;
+    }
 }
 
+
 .gift-certificate-block {
-    padding: 17px 12px 30px 17px;
+    padding: 21px 12px 27px 17px;
 
     background-color: #f3f3f3;
+    @media (min-width: 768px) {
+        padding: 17px 12px 13px 17px;
+    }
+    @media (min-width: 1235px) {
+        padding-top: 26px;
+        padding-bottom: 32px;
+    }
 }
 
 .gift-certificate {
     &__link {
         margin-bottom: 4px;
+
         a {
             font: 15px $main-font-semibold;
 
@@ -408,6 +506,35 @@ h3.cabinet-title {
 
             color: #3d6cab;
             background: url(images/personal-cabinet/spritesheet.png) no-repeat -5px -617px;
+        }
+        @media (min-width: 768px) {
+            display: inline-block;
+            width: 150px;
+            vertical-align: middle;
+
+            a {
+                background: url("images/ui-icon-personal-present.png") no-repeat 0 6px;
+                padding: 2px 0 10px 27px;
+            }
+        }
+        @media (min-width: 1235px) {
+            display: block;
+            width: auto;
+            a {
+                background: url(images/personal-cabinet/spritesheet.png) no-repeat -9px -623px;
+            }
+            
+        }
+        
+    }
+
+    &__form {
+        @media (min-width: 768px) {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        @media (min-width: 1235px) {
+            display: block;
         }
     }
     &__select {
@@ -462,7 +589,7 @@ h3.cabinet-title {
 
         width: 270px;
         padding-top: 18px;
-        padding-bottom: 17px;
+        padding-bottom: 29px;
         &__icon {
             width: 100%;
             height: 84px;
@@ -474,6 +601,7 @@ h3.cabinet-title {
         float: none;
 
         width: auto;
+        padding-bottom: 19px;
     }
     &__title {
         font-family: $main-font-bold;
@@ -481,12 +609,19 @@ h3.cabinet-title {
         margin-bottom: 15px;
     }
     &__options {
-        margin-bottom: 23px;
+        margin-bottom: 27px;
+        @media (min-width: 768px) {
+            margin-bottom: 23px;
+        }
     }
     &__option {
-        margin-bottom: 6px;
+        margin-bottom: 10px;
         &:last-child {
             margin-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            margin-bottom: 6px;
         }
     }
     &__label {
@@ -501,7 +636,7 @@ h3.cabinet-title {
         display: inline-block;
 
         width: 122px;
-        height: 28px;
+        height: 32px;
         margin-left: 4px;
         padding: 0 35px 0 12px;
 
@@ -522,6 +657,10 @@ h3.cabinet-title {
         }
         &--overviews {
             background-color: #5182b9;
+        }
+
+        @media (min-width: 768px) {
+            height: 28px;
         }
     }
     &__btn {
@@ -549,24 +688,6 @@ h3.cabinet-title {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ===============================================================================
 // ****************************** 10 - Profile Page ******************************
 .profile-form {
@@ -587,12 +708,23 @@ h3.cabinet-title {
         border-radius: 3px;
         @media (min-width: 768px) {
             width: 49.1%;
+            margin-bottom: 0;
             & + & {
                 margin: 0;
                 margin-left: 1%;
             }
             &--full {
                 width: 100%;
+            }
+
+            &--phone {
+                width: 248px;
+                display: block;
+
+                & + & {
+                    margin-left: 0;
+                    margin-top: 11px;
+                }
             }
         }
         @media (min-width: 1235px) {
@@ -603,6 +735,14 @@ h3.cabinet-title {
             }
             &--full {
                 width: 100%;
+            }
+
+            &--phone {
+
+                & + & {
+                    margin-left: 0;
+                    margin-top: 11px;
+                }
             }
         }
     }
@@ -620,6 +760,7 @@ h3.cabinet-title {
     }
     &--phone {
         background-image: url('images/personal-cabinet/ui-icon-personal-phone.png');
+        position: relative;
     }
     &--password {
         background-image: url('images/personal-cabinet/ui-icon-personal-lock.png');
@@ -630,12 +771,28 @@ h3.cabinet-title {
         background-position: 17px 6px;
     }
 }
+.profile-form-add-phone {
+    
+
+    @media (min-width: 768px) {
+        position: absolute;
+        left: 310px;
+        top: 11px;
+    }
+
+    @media (min-width: 1235px) {
+        left: 325px;
+    }
+}
 .profile-form-group {
     margin-bottom: 20px;
-    padding: 19px 7px 10px 14px;
+    padding: 16px 7px 7px 11px;
 
     border: 1px solid #959595;
     border-radius: 3px;
+    @media (min-width: 768px) {
+        padding-left: 14px;
+    }
     p {
         font-size: 15px;
         line-height: 25px;
@@ -647,6 +804,7 @@ h3.cabinet-title {
 // start of profile-socials block
 .profile-socials {
     margin-bottom: 20px;
+    margin-top: 21px;
     padding: 13px 15px 17px;
 
     background-color: #fffae8;
@@ -699,6 +857,9 @@ h3.cabinet-title {
     background-position: 0 -40px;
 }
 // end of profile socials block
+.cabinet-sab-block {
+    margin-bottom: 7px;
+}
 .sex-block {
     font-size: 0;
 
@@ -706,7 +867,7 @@ h3.cabinet-title {
     @media (min-width: 768px) {
         display: inline-block;
 
-        margin-right: 19px;
+        margin-right: 10px;
         margin-bottom: 0;
 
         vertical-align: middle;
@@ -722,6 +883,7 @@ h3.cabinet-title {
         width: 58px;
         height: 58px;
         margin: 0;
+        margin-right: 5px;
 
         cursor: pointer;
 
@@ -748,6 +910,7 @@ h3.cabinet-title {
     }
     &__heading {
         font-size: 15px;
+        line-height: 15px;
 
         margin-bottom: 9px;
     }
@@ -779,8 +942,38 @@ h3.cabinet-title {
     &:focus {
         border-color: #4b80bb;
     }
+
+    & + & {
+        margin-left: 6px;
+    }
 }
 
+.cabinet-subscription {
+
+    &__item {
+        
+
+        @media (min-width: 0px)  and (max-width: 520px){
+            margin-right: 12px;       
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            &:nth-child(2n) {
+                margin-right: 15px;
+            }
+        }
+
+        @media (min-width: 1235px) {
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
 
 .profile-form__btn {
     font: 18px $main-font-semibold;
@@ -791,4 +984,16 @@ h3.cabinet-title {
 
     color: #fff;
     background-color: #659913;
+}
+
+.profile-form__delete-link {
+    display: block;
+    margin-top: 25px;
+    font-size: 16px;
+
+    @media (min-width: 768px) {
+        float: right;
+        display: inline-block;
+        margin-top: 15px;
+    }
 }

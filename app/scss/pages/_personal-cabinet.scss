@@ -318,39 +318,7 @@ progress[value]::-webkit-progress-bar {
 
     color: #000;
 }
-.chat-btn {
-    font-weight: bold;
 
-    display: inline-block;
-    float: right;
-    clear: both;
-
-    width: auto;
-    margin: 10px 0 15px;
-    padding: 9px 16px;
-
-    text-align: center;
-    text-decoration: none;
-
-    color: #76972a;
-    border: 1px #76972a solid;
-    border-radius: 3px;
-    background: #fff;
-    @media (min-width: 544px) {
-        margin-top: -25px;
-    }
-    @media (min-width: 1235px) {
-        float: none;
-
-        margin-top: 0;
-    }
-}
-.chat-btn:hover {
-    text-decoration: none;
-
-    color: #76972a;
-    background-color: #f9fef4;
-}
 /*Правый блок с информацией (Сертификат)*/
 
 .certificate {

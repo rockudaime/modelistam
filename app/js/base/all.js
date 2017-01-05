@@ -20,10 +20,6 @@ $(function(){
 		this.menuContainer = $('.main-nav'); // контейнер меню
 		var menu = this;
 
-
-
-
-
 		this.init = function () {
 
 			// ракскрытие меню при клике на кнопку "меню" в шапке сайта (мобильный и планшетный вид)

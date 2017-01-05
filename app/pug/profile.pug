@@ -14,6 +14,7 @@ html(lang="ru")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 
 		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/personal-cabinet.js")
 
 	body
 		header.main-header
@@ -188,9 +189,6 @@ html(lang="ru")
 						.main-nav-link
 							a(href="#") О нас
 
-					.main-nav__top-links
-						a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
-						a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
 				.main-nav__top-links
 					a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
 					a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
@@ -442,10 +440,14 @@ html(lang="ru")
 						a.media-link.media-top-link(href="#")
 							i.media-video-icon.media-icon
 							| Видео
+		// Конец основного меню сайта
 		// Контент страницы
 		.container.personal-cabinet-content
+			// Блок меню личного кабинета
 			aside.cabinet-menu-block
+				// Кнопка раскрытия меню в мобильном и табличном виде
 				.mobile-custom-select.cabinet-menu__custom-select Профиль
+				// Меню
 				nav.cabinet-menu
 					a(href="#").cabinet-menu-link
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--save
@@ -457,17 +459,20 @@ html(lang="ru")
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
 						| Профиль 
 			.cabinet-content-block.clearfix
+				// Блок main  - содержимое отличается для разных страниц личного кабинета
 				main.cabinet-main-content
 					h2.cabinet-title Профиль
 
 					form.profile-form(action method="POST")
 						.profile-field-group.profile-field-group--name
-							input.profile-form__input-field(type="text" value="Александра" placeholder="Имя")
-							input.profile-form__input-field(type="text" value="Романенко" placeholder="Фамилия")
-						.profile-field-group.profile-field-group--phone
-							input.profile-form__input-field(type="phone" value="096-878-8963" pattern="[\+\- 0-9]{6,}")
+							input.profile-form__input-field(type="text", value="Александра", placeholder="Имя", id="name")
+							input.profile-form__input-field(type="text", value="Романенко", placeholder="Фамилия", id="surname")
+						.profile-field-group.profile-field-group--phone#phoneBlock
+							input.profile-form__input-field.profile-form__input-field--phone(type="tel", name="tel", value="096-878-8963", pattern="[\+\- 0-9]{6,}", placeholder="Ваш телефон", id="phoneNumber1", data-id="1")
+							a(href="#").cabinet-link.profile-form-add-phone#addPhoneField
+								span добавить еще телефон
 						.profile-field-group.profile-field-group--email
-							input.profile-form__input-field.profile-form__input-field--full(type="email" value="romanenko@mail.ru")
+							input.profile-form__input-field.profile-form__input-field--full(type="email", value="romanenko@mail.ru", placeholder="Ваш телефон")
 						.profile-field-group.profile-field-group--password
 							input.profile-form__input-field(type="password" placeholder="Новый пароль")
 							input.profile-form__input-field(type="password" placeholder="Повторите пароль")
@@ -483,7 +488,7 @@ html(lang="ru")
 						.profile-form-group.clearfix
 							h3.cabinet-title Дата рождения
 							p Для напоминаний о специальных предложениях ко Дню рождения
-							.sab-block
+							.sab-block.cabinet-sab-block
 								.sex-block
 									input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
 									label(for="maleSex") 
@@ -509,14 +514,44 @@ html(lang="ru")
 								Без спама.<br> 
 								Нажмите, чтобы включить или отменить
 
+							.subscription.cabinet-subscription
+								each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden(id=index, type="checkbox")
+										label.subscription-item__label(for=index)=val
+
+
+
 
 						.profile-form-group.clearfix
 							h3.cabinet-title Мои подписки
 							p Нажмите, чтобы включить или отменить
 
+							.subscription.cabinet-subscription.clearfix
+								.subscription-item.cabinet-subscription__item
+									input.checkbox-hidden#msStock(type="checkbox" checked)
+									label.subscription-item__label(for="msStock") Акции
+								.subscription-item.cabinet-subscription__item
+									input.checkbox-hidden#msDiscount(type="checkbox")
+									label.subscription-item__label(for="msDiscount") Скидки
+								.subscription-item.cabinet-subscription__item
+									input.checkbox-hidden#msHit(type="checkbox")
+									label.subscription-item__label(for="msHit") Хиты
+								.subscription-item.cabinet-subscription__item
+									input.checkbox-hidden#msNovelty(type="checkbox")
+									label.subscription-item__label(for="msNovelty") Новинки
+								.subscription-item.cabinet-subscription__item
+									input.checkbox-hidden#msOverview(type="checkbox")
+									label.subscription-item__label(for="msOverview") Обзоры
 
-						input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
+						footer.profile-form-footer.clearfix
+							input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
+							a(href="#").cabinet-link.profile-form__delete-link
+								span Удалить профиль
 
+
+
+				// Сайдбар личного кабинета (общее)
 				aside.cabinet-sidebar
 					section.cabinet-extra-info
 						.personal-discount-block
@@ -552,9 +587,10 @@ html(lang="ru")
 								p.personal-manager__info.
 									(067) 234-52-68<br>
 									<a mailto="ev@modelistam.com.ua">ev@modelistam.com.ua</a>
+								a.chat-btn(href="#") Онлайн чат
 							.personal-manager-block__right
 								img(src="dist/images/personal-cabinet/photo-manager.jpg").personal-manager__photo
-								a.chat-btn(href="#") Онлайн чат
+								
 						.gift-certificate-block
 							.gift-certificate__link
 								a(href="#") Подарочные сертификаты
@@ -602,18 +638,6 @@ html(lang="ru")
 							p.cabinet-signup__legend.
 								Без спама.<br>
 								Отписка в любое время
-
-
-
-
-
-
-					
-
-
-
-
-
 
 
 		// Все попапы

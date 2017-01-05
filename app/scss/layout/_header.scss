@@ -67,7 +67,7 @@
 			height: 30px;
 			background: #1581be url(images/header-menu-down-icon.png) no-repeat right 9px top 50%;
 			color: #fff;
-			font: 14px/30px 'OpenSans';
+			font: 14px/30px $main-font;
 			padding: 0 24px 0 9px;
 			border-radius: 3px;
 		}
@@ -465,7 +465,7 @@
 }
 // Персональные ссылки, представленные иконками, в шапке (желания, сравнить и т.д)
 .header-personal {
-    font: 12px 'OpenSans__Light';
+    font: 12px $main-font-light;
 
     float: left;
 
