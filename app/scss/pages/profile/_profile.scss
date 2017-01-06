@@ -25,6 +25,7 @@
 .cabinet-menu {
     display: none;
     position: absolute;
+    z-index: 9999;
     width: 100%;
     background-color: #fff;
     max-width: 360px;
@@ -76,7 +77,7 @@
     }
     &:hover,
     &.active {
-        font-family: $main-font-bold;
+        font-family: $main-font-semibold;
 
         background: #fafafa;
         .cabinet-menu-link__icon {
@@ -84,7 +85,7 @@
                 background-position: 5px -283px;
             }
             &--profile {
-                background-position: 5px -1004px;
+                background-position: 6px -1005px;
             }
         }
     }
@@ -106,7 +107,7 @@
             background-position: 5px -247px;
         }
         &--profile {
-            background-position: 5px -968px;
+            background-position: 6px -969px;
         }
     }
     @media (min-width: 1235px) {
@@ -573,6 +574,11 @@ h3.cabinet-title {
         background: #76972a;
         padding: 0;
         vertical-align: top;
+
+        &:hover,
+        &:focus {
+            background-color: #6b8925;
+        }
     }
 }
 
@@ -706,6 +712,15 @@ h3.cabinet-title {
         color: #151515;
         border: 1px solid #777;
         border-radius: 3px;
+
+        &:focus,
+        &:hover {
+            outline: 0;
+            border-color: #4b80bb;
+            position: relative;
+            border-width: 2px;
+            padding: 0 9px;
+        }
         @media (min-width: 768px) {
             width: 49.1%;
             margin-bottom: 0;
@@ -984,6 +999,11 @@ h3.cabinet-title {
 
     color: #fff;
     background-color: #659913;
+
+    &:hover,
+    &:focus {
+        background-color: #5f9012;
+    }
 }
 
 .profile-form__delete-link {
@@ -995,5 +1015,36 @@ h3.cabinet-title {
         float: right;
         display: inline-block;
         margin-top: 15px;
+    }
+}
+
+.profile-delete { // popup after click on profile-form__delete-link
+
+    a {
+        text-decoration: underline;
+    }
+
+    &.popup-b {
+        max-width: 700px;
+
+        @media (min-width: 1235px) {
+            margin-top: 250px;
+        }
+    }
+
+    &__btn {
+        padding: 0 20px;
+        height: 46px;
+        font: 18px/43px $main-font-semibold;
+        vertical-align: top;
+
+        &--delete {
+            margin-bottom: 20px;
+            margin-right: 6px;
+
+            @media (min-width: 544px) {
+                margin-bottom: 0;
+            }
+        }
     }
 }

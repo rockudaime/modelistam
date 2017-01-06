@@ -55,8 +55,8 @@ html(lang="ru")
 					a(href="#").mobile-cart-link
 						span.header-link-indicator.mobile-cart-link__indicator 12
 					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
-						span.bb-dashed.not-authorized Войти в личный кабинет
-						//span.authorized Алексей, 
+						// span.bb-dashed.not-authorized Войти в личный кабинет
+						span.authorized Алексей, 
 							i.header-profile-link__discount ваша скидка 3%
 					
 			.header-stripe
@@ -98,10 +98,6 @@ html(lang="ru")
 										h2.header-popup__title Список ожиданий
 										p Здесь собраны ожидаемые Вами товары
 
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы проверить ожидаемые товары, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 							// Попап Желания
 							.header-popup.header-popup-wishlist#popupWishlist
 								.header-popup__main.clearfix
@@ -109,11 +105,6 @@ html(lang="ru")
 									.header-popup__text
 										h2.header-popup__title Список желаний
 										p Запомните товар, который вам понравился, добавив его в список желаний.
-
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы добавить товар в список желаний, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 
 							// Попап Сравнение
 							.header-popup.header-popup-compare#popupCompare
@@ -123,11 +114,6 @@ html(lang="ru")
 										h2.header-popup__title Сравнение товаров
 										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
 
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы сравнить товар добавленный ранее, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
-
 							// Попап Цены
 							.header-popup.header-popup-watch-price#popupWatchPrice
 								.header-popup__main.clearfix
@@ -136,10 +122,6 @@ html(lang="ru")
 										h2.header-popup__title Следить за ценой
 										p Следить за ценой понравившегося товара очень просто
 
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Если у вас уже есть отслеживаемые товары, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
 
 					// Иконка для раскрытия формы поиска в мобильном виде
 					span.mobile-search-link
@@ -465,14 +447,14 @@ html(lang="ru")
 
 					form.profile-form(action method="POST")
 						.profile-field-group.profile-field-group--name
-							input.profile-form__input-field(type="text", value="Александра", placeholder="Имя", id="name")
+							input.profile-form__input-field(type="text", value="Александра", placeholder="Имя", id="name", required)
 							input.profile-form__input-field(type="text", value="Романенко", placeholder="Фамилия", id="surname")
 						.profile-field-group.profile-field-group--phone#phoneBlock
-							input.profile-form__input-field.profile-form__input-field--phone(type="tel", name="tel", value="096-878-8963", pattern="[\+\- 0-9]{6,}", placeholder="Ваш телефон", id="phoneNumber1", data-id="1")
+							input.profile-form__input-field.profile-form__input-field--phone(type="tel", name="tel", value="096-878-8963", placeholder="Ваш телефон", id="phoneNumber1")
 							a(href="#").cabinet-link.profile-form-add-phone#addPhoneField
 								span добавить еще телефон
 						.profile-field-group.profile-field-group--email
-							input.profile-form__input-field.profile-form__input-field--full(type="email", value="romanenko@mail.ru", placeholder="Ваш телефон")
+							input.profile-form__input-field.profile-form__input-field--full(type="email", value="romanenko@mail.ru", placeholder="Ваш email", required)
 						.profile-field-group.profile-field-group--password
 							input.profile-form__input-field(type="password" placeholder="Новый пароль")
 							input.profile-form__input-field(type="password" placeholder="Повторите пароль")
@@ -546,7 +528,7 @@ html(lang="ru")
 
 						footer.profile-form-footer.clearfix
 							input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
-							a(href="#").cabinet-link.profile-form__delete-link
+							a(href="#", data-popup-target="popupProfileDelete").cabinet-link.profile-form__delete-link.popup-open-link
 								span Удалить профиль
 
 
@@ -673,6 +655,16 @@ html(lang="ru")
 						li.social-login__link.social-login__link--gp
 							a(href="#", title="google plus")
 
+				a.popup-b__close(href="#")
+			section.popup-b.profile-delete#popupProfileDelete
+				header.popup-b__header
+					h2.popup-b__heading Удаление профиля
+				.popup-b__content
+					p.
+						Вы действительно хотите удалить свой профиль на сайте <a href="#">modelistam.com.ua</a>?
+					p
+						button.btn.btn--danger.profile-delete__btn.profile-delete__btn--delete Да, удалить
+						button.btn.btn--succes.profile-delete__btn.profile-delete__btn--keep.popup-b-close Нет, оставить
 				a.popup-b__close(href="#")
 		// Начало основного футера сайта
 		footer.main-footer

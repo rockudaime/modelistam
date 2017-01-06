@@ -31,11 +31,11 @@ $(document).ready(function(){
 
 		addPhoneLink.on('click', function(e) {
 			var phoneField = $('#phoneBlock input:first-child');
-			var idNumber = (Number(phoneField.data('id')) + 1);
+			var idNumber = $('#phoneBlock input').length + 1;
+			console.log(idNumber);
 			var newId = 'phoneNumber' + idNumber;
-			phoneField.data('id', idNumber);
 			var newField = phoneField.clone();
-			newField.attr({id: newId, value: ""}).data('id', "").insertBefore(addPhoneLink);
+			newField.attr({id: newId, value: ""}).insertBefore(addPhoneLink);
 			
 			return false;	
 		});

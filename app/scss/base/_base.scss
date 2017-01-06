@@ -290,7 +290,7 @@ strong, b {
 
 .btn{
     display: inline-block;
-    width: 100%;
+    // width: 100%;
     padding: 6px 12px;
     margin-bottom: 0;
     font: 18px $main-font;
@@ -307,6 +307,25 @@ strong, b {
 
     &:hover {
         text-decoration: none;
+    }
+
+    &--danger {
+        background-color: #d34f27;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: #c44a25;
+        }
+    }
+    &--succes {
+        background-color: #659913;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: #5d8c12;
+        }
     }
 }
 

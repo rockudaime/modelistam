@@ -209,6 +209,11 @@ $(function () {
 		popup.parent().fadeIn();
 	});
 
+	// profile page
+	var profilePopupCloseLink = $('.popup-b-close');
+	profilePopupCloseLink.on('click', closePopupHandler);
+
+
 });
 
 // ========================= Owl custom scrollbar ==================
