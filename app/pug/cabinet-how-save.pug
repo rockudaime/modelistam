@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		title Профиль
+		title Личный кабинет - Как сэкономить
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -141,7 +141,7 @@ html(lang="ru")
 					span.bb-solid Главная
 				a(href="#").breadcrumbs-item
 					span.bb-solid Личный кабинет 
-				span Профиль 
+				span Как сэкономить
 			// Начало основного меню
 
 			nav.main-nav
@@ -337,12 +337,71 @@ html(lang="ru")
 					.main-nav__item
 						.main-nav-link
 							a(href="#") Катера и яхты
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Электрокатера
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Катера для рыбалки
+										.main-nav-link__btn <i></i><i></i>
+									.main-nav-submenu.main-nav-submenu--l2
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Мини, электро
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С электродвигателем
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l3
+												h3.main-nav__submenu-heading Источник питания
+												.main-nav__submenu-content
+													.main-nav__link-3l
+														a(href="#") На батарейках
+													.main-nav__link-3l
+														a(href="#") На аккумуляторах
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С двс двигателем
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С бензиновым двигателем
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Подводные лодки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Модели яхт
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
 					.main-nav__item
 						.main-nav-link
 							a(href="#") Танки
 					.main-nav__item
 						.main-nav-link
 							a(href="#") Мотоциклы
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Коллекционные
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Стендовые
 					.main-nav__item
 						.main-nav-link
 							a(href="#") Другая техника
@@ -384,6 +443,17 @@ html(lang="ru")
 										.main-nav-submenu__item
 											.main-nav-link.main-nav-submenu__link
 												a(href="#") Инструменты
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l2
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Отвертки
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Ключи
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Наборы инструментов
 										.main-nav-submenu__item
 											.main-nav-link.main-nav-submenu__link
 												a(href="#") Болты
@@ -401,7 +471,7 @@ html(lang="ru")
 						.main-nav-link
 							a(href="#") Производители
 				// Ссылки на медиа контент (.main-nav-home__media-links - класс для главной страницы)
-				.main-nav__media-links
+				.main-nav__media-links.main-nav-home__media-links
 					.main-nav-link.main-nav-media-link
 						a.media-link.media-top-link(href="#")
 							i.media-review-icon.media-icon
@@ -422,114 +492,70 @@ html(lang="ru")
 						a.media-link.media-top-link(href="#")
 							i.media-video-icon.media-icon
 							| Видео
-		// Конец основного меню сайта
+			// Конец основного меню
 		// Контент страницы
 		.container.personal-cabinet-content
 			// Блок меню личного кабинета
 			aside.cabinet-menu-block
 				// Кнопка раскрытия меню в мобильном и табличном виде
-				.mobile-custom-select.cabinet-menu__custom-select Профиль
+				.mobile-custom-select.cabinet-menu__custom-select Как сэкономить
 				// Меню
 				nav.cabinet-menu
-					a(href="#").cabinet-menu-link
+					a(href="#").cabinet-menu-link.active
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--save
 						| Как сэкономить
 					a(href="#").cabinet-menu-link
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
 						| Мои заказы
-					a(href="#").cabinet-menu-link.active
+					a(href="#").cabinet-menu-link
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
 						| Профиль 
 			.cabinet-content-block.clearfix
 				// Блок main  - содержимое отличается для разных страниц личного кабинета
 				main.cabinet-main-content
-					h2.cabinet-title Профиль
+					h2.cabinet-title Как сэкономить
+					.cabinet-how-save.j-accordion
+						.how-save-item
+							.how-save-item__title.j-accordion-title.active(tabindex="0")
+								| Накопительная система скидок
 
-					form.profile-form(action method="POST")
-						.profile-field-group.profile-field-group--name
-							input.profile-form__input-field(type="text", value="Александра", placeholder="Имя", id="name", required)
-							input.profile-form__input-field(type="text", value="Романенко", placeholder="Фамилия", id="surname")
-						.profile-field-group.profile-field-group--phone#phoneBlock1
-							input.profile-form__input-field.profile-form__input-field--phone(type="tel", name="tel", value="096-878-8963", placeholder="Ваш телефон", id="phoneNumber1")
-							a(href="#").cabinet-link.profile-form-add-phone#addPhoneField
-								span добавить еще телефон
-						.profile-field-group.profile-field-group--email
-							input.profile-form__input-field.profile-form__input-field--full(type="email", value="romanenko@mail.ru", placeholder="Ваш email", required)
-						.profile-field-group.profile-field-group--password
-							input.profile-form__input-field(type="password" placeholder="Новый пароль")
-							input.profile-form__input-field(type="password" placeholder="Повторите пароль")
+							.how-save-item__content.j-accordion-content
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						.how-save-item
+							.how-save-item__title.j-accordion-title(tabindex="0")
+								| Правило 10/15%
 
-						.profile-socials
-							h3.profile-socials__title Позвольте помочь лучше подбирать товары
-							.profile-socials__links
-								span Улучшите свой профиль с помощью:
-								a(href="#").profile-socials__link.fb-link
-								a(href="#").profile-socials__link.gplus-link
-								a(href="#").profile-socials__link.tw-link
+							.how-save-item__content.j-accordion-content.collapsed
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
-						.profile-form-group.clearfix
-							h3.cabinet-title Дата рождения
-							p Для напоминаний о специальных предложениях ко Дню рождения
-							.sab-block.cabinet-sab-block
-								.sex-block
-									input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
-									label(for="maleSex") 
-									input(type="radio" name="sex" value="female" id="femaleSex")
-									label(for="femaleSex")
-								.birthday-block
-									.birthday-block__heading Вы родились:
-									.select-date
-										select.select-date__select(name="birth-day", id="birthDay")
-											- for (var x = 1; x < 32; x++)
-												option(value=x)=x
-										select.select-date__select(name="birth-month",id="birthMonth")
-											each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-												option(value=index)= val
-										select.select-date__select(name="birth-year", id="birthYear")
-											-for (var x = 2016; x>1939; x--)
-												option(value=x)= x
+						.how-save-item
+							.how-save-item__title.j-accordion-title(tabindex="0")
+								| Акции и специальные предложения
 
-						.profile-form-group.clearfix
-							h3.cabinet-title Ваши интересы
-							p.
-								Отправляем рассылки и оповещения, связанные с увлечениями. <br>  
-								Без спама.<br> 
-								Нажмите, чтобы включить или отменить
+							.how-save-item__content.j-accordion-content.collapsed
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
-							.subscription.cabinet-subscription
-								each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden(id=index, type="checkbox")
-										label.subscription-item__label(for=index)=val
+						.how-save-item
+							.how-save-item__title.j-accordion-title(tabindex="0")
+								| Гарантия низкой цены
 
+							.how-save-item__content.j-accordion-content.collapsed
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
+						.how-save-item
+							.how-save-item__title.j-accordion-title(tabindex="0")
+								| Бонусы по партнерской программе
 
+							.how-save-item__content.j-accordion-content.collapsed
+								p.
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
-						.profile-form-group.clearfix
-							h3.cabinet-title Мои подписки
-							p Нажмите, чтобы включить или отменить
-
-							.subscription.cabinet-subscription.clearfix
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msStock(type="checkbox" checked)
-									label.subscription-item__label(for="msStock") Акции
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msDiscount(type="checkbox")
-									label.subscription-item__label(for="msDiscount") Скидки
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msHit(type="checkbox")
-									label.subscription-item__label(for="msHit") Хиты
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msNovelty(type="checkbox")
-									label.subscription-item__label(for="msNovelty") Новинки
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msOverview(type="checkbox")
-									label.subscription-item__label(for="msOverview") Обзоры
-
-						footer.profile-form-footer.clearfix
-							input.btn.profile-form__btn(type="submit" value="Сохранить изменения")
-							a(href="#", data-popup-target="popupProfileDelete").cabinet-link.profile-form__delete-link.popup-open-link
-								span Удалить профиль
 
 
 
@@ -655,16 +681,6 @@ html(lang="ru")
 						li.social-login__link.social-login__link--gp
 							a(href="#", title="google plus")
 
-				a.popup-b__close(href="#")
-			section.popup-b.profile-delete#popupProfileDelete
-				header.popup-b__header
-					h2.popup-b__heading Удаление профиля
-				.popup-b__content
-					p.
-						Вы действительно хотите удалить свой профиль на сайте <a href="#">modelistam.com.ua</a>?
-					p
-						button.btn.btn--danger.profile-delete__btn.profile-delete__btn--delete Да, удалить
-						button.btn.btn--succes.profile-delete__btn.profile-delete__btn--keep.popup-b-close Нет, оставить
 				a.popup-b__close(href="#")
 		// Начало основного футера сайта
 		footer.main-footer

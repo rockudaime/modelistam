@@ -1,0 +1,66 @@
+.how-save-item {
+	border: 1px solid #959595;
+	border-radius: 2px;
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&__title {
+		padding: 12px 50px 12px 15px;
+		font: 17px/24px $main-font;
+		color: #151515;
+		position: relative;
+
+		&.active,
+		&:hover,
+		&:focus {
+			font-family: $main-font-semibold;
+			outline: 0;
+			background-color: #fffae8;
+			cursor: pointer;
+		}
+
+		&:after {
+			position: absolute;
+			display: block;
+			content: "";
+			width: 45px;
+			height: 100%;
+
+			
+			top: 0;
+			right: 0;
+			background: #f6f6f6 url(images/ui-icon-personal-open-detail-sprite.png) no-repeat 13px 50%;
+		}
+
+		&.active {
+			border-bottom: 1px solid #959595;
+			&:after {
+				background-position: -27px 50%;
+			}
+		}
+	}
+
+	&__content {
+		padding: 15px;
+
+		p {
+			font-size: 15px;
+			line-height: 24px;
+			margin-bottom: 0;
+		}
+
+		p + p {
+			margin-top: 11px;
+		}
+	}
+}
+
+
+.j-accordion-content.collapsed {
+	display: none;
+
+
+}

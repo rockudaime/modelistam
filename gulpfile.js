@@ -41,7 +41,7 @@ gulp.task('sass', function () {
 // HTML processing
 // ***********************
 gulp.task('pug', function() {
-    return gulp.src('app/pug/profile.pug') //('app/jade/**/*.jade')
+    return gulp.src('app/pug/cabinet-how-save.pug') //('app/jade/**/*.jade')
         .pipe(pug({
             pretty: true
             })) 
@@ -73,9 +73,9 @@ gulp.task('browsersync', function(cb) {
     return browsersync({
     server: {
             baseDir:'./',
-            index: 'profile.html'
+            index: 'cabinet-how-save.html'
         },
-    reloadDelay: 300
+    reloadDelay: 500
 
     }, cb);
 });
