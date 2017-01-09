@@ -406,3 +406,11 @@ function dragElement(obj) {
 		elPosition = -(e.target.offsetLeft - this.offsetLeft);
 	}
 }
+
+function tabElemsKeypressHandler(e) { // Trigger the click event from the keyboard
+	var code = e.which;
+	// 13 = Return, 32 = Space
+	if ((code === 13) || (code === 32)) {
+		$(this).click();
+	}
+}

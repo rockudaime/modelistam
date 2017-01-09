@@ -625,11 +625,13 @@
 			width: 20px;
 			height: 20px;
 			background: url(images/footer-spritesheet.png) no-repeat 0 0px;
+
+			&--phone {
+				background-position: 0 -20px;
+			}
 		}
 
-		&--phone {
-			background-position: 0 -20px;
-		}
+		
 	}
 
 	&__country-phone {

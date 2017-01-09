@@ -327,6 +327,16 @@ strong, b {
             background-color: #5d8c12;
         }
     }
+
+    &--sale {
+        background-color: #ce3b1e; 
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: #bd371c;
+        }
+    }
 }
 
 h1 {

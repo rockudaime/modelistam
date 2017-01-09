@@ -78,6 +78,7 @@ $(document).ready(function(){
 				var contents = accordion.content;
 
 				titles.on('click', clickHandler);
+				titles.on('keydown', tabElemsKeypressHandler)
 
 				function clickHandler (e) {
 					e.preventDefault;
@@ -103,8 +104,23 @@ $(document).ready(function(){
 
 		accordion.init();
 
+		var wWidth = $(window).width();
+
+		$('[data-countdown]').each(function() {
+		  var $this = $(this), finalDate = $(this).data('countdown');
+
+			if (wWidth < 1235) {
+				$this.countdown(finalDate, function(event) {
+					$this.html(event.strftime('%-D %!D:день, дня, дней; %H:%M'));
+				});
+		  } else {
+				$this.countdown(finalDate, function(event) {
+					$this.html(event.strftime('%-D %!D:день, дня, дней; %H %!H:час, часа, часов; %M %!M:минута, минуты, минут;'));
+				});
+		  }
+		  
+		});
+
 	}
 
 });
-
-

@@ -1,3 +1,14 @@
+.cabinet-how-save {
+	margin-bottom: 35px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 43px;
+	}
+
+	@media (min-width: 1235px) {
+		margin-bottom: 22px;
+	}
+}
 .how-save-item {
 	border: 1px solid #959595;
 	border-radius: 2px;
@@ -8,14 +19,15 @@
 	}
 
 	&__title {
-		padding: 12px 50px 12px 15px;
+		padding: 11px 50px 10px 15px;
 		font: 17px/24px $main-font;
 		color: #151515;
 		position: relative;
 
 		&.active,
 		&:hover,
-		&:focus {
+		&:focus,
+		.no-js & {
 			font-family: $main-font-semibold;
 			outline: 0;
 			background-color: #fffae8;
@@ -32,14 +44,19 @@
 			
 			top: 0;
 			right: 0;
-			background: #f6f6f6 url(images/ui-icon-personal-open-detail-sprite.png) no-repeat 13px 50%;
+			background: #f6f6f6 url(images/ui-icon-personal-open-detail-sprite.png) no-repeat 10px 50%;
 		}
 
-		&.active {
+		&.active,
+		.no-js & {
 			border-bottom: 1px solid #959595;
 			&:after {
 				background-position: -27px 50%;
 			}
+		}
+
+		@media (min-width: 1235px) {
+			padding-top: 9px;
 		}
 	}
 
@@ -62,5 +79,141 @@
 .j-accordion-content.collapsed {
 	display: none;
 
+	.no-js & {
+		display: block;
+	}
+}
+
+.cabinet-sales-preview {
+	@media (min-width: 1235px) {
+		width: 470px;
+	}
+}
+
+// ==================================================
+// =================== styles for sale page  ========
+// надо будет перенести потом в нужный файл
+.sales-preview-wrapper {
+	font: 16px $main-font;
+}
+
+h3.sales-preview-title {
+	font: 20px/28px $main-font-semibold;
+	color: #151515;
+	margin-bottom: 10px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 20px;
+	}
+}
+
+.sales-preview {
+
+	&__more {
+		font-size: 1em;
+		display: inline-block;
+		position: relative;
+		top: -5px;
+
+		@media (min-width: 768px) and (max-width: 1234px) {
+			top: -14px;
+		}
+
+		span.bb-solid {
+			display: inline-block;
+			line-height: 16px;
+			border-color: #92aacc;
+		}
+	}
+
+}
+
+.sale-preview {
+	padding-bottom: 25px;
+	@media (min-width: 768px) {
+		padding-bottom: 30px;
+	}
+	& + & {
+		border-top: 1px dashed #c2c2c2;
+		padding-top: 31px;
+
+		@media (min-width: 1235px) {
+			padding-top: 26px;
+		}
+	}
+
+	&__photo {
+		font-size: 0px;
+		margin-bottom: 21px;
+
+		img {
+			max-width: 100%;
+		}
+
+		@media (min-width: 768px) {
+			float: left;
+			width: 400px;
+			margin-bottom: 0;
+		}
+		@media (min-width: 1235px) {
+			float: none;
+			width: auto;
+			margin-bottom: 12px;
+		}
+	}
+	&__description {
+		@media (min-width: 768px) {
+			margin-left: 420px;
+			position: relative;
+			height: 100%;
+		}
+		@media (min-width: 1235px) {
+			margin-left: 0;
+		}
+	}
+	&__text {
+		margin-bottom: 25px;
+
+		@media (min-width: 768px) {
+			margin-bottom: 26px;
+		}
+
+		@media (min-width: 1235px) {
+			margin-bottom: 24px;
+		}
+
+		p + p {
+			margin-top: 15px;
+		}
+		p {
+			font: 20px/32px $main-font-light;
+			margin-bottom: 0;
+		}
+	}
+	&__controls {
+		@media (min-width: 768px) and (max-width: 1234px) {
+			
+		}
+	}
+	&__btn {
+		font-size: 16px;
+		font-family: $main-font;
+		padding: 10px 20px 12px 17px;
+	}
+
+}
+
+.sale-timer {
+	font-size: 22px;
+	&-wrapper {
+		font-family: $main-font;
+		font-size: 18px;
+		color: #d91c1c;
+		margin-bottom: 15px;
+
+		& * {
+			display: inline-block;
+		}
+	}
 
 }

@@ -1,5 +1,5 @@
 doctype html
-html(lang="ru")
+html(lang="ru").no-js
 	head
 		title Личный кабинет - Как сэкономить
 		meta(charset="utf-8")
@@ -12,6 +12,8 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/vendor/countdown/jquery.countdown.js")
+		//- script(src="dist/js/vendor/countdown/jquery.countdown-ru.js")
 
 		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/personal-cabinet.js")
@@ -516,16 +518,16 @@ html(lang="ru")
 					h2.cabinet-title Как сэкономить
 					.cabinet-how-save.j-accordion
 						.how-save-item
-							.how-save-item__title.j-accordion-title.active(tabindex="0")
+							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
 								| Накопительная система скидок
 
-							.how-save-item__content.j-accordion-content
+							.how-save-item__content.j-accordion-content.collapsed
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0")
+							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
 								| Правило 10/15%
 
 							.how-save-item__content.j-accordion-content.collapsed
@@ -533,7 +535,7 @@ html(lang="ru")
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
 						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0")
+							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
 								| Акции и специальные предложения
 
 							.how-save-item__content.j-accordion-content.collapsed
@@ -541,7 +543,7 @@ html(lang="ru")
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
 						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0")
+							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
 								| Гарантия низкой цены
 
 							.how-save-item__content.j-accordion-content.collapsed
@@ -549,12 +551,48 @@ html(lang="ru")
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
 
 						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0")
+							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
 								| Бонусы по партнерской программе
 
 							.how-save-item__content.j-accordion-content.collapsed
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+
+					.sales-preview-wrapper
+						h3.cabinet-title.sales-preview-title У нас есть ещё хорошие предложения
+						.sales-preview.cabinet-sales-preview
+							.sale-preview.clearfix
+								.sale-preview__photo
+									a(href="#")
+										img(src="dist/images/temporary/sale-main-pic.jpg", alt="some alt for image")
+								.sale-preview__description
+									.sale-preview__text
+										p.
+											Эксклюзивно в Modelistam! Nanda Racing NRB-5 RTR 1/8 Nitro Buggy по спеццене + бесплатная доставка в подарок!
+									.sale-preview__controls
+										.sale-timer-wrapper Осталось
+											div.sale-timer(data-countdown="2017/01/18 19:00:00")
+												// YY/MM/DD
+										a(href="#").btn.btn--sale.sale-preview__btn Посмотреть акционные товары
+
+							.sale-preview.clearfix
+								.sale-preview__photo
+									a(href="#")
+										img(src="dist/images/temporary/sale-main-pic-2.jpg", alt="some alt for image")
+								.sale-preview__description
+									.sale-preview__text
+										p.
+											При покупке модельного ряда багги, в подарок чехол на выбор
+									.sale-preview__controls
+										.sale-timer-wrapper Осталось
+											div.sale-timer(data-countdown="2017/01/10 22:27:00")
+										a(href="#").btn.btn--sale.sale-preview__btn Посмотреть акционные товары
+
+						a.sales-preview__more(href="#")
+							span.bb-solid Посмотреть другие акции
+
+
+
 
 
 
