@@ -414,3 +414,13 @@ function tabElemsKeypressHandler(e) { // Trigger the click event from the keyboa
 		$(this).click();
 	}
 }
+
+var MYFUNCS = {
+	ellipsis: function (obj, len) {
+			var text = obj.innerHTML;
+			if (text.length > len) {
+				text = text.slice(0, len - 3) + '...'; 
+				obj.innerHTML = text;
+			}
+		}
+}

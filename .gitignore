@@ -8,3 +8,5 @@ bitrix/components/
 .sass-cache/
 node_modules/
 pass.txt
+maps/
+*.map

@@ -51,12 +51,12 @@
 		.no-js & {
 			border-bottom: 1px solid #959595;
 			&:after {
-				background-position: -27px 50%;
+				background-position: -30px 50%;
 			}
 		}
 
 		@media (min-width: 1235px) {
-			padding-top: 9px;
+			padding-top: 11px;
 		}
 	}
 
@@ -206,7 +206,7 @@ h3.sales-preview-title {
 .sale-timer {
 	font-size: 22px;
 	&-wrapper {
-		font-family: $main-font;
+		font-family: $main-font-semibold;
 		font-size: 18px;
 		color: #d91c1c;
 		margin-bottom: 15px;

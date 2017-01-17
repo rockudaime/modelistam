@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru").no-js
 	head
-		title Личный кабинет - Как сэкономить
+		title Личный кабинет - Мои заказы
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -143,7 +143,7 @@ html(lang="ru").no-js
 					span.bb-solid Главная
 				a(href="#").breadcrumbs-item
 					span.bb-solid Личный кабинет 
-				span Как сэкономить
+				span Мои заказы
 			// Начало основного меню
 
 			nav.main-nav
@@ -495,18 +495,19 @@ html(lang="ru").no-js
 							i.media-video-icon.media-icon
 							| Видео
 			// Конец основного меню
+
 		// Контент страницы
 		.container.personal-cabinet-content
 			// Блок меню личного кабинета
 			aside.cabinet-menu-block
 				// Кнопка раскрытия меню в мобильном и табличном виде
-				.mobile-custom-select.cabinet-menu__custom-select Как сэкономить
+				.mobile-custom-select.cabinet-menu__custom-select Мои заказы
 				// Меню
 				nav.cabinet-menu
-					a(href="#").cabinet-menu-link.active
+					a(href="#").cabinet-menu-link
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--save
 						| Как сэкономить
-					a(href="#").cabinet-menu-link
+					a(href="#").cabinet-menu-link.active
 						i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
 						| Мои заказы
 					a(href="#").cabinet-menu-link
@@ -515,95 +516,417 @@ html(lang="ru").no-js
 			.cabinet-content-block.clearfix
 				// Блок main  - содержимое отличается для разных страниц личного кабинета
 				main.cabinet-main-content
-					h2.cabinet-title Как сэкономить
-					.cabinet-how-save.j-accordion
-						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
-								| Накопительная система скидок
+					h2.cabinet-title Мои заказы
+					p.cabinet-order-total Общая сумма покупок — 32 000 грн
+					.cabinet-my-orders.j-accordion
+						// Блок заказов, которые находятся в обработке
+						.my-orders-processing
+							// Блок первого заказа
+							article.my-order
+								header.my-order-header.j-accordion-title(tabindex="0", role="tab")
+									span.my-order__info Заказ 83497 от 15.01.17
+									span.my-order__price
+										span.current-price 11 650 
+											span.price-currency грн 
+									span.my-order__status.my-order__status--waiting В обработке
+									.my-order-header__controls
+										button.my-order-control.my-order-control--add
+										button.my-order-control.my-order-control--email
+										button.my-order-control.my-order-control--print
+								.my-order-body.j-accordion-content.collapsed
+									section.my-order-content
+										.ordered-good.clearfix
+											.ordered-good__description.clearfix
+												.ordered-good__photo
+													a(href="#")
+														img(src="dist/images/temporary/product-main-img.jpg" alt="some alt for image")
+											
+												.ordered-good__text
+													a(href="#").
+														Самолет Hubsan Spy Hawk H301F 843 мм 2.4 &amp; 5.8GHz с бортовой видеокамерой и системой FPV RTF
+												.ordered-good__bought-warranty
+													.ordered-good__text
+														.ordered-good__text-cell
+															h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+														.ordered-good__text-cell
+															i.gift-icon.icon
+															| На подарок
+														
+													.ordered-good__bought-warranty-pricing
+														.ordered-good__price-cell 500 грн
+														.ordered-good__price-cell 30 грн
 
-							.how-save-item__content.j-accordion-content.collapsed
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
-								| Правило 10/15%
+											.ordered-good__pricing
+												.ordered-good__qty 1 шт
+												.ordered-good__price
+													span.product-price.current-price 11 600  
+														span.price-currency грн
 
-							.how-save-item__content.j-accordion-content.collapsed
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+											.ordered-good__additional
+												// Рекомендуемые товары
+												.recomended-goods
+													h3.recomended-goods__heading Рекомендуем к этому товару:
+													ul.recomended-goods__list
+														li.recomended-goods__item
+															a(href="#")
+																span Батарейки
+														li.recomended-goods__item
+															a(href="#")
+																span Аккумуляторы
+														li.recomended-goods__item
+															a(href="#")
+																span Сумки
 
-						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
-								| Акции и специальные предложения
+												
 
-							.how-save-item__content.j-accordion-content.collapsed
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+										.ordered-good.clearfix
+											.ordered-good__description.clearfix
+												.ordered-good__photo
+													a(href="#")
+														img(src="dist/images/temporary/cabinet-product-2.jpg" alt="some alt for image")
+											
+												.ordered-good__text
+													a(href="#").
+														Himoto Tyronno E18SC 1/18 Brushed красный (E18SCr)
+											.ordered-good__pricing
+												.ordered-good__qty 1 шт
+												.ordered-good__price
+													span.product-price.current-price 11 600  
+														span.price-currency грн
 
-						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
-								| Гарантия низкой цены
+											.ordered-good__additional
+												// Дополнительная гарантия
+												.extended-warranty
+													h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+													p.extended-warranty__description.
+														50% покупателей, приобретая дополнительную гарантию, застраховывают свою технику от дополнительных расходов на ремонты, которые в 5 раз превышают сумму гарантии.
+													.extended-warranty__buy-block
+														.extended-warranty__price
+															.current-price.warranty-price 500 
+																span.price-currency грн
+															.product-price.product-price--old 580
+																span.product-price__text-small грн
+														div
+															a.btn.extended-warranty__btn-buy(href="#") Добавить
+												// Комплект с товаром
+												.additional-good.clearfix
+													h3.additional-good__heading Комплект со скидкой 10%
+													.additional-good__photo
+														a(href="#")
+															img.product-set__good-photo(src="dist/images/temporary/cart-recomended.png", alt="recomended good")
+													.additional-good__name
+														a(href="#") Аккумулятор Hubsan Li-Po 3,7В 380 мАч...
+													.additional-good__bottom
+														.additional-good__price
+															.current-price.product-price.product-price--new 300 
+																span.price-currency грн
+															.product-price.product-price--old
+																del 330грн
+														a.btn.additional-good__btn-add(href="#") Добавить
+									// footer of .my-order block
+									footer.my-order-footer.clearfix
+										table.product-price-discount
+											tbody
+												tr
+													td Стоимость товара
+													td 
+														.current-price 110 667 грн
+												tr
+													td
+														span.my-order-discount Ваша скидка 3%
+													td 
+														.current-price.current-price--discount -700 грн
 
-							.how-save-item__content.j-accordion-content.collapsed
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+										.product-total-block
+											.my-order-footer__total Итого: 
+												span.current-price 10 957 
+													span.price-currency грн
 
-						.how-save-item
-							.how-save-item__title.j-accordion-title(tabindex="0", role="tab")
-								| Бонусы по партнерской программе
+							article.my-order
+								header.my-order-header.j-accordion-title(tabindex="0", role="tab")
+									span.my-order__info Заказ 83497 от 12.12.16
+									span.my-order__price
+										span.current-price 4 100 
+											span.price-currency грн 
+									span.my-order__status.my-order__status--waiting В обработке
+									.my-order-header__controls
+										button.my-order-control.my-order-control--add
+										button.my-order-control.my-order-control--email
+										button.my-order-control.my-order-control--print
+							article.my-order
+								header.my-order-header.j-accordion-title(tabindex="0", role="tab")
+									span.my-order__info Заказ 83497 от 12.12.16
+									span.my-order__price
+										span.current-price 4 100 
+											span.price-currency грн 
+									span.my-order__status.my-order__status--waiting В обработке
+									.my-order-header__controls
+										button.my-order-control.my-order-control--add
+										button.my-order-control.my-order-control--email
+										button.my-order-control.my-order-control--print
+						// Блок уже обработанных заказов
+						.my-orders-ready
+							h3.cabinet-title Выполненные заказы
+							// Обработанный заказ №1
+							article.my-order
+								header.my-order-header.j-accordion-title(tabindex="0", role="tab")
+									span.my-order__info Заказ 83497 от 12.12.15
+									span.my-order__price
+										span.current-price 11 650 
+											span.price-currency грн 
+									span.my-order__warranty Осталось 10 мес гарантии
 
-							.how-save-item__content.j-accordion-content.collapsed
-								p.
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+									.my-order-header__controls
+										button.my-order-control.my-order-control--print
+								.my-order-body.j-accordion-content.collapsed
+									section.my-order-content
+										.ordered-good.clearfix
+											.ordered-good__description.clearfix
+												.ordered-good__photo
+													a(href="#")
+														img(src="dist/images/temporary/product-main-img.jpg" alt="some alt for image")
+											
+												.ordered-good__text
+													a(href="#").
+														Самолет Hubsan Spy Hawk H301F 843 мм 2.4 &amp; 5.8GHz с бортовой видеокамерой и системой FPV RTF
+												.ordered-good__bought-warranty
+													.ordered-good__text
+														.ordered-good__text-cell
+															h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+														.ordered-good__text-cell
+															i.gift-icon.icon
+															| На подарок
+														
+													.ordered-good__bought-warranty-pricing
+														.ordered-good__price-cell 500 грн
+														.ordered-good__price-cell 30 грн
+											.ordered-good__pricing
+												.ordered-good__qty 1 шт
+												.ordered-good__price
+													span.product-price.current-price 11 600 
+														span.price-currency грн
 
-					.sales-preview-wrapper
-						h3.cabinet-title.sales-preview-title У нас есть ещё хорошие предложения
-						.sales-preview.cabinet-sales-preview
-							.sale-preview.clearfix
-								.sale-preview__photo
-									a(href="#")
-										img(src="dist/images/temporary/sale-main-pic.jpg", alt="some alt for image")
-								.sale-preview__description
-									.sale-preview__text
-										p.
-											Эксклюзивно в Modelistam! Nanda Racing NRB-5 RTR 1/8 Nitro Buggy по спеццене + бесплатная доставка в подарок!
-									.sale-preview__controls
-										.sale-timer-wrapper Осталось
-											div.sale-timer(data-countdown="2017/01/18 19:00:00")
-												// YY/MM/DD
-										a(href="#").btn.btn--sale.sale-preview__btn Посмотреть акционные товары
-
-							.sale-preview.clearfix
-								.sale-preview__photo
-									a(href="#")
-										img(src="dist/images/temporary/sale-main-pic-2.jpg", alt="some alt for image")
-								.sale-preview__description
-									.sale-preview__text
-										p.
-											При покупке модельного ряда багги, в подарок чехол на выбор
-									.sale-preview__controls
-										.sale-timer-wrapper Осталось
-											// внутри data-countdown
-												- A native date object
-												- The milliseconds from Epoch time
-												- String formatted as following:
-												YYYY/MM/DD
-												MM/DD/YYYY
-												YYYY/MM/DD hh:mm:ss
-												MM/DD/YYYY hh:mm:ss
-											div.sale-timer(data-countdown="2017/01/10 22:27:00")
-										a(href="#").btn.btn--sale.sale-preview__btn Посмотреть акционные товары
-
-						a.sales-preview__more(href="#")
-							span.bb-solid Посмотреть другие акции
-
-
-
+											.ordered-good__additional
+												// Дополнительная гарантия
+												.extended-warranty
+													h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+													p.extended-warranty__description.
+														50% покупателей, приобретая дополнительную гарантию, застраховывают свою технику от дополнительных расходов на ремонты, которые в 5 раз превышают сумму гарантии.
+													.extended-warranty__buy-block
+														.extended-warranty__price
+															.current-price.warranty-price 500 
+																span.price-currency грн
+														div
+															a.btn.extended-warranty__btn-buy(href="#") Купить
+												// Отзывы о товаре
+												.personal-review.ordered-good__review
+													h3.personal-review__title Оставить отзыв
+													form.personal-review__form.personal-review-form(action="/", method="get")
+														input(type='hidden', name='productID', value='01')
+														input(type='hidden', name='userID', value='00001')
+														textarea.personal-review-form__textarea(placeholder="Расскажите о вашем опыте использования модели", name="review")
+														.personal-review__form-group.clearfix
+															.star-rating-block.personal-review__star-rating-block
+																.review-star-rating.clearfix
+																	.review-star-rating__star
+																		a(href="#", title="1") 1
+																	.review-star-rating__star
+																		a(href="#", title="2") 2
+																	.review-star-rating__star
+																		a(href="#", title="3") 3
+																	.review-star-rating__star
+																		a(href="#", title="4") 4
+																	.review-star-rating__star
+																		a(href="#", title="5") 5
+																input.personal-review-form__rate(type='hidden', name='rate', value='')
+															select.personal-review__use-period(name="usePeriod")
+																option(value="", disabled, selected) Срок использования
+																option(value="3") 1 - 3 мес
+																option(value="6") 3 - 6 мес
+																option(value="12") 6 мес - 1 год
+																option(value="24") 2 года
+																option(value="36") 3 года
+															input(type="submit" value="Оставить отзыв").personal-review__btn.btn
 
 
 
+												// Рекомендуемые товары
+												.recomended-goods
+													h3.recomended-goods__heading Рекомендуем к этому товару:
+													ul.recomended-goods__list
+														li.recomended-goods__item
+															a(href="#")
+																span Батарейки
+														li.recomended-goods__item
+															a(href="#")
+																span Аккумуляторы
+														li.recomended-goods__item
+															a(href="#")
+																span Сумки
+
+										.ordered-good.clearfix
+											.ordered-good__description.clearfix
+												.ordered-good__photo
+													a(href="#")
+														img(src="dist/images/temporary/sale-main-pic-2.jpg" alt="some alt for image")
+											
+												.ordered-good__text
+													a(href="#").
+														Himoto Tyronno E18SC 1/18 Brushed красный (E18SCr)
+											.ordered-good__pricing
+												.ordered-good__qty 1 шт
+												.ordered-good__price
+													span.product-price.current-price 11 600 
+														span.price-currency грн
+
+											.ordered-good__additional
+												// Дополнительная гарантия
+												.extended-warranty
+													h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+													p.extended-warranty__description.
+														50% покупателей, приобретая дополнительную гарантию, застраховывают свою технику от дополнительных расходов на ремонты, которые в 5 раз превышают сумму гарантии.
+													.extended-warranty__buy-block
+														.extended-warranty__price
+															.current-price.warranty-price 500 
+																span.price-currency грн
+														div
+															a.btn.extended-warranty__btn-buy(href="#") Купить
+												// Отзывы о товаре
+												.personal-review.ordered-good__review
+													h3.personal-review__title Оставить отзыв
+													form.personal-review__form(action="/", method="get")
+														input(type='hidden', name='productID', value='02')
+														input(type='hidden', name='userID', value='00001')
+														textarea.personal-review-form__textarea(placeholder="Расскажите о вашем опыте использования модели", name="review")
+														.personal-review__form-group.clearfix
+															.star-rating-block.personal-review__star-rating-block
+																.review-star-rating.clearfix
+																	.review-star-rating__star
+																		a(href="#", title="1") 1
+																	.review-star-rating__star
+																		a(href="#", title="2") 2
+																	.review-star-rating__star
+																		a(href="#", title="3") 3
+																	.review-star-rating__star
+																		a(href="#", title="4") 4
+																	.review-star-rating__star
+																		a(href="#", title="5") 5
+																input.personal-review-form__rate(type='hidden', name='rate', value='')
+															select.personal-review__use-period(name="usePeriod")
+																option(value="", disabled, selected) Срок использования
+																option(value="3") 1 - 3 мес
+																option(value="6") 3 - 6 мес
+																option(value="12") 6 мес - 1 год
+																option(value="24") 2 года
+																option(value="36") 3 года
+															input(type="submit" value="Оставить отзыв").personal-review__btn.btn
+
+
+
+												// Рекомендуемые товары
+												.recomended-goods
+													h3.recomended-goods__heading Рекомендуем к этому товару:
+													ul.recomended-goods__list
+														li.recomended-goods__item
+															a(href="#")
+																span Батарейки
+														li.recomended-goods__item
+															a(href="#")
+																span Аккумуляторы
+														li.recomended-goods__item
+															a(href="#")
+																span Сумки
+							// Обработанный заказ №2
+							article.my-order
+								header.my-order-header.j-accordion-title(tabindex="0", role="tab")
+									span.my-order__info Заказ 83497 от 12.12.15
+									span.my-order__price
+										span.current-price 1 320 
+											span.price-currency грн 
+									span.my-order__warranty
+										a(href="#") Продлить гарантию
+									.my-order-header__controls
+										button.my-order-control.my-order-control--print
+								.my-order-body.j-accordion-content.collapsed
+									section.my-order-content
+										.ordered-good.clearfix
+											.ordered-good__description.clearfix
+												.ordered-good__photo
+													a(href="#")
+														img(src="dist/images/temporary/avto.jpeg" alt="some alt for image")
+											
+												.ordered-good__text
+													a(href="#").
+														Himoto Tyronno E18SC 1/18 Brushed красный (E18SCr)
+											.ordered-good__pricing
+												.ordered-good__qty 3 шт
+												.ordered-good__price
+													span.product-price.current-price 960
+														span.price-currency грн
+
+											.ordered-good__additional
+												// Дополнительная гарантия
+												.extended-warranty
+													h3.extended-warranty__heading Расширенная гарантия <b>+ 24 мес</b>
+													p.extended-warranty__description.
+														50% покупателей, приобретая дополнительную гарантию, застраховывают свою технику от дополнительных расходов на ремонты, которые в 5 раз превышают сумму гарантии.
+													.extended-warranty__buy-block
+														.extended-warranty__price
+															.current-price.warranty-price 300 
+																span.price-currency грн
+														div
+															a.btn.extended-warranty__btn-buy(href="#") Купить
+												// Отзывы о товаре
+												.personal-review.ordered-good__review
+													h3.personal-review__title Оставить отзыв
+													form.personal-review__form(action="/", method="get")
+														input(type='hidden', name='productID', value='03')
+														input(type='hidden', name='userID', value='00001')
+														textarea.personal-review-form__textarea(placeholder="Расскажите о вашем опыте использования модели", name="review")
+														.personal-review__form-group.clearfix
+															.star-rating-block.personal-review__star-rating-block
+																.review-star-rating.clearfix
+																	.review-star-rating__star
+																		a(href="#", title="1") 1
+																	.review-star-rating__star
+																		a(href="#", title="2") 2
+																	.review-star-rating__star
+																		a(href="#", title="3") 3
+																	.review-star-rating__star
+																		a(href="#", title="4") 4
+																	.review-star-rating__star
+																		a(href="#", title="5") 5
+																input.personal-review-form__rate(type='hidden', name='rate', value='')
+															select.personal-review__use-period(name="usePeriod")
+																option(value="", disabled, selected) Срок использования
+																option(value="3") 1 - 3 мес
+																option(value="6") 3 - 6 мес
+																option(value="12") 6 мес - 1 год
+																option(value="24") 2 года
+																option(value="36") 3 года
+															input(type="submit" value="Оставить отзыв").personal-review__btn.btn
+
+												// Рекомендуемые товары
+												.recomended-goods
+													h3.recomended-goods__heading Рекомендуем к этому товару:
+													ul.recomended-goods__list
+														li.recomended-goods__item
+															a(href="#")
+																span Батарейки
+														li.recomended-goods__item
+															a(href="#")
+																span Аккумуляторы
+														li.recomended-goods__item
+															a(href="#")
+																span Сумки
+
+
+
+
+
+						
+
+					
 
 				// Сайдбар личного кабинета (общее)
 				aside.cabinet-sidebar

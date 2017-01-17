@@ -116,12 +116,17 @@
 		
 		white-space: nowrap;
 
-		&--desctop {
-			display: none;
+        &:nth-child(4),
+        &:nth-child(5) {
+            display: none;
 
-			@media (min-width: 1235px) {
-				display: inline-block;
-			}
+            @media (min-width: 1235px) {
+                display: inline-block;
+            }
+        }
+
+		&--desctop {
+			
 		}
 
 		a {
@@ -1351,7 +1356,7 @@
 }
 
 .popup-login {
-	max-width: 350px;
+	max-width: 350px !important;
 	padding: 41px 40px 27px;
 
 	.popup-b__close {
@@ -1388,6 +1393,7 @@
 	}
 	.form-group {
 		margin-bottom: 8px;
+        white-space: nowrap;
 	}
 
 	&__input {

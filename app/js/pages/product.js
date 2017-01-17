@@ -632,27 +632,27 @@ $(function() {
 	ratingBlock.children().on('mouseover', function(){
 		'use strict';
 		var current = $(this);
-		ratingBlock.children().removeClass('star-rating-hover');
-		$(this).addClass('star-rating-hover');
+		ratingBlock.children().removeClass('.review-star-rating__star--hover');
+		$(this).addClass('review-star-rating__star--hover');
 		while (current.prev().length > 0) {
-			current.prev().addClass('star-rating-hover');
+			current.prev().addClass('review-star-rating__star--hover');
 			current = current.prev();
 		}
 	});
 
 	ratingBlock.on('mouseleave', function() {
-		ratingBlock.children().removeClass('star-rating-hover');
+		ratingBlock.children().removeClass('review-star-rating__star--hover');
 	});
 
 	ratingBlock.children().on('click', function () {
 		'use strict';
 		var current = $(this);
-		ratingBlock.children().removeClass('star-rating-on');
-		$(this).addClass('star-rating-on');
+		ratingBlock.children().removeClass('review-star-rating__star--on');
+		$(this).addClass('review-star-rating__star--on');
 		while (current.prev().length > 0) {
-			current.prev().addClass('star-rating-on');
+			current.prev().addClass('review-star-rating__star--on');
 			current = current.prev();
 		}
 	});
 
-});
+}); 

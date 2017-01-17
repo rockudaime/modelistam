@@ -1,0 +1,844 @@
+.cabinet-order-total {
+  font-size: 20px;
+  color: #151515;
+  margin-bottom: 4px;
+  position: relative;
+  top: -9px;
+  line-height: 25px;
+
+  @media (min-width: 768px) and (max-width: 1234px) {
+    margin-bottom: 7px;
+  }
+}
+
+.my-orders-processing {
+  padding-bottom: 30px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.my-orders-ready {
+
+  .cabinet-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+
+.gift-icon {
+  background: url(images/ui-icon-personal-present.png) no-repeat 0 0;
+    width: 22px;
+    height: 28px;
+    margin-right: 8px;
+}
+.my-order {
+  border: 1px solid #959595;
+  border-radius: 2px;
+  font: 15px $main-font;
+  color: #151515;
+  overflow: hidden;
+
+  & + & {
+    margin-top: 17px;
+
+    @media (min-width: 1235px) {
+      margin-top: 15px;
+    }
+  } 
+
+  &__info {
+    color: #777;
+    font-size: 1em;
+    font-family: $main-font;
+    margin-right: 22px;
+    white-space: nowrap;
+
+    @media (min-width: 1235px) {
+      font-size: .8666em;
+      margin-right: 10px;
+    }
+  }
+
+  &__price {
+    white-space: nowrap;
+    margin-right: 8px;
+
+    @media (min-width: 1235px) {
+      margin-right: 13px;
+      .current-price {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &__status {
+    font: 1em $main-font-semibold;
+
+    &--waiting {
+      color: #f1880f;
+      background: url('images/ui-icon-personal-order-status.png') no-repeat 0 50%;
+      padding-left: 25px;
+    }
+  }
+
+  &-discount {
+    color: #658800;
+    font-size: 16px;
+    font-family: $main-font-semibold;
+  }
+
+  & &__warranty {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  &__warranty {
+    color: #ce1e36;
+    font-size: 1em;
+
+    a {
+      border-bottom: 1px dashed #f54d5d;
+      color: inherit;
+    }
+  }
+
+}
+
+.current-price {
+  font: 18px $main-font-semibold;
+
+  &--discount {
+    color: #568800;
+  }
+
+  .price-currency {
+    font-size: 15px;
+  }
+}
+.my-order-header {
+  padding: 11px 48px 15px 10px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    padding-left: 14px;
+    padding-top: 7px;
+  }
+
+  @media (min-width: 1235px) {
+    padding: 10px 48px 15px 14px;
+  }
+
+  & > span {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  
+
+  &:focus {
+    outline: 1px dotted #346cab;
+  }
+  &.active,
+  .no-js & {
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 100%;
+
+    
+    top: 0;
+    right: 0;
+    background: #f6f6f6 url(images/ui-icon-personal-open-detail-sprite.png) no-repeat 10px 50%;
+  }
+
+  &.active,
+  .no-js & {
+    &:after {
+      background-position: -30px 50%;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px; 
+    }
+  }
+
+
+
+  &__controls {
+    position: absolute;
+    right: 60px;
+    top: 15px;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      right: 64px;
+        top: 11px;
+    }
+  }
+
+}
+.my-order-control {
+  width: 25px;
+  height: 19px;
+  background-color: red;
+  border: 0;
+  outline: 0;
+  margin-left: 10px;
+  background: url('images/cabinet-controls.png') no-repeat -5px -5px;
+
+  & + & {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &--add {
+    background-position: -5px -5px;
+  }
+  &--email {
+    background-position: -5px -32px;
+  }
+  &--print {
+    background-position: -5px -60px;
+  }
+}
+
+.my-order-footer {
+  
+  font-size: 16px;
+
+  @media (min-width: 1235px) {
+    border-top: 1px dashed #c2c2c2;
+  }
+}
+.product-price-discount {
+  float: right;
+  clear: both;
+  margin: 21px 20px;
+  font-size: 15px;
+  td {
+    padding: 2px 0;
+  }
+
+  td:first-child {
+    width: 158px;
+  }
+  td:last-child {
+    text-align: right;
+    width: 120px;
+  }
+}
+.product-total-block {
+  clear: both;
+  background-color: #fef4ce;
+  border-top: 1px solid #eaeaea;
+  padding: 14px 23px 16px;
+  text-align: right;
+  font-family: $main-font-semibold;
+
+  .current-price {
+    font-size: 22px;
+  }
+}
+
+.ordered-good {
+
+  padding: 13px 20px 0px 10px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    padding-right: 16px;
+  }
+  
+  & + & {
+    border-top: 1px dashed #c2c2c2;
+  }
+
+  &__additional {
+    margin: 0 -20px 0 -10px;
+    clear: both;
+  }
+
+  &__description {
+
+    @media (min-width: 768px) {
+      // width: 556px;
+      // float: left;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: 1235px) {
+      width: auto;
+    }
+  }
+    &__photo {
+      width: 150px;
+      float: left;
+      font-size: 0px;
+
+      @media (min-width: 768px) {
+        height: 133px;
+          line-height: 133px;
+      }
+
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    &__text {
+      margin-left: 170px;
+      line-height: 25px;
+
+      @media (min-width: 768px) {
+        width: 370px;
+        margin-left: 175px;
+        padding-top: 2px;
+        margin-bottom: 3px;
+      }
+
+      @media (min-width: 1235px) {
+        width: 250px;
+        min-height: 100px;
+        padding-top: 4px;
+        margin-bottom: 6px;
+
+
+      }
+
+      p{
+        line-height: inherit;
+        margin-bottom: 0;
+      }
+
+      a {
+        color: inherit;
+        display: flex;
+        align-items: center;
+        min-height: 78px;
+
+        &:hover {
+          color: #346cab;
+        }
+      }
+    }
+
+    
+
+  &__pricing {
+    margin-bottom: 15px;
+    @media (min-width: 768px) {
+      position: absolute;
+      right: 20px;
+      top: 13px;
+      width: 140px;
+      text-align: right;
+    }
+
+    @media (min-width: 768px) and (max-width: 1234px) {
+      right: 16px;
+      top: 20px;
+    }
+
+    @media (min-width: 1235px) {
+      top: 20px;
+    }
+  }
+    &__qty {
+      float: left;
+      width: 170px;
+      font-size: 15px;
+      color: #777;
+      padding-top: 5px;
+
+      @media (min-width: 768px) {
+        float: none;
+        width: auto;
+        padding: 0;
+      }
+    }
+
+    &__price {
+      margin-left: 170px;
+
+      @media (min-width: 768px) {
+        margin-left: 0;
+      }
+
+      .current-price {
+        font-size: 20px;
+      }
+    }
+  &__bought-warranty {
+    display: none;
+    
+    position: relative;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    &-pricing {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      padding-top: 4px;
+    }
+
+    .extended-warranty__heading {
+      margin-bottom: 0;
+    }
+
+    .ordered-good__text {
+      min-height: auto;
+      border-top: 1px dashed #c2c2c2;
+    }
+  }
+  &__text-cell,
+  &__price-cell {
+    height: 28px;
+    line-height: 30px;
+  }
+  &__price-cell {
+    text-align: right;
+  }
+  &__review {
+    // .ordered-good__review
+    border-top: 1px dashed #c2c2c2;
+
+    @media (min-width: 768px) {
+      border-top: 0;
+    }
+    @media (min-width: 1235px) {
+      margin-bottom: 12px;
+    }
+  }
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+}
+// Блок рекомендованных товаров
+.recomended-goods{
+  background: #fafbfc;
+  width: 100%;
+  padding: 12px 11px 20px;
+  box-sizing: border-box;
+  clear: both;
+
+  @media (min-width: 768px) and (max-width: 1234px) {
+    padding: 15px 11px 17px;
+  }
+
+  @media (min-width: 1235px){
+    padding: 15px 15px 17px;
+  }
+
+  &__heading {
+    font: 15px $main-font;
+    color: #151515;
+    margin: 0 0 10px;
+
+    @media (min-width: 768px) and (max-width: 1234px) {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px) and (max-width: 1234px) {
+      display: inline-block;
+    }
+  }
+  &__item {
+    display: inline-block;
+
+    & + & {
+      margin-left: 12px;
+    }
+
+    a {
+      color: #575757;
+
+      span {
+        border-bottom: 1px solid #bcbdbd;
+        line-height: 16px;
+          display: inline-block;
+      }
+
+      &:hover {
+        span {
+          border-color: #575757;
+        } 
+      }
+    }
+  }
+}
+// Блок комплект со скидкой
+.additional-good {
+  background: #fafbfc;
+  font: 15px $main-font;
+  width: 100%;
+  padding: 13px 11px 23px;
+  box-sizing: border-box;
+  clear: both;
+  position: relative;
+
+  &__heading {
+    font-size: 1em;
+    font-family: $main-font;
+    color: #bf001a;
+    margin-bottom: 7px;
+  }
+
+  &__photo {
+    width: 65px;
+    float: left;
+
+    img {
+      max-width: 100%;
+    }
+
+
+  }
+
+  &__name {
+    margin-left: 80px;
+    max-width: 460px;
+    margin-bottom: 14px;
+
+    @media (min-width: 1235px) {
+      max-width: 335px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    &:hover {
+      a {
+        color: #346cab;
+      }
+    }
+
+
+  }
+
+  &__bottom {
+    margin-left: 80px;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      text-align: right;
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    vertical-align: bottom;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      margin-bottom: 15px;
+
+
+      .product-price {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 1235px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__btn-add {
+    background-color: #76972a;
+    color: #fff;
+    font: 17px $main-font-semibold;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #6b8925;
+    }
+
+    @media (min-width: 768px) {
+      display: block;
+      width: 113px;
+    }
+
+    @media (min-width: 1235px) {
+      padding: 0;
+      width: 96px;
+      height: 32px;
+      font-size: 15px;
+      font-family: $main-font;
+      line-height: 26px;
+    }
+  }
+}
+// Блок расширенной гарантии
+.extended-warranty {
+  background-color: #fffdf6;
+  padding: 13px 15px 16px 15px;
+  position: relative;
+
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    padding-bottom: 25px;
+
+    & + .recomended-goods,
+    & + .additional-good {
+      margin-top: 11px;
+    }
+  }
+
+  @media (min-width: 1235px) {
+    
+  }
+
+  &__heading {
+    font: 15px $main-font;
+    color: #568800;
+    margin-bottom: 4px;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 22px;
+    margin: 0;
+    max-width: 545px;
+
+    @media (min-width: 768px) {
+
+    }
+
+    @media (min-width: 1235px) {
+      max-width: 400px;
+    }
+  }
+
+  &__buy-block {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    text-align: right;
+  }
+
+  &__price {
+    margin-bottom: 14px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  &__btn-buy {
+    background-color: #76972a;
+    color: #fff;
+    font: 17px $main-font-semibold;
+    box-sizing: border-box;
+    width: 112px;
+    height: 38px;
+
+    @media (min-width: 1235px) {
+      padding: 0;
+      width: 96px;
+      height: 32px;
+      font-size: 15px;
+      font-family: $main-font;
+      line-height: 26px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: darken(#76972a, 3%);
+    }
+  }
+}
+
+.warranty-price {
+  color: #ce1e36;
+  font-size: 20px;
+}
+
+.personal-review {
+  font-size: 15px;
+  font-family: $main-font;
+  padding: 21px 10px 30px 10px;
+  @media (min-width: 768px) {
+    padding: 15px 20px 20px 15px;
+  }
+
+  &__title {
+    font: 1em $main-font-semibold;
+    color: #000;
+    margin-bottom: 11px;
+  }
+
+  &__form {
+
+    textarea {
+      width: 100%;
+      font-size: 16px;
+      font-family: inherit;
+      line-height: 25px;
+      border: 1px solid #777;
+      outline: 0;
+      border-radius: 3px;
+      box-sizing: border-box;
+      height: 154px;
+      padding: 8px 13px;
+      margin-bottom: 11px;
+      color: #000;
+
+      @media (min-width: 768px) {
+        padding: 7px 14px;
+        margin-bottom: 16px;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+
+    select {
+      font: 15px "OpenSans", Arial, sans-serif;
+        box-sizing: border-box;
+        height: 38px;
+        padding: 0 25px 0 10px;
+        cursor: pointer;
+        color: #0d0d0d;
+        border: 1px solid #c2c2c2;
+        border-radius: 2px;
+        outline: none;
+        background: #fff url(images/select-arrow-small.png) no-repeat right 6px top 55%;
+        background-size: 12px;
+        box-shadow: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          border-color: #346cab;
+        }
+    }
+  }
+
+  &__form-group {
+    white-space: nowrap;
+  }
+
+  &__use-period {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      vertical-align: baseline;
+      box-sizing: border-box;
+      width: 204px;
+      float: left;
+    }
+  }
+
+  &__star-rating-block {
+    float: left;
+  }
+
+  &__btn {
+    width: 175px;
+    height: 38px;
+    background-color: #76972a;
+    color: #fff;
+    box-sizing: border-box;
+    font: 17px $main-font-semibold;
+    float: right;
+
+    &:hover,
+    &:focus {
+      background-color: darken(#76972a, 3%);
+      outline: 0;
+    }
+  }
+
+
+}
+.star-rating-block {
+  display: inline-block;
+  width: 130px;
+  vertical-align: middle;
+  padding-top: 10px;
+  // margin-right: 12px;
+  // float: left;
+
+  @media (min-width: 375px) {
+    margin-right: 20px;
+  }
+
+  @media (min-width: 1235px) {
+    width: 97px;
+    margin-right: 17px;
+  }
+}
+
+.review-star-rating {
+  
+
+  
+  &__star{
+    float: left;
+    & + & {
+      margin-left: 6px;
+    }
+    a {
+      display: block;
+      width: 21px;
+      height: 21px;
+      background: url('images/personal-rating-star.png') no-repeat 0 -21px;
+      text-align: center;
+      text-indent: -9999px;
+    }
+
+    &:hover a,
+    & a:focus,
+    &--hover a,
+    &--on a{
+      background-position: 0 0 !important; 
+    }
+
+    @media (min-width: 1235px) {
+
+      & + & {
+        margin-left: 4px;
+      }
+
+      a {
+        width: 16px;
+        height: 16px;
+        background-size: 16px;
+        background-position: 0 -16px;
+      }
+    }
+  }
+}
