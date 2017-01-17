@@ -1510,6 +1510,9 @@
 		}
 	}
 
+    &-next {
+        color: $text-grey;
+    }
 	&-menu-btn {
 		font: 16px 'OpenSans_Semibold';
 		background: #1581be url('images/header-menu-down-icon.png') no-repeat right 12px top 50%;

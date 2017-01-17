@@ -5,14 +5,18 @@
 }
 
 .required:required:valid {
-    padding: 12px 15px;
+    // padding: 12px 15px;
 
-    border: 1px solid #659812;
+    border: 1px solid #76972a;
     background-image: url(images/ui-icon-avail-yes.png);
     background-position: right 10px top 50%;
 }
-.required:required:invalid {
+.invalid {
     border-color: #c03911;
+    border-width: 2px;
+}
+.valid {
+    border-color: #76972a;
 }
 ::-webkit-input-placeholder {
     color: #777;

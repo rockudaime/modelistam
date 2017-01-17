@@ -1,0 +1,87 @@
+doctype html
+html(lang="ru").no-js
+	head
+		title Корзина
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/cart.js")
+
+	body
+		.cart-content-wrapper
+			header.cart-main-header
+				.container
+					.cart-main-header__inner
+						a.header-logo.cart-main-header__logo(href="#", title="Planeta Hobby")
+							img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+						.header-phone.cart-main-header__phone
+							.cart-main-header__phone-inner
+								span.header-phone__number 0 800 218-817 
+								span.header-phone__description  Бесплатно по Украине
+								a(href="#").header-phone__callback.callback-link перезвонить мне
+
+			
+			// Хлебные крошки
+			section.breadcrumbs
+				.container
+					a(href="#").breadcrumbs-item
+						span.bb-solid главная
+					span.breadcrumbs-item оформление заказа
+					span.breadcrumbs-next заказ оформлен
+			main.cart-main
+				.container
+					h1.page-title Оформление заказа
+				
+					section.order-checkout
+							ul.order-checkout-tabs.clearfix
+								li.active-tab#new-buyer-tab
+									span Новый покупатель
+								li#registered-buyer-tab
+									span Покупал(а) раньше
+							.order-checkout-content
+
+								form.checkout-form(method="post")
+									.checkout-form-group
+										input.checkout-form__field.checkout-form__field--half.required(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}")
+										input.checkout-form__field.checkout-form__field--half.required(type="text", name="lastName", placeholder="Фамилия")
+									.checkout-form-group
+										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380", required, pattern=".{9,}")
+									.checkout-form-group.checkout-form-group--email
+										label.checkout-form__label.checkout-form__label--email(for="email") Получите скидку и личный кабинет
+										input.checkout-form__field#email(type="email", placeholder="email", name="email")
+										p для информации о статусе заказа
+										div
+											input.custom-checkbox(type="checkbox", id="emailSignup")
+											label.custom-checkbox__label(for="emailSignup")
+												span.custom-checkbox__box
+												span Подписаться на рассылку <br>
+													small только полезное: акции, распродажи, новинки&hellip;
+									.checkout-form-group
+										label.checkout-form__label(for="deliveryOption") Доставка и оплата
+										select.checkout-form__field.checkout-form__field--select#deliveryOption(name="deliveryOption")
+											option(value="newPost") Новая почта
+											option(value="intime") Интайм
+											option(value="fromStore") Самовывоз
+											option(value="courer") Доставка курьером
+									.checkout-form-group
+										input.checkout-form__field(type="text", placeholder="Промо-код (если есть)")
+									.checkout-form-group
+										input.btn.checkout-form__submit(type="submit", value="Оформить заказ")
+
+					section.cart-content
+
+		footer.cart-main-footer
+			.container
+				.cart-main-footer__inner
+					.header-phone.cart-main-footer__phone
+							.cart-main-header__phone-inner
+								span.header-phone__number 0 800 218-817 
+								span.header-phone__description  Бесплатно по Украине
+								a(href="#").header-phone__callback.callback-link перезвонить мне
