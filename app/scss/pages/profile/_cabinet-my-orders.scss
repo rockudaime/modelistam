@@ -255,6 +255,7 @@
 
   @media (min-width: 768px) {
     padding-right: 16px;
+    padding-left: 15px;
   }
   
   & + & {
@@ -264,6 +265,11 @@
   &__additional {
     margin: 0 -20px 0 -10px;
     clear: both;
+
+    @media (min-width: 768px) {
+      margin-right: -16px;
+      margin-left: -15px;
+    }
   }
 
   &__description {
@@ -302,7 +308,7 @@
 
       @media (min-width: 768px) {
         width: 370px;
-        margin-left: 175px;
+        margin-left: 170px;
         padding-top: 2px;
         margin-bottom: 3px;
       }
@@ -325,7 +331,7 @@
         color: inherit;
         display: flex;
         align-items: center;
-        min-height: 78px;
+        // min-height: 78px;
 
         &:hover {
           color: #346cab;
@@ -500,6 +506,10 @@
   clear: both;
   position: relative;
 
+  @media (min-width: 768px) {
+    padding-right: 16px;
+  }
+
   &__heading {
     font-size: 1em;
     font-family: $main-font;
@@ -514,8 +524,6 @@
     img {
       max-width: 100%;
     }
-
-
   }
 
   &__name {
@@ -548,6 +556,10 @@
       top: 15px;
       right: 15px;
       text-align: right;
+    }
+
+    @media (min-width: 1235px) {
+      right: 20px;
     }
   }
 
@@ -595,7 +607,10 @@
     }
   }
 }
-// Блок расширенной гарантии
+
+/////////////////////////////////////
+// Блок расширенной гарантии  //
+////////////////////////////////////
 .extended-warranty {
   background-color: #fffdf6;
   padding: 13px 15px 16px 15px;
@@ -644,6 +659,10 @@
     top: 12px;
     right: 20px;
     text-align: right;
+
+    @media (min-width: 768px) and (max-width: 1234px) {
+      right: 15px;
+    }
   }
 
   &__price {
@@ -652,7 +671,7 @@
     text-align: left;
   }
 
-  &__btn-buy {
+  &__btn {
     background-color: #76972a;
     color: #fff;
     font: 17px $main-font-semibold;
@@ -661,12 +680,17 @@
     height: 38px;
 
     @media (min-width: 1235px) {
-      padding: 0;
-      width: 96px;
-      height: 32px;
-      font-size: 15px;
-      font-family: $main-font;
-      line-height: 26px;
+     
+      
+
+      &--add {
+        width: 96px;
+        height: 32px;
+        line-height: 26px;
+        padding: 0;
+        font-size: 15px;
+        font-family: $main-font;
+      }
     }
 
     &:hover,
@@ -686,7 +710,11 @@
   font-family: $main-font;
   padding: 21px 10px 30px 10px;
   @media (min-width: 768px) {
-    padding: 15px 20px 20px 15px;
+    padding: 15px 15px 20px 15px;
+  }
+  @media (min-width: 1235px) {
+    padding-top: 5px;
+    padding-right: 20px;
   }
 
   &__title {
@@ -799,6 +827,7 @@
   @media (min-width: 1235px) {
     width: 97px;
     margin-right: 17px;
+    padding-left: 4px;
   }
 }
 

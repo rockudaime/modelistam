@@ -348,6 +348,16 @@ strong, b {
             background-color: #bd371c;
         }
     }
+
+    &--add {
+        background-color: #76972a;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: darken(#76972a, 3%);
+        }
+    }
 }
 
 h1 {
