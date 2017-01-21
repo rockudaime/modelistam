@@ -213,6 +213,21 @@ $(function () {
 	var profilePopupCloseLink = $('.popup-b-close');
 	profilePopupCloseLink.on('click', closePopupHandler);
 
+	//  Стили для обработки всплывающего окна редактирования корзины
+	//  при нажатии на крестик в провом верхнем углу. 
+	$(".bcart-product__delete").on("click",function(e){
+		e.preventDefault();
+		var ppBlock = $(this).parent().find('.popup-back');
+		ppBlock.show();
+		ppBlock.parent().addClass("in-tr-background");
+	});
+	$(".close-popup").on("click",function(e){
+		e.preventDefault();
+		$(".page-cart__delete_checkbox-item").show();
+		$(this).parent().hide();
+		$(this).parent().parent().removeClass("in-tr-background");
+	});
+
 
 });
 

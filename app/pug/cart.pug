@@ -27,29 +27,31 @@ html(lang="ru").no-js
 								span.header-phone__description  Бесплатно по Украине
 								a(href="#").header-phone__callback.callback-link перезвонить мне
 
-			
-			// Хлебные крошки
+			// ХЛЕБНЫЕ КРОШКИ
 			section.breadcrumbs
 				.container
 					a(href="#").breadcrumbs-item
-						span.bb-solid главная
-					span.breadcrumbs-item оформление заказа
-					span.breadcrumbs-next заказ оформлен
+						span.bb-solid Главная
+					span.breadcrumbs-item Оформление заказа
+					span.breadcrumbs-next Заказ оформлен
 			main.cart-main
 				.container
 					h1.page-title Оформление заказа
-				
+					// ФОРМА ОФОРМЛЕНИЯ ТОВАРА
 					section.order-checkout
-							ul.order-checkout-tabs.clearfix
-								li.order-checkout-tabs__tab.active(data-target="newBuyer", role="tab")
+							ul.order-checkout-tabs.clearfix(data-js="tabsLinksContainer")
+								li.order-checkout-tabs__tab.active(data-target="newBuyer", role="tab", data-js="tablink")
 									span Новый покупатель
-								li.order-checkout-tabs__tab(data-target="registeredBuyer", role="tab", tabindex="0")
+								li.order-checkout-tabs__tab(data-target="registeredBuyer", role="tab", tabindex="0", data-js="tablink")
 									span Покупал(а) раньше
-							.order-checkout-content.active#newBuyer
+							////////////////////////////////////////////////////
+							// ТАБ ДЛЯ НОВОГО ПОЛЬЗОВАТЕЛЯ
+							.order-checkout-content.active#newBuyer(data-js="tabcontent")
 								form.checkout-form(method="post")
+									input(type="hidden" name="product-qty" id="prod-127" value="1")
 									.checkout-form-group
 										input.checkout-form__field.checkout-form__field--half.required(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}")
-										input.checkout-form__field.checkout-form__field--half.required(type="text", name="lastName", placeholder="Фамилия")
+										input.checkout-form__field.checkout-form__field--half(type="text", name="lastName", placeholder="Фамилия")
 									.checkout-form-group
 										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380", required, pattern=".{9,}")
 									.checkout-form-group.checkout-form-group--email
@@ -63,18 +65,55 @@ html(lang="ru").no-js
 												span Подписаться на рассылку <br>
 													small только полезное: акции, распродажи, новинки&hellip;
 									.checkout-form-group
-										label.checkout-form__label(for="deliveryOption") Доставка и оплата
+										label.checkout-form__label(for="deliveryOption") Доставка и оплата:
 										select.checkout-form__field.checkout-form__field--select#deliveryOption(name="deliveryOption")
 											option(value="newPost") Новая почта
 											option(value="intime") Интайм
 											option(value="fromStore") Самовывоз
 											option(value="courer") Доставка курьером
+										.checkout-form__delivery-option.active
+											.checkout-form-group.checkout-form-group--delivery
+												select.checkout-form__field.checkout-form__field--select(name="city")
+													option(selected, disabled, value="-1") Выберите город
+													option(value="01") Харьков
+													option(value="02") Киев
+													option(value="03") Одесса
+											.checkout-form-group.checkout-form-group--delivery
+												select.checkout-form__field.checkout-form__field--select(name="city")
+													option(selected, disabled, value="-1") В отделении
+													option(value="01") Харьков
+													option(value="02") Киев
+													option(value="03") Одесса
+											.checkout-form-group.checkout-form-group--delivery
+												select.checkout-form__field.checkout-form__field--select(name="city")
+													option(selected, disabled, value="-1") Выберите отделение
+													option(value="01") Харьков
+													option(value="02") Киев
+													option(value="03") Одесса
 									.checkout-form-group
+										select.checkout-form__field.checkout-form__field--select(name="city")
+											option(selected, disabled, value="-1") Выберите способ оплаты
+											option(value="01") Наличными при получении
+											option(value="02") На карту
+											option(value="03") Банковский перевод
+									.checkout-form-group
+										.checkout-form-group.checkout-form-group--small-margin
+											a.commentToggleLink(href="#") Добавить комментарий к заказу
+										.checkout-form-group.checkout-form-group--small-margin.collapsed
+											textarea.checkout-form__field.checkout-form__field--textarea(placeholder="Ваш комментарий ...")
+
+									.checkout-form-group.checkout-form-group--small-margin
 										input.checkout-form__field(type="text", placeholder="Промо-код (если есть)")
 									.checkout-form-group
 										input.btn.checkout-form__submit(type="submit", value="Оформить заказ")
-							.order-checkout-content#registeredBuyer
+
+							////////////////////////////////////////////////////
+							// ТАБ ДЛЯ ЗАРЕГИСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ
+							.order-checkout-content#registeredBuyer(data-js="tabcontent")
 								button.btn.btn--add.popup-open-link(data-popup-target="popupLogin") Авторизация
+
+					//////////////////////////////////////////
+					// ПРАВЫЙ БЛОК С СОДЕРЖИМЫМ КОРЗИНЫ
 					section.cart-content
 						header.cart-content-header
 							.cart-content-header__text Ваш заказ: 6 товаров на 18 590 грн
@@ -82,10 +121,13 @@ html(lang="ru").no-js
 						.sale-offer
 								b Хотите скидку 3% на следующий заказ? 
 								|  Сделайте покупку от 1000 грн
+						///////////////////////////////
+						// СОДЕРЖИМОЕ КОРЗИНЫ
 						section.cart-content-inner
 							//- .popup-bcart__content
-							.popup-bcart__set
-								.popup-bcart__set-sticker Набор
+							.cart-products-set
+								.cart-product-sticker.cart-product-sticker--set Набор
+
 								// 1й товар
 								.bcart-product.clearfix
 									.bcart-product__img
@@ -103,7 +145,7 @@ html(lang="ru").no-js
 								.bcart-product.clearfix
 									.bcart-product__img
 										a(href="#")
-											img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+											img(src="dist/images/temporary/cabinet-product-2.jpg", title="product img")
 									h2.bcart-product__name
 										a(href="#") Катер Joysway 8108 Magic Cat MK2 265 мм 2.4Ghz RTR (JW8108)
 
@@ -157,8 +199,8 @@ html(lang="ru").no-js
 												i
 												span Удалить
 							// 1й товар вне комплекта
-							.bcart-product.clearfix
-								span.bcart-product__sticker Под заказ
+							.cart-product.bcart-product.clearfix
+								span.cart-product-sticker Под заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
 									a(href="#")
@@ -169,7 +211,6 @@ html(lang="ru").no-js
 								.bcart-product__controls
 									span.u-control.u-control--del(data-target="prod-127")
 									span.bcart-product__qty
-										input(type="hidden" name="product-qty" id="prod-127" value="1")
 										span.bcart-product__qty-label 1
 										|  шт
 									span.u-control.u-control--add(data-target="prod-127")
@@ -192,8 +233,41 @@ html(lang="ru").no-js
 											a(href="#").page-cart__delete_checkbox
 												i
 												span Удалить
+							// 2й товар вне комплекта
+							.cart-product.bcart-product.clearfix
+								span.cart-product-sticker Предварительный заказ
+								a.bcart-product__delete(href="#")
+								.bcart-product__img
+									a(href="#")
+										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
+								h2.bcart-product__name
+									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 
+								.bcart-product__controls
+									span.u-control.u-control--del(data-target="prod-127")
+									span.bcart-product__qty
+										span.bcart-product__qty-label 1
+										|  шт
+									span.u-control.u-control--add(data-target="prod-127")
 
+									span.bcart-product__pprice
+										span.product-price--current 1182
+										|  грн
+								// Всплывающий блок редактирования товара
+								div.popup-back-wrapper
+									.popup-back.popup-bcart__product-back
+										.close-popup
+											a(href="#" rel="#").come-back
+												i
+												span Вернуть
+										.product-wishlist-block.cart-wishlist-block
+											a(href="#" class="top-wishlist-link wishlist-link cart-wishlist")
+												i
+												span В избранное
+										.delete-detail-block
+											a(href="#").page-cart__delete_checkbox
+												i
+												span Удалить
 
 						footer.cart-content__footer.cart-content-footer
 							.product-total-block
@@ -234,6 +308,7 @@ html(lang="ru").no-js
 							a(href="#", title="google plus")
 
 				a.popup-b__close(href="#")
+		// ОСНОВНОЙ ФУТЕР КОРЗИНЫ
 		footer.cart-main-footer
 			.container
 				.cart-main-footer__inner

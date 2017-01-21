@@ -381,6 +381,10 @@ span.bb-dashed {
 span.bb-solid {
     border-bottom: 1px solid #777;
 }
+
+.collapsed {
+    display: none !important;
+}
 /*--------------------------
  ^ end of _base.scss
  --------------------------*/
