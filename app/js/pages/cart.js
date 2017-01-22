@@ -27,6 +27,27 @@ $(function () {
 			contentBlock.addClass('collapsed');
 		}
 	});
+
+	// form
+
+	$('#deliveryOption').on('change', function (e) {
+		var select = $(this);
+		var val = select.val();
+		switch (val) {
+			case 'newPost':
+				select.addClass('delivery-company-select--novaposhta').addClass('delivery-company-select');
+				select.removeClass('delivery-company-select--intime');
+				break;
+			case 'intime':
+				select.addClass('delivery-company-select--intime').addClass('delivery-company-select');
+				select.removeClass('delivery-company-select--novaposhta');
+				break;
+			default:
+				select.removeClass('delivery-company-select').removeClass('delivery-company-select--novaposhta');
+				select.removeClass('delivery-company-select--intime');
+
+		}
+	});
 });
 
 

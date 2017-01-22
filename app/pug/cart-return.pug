@@ -55,14 +55,14 @@ html(lang="ru").no-js
 										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380", required, pattern=".{9,}")
 									.checkout-form-group.checkout-form-group--email
 										label.checkout-form__label.checkout-form__label--email(for="email") Получите скидку и личный кабинет:
-										input.checkout-form__field(type="email", placeholder="email", name="email")
+										input.checkout-form__field#email(type="email", placeholder="email", name="email")
 										p.checkout-form__small-caption для информации о статусе заказа
 										div.checkout-form__email-signup-checkbox
 											input.custom-checkbox(type="checkbox", id="emailSignup")
 											label.custom-checkbox__label.checkout-form__checkbox-label(for="emailSignup")
 												span.custom-checkbox__box.checkout-form__checkbox-box
 												span Подписаться на рассылку <br>
-													span.checkout-form__small-caption только полезное: акции, распродажи, новинки
+													span.checkout-form__small-caption только полезное: акции, распродажи, новинки&hellip;
 									.checkout-form-group
 										label.checkout-form__label(for="deliveryOption") Доставка и оплата:
 										select.checkout-form__field.checkout-form__field--select.delivery-company-select.delivery-company-select--novaposhta#deliveryOption(name="deliveryOption")
@@ -110,7 +110,59 @@ html(lang="ru").no-js
 							////////////////////////////////////////////////////
 							// ТАБ ДЛЯ ЗАРЕГИСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ
 							.order-checkout-content#registeredBuyer(data-js="tabcontent")
-								button.btn.btn--add.order-checkout-content__login-btn.popup-open-link(data-popup-target="popupLogin") Авторизация
+								form.checkout-form(method="post")
+									.checkout-form-group
+										select.checkout-form__field.checkout-form__field--select(name="customerFullName")
+													option(value="01", selected) Александра Гавриленкова
+													option(value="02") Иван Грозный
+													option(value="03") Петр Первый
+									.checkout-form-group
+										input.checkout-form__field.checkout-form__field--half.required(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}", value="Александра")
+										input.checkout-form__field.checkout-form__field--half.valid(type="text", name="lastName", placeholder="Фамилия", value="Гавриленкова")
+									.checkout-form-group
+										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380 97 045 85 78", required, pattern=".{9,}")
+									.checkout-form-group.checkout-form-group--small-margin
+										input.checkout-form__field.valid(type="email", placeholder="email", name="email", value="alex@gmail.com")
+									.checkout-form-group
+										label.checkout-form__label(for="deliveryOption") Доставка и оплата:
+										select.checkout-form__field.checkout-form__field--select.delivery-company-select.delivery-company-select--intime#deliveryOption(name="deliveryOption")
+											option(value="newPost") Новая почта
+											option(value="intime", selected) Интайм
+											option(value="fromStore") Заберу в магазине
+											option(value="courer") Доставка курьером
+										.checkout-form__delivery-option.active
+											.checkout-form-group.checkout-form-group--small-margin
+												select.checkout-form__field.checkout-form__field--select(name="city")
+													option(selected, disabled, value="-1") Город
+													option(value="01") Харьков
+													option(value="02") Киев
+													option(value="03", selected) Одесса
+											.checkout-form-group.checkout-form-group--small-margin
+												select.checkout-form__field.checkout-form__field--select(name="city")
+													option(selected, disabled, value="-1") Выберите способ доставки
+													option(value="01", selected) Адрессная доставка
+													option(value="02") Доставка в отделение											
+											.checkout-form-group.checkout-form-group--small-margin
+												input.checkout-form__field.checkout-form__field--street.valid(type="text", value="ул. Дерибасовская", placeholder="улица")
+												input.checkout-form__field.checkout-form__field--house.valid(type="text", value="125-Б", placeholder="дом")
+												input.checkout-form__field.checkout-form__field--apartment.valid(type="text", value="1055", placeholder="кв.")
+									.checkout-form-group
+										select.checkout-form__field.checkout-form__field--select(name="city")
+											option(selected, disabled, value="-1") Выберите способ оплаты
+											option(value="01", selected) Оплата при получении
+											option(value="02") На карту
+											option(value="03") Банковский перевод
+									.checkout-form-group
+										.checkout-form-group.checkout-form-group--small-margin
+											a.commentToggleLink(href="#") Добавить комментарий к заказу
+										.checkout-form-group.checkout-form-group--small-margin.collapsed
+											textarea.checkout-form__field.checkout-form__field--textarea(placeholder="Ваш комментарий ...")
+
+									.checkout-form-group.checkout-form-group--small-margin.promokod
+										input.checkout-form__field.promokod__field(type="text", placeholder="Промо-код (если есть)", name="promokod")
+										a(href="#", data-popup-target="promokodPopup").promokod__icon.icon.popup-open-link
+									.checkout-form-group
+										input.btn.checkout-form__submit(type="submit", value="Подтвердить заказ")
 
 					//////////////////////////////////////////
 					// ПРАВЫЙ БЛОК С СОДЕРЖИМЫМ КОРЗИНЫ
@@ -206,7 +258,7 @@ html(lang="ru").no-js
 									a(href="#")
 										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name
-									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 &amp; 5.8GHz с бортовой видеокамерой и системой FPV RTF
+									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 
 								.bcart-product__controls
 									span.u-control.u-control--del(data-target="prod-127")
@@ -241,7 +293,7 @@ html(lang="ru").no-js
 									a(href="#")
 										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name
-									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 &amp; 5.8GHz с бортовой видеокамерой и системой FPV RTF
+									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 								.cart-recomended-goods
 									h3.cart-recomended-goods__heading К этому товару подходят:
 									ul.cart-recomended-goods__list
@@ -279,8 +331,8 @@ html(lang="ru").no-js
 												span Удалить
 
 						footer.cart-content__footer.cart-content-footer
-							.discount-total-block
-								.cart-content-footer__total.cart-content-footer__total-discount Скидка по промокоду -745 грн
+							.product-total-block.product-total-block--discount
+								.cart-content-footer__total.cart-content-footer__total-discount Ваша скидка 3% -745 грн
 							.product-total-block
 								.cart-content-footer__total Итого: 
 									span.current-price 10 957 

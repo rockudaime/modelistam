@@ -20,7 +20,7 @@ $form-border: 1px solid #dcd5bd;
 //////////////////////////////////////
 
 .cart-main-header {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	&__inner {
 		height: 72px;
 		border-bottom: 1px solid $border-color;	
@@ -61,6 +61,10 @@ $form-border: 1px solid #dcd5bd;
 		display: table-cell;
 		vertical-align: middle;
 	}
+}
+
+.cart-page-title {
+	margin-bottom: 15px;
 }
 //////////////////////////////////////
 ///         CART MAIN FORM         ///
@@ -130,7 +134,7 @@ $form-border: 1px solid #dcd5bd;
 	background-color: $form-bg;
 	border: $form-border;
 	border-radius: 2px;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	padding: 20px 10px 30px;
 	display: none;
 	// animation: fadeEffect 0.3s;
@@ -142,6 +146,13 @@ $form-border: 1px solid #dcd5bd;
 	@media (min-width: 420px) {
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+
+	&__login-btn {
+		width: 150px;
+		height: 40px;
+		display: block;
+		margin: 10px auto 0;
 	}
 }
 
@@ -170,6 +181,9 @@ $form-border: 1px solid #dcd5bd;
 			}
 		}
 
+		& + &--email {
+			margin-top: 15px;
+		}
 	}
 
 	&__delivery-option {
@@ -181,12 +195,22 @@ $form-border: 1px solid #dcd5bd;
 		}
 	}
 
+	&__label {
+		display: inline-block;
+
+		&--email {
+			background: url('images/cart-form-icons.png') no-repeat -20px -67px;
+			padding-left: 18px;
+			margin-bottom: 6px;
+		}
+	}
+
 	&__field {
 		width: 100%;
 		height: 44px;
 		border: 1px solid $border-dark;
 		border-radius: 3px;
-		padding: 0 12px;
+		padding: 0 9px;
 		font-size: 1em;
 		color: #000;
 		display: block;
@@ -195,20 +219,24 @@ $form-border: 1px solid #dcd5bd;
 			padding-right: 25px;
 		}
 
+		&.valid {
+			border-color: #76972a;
+		}
+
 		&:hover {
 			border-color: #4b80bb;
 		}
 		&:focus {
 			border: 2px solid #4b80bb;
 			outline: 0;
-			padding: 0 11px;
+			padding: 0 8px;
 
 			&.required:invalid {
 				background-position: right 9px  top 50%;
 				padding-right: 24px;
 			}
 			&.required:valid {
-				padding: 0 12px;
+				padding: 0 9px;
 				padding-right: 25px;
 				border: 1px solid #76972a;
 			}
@@ -232,12 +260,35 @@ $form-border: 1px solid #dcd5bd;
 			}
 		}
 
+		&--street {
+			width: 57.5%;
+			float: left;
+		}
+
+		&--house {
+			width: 20.2778%;
+			margin-left: 2.7778%;
+			float: left;
+		}
+
+		&--apartment {
+			width: 16.3888%;
+			margin-left: 2.7778%;
+			float: left;
+		}
+
 		&--select {
 			background-color: #fff;
 			padding: 0 8px;
+			background-image: url('images/cart-form-icons.png');
+			background-repeat: no-repeat;
+			background-position: right -10px top -165px;
+
+	        appearance: none;
 
 			&:focus {
 				padding: 0 7px;
+				background-position: right -11px top -166px;
 			}
 		}
 
@@ -256,6 +307,23 @@ $form-border: 1px solid #dcd5bd;
 		}
 	}
 
+	&__checkbox {
+		&-label {
+			padding-left: 24px;
+			padding-top: 8px;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			font-family: $main-font;
+			font-size: 15px;
+		}
+
+		&-box {
+			margin: 0;
+			top: 10px;
+		}
+	}
+
+
 	&__submit {
 		background-color: #659913;
 		color: #fff;
@@ -268,13 +336,61 @@ $form-border: 1px solid #dcd5bd;
 		}
 	}
 
+	&__small-caption {
+		font: 13px $main-font;
+		color: $text-grey;
+		margin-bottom: 0;
+	}
+
+}
+.promokod {
+	position: relative;
+
+	&__icon {
+		position: absolute;
+		display: inline-block;
+		top: 5px;
+		right: 0;
+		width: 35px;
+		height: 35px;
+		background: url('images/cart-form-icons.png') no-repeat right -10px top -120px;
+	}
+}
+.delivery-company-select {
+	background-repeat: no-repeat;
+	background-position: right -10px top -160px, 15px 50%;
+	padding-left: 65px;
+	height: 54px;
+
+	&:focus {
+		padding-left: 64px;
+		background-position: right -11px top -161px, 14px 50%;
+	}
+
+	&--novaposhta {
+		background-image: url('images/cart-form-icons.png'),  url(images/cart/novaposhta-icon.png);
+	}
+
+	&--intime {
+		background-image: url('images/cart-form-icons.png'),  url(images/cart/intime-icon.png);
+		background-position: right -10px top -160px, 8px 50%;
+
+		&:focus {
+			background-position: right -11px top -161px, 7px 50%;
+		}
+	}
+
+	
 }
 .commentToggleLink {
 	font-size: 15px;
 	border-bottom: 1px dashed #c1cbd1;
 	line-height: 17px;
 	display: inline-block;
+	padding-top: 8px;
 }
+
+
 //////////////////////////////////////
 ///         CART MAIN CONTENT      ///
 //////////////////////////////////////
@@ -303,7 +419,14 @@ $form-border: 1px solid #dcd5bd;
 
 .cart-content-header {
 	line-height: 26px;
-	margin-bottom: 10px;
+	margin-bottom: 12px;
+	&__text {
+		margin-bottom: 4px;
+
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+		}
+	}
 	@media (min-width: 1235px) {
 		height: 48px;
 		display: flex;
@@ -319,7 +442,7 @@ $form-border: 1px solid #dcd5bd;
 	}
 }
 .sale-offer {
-	padding: 8px 10px 9px;
+	padding: 8px 10px 11px;
 	background: #fff4cd;
 	margin-bottom: 15px;
 	border: 1px solid #f9db84;
@@ -381,6 +504,36 @@ $form-border: 1px solid #dcd5bd;
 .cart-content-footer {
 	&__total {
 		color: #d31328;
+
+		&-discount {
+			color: #628d00;
+		}
+	}
+}
+.product-total-block.product-total-block--discount {
+	background-color: #fff;
+	padding-right: 73px;
+}
+
+.cart-recomended-goods {
+	width: 320px;
+	float: left;
+	font-size: 13px;
+
+	&__heading {
+		font: 13px $main-font;
+		margin: 0 0 3px;
+	}
+
+	&__item {
+		display: inline-block;
+		margin-right: 8px;
+
+		a {
+			display: inline-block;
+			border-bottom: 1px solid #aabdd7;
+			line-height: 15px;
+		}
 	}
 }
 
