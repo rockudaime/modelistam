@@ -3,7 +3,7 @@ $form-bg: #fffae6;
 
 $set-color: #76a035;
 $sticker-color: #afafaf;
-
+$error-color: #c03911;
 $form-border: 1px solid #dcd5bd;
 
 @keyframes fadeEffect {
@@ -12,7 +12,8 @@ $form-border: 1px solid #dcd5bd;
 }
 
 .cart-content-wrapper {
-  min-height: calc(100vh - 70px); // height to stick footer to bottom of the page
+  min-height: calc(100vh - 70px);
+  // height to stick footer to bottom of the page
 }
 
 //////////////////////////////////////
@@ -221,12 +222,21 @@ $form-border: 1px solid #dcd5bd;
 
 		&.valid {
 			border-color: #76972a;
+
+			&--icon{
+				background-image: url('images/cart-form-icons.png');
+				background-repeat: no-repeat;
+				background-position: right -10px top -4px;
+			}
+		}
+		&.required:valid {
+			@extend .checkout-form__field.valid--icon;
 		}
 
 		&:hover {
 			border-color: #4b80bb;
 		}
-		&:focus {
+		&:focus, &.error {
 			border: 2px solid #4b80bb;
 			outline: 0;
 			padding: 0 8px;
@@ -235,12 +245,16 @@ $form-border: 1px solid #dcd5bd;
 				background-position: right 9px  top 50%;
 				padding-right: 24px;
 			}
-			&.required:valid {
+			&.required:valid,
+			&.valid {
 				padding: 0 9px;
 				padding-right: 25px;
 				border: 1px solid #76972a;
 			}
 
+		}
+		&.error {
+			border-color: $error-color;
 		}
 
 		&--half {
@@ -343,6 +357,17 @@ $form-border: 1px solid #dcd5bd;
 	}
 
 }
+
+.error-message {
+	font-size: 13px;
+	color: $error-color;
+	margin-bottom: 6px;
+}
+.checkout-form__error-message {
+	margin-bottom: -9px;
+	position: relative;
+	top: -12px;
+}
 .promokod {
 	position: relative;
 
@@ -382,7 +407,7 @@ $form-border: 1px solid #dcd5bd;
 
 	
 }
-.commentToggleLink {
+.toggleLink {
 	font-size: 15px;
 	border-bottom: 1px dashed #c1cbd1;
 	line-height: 17px;
@@ -514,10 +539,34 @@ $form-border: 1px solid #dcd5bd;
 	background-color: #fff;
 	padding-right: 73px;
 }
-
-.cart-recomended-goods {
+.cart-content-additional {
 	width: 320px;
 	float: left;
+}
+.cart-additional-good {
+	position: relative;
+	font-size: 14px;
+
+	&__price {
+		margin-right: 20px;
+		display: inline-block;
+		& > * {
+			display: inline-block;
+		}
+
+		.product-price--new {
+			margin-right: 5px;
+		}
+	}
+
+	& &__btn-add {
+		@media (min-width: 768px) {
+			display: inline-block;
+		}
+	}
+}
+.cart-recomended-goods {
+	
 	font-size: 13px;
 
 	&__heading {

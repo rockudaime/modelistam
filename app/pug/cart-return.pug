@@ -49,13 +49,16 @@ html(lang="ru").no-js
 							.order-checkout-content.active#newBuyer(data-js="tabcontent")
 								form.checkout-form(method="post")
 									.checkout-form-group
-										input.checkout-form__field.checkout-form__field--half.required(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}")
+										p.error-message.checkout-form__error-message Имя - обязательное поле
+										input.checkout-form__field.checkout-form__field--half.required.error(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}")
 										input.checkout-form__field.checkout-form__field--half(type="text", name="lastName", placeholder="Фамилия")
 									.checkout-form-group
-										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380", required, pattern=".{9,}")
+										p.error-message.checkout-form__error-message Телефон - обязательное поле
+										input.checkout-form__field.required.error(type="tel", placeholder="телефон", value="+380", required, pattern=".{9,}")
 									.checkout-form-group.checkout-form-group--email
 										label.checkout-form__label.checkout-form__label--email(for="email") Получите скидку и личный кабинет:
-										input.checkout-form__field#email(type="email", placeholder="email", name="email")
+										p.error-message Email: проверьте правильность написания
+										input.checkout-form__field#email.error(type="email", placeholder="email", name="email")
 										p.checkout-form__small-caption для информации о статусе заказа
 										div.checkout-form__email-signup-checkbox
 											input.custom-checkbox(type="checkbox", id="emailSignup")
@@ -97,7 +100,7 @@ html(lang="ru").no-js
 											option(value="03") Банковский перевод
 									.checkout-form-group
 										.checkout-form-group.checkout-form-group--small-margin
-											a.commentToggleLink(href="#") Добавить комментарий к заказу
+											a.toggleLink.commentToggleLink(href="#") Добавить комментарий к заказу
 										.checkout-form-group.checkout-form-group--small-margin.collapsed
 											textarea.checkout-form__field.checkout-form__field--textarea(placeholder="Ваш комментарий ...")
 
@@ -120,9 +123,9 @@ html(lang="ru").no-js
 										input.checkout-form__field.checkout-form__field--half.required(type="text", name="firstName", placeholder="Имя", required, pattern=".{2,}", value="Александра")
 										input.checkout-form__field.checkout-form__field--half.valid(type="text", name="lastName", placeholder="Фамилия", value="Гавриленкова")
 									.checkout-form-group
-										input.checkout-form__field.required(type="tel", placeholder="телефон", value="+380 97 045 85 78", required, pattern=".{9,}")
+										input.checkout-form__field.required.valid(type="tel", placeholder="телефон", value="+380 97 045 85 78", required, pattern=".{9,}")
 									.checkout-form-group.checkout-form-group--small-margin
-										input.checkout-form__field.valid(type="email", placeholder="email", name="email", value="alex@gmail.com")
+										input.checkout-form__field.valid.valid--icon(type="email", placeholder="email", name="email", value="alex@gmail.com")
 									.checkout-form-group
 										label.checkout-form__label(for="deliveryOption") Доставка и оплата:
 										select.checkout-form__field.checkout-form__field--select.delivery-company-select.delivery-company-select--intime#deliveryOption(name="deliveryOption")
@@ -259,6 +262,20 @@ html(lang="ru").no-js
 										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name
 									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+								.cart-content-additional.cart-additional-good.clearfix
+									h3.additional-good__heading Комплект со скидкой 10%
+									.additional-good__photo
+										a(href="#")
+											img.product-set__good-photo(src="dist/images/temporary/cart-recomended.png", alt="recomended good")
+									.additional-good__name
+										a(href="#") Аккумулятор Hubsan Li-Po 3,7В 380 мАч...
+									.cart-additional-good__bottom
+										.cart-additional-good__price
+											.current-price.product-price.product-price--new 300 
+												span.price-currency грн
+											.product-price.product-price--old
+												del 330грн
+										a.btn.additional-good__btn-add.cart-additional-good__btn-add(href="#") Добавить
 
 								.bcart-product__controls
 									span.u-control.u-control--del(data-target="prod-127")
@@ -294,7 +311,7 @@ html(lang="ru").no-js
 										img(src="dist/images/temporary/big-images/3_b.jpeg", title="product img")
 								h2.bcart-product__name
 									a(href="#") Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-								.cart-recomended-goods
+								.cart-recomended-goods.cart-content-additional
 									h3.cart-recomended-goods__heading К этому товару подходят:
 									ul.cart-recomended-goods__list
 										li.cart-recomended-goods__item
