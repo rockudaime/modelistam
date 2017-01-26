@@ -521,19 +521,25 @@ $form-border: 1px solid #dcd5bd;
 	border: 2px solid $set-color;
 	padding: 0px 10px 0px 17px;
 	position: relative;
-	border-radius: 4px;
+	border-radius: 5px;
 	margin: 0 -20px;
 
 
 	&__price.product-price--new {
 		font-family: $main-font-semibold;
+		font-size: 22px;
 
+	}
+
+	.bcart-product:nth-child(2) {
+		padding-top: 17px;
+		padding-bottom: 19px;
 	}
 
 	.bcart-product__delete {
         @media (min-width: 768px) {
             top: 15px;
-            right: 24px;
+            right: 28px;
         }
     }
 }
