@@ -1,74 +1,58 @@
-$(document).ready(function() {
-
-	var owl = $("#owl-alike-products");
-	
-	owl.owlCarousel({
-	    loop:true,
-	    margin:10,
-	    navigationText: false,
-	    responsiveClass:true,
-	    pagination: true,
-	    responsive:{
-	    	//- 0:{
-	    	//- 	items:1,
-	    	//- 	nav:true
-	    	//- },
-	        460:{
-	            items:2,
-	            nav: false
-	        },
-	        768:{
-	            items:3,
-	            nav:false,
-	            paginatioin: true
-	        },
-	        994:{
-	            items:4,
-	            nav:true,
-	            loop:false,
-	            paginatioin: false
-
-	        },
-	        1200:{
-	            items:5,
-	            nav:true,
-	            loop:false,
-	            paginatioin: false
-	        }
-	    }
+$(function () {
+	var wWidth = $(window).width();
+	$('[data-countdown]').each(function() {
+		var $this = $(this), finalDate = $(this).data('countdown');
+		$this.countdown(finalDate, function(event) {
+		  $this.html(event.strftime('%-D %!D:день, дня, дней; %H:%M'));
+		});
 	});
 
+	var similarProductsSlider = $('#owl-similar-products');
+	initOwlSlider(similarProductsSlider);
 
-});
+	function initOwlSlider(slider) {
+		slider.owlCarousel({
+			loop: false,
+			margin:0,
+			navigationtext: false,
+			
+			// responsiveclass:true,
+			pagination: false,
+			nav: true,
+			dots: false,
+			touchDrag: false,
+			mouseDrag: false,
 
-window.onload = function(){
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth(); //January is 0!
-	var yyyy = today.getFullYear();
-	var age = document.getElementById("computed-age");
-	var birthYear = document.getElementById("birthYear").value;
-	var birthMonth = document.getElementById("birthMonth").value;
-	var birthDay = document.getElementById("birthDay").value;
+			responsive:{
+				0:{
+					items:1,
 
-	document.getElementById("birthYear").onchange = function() {
-		birthYear = document.getElementById("birthYear").value;
-		if (mm > birthMonth) {
-			age.innerHTML = (yyyy - birthYear) + " лет";
-		} else if (mm == birthMonth) {
-			if (dd >= birthDay) {
-				age.innerHTML = (yyyy - birthYear) + " лет";
-			} else {
-				age.innerHTML = (yyyy - birthYear - 1) + " лет";
+				},
+				544:{
+					items:2,
+
+				},
+				768:{
+					items:3,
+					// ontranslated: mycallback
+				},
+				994:{
+					items:3,
+					// ontranslated: mycallback
+
+				},
+				1200:{
+					items:4,
+					// ontranslated: mycallback
+				}
 			}
-		} else {
-			age.innerHTML = (yyyy - birthYear - 1) + " лет";
-		}
-	};
-	document.getElementById("birthMonth").onchange = function() {
-		birthMonth = document.getElementById("birthMonth").value;
-	};
-	document.getElementById("birthDay").onchange = function() {
-		birthDay = document.getElementById("birthDay").value;
-	};
-};
+		});
+	}
+
+	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
+	var item;
+	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
+		item = owlSlidersWithScrollbar[i];
+		addCustomScrollbar(item);
+	}
+});

@@ -17,7 +17,7 @@ html, body {
 body {
     font: 14px  $main-font;
     font-weight: 400;
-    color: #434343;
+    color: $main-text-color;
     min-width: 320px;
 }
 
@@ -290,6 +290,10 @@ strong, b {
     @media (min-width: 1235px) {
         max-width: 1200px;
         padding: 0 15px;
+    }
+
+    & & {
+        padding: 0 !important;
     }
 }
 
