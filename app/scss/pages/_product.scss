@@ -107,6 +107,7 @@ a.link-to-images {
   @media(min-width: 768px) {
     width: 42px;
     height: 100%;
+    overflow: hidden;
   }
   @media (min-width: 1235px) {
     width: 120px;
@@ -172,6 +173,7 @@ a.link-to-images {
   width: 36px;
   height: 36px;
   margin-right: 10px;
+  margin-bottom: 10px;
 
   cursor: pointer;
   text-align: center;
@@ -3928,6 +3930,7 @@ div.star-rating-hover a{background-position:0 0px}
       float: right;
       margin: 0;
       margin-right: 83px;
+      max-height: 480px;
     }
 
     .gallery-product__content{

@@ -321,9 +321,6 @@ $(document).ready(function() {
 		mainImage: null,
 		init: function () {
 			var content, block, activeImage, popupMainImageBlock;
-			var shift, maxshift, currentShift = 0;
-			var startPos, currentPos, endPos = 0;
-
 			var self = this;
 
 			block = $('.popup-gallery__all-images');
@@ -333,7 +330,7 @@ $(document).ready(function() {
 			$('.product-card__main-image img').clone().appendTo(popupMainImageBlock);
 			self.mainImage = $('.popup-gallery__main-image img');
 			self.galleryImages = content.find('.gallery-product__item');
-			self.handleNavLinks();
+			self.handleNavLinksStatus();
 			
 			// Переключение изображений по клику
 			self.galleryImages.on('mouseover', imageSwitchHandler);
@@ -352,7 +349,7 @@ $(document).ready(function() {
 					self.mainImage.removeClass('scaleIn');
 					self.galleryImages.removeClass('gallery-product__item--active');
 					$(this).addClass('gallery-product__item--active');
-					self.handleNavLinks();
+					self.handleNavLinksStatus();
 				}
 			}
 			$('.popup-gallery__nav').on('click', navLinksClickHandler);
@@ -362,26 +359,20 @@ $(document).ready(function() {
 				var activeImage, imgHref;
 				if (!$(e.target).hasClass('disabled')) {
 					activeImage = self.galleryImages.filter('.gallery-product__item--active');
-					if ($(e.target).hasClass('nav-next') && !$(e.target).hasClass('disabled')) {
+					if ($(e.target).hasClass('nav-next')) {
 						self.galleryImages.removeClass('gallery-product__item--active');
 						activeImage.next().addClass('gallery-product__item--active');
 						activeImage = activeImage.next();
 					}
-					if ($(e.target).hasClass('nav-prev') && !$(e.target).hasClass('disabled')) {
+					if ($(e.target).hasClass('nav-prev')) {
 						self.galleryImages.removeClass('gallery-product__item--active');
 						activeImage.prev().addClass('gallery-product__item--active');
 						activeImage = activeImage.prev();
 					}
-					imgHref = activeImage.children().attr('href');
-					// self.mainImage.parent().attr('href', imgHref);
-					self.mainImage.attr('src', imgHref);
-					self.mainImage.addClass('scaleIn');
-					// clearTimeout(animationTimeOut);
 
-					var animationTimeOut = setTimeout(function() {
-						self.mainImage.removeClass('scaleIn');
-					}, 0);
-					self.handleNavLinks();
+					imgHref = activeImage.children().attr('href');
+					self.mainImage.attr('src', imgHref);
+					self.handleNavLinksStatus();
 				}
 			}
 
@@ -399,37 +390,12 @@ $(document).ready(function() {
 			// Свайп изображений в галерее, если они не влязят в зону попапа
 			maxshift = block.width() - content.width();
 			if (wWidth < 1235 && maxshift < 0) {
-
-				content.on('touchstart', function(e) {
-					startPos = e.originalEvent.touches[0].pageX;
-				});
-				content.on('touchmove', function(e) {
-					var thisPos = $(this).position().left;
-
-					e.preventDefault();
-					currentPos = e.originalEvent.touches[0].pageX;
-					shift = currentPos - startPos;
-					// границы по сдвигу
-					if (shift + endPos  >= 0){
-						shift = 0;
-						endPos = 0;
-						startPos = currentPos;
-					} else if (shift + endPos < maxshift) {
-						shift =  0;
-						endPos = maxshift;
-						startPos = currentPos;
-					}
-					$(this).css('transform', 'translateX(' + (shift + endPos) + 'px)');
-					
-				});
-				content.on('touchend', function(e) {
-					endPos = $(this).position().left;
-				});
+				self.addTouchSlideForBlock(content);
 			}
 
 			this.iniatialized = true;
 		},
-		handleNavLinks: function () {
+		handleNavLinksStatus: function () {
 			var self = this;
 			var activeImage = self.galleryImages.filter('.gallery-product__item--active');
 			var navPrev = $('.popup-gallery__nav .nav-prev');
@@ -446,6 +412,36 @@ $(document).ready(function() {
 			} else {
 				navNext.addClass('disabled');
 			}
+		},
+		addTouchSlideForBlock: function (block) {
+			var shift, maxshift, currentShift = 0;
+			var startPos, currentPos, endPos = 0;
+
+			block.on('touchstart', function(e) {
+				startPos = e.originalEvent.touches[0].pageX;
+			});
+			block.on('touchmove', function(e) {
+				var thisPos = $(this).position().left;
+
+				e.preventDefault();
+				currentPos = e.originalEvent.touches[0].pageX;
+				shift = currentPos - startPos;
+				// границы по сдвигу
+				if (shift + endPos  >= 0){
+					shift = 0;
+					endPos = 0;
+					startPos = currentPos;
+				} else if (shift + endPos < maxshift) {
+					shift =  0;
+					endPos = maxshift;
+					startPos = currentPos;
+				}
+				$(this).css('transform', 'translateX(' + (shift + endPos) + 'px)');
+				
+			});
+			block.on('touchend', function(e) {
+				endPos = $(this).position().left;
+			});
 		}
 
 
