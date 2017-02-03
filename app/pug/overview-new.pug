@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		title Категории
+		title Обзоры
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -151,7 +151,7 @@ html(lang="ru")
 		// Конец шапки сайта
 		
 		.container
-			// Хлебные крошки
+			// ХЛЕБНЫЕ КРОШКИ
 			section.breadcrumbs
 				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
 				a(href="#").breadcrumbs-item
@@ -159,8 +159,7 @@ html(lang="ru")
 				a(href="#").breadcrumbs-item
 					span.bb-solid Техника 
 				span Катера 
-			// Начало основного меню
-
+			// ОСНОВНОЕ МЕНЮ САЙТА
 			nav.main-nav
 				.main-nav__mobile-links
 					.main-nav__item
@@ -442,104 +441,119 @@ html(lang="ru")
 						a.media-link.media-top-link(href="#")
 							i.media-video-icon.media-icon
 							| Видео
-
 			h1.pagetitle.overviews-pagetitle Обзоры 
 			//- Блок с тегами и основным видео
-			aside.overviews-first-sidebar.overview-sidebar
-				h2.overview-sidebar__title Теги
-				h2.overview-sidebar__title Каталог
-				section.category-sidebar-menu.category-menu
-					.category-menu__item
-						.subcategory
-							a(href="#") Авто
+			// САЙДБАР (верхний)
+			aside.overview-first-sidebar.overview-sidebar.clearfix
+				.filter-link.overview-sidebar__mobile-menu-btn(tabindex="0") Каталог
+				section.overview-sidebar__tags
+					h2.overview-sidebar__title.overview-sidebar__tags-title Теги
+					.overview-sidebar__content.tags
+						.tag
+							a(href="#").tag__link топ 5 квадракоптеров
+						.tag
+							a.tag__link(href="#") элементы питания
+						.tag
+							a.tag__link(href="#") багги
+						.tag
+							a.tag__link(href="#") радиоуправление 
+						.tag
+							a.tag__link(href="#") ремонт 
+						.tag
+							a.tag__link(href="#") своими руками 
+				section.overview-sidebar__category-menu
+					h2.overview-sidebar__title.overview-sidebar__category-menu-title Каталог
+					.category-sidebar-menu.category-menu
+						.category-menu__item
+							.subcategory
+								a(href="#") Авто
 
-						ul.category-menu__subcategories.sub-menu
-							li
-								a(href="#") Мини, электро
-							li
-								a(href="#") С электродвигателем
-								ul.sub-menu.sub-menu-2
-									li
-										a(href="#") На батарейках
-									li
-										a(href="#") На аккумуляторах
-							li
-								a(href="#") С двс двигателем 
-							li
-								a(href="#") С бензиновым двигателем
-
-					.category-menu__item
-						.subcategory
-							a(href="#") Самолеты
-						ul.category-menu__subcategories.sub-menu
-							li
-								a(href="#") Мини, электро
-							li
-								a(href="#") С электродвигателем
-								ul.sub-menu.sub-menu-2
-									li
-										a(href="#") На батарейках
-									li
-										a(href="#") На аккумуляторах
-							li
-								a(href="#") С двс двигателем 
-							li
-								a(href="#") С бензиновым двигателем
-					.category-menu__item
-						.subcategory
-							a(href="#") Вертолеты
-						ul.category-menu__subcategories.sub-menu
-							li
-								a(href="#") Мини, электро
-							li
-								a(href="#") С электродвигателем
-								ul.sub-menu.sub-menu-2
-									li
-										a(href="#") На батарейках
-									li
-										a(href="#") На аккумуляторах
-							li
-								a(href="#") С двс двигателем 
-							li
-								a(href="#") С бензиновым двигателем
-
-					.category-menu__item
-						.subcategory
-							a(href="#") Яхты
-						ul.category-menu__subcategories.sub-menu
-							li
-								a(href="#") Мини, электро
-							li
-								a(href="#") С электродвигателем
-								ul.sub-menu.sub-menu-2
-									li
-										a(href="#") На батарейках
-									li
-										a(href="#") На аккумуляторах
-							li
-								a(href="#") С двс двигателем 
-							li
-								a(href="#") С бензиновым двигателем
-					.category-menu__item
-						.subcategory
-							a(href="#") Квадракоптеры
-						ul.category-menu__subcategories.sub-menu
-							li
-								a(href="#") Мини, электро
-							li
-								a(href="#") С электродвигателем
-								ul.sub-menu.sub-menu-2
-									li
-										a(href="#") На батарейках
-									li
-										a(href="#") На аккумуляторах
-							li
-								a(href="#") С двс двигателем 
-							li
-								a(href="#") С бензиновым двигателем
+							ul.category-menu__subcategories.sub-menu
+								li
+									a(href="#") Мини, электро
+								li
+									a(href="#") С электродвигателем
+									ul.sub-menu.sub-menu-2
+										li
+											a(href="#") На батарейках
+										li
+											a(href="#") На аккумуляторах
+								li
+									a(href="#") С двс двигателем 
+								li
+									a(href="#") С бензиновым двигателем
+						.category-menu__item
+							.subcategory
+								a(href="#") Самолеты
+							ul.category-menu__subcategories.sub-menu
+								li
+									a(href="#") Мини, электро
+								li
+									a(href="#") С электродвигателем
+									ul.sub-menu.sub-menu-2
+										li
+											a(href="#") На батарейках
+										li
+											a(href="#") На аккумуляторах
+								li
+									a(href="#") С двс двигателем 
+								li
+									a(href="#") С бензиновым двигателем
+						.category-menu__item
+							.subcategory
+								a(href="#") Вертолеты
+							ul.category-menu__subcategories.sub-menu
+								li
+									a(href="#") Мини, электро
+								li
+									a(href="#") С электродвигателем
+									ul.sub-menu.sub-menu-2
+										li
+											a(href="#") На батарейках
+										li
+											a(href="#") На аккумуляторах
+								li
+									a(href="#") С двс двигателем 
+								li
+									a(href="#") С бензиновым двигателем
+						.category-menu__item
+							.subcategory
+								a(href="#") Яхты
+							ul.category-menu__subcategories.sub-menu
+								li
+									a(href="#") Мини, электро
+								li
+									a(href="#") С электродвигателем
+									ul.sub-menu.sub-menu-2
+										li
+											a(href="#") На батарейках
+										li
+											a(href="#") На аккумуляторах
+								li
+									a(href="#") С двс двигателем 
+								li
+									a(href="#") С бензиновым двигателем
+						.category-menu__item
+							.subcategory
+								a(href="#") Квадракоптеры
+							ul.category-menu__subcategories.sub-menu
+								li
+									a(href="#") Мини, электро
+								li
+									a(href="#") С электродвигателем
+									ul.sub-menu.sub-menu-2
+										li
+											a(href="#") На батарейках
+										li
+											a(href="#") На аккумуляторах
+								li
+									a(href="#") С двс двигателем 
+								li
+									a(href="#") С бензиновым двигателем
+			// НАЧАЛО ОСНОВНОГО КОНТЕНТА
 			main.overviews-main
 				section.overviews-content.clearfix
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
@@ -553,7 +567,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
@@ -564,7 +578,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
@@ -578,7 +592,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
@@ -589,7 +603,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
@@ -603,7 +617,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
@@ -614,7 +628,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
@@ -628,7 +642,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
@@ -639,7 +653,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
@@ -653,7 +667,7 @@ html(lang="ru")
 								//- excerpt - отрывок.
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
-					.overview-preview
+					section.overview-preview
 						.overview-preview__img
 							a(href="#")
 								img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
@@ -696,28 +710,47 @@ html(lang="ru")
 								| Следующая
 								i
 				// конец блока навигации
+			// конец основного контента
 
-			// Начало сайдбара
-			aside.overviews-second-sidebar.overview-sidebar
+			// ВТОРОЙ САЙДБАР (нижний)
+			aside.overview-second-sidebar.overview-sidebar
 				// Блок с видео-обзорами
-				section.sidebar-video.overview-sidebar__item
+				section.overview-sidebar__video.overview-sidebar__item
 					h2.overview-sidebar__title
 						span.bb-solid Видео Планета Хобби
+					.overview-sidebar__content
+						.sidebar-video__item
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/FyRLjKswSEw" frameborder="0" allowfullscreen></iframe>
+						p.sidebar-video__item-title
+							a(href="#") Выбрать подвес для квадракоптера
+						.sidebar-video__item
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/FyRLjKswSEw" frameborder="0" allowfullscreen></iframe>
+						p.sidebar-video__item-title
+							a(href="#") Выбрать подвес для квадракоптера
+						.sidebar-video__item
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/FyRLjKswSEw" frameborder="0" allowfullscreen></iframe>
+						p.sidebar-video__item-title
+							a(href="#") Выбрать подвес для квадракоптера
 
-				section.sidebar-video.overview-sidebar__item
+				section.overview-sidebar__events.overview-sidebar__item
 					h2.overview-sidebar__title
 						span.bb-solid События
+					ul.events-list
+						li.events-list__item
+							a(href="#") Харьков. Соревнование по радиоуправляемым авиамоделям
+						li.events-list__item
+							a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+						li.events-list__item
+							a(href="#") Ко Дню авиаконструктора! Тематическая встреча в Киеве
 
-				section.sidebar-video.overview-sidebar__item
+
+				section.overview-sidebar__news.overview-sidebar__item
 					h2.overview-sidebar__title
 						span.bb-solid Новости 
 
-				section.sidebar-video.overview-sidebar__item
+				section.overview-sidebar__articles.overview-sidebar__item
 					h2.overview-sidebar__title
 						span.bb-solid Статьи 
-
-
-					
 			// Конец сайдбара
 
 			section.ov-more-articles.ovp-more-articles

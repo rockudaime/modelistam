@@ -239,48 +239,62 @@ $(document).ready(function() {
 	var mainImage = $('.product-card__main-image img');
 	var smallImages = $('.gallery-product__item');
 	var galleryContent = $('.gallery-product__content');
-	var gallery = $('.gallery-product');
-	var galleryHeight = gallery.outerHeight();
-	var galleryContentHeight = galleryContent.outerHeight();
-	var galleryContentPosition = 0;
-	var galleryControlArrowHeight = 12;
-// Добавление кнопок навигации по картинкам галереи, если их больше 4х
-	if (wWidth >= 1235){
-		if (galleryHeight < galleryContentHeight) {
-			$('.gallery-product__control--down').addClass('gallery-product__control--active');
 
-			$('.gallery-product__control--down').on('click', function(e) {
+	galleryConfig = {
+		galleryImagesParentBlock:  $('.gallery-product'),
+		galleryImagesBlock: $('.gallery-product__content'),
+		controlButtonUp: $('.gallery-product__control--up'),
+		controlButtonDown: $('.gallery-product__control--down'),
+		activeControlButtonClassName: 'gallery-product__control--active'
+	}
+
+// Добавление кнопок навигации по картинкам галереи, если их больше 4х
+
+	if (wWidth >= 1235) {
+		initializeGalleryImagesNavigation(galleryConfig);
+	}
+
+	function initializeGalleryImagesNavigation (galleryConfig) {
+		var galleryImagesParentBlock = galleryConfig.galleryImagesParentBlock;
+		var galleryImagesBlock = galleryConfig.galleryImagesBlock;
+		var controlButtonUp = galleryConfig.controlButtonUp;
+		var controlButtonDown = galleryConfig.controlButtonDown;
+		var activeControlButtonClassName = galleryConfig.activeControlButtonClassName;
+
+		var galleryImagesBlockHeight = galleryImagesBlock.outerHeight();
+		var galleryImagesParentBlockHeight = galleryImagesParentBlock.outerHeight();
+		var galleryContentPosition = 0;
+
+		if (galleryImagesBlockHeight > galleryImagesParentBlockHeight) {
+			controlButtonDown.addClass(activeControlButtonClassName);
+			controlButtonDown.on('click', function (e) {
 				e.preventDefault();
-				if (galleryContentPosition + galleryHeight > galleryContentHeight - galleryHeight) {
-					galleryContentPosition = galleryContentHeight - galleryHeight;
-					console.log('exceeds' + galleryContentPosition);
-					galleryContent.css('transform', 'translateY(' + (  -galleryContentPosition - galleryControlArrowHeight + 'px)'));
-					$('.gallery-product__control--up').addClass('gallery-product__control--active');
-					$(this).removeClass('gallery-product__control--active');
+
+				if (galleryContentPosition + galleryImagesParentBlockHeight > galleryImagesBlockHeight - galleryImagesParentBlockHeight) {
+					galleryContentPosition = galleryImagesBlockHeight - galleryImagesParentBlockHeight;
+					galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition - 12 + 'px)'));
+					controlButtonUp.addClass(activeControlButtonClassName);
+					$(this).removeClass(activeControlButtonClassName);
 				} else {
-					galleryContentPosition += galleryHeight;
-					galleryContent.css('transform', 'translateY(' + ( -(galleryContentPosition) - galleryControlArrowHeight + 'px)'));
-					$('.gallery-product__control--up').addClass('gallery-product__control--active');
+					galleryContentPosition += galleryImagesParentBlockHeight;
+					galleryImagesBlock.css('transform', 'translateY(' + ( -(galleryContentPosition) - 12 + 'px)'));
+					controlButtonUp.addClass(activeControlButtonClassName);
 				}
-				console.log(galleryContentPosition);
-				// galleryContent.css('transform', 'translateY(' + (gallery.outerHeight() - galleryContent.outerHeight() - 12 + 'px)'));
-				// $('.gallery-product__control--up').addClass('gallery-product__control--active');
-				// $(this).removeClass('gallery-product__control--active');
 			});
 
-			$('.gallery-product__control--up').on('click', function(e) {
+			controlButtonUp.on('click', function (e) {
 				e.preventDefault();
-				if (galleryContentPosition - galleryHeight <= 0) {
+
+				if (galleryContentPosition - galleryImagesParentBlockHeight <= 0) {
 					galleryContentPosition = 0;
-					galleryContent.css('transform', 'translateY(' + (0 + 'px)'));
-					$(this).removeClass('gallery-product__control--active');
-					$('.gallery-product__control--down').addClass('gallery-product__control--active');
+					galleryImagesBlock.css('transform', 'translateY(' + (0 + 'px)'));
+					$(this).removeClass(activeControlButtonClassName);
+					$(controlButtonDown).addClass(activeControlButtonClassName);
 				} else {
-					galleryContentPosition -= galleryHeight;
-					galleryContent.css('transform', 'translateY(' + (  -galleryContentPosition + galleryControlArrowHeight + 'px)'));
-					$('.gallery-product__control--down').addClass('gallery-product__control--active');
+					galleryContentPosition -= galleryImagesParentBlockHeight;
+					galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition + 12 + 'px)'));
+					$(controlButtonDown).addClass(activeControlButtonClassName);
 				}
-				console.log(galleryContentPosition);
 			});
 		}
 	}
@@ -320,16 +334,16 @@ $(document).ready(function() {
 		galleryImages: null,
 		mainImage: null,
 		init: function () {
-			var content, block, activeImage, popupMainImageBlock;
+			var previewImages, previewImagesParentBlock, activeImage, popupMainImageBlock;
 			var self = this;
 
-			block = $('.popup-gallery__all-images');
+			previewImagesParentBlock = $('.popup-gallery__all-images');
 			popupMainImageBlock = $('.popup-gallery__main-image');
-			content = galleryContent.clone().appendTo('.popup-gallery__all-images');
-			content.css("transform", "translateY(0px)");
+			previewImages = galleryContent.clone().appendTo('.popup-gallery__all-images');
+			previewImages.css("transform", "translateY(0px)");
 			$('.product-card__main-image img').clone().appendTo(popupMainImageBlock);
 			self.mainImage = $('.popup-gallery__main-image img');
-			self.galleryImages = content.find('.gallery-product__item');
+			self.galleryImages = previewImages.find('.gallery-product__item');
 			self.handleNavLinksStatus();
 			
 			// Переключение изображений по клику
@@ -388,9 +402,9 @@ $(document).ready(function() {
 			});
 			
 			// Свайп изображений в галерее, если они не влязят в зону попапа
-			maxshift = block.width() - content.width();
-			if (wWidth < 1235 && maxshift < 0) {
-				self.addTouchSlideForBlock(content);
+			
+			if (wWidth < 1235 && previewImages.width() > previewImagesParentBlock.width()) {
+				self.addTouchSlideForBlock(previewImages);
 			}
 
 			this.iniatialized = true;
@@ -417,9 +431,11 @@ $(document).ready(function() {
 			var shift, maxshift, currentShift = 0;
 			var startPos, currentPos, endPos = 0;
 
+			maxshift = block.parent().width() - block.width();
 			block.on('touchstart', function(e) {
 				startPos = e.originalEvent.touches[0].pageX;
 			});
+
 			block.on('touchmove', function(e) {
 				var thisPos = $(this).position().left;
 
@@ -437,13 +453,12 @@ $(document).ready(function() {
 					startPos = currentPos;
 				}
 				$(this).css('transform', 'translateX(' + (shift + endPos) + 'px)');
-				
 			});
+
 			block.on('touchend', function(e) {
 				endPos = $(this).position().left;
 			});
 		}
-
 
 	};	
 // Открытие попапа галереи
@@ -557,15 +572,15 @@ $(function () {
 	mypopup.wrapper.on('click', function(e) {
 		e.stopPropagation();
 		if ($(e.target).hasClass('popup-outer')) {
-			mypopup.wrapper.children().fadeOut();
-			mypopup.wrapper.fadeOut();
+			$(this).children().fadeOut();
+			$(this).fadeOut();
 		}
 	});
 
 	function closePopupHandler (e) {
 		e.preventDefault();
-		mypopup.wrapper.children().fadeOut();
-		mypopup.wrapper.fadeOut();
+		$(this).closest('.popup-b').fadeOut();
+		$(this).closest('.popup-outer').fadeOut();
 	}
 	// $('.popup-bcart__content').customScrollbar();
 	// Нажатие кнопки "Купить" открывает попап

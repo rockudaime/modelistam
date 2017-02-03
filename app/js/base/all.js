@@ -195,9 +195,13 @@ $(function () {
 	});
 
 	function closePopupHandler (e) {
-		e.preventDefault();
-		mypopup.wrapper.children().fadeOut();
-		mypopup.wrapper.fadeOut();
+		// e.preventDefault();
+		// // mypopup.wrapper.children().fadeOut();
+		// // mypopup.wrapper.fadeOut();
+		// $(this).parent().fadeOut();
+		// $(this).parent('.popup-outer').fadeOut();
+		// console.log('hello from all.js');
+		// console.log($(this).parent('.popup-outer'));
 	}
 	// $('.popup-bcart__content').customScrollbar();
 	$('.popup-open-link').on('click', function(e) {
@@ -390,7 +394,6 @@ function dragElement(obj) {
 			elPosition = 0;
 		}
 	}
-
 
 	function handleEnd(e) {
 		if (moveVal !== undefined && typeof moveVal === 'number') {
