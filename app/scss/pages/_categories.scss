@@ -232,6 +232,16 @@
         & > a {
             color: inherit;
         }
+
+        &--no-subcategories {
+            .subcategory {
+                background-image: none;
+
+                a {
+                    display: block;
+                }
+            }
+        }
     }
     &-back-link {
         font: 15px 'OpenSans';

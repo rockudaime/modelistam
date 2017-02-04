@@ -37,14 +37,18 @@ $(function () {
 	menuLinks.on('click', function(e) {
 		if (e.target.nodeName !== 'A'){
 			e.preventDefault();
-			if ($(this).hasClass('opened')) {
-				$(this).next().slideUp();
-				$(this).removeClass('opened');
+			menuLink = $(this);
+			if (menuLink.hasClass('opened')) {
+				menuLink.next().slideUp();
+				menuLink.removeClass('opened');
 			} else {
-				menuLinks.removeClass('opened');
-				$(this).addClass('opened');
-				subcategories.slideUp();
-				$(this).next().slideDown();
+				if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
+					menuLinks.removeClass('opened');
+					menuLink.addClass('opened');
+					subcategories.slideUp();
+					menuLink.next().slideDown();
+				}
+				
 			}
 		}
 	});

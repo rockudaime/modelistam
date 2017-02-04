@@ -1,0 +1,26 @@
+$video-icon-width: 82px;
+$video-icon-height: 58px;
+
+.video-thumb {
+	position: relative;
+	text-align: center;
+	font-size: 0px;
+
+	img {
+		max-width: 100%;
+		vertical-align: middle;
+	}
+
+	&__icon {
+		position: absolute;
+		display: inline-block;
+		width: $video-icon-width;
+		height: $video-icon-height;
+		border-radius: 11px;
+		background: rgba(0, 0, 0, 0.7) url('images/video-thumb-icon.png') no-repeat center center;
+		top: 50%;
+		left: 50%;
+		margin-top: -$video-icon-height/2;
+		margin-left: -$video-icon-width/2;
+	}
+}

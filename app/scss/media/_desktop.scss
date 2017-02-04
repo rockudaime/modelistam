@@ -3,50 +3,50 @@
 ***********************************************/
 @media screen and (max-width: 1234px){
     // Основные контейнеры
-    .page-header-wrapper__inner,
-    .header__top-menu__inner,
-    .page-main-menu,
-    .page-inner,
-    .front-bg,
-    .front-category-wrap,
-    #footer{
-        max-width: 940px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    // .page-header-wrapper__inner,
+    // .header__top-menu__inner,
+    // .page-main-menu,
+    // .page-inner,
+    // .front-bg,
+    // .front-category-wrap,
+    // #footer{
+    //     max-width: 940px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
 
-    .front-bg{
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-    }
+    // .front-bg{
+    //     padding-left: 0.9375rem;
+    //     padding-right: 0.9375rem;
+    // }
 
 // ********************************************
 // *        Стили шапки                       *
 // ********************************************
-    .top-menu-left-text{ // описание в левом верхнем углу
-        display: none;
-    }
+ //    .top-menu-left-text{ // описание в левом верхнем углу
+ //        display: none;
+ //    }
 
 
-    #search {
-        width: 332px;
-    }
-    .client-link{
-        margin: 0;
-    }
-    .first_ph_text{
-	  display: none;
-	}
-    .search .search__q-input {
-		min-width: 264px;
-	}
-	.search_focused .search__q-input {
-		min-width: 266px;
-	}
-	.search_focused .search__submit {
-		padding: 7px 30px 6px 12px;
-		    margin: 0;
-	}
+ //    #search {
+ //        width: 332px;
+ //    }
+ //    .client-link{
+ //        margin: 0;
+ //    }
+ //    .first_ph_text{
+	//   display: none;
+	// }
+ //    .search .search__q-input {
+	// 	min-width: 264px;
+	// }
+	// .search_focused .search__q-input {
+	// 	min-width: 266px;
+	// }
+	// .search_focused .search__submit {
+	// 	padding: 7px 30px 6px 12px;
+	// 	    margin: 0;
+	// }
     // =======================================
     // Конец стилей шапки mw: 1199px
     // =======================================
@@ -54,26 +54,26 @@
 // ********************************************
 // *        Главная страница сайта            *
 // ********************************************
-    .home-page .front-middle .front-right{
-        width: 670px;
-    }
-    .home-page .brands-container__content{
-        width: 655px;
-    }
-    .home-page  .brand-list .brand-item{
-        width: 158px;
-        padding: 6px 0;
-    }
-    .news_item__img-wrap{
-        width: 290px;
-    }
+    // .home-page .front-middle .front-right{
+    //     width: 670px;
+    // }
+    // .home-page .brands-container__content{
+    //     width: 655px;
+    // }
+    // .home-page  .brand-list .brand-item{
+    //     width: 158px;
+    //     padding: 6px 0;
+    // }
+    // .news_item__img-wrap{
+    //     width: 290px;
+    // }
 
-    .footer__socials > li{
-        margin: 0 12px 4px 0;
-    }
-    .footer__socials > li:last-child{
-        margin-right: 0;
-    }
+    // .footer__socials > li{
+    //     margin: 0 12px 4px 0;
+    // }
+    // .footer__socials > li:last-child{
+    //     margin-right: 0;
+    // }
 
 
 
@@ -298,23 +298,23 @@
 ***********************************************/
 @media screen and (max-width: 993px){
     // Основные контейнеры
-    .page-header-wrapper__inner,
-    .header__top-menu__inner,
-    .page-main-menu,
-    .page-inner,
-    .front-bg,
-    .front-category-wrap,
-    #footer{
-        max-width: 768px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    // .page-header-wrapper__inner,
+    // .header__top-menu__inner,
+    // .page-main-menu,
+    // .page-inner,
+    // .front-bg,
+    // .front-category-wrap,
+    // #footer{
+    //     max-width: 768px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
 
-    .front-bg,
-    .page-inner{
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+    // .front-bg,
+    // .page-inner{
+    //     padding-left: 15px;
+    //     padding-right: 15px;
+    // }
 
 //****************************************
 // *           Стили шапки               *
@@ -907,9 +907,9 @@
 // ************************************************************
 // *           Страница сравнения товаров                     *
 // ************************************************************
-    .compare-page__item__image-block{
-        float: none;
-    }
+    // .compare-page__item__image-block{
+    //     float: none;
+    // }
 
 
     // ==================================================
@@ -919,32 +919,32 @@
 // *   Стили блока с адрессом который идет перед футером     *
 // ************************************************************
 
-    .brands-container__content .brand-list .brand-item {
-        width: 28%;
-    }
+    // .brands-container__content .brand-list .brand-item {
+    //     width: 28%;
+    // }
 
-    .location-top-info .location-adress,
-    .location-top-info .top-work-hours,
-    .location-top-info .top-phone,
-    .location-top-info .top-skype{
-        width: 100%;
-        margin: 5px 0;
-    }
-    .adress-centre{
-        margin: 0 0 10px;
-    }
-    .location-top-info .top-skype{
-        margin-bottom: 20px;
-    }
-    .location-galery-main{
-        width: 49%;
-    }
+    // .location-top-info .location-adress,
+    // .location-top-info .top-work-hours,
+    // .location-top-info .top-phone,
+    // .location-top-info .top-skype{
+    //     width: 100%;
+    //     margin: 5px 0;
+    // }
+    // .adress-centre{
+    //     margin: 0 0 10px;
+    // }
+    // .location-top-info .top-skype{
+    //     margin-bottom: 20px;
+    // }
+    // .location-galery-main{
+    //     width: 49%;
+    // }
 
-    .location-map-main{
-        width: 49%;
-        height: 300px;
+    // .location-map-main{
+    //     width: 49%;
+    //     height: 300px;
 
-    }
+    // }
 
     // =======================================
     // Конец стилей блока с адресом mw: 992px
