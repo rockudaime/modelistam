@@ -34,6 +34,11 @@ $sidebar-border: 1px solid #dfdfdf;
 .overview-second-sidebar {
     border-bottom: $sidebar-border;
     margin-bottom: 22px;
+
+    @media (min-width: 1235px) {
+        border-bottom: 0;
+        margin-bottom: 43px;
+    }
 }
 .overview-sidebar {
     
@@ -165,6 +170,7 @@ $sidebar-border: 1px solid #dfdfdf;
                 padding-bottom: 0;
             }
         }
+
         @media (min-width: 768px) {
             float: right;
             width: 47.29%;
@@ -587,6 +593,9 @@ input.o-signup-form__input {
     @media (min-width: 1235px) {
         border-top: 1px dashed #dfdfdf;
         padding-top: 26px;
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
 

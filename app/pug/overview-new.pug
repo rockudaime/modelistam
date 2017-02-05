@@ -660,7 +660,6 @@ html(lang="ru")
 								p.
 									Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
 
-
 				// блок имейл подписки
 				section.o-signup
 					h2.o-signup__heading Я хочу быть в курсе последних событий по моделям
@@ -672,6 +671,7 @@ html(lang="ru")
 							input.form-control.o-signup-form__input(type="email" required placeholder="Эл. почта" pattern=".*@.*[.][a-z]+")
 							input.o-signup-form__submit(type="submit" value="Следить за рыссылками")
 						p.o-signup-legend 1 раз в неделю. Отписаться можно в любое время
+
 				// блок навигации
 				.overviews-bottom-pager
 					.pager-main-block
@@ -692,6 +692,7 @@ html(lang="ru")
 								| Следующая
 								i
 				// конец блока навигации
+				
 			// конец основного контента
 
 			// ВТОРОЙ САЙДБАР (нижний)
@@ -757,6 +758,153 @@ html(lang="ru")
 							li.sidebar-nav-list__item
 								a(href="#") Как управлять квадрокоптером: советы и упражнения
 			// Конец сайдбара
+			section.additional-blocks
+				// Популярные товары
+				h2.additional-blocks__heading Связанные товары
+				#owl-popular-products.clearfix.owl-carousel.popular-products-block.custom-scrollbar
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/temporary/blocks/product1.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									span.product-status.product-status--new Новинка
+									span.category-product__product-comments
+										a(href="#") 16
+									span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+								h3.product-preview-item__heading
+									a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/temporary/blocks/product4.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									span.product-status.product-status--new Новинка
+									span.category-product__product-comments
+										a(href="#") 16
+									span.product-status.product-status--discount -10%
+									
+								h3.product-preview-item__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/temporary/blocks/product2.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									span.product-status.product-status--top Топ продаж
+									span.product-status.product-status--discount -10%
+								h3.product-preview-item__heading
+									a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/temporary/blocks/product3.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									span.category-product__product-comments
+										a(href="#") 16
+									span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+									
+								h3.product-preview-item__heading
+									a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									
+								h3.product-preview-item__heading
+									a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+					.product-preview-item
+						.product-preview-item__inner
+							.product-preview-item__photo
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							.product-preview-item__content
+								.product-preview-item__product-status
+									
+								h3.product-preview-item__heading
+									a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+								.category-product__price
+									// span.product-price--new 2600 
+									// 	span.product-price__text--small грн
+									// span.product-price--old 2785 грн
+									span.product-price--current 13 600 
+										span.product-price__text--small грн
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
 
 			section.ov-more-articles.ovp-more-articles
 				h2.ov-more-articles__heading

@@ -98,6 +98,7 @@ $(document).ready(function() {
 			}
 		}
 	});
+	
 
 	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
 	var item;

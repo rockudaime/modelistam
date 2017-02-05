@@ -52,6 +52,58 @@ $(function () {
 			}
 		}
 	});
+
+
+
+	var popularProductsSlider = $("#owl-popular-products");
+	popularProductsSlider.owlCarousel({
+		loop: false,
+		margin:0,
+		navigationtext: false,
+		
+		// responsiveclass:true,
+		pagination: false,
+		nav: true,
+		dots: false,
+
+		responsive:{
+			0:{
+				items:1,
+
+			},
+			544:{
+				items:2,
+
+			},
+			768:{
+				items:3,
+				// onTranslated: myCallback
+			},
+			994:{
+				items:2,
+
+
+			},
+			1200:{
+				items:3,
+
+			}
+		}
+	});
+	    // Listen to owl events:
+    popularProductsSlider.on('change.owl.carousel', function(event) {
+        var currentItem = event.item.index;
+        event.item.index += 1;
+        console.log(currentItem);
+    })
+	
+
+	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
+	var item;
+	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
+		item = owlSlidersWithScrollbar[i];
+		addCustomScrollbar(item);
+	}
 });
 
 
