@@ -31,6 +31,10 @@ $sidebar-border: 1px solid #dfdfdf;
         margin-bottom: 25px;
     }
 }
+.overview-second-sidebar {
+    border-bottom: $sidebar-border;
+    margin-bottom: 22px;
+}
 .overview-sidebar {
     
     @media (min-width: 1235px) {
@@ -42,8 +46,16 @@ $sidebar-border: 1px solid #dfdfdf;
         color: #454446;
         font-size: 17px;
 
+        @media (min-width: 768px) {
+            margin-bottom: 20px;
+        }
+
         @media (min-width: 1235px) {
             margin-bottom: 18px;
+        }
+
+        a {
+            color: inherit; 
         }
 
         span {
@@ -141,6 +153,13 @@ $sidebar-border: 1px solid #dfdfdf;
             padding-bottom: 15px;
             margin-bottom: 25px;
 
+            @media (min-width: 768px) {
+                padding-bottom: 12px;
+            }
+            @media (min-width: 1235px) {
+                padding-bottom: 15px;
+            }
+
             &:last-child {
                 border-bottom: 0;
                 padding-bottom: 0;
@@ -181,6 +200,10 @@ $sidebar-border: 1px solid #dfdfdf;
         margin-bottom: 15px;
         a {
             border-bottom: 1px solid #c1cee1;
+
+            &:hover {
+                border-color: #346cab;
+            }
         }
     }
 }
@@ -379,6 +402,10 @@ $sidebar-border: 1px solid #dfdfdf;
             font-family: $main-font;
             line-height: 26px;
             margin-bottom: 0px;
+
+            a:hover {
+                text-decoration: underline;
+            }
         }
 
         &-thumb {
@@ -392,15 +419,16 @@ $sidebar-border: 1px solid #dfdfdf;
 // signup block
 .o-signup {
     margin: 0 -10px;
-    margin-bottom: 35px;
+    margin-bottom: 37px;
     padding: 24px 10px 33px;
 
     background: #fef4ce;
     clear: both;
     @media (min-width: 768px) {
-        margin: 0 -15px 35px;
+        margin: 0 -15px 39px;
         padding-left: 15px;
         padding-right: 15px;
+        padding-bottom: 28px;
     }
     @media (min-width: 1235px) {
         margin: 0 0 30px;
@@ -443,9 +471,9 @@ $sidebar-border: 1px solid #dfdfdf;
 
         color: #000;
         @media (min-width: 768px) {
-            font: 25px/36px $main-font-light;
+            font: 25px/35px $main-font-light;
 
-            margin-bottom: 17px;
+            margin-bottom: 15px;
         }
         @media (min-width: 1235px) {
             padding: 26px 0 44px;
@@ -553,8 +581,15 @@ input.o-signup-form__input {
 
 .overviews-bottom-pager {
     font-size: 16px;
-    border-top: 1px dashed #dfdfdf;
-    padding-top: 26px;
+    padding-bottom: 30px;
+    border-bottom: $sidebar-border;
+    margin-bottom: 25px;
+    @media (min-width: 1235px) {
+        border-top: 1px dashed #dfdfdf;
+        padding-top: 26px;
+    }
+
+
 }
 
 
@@ -562,7 +597,7 @@ input.o-signup-form__input {
 .ov-more-articles{
     padding: 0;
     clear: both;
-    border: 1px solid #dfdfdf;
+    // border: 1px solid #dfdfdf;
     border-left: 0;
     border-right: 0;
     display: none;
