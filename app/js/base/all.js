@@ -286,7 +286,29 @@ function addCustomScrollbar (owlContainer) {
 		scrollbar.css('margin-left', - scrollbarOffset + '%');
 	}
 }
-
+$(function () {
+	var menuLinks = $('.subcategory');
+	var subcategories = $('.category-menu__subcategories');
+	//    раскрытие пунктов меню сайдбара
+	menuLinks.on('click', function(e) {
+		if (e.target.nodeName !== 'A'){
+			e.preventDefault();
+			menuLink = $(this);
+			if (menuLink.hasClass('opened')) {
+				menuLink.next().slideUp();
+				menuLink.removeClass('opened');
+			} else {
+				if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
+					menuLinks.removeClass('opened');
+					menuLink.addClass('opened');
+					subcategories.slideUp();
+					menuLink.next().slideDown();
+				}
+				
+			}
+		}
+	});
+});
 // ================================= FOOTER =============================
 
 // переключение между адресами в футере сайта

@@ -105,6 +105,13 @@
 
 .category-sort-form {
     margin-bottom: 12px;
+
+    &--half-mob {
+        float: right;
+
+        width: 49%;
+        margin-bottom: 0;
+    }
     @media (min-width: 544px) {
         float: right;
 
@@ -136,6 +143,12 @@
     border-radius: 3px;
     background: #fff url(images/select-arrow-small.png) no-repeat right 8px  top 50%;
     background-size: 17px;
+    &--half-mob {
+        float: left;
+
+        width: 48%;
+        margin-bottom: 0;
+    }
     @media (min-width: 544px) {
         float: left;
 
@@ -1115,7 +1128,7 @@
             display: inline-block;
 
             height: 45px;
-            margin-right: 7px;
+            margin-right: 0px;
 
             vertical-align: middle;
             a {
@@ -1179,7 +1192,7 @@
 
     box-sizing: border-box;
     width: 100%;
-    // min-width: 270px;
+    min-width: 270px;
     margin: 0 0 20px;
 
     color: #000;
@@ -1188,6 +1201,9 @@
     border-radius: 2px;
     @media (min-width: 544px) {
         // max-width: 270px;
+    }
+    @media (min-width: 768px) {
+        left: 15px;
     }
     @media (min-width: 994px) {
         position: relative;
