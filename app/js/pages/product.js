@@ -173,6 +173,7 @@ $(document).ready(function() {
 					$('.tabs-nav').removeClass('tabs-nav--active');
 					link.addClass('tabs-nav--active');
 				}
+				return false;
 			});
 		}
 	};
@@ -385,8 +386,34 @@ $(document).ready(function() {
 					}
 
 					imgHref = activeImage.children().attr('href');
+					proccesActiveImagePosition(activeImage);
 					self.mainImage.attr('src', imgHref);
 					self.handleNavLinksStatus();
+				}
+			}
+
+			function proccesActiveImagePosition(activeImage) {
+				'use strict';
+				var parent = activeImage.parent();
+				var container = parent.parent();
+				var containerSize, activeImageOffset, activeImageSize;
+				var parentShiftLeft = 0;
+				var parentShiftTop = 0;
+				if (parent.outerHeight() > container.outerHeight()) {
+					containerSize = container.outerHeight();
+					activeImageOffset = activeImage.offset().top - parent.offset().top ;
+					activeImageSize = activeImage.outerHeight();
+					parentShiftTop = container.outerHeight() - activeImageOffset - activeImage.outerHeight();
+				} else if (parent.outerWidth() > container.outerWidth()) {
+					containerSize = container.outerWidth();
+					activeImageOffset = activeImage.offset().left - parent.offset().left ;
+					activeImageSize = activeImage.outerWidth();
+					parentShiftLeft = containerSize - activeImageOffset - activeImageSize;
+				}
+
+				if (activeImageOffset > containerSize) {
+					parent.css('transform', 'translate3d(' + parentShiftLeft + 'px, ' + parentShiftTop + 'px, 0px)' )
+					parent.css('transition', 'transform 0.2s ease');
 				}
 			}
 

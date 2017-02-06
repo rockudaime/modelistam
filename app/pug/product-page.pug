@@ -26,6 +26,7 @@ html(lang="ru")
 		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
 		
 		// main script
+		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/product.js")
 
 		// rating mneniya.pro
@@ -36,7 +37,501 @@ html(lang="ru")
 		
 
 	body
-		.page-inner
+		header.main-header
+			.header-top-info
+				.container
+					a(name="top")
+					a.header-logo(href="#", title="Planeta Hobby")
+						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+					.header-phone
+						span.header-phone__number 0 800 218-817 
+						span.header-phone__description  Бесплатно по Украине
+						a(href="#").header-phone__callback.callback-link перезвонить мне
+					.header-nav
+						ul.for-customer
+							li.for-customer__btn 
+								span Покупателю
+								ul.for-customer__menu
+									li
+										a(href="#") Акции
+									li
+										a(href="#") Скидки
+									li
+										a(href="#") Дисконтная программа
+						ul.header-nav-links
+							li.header-nav-links__item
+								a(href="#") Дисконтная программа
+							li.header-nav-links__item
+								a(href="#") Доставка и оплата
+							li.header-nav-links__item
+								a(href="#") Контакты
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Гарантия
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Сервисный центр
+
+					
+					// Корзина, видна только в мобильном виде до 768 пикселей
+					a(href="#").mobile-cart-link
+						span.header-link-indicator.mobile-cart-link__indicator 12
+					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
+						span.bb-dashed.not-authorized Войти в личный кабинет
+						//span.authorized Алексей, 
+							i.header-profile-link__discount ваша скидка 3%
+					
+			.header-stripe
+				.container
+					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
+					button.header-menu-link.active
+						i.header-menu-link__icon
+						| меню
+					// Поиск
+					form.header-search
+						.container
+							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
+							input.header-search__submit(type="submit", value="")
+					// персональные ссылки
+					.header-personal
+						.header-personal__links.clearfix
+							a.header-personal__item.active(href="#", data-id="popupWishlist")
+								i.header-personal__icon.header-personal__icon--wishlist
+									span.header-link-indicator.header-personal__indicator 3
+								| Желания
+							a.header-personal__item(href="#", data-id="popupCompare")
+								i.header-personal__icon.header-personal__icon--compare
+									span.header-link-indicator.header-personal__indicator 0
+								| Сравнение
+							a.header-personal__item(href="#", data-id="popupWatchPrice")
+								i.header-personal__icon.header-personal__icon--watch-price
+									span.header-link-indicator.header-personal__indicator 0
+								| Цены
+							a.header-personal__item.active(href="#", data-id="popupWaiting")
+								i.header-personal__icon.header-personal__icon--waiting
+									span.header-link-indicator.header-personal__indicator 12
+								| Ожидание
+						.header-personal__popups
+							// Попап Ожидания
+							.header-popup.header-popup-waiting#popupWaiting
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--waiting
+									.header-popup__text
+										h2.header-popup__title Список ожиданий
+										p Здесь собраны ожидаемые Вами товары
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы проверить ожидаемые товары, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+							// Попап Желания
+							.header-popup.header-popup-wishlist#popupWishlist
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--wishlist
+									.header-popup__text
+										h2.header-popup__title Список желаний
+										p Запомните товар, который вам понравился, добавив его в список желаний.
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы добавить товар в список желаний, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+							// Попап Сравнение
+							.header-popup.header-popup-compare#popupCompare
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--compare
+									.header-popup__text
+										h2.header-popup__title Сравнение товаров
+										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы сравнить товар добавленный ранее, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+							// Попап Цены
+							.header-popup.header-popup-watch-price#popupWatchPrice
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--watch-price
+									.header-popup__text
+										h2.header-popup__title Следить за ценой
+										p Следить за ценой понравившегося товара очень просто
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Если у вас уже есть отслеживаемые товары, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+					// Иконка для раскрытия формы поиска в мобильном виде
+					span.mobile-search-link
+					// Корзина
+					a(href="#", title="Перейти в корзину").header-cart
+						i.header-link-indicator.header-cart__indicator 10
+						//span.header-cart__empty Здесь пока ничего нет
+						span.header-cart__total 142 458
+							i.header-cart__total--text-smaller  грн
+		// Конец шапки сайта
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				a(href="#").breadcrumbs-item
+					span.bb-solid Техника 
+				span Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF 
+		.container
+			nav.main-nav
+				// класс main-nav-home  - только для главной страницы
+				//- j-menu-item - для работы скрипта
+				.main-nav__mobile-links
+					.main-nav__item
+						.main-nav-link.main-nav-link--wsub
+							a(href="#") Покупателю
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu.main-nav-submenu--l1
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link
+									a(href="#") Акции
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link
+									a(href="#") Скидки
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link.main-nav-link--wsub
+									a(href="#") Дисконтная программа
+									
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Доставка и оплата
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Контакты
+					.main-nav__item
+						.main-nav-link
+							a(href="#") О нас
+
+				.main-nav__top-links
+					a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
+					a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
+				// Основная часть меню, которая содержит ссылки на категории
+				.main-nav__menu
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Автомобили
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Багги
+										.main-nav-link__btn <i></i><i></i>
+
+									.main-nav-submenu.main-nav-submenu--l3
+										h3.main-nav__submenu-heading Тип двигателя
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") ДВС
+											.main-nav__link-3l
+												a(href="#") Электромотор
+										h3.main-nav__submenu-heading Привод
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") 4WD полный
+											.main-nav__link-3l
+												a(href="#") 2WD задний
+										h3.main-nav__submenu-heading Масштаб
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") 1:8
+											.main-nav__link-3l
+												a(href="#") 1:10
+											.main-nav__link-3l
+												a(href="#") 1:18
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Трагги
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Монстры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шорт-корс
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Краулеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Ралли
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Картинг
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шоссейные (скоростные)
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шоссейные (для дрифта)
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Трассовые
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Игрушки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
+							
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Самолеты
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu__wrapper
+							.main-nav-submenu.main-nav-submenu--l1.j-nav-submenu
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Для FPV и съемки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С камерой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Полный комплект
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Модели планеров
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Реактивные
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Вертолеты
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Квадракоптеры
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Квадракоптеры
+										.main-nav-link__btn <i></i><i></i>
+
+									.main-nav-submenu.main-nav-submenu--l3
+										h3.main-nav__submenu-heading Сложность
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") Начинающим
+											.main-nav__link-3l
+												a(href="#") Профессионалам
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Гексакоптеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Октокоптеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Для хобби
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С видеокамерой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С подвесом для GoPro или аналогов
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С FPV системой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Авиамодели
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Катера и яхты
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Электрокатера
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Катера для рыбалки
+										.main-nav-link__btn <i></i><i></i>
+									.main-nav-submenu.main-nav-submenu--l2
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Мини, электро
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С электродвигателем
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l3
+												h3.main-nav__submenu-heading Источник питания
+												.main-nav__submenu-content
+													.main-nav__link-3l
+														a(href="#") На батарейках
+													.main-nav__link-3l
+														a(href="#") На аккумуляторах
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С двс двигателем
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") С бензиновым двигателем
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Подводные лодки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Модели яхт
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Танки
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Мотоциклы
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Коллекционные
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Стендовые
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Другая техника
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Копмплектующие
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Фото, видео
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Радиоуправление
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Аккумуляторы
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Зарядные устройства
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Электроника
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Двигатели
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Топливо
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Жидкости
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Запчасти
+										.main-nav-link__btn <i></i><i></i>
+									.main-nav-submenu.main-nav-submenu--l2
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Инструменты
+												.main-nav-link__btn <i></i><i></i>
+											.main-nav-submenu.main-nav-submenu--l2
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Отвертки
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Ключи
+												.main-nav-submenu__item
+													.main-nav-link.main-nav-submenu__link
+														a(href="#") Наборы инструментов
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Болты
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Подшипники
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Кабели
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Аксессуары
+
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Производители
+				// Ссылки на медиа контент (.main-nav-home__media-links - класс для главной страницы)
+				.main-nav__media-links.main-nav-home__media-links
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-review-icon.media-icon
+							| Обзоры
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-article-icon.media-icon
+							| Статьи
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-news-icon.media-icon
+							| Новости
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-events-icon.media-icon
+							| События
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-video-icon.media-icon
+							| Видео
+		// Конец основного меню
+		.container
 			section.product-card
 				block page-heading
 					h1.product-card__title Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF

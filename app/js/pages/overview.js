@@ -90,13 +90,6 @@ $(function () {
 			}
 		}
 	});
-	    // Listen to owl events:
-    popularProductsSlider.on('change.owl.carousel', function(event) {
-        var currentItem = event.item.index;
-        event.item.index += 1;
-        console.log(currentItem);
-    })
-	
 
 	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
 	var item;

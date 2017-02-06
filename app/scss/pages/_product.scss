@@ -35,7 +35,7 @@ h1.product-card__title {
     margin-bottom: 0;
   }
   @media (min-width: 994px) {
-    width: 604px;
+    width: 572px;
     height: 350px;
   }
   @media (min-width: 1235px) {
@@ -108,10 +108,12 @@ a.link-to-images {
     width: 42px;
     height: 100%;
     overflow: hidden;
+    max-height: 405px;
   }
   @media (min-width: 1235px) {
     width: 120px;
     overflow: hidden;
+    max-height: none;
   }
 }
 
@@ -3917,6 +3919,7 @@ div.star-rating-hover a{background-position:0 0px}
   }
 
   &__all-images {
+    // .popup-gallery__all-images
     overflow: hidden;
     width: 100%;
 
@@ -3924,7 +3927,7 @@ div.star-rating-hover a{background-position:0 0px}
       margin-left: 30px;
       margin-right: 55px;
       margin-bottom: 25px;
-      max-width: 715px;
+      max-width: 655px;
     }
     @media (min-width: 1235px) {
       width: 85px;
