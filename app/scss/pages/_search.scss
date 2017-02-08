@@ -108,9 +108,17 @@
 	.category-menu {
 		border: 0;
 		margin-bottom: 0;
+		position: static;
+		display: block;
+		box-shadow: none;
 	}
 
 	.subcategory {
 		font-family: $main-font-bold;
 	}
+}
+
+.found-items-amount {
+	font: 0.86666em $main-font;
+	color: $text-grey;
 }

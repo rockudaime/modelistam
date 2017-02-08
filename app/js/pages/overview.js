@@ -1,8 +1,8 @@
 
 $(function () {
 	var wWidth = $(window).width();
-	var subcategories = $('.category-menu__subcategories');
-	var menuLinks = $('.subcategory');
+	// var subcategories = $('.category-menu__subcategories');
+	// var menuLinks = $('.subcategory');
 	var filterLink = $('.filter-link');
 	var sidebar = $('.category-sidebar-menu');
 	// open sidebar filter by clicking on mobile filter link (подбор)
@@ -34,24 +34,24 @@ $(function () {
 	});
 	
 	//    раскрытие пунктов меню сайдбара
-	menuLinks.on('click', function(e) {
-		if (e.target.nodeName !== 'A'){
-			e.preventDefault();
-			menuLink = $(this);
-			if (menuLink.hasClass('opened')) {
-				menuLink.next().slideUp();
-				menuLink.removeClass('opened');
-			} else {
-				if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
-					menuLinks.removeClass('opened');
-					menuLink.addClass('opened');
-					subcategories.slideUp();
-					menuLink.next().slideDown();
-				}
+	// menuLinks.on('click', function(e) {
+	// 	if (e.target.nodeName !== 'A'){
+	// 		e.preventDefault();
+	// 		menuLink = $(this);
+	// 		if (menuLink.hasClass('opened')) {
+	// 			menuLink.next().slideUp();
+	// 			menuLink.removeClass('opened');
+	// 		} else {
+	// 			if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
+	// 				menuLinks.removeClass('opened');
+	// 				menuLink.addClass('opened');
+	// 				subcategories.slideUp();
+	// 				menuLink.next().slideDown();
+	// 			}
 				
-			}
-		}
-	});
+	// 		}
+	// 	}
+	// });
 
 
 
@@ -80,12 +80,12 @@ $(function () {
 				// onTranslated: myCallback
 			},
 			994:{
-				items:2,
+				items:3,
 
 
 			},
-			1200:{
-				items:3,
+			1235:{
+				items:4,
 
 			}
 		}

@@ -190,6 +190,8 @@ $sidebar-border: 1px solid #dfdfdf;
         @media (min-width: 1235px) {
             float: none;
             width: 100%;
+            border-bottom: $sidebar-border;
+            margin-bottom: 25px;
         }
     }
 }

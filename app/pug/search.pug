@@ -1491,7 +1491,8 @@ html(lang="ru")
 						.category-sidebar-menu.category-menu
 							.category-menu__item
 								.subcategory
-									a(href="#") Авто
+									a(href="#") Авто 
+										span.found-items-amount (10)
 
 								ul.category-menu__subcategories.sub-menu
 									li
@@ -1509,7 +1510,8 @@ html(lang="ru")
 										a(href="#") С бензиновым двигателем
 							.category-menu__item
 								.subcategory
-									a(href="#") Самолеты
+									a(href="#") Самолеты 
+										span.found-items-amount (135)
 								ul.category-menu__subcategories.sub-menu
 									li
 										a(href="#") Мини, электро
@@ -1526,7 +1528,8 @@ html(lang="ru")
 										a(href="#") С бензиновым двигателем
 							.category-menu__item
 								.subcategory
-									a(href="#") Вертолеты
+									a(href="#") Вертолеты 
+										span.found-items-amount (15)
 								ul.category-menu__subcategories.sub-menu
 									li
 										a(href="#") Мини, электро
@@ -1543,7 +1546,8 @@ html(lang="ru")
 										a(href="#") С бензиновым двигателем
 							.category-menu__item
 								.subcategory
-									a(href="#") Яхты
+									a(href="#") Яхты 
+										span.found-items-amount (11)
 								ul.category-menu__subcategories.sub-menu
 									li
 										a(href="#") Мини, электро
@@ -1560,23 +1564,9 @@ html(lang="ru")
 										a(href="#") С бензиновым двигателем
 							.category-menu__item.category-menu__item--no-subcategories
 								.subcategory
-									a(href="#") Квадракоптеры
+									a(href="#") Квадракоптеры 
+										span.found-items-amount (86)
 					form#filter-form(method="get" action="/")
-						.product-filter
-							.filter-header.filter-header-main Подбор
-								// .filter-total-amount
-								// 	strong Найдено: 1298
-							.filter-values-block
-								a.filter-delete(href="#")
-									i
-									span Удалить фильтры
-							// если есть фильтры добавляется весь блок ниже с перечислением фильтров
-							.filter-values-block
-								.filter-value
-									a.filter-value-delete(href="#") Самолеты RTF
-								.filter-value
-									a.filter-value-delete(href="#") Для начинающих
-						
 						.product-filter
 							.filter-header Производитель
 								
@@ -1585,37 +1575,44 @@ html(lang="ru")
 									input.custom-checkbox#prop-000021(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
 										span.custom-checkbox__box
-										| Revell
+										| Revell 
+										span.found-items-amount (275)
 								.prop-filter
 									input.custom-checkbox#prop-000022(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
 										span.custom-checkbox__box
-										| КУМ
+										| КУМ 
+										span.found-items-amount (105)
 								.prop-filter
 									input.custom-checkbox#prop-000023(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
 										span.custom-checkbox__box
-										| LEGO
+										| LEGO 
+										span.found-items-amount (89)
 								.prop-filter
 									input.custom-checkbox#prop-000024(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000024")
 										span.custom-checkbox__box
-										| Zvezda  
+										| Zvezda 
+										span.found-items-amount (85)
 								.prop-filter
 									input.custom-checkbox#prop-000025(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000025")
 										span.custom-checkbox__box
-										| Kyosho  
+										| Kyosho 
+										span.found-items-amount (69)
 								.prop-filter
 									input.custom-checkbox#prop-000026(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000026")
 										span.custom-checkbox__box
-										| Puccini
+										| Puccini 
+										span.found-items-amount (45)
 								.prop-filter
 									input.custom-checkbox#prop-000027(type='checkbox', name='bylevel')
 									label.custom-checkbox__label.product-filter__filter-label(for="prop-000027")
 										span.custom-checkbox__box
-										| 4D MASTER
+										| 4D MASTER 
+										span.found-items-amount (33)
 						.product-filter
 							.filter-header По цене
 							.filter-values-block

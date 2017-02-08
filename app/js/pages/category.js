@@ -1,7 +1,7 @@
 $(function() {
 	var wWidth = $(window).width();
-	var subcategories = $('.category-menu__subcategories');
-	var menuLinks = $('.subcategory');
+	// var subcategories = $('.category-menu__subcategories');
+	// var menuLinks = $('.subcategory');
 
 	var sidebar = $('.category-sidebar-menu');
 	var filterLink = $('.filter-link');
@@ -15,15 +15,16 @@ $(function() {
 			var left = offset.left;
 		}
 		sidebar.css('width', $(this).outerWidth() + 'px');
-		sidebar.css('top', (offset.top) + filterLink.outerHeight()    + 'px' );
-		sidebar.css('left', (offset.left) + 'px');
+		sidebar.css('top', top + filterLink.outerHeight()    + 'px' );
+		sidebar.css('left', left + 'px');
+		console.log(top + ' ' + left);
 		sidebar.toggle();
 		$(this).toggleClass('filter-link-active');
 	});
 
 	// close sidebar by clicking on free space
-	$(document).mouseup(function (e)
-	{ if ($(document).width() <= 994){
+	$(document).mouseup(function (e) { 
+		if ($(document).width() <= 994){
 			if (!sidebar.is(e.target) // if the target of the click isn't the container...
 				&& sidebar.has(e.target).length === 0 // ... nor a descendant of the container
 				&& !filterLink.is(e.target) && sidebar.css('display') === 'block') 
@@ -33,27 +34,11 @@ $(function() {
 			}
 		}
 	});
-	//    раскрытие пунктов меню сайдбара
-	menuLinks.on('click', function(e) {
-		if (e.target.nodeName !== 'A'){
-			e.preventDefault();
-			if ($(this).hasClass('opened')) {
-				$(this).next().slideUp();
-				$(this).removeClass('opened');
-			} else {
-				menuLinks.removeClass('opened');
-				$(this).addClass('opened');
-				subcategories.slideUp();
-				$(this).next().slideDown();
-			}
-		}
-	});
 
 	// раскрытие блока с брендами товара в мобильном виде
 	if (wWidth < 768) {
 		$('.brands-block__heading').on('click', function(e) {
 			$(this).toggleClass('active');
-			console.log($(this).next());
 			$(this).next().slideToggle();
 		});
 	}
@@ -61,7 +46,7 @@ $(function() {
 });
 
 
-$(document).ready(function() {
+$(function() {
 	// var categorySlider = $(".owl-category-slider");	
 	var popularProductsSlider = $("#owl-popular-products");
 	popularProductsSlider.owlCarousel({
@@ -106,56 +91,11 @@ $(document).ready(function() {
 		item = owlSlidersWithScrollbar[i];
 		addCustomScrollbar(item);
 	}
-	// scrollbar внизу блока с популярными товарами
-	// if ($(window).width() > 767) {
-	// 	var newDiv = document.createElement('div');
-	// 	newDiv.classList.add("owl-custom-scrollbar-wrapper");
-	// 	newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-	// 	var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
-
-	// 	popularProductsSlider.append(newDiv);
-	// 	var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
-	// 	customScrollbar.css('width', scrollbarWidth + '%');
-	// }
-	
-	// function myCallback(event) {
-	//     var transformMatrix = popularProductsSlider.find('.owl-stage').css('transform');
-	//     var matrix = transformMatrix.replace(/[^0-9\-.,]/g, '').split(',');
-	// 	var x = matrix[12] || matrix[4];//translate x
-	// 	var y = matrix[13] || matrix[5];//translate y
-
-	// 	customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
-	// }
-
-	// function getTouches(event) {
- //        if (event.touches !== undefined) {
- //            return {
- //                x : event.touches[0].pageX,
- //                y : event.touches[0].pageY
- //            };
- //        }
-
- //        if (event.touches === undefined) {
- //            if (event.pageX !== undefined) {
- //                return {
- //                    x : event.pageX,
- //                    y : event.pageY
- //                };
- //            }
- //            if (event.pageX === undefined) {
- //                return {
- //                    x : event.clientX,
- //                    y : event.clientY
- //                };
- //            }
- //        }
- //    }
 });
 // page slider
 $(function() {
 	var pageSlider = $(".page-slider");
 	var pageSliderContainer, pageSliderControls;
-	console.log(pageSlider);
  
 	pageSlider.owlCarousel({
  

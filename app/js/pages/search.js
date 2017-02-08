@@ -67,7 +67,6 @@ $(function(){
 			isListFlag = false;
 			localStorage.listFlag = JSON.stringify(isListFlag);
 		}
-
 	};
 	// process clicks on the change layout links
 	var links = $('.view-changer-link');
@@ -156,11 +155,9 @@ $(function(){
 	filterLink.click(function() {
 		var offset = filterLink.position();
 		var sidebarOffset = sidebar.offset();
-		if(offset !== undefined) {
-			var top = offset.top;
-		}
 	    sidebar.css('width', $(this).outerWidth() + 'px');
 	    sidebar.css('top', (offset.top) + filterLink.outerHeight()  + 'px' );
+	    sidebar.css('left', (offset.left)  + 'px' );
 	    sidebar.toggle();
 	    $(this).toggleClass('filter-link-active');
 	});
