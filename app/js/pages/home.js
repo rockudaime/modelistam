@@ -133,24 +133,18 @@ $(function() {
 		responsive:{
 			0:{
 				items:1,
-
 			},
 			544:{
 				items:2,
-
 			},
 			768:{
 				items:3,
-				onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				onTranslated: myCallback
-
 			},
 			1200:{
 				items:4,
-				onTranslated: myCallback
 			}
 		}
 	});
@@ -171,16 +165,13 @@ $(function() {
 			},
 			768:{
 				items:3,
-				onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				onTranslated: myCallback
 
 			},
 			1200:{
 				items:4,
-				onTranslated: myCallback
 			}
 		}
 	});
@@ -201,16 +192,15 @@ $(function() {
 			},
 			768:{
 				items:3,
-				// onTranslated: myCallback
 			},
 			994:{
 				items:3,
-				// onTranslated: myCallback
+
 
 			},
 			1200:{
 				items:4,
-				// onTranslated: myCallback
+
 			}
 		}
 	});
