@@ -26,6 +26,13 @@
 		@media (min-width: 994px) {
 			float: left;
 			margin-bottom: 0;
+			max-width: 700px;
+			width: 700px;
+		}
+
+		@media (min-width: 1235px) {
+			max-width: 830px;
+			width: 830px;
 		}
 
 	}

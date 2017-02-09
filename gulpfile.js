@@ -17,10 +17,10 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html:['search.html'],
-  pug: ['app/pug/search.pug'],
-  css:['app/scss/**/*.scss'],
-  script:['app/js/**/*.js']
+  html: ['category-manufacturer.html'],
+  pug: ['app/pug/category-manufacturer.pug'],
+  css: ['app/scss/**/*.scss'],
+  script: ['app/js/**/*.js']
 };
 
 // ////////////////////////////////////////////////
