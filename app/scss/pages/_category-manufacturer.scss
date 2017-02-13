@@ -1,6 +1,6 @@
 .category-manufacturer-header {
 	@extend .search-page-header;
-
+	margin-top: 10px;
 }
 
 .category-manufacturer-header__left {
@@ -14,8 +14,13 @@
 }
 
 .manufacturer-logo {
-	max-width: 68px;
+	width: 68px;
 	margin-right: 16px;
+	padding-top: 8px;
+
+	img {
+		max-width: 100%;
+	}
 }
 .manufacturer-name {
 }
@@ -26,23 +31,34 @@
 	line-height: 26px;
 
 	@media (min-width: 994px) {
-		margin-bottom: 5px;
+		margin-bottom: 10px;
+	}
+
+	@media (min-width: 1235px) {
+		margin-left: 85px;
 	}
 
 }
 .manufacturer-country {
 	font-family: $main-font-light;
 	margin-right: 15px;
+	margin-left: 16px;
 }
 .manufacturer-about {
 	font-size: 15px;
 	border-bottom: 1px dashed #86accf;
 	white-space: nowrap;
+	display: inline-block;
+    line-height: 15px;
 
 }
 .related-manufacturers {
-	font-size: 16px;
-	font-family: $main-font-light;
+	font-size: 15px;
+	font-family: $main-font;
+
+	@media (min-width: 1235px) {
+		margin-left: 85px;
+	}
 
 	&__item {
 		margin-right: 15px;
@@ -57,12 +73,23 @@
 	}
 }
 
+.category-manufacturer-content {
+	margin-bottom: 35px;
+
+	@media (min-width: 768px) {
+		marign-bottom: 40px;
+	}
+
+	@media (min-width: 1235px) {
+		margin-bottom: 45px;
+	}
+}
 .category-manufacturer-pager {
 	padding-bottom: 35px;
 	border-bottom: 1px solid #e1e1e1;
 	margin-bottom: 32px;
 
-	@media (min-widht: 768px) {
+	@media (min-width: 768px) {
 		padding-bottom: 40px;
 		margin-bottom: 36px;
 	}
@@ -73,17 +100,30 @@
 	font: 16px/2 $main-font-light;
 	color: $main-text-color;
 
+	@media (min-width: 994px) {
+		padding-left: 19px;
+		padding-right: 15px;
+	}
+
+	@media (min-width: 1235px) {
+		padding-right: 72px;
+	}
+
+	& > p:last-child {
+		margin-bottom: 0px;
+	}
+
 	h2, 
 	h3 {
 		font-size: 1em;
 		font-family: $main-font-semibold;
-		margin-bottom: 9px;
+		margin-bottom: 4px;
 	}
 
 	p {
 		font-size: inherit;
 		font-family: inherit;
 		line-height: inherit;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 	}
 }

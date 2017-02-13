@@ -81,10 +81,11 @@ $(function(){
 		if (link.data('view') == 'block' && alreadyList) {
 			categoryLayoutObj.displayBlock();
 		}
-
 	});
-
-	categoryLayoutObj.init();
+	if (links.length > 0) {
+		categoryLayoutObj.init();
+	}
+	
 	// check if list settings is on in local storage of users pc
 	if (typeof localStorage.listFlag !== "undefined" && localStorage.listFlag !== "undefined") {
 		isListFlag = JSON.parse(localStorage.listFlag);
@@ -162,23 +163,6 @@ $(function(){
 	    $(this).toggleClass('filter-link-active');
 	});
 
-
-
-	// var updateSidebarPosition = debounce( function() {
-	// 	if ($(window).width() < 994) {
-	// 		sidebar.hide();
-	// 		sidebar.css('left', '10'  + 'px' );
-	// 	} else {
-	// 		sidebar.show();
-	// 		sidebar.css('top', '0'  + 'px' );
-	// 		sidebar.css('left', '0'  + 'px' );
-	// 	}
-		
-	// },50);
-
-	// window.addEventListener("resize", updateSidebarPosition, false);
-
-
 	// ======================== filter popup ==================
 	var filterPopup = $('.filter-popup');
 	var filterPopupCloseLink = $('.filter-popup-close-link');
@@ -188,24 +172,6 @@ $(function(){
 
 		filterPopup.fadeOut();
 	});
-
-
-
-	// utilitary function
-	function debounce(func, wait, immediate) {
-		var timeout;
-		return function() {
-			var context = this, args = arguments;
-			var later = function() {
-				timeout = null;
-				if (!immediate) func.apply(context, args);
-			};
-			var callNow = immediate && !timeout;
-			clearTimeout(timeout);
-			timeout = setTimeout(later, wait);
-			if (callNow) func.apply(context, args);
-		};
-	}
 
 });
 

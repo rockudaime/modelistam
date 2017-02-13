@@ -286,6 +286,7 @@ function addCustomScrollbar (owlContainer) {
 		scrollbar.css('margin-left', - scrollbarOffset + '%');
 	}
 }
+
 $(function () {
 	var menuLinks = $('.subcategory');
 	var subcategories = $('.category-menu__subcategories');
@@ -307,6 +308,28 @@ $(function () {
 				
 			}
 		}
+	});
+});
+
+// ======================== rating stars in category ====================
+$(function () {
+	// Просто анимация звездочек рейтинга
+	var rating = 0; // в эту переменную записывается выбранный рейтинг числа от 1 до 5
+
+	$('.rateit__range').on('mousemove', function(e){
+		var parentOffset = $(this).offset(); 
+	   	var relX = e.pageX - parentOffset.left;
+		$(this).find('.rateit__hover').css('width', relX + 'px');
+	});
+	$('.rateit__range').on('click', function(e){
+		var parentOffset = $(this).offset(); 
+	   	var relX = e.pageX - parentOffset.left;
+	   	rating = Math.abs(Math.ceil(relX / parseInt($(this).width()) * 5));
+	   	$(this).find('.rateit__selected').css('width', rating * 17 + 'px');
+
+	});
+	$('.rateit__range').on('mouseleave', function(e){
+		$(this).find('.rateit__hover').css('width', '0');
 	});
 });
 // ================================= FOOTER =============================

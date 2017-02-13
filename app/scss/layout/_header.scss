@@ -104,7 +104,7 @@
 .header-nav-links {
 	display: inline-block;
 	vertical-align: baseline;
-	font: 14px 'OpenSans';
+	font: 14px $main-font;
 
 	@media (min-width: 1235px) {
 		// font-size: 14px;
@@ -172,7 +172,7 @@
         }
     }
     &__number {
-        font: 17px 'OpenSans_Semibold';
+        font: 17px $main-font-semibold;
 
         color: #0d0d0d;
     }
@@ -211,7 +211,7 @@
 }
 
 .header-profile-link {
-	font: 15px 'OpenSans', sans-serif;
+	font: 15px $main-font;
 	color: #151515;
     display: inline-block;
     float: right;
@@ -276,7 +276,7 @@
 }
 
 .header-link-indicator {
-    font: 13px 'OpenSans_SemiBold', sans-serif;
+    font: 13px $main-font-semibold;
 
     padding: 2px 8px;
 
@@ -330,7 +330,7 @@
 
 
 .header-menu-link {
-    font: 10px 'OpenSans_Bold';
+    font: 10px $main-font-bold;
 
     float: left;
 
@@ -678,7 +678,7 @@
 .header-cart {
     display: none;
     @media (min-width: 768px) {
-        font: 18px 'OpenSans_SemiBold';
+        font: 18px $main-font-semibold;
         // line-height: 64px;
 
         position: relative;
@@ -745,13 +745,13 @@
             line-height: 59px;
         }
         &--text-smaller {
-        	font: 15px 'OpenSans';
+        	font: 15px $main-font;
         }
 
     }
 
     &__empty {
-	    font: 16px/23px 'OpenSans';
+	    font: 16px/23px $main-font;
 	    margin-top: 6px;
 	    margin-left: 5px;
 	    display: none;
@@ -763,22 +763,8 @@
 
 }
 
-
-
-
-// .main-nav-wrapper {
-// 	position: absolute;
-// 	left: 0;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	background: rgba(245, 241, 234, 0.3);
-// 	z-index: 9999;
-// 	max-height: 100%;
-
-// }
 .main-nav {
-    font: 16px 'OpenSans';
+    font: 16px $main-font;
     display: none;
 
     position: absolute;
@@ -830,7 +816,7 @@
 
     	.main-nav-link  a{
     		color: #000;
-    		font-family: 'OpenSans';
+    		font-family: $main-font;
     	}
     }
     &__menu {
@@ -858,7 +844,7 @@
     	width: 100%;
     	position: relative;
     	box-sizing: border-box;
-    	font-family: 'OpenSans_SemiBold';
+    	font-family: $main-font-semibold;
 
     	a {
     		padding: 9px 0;
@@ -1026,7 +1012,7 @@
     // непосредственно сами ссылки (Акции, Скидки)
     &__top-link {
         display: block;
-        font-family: 'OpenSans_SemiBold';
+        font-family: $main-font-semibold;
 
         padding: 9px 15px 9px 45px;
 
@@ -1066,7 +1052,7 @@
 
     &-submenu {
     	display: none;
-    	font: 15px 'OpenSans';
+    	font: 15px $main-font;
 
     	& & .main-nav-link__btn {
     		display: none;
@@ -1097,7 +1083,7 @@
 
 
     	&__link {
-    		font-family: 'OpenSans';
+    		font-family: $main-font;
     		a {
     			color: #000;
     			padding-left: 0;
@@ -1148,7 +1134,7 @@
     }
 
     &__submenu-heading {
-    	font: 17px 'OpenSans_SemiBold';
+    	font: 17px $main-font-semibold;
     	margin: 0;
     	padding: 5px 0;
 
@@ -1159,7 +1145,7 @@
 
     }
     &-media-link {
-    	font-family: 'OpenSans';
+    	font-family: $main-font;
 
     	a {
     		padding: 6px 0 5px;
@@ -1291,7 +1277,7 @@
         }
     }
     &__heading {
-        font: 20px 'OpenSans_SemiBold';
+        font: 20px $main-font-semibold;
 
         margin: 0;
         // padding-right: 55px;
@@ -1343,7 +1329,7 @@
         }
     }
     &__back {
-        font: 17px 'OpenSans_SemiBold';
+        font: 17px $main-font-semibold;
 
         display: inline-block;
 
@@ -1374,7 +1360,7 @@
 	&__reg-link {
 		border-bottom: 1px dashed #4777b0;
 		display: inline-block;
-		font: 18px/19px 'OpenSans_SemiBold';
+		font: 18px/19px $main-font-semibold;
 
 		&:hover {
 			text-decoration: none;
@@ -1389,7 +1375,7 @@
 	&__label {
 		margin-bottom: 2px;
 		font-size: 15px;
-		font-family: 'OpenSans', sans-serif;
+		font-family: $main-font;
 	}
 	.form-group {
 		margin-bottom: 8px;
@@ -1431,7 +1417,7 @@
 	margin-top: 21px;
 
 	&__title {
-		font: 15px 'OpenSans';
+		font: 15px $main-font;
 		margin-bottom: 10px;
 	}
 
@@ -1470,7 +1456,7 @@
 .breadcrumbs {
 	display: none;
 	color: #000;
-	font: 15px 'OpenSans';
+	font: 15px $main-font;
 
 	@media (min-width: 1235px) {
 		margin-bottom: 12px;
@@ -1514,15 +1500,13 @@
         color: $text-grey;
     }
 	&-menu-btn {
-		font: 16px 'OpenSans_Semibold';
-		background: #1581be url('images/header-menu-down-icon.png') no-repeat right 12px top 50%;
-		max-width: 105px;
-		color: #fff;
-		text-align: left;
-		padding: 5px 30px 5px 7px;
-		box-sizing: border-box;
+        font: 16px $main-font-semibold;
+        background: #1581be url(images/header-menu-down-icon.png) no-repeat right 12px top 50%;
+        max-width: 107px;
+        color: #fff;
+        text-align: left;
+        padding: 5px 33px 5px 9px;
+        box-sizing: border-box;
 	}
 }
 /* end of header.scss*/
-
-

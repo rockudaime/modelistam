@@ -152,8 +152,17 @@ html(lang="ru")
 						span.header-cart__total 142 458
 							i.header-cart__total--text-smaller  грн
 		// Конец шапки сайта
-		// ОСНОВНОЕ МЕНЮ
 		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				a(href="#").breadcrumbs-item
+					span.bb-solid Производители 
+				span Dickie Toys 
+			// ОСНОВНОЕ МЕНЮ
+
 			nav.main-nav
 				// класс main-nav-home  - только для главной страницы
 				//- j-menu-item - для работы скрипта
@@ -504,20 +513,21 @@ html(lang="ru")
 						a.media-link.media-top-link(href="#")
 							i.media-video-icon.media-icon
 							| Видео
-		// Конец основного меню
+			// Конец основного меню
 		// ОСНОВНОЙ КОНТЕНТ
 		.container
 			header.category-manufacturer-header.clearfix
 				.category-manufacturer-header__left.clearfix
-					img.fl_l.manufacturer-logo(src="dist/images/temporary/dickie-toys-logo.png", alt="")
+					.fl_l.manufacturer-logo
+						img(src="dist/images/temporary/dickie-toys-logo.png", alt="")
 					.manufacturer-name
-						h2.manufacturer-title Dickie toys 
+						h2.manufacturer-title Dickie Toys 
 							span.manufacturer-country США 
 							a.manufacturer-about(href="#") О производителе
 						.related-manufacturers Вместе с Dickie Toys покупатели также смотрят: 
 							a.related-manufacturers__item(href="#") Vketch 
 							a.related-manufacturers__item(href="#") Neewer 
-							a.related-manufacturers__item(href="#") Midea Tech 
+							a.related-manufacturers__item(href="#") Midea Tech and some more words 
 				.category-manufacturer-header__right.clearfix
 					.catalog-view-changer
 						a.view-changer-link.view-changer-link--active(title='Показать блоками', href='?view=block', data-view="block")
@@ -547,7 +557,7 @@ html(lang="ru")
 											a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
 										li
 											a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
-			main.category-content.search-results.clearfix
+			main.category-content.clearfix.category-manufacturer-content
 				section.category-content__products.search-results__products
 					// product 1
 					.category-product.category-product--noavail
@@ -1489,7 +1499,7 @@ html(lang="ru")
 								i
 				// конец блока навигации
 				section.manufacturer-description.category-prefooter-description
-					h2 О производителе Dickie toys
+					h2 О производителе Dickie Toys
 					p.
 						Немецкая компания Simba Dickie Toys была создана в 1982 году. Именно с этого момента она начала предлагать в продажу очень реалистично выполненные радиоуправляемые модели, модели служебного транспорта, самые различные вертолеты, самолеты, машинки, катера, подъемные краны. Служебные модели Dickie (Дики) принципиально отличаются от аналогов максимальной функциональностью.
 					p.
