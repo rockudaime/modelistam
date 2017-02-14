@@ -1,0 +1,163 @@
+.overview-content-wrapper {
+	@media (min-width: 1235px) {
+		margin-bottom: 25px;
+		border-bottom: 1px solid #e1e1e1;
+		padding-bottom: 30px;
+	}
+}
+.overview-main {
+	font: 15px/25px $main-font;
+	@media (min-width: 1235px) {
+		float: left;
+		width: 59.8291%;
+		max-width: 700px;
+	}
+
+	.additional-blocks,
+	.popular-products-block {
+		margin-bottom: 25px;
+	}
+}
+
+.overview-text {
+	padding-bottom: 25px;
+	margin-bottom: 26px;
+	border-bottom: 1px solid #eaeaea;
+
+	@media(min-width: 768px){
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+
+	@media (min-width: 1235px) {
+		border-bottom: 1px dashed #c2c2c2;
+		padding-bottom: 38px;
+		margin-bottom: 34px;
+	}
+
+	i {
+		font-family: $main-font-italic;
+	}
+
+	p {
+		font: inherit;
+		margin-bottom: 15px;
+	}
+
+	img {
+		width: 100%;
+		margin-bottom: 16px;
+	}
+
+	iframe {
+		width: 100%;
+		min-height: 200px;
+		margin: 10px 0 15px;
+
+		@media(min-width: 768px){
+			height: 415px;
+			margin-top: 16px;
+		}
+	}
+
+	ul {
+		padding-left: 16px;
+		margin-bottom: 15px;
+
+		li {
+			list-style-image: url('images/overview-page/ov-list-bullet.png');
+			padding-left: 8px;
+			margin-bottom: 5px;
+		}
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.overview-social{
+	&__title {
+		font-family: $main-font;
+		font-size: inherit;
+		display: inline-block;
+		line-height: 25px;
+		margin: 0 8px 18px 0;
+		vertical-align: middle;
+	}
+	&__fb {
+		background-position: 0 -71px;
+		background-size: 24px 196.641px;
+		margin-right: 8px;	
+		height: 28px;
+		&:hover {
+			background-position: 0 -71px;
+		}
+	}
+	&__vk {
+		background-position: 0 -118px;
+		background-size: 24px 196.641px;
+		height: 28px;
+		margin-right: 13px;
+		&:hover {
+			background-position: 0 -118px;
+		}
+	}
+	&__youtube {
+		background-position: 0 -171px;
+		background-size: 24px 196.641px;
+		height: 27px;
+		&:hover {
+			background-position: 0 -171px;
+		}
+	}
+}
+
+.overview-tags {
+	padding-bottom: 17px;
+	border-bottom: 1px solid #c2c2c2;
+	margin-bottom: 20px;
+
+	&__title {
+		float: left;
+	}
+
+	&__content {
+		margin-left: 40px;
+	}
+}
+
+.overview-comments {
+
+	&__title {
+		margin-bottom: 0px;
+	}
+	&__quantity {
+		color: $text-grey;
+		font: 15px $main-font;
+	}
+}
+.related-reviews{
+	margin-bottom: 25px;
+
+	@media(min-width: 768px){
+		margin-bottom: 31px;
+	}
+
+	&__title{
+		font: normal 15px 'OpenSans', sans-serif;
+		line-height: 25px;
+		margin-bottom: 0px;
+
+		&--bottom-margin{
+			margin-bottom: 4px;
+		}
+	}
+	&__list{
+		font: normal 15px 'OpenSans', sans-serif;
+		line-height: 25px;
+		margin-bottom: 8px;
+		text-decoration: underline;
+	}
+
+}

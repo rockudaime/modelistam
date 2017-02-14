@@ -1,0 +1,1188 @@
+doctype html
+html(lang="ru")
+	head
+		title Обзор
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/overview-one.js")
+
+	body
+		header.main-header
+			.header-top-info
+				.container
+					a(name="top")
+					a.header-logo(href="#", title="Planeta Hobby")
+						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+					.header-phone
+						span.header-phone__number 0 800 218-817 
+						span.header-phone__description  Бесплатно по Украине
+						a(href="#").header-phone__callback.callback-link перезвонить мне
+					.header-nav
+						ul.for-customer
+							li.for-customer__btn 
+								span Покупателю
+								ul.for-customer__menu
+									li
+										a(href="#") Акции
+									li
+										a(href="#") Скидки
+									li
+										a(href="#") Дисконтная программа
+						ul.header-nav-links
+							li.header-nav-links__item
+								a(href="#") Дисконтная программа
+							li.header-nav-links__item
+								a(href="#") Доставка и оплата
+							li.header-nav-links__item
+								a(href="#") Контакты
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Гарантия
+							li.header-nav-links__item.header-nav-links__item--desctop
+								a(href="#") Сервисный центр
+
+					
+					// Корзина, видна только в мобильном виде до 768 пикселей
+					a(href="#").mobile-cart-link
+						span.header-link-indicator.mobile-cart-link__indicator 12
+					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
+						span.bb-dashed.not-authorized Войти в личный кабинет
+						//span.authorized Алексей, 
+							i.header-profile-link__discount ваша скидка 3%
+					
+			.header-stripe
+				.container
+					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
+					button.header-menu-link.active
+						i.header-menu-link__icon
+						| меню
+					// Поиск
+					form.header-search
+						.container
+							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
+							input.header-search__submit(type="submit", value="")
+					// персональные ссылки
+					.header-personal
+						.header-personal__links.clearfix
+							a.header-personal__item.active(href="#", data-id="popupWishlist")
+								i.header-personal__icon.header-personal__icon--wishlist
+									span.header-link-indicator.header-personal__indicator 3
+								| Желания
+							a.header-personal__item(href="#", data-id="popupCompare")
+								i.header-personal__icon.header-personal__icon--compare
+									span.header-link-indicator.header-personal__indicator 0
+								| Сравнение
+							a.header-personal__item(href="#", data-id="popupWatchPrice")
+								i.header-personal__icon.header-personal__icon--watch-price
+									span.header-link-indicator.header-personal__indicator 0
+								| Цены
+							a.header-personal__item.active(href="#", data-id="popupWaiting")
+								i.header-personal__icon.header-personal__icon--waiting
+									span.header-link-indicator.header-personal__indicator 12
+								| Ожидание
+						.header-personal__popups
+							// Попап Ожидания
+							.header-popup.header-popup-waiting#popupWaiting
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--waiting
+									.header-popup__text
+										h2.header-popup__title Список ожиданий
+										p Здесь собраны ожидаемые Вами товары
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы проверить ожидаемые товары, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+							// Попап Желания
+							.header-popup.header-popup-wishlist#popupWishlist
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--wishlist
+									.header-popup__text
+										h2.header-popup__title Список желаний
+										p Запомните товар, который вам понравился, добавив его в список желаний.
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы добавить товар в список желаний, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+							// Попап Сравнение
+							.header-popup.header-popup-compare#popupCompare
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--compare
+									.header-popup__text
+										h2.header-popup__title Сравнение товаров
+										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Чтобы сравнить товар добавленный ранее, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+							// Попап Цены
+							.header-popup.header-popup-watch-price#popupWatchPrice
+								.header-popup__main.clearfix
+									span.header-popup-icon.header-popup-icon--watch-price
+									.header-popup__text
+										h2.header-popup__title Следить за ценой
+										p Следить за ценой понравившегося товара очень просто
+
+								// Блок, который виден незарегистрированному пользователю
+								.header-popup__unlogin
+									p Если у вас уже есть отслеживаемые товары, 
+										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+					// Иконка для раскрытия формы поиска в мобильном виде
+					span.mobile-search-link
+					// Корзина
+					a(href="#", title="Перейти в корзину").header-cart
+						i.header-link-indicator.header-cart__indicator 10
+						//span.header-cart__empty Здесь пока ничего нет
+						span.header-cart__total 142 458
+							i.header-cart__total--text-smaller  грн
+		// Конец шапки сайта
+		
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				a(href="#").breadcrumbs-item
+					span.bb-solid Обзоры
+				span Авто 
+			// ОСНОВНОЕ МЕНЮ САЙТА
+			nav.main-nav
+				.main-nav__mobile-links
+					.main-nav__item
+						.main-nav-link.main-nav-link--wsub
+							a(href="#") Покупателю
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu.main-nav-submenu--l1
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link
+									a(href="#") Акции
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link
+									a(href="#") Скидки
+							.main-nav-submenu__item
+								.main-nav-link.main-nav-submenu__link.main-nav-link--wsub
+									a(href="#") Дисконтная программа
+									
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Доставка и оплата
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Контакты
+					.main-nav__item
+						.main-nav-link
+							a(href="#") О нас
+				.main-nav__top-links
+					a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
+					a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
+				// Основная часть меню, которая содержит ссылки на категории
+				.main-nav__menu
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Автомобили
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Багги
+										.main-nav-link__btn <i></i><i></i>
+
+									.main-nav-submenu.main-nav-submenu--l3
+										h3.main-nav__submenu-heading Тип двигателя
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") ДВС
+											.main-nav__link-3l
+												a(href="#") Электромотор
+										h3.main-nav__submenu-heading Привод
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") 4WD полный
+											.main-nav__link-3l
+												a(href="#") 2WD задний
+										h3.main-nav__submenu-heading Масштаб
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") 1:8
+											.main-nav__link-3l
+												a(href="#") 1:10
+											.main-nav__link-3l
+												a(href="#") 1:18
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Трагги
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Монстры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шорт-корс
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Краулеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Ралли
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Картинг
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шоссейные (скоростные)
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Шоссейные (для дрифта)
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Трассовые
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Игрушки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
+							
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Самолеты
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu__wrapper
+							.main-nav-submenu.main-nav-submenu--l1.j-nav-submenu
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Для FPV и съемки
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С камерой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Полный комплект
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Модели планеров
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Реактивные
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Вертолеты
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Квадракоптеры
+							.main-nav-link__btn <i></i><i></i>
+						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Квадракоптеры
+										.main-nav-link__btn <i></i><i></i>
+
+									.main-nav-submenu.main-nav-submenu--l3
+										h3.main-nav__submenu-heading Сложность
+										.main-nav__submenu-content
+											.main-nav__link-3l
+												a(href="#") Начинающим
+											.main-nav__link-3l
+												a(href="#") Профессионалам
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Гексакоптеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Октокоптеры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Для хобби
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С видеокамерой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С подвесом для GoPro или аналогов
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") С FPV системой
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-choice-icon.media-icon
+											| Как выбрать
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-review-icon.media-icon
+											| Обзоры
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a.media-link.media-top-link(href="#")
+											i.media-video-icon.media-icon
+											| Видео
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Авиамодели
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Катера и яхты
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Танки
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Мотоциклы
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Другая техника
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Копмплектующие
+							.main-nav-link__btn <i></i><i></i>
+						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
+							.main-nav-submenu.main-nav-submenu--l1
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Фото, видео
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Радиоуправление
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Аккумуляторы
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Зарядные устройства
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Электроника
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Двигатели
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Топливо
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Жидкости
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Запчасти
+										.main-nav-link__btn <i></i><i></i>
+									.main-nav-submenu.main-nav-submenu--l2
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Инструменты
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Болты
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Подшипники
+										.main-nav-submenu__item
+											.main-nav-link.main-nav-submenu__link
+												a(href="#") Кабели
+								.main-nav-submenu__item
+									.main-nav-link.main-nav-submenu__link
+										a(href="#") Аксессуары
+
+					.main-nav__item
+						.main-nav-link
+							a(href="#") Производители
+				// Ссылки на медиа контент (.main-nav-home__media-links - класс для главной страницы)
+				.main-nav__media-links
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-review-icon.media-icon
+							| Обзоры
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-article-icon.media-icon
+							| Статьи
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-news-icon.media-icon
+							| Новости
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-events-icon.media-icon
+							| События
+					.main-nav-link.main-nav-media-link
+						a.media-link.media-top-link(href="#")
+							i.media-video-icon.media-icon
+							| Видео
+			h1.pagetitle.overviews-pagetitle Выбор радиоуправляемого внедорожника: серьезный подход к вопросу
+			//- Блок с тегами и основным видео
+			.overview-content-wrapper.clearfix
+				// САЙДБАР (верхний)
+				aside.overview-first-sidebar.overview-sidebar.clearfix
+					.filter-link.overview-sidebar__mobile-menu-btn(tabindex="0") Каталог
+					section.overview-sidebar__item.overview-sidebar__signup-block
+						h2.overview-sidebar__title.overview-sidebar__signup-block-title Подписка
+						.h-signup.overview-sidebar__signup
+							form.h-signup__form
+								input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
+								input.h-signup__submit(type="submit", value="Держите в курсе")
+							
+					section.overview-sidebar__category-menu
+						h2.overview-sidebar__title.overview-sidebar__category-menu-title Каталог
+						.category-sidebar-menu.category-menu
+							.category-menu__item
+								.subcategory
+									a(href="#") Авто
+
+								ul.category-menu__subcategories.sub-menu
+									li
+										a(href="#") Мини, электро
+									li
+										a(href="#") С электродвигателем
+										ul.sub-menu.sub-menu-2
+											li
+												a(href="#") На батарейках
+											li
+												a(href="#") На аккумуляторах
+									li
+										a(href="#") С двс двигателем 
+									li
+										a(href="#") С бензиновым двигателем
+							.category-menu__item
+								.subcategory
+									a(href="#") Самолеты
+								ul.category-menu__subcategories.sub-menu
+									li
+										a(href="#") Мини, электро
+									li
+										a(href="#") С электродвигателем
+										ul.sub-menu.sub-menu-2
+											li
+												a(href="#") На батарейках
+											li
+												a(href="#") На аккумуляторах
+									li
+										a(href="#") С двс двигателем 
+									li
+										a(href="#") С бензиновым двигателем
+							.category-menu__item
+								.subcategory
+									a(href="#") Вертолеты
+								ul.category-menu__subcategories.sub-menu
+									li
+										a(href="#") Мини, электро
+									li
+										a(href="#") С электродвигателем
+										ul.sub-menu.sub-menu-2
+											li
+												a(href="#") На батарейках
+											li
+												a(href="#") На аккумуляторах
+									li
+										a(href="#") С двс двигателем 
+									li
+										a(href="#") С бензиновым двигателем
+							.category-menu__item
+								.subcategory
+									a(href="#") Яхты
+								ul.category-menu__subcategories.sub-menu
+									li
+										a(href="#") Мини, электро
+									li
+										a(href="#") С электродвигателем
+										ul.sub-menu.sub-menu-2
+											li
+												a(href="#") На батарейках
+											li
+												a(href="#") На аккумуляторах
+									li
+										a(href="#") С двс двигателем 
+									li
+										a(href="#") С бензиновым двигателем
+							.category-menu__item.category-menu__item--no-subcategories
+								.subcategory
+									a(href="#") Квадракоптеры
+				// НАЧАЛО ОСНОВНОГО КОНТЕНТА
+				main.overview.overview-main
+					article.overview-text.clearfix
+						img(src="dist/images/temporary/owerview-banner-big.jpg")
+						p
+							i Сегодня RC тачки достаточно доступны, разнообразны, универсальны. Машины класса оффроад можно катать абсолютно на любой пересеченной местности и ничто не остановит их: песок, снег, ямы, трамплины, лужи, камни, гравий. Развлекаться с ними можно везде: в закрытом помещении, на улице, на природе.
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/7fYrEC_WDN4" frameborder="0" allowfullscreen></iframe>
+						p Мы выделим для Вас несколько преимуществ радиоуправляемых моделей внедорожников перед другими классами тачек:
+						ul
+							li в среднем этот вид развивает скорость в пределах 50 км/ч, а некоторые представители гораздо большую;  
+							li они пройдут там, куда никто не сможет добраться – это вездеходы с заглавной буквы;  
+							li большинство моделей имеет радиус действия дистанционного пульта управления в районе 80 метров;  
+							li автомодели обладают реалистичной колесной базой, могучим двигателем, профессиональной подвеской и настоящими маслонаполненными амортизаторами;  
+						p отлично чувствуют себя на любом природном покрытии: травяном, асфальтовом или грунтовом! Для них нет границ! Также у Вас есть возможность устраивать гонки в закрытом помещении, предварительно продумывая и создавая специальную трассу с разными препятствиями. Естественно, уровень сложности и протяженность трассы можно будет легко откорректировать по желанию участников;   
+						p Вы обладаете полным контролем над болидом – машина очень легко выполняет все Ваши команды благодаря установленной электронике высокой точности.  
+						p Вы сможете с легкостью преобразить Вашу модель радиоуправляемого внедорожника при помощи наклеек или реклам на корпусе авто.
+						p А еще, каждый автомобиль обладает яркой индивидуальностью и персональными характеристиками.
+
+					section.additional-blocks
+						// Популярные товары
+						h2.additional-blocks__heading Связанные товары
+						#owl-popular-products.clearfix.owl-carousel.popular-products-block.custom-scrollbar
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/temporary/blocks/product1.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/temporary/blocks/product4.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--new Новинка
+											span.category-product__product-comments
+												a(href="#") 16
+											span.product-status.product-status--discount -10%
+											
+										h3.product-preview-item__heading
+											a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/temporary/blocks/product2.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.product-status.product-status--top Топ продаж
+											span.product-status.product-status--discount -10%
+										h3.product-preview-item__heading
+											a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/temporary/blocks/product3.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											span.category-product__product-comments
+												a(href="#") 16
+											span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+							.product-preview-item
+								.product-preview-item__inner
+									.product-preview-item__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.product-preview-item__content
+										.product-preview-item__product-status
+											
+										h3.product-preview-item__heading
+											a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+										.category-product__price
+											// span.product-price--new 2600 
+											// 	span.product-price__text--small грн
+											// span.product-price--old 2785 грн
+											span.product-price--current 13 600 
+												span.product-price__text--small грн
+										.category-product__buy
+											a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+											.category-product__product-links
+												a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+												a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+					section.overview-social
+						h3.overview-social__title Поделиться
+						a(href="#", title="Facebook", target="_blank").footer-socials-link.fb-social-link.overview-social__fb
+						a(href="#", title="Vkontakte", target="_blank").footer-socials-link.vk-social-link.overview-social__vk
+						a(href="#", title="Youtube", target="_blank").footer-socials-link.youtube-social-link.overview-social__youtube
+					section.related-reviews
+						p.related-reviews__title.related-reviews__title--bottom-margin С этой публикацией связаны:
+						p.related-reviews__title Видео
+						ul.related-reviews__list
+							li
+								a(href="#") Обзор квадрокоптера Syma X5C с видеокамерой
+							li
+								a(href="#") Какой подвес для квадрокоптера выбрать?
+						p.related-reviews__title События
+						ul.related-reviews__list
+							li
+								a(href="#") Обзор XK Detect X380: бюджетный квадрокоптер с FPV.
+						p.related-reviews__title Новости
+						ul.related-reviews__list
+							li
+								a(href="#") Радиоуправляемые автомобили для детей: особенности и возможности
+					.overview-tags.clearfix
+						p.overview-tags__title теги
+						.tags.overview-tags__content
+							.tag
+								a(href="#").tag__link радиоуправляемые авто
+							.tag
+								a.tag__link(href="#") ралли 
+							.tag
+								a.tag__link(href="#") багги
+					section.overview-comments.clearfix
+						h2.overview-comments__title Отзывы 
+							span.overview-comments__quantity (10)
+						#mneniyapro_feeddata
+							.clear
+							#mneniya-head
+								.mp-head-left.mp-floatl(itemscope='', itemtype='http://data-vocabulary.org/Review-aggregate')
+									span.mp-title Средний рейтинг:
+									.mp-total-score-wraper
+										span(itemprop='itemreviewed', style='display:none;') Метательный планер Miniprop Felix iQ (F8060)
+										.mp-total-score
+											div(style='width:60%')
+										.mp-floatl.mp-total-score-text
+											span.mp-total-score-val(itemprop='rating', itemscope='', itemtype='http://data-vocabulary.org/Rating')
+												| "
+												span(itemprop='average') 3
+												| "
+											| на основании 
+											span
+												span(itemprop='votes') 6
+												| отзывов
+										.clear
+									.mp-total-reccomend
+										span.mp-total-recommend-val 67% 
+										| покупателей рекомендуют этот товар
+									.mp-calltoaction
+										span Успели купить?
+										a.addformlink.big-link.popup-open-link(data-popup-target="commentPopup", href='#', data-animation='fade') Оставить отзыв
+								.mp-head-right.mp-floatl
+									span.mp-title Распределение рейтингов:
+									table.mp-rating-details
+										tbody
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:100%')
+												td.mp-bar
+													.mp-strip5(title='17%', style='width:17%')
+												td.mp-count (1)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:80%')
+												td.mp-bar
+													.mp-strip4(title='33%', style='width:33%')
+												td.mp-count (2)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:60%')
+												td.mp-bar
+													.mp-strip3(title='17%', style='width:17%')
+												td.mp-count (1)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:40%')
+												td.mp-bar
+													.mp-strip2(title='0%', style='width:0%')
+												td.mp-count (0)
+											tr
+												td.mp-range
+													.mp-rating-value
+														div(style='width:20%')
+												td.mp-bar
+													.mp-strip1(title='33%', style='width:33%')
+												td.mp-count (2)
+								.clear
+								.mp-head-left.mp-floatl
+									span.mp-reviews-title Отзывы о товаре:
+								.mp-head-right.mp-floatl
+									.mp-proof
+										a.mp-logol-link(href='//mneniya.pro/trustmark/', target='_blank')
+											img.mp-logo(src='//dev.mneniya.pro/images/logo.png', title='Отзывы покупателей собраны независимым сервисом Mneniya.Pro', alt='Отзывы покупателей собраны независимым сервисом Mneniya.Pro')
+										span гарантирует достоверность отзывов
+								.clear
+							ul.mp-rating-items
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/375eec20ee9271f036e8e8e66caee356?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:20%')
+										.mp-rating-head
+											.mp-rating-author-name Дмитрий
+											.mp-rating-date 09.06.2016
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Кусок пинопласта за 600 грн...
+											.mp-rating-pros
+												.mp-plus Нравится детям
+											.mp-rating-cons
+												.mp-minus Отломился кусочек между пазами руля.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/3f283f3f1e496846c4f8ed9e608bb3d8?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:60%')
+										.mp-rating-head
+											.mp-rating-author-name Олександр Генералов
+											.mp-rating-date 16.05.2016
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-pros
+												.mp-plus Небольшая цена, ударостойкий
+											.mp-rating-cons
+												.mp-minus
+													| У планера крыло не аэродинамическое, на поверхности крыла какие-то звездочки непонятно зачем.
+										.mp-i-recommend Я рекомендую этот товар другим!
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/29651e4826979cc838b144a188577049?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:20%')
+										.mp-rating-head
+											.mp-rating-author-name Александр
+											.mp-rating-date 18.08.2015
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Купил сыну этот планер Miniprop Felix iQ. Вышли поиграть на стадионе. Играли около часа. При очередном приземлении на траву крыло сламалось на 2 равных части. Место разлома - в зажатой корпусом части - там, где при нормальном качестве материала, ломаться в принципе не должно. Эта игрушка недолговечна, поэтому не стоит таких денег.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/94c7ac6376ca483be4e3b87213915d7c?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:100%')
+										.mp-rating-head
+											.mp-rating-author-name Наталья
+											.mp-rating-date 15.05.2015
+										.mp-rating-prooved
+											img.mp-rating-prooved-img(src='//dev.mneniya.pro/images/pokupatel.png', title='')
+											.mp-proof-tooltip
+												small
+													| MNENIYA.PRO подтверждает, что человек, оставивший отзыв, приобрел товар в данном интернет-магазине
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Очень интересная штука, увлекательная. Удобная в использовании, безопасная для ребенка, потому как легкая без острых углов. Даже если на площадке попадет в других детей - беды не будет. Сыну 5 лет, увлекается самолетами, ему очень понравилась игрушка. Это будет оригинальный подарок (не такой как у всех) для наших друзей. Спасибо
+										.mp-i-recommend Я рекомендую этот товар другим!
+										.mp-rating-customer-comment
+											b Комментарий Planeta Hobby:
+											br
+											|             Добрый день. Спасибо Вам за обратную связь. Нам очень приятно, что Вы остались довольны покупкой в нашем интернет-магазине. Желаем Вам удачных полетов. 
+											br
+											| С Уважением, интернет-магазин Planeta Hobby.
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:80%')
+										.mp-rating-head
+											.mp-rating-author-name Алексей
+											.mp-rating-date 14.01.2015
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Купил такой планер своему малому летом 2013го. Пользовались до осени 2014го пока сын с мамой не потерял хвостовой стабилизатор. Кстати его можно переставлять на 2 режима полета - прямо, по кругу (мертвая петля). Модель просто НЕУБИВЕМАЯ. За 1 год эксплуатации счесан нос, и то, падал на все что угодно - грунтовку, траву, асфальт. Всем рекомендую!
+										.mp-i-recommend Я рекомендую этот товар другим!
+								li.mp-rating-item
+									.mp-wrap-left
+										img(src='https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=%2F%2Fdev.mneniya.pro%2Fimages%2Fdefault-avatar.png&s=50')
+										.mp-rating-value
+											div(style='width:80%')
+										.mp-rating-head
+											.mp-rating-author-name George
+											.mp-rating-date 31.10.2013
+									.mp-wrap-right
+										.mp-rating-notes
+											.mp-rating-text
+												| Метательный планер просто идеален для активного отдыха в парке на пляже на стадионе в огороде:)
+												br
+												| купил такой своим детям 4 и 6 лет, дети терзают его уже три месяца, качество материала наивысшего качества, у нашей семьи был полнейший восторг!
+												br
+												| Однозначно стоит своих денег, рекомендую!
+										.mp-i-recommend Я рекомендую этот товар другим!
+				// конец основного контента
+				// ВТОРОЙ САЙДБАР (нижний)
+				aside.overview-second-sidebar.overview-sidebar.clearfix
+					// Блок с похожими обзорами
+					section.overview-sidebar__related-overviews.overview-sidebar__item.clearfix
+						h2.overview-sidebar__title Похожие обзоры
+						.overview-sidebar__content
+							section.overview-preview
+								.overview-preview__img
+									a(href="#")
+										img(src="dist/images/temporary/overview/ov1.jpg", alt="some overview")
+								.overview-preview__content
+									.overview-preview__status
+										span.overview-status.overview-status--announce Анонс
+
+									h2.overview-preview__title
+										a(href="#") Краткий обзор наиболее популярных компаний, выпускающих R/C модели
+									.overview-preview__excerpt
+										//- excerpt - отрывок.
+										p.
+											Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров.
+							section.overview-preview
+								.overview-preview__img
+									a(href="#")
+										img(src="dist/images/temporary/overview/ov2.jpg", alt="some overview")
+								.overview-preview__content
+									h2.overview-preview__title
+										a(href="#") Багги или монстр? Как выбрать радиоуправляемую машину?
+									.overview-preview__excerpt
+										//- excerpt - отрывок.
+										p.
+											Hitec северокорейская компания, основанная в 1973 году, производитель радиоаппаратуры: передатчиков, приёмников, сервомашинок, прочей электроники, аксессуаров; авиамоделей.
+
+					// Блок с видео-обзорами
+					section.overview-sidebar__video.overview-sidebar__item
+						h2.overview-sidebar__title
+							span.bb-solid Видео Планета Хобби
+						.overview-sidebar__content
+							.sidebar-video__item
+								.video-thumb.sidebar-video__item-thumb
+									a(href="#")
+										img(src="dist/images/temporary/video-thumbs/thumb1.jpg", alt="some alt for video thumb")
+										span.video-thumb__icon
+								h3.sidebar-video__item-title
+									a(href="#") Какой подвес для квадрокоптера выбрать?
+							.sidebar-video__item
+								.video-thumb.sidebar-video__item-thumb
+									a(href="#")
+										img(src="dist/images/temporary/video-thumbs/thumb2.jpg", alt="some alt for video thumb2")
+										span.video-thumb__icon
+								h3.sidebar-video__item-title
+									a(href="#") Как выбрать приемник для радиоуправляемых моделей?
+							.sidebar-video__item
+								.video-thumb.sidebar-video__item-thumb
+									a(href="#")
+										img(src="dist/images/temporary/video-thumbs/thumb3.jpg", alt="some alt for video thumb3")
+										span.video-thumb__icon
+								h3.sidebar-video__item-title
+									a(href="#") Рама гексакоптера: как собрать самому?
+					section.overview-sidebar__nav-group
+						section.overview-sidebar__events.overview-sidebar__item
+							h2.overview-sidebar__title
+								a(href="#")
+									span.bb-solid События
+							ul.sidebar-nav-list
+								li.sidebar-nav-list__item
+									a(href="#") Харьков. Соревнование по радиоуправляемым авиамоделям
+								li.sidebar-nav-list__item
+									a(href="#") Встреча форумчан в Киеве. Профессионалы и любители радиоуправляемых моделей
+								li.sidebar-nav-list__item
+									a(href="#") Ко Дню авиаконструктора! Тематическая встреча в Киеве
+						section.overview-sidebar__news.overview-sidebar__item
+							h2.overview-sidebar__title
+								a(href="#")
+									span.bb-solid Новости
+							ul.sidebar-nav-list
+								li.sidebar-nav-list__item
+									a(href="#") Соревнование по радиоуправляемым авиамоделям
+								li.sidebar-nav-list__item
+									a(href="#") Профессионалы и любители радиоуправляемых моделей
+								li.sidebar-nav-list__item
+									a(href="#") Тематическая встреча в Киеве
+						section.overview-sidebar__articles.overview-sidebar__item
+							h2.overview-sidebar__title
+								a(href="#")
+									span.bb-solid Статьи
+							ul.sidebar-nav-list
+								li.sidebar-nav-list__item
+									a(href="#") Как выбрать экшн камеру и не разочароваться
+								li.sidebar-nav-list__item
+									a(href="#") XK Detect X380: бюджетный квадрокоптер с FPV
+								li.sidebar-nav-list__item
+									a(href="#") Как управлять квадрокоптером: советы и упражнения
+				// Конец сайдбара
+
+
+			section.ov-more-articles.ovp-more-articles
+				h2.ov-more-articles__heading
+					a(href="#") Нам есть, что еще рассказать
+				ul.o-more
+					each value in ["Авто", "Самолеты", "Вертолёты", "Квадракоптеры"]
+						li.o-more__category
+							a.o-more__category-link.o-more__link(href="#")=value 
+							ul.o-more__items
+								li.o-more__item
+									a.o-more__link(href="#") $17 HK FPV camera with wide-angle lens
+								li.o-more__item
+									a.o-more__link(href="#") Fatshark Dominator FPV glasses (Part 1)
+								li.o-more__item
+									a.o-more__link(href="#") FrSky telemetry dashboard and sensor hub (part 1)
+		// Все попапы
+		.popup-outer
+			section.popup-b.popup-login#popupLogin
+				header
+					h2.popup-login__title Вход
+					a(href="#").popup-login__reg-link Регистрация
+				form(action="/", method="POST", name="login").login-form
+					
+					label(for="email").login-form__label E-mail
+					input(type="email", required).login-form__input.form-control
+					
+					label(for="email").login-form__label Пароль
+					input(type="password", required).login-form__input.form-control
+
+					.form-group
+						input(type="checkbox", id="forgotPassword").custom-checkbox
+						label(for="forgotPassword").custom-checkbox__label.login-form__label
+							span.custom-checkbox__box.login-form__checkbox-box 
+							|  Запомнить меня
+					.form-group
+						.login-form__invalid-data Неправильный логин или пароль
+						input(type="submit", value="Войти").btn.login-form__btn
+						a(href="#").login-form__reminder-link Забыли пароль?
+				.social-login
+					h2.social-login__title Вход через социальные сети
+					ul.social-login__links.clearfix
+						li.social-login__link.social-login__link--fb
+							a(href="#", title="facebook")
+						li.social-login__link.social-login__link--vk
+							a(href="#", title="vkontakte")
+						li.social-login__link.social-login__link--gp
+							a(href="#", title="google plus")
+
+				a.popup-b__close(href="#")
+
+
+			// попап "добавить комментарий"
+			section.popup-b.popup-bcomment#commentPopup.clearfix
+				.popup-b__header.popup-b__header--dbb
+					h2.popup-b__heading Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
+				form.popup-bcomment__form#reviewform(action method="get")
+					input(type='hidden', name='producturl', value='http://modelistam.com.ua/kvadrokopter-syma-x5sw-kameroi-p-31298/')
+					input(type='hidden', name='customerid', value='090BF0F9-E3E6-033A-176E-F813CCAF')
+					input(type='hidden', name='sendingqueueid', value='')
+					input(type='hidden', name='productuid', value='31298')
+					input(type='hidden', name='productname', value='Квадрокоптер Syma X5SW с FPV Wi-Fi камерой и 6-осевым гироскопом')
+					input#rate(type='hidden', name='rate', value='')
+					input(type='hidden', name='customerurl', value='http://modelistam.com.ua')
+					.popup-bcomment__row
+						.popup-bcomment__hf
+							label(for="productPros") Достоинства:
+							textarea#productPros(name="pros", rows="5")
+						.popup-bcomment__hf
+							label(for="productCons") Недостатки:
+							textarea#productCons(name="cons", rows="5")
+					.popup-bcomment__row
+						.popup-bcomment__fl
+							label(for="productComment") Комментарий:
+							textarea#productComment(name="feedback", rows="10")
+					.popup-bcomment__row
+						.popup-bcomment__rating.clearfix
+							p.rate_text Оцените товар*:
+							.mp-rate-block
+								div
+									span.star-rating-control
+										.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+											a(title='1') 1
+										.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+											a(title='2') 2
+										.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+											a(title='3') 3
+										.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+											a(title='4') 4
+										.star-rating.rater-0.star.star-rating-applied.star-rating-live(role='text', aria-label='')
+											a(title='5') 5
+									input.star.star-rating-applied(name='star1', type='radio', value='1', style='display: none;')
+									input.star.star-rating-applied(name='star1', type='radio', value='2', style='display: none;')
+									input.star.star-rating-applied(name='star1', type='radio', value='3', style='display: none;')
+									input.star.star-rating-applied(name='star1', type='radio', value='4', style='display: none;')
+									input.star.star-rating-applied(name='star1', type='radio', value='5', style='display: none;')
+						.popup-bcomment__share
+							p Рекомендуете ли вы этот товар другим покупателям?
+							ul.share-options.clearfix
+								li.share-options__item
+									input#shareOptionYes.custom-radio__input(type="radio" value="true" name="recomend" checked)
+									label.custom-radio__tab-label.share-options__tab(for="shareOptionYes") Да
+								li.share-options__item
+									input#shareOptionNo.custom-radio__input(type="radio" value="false" name="recomend")
+									label.custom-radio__tab-label.share-options__tab(for="shareOptionNo") Нет
+					.popup-bcomment__footer
+						.popup-bcomment__name
+							label(for="commentName").name-title Ваше имя*:
+							input#commentName.popup-bcomment__text-input(type="text" required name="name" placeholder="Иван Петров")
+						.popup-bcomment__email
+							label(for="commentEmail").email-title Ваш email*:
+							input#commentEmail.popup-bcomment__text-input(type="email" name="email" required placeholder="ivanpetrov@gmail.com")
+						input.popup-bcomment__submit(type="submit" value="ДОБАВИТЬ ОТЗЫВ")
+				a.popup-b__close(href="#")
+		// Начало основного футера сайта
+		footer.main-footer
+			.container
+				.footer-nav-wrapper.clearfix
+					.footer-nav.footer-nav--categories
+						h2.main-footer__heading Всегда в наличии
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Автомобили
+							li.footer-nav__link
+								a(href="#") Квадракоптеры
+							li.footer-nav__link
+								a(href="#") Самолеты
+							li.footer-nav__link
+								a(href="#") Вертолеты
+							li.footer-nav__link
+								a(href="#") Яхты
+							li.footer-nav__link
+								a(href="#") Аксессуары
+					.footer-nav.footer-nav--info
+						h2.main-footer__heading Ваши покупки
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Вопросы и ответы 
+							li.footer-nav__link
+								a(href="#") Оплата и доставка 
+							li.footer-nav__link
+								a(href="#") Гарантия
+							li.footer-nav__link
+								a(href="#") Условия использования сайта
+						.footer-payment-methods
+							p Принимаем к оплате
+							img(src="dist/images/payment-methods.png", alt="методы оплаты виза, мастеркард, приватбанк")
+					.footer-nav.footer-nav--site-links
+						ul.footer-nav__links
+							li.footer-nav__link
+								a(href="#") Блог
+							li.footer-nav__link
+								a(href="#") Новости и события 
+							li.footer-nav__link
+								a(href="#") О компании 
+							li.footer-nav__link
+								a(href="#") Вакансии 
+
+				.main-footer__contacts.clearfix
+					.footer-contact-info
+						h2.main-footer__heading Киев
+						.footer-contact-info__schedule
+							span.footer-contact-info__icon.footer-contact-info__icon--schedule
+							| пн-пт: 9-20, сб: 10-20
+						.footer-contact-info__phone
+							span.footer-contact-info__icon.footer-contact-info__icon--phone
+							| (044) 221-61-00
+						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+
+						.footer-contact-info__country-phone
+							p 0 800 218-817
+							p.footer-contact-info__desc Бесплатно по Украине
+
+					.footer-contact-info
+						h2.main-footer__heading Харьков
+						.footer-contact-info__schedule
+							span.footer-contact-info__icon.footer-contact-info__icon--schedule
+							| пн-пт: 9-20, сб: 10-20
+						.footer-contact-info__phone
+							span.footer-contact-info__icon.footer-contact-info__icon--phone
+							| (057) 755-15-00
+						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+				.main-footer__socials
+					p Следите за нами в соцсетях
+					a(href="#", title="Facebook", target="_blank").footer-socials-link.fb-social-link
+					a(href="#", title="Vkontakte", target="_blank").footer-socials-link.vk-social-link
+					a(href="#", title="Youtube", target="_blank").footer-socials-link.youtube-social-link
+
+
+				a(href="#top").footer-up-link
+					span.footer-up-link__icon
+					| Вверх

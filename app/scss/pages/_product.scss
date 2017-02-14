@@ -3360,6 +3360,10 @@ ul.mp-rating-items li.mp-rating-item {
 
   border-bottom: 1px solid #e6eae6;
   background: none;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 .mp-rating-author-name {
   padding-bottom: 5px;
