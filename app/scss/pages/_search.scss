@@ -102,8 +102,9 @@
 		margin-bottom: 50px;
 		&__products {
 			position: relative;
-			top: -30px;
+			top: -33px;
 			background-color: transparent;
+			margin-bottom: 7px;
 		}
 
 		&__products.category-content__products--list {
@@ -112,6 +113,9 @@
 	}
 }
 .search-sidebar__category-menu {
+	padding-bottom: 8px;
+	border-bottom: 1px solid #dfdfdf;
+
 	.category-menu {
 		border: 0;
 		margin-bottom: 0;
@@ -122,11 +126,23 @@
 
 	.subcategory {
 		font-family: $main-font-bold;
+		&:hover {
+			color: #346cab;
+		}
+
+		&.opened {
+			color: #346cab;
+		}
 	}
-	border-bottom: 1px solid #dfdfdf;
+	
 }
 
 .found-items-amount {
 	font: 0.86666em $main-font;
 	color: $text-grey;
+	margin-left: 6px;
+
+	&:hover {
+		text-decoration: none;
+	}
 }

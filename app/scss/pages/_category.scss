@@ -629,7 +629,7 @@
 
             white-space: nowrap;
             text-overflow: ellipsis;
-            margin: 5px 0;
+            margin: 4px 0 4px;
         }
         .product-status {
             line-height: 26px;
@@ -699,7 +699,7 @@
 
         height: 30px;
         min-height: 25px;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
         // margin-bottom: 15px;
         @media (min-width: 994px) {
             // .product-price--new,
@@ -1225,12 +1225,12 @@
         display: block;
 
         width: 220px;
-        height: 42px;
-        margin: 20px auto 15px;
+        height: 40px;
+        margin: 21px 8px 10px;
 
         color: #fff;
         border: 0;
-        border-radius: 2px;
+        border-radius: 4px;
         outline: 0;
         background: #d34f27;
         &:hover {
@@ -1290,18 +1290,19 @@
         font: 15px/18px 'OpenSans';
 
         margin: 0;
+        padding: 5px 0 8px 29px;
 
         color: inherit;
     }
     &__price-block {
         padding: 15px 0 5px;
 
-        text-align: center;
+        // text-align: center;
     }
 }
 
 .filter-header {
-    font: 16px/42px 'OpenSans_SemiBold';
+    font: 16px/37px 'OpenSans_SemiBold';
 
     box-sizing: border-box;
     height: 36px;
@@ -1332,12 +1333,13 @@
     font: 18px/32px 'OpenSans';
 
     display: inline-block;
+    vertical-align: middle;
 
     box-sizing: border-box;
     width: 82px;
     max-width: 82px;
     height: 34px;
-    margin: 0 7px;
+    margin: 0 8px;
     padding: 2px 5px;
 
     border: 1px solid #474647;
@@ -1348,6 +1350,11 @@
 
         border: 2px solid #4b80bb;
         outline: 0;
+    }
+
+    &.price-min {
+        margin-left: 5px;
+        margin-right: 11px;
     }
 }
 

@@ -55,7 +55,7 @@ $(function () {
 
 
 
-	var popularProductsSlider = $("#owl-popular-products");
+	var popularProductsSlider = $("#owl-related-products");
 	popularProductsSlider.owlCarousel({
 		loop: false,
 		margin:0,

@@ -588,27 +588,27 @@ $(function () {
 		bestPricePopup.parent().fadeIn();
 	});
 
-	var mypopup = {
-		closeLink: $('.popup-b__close'),
-		backLink: $('.popup-b__back'),
-		wrapper: $('.popup-outer')
-	};
+	// var mypopup = {
+	// 	closeLink: $('.popup-b__close'),
+	// 	backLink: $('.popup-b__back'),
+	// 	wrapper: $('.popup-outer')
+	// };
 
-	mypopup.closeLink.on('click', closePopupHandler);
-	mypopup.backLink.on('click', closePopupHandler);
-	mypopup.wrapper.on('click', function(e) {
-		e.stopPropagation();
-		if ($(e.target).hasClass('popup-outer')) {
-			$(this).children().fadeOut();
-			$(this).fadeOut();
-		}
-	});
+	// mypopup.closeLink.on('click', closePopupHandler);
+	// mypopup.backLink.on('click', closePopupHandler);
+	// mypopup.wrapper.on('click', function(e) {
+	// 	e.stopPropagation();
+	// 	if ($(e.target).hasClass('popup-outer')) {
+	// 		$(this).children().fadeOut();
+	// 		$(this).fadeOut();
+	// 	}
+	// });
 
-	function closePopupHandler (e) {
-		e.preventDefault();
-		$(this).closest('.popup-b').fadeOut();
-		$(this).closest('.popup-outer').fadeOut();
-	}
+	// function closePopupHandler (e) {
+	// 	e.preventDefault();
+	// 	$(this).closest('.popup-b').fadeOut();
+	// 	$(this).closest('.popup-outer').fadeOut();
+	// }
 	// $('.popup-bcart__content').customScrollbar();
 	// Нажатие кнопки "Купить" открывает попап
 	$('#submitOrderBtn').on('click', function(e) {
@@ -634,14 +634,14 @@ $(function () {
 		}
 	});
 
-	$('.popup-open-link').on('click', function(e) {
-		e.preventDefault();
-		var targetId = this.dataset.popupTarget;
-		var popup = $('#' + targetId);
+	// $('.popup-open-link').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	var targetId = this.dataset.popupTarget;
+	// 	var popup = $('#' + targetId);
 
-		popup.show();
-		popup.parent().fadeIn();
-	});
+	// 	popup.show();
+	// 	popup.parent().fadeIn();
+	// });
 
 
 	

@@ -188,8 +188,8 @@ $(function(){
 		mypopup.wrapper.on('click', function(e) {
 			e.stopPropagation();
 			if ($(e.target).hasClass('popup-outer')) {
-				mypopup.wrapper.children().fadeOut();
-				mypopup.wrapper.fadeOut();
+				$(this).children().fadeOut();
+				$(this).fadeOut();
 			}
 		});
 
@@ -260,64 +260,6 @@ $(function(){
 	}());
 
 });
-
-
-
-
-
-// ========================= Owl custom scrollbar ==================
-
-function addCustomScrollbar (owlContainer) {
-	'use strict';
-	var owlSlider = $(owlContainer);
-	var sliderItemWidth = owlSlider.find('.owl-item').width();
-	var owlNavNext = owlSlider.find('.owl-next');
-	var owlNavPrev = owlSlider.find('.owl-prev');
-	var scrollbar;
-	addScrollbar(owlSlider);
-	setScrollbarWidth (scrollbar, owlSlider);
-	
-	owlNavNext.on('click', function (e) {
-		setScrollbarOffset(scrollbar, owlSlider, sliderItemWidth);
-	});
-	owlNavPrev.on('click', function (e) {
-		setScrollbarOffset(scrollbar, owlSlider, -sliderItemWidth);
-	});
-
-
-
-	function addScrollbar($obj) {
-		var newDiv = document.createElement('div');
-		newDiv.classList.add("owl-custom-scrollbar-wrapper");
-		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-
-		scrollbar = $(newDiv).find('.owl-custom-scrollbar');
-		$obj.append(newDiv);
-	}
-
-	function setScrollbarWidth (scrollbar, owlContainer) {
-		var scrollbarWidth = 100 / (owlContainer.find('.owl-stage').width()/owlContainer.width());
-		scrollbar.css('width', scrollbarWidth + '%');
-	}
-
-	function setScrollbarOffset (scrollbar, owlContainer, offset) {
-		var stage = owlContainer.find('.owl-stage');
-	    var matrix = stage.css('transform').replace(/[^0-9\-.,]/g, '').split(',');
-		var x = matrix[12] || matrix[4];// предыдущий сдвиг
-		var newOffset = x - offset;
-		var stageWidth = stage.width(); // полная ширина контейнера с блоками товаров
-		if (-newOffset >= stageWidth) {
-			newOffset = x;
-		} else if (-newOffset <= 0) {
-			newOffset = 0;
-		}
-		var scrollbarOffset = 100 / (stageWidth / newOffset);
-
-		scrollbar.css('margin-left', - scrollbarOffset + '%');
-	}
-}
-
-
 
 // ======================== rating stars in category ====================
 $(function () {
@@ -410,7 +352,67 @@ $(function () {
 
 	// }	
 });
+
+
+// ========================= Owl custom scrollbar ==================
+
+function addCustomScrollbar (owlContainer) {
+	'use strict';
+	var owlSlider = $(owlContainer);
+	var sliderItems = owlSlider.find('.owl-item');
+	var sliderItemsQuantity = sliderItems.length;
+	var sliderItemWidth = owlSlider.find('.owl-item').width();
+	var owlNavNext = owlSlider.find('.owl-next');
+	var owlNavPrev = owlSlider.find('.owl-prev');
+	var scrollbar;
+	var scrollbarWidth = 100 / (owlSlider.find('.owl-stage').width()/owlSlider.width());
+
+	addScrollbar(owlSlider);
+	setScrollbarWidth (scrollbar, owlSlider);
 	
+	owlNavNext.on('click', function (e) {
+		setScrollbarOffset(scrollbar, owlSlider, sliderItemWidth);
+	});
+	owlNavPrev.on('click', function (e) {
+		setScrollbarOffset(scrollbar, owlSlider, -sliderItemWidth);
+	});
+
+
+
+	function addScrollbar($obj) {
+		var newDiv = document.createElement('div');
+		newDiv.classList.add("owl-custom-scrollbar-wrapper");
+		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
+
+		scrollbar = $(newDiv).find('.owl-custom-scrollbar');
+		$obj.append(newDiv);
+	}
+
+	function setScrollbarWidth (scrollbar, owlContainer) {
+		scrollbar.css('width', scrollbarWidth + '%');
+	}
+
+	function setScrollbarOffset (scrollbar, owlContainer, offset) {
+		var stage = owlContainer.find('.owl-stage');
+	    var matrix = stage.css('transform').replace(/[^0-9\-.,]/g, '').split(',');
+		var x = matrix[12] || matrix[4];// предыдущий сдвиг
+		var newOffset = x - offset;
+		var stageWidth = stage.width(); // полная ширина контейнера с блоками товаров
+		if (-newOffset >= stageWidth) {
+			newOffset = x;
+		} else if (-newOffset <= 0) {
+			newOffset = 0;
+		}
+		var scrollbarOffset = 100 / (stageWidth / newOffset);
+		if (scrollbarWidth - 100 > scrollbarOffset) {
+			scrollbarOffset = scrollbarWidth - 100;
+		}
+
+		scrollbar.css('margin-left', - scrollbarOffset + '%');
+	}
+}
+
+
 function dragElement(obj) {
 	'use strict';
 	var wWidth, startPoint, elPosition = 0, moveVal, rightBorder;
