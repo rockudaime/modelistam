@@ -109,6 +109,7 @@
 
 		&__products.category-content__products--list {
 			top: 0;
+			margin-bottom: 40px;
 		}
 	}
 }
@@ -126,13 +127,13 @@
 
 	.subcategory {
 		font-family: $main-font-bold;
-		&:hover {
-			color: #346cab;
-		}
+		// &:hover {
+		// 	color: #346cab;
+		// }
 
-		&.opened {
-			color: #346cab;
-		}
+		// &.opened {
+		// 	color: #346cab;
+		// }
 	}
 	
 }

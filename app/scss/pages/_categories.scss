@@ -286,6 +286,10 @@
             height: 100%;
 
             color: #346cab;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
