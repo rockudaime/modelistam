@@ -1753,12 +1753,21 @@ a.products-purchase__show-link {
       display: block;
     }
   }
+
   &__tabs-menu {
     display: none;
 
     margin-bottom: 30px;
     @media (min-width: 768px) {
-      display: block;
+      display: inline-block;
+      max-width: 100%;
+      box-sizing: border-box;
+
+      border: 1px solid #d4d4d4;
+      border-radius: 1px;
+      overflow: hidden;
+      position: relative;
+      
     }
   }
 }
@@ -1774,22 +1783,75 @@ a.products-purchase__show-link {
   list-style: none;
 
   color: #000;
-  border: 1px solid #777;
-  border-radius: 3px;
+  transition: transform .25s ease;
+  // border: 1px solid #777;
+  // border-radius: 3px;
+  @media (min-width: 768px) {
+    white-space: nowrap;
+    font-size: 0px;
+  }
+
   &__item {
-    float: left;
+    display: inline-block;
 
     padding: 10px 15px;
 
     cursor: pointer;
 
-    border-right: 1px solid #777;
+    border: 1px solid transparent;
+    font-size: 15px;
     &:last-child {
-      border: 0;
+      // border: 0;
     }
     &--active {
       color: #fff;
       background-color: #51677d;
+      border-color: #777;
+      border-radius: 1px;
+    }
+  }
+
+  &__control {
+    position: absolute;
+    top: -1px;
+    height: 100%;
+    width: 40px;
+    background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
+    border: 1px solid #dfdfdf;
+    display: none;
+    z-index: 999;
+
+    &.active {
+      display: block;
+    }
+
+    &:hover {
+      border-color: #777;
+      cursor: pointer;
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: 100%;
+    //   width: 25px;
+    //   height: 100%;
+    //   background-image: linear-gradient(to right, rgba(255,255,255,0.5), transparent);
+    // }
+
+    &--prev {
+      left: -1px;
+      &:hover {
+        background: #346cab url(images/ui-icon-catalog-prev-hover.png) no-repeat center center;
+      }
+    }
+
+    &--next {
+      right: -1px;
+      background: #f5f5f5 url(images/ui-icon-catalog-next.png) no-repeat center center;
+      &:hover {
+        background: #346cab url(images/ui-icon-catalog-next-hover.png) no-repeat center center;
+      }
     }
   }
 }

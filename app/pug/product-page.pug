@@ -27,14 +27,9 @@ html(lang="ru")
 		
 		// main script
 		script(src="dist/js/base/all.js")
-		script(src="dist/js/pages/product.js")
 
 		// rating mneniya.pro
 		script(src="//dev.mneniya.pro/jquery.rating.pack.js")
-			
-
-
-		
 
 	body
 		header.main-header
@@ -1036,7 +1031,9 @@ html(lang="ru")
 					// 4 таб - Аксессуары
 					div.item-detail__mobile-menu-item Аксессуары
 					section#accessories.details-product__detail-item.item-detail
-						.accessories-tab__menu.clearfix
+						.accessories__tabs-menu#accessoriesMain(data-tab-class="accessories-tabs__item")
+							.tabs-menu__control.tabs-menu__control--prev
+							.tabs-menu__control.tabs-menu__control--next.active
 							ul.tabs-menu.clearfix
 								li.tabs-menu__item.tabs-menu__item--active(data-tabid="actab1") Сумки
 								li.tabs-menu__item(data-tabid="actab2") Аккумуляторы
@@ -1383,11 +1380,32 @@ html(lang="ru")
 					// Начало секции с аксессуарами (нижний блок аксессуаров)
 					section#accessories-bottom.accessories
 						h2.accessories__heading <strong>Аксессуары</strong> к Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
-						.accessories__tabs-menu
+						.accessories__tabs-menu#accessoriesAdditional(data-tab-class="accessories__item")
+							.tabs-menu__control.tabs-menu__control--prev
+							.tabs-menu__control.tabs-menu__control--next.active
 							ul.tabs-menu.clearfix
 								li.tabs-menu__item.tabs-menu__item--active(data-tabid="tab1") Аккумуляторы
-								li.tabs-menu__item(data-tabid="tab2") Сумки
-
+								li.tabs-menu__item(data-tabid="tab2") Зарядные устройства
+								li.tabs-menu__item(data-tabid="tab3") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab4") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab5") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab6") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab7") Ключи
+								li.tabs-menu__item(data-tabid="tab8") Запчасти
+								li.tabs-menu__item(data-tabid="tab2") Зарядные устройства
+								li.tabs-menu__item(data-tabid="tab3") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab4") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab5") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab6") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab7") Ключи
+								li.tabs-menu__item(data-tabid="tab8") Запчасти
+								li.tabs-menu__item(data-tabid="tab2") Зарядные устройства
+								li.tabs-menu__item(data-tabid="tab3") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab4") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab5") Фиксаторы резьбы
+								li.tabs-menu__item(data-tabid="tab6") Для дифференциалов
+								li.tabs-menu__item(data-tabid="tab7") Ключи
+								li.tabs-menu__item(data-tabid="tab8") Запчасти
 						.accessories__tabs
 							// Tab 1
 							div.item-detail__mobile-menu-item.mobile-menu-item--active Аккумуляторы
@@ -2192,6 +2210,7 @@ html(lang="ru")
 						a.popup-b__more(href='#') Подробнее
 					a.popup-b__close(href='#')
 				// Конец статичных попапов
+		script(src="dist/js/pages/product.js")
 
 
 
