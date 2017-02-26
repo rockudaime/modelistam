@@ -1,0 +1,56 @@
+.page404{
+	max-width: 629px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+
+	@media(min-width: 768px){
+		padding: 51px 0 243px;
+	}
+
+	&__type{
+		font:  81.3px 'OpenSans_Bold', sans-serif;
+		color: #cdcdcd;
+		margin-bottom: -2px;
+	}
+
+	&__details{
+		font-size: 16px;
+		margin-bottom: 30px;
+
+		@media(min-width: 768px){
+			margin-bottom: 45px;
+		}
+
+		&-link{
+			text-decoration: underline;
+
+			&:hover{
+				color: darken(#346cab, 20%);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__categories{
+
+		&-item{
+			font-size: 16px;
+			margin-bottom: 15px;
+
+			& a:hover{
+				color: darken(#346cab, 20%);
+			}
+		}
+
+		@media(min-width: 768px){
+			&--left{
+				float: left;
+				display: inline-block;
+				margin-right: 63px;
+			}
+			&--right{
+				float: left;
+			}
+		}
+	}
+}
