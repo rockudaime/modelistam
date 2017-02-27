@@ -1411,316 +1411,165 @@ html(lang="ru")
 							div.item-detail__mobile-menu-item.mobile-menu-item--active Аккумуляторы
 
 							.item-detail.item-detail--active.accessories__item#tab1
-								.owl-carousel
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item1.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--top Топ продаж
-												h3.product-preview-item__heading
-													a(href="#") Аккумулятор Hubsan Li-Po 7,4В 450 мАч 2S
-												.product-preview-item__price
-													span.product-price--current 288
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-													.product-preview-item__wishlist
-														a.o-wishlist-link.o-wished(href="#")
-															span.o-wishlist__text В избранном
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item2.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-												h3.product-preview-item__heading
-													a(href="#") Мини трагги WL-Toys Speed Racing 1:32 красный RTR
-												.product-preview-item__price
-													span.product-price--current 556
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item3.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-													span.product-status.product-status--discount -10%
-												h3.product-preview-item__heading
-													a(href="#") Передатчик Hubsan H301C-09 для планера Spy Hawk 2.4GHz
-												.product-preview-item__price
-													span.product-price--new 600
-														span.product-price__text--small грн
-													span.product-price--old 785 грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item4.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													// no status
-												h3.product-preview-item__heading
-													a(href="#") Плата видеомодуля планера Hubsan Spy Hawk H301C
-												.product-preview-item__price
-													span.product-price--current 600 
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item5.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													// no status
-												h3.product-preview-item__heading
-													a(href="#") Сервопривод планера Hubsan Spy Hawk
-												.product-preview-item__price
-													span.product-price--current 338
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное 
+								mixin accessories-carousel
+									.owl-carousel.popular-products-block.custom-scrollbar.clearfix
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/temporary/blocks/product1.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														span.product-status.product-status--new Новинка
+														span.category-product__product-comments
+															a(href="#") 16
+														span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+													h3.product-preview-item__heading
+														a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/temporary/blocks/product4.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														span.product-status.product-status--new Новинка
+														span.category-product__product-comments
+															a(href="#") 16
+														span.product-status.product-status--discount -10%
+														
+													h3.product-preview-item__heading
+														a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/temporary/blocks/product2.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														span.product-status.product-status--top Топ продаж
+														span.product-status.product-status--discount -10%
+													h3.product-preview-item__heading
+														a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/temporary/blocks/product3.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														span.category-product__product-comments
+															a(href="#") 16
+														span(class="product-info__code") Код:&nbsp;HSP-94107Pro
+														
+													h3.product-preview-item__heading
+														a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														
+													h3.product-preview-item__heading
+														a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										.product-preview-item
+											.product-preview-item__inner
+												.product-preview-item__photo
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												.product-preview-item__content
+													.product-preview-item__product-status
+														
+													h3.product-preview-item__heading
+														a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
+													.category-product__price
+														// span.product-price--new 2600 
+														// 	span.product-price__text--small грн
+														// span.product-price--old 2785 грн
+														span.product-price--current 13 600 
+															span.product-price__text--small грн
+													.category-product__buy
+														a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+														.category-product__product-links
+															a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+															a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+								+accessories-carousel
 							// Tab 2
-							div.item-detail__mobile-menu-item Сумки
+							div.item-detail__mobile-menu-item Зарядные устройства
 							.item-detail.accessories__item#tab2
-								.owl-carousel
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item1.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--top Топ продаж
-												h3.product-preview-item__heading
-													a(href="#") Аккумулятор Hubsan Li-Po 7,4В 450 мАч 2S
-												.product-preview-item__price
-													span.product-price--current 288
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-													.product-preview-item__wishlist
-														a.o-wishlist-link.o-wished(href="#")
-															span.o-wishlist__text В избранном
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item2.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-												h3.product-preview-item__heading
-													a(href="#") Мини трагги WL-Toys Speed Racing 1:32 красный RTR
-												.product-preview-item__price
-													span.product-price--current 556
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item3.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-													span.product-status.product-status--discount -10%
-												h3.product-preview-item__heading
-													a(href="#") Передатчик Hubsan H301C-09 для планера Spy Hawk 2.4GHz
-												.product-preview-item__price
-													span.product-price--new 600
-														span.product-price__text--small грн
-													span.product-price--old 785 грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item4.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													// no status
-												h3.product-preview-item__heading
-													a(href="#") Плата видеомодуля планера Hubsan Spy Hawk H301C
-												.product-preview-item__price
-													span.product-price--current 600 
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/temporary/product/item5.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													// no status
-												h3.product-preview-item__heading
-													a(href="#") Сервопривод планера Hubsan Spy Hawk
-												.product-preview-item__price
-													span.product-price--current 338
-														span.product-price__text--small грн
-												.product-preview-item__buy
-													a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-													.product-preview-item__wishlist
-														a.o-wishlist-link(href="#")
-															span.o-wishlist__text В избранное
+								+accessories-carousel
+							// Tab 3
+							div.item-detail__mobile-menu-item Фиксаторы резьбы
+							.item-detail.accessories__item#tab3
+								+accessories-carousel
+							// Tab 4
+							div.item-detail__mobile-menu-item Фиксаторы резьбы
+							.item-detail.accessories__item#tab3
+								+accessories-carousel
 				
 				// Начало дополнительных блоков: похожие товары, вы смотрели и т.д.
 				section.additional-blocks
 					// Похожие товары
 					h2.additional-blocks__heading С этой моделью также смотрят
-					.similar-products-block.clearfix#owl-similar-products.owl-carousel
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--new Новинка
-									h3.product-preview-item__heading
-										a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-									.product-preview-item__price
-										span.product-price--current 5 025 
-											span.product-price__text--small грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--incart(href="#") В корзине
-										.product-preview-item__wishlist
-											a.o-wishlist-link.o-wished(href="#")
-												span.o-wishlist__text В избранном
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--new Новинка
-										span.product-status.product-status--discount -10%
-										
-									h3.product-preview-item__heading
-										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-									.product-preview-item__price
-										span.product-price--new 2600 
-											span.product-price__text--small грн
-										span.product-price--old 2785 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										span.product-status.product-status--top Топ продаж
-										span.product-status.product-status--discount -10%
-									h3.product-preview-item__heading
-										a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
-									.product-preview-item__price
-										span.product-price--new 896 
-											span.product-price__text--small грн
-										span.product-price--old 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link(href="#")
-												span.o-wishlist__text В избранное
-
-						.product-preview-item
-							.product-preview-item__inner
-								.product-preview-item__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.product-preview-item__content
-									.product-preview-item__product-status
-										
-									h3.product-preview-item__heading
-										a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-									.product-preview-item__price
-										.product-price.product-price--current 1024 грн
-									.product-preview-item__buy
-										a.product-btn.product-preview-item__btn.product-preview-item__btn--buy(href="#") Купить
-										.product-preview-item__wishlist
-											a.o-wishlist-link.o-wished(href="#")
-												span.o-wishlist__text В избранном
+					+accessories-carousel
 
 			//- .product-add-popup
 			//-         .product-add

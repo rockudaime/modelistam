@@ -148,7 +148,6 @@ $(document).ready(function() {
 				var videos = $('.video-tab');
 				if (link.data("nav")){
 					var videoTab = $('.video-tab').filter('[data-order=' +link.data("nav") + ']');
-					console.log(link.data("nav"));
 					videos.addClass('video-tab--hidden');
 					videoTab.removeClass('video-tab--hidden');
 					$('.tabs-nav').removeClass('tabs-nav--active');
@@ -207,7 +206,6 @@ $(document).ready(function() {
 
 	$('.products-purchase__show-link').on('click', function(e) {
 		e.preventDefault();
-		console.log('hello');
 		$(this).prev().slideToggle();
 		$(this).toggleClass('products-purchase__show-link--open');
 	});
@@ -302,7 +300,6 @@ $(document).ready(function() {
 			mainImage.attr('src', imgHref);
 			smallImages.removeClass('gallery-product__item--active');
 			$(this).addClass('gallery-product__item--active');
-			console.log("switching over the images");
 		}
 	}
 
@@ -484,7 +481,6 @@ $(document).ready(function() {
 
 			popup.show();
 			popup.parent().fadeIn();
-			console.log($(this));
 			var imageFilePath = $(this).parent().attr("href");
 			setGalleryPopupMainImage(imageFilePath);
 		});
@@ -537,9 +533,6 @@ $(document).ready(function() {
 
 				if (-tabsObj.maxOffset > tabsObj.container.outerWidth()) {
 					tabsObj.offset = tabsObj.container.outerWidth() - tabsObj.nextNav.outerWidth()*2;
-					console.log('width',tabsObj.container.outerWidth());
-					console.log('offset', tabsObj.offset);
-
 				}
 			} else {
 				tabsObj.nextNav.removeClass('active');
@@ -558,7 +551,6 @@ $(document).ready(function() {
 					offset = 0;
 				}
 				else if (offset <= tabsObj.maxOffset) {
-					console.log(offset, tabsObj.maxOffset);
 					offset = tabsObj.maxOffset;
 				}
 
@@ -579,7 +571,6 @@ $(document).ready(function() {
 			function navClickHandler (event) {
 				var dir = event.data;
 				var offset = getOffset(dir);
-				console.log(offset);
 				updateCurrentOffset(offset);
 
 				if (offset >= 0) {

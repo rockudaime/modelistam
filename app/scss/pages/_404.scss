@@ -22,11 +22,13 @@
 		}
 
 		&-link{
-			text-decoration: underline;
+			border-bottom: 1px solid #aabdd7;
+			display: inline-block;
+			line-height: 15px;
 
 			&:hover{
 				color: darken(#346cab, 20%);
-				text-decoration: underline;
+				border-color: #346cab;
 			}
 		}
 	}
