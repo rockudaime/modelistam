@@ -1,0 +1,39 @@
+.signup-container {
+	max-width: 690px;
+	margin: 0 auto;
+}
+
+.signup-form {
+
+	&__main-info {
+
+		@media (min-width: 1235px) {
+			padding-right: 120px;
+		}
+	}
+
+	&__toggle-link {
+		background: url(images/category-arrow-down.png) no-repeat 3px 50%;
+		padding-left: 21px;
+		margin-right: 4px;
+		background-size: 12px;
+		span {
+			border-bottom: 1px dashed #bccadf;
+			display: inline-block;
+			line-height: 16px;
+		}
+		&.active {
+			background-image: url(images/category-arrow-up.png);
+			
+		}
+	}
+
+	&__toggled-content {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
