@@ -1,14 +1,33 @@
 .signup-container {
-	max-width: 690px;
-	margin: 0 auto;
+	@media (min-width: 1235px) {
+		max-width: 690px;
+		margin: 0 auto;
+	}
 }
 
 .signup-form {
+	font-size: 15px;
+
+	&__error-message {
+		margin-bottom: -9px;
+	    position: relative;
+	    top: -8px;
+	}
 
 	&__main-info {
 
 		@media (min-width: 1235px) {
-			padding-right: 120px;
+			padding-right: 85px;
+			padding-left: 17px;
+			margin-bottom: 34px;
+		}
+	}
+	
+	&__additional-info {
+
+		@media (min-width: 1235px) {
+			padding-left: 81px;
+			margin-bottom: 32px;
 		}
 	}
 
@@ -26,6 +45,17 @@
 			background-image: url(images/category-arrow-up.png);
 			
 		}
+
+		@media (min-width: 1235px) {
+			margin-bottom: 12px;
+		} 
+	}
+
+	&__toggle-header {
+
+		@media (min-width: 1235px) {
+			margin-bottom: 11px;
+		}
 	}
 
 	&__toggled-content {
@@ -34,6 +64,70 @@
 		&.active {
 			display: block;
 		}
+
+		@media (min-width: 1235px) {
+			width: 569px;
+			margin-bottom: 25px;
+		}
+	}
+
+	&-footer {
+		background: #fffae8;
+		padding: 16px 0 23px;
+		margin-bottom: 49px;
+
+		@media (min-width: 1235px) {
+			padding-left: 64px;
+			margin-bottom: 70px;
+		}
+	}
+
+	&__btn {
+
+		@media (min-width: 1235px) {
+			width: 229px;
+			margin-left: 49px;
+
+		}
 	}
 }
 
+.signup {
+	&-pagetitle {
+		font-size: 24px;
+
+
+		@media (min-width: 1235px) {
+			padding-left: 33px;
+		}
+	}
+
+	&-form {
+
+		&__input-field {
+
+			&.error {
+				border-color: #c03911;
+			}
+
+			@media (min-width: 1235px) {
+				width: 255px;
+			}
+		}
+	}
+
+	&-field-group {
+
+		@media (min-width: 1235px) {
+			padding-left: 64px;
+		}
+	}
+
+	&-title {
+		line-height: 26px;
+		@media (min-width: 1235px) {
+			width: 700px;
+			line-height: 16px;
+		}
+	}
+}

@@ -19,10 +19,9 @@ html(lang="ru")
 
 	body
 		// ШАПКА
-		header.main-header
+		header.main-header#top
 			.header-top-info
 				.container
-					a(name="top")
 					a.header-logo(href="#", title="Planeta Hobby")
 						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
 					.header-phone
@@ -52,7 +51,6 @@ html(lang="ru")
 							li.header-nav-links__item.header-nav-links__item--desctop
 								a(href="#") Сервисный центр
 
-					
 					// Корзина, видна только в мобильном виде до 768 пикселей
 					a(href="#").mobile-cart-link
 						span.header-link-indicator.mobile-cart-link__indicator 12
@@ -68,10 +66,50 @@ html(lang="ru")
 						i.header-menu-link__icon
 						| меню
 					// Поиск
-					form.header-search
+					form.header-search(action="/")
 						.container
 							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
-							input.header-search__submit(type="submit", value="")
+							input.header-search__submit(type="submit", value="Найти")
+
+							// Результаты поиска
+							.header-search-results
+								.header-search-results__list-products
+									a(href="#").header-search-results__item.clearfix
+										.header-search-results__item-image
+											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+										.header-search-results__item-details
+											h2.header-search-results__item-title.
+												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+											.header-search-results__item-price 3 150 грн
+									a(href="#").header-search-results__item.clearfix
+										.header-search-results__item-image
+											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+										.header-search-results__item-details
+											h2.header-search-results__item-title.
+												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+											.header-search-results__item-price 3 150 грн
+									a(href="#").header-search-results__item.clearfix
+										.header-search-results__item-image
+											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+										.header-search-results__item-details
+											h2.header-search-results__item-title.
+												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+											.header-search-results__item-price 3 150 грн
+									a(href="#").header-search-results__item.clearfix
+										.header-search-results__item-image
+											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+										.header-search-results__item-details
+											h2.header-search-results__item-title.
+												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+											.header-search-results__item-price 3 150 грн
+								.header-search-results__list-category
+									a(href="#").header-search-results__item.header-search-results__item-category
+										h2.header-search-results__category-title Самолеты <b>для FPV и съемки</b> <span>Категория</span>
+									a(href="#").header-search-results__item.header-search-results__item-category
+										h2.header-search-results__category-title Самолеты <b>с камерой</b> <span>Категория</span>
+									a(href="#").header-search-results__item.header-search-results__item-category
+										h2.header-search-results__category-title Самолеты <b>для начинающих (электрические)</b> <span>Категория</span>
+								a(href="#").header-search-results__all-results Все результаты поиска
 					// персональные ссылки
 					.header-personal
 						.header-personal__links.clearfix
@@ -151,6 +189,7 @@ html(lang="ru")
 						//span.header-cart__empty Здесь пока ничего нет
 						span.header-cart__total 142 458
 							i.header-cart__total--text-smaller  грн
+		.header-search-results-wrapper
 		// Конец шапки сайта
 		// ОСНОВНОЕ МЕНЮ
 		.container
@@ -506,102 +545,97 @@ html(lang="ru")
 							| Видео
 		// Конец основного меню
 		// ОСНОВНОЙ КОНТЕНТ
-		.container
-			main.signup-container
-				h1.page-title Регистрация
-				form.profile-form.signup-form(action method="POST")
-					.signup-form__main-info
-						.profile-field-group.profile-field-group--name
-							input.profile-form__input-field(type="text", value="", placeholder="Имя*", id="name", required)
-							input.profile-form__input-field(type="text", value="", placeholder="Фамилия", id="surname")
-						.profile-field-group.profile-field-group--phone#phoneBlock1
-							input.profile-form__input-field.profile-form__input-field--phone(type="tel", name="tel", value="", placeholder="Ваш телефон*", id="phoneNumber1" required)
-						.profile-field-group.profile-field-group--email
-							input.profile-form__input-field.profile-form__input-field--full(type="email", value="", placeholder="Ваш email*", required)
-						.profile-field-group.profile-field-group--password
-							input.profile-form__input-field(type="password" name="passwordl" id="passwordl" placeholder="Пароль*" required)
-							input.profile-form__input-field(type="password" name="password2" id="password2" placeholder="Повторите пароль*" required)
-					.signup-form__additional-info
-						h3.cabinet-title Точный подбор товаров, важные вам советы и рекомендации
-						p мы сможем для вас подготовить, если лучше узнаем о ваших интересах и увлечениях:
-						p
-							a.signup-form__toggle-link(data-target-id="birthday")
-								span Укажите дату рождения 
-							| для уведомления о подарке
-						.signup-form__toggled-content.profile-form-group.clearfix#birthday
-							h3.cabinet-title Дата рождения
-							p Для напоминаний о специальных предложениях ко Дню рождения
-							.sab-block.cabinet-sab-block
-								.sex-block
-									input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
-									label(for="maleSex") 
-									input(type="radio" name="sex" value="female" id="femaleSex")
-									label(for="femaleSex")
-								.birthday-block
-									.birthday-block__heading Вы родились:
-									.select-date
-										select.select-date__select(name="birth-day", id="birthDay")
-											- for (var x = 1; x < 32; x++)
-												option(value=x)=x
-										select.select-date__select(name="birth-month",id="birthMonth")
-											each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-												option(value=index)= val
-										select.select-date__select(name="birth-year", id="birthYear")
-											-for (var x = 2016; x>1939; x--)
-												option(value=x)= x
-						p
-							a.signup-form__toggle-link(data-target-id="interests")
-								span Ваши интересы 
-						.signup-form__toggled-content.profile-form-group.clearfix#interests
-							h3.cabinet-title Ваши интересы
-							p.
-								Отправляем рассылки и оповещения, связанные с увлечениями. <br>  
-								Без спама.<br> 
-								Нажмите, чтобы включить или отменить
-
-							.subscription.cabinet-subscription
-								each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden(id=index, type="checkbox")
-										label.subscription-item__label(for=index)=val
-						p
-							a.signup-form__toggle-link(data-target-id="subscriptions")
-								span Ваши подписки				
-						.signup-form__toggled-content.profile-form-group.clearfix#subscriptions
-							h3.cabinet-title Ваши подписки
-							p Нажмите, чтобы включить или отменить
-
-							.subscription.cabinet-subscription.clearfix
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msStock(type="checkbox" checked)
-									label.subscription-item__label(for="msStock") Акции
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msDiscount(type="checkbox")
-									label.subscription-item__label(for="msDiscount") Скидки
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msHit(type="checkbox")
-									label.subscription-item__label(for="msHit") Хиты
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msNovelty(type="checkbox")
-									label.subscription-item__label(for="msNovelty") Новинки
-								.subscription-item.cabinet-subscription__item
-									input.checkbox-hidden#msOverview(type="checkbox")
-									label.subscription-item__label(for="msOverview") Обзоры
-
-					footer.profile-form-footer.clearfix
-						button.btn.profile-form__btn Зарегистрироваться
-		// ************************************************************************************
-		// Начало нижней части сайта с адресами магазинов (префутера) 
-		section.prefooter
+		
+		main.signup-main
 			.container
-				// signup block
-				.h-signup
+				.signup-container
+					h1.pagetitle.signup-pagetitle Регистрация
+			form.profile-form.signup-form(action method="POST")
+				.container
+					.signup-container
+						.signup-form__main-info
+							.profile-field-group.profile-field-group--name.signup-field-group
+								input.profile-form__input-field.signup-form__input-field(type="text", value="", placeholder="Имя*", id="name", name="name", required)
+								input.profile-form__input-field.signup-form__input-field(type="text", value="", placeholder="Фамилия", id="surname")
+							.profile-field-group.signup-field-group.profile-field-group--phone
+								input.profile-form__input-field.profile-form__input-field--phone.signup-form__input-field(type="tel", name="tel", value="", placeholder="Ваш телефон*", id="phoneNumber1", required)
+							.profile-field-group.profile-field-group--email.signup-field-group
+								input.profile-form__input-field.profile-form__input-field--full.signup-form__input-field--full(type="email", name=email, value="", placeholder="Ваш email*", required)
+							.profile-field-group.profile-field-group--password.signup-field-group
+								input.profile-form__input-field.signup-form__input-field(type="password" name="passwordl" id="passwordl" placeholder="Пароль*", required)
+								input.profile-form__input-field.signup-form__input-field(type="password" name="password2" id="password2" placeholder="Повторите пароль*", required)
+						.signup-form__additional-info
+							h3.cabinet-title.signup-title Точный подбор товаров, важные вам советы и рекомендации
+							p мы сможем для вас подготовить, если лучше узнаем о ваших интересах:
+							p.signup-form__toggle-header
+								a.signup-form__toggle-link(data-target-id="birthday")
+									span Укажите дату рождения 
+								| для уведомления о подарке
+							.signup-form__toggled-content.profile-form-group.clearfix#birthday
+								h3.cabinet-title Дата рождения
+								p Для напоминаний о специальных предложениях ко Дню рождения
+								.sab-block.cabinet-sab-block
+									.sex-block
+										input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
+										label(for="maleSex") 
+										input(type="radio" name="sex" value="female" id="femaleSex")
+										label(for="femaleSex")
+									.birthday-block
+										.birthday-block__heading Вы родились:
+										.select-date
+											select.select-date__select(name="birth-day", id="birthDay")
+												- for (var x = 1; x < 32; x++)
+													option(value=x)=x
+											select.select-date__select(name="birth-month",id="birthMonth")
+												each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+													option(value=index)= val
+											select.select-date__select(name="birth-year", id="birthYear")
+												-for (var x = 2016; x>1939; x--)
+													option(value=x)= x
+							p.signup-form__toggle-header
+								a.signup-form__toggle-link(data-target-id="interests")
+									span Ваши интересы 
+							.signup-form__toggled-content.profile-form-group.clearfix#interests
+								h3.cabinet-title Ваши интересы
+								p.
+									Отправляем рассылки и оповещения, связанные с увлечениями. <br>  
+									Без спама.<br> 
+									Нажмите, чтобы включить или отменить
 
-					p.h-signup__heading Получайте только акции и важные новости
-					form.h-signup__form
-						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
-						input.h-signup__submit(type="submit", value="Держите в курсе")
-					p.h-signup__form-caption 1 раз в неделю. Без спама
+								.subscription.cabinet-subscription
+									each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
+										.subscription-item.cabinet-subscription__item
+											input.checkbox-hidden(id=index, type="checkbox")
+											label.subscription-item__label(for=index)=val
+							p.signup-form__toggle-header
+								a.signup-form__toggle-link(data-target-id="subscriptions")
+									span Ваши подписки				
+							.signup-form__toggled-content.profile-form-group.clearfix#subscriptions
+								h3.cabinet-title Ваши подписки
+								p Нажмите, чтобы включить или отменить
+
+								.subscription.cabinet-subscription.clearfix
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden#msStock(type="checkbox" checked)
+										label.subscription-item__label(for="msStock") Акции
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden#msDiscount(type="checkbox")
+										label.subscription-item__label(for="msDiscount") Скидки
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden#msHit(type="checkbox")
+										label.subscription-item__label(for="msHit") Хиты
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden#msNovelty(type="checkbox")
+										label.subscription-item__label(for="msNovelty") Новинки
+									.subscription-item.cabinet-subscription__item
+										input.checkbox-hidden#msOverview(type="checkbox")
+										label.subscription-item__label(for="msOverview") Обзоры
+
+				footer.profile-form-footer.clearfix.signup-form-footer
+					.container
+						.signup-container
+							button.btn.profile-form__btn.signup-form__btn Зарегистрироваться
+		// ************************************************************************************
 
 		// Начало основного футера сайта
 		footer.main-footer
@@ -681,6 +715,18 @@ html(lang="ru")
 				a(href="#top").footer-up-link
 					span.footer-up-link__icon
 					| Вверх
+		script.
+			$(function () {
+				$('.header-search__input').on('focus', function(e) {
+					$('.header-search-results-wrapper').show();
+					$('.header-search-results').show();
+				});
+
+				$('.header-search__input').on('blur', function(e) {
+					$('.header-search-results-wrapper').hide();
+					$('.header-search-results').hide();
+				})
+			})
 
 
 
