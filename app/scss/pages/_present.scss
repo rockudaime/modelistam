@@ -1,0 +1,167 @@
+.present-nav-wrapper {
+	margin-bottom: 20px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 15px;
+	}
+}
+.present-nav {
+	font: 16px $main-font;
+	color: #000;
+	display: none;
+	
+	@media (min-width: 768px) {
+		display: block;
+	}
+
+	&__mobile-select {
+		// .present-nav__mobile-select
+		font-family: $main-font-semibold;
+	}
+
+	&__item {
+		// .present-nav__item
+		font-size: 1em;
+		float: left;
+		height: 40px;
+		box-sizing: border-box;
+		padding: 0 16px;
+		border: 1px solid transparent;
+		border-radius: 2px;
+		line-height: 35px;
+
+		span {
+			border-bottom: 1px dashed #a4a4a4;
+			display: inline-block;
+			line-height: 16px;
+		}
+
+		&.active {
+			border-color: #e1e1e1;
+
+			span {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.present-choice {
+	background: #f6f6f6;
+	padding-top: 14px;
+	margin-bottom: 50px;
+	font-size: 18px;
+
+	&__inner {
+		@media(min-width: 768px) {
+			padding: 0 27px;
+		}
+	}
+
+	&__title {
+		font: 1em $main-font;
+		margin-bottom: 25px;
+	}
+
+	&__banner {
+		margin-top: 30px;
+	}
+
+	&__option {
+		border: 0;
+		background: none;
+		color: #346cab;
+		padding: 0;
+		text-align: left;
+
+		@media (min-width: 1235px) {
+			padding-left: 17px;
+		}
+
+		& + & {
+			margin-left: 60px;
+
+			@media (min-width: 1235px) {
+				margin-left: 43px;
+			}
+		}
+
+		&:hover, &:focus {
+			transition: color ease .2s;
+			color: #d34f27;
+			outline: 0;
+		}
+
+		.icon {
+			display: inline-block;
+			width: 134px;
+			height: 90px;
+			transition: background-image ease .2s;
+			margin-bottom: 11px;
+
+		}
+	}
+}
+
+.newbie-icon {
+	background: url('images/present/newbie-level-icon.png') no-repeat;
+
+	&:hover {
+		background-image: url('images/present/newbie-level-icon-active.png');
+	}
+}
+
+.pro-icon {
+	background: url('images/present/pro-level-icon.png') no-repeat;
+
+	&:hover {
+		background-image: url('images/present/pro-level-icon-active.png');
+	}
+}
+
+.choice-steps {
+	margin-bottom: 25px;
+}
+
+.choice-step {
+	font-size: 1em;
+	box-sizing: border-box;
+	float: left;
+	width: 45px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	box-shadow: inset 0 0 0 1px #e1e1e1;
+	border-radius: 100%;
+	background: #fff;
+	margin-right: 36px;
+	position: relative;
+
+	&--current {
+		box-shadow: inset 0 0 0 6px #92a1ab;
+	}
+
+	&--done {
+		box-shadow: inset 0 0 0 1px #92a1ab;
+		text-indent: -9999px;
+		background: #fff url('images/present-icon-check.png') no-repeat center center;
+	}
+
+	& + &::after {
+		display: block;
+		content: "";
+		width: 36px;
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		border-bottom: 1px dashed #b0b0b0;
+	}
+}
+
+.banner {
+	font-size: 0px;
+
+	img {
+		width: 100%;
+	}
+}

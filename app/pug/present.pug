@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		block title
+		title Выберите подарок
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -15,7 +15,6 @@ html(lang="ru")
 	
 		// main script
 		script(src="dist/js/base/all.js")
-		script(src="dist/js/pages/register.js")
 
 	body
 		// ШАПКА
@@ -191,8 +190,15 @@ html(lang="ru")
 							i.header-cart__total--text-smaller  грн
 		.header-search-results-wrapper
 		// Конец шапки сайта
-		// ОСНОВНОЕ МЕНЮ
+		
 		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				span Подбор подарка
+			// ОСНОВНОЕ МЕНЮ
 			nav.main-nav
 				// класс main-nav-home  - только для главной страницы
 				//- j-menu-item - для работы скрипта
@@ -543,97 +549,48 @@ html(lang="ru")
 						a.media-link.media-top-link(href="#")
 							i.media-video-icon.media-icon
 							| Видео
-		// Конец основного меню
+			// Конец основного меню
 		// ОСНОВНОЙ КОНТЕНТ
-		main.signup-main
+		main
 			.container
-				.signup-container
-					h1.pagetitle.signup-pagetitle Регистрация
-			form.profile-form.signup-form(action method="POST")
-				.container
-					.signup-container
-						.signup-form__main-info
-							.profile-field-group.profile-field-group--name.signup-field-group
-								input.profile-form__input-field.signup-form__input-field(type="text", value="", placeholder="Имя*", id="name", name="name", required)
-								input.profile-form__input-field.signup-form__input-field(type="text", value="", placeholder="Фамилия", id="surname")
-							.profile-field-group.signup-field-group.profile-field-group--phone
-								input.profile-form__input-field.profile-form__input-field--phone.signup-form__input-field(type="tel", name="tel", value="", placeholder="Ваш телефон*", id="phoneNumber1", required)
-							.profile-field-group.profile-field-group--email.signup-field-group
-								input.profile-form__input-field.profile-form__input-field--full.signup-form__input-field--full(type="email", name=email, value="", placeholder="Ваш email*", required)
-							.profile-field-group.profile-field-group--password.signup-field-group
-								input.profile-form__input-field.signup-form__input-field(type="password" name="passwordl" id="passwordl" placeholder="Пароль*", required)
-								input.profile-form__input-field.signup-form__input-field(type="password" name="password2" id="password2" placeholder="Повторите пароль*", required)
-						.signup-form__additional-info
-							h3.cabinet-title.signup-title Точный подбор товаров, важные вам советы и рекомендации
-							p мы сможем для вас подготовить, если лучше узнаем о ваших интересах:
-							p.signup-form__toggle-header
-								a.signup-form__toggle-link(data-target-id="birthday")
-									span Укажите дату рождения 
-								| для уведомления о подарке
-							.signup-form__toggled-content.profile-form-group.clearfix#birthday
-								h3.cabinet-title Дата рождения
-								p Для напоминаний о специальных предложениях ко Дню рождения
-								.sab-block.cabinet-sab-block
-									.sex-block
-										input(type="radio" name="sex" value="male" id="maleSex" checked="checked")
-										label(for="maleSex") 
-										input(type="radio" name="sex" value="female" id="femaleSex")
-										label(for="femaleSex")
-									.birthday-block
-										.birthday-block__heading Вы родились:
-										.select-date
-											select.select-date__select(name="birth-day", id="birthDay")
-												- for (var x = 1; x < 32; x++)
-													option(value=x)=x
-											select.select-date__select(name="birth-month",id="birthMonth")
-												each val,index in ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-													option(value=index)= val
-											select.select-date__select(name="birth-year", id="birthYear")
-												-for (var x = 2016; x>1939; x--)
-													option(value=x)= x
-							p.signup-form__toggle-header
-								a.signup-form__toggle-link(data-target-id="interests")
-									span Ваши интересы 
-							.signup-form__toggled-content.profile-form-group.clearfix#interests
-								h3.cabinet-title Ваши интересы
-								p.
-									Отправляем рассылки и оповещения, связанные с увлечениями. <br>  
-									Без спама.<br> 
-									Нажмите, чтобы включить или отменить
+				h2.pagetitle Подбор подарка за 30 секунд
+				.present-nav-wrapper
+					.mobile-custom-select.present-nav__mobile-select Авто
+					ul.present-nav.clearfix
+						li.present-nav__item.active
+							span Авто
+						li.present-nav__item
+							span Самолет
+						li.present-nav__item
+							span Вертолет
+						li.present-nav__item
+							span Квадракоптер
+						li.present-nav__item
+							span Катер, Яхта
+						li.present-nav__item
+							span Танк
+						li.present-nav__item
+							span Мотоцикл
+			section.present-choice
+				.container.present-choice__inner
+					header.choice-steps.clearfix
+						.choice-step.choice-step--current 1
+						.choice-step 2
+						.choice-step.choice-step--done 3
+						.choice-step 4
+					h3.present-choice__title Опыт использования модели
+					section.present-choice__select
+						button.present-choice__option
+							i.icon.newbie-icon
+							.title Новичок
+						button.present-choice__option
+							i.icon.pro-icon
+							.title Профи
+				.present-choice__banner.banner
+					img(src="dist/images/present/avto-banner.jpg", alt="авто")
 
-								.subscription.cabinet-subscription
-									each val, index in {"miAvto": "Автомобили", "miAvia": "Авиамодели", "miQuadro": "Квадрокоптеры", "miPlanes": "Самолеты", "miBoat": "Катера и Яхты", "miStand": "Стендовые", "myHelicopter": "Вертолеты", "miCollections": "Коллекции", "miAnother": "Другая техника"}
-										.subscription-item.cabinet-subscription__item
-											input.checkbox-hidden(id=index, type="checkbox")
-											label.subscription-item__label(for=index)=val
-							p.signup-form__toggle-header
-								a.signup-form__toggle-link(data-target-id="subscriptions")
-									span Ваши подписки				
-							.signup-form__toggled-content.profile-form-group.clearfix#subscriptions
-								h3.cabinet-title Ваши подписки
-								p Нажмите, чтобы включить или отменить
 
-								.subscription.cabinet-subscription.clearfix
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden#msStock(type="checkbox" checked)
-										label.subscription-item__label(for="msStock") Акции
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden#msDiscount(type="checkbox")
-										label.subscription-item__label(for="msDiscount") Скидки
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden#msHit(type="checkbox")
-										label.subscription-item__label(for="msHit") Хиты
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden#msNovelty(type="checkbox")
-										label.subscription-item__label(for="msNovelty") Новинки
-									.subscription-item.cabinet-subscription__item
-										input.checkbox-hidden#msOverview(type="checkbox")
-										label.subscription-item__label(for="msOverview") Обзоры
 
-				footer.profile-form-footer.clearfix.signup-form-footer
-					.container
-						.signup-container
-							button.btn.profile-form__btn.signup-form__btn Зарегистрироваться
 		// ************************************************************************************
 
 		// Начало основного футера сайта
