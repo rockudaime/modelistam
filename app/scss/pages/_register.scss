@@ -32,7 +32,7 @@
 	}
 
 	&__toggle-link {
-		background: url(images/category-arrow-down.png) no-repeat 3px 50%;
+		background: url(images/category-arrow-down.png) no-repeat -1px 50%;
 		padding-left: 21px;
 		margin-right: 4px;
 		background-size: 12px;
@@ -63,11 +63,13 @@
 
 		&.active {
 			display: block;
+
 		}
 
 		@media (min-width: 1235px) {
 			width: 569px;
 			margin-bottom: 25px;
+			margin-top: 15px;
 		}
 	}
 

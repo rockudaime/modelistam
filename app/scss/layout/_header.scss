@@ -407,7 +407,7 @@
 
     &__input {
         font-size: 16px;
-        // height: 40px;
+        height: 40px;
 
         box-sizing: border-box !important;
         width: 230px;
@@ -421,7 +421,6 @@
             padding: 9px 44px 10px 11px;
 
             border: 2px solid #4b80bb;
-            border-radius: 5px;
             outline: 0;
         }
         @media (min-width: 768px) {
@@ -483,19 +482,23 @@
 .header-search-results-wrapper {
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
-    margin-top: -20px;
-    min-height: 100%;
+    // margin-top: -20px;
+    // min-height: 100%;
     z-index: 2;
     right: 0;
     left: 0;
     display: none;
+    top: 232px;
+    bottom: 0;
+    overflow: hidden;
 
-    @media (min-width: 768px) and (max-width: 993px) {
-        margin-top: -28px;
+
+    @media (min-width: 768px) {
+        top: 163px;
     }
 
     @media (min-width: 1235px) {
-        margin-top: -20px;
+        top: 131px;
     }
 }
 

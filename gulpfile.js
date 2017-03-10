@@ -17,8 +17,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['present.html'],
-  pug: ['app/pug/present.pug'],
+  html: ['register.html'],
+  pug: ['app/pug/register.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
