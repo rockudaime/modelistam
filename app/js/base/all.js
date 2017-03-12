@@ -286,34 +286,32 @@ $(function () {
 
 // переключение между адресами в футере сайта
 $(function () {
-	if ($('*').is('.prefooter')) {
-		var storesInfo = $('.store');
+	var storesInfo = $('.store');
 
-		$('.store-address-tabs-menu__item').on('click', function(e) {
-			e.preventDefault();
-			var self = $(this);
-			$('.store-address-tabs-menu__item').removeClass('active');
-			storesInfo.removeClass('store--active');
-			self.addClass('active');
-			$(self.data("id")).addClass('store--active');
+	$('.store-address-tabs-menu__item').on('click', function(e) {
+		e.preventDefault();
+		var self = $(this);
+		$('.store-address-tabs-menu__item').removeClass('active');
+		storesInfo.removeClass('store--active');
+		self.addClass('active');
+		$(self.data("id")).addClass('store--active');
 
-			if ($(window).width() < 768) {
-				mobileSelect = self.parent().prev();
-				self.parent().hide();
-				mobileSelect.removeClass('active');
-				mobileSelect.html($(this).html());
-			}
-		});
+		if ($(window).width() < 768) {
+			mobileSelect = self.parent().prev();
+			self.parent().hide();
+			mobileSelect.removeClass('active');
+			mobileSelect.html($(this).html());
+		}
+	});
 
-		$('.store-gallery__miniatures').on('click', function(e) {
-			e.preventDefault();
-			if (e.target.nodeName === "IMG") {
-				$('.store-gallery__main-image img').attr("src", $(e.target).parent().attr("href"));
-				$(this).find('.store-gallery__miniature--active').removeClass('store-gallery__miniature--active');
-				$(e.target).parent().parent().addClass('store-gallery__miniature--active');
-			}
-		});
-	}
+	$('.store-gallery__miniatures').on('click', function(e) {
+		e.preventDefault();
+		if (e.target.nodeName === "IMG") {
+			$('.store-gallery__main-image img').attr("src", $(e.target).parent().attr("href"));
+			$(this).find('.store-gallery__miniature--active').removeClass('store-gallery__miniature--active');
+			$(e.target).parent().parent().addClass('store-gallery__miniature--active');
+		}
+	});
 	var footerGallery = document.querySelectorAll('.store-gallery__miniatures-inner');
 	for (var i = 0; i < footerGallery.length; i++) {
 		dragElement(footerGallery[i]);

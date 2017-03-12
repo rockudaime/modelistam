@@ -24,3 +24,43 @@ $video-icon-height: 58px;
 		margin-left: -$video-icon-width/2;
 	}
 }
+
+.focuspoint {
+	position: relative; /*Any position but static should work*/
+	overflow: hidden;
+}
+.focuspoint img {
+	max-width: 100%;
+	margin: 0;
+	display: block;
+
+	@media (min-width: 1235px) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: auto; height: auto;
+		min-width: 100%; min-height: 100%;
+		max-height: none; max-width: none;
+	}
+	
+
+	/* fill and maintain aspect ratio */
+}
+
+/* Tabs */
+.tabs-links-container {
+
+}
+.tab-link {
+	cursor: pointer;
+}
+.tabs-container {
+
+}
+.tab {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}

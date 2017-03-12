@@ -1,5 +1,6 @@
 .present-nav-wrapper {
 	margin-bottom: 20px;
+	position: relative;
 
 	@media (min-width: 768px) {
 		margin-bottom: 15px;
@@ -9,9 +10,14 @@
 	font: 16px $main-font;
 	color: #000;
 	display: none;
+	position: absolute;
+	background: #fff;
+	z-index: 2;
+	width: 100%;
 	
 	@media (min-width: 768px) {
-		display: block;
+		display: block !important;
+		position: static;
 	}
 
 	&__mobile-select {
@@ -22,13 +28,16 @@
 	&__item {
 		// .present-nav__item
 		font-size: 1em;
-		float: left;
 		height: 40px;
 		box-sizing: border-box;
 		padding: 0 16px;
 		border: 1px solid transparent;
 		border-radius: 2px;
 		line-height: 35px;
+
+		@media (min-width: 768px) {
+			float: left;
+		}
 
 		span {
 			border-bottom: 1px dashed #a4a4a4;
@@ -65,6 +74,13 @@
 
 	&__banner {
 		margin-top: 30px;
+		width: 100%;
+		max-height: 450px;
+		overflow: hidden;
+
+		@media (min-width: 1235px) {
+			height: 450px;
+		}
 	}
 
 	&__option {
@@ -73,6 +89,7 @@
 		color: #346cab;
 		padding: 0;
 		text-align: left;
+		vertical-align: top;
 
 		@media (min-width: 1235px) {
 			padding-left: 17px;
@@ -90,34 +107,52 @@
 			transition: color ease .2s;
 			color: #d34f27;
 			outline: 0;
+
+			svg {
+				fill: #d34f27;
+				stroke: #d34f27;
+			}
 		}
 
-		.icon {
-			display: inline-block;
-			width: 134px;
-			height: 90px;
-			transition: background-image ease .2s;
-			margin-bottom: 11px;
+		// .icon {
+		// 	display: inline-block;
+		// 	width: 134px;
+		// 	height: 90px;
+		// 	transition: background-image ease .2s;
+		// 	margin-bottom: 11px;
 
-		}
+		// }
 	}
 }
+.svg-icon {
+	display: inline-block;
+	margin-bottom: 11px;
+	height: 90px;
+	line-height: 90px;
+	// width: 134px;
+	font-size: 0;
 
-.newbie-icon {
-	background: url('images/present/newbie-level-icon.png') no-repeat;
-
-	&:hover {
-		background-image: url('images/present/newbie-level-icon-active.png');
+	svg {
+		fill: #346cab;
+		stroke: #346cab;
+		vertical-align: bottom;
 	}
 }
+// .newbie-icon {
+// 	background: url('images/present/newbie-level-icon.png') no-repeat;
 
-.pro-icon {
-	background: url('images/present/pro-level-icon.png') no-repeat;
+// 	&:hover {
+// 		background-image: url('images/present/newbie-level-icon-active.png');
+// 	}
+// }
 
-	&:hover {
-		background-image: url('images/present/pro-level-icon-active.png');
-	}
-}
+// .pro-icon {
+// 	background: url('images/present/pro-level-icon.png') no-repeat;
+
+// 	&:hover {
+// 		background-image: url('images/present/pro-level-icon-active.png');
+// 	}
+// }
 
 .choice-steps {
 	margin-bottom: 25px;
@@ -158,10 +193,10 @@
 	}
 }
 
-.banner {
-	font-size: 0px;
+// .banner {
+// 	font-size: 0px;
 
-	img {
-		width: 100%;
-	}
-}
+// 	img {
+// 		width: 100%;
+// 	}
+// }
