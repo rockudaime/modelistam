@@ -1,756 +1,91 @@
-doctype html
-html(lang="ru")
-	head
-		title Выберите подарок
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
-		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
-		link(rel="stylesheet" href="dist/normalize.css")
-		link(rel="stylesheet" href="dist/template_styles.css")
-		
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
-		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		script(src="dist/js/vendor/jquery.focuspoint.min.js")
-	
-		// main script
-		script(src="dist/js/base/all.js")
-		script(src="dist/js/pages/present.js")
+extends present-template.pug
 
-	body
-		// ШАПКА
-		header.main-header#top
-			.header-top-info
-				.container
-					a.header-logo(href="#", title="Planeta Hobby")
-						img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
-					.header-phone
-						span.header-phone__number 0 800 218-817 
-						span.header-phone__description  Бесплатно по Украине
-						a(href="#").header-phone__callback.callback-link перезвонить мне
-					.header-nav
-						ul.for-customer
-							li.for-customer__btn 
-								span Покупателю
-								ul.for-customer__menu
-									li
-										a(href="#") Акции
-									li
-										a(href="#") Скидки
-									li
-										a(href="#") Дисконтная программа
-						ul.header-nav-links
-							li.header-nav-links__item
-								a(href="#") Дисконтная программа
-							li.header-nav-links__item
-								a(href="#") Доставка и оплата
-							li.header-nav-links__item
-								a(href="#") Контакты
-							li.header-nav-links__item.header-nav-links__item--desctop
-								a(href="#") Гарантия
-							li.header-nav-links__item.header-nav-links__item--desctop
-								a(href="#") Сервисный центр
-
-					// Корзина, видна только в мобильном виде до 768 пикселей
-					a(href="#").mobile-cart-link
-						span.header-link-indicator.mobile-cart-link__indicator 12
-					a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
-						span.bb-dashed.not-authorized Войти в личный кабинет
-						//span.authorized Алексей, 
-							i.header-profile-link__discount ваша скидка 3%
-					
-			.header-stripe
-				.container
-					// кнопка раскрытия меню, видна только в мобильном и планшетном виде
-					button.header-menu-link.active
-						i.header-menu-link__icon
-						| меню
-					// Поиск
-					form.header-search(action="/")
-						.container
-							input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
-							input.header-search__submit(type="submit", value="Найти")
-
-							// Результаты поиска
-							.header-search-results
-								.header-search-results__list-products
-									a(href="#").header-search-results__item.clearfix
-										.header-search-results__item-image
-											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
-										.header-search-results__item-details
-											h2.header-search-results__item-title.
-												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
-											.header-search-results__item-price 3 150 грн
-									a(href="#").header-search-results__item.clearfix
-										.header-search-results__item-image
-											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
-										.header-search-results__item-details
-											h2.header-search-results__item-title.
-												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
-											.header-search-results__item-price 3 150 грн
-									a(href="#").header-search-results__item.clearfix
-										.header-search-results__item-image
-											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
-										.header-search-results__item-details
-											h2.header-search-results__item-title.
-												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
-											.header-search-results__item-price 3 150 грн
-									a(href="#").header-search-results__item.clearfix
-										.header-search-results__item-image
-											img(src="dist/images/temporary/owerview-banner-small-1.jpg")
-										.header-search-results__item-details
-											h2.header-search-results__item-title.
-												Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
-											.header-search-results__item-price 3 150 грн
-								.header-search-results__list-category
-									a(href="#").header-search-results__item.header-search-results__item-category
-										h2.header-search-results__category-title Самолеты <b>для FPV и съемки</b> <span>Категория</span>
-									a(href="#").header-search-results__item.header-search-results__item-category
-										h2.header-search-results__category-title Самолеты <b>с камерой</b> <span>Категория</span>
-									a(href="#").header-search-results__item.header-search-results__item-category
-										h2.header-search-results__category-title Самолеты <b>для начинающих (электрические)</b> <span>Категория</span>
-								a(href="#").header-search-results__all-results Все результаты поиска
-					// персональные ссылки
-					.header-personal
-						.header-personal__links.clearfix
-							a.header-personal__item.active(href="#", data-id="popupWishlist")
-								i.header-personal__icon.header-personal__icon--wishlist
-									span.header-link-indicator.header-personal__indicator 3
-								| Желания
-							a.header-personal__item(href="#", data-id="popupCompare")
-								i.header-personal__icon.header-personal__icon--compare
-									span.header-link-indicator.header-personal__indicator 0
-								| Сравнение
-							a.header-personal__item(href="#", data-id="popupWatchPrice")
-								i.header-personal__icon.header-personal__icon--watch-price
-									span.header-link-indicator.header-personal__indicator 0
-								| Цены
-							a.header-personal__item.active(href="#", data-id="popupWaiting")
-								i.header-personal__icon.header-personal__icon--waiting
-									span.header-link-indicator.header-personal__indicator 12
-								| Ожидание
-						.header-personal__popups
-							// Попап Ожидания
-							.header-popup.header-popup-waiting#popupWaiting
-								.header-popup__main.clearfix
-									span.header-popup-icon.header-popup-icon--waiting
-									.header-popup__text
-										h2.header-popup__title Список ожиданий
-										p Здесь собраны ожидаемые Вами товары
-
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы проверить ожидаемые товары, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
-							// Попап Желания
-							.header-popup.header-popup-wishlist#popupWishlist
-								.header-popup__main.clearfix
-									span.header-popup-icon.header-popup-icon--wishlist
-									.header-popup__text
-										h2.header-popup__title Список желаний
-										p Запомните товар, который вам понравился, добавив его в список желаний.
-
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы добавить товар в список желаний, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
-
-							// Попап Сравнение
-							.header-popup.header-popup-compare#popupCompare
-								.header-popup__main.clearfix
-									span.header-popup-icon.header-popup-icon--compare
-									.header-popup__text
-										h2.header-popup__title Сравнение товаров
-										p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
-
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Чтобы сравнить товар добавленный ранее, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
-
-							// Попап Цены
-							.header-popup.header-popup-watch-price#popupWatchPrice
-								.header-popup__main.clearfix
-									span.header-popup-icon.header-popup-icon--watch-price
-									.header-popup__text
-										h2.header-popup__title Следить за ценой
-										p Следить за ценой понравившегося товара очень просто
-
-								// Блок, который виден незарегистрированному пользователю
-								.header-popup__unlogin
-									p Если у вас уже есть отслеживаемые товары, 
-										a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
-
-					// Иконка для раскрытия формы поиска в мобильном виде
-					span.mobile-search-link
-					// Корзина
-					a(href="#", title="Перейти в корзину").header-cart
-						i.header-link-indicator.header-cart__indicator 10
-						//span.header-cart__empty Здесь пока ничего нет
-						span.header-cart__total 142 458
-							i.header-cart__total--text-smaller  грн
-		.header-search-results-wrapper
-		// Конец шапки сайта
-		
-		.container
-			// ХЛЕБНЫЕ КРОШКИ
-			section.breadcrumbs
-				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
-				a(href="#").breadcrumbs-item
-					span.bb-solid Главная
-				span Подбор подарка
-			// ОСНОВНОЕ МЕНЮ
-			nav.main-nav
-				// класс main-nav-home  - только для главной страницы
-				//- j-menu-item - для работы скрипта
-				.main-nav__mobile-links
-					.main-nav__item
-						.main-nav-link.main-nav-link--wsub
-							a(href="#") Покупателю
-							.main-nav-link__btn <i></i><i></i>
-						.main-nav-submenu.main-nav-submenu--l1
-							.main-nav-submenu__item
-								.main-nav-link.main-nav-submenu__link
-									a(href="#") Акции
-							.main-nav-submenu__item
-								.main-nav-link.main-nav-submenu__link
-									a(href="#") Скидки
-							.main-nav-submenu__item
-								.main-nav-link.main-nav-submenu__link.main-nav-link--wsub
-									a(href="#") Дисконтная программа
-									
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Доставка и оплата
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Контакты
-					.main-nav__item
-						.main-nav-link
-							a(href="#") О нас
-
-				.main-nav__top-links
-					a.main-nav__top-link.main-nav__top-link--discount(href="#") Акции и скидки
-					a.main-nav__top-link.main-nav__top-link--new(href="#") Новинки
-				// Основная часть меню, которая содержит ссылки на категории
-				.main-nav__menu
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Автомобили
-							.main-nav-link__btn <i></i><i></i>
-						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
-						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
-							.main-nav-submenu.main-nav-submenu--l1
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Багги
-										.main-nav-link__btn <i></i><i></i>
-
-									.main-nav-submenu.main-nav-submenu--l3
-										h3.main-nav__submenu-heading Тип двигателя
-										.main-nav__submenu-content
-											.main-nav__link-3l
-												a(href="#") ДВС
-											.main-nav__link-3l
-												a(href="#") Электромотор
-										h3.main-nav__submenu-heading Привод
-										.main-nav__submenu-content
-											.main-nav__link-3l
-												a(href="#") 4WD полный
-											.main-nav__link-3l
-												a(href="#") 2WD задний
-										h3.main-nav__submenu-heading Масштаб
-										.main-nav__submenu-content
-											.main-nav__link-3l
-												a(href="#") 1:8
-											.main-nav__link-3l
-												a(href="#") 1:10
-											.main-nav__link-3l
-												a(href="#") 1:18
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Трагги
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Монстры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Шорт-корс
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Краулеры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Ралли
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Картинг
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Шоссейные (скоростные)
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Шоссейные (для дрифта)
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Трассовые
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Игрушки
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-choice-icon.media-icon
-											| Как выбрать
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-review-icon.media-icon
-											| Обзоры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-video-icon.media-icon
-											| Видео
-							
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Самолеты
-							.main-nav-link__btn <i></i><i></i>
-						.main-nav-submenu__wrapper
-							.main-nav-submenu.main-nav-submenu--l1.j-nav-submenu
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Для FPV и съемки
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") С камерой
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Полный комплект
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Модели планеров
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Реактивные
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Вертолеты
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Квадракоптеры
-							.main-nav-link__btn <i></i><i></i>
-						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
-						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
-							.main-nav-submenu.main-nav-submenu--l1
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Квадракоптеры
-										.main-nav-link__btn <i></i><i></i>
-
-									.main-nav-submenu.main-nav-submenu--l3
-										h3.main-nav__submenu-heading Сложность
-										.main-nav__submenu-content
-											.main-nav__link-3l
-												a(href="#") Начинающим
-											.main-nav__link-3l
-												a(href="#") Профессионалам
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Гексакоптеры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Октокоптеры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Для хобби
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") С видеокамерой
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") С подвесом для GoPro или аналогов
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") С FPV системой
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-choice-icon.media-icon
-											| Как выбрать
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-review-icon.media-icon
-											| Обзоры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-video-icon.media-icon
-											| Видео
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Авиамодели
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Катера и яхты
-							.main-nav-link__btn <i></i><i></i>
-						// Фоновое изображение прописывается как свойство дата, чтобы не подгружать картинки на мобильном
-						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
-							.main-nav-submenu.main-nav-submenu--l1
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Электрокатера
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Катера для рыбалки
-										.main-nav-link__btn <i></i><i></i>
-									.main-nav-submenu.main-nav-submenu--l2
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") Мини, электро
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") С электродвигателем
-												.main-nav-link__btn <i></i><i></i>
-											.main-nav-submenu.main-nav-submenu--l3
-												h3.main-nav__submenu-heading Источник питания
-												.main-nav__submenu-content
-													.main-nav__link-3l
-														a(href="#") На батарейках
-													.main-nav__link-3l
-														a(href="#") На аккумуляторах
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") С двс двигателем
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") С бензиновым двигателем
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Подводные лодки
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Модели яхт
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-choice-icon.media-icon
-											| Как выбрать
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-review-icon.media-icon
-											| Обзоры
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a.media-link.media-top-link(href="#")
-											i.media-video-icon.media-icon
-											| Видео
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Танки
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Мотоциклы
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Коллекционные
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Стендовые
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Другая техника
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Копмплектующие
-							.main-nav-link__btn <i></i><i></i>
-						.main-nav-submenu__wrapper(data-bg='dist/images/home-page/auto-menu-bg.jpg')
-							.main-nav-submenu.main-nav-submenu--l1
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Фото, видео
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Радиоуправление
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Аккумуляторы
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Зарядные устройства
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Электроника
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Двигатели
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Топливо
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Жидкости
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Запчасти
-										.main-nav-link__btn <i></i><i></i>
-									.main-nav-submenu.main-nav-submenu--l2
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") Инструменты
-												.main-nav-link__btn <i></i><i></i>
-											.main-nav-submenu.main-nav-submenu--l2
-												.main-nav-submenu__item
-													.main-nav-link.main-nav-submenu__link
-														a(href="#") Отвертки
-												.main-nav-submenu__item
-													.main-nav-link.main-nav-submenu__link
-														a(href="#") Ключи
-												.main-nav-submenu__item
-													.main-nav-link.main-nav-submenu__link
-														a(href="#") Наборы инструментов
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") Болты
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") Подшипники
-										.main-nav-submenu__item
-											.main-nav-link.main-nav-submenu__link
-												a(href="#") Кабели
-								.main-nav-submenu__item
-									.main-nav-link.main-nav-submenu__link
-										a(href="#") Аксессуары
-
-					.main-nav__item
-						.main-nav-link
-							a(href="#") Производители
-				// Ссылки на медиа контент (.main-nav-home__media-links - класс для главной страницы)
-				.main-nav__media-links.main-nav-home__media-links
-					.main-nav-link.main-nav-media-link
-						a.media-link.media-top-link(href="#")
-							i.media-review-icon.media-icon
-							| Обзоры
-					.main-nav-link.main-nav-media-link
-						a.media-link.media-top-link(href="#")
-							i.media-article-icon.media-icon
-							| Статьи
-					.main-nav-link.main-nav-media-link
-						a.media-link.media-top-link(href="#")
-							i.media-news-icon.media-icon
-							| Новости
-					.main-nav-link.main-nav-media-link
-						a.media-link.media-top-link(href="#")
-							i.media-events-icon.media-icon
-							| События
-					.main-nav-link.main-nav-media-link
-						a.media-link.media-top-link(href="#")
-							i.media-video-icon.media-icon
-							| Видео
-			// Конец основного меню
-		// ОСНОВНОЙ КОНТЕНТ
-		main
-			.container
-				h2.pagetitle Подбор подарка за 30 секунд
-				.present-nav-wrapper
-					.mobile-custom-select.present-nav__mobile-select Авто
-					ul.present-nav.clearfix.tabs-links-container
-						li.present-nav__item.active.tab-link(data-target-id="avto")
-							span Авто
-						li.present-nav__item.tab-link(data-target-id="plane")
-							span Самолет
-						li.present-nav__item.tab-link(data-target-id="helicopter")
-							span Вертолет
-						li.present-nav__item.tab-link(data-target-id="quadrocopter")
-							span Квадракоптер
-						li.present-nav__item.tab-link(data-target-id="boat")
-							span Катер, Яхта
-						li.present-nav__item.tab-link(data-target-id="tank")
-							span Танк
-						li.present-nav__item.tab-link(data-target-id="motorcycle")
-							span Мотоцикл
-			mixin present-choice(sectionId, className, focusY=0.13)
-				section.present-choice(id=sectionId, class=className).tab
-					.container.present-choice__inner
-						header.choice-steps.clearfix
-							.choice-step.choice-step--current 1
-							.choice-step 2
-							.choice-step.choice-step--done 3
-							.choice-step 4
-						h3.present-choice__title Какой размер предпочтительнее
-						section.present-choice__select
-							button.present-choice__option
-								span.svg-icon.
-									<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="-125px" width="65px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
-										<g id="Big"><g>
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
-											C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
-													c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
-													c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
-													c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
-													c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
-													c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
-													L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
-													c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
-													c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
-													c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
-													c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
-													C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
-													c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
-											</g>
-										</g>
-									</svg>
-								.title Малый
-							button.present-choice__option
-								span.svg-icon.
-									<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="-125px" width="96px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
-										<g id="Big"><g>
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
-											C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
-													c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
-													c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
-													c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
-													c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
-													c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
-													L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
-													c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
-													c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
-													c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
-													c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
-													C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
-													c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
-											</g>
-										</g>
-									</svg>
-								.title Средний
-							button.present-choice__option
-								span.svg-icon.
-									<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="125px" width="125px" height="57px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
-										<g id="Big"><g>
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
-											C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
-													c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
-													c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
-													c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
-													c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
-													c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
-													L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
-													c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
-													c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
-													c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
-													c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
-													C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
-													c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
-											</g>
-										</g>
-									</svg>
-								.title Большой
-					.present-choice__banner.banner(class="focuspoint", data-focus-x='0', data-focus-y=focusY, data-image-w="1200", data-image-h="480")
-						-imgSrc = 'dist/images/present/' + sectionId + '-banner.jpg'
-						img(src=imgSrc, alt=sectionId)
-			.tabs-container
-				+present-choice('avto', 'active')
-				+present-choice('tank', '', 0.1)
-				+present-choice('motorcycle','', 0.1)
-				+present-choice('plane', '', 0.2)
-				+present-choice('boat', '', -0.13)
-				+present-choice('helicopter', '', 0.1)
-				+present-choice('quadrocopter', '', 0)
-
-
-		// ************************************************************************************
-
-		// Начало основного футера сайта
-		footer.main-footer
-			.container
-				.footer-nav-wrapper.clearfix
-					.footer-nav.footer-nav--categories
-						h2.main-footer__heading Всегда в наличии
-						ul.footer-nav__links
-							li.footer-nav__link
-								a(href="#") Автомобили
-							li.footer-nav__link
-								a(href="#") Квадракоптеры
-							li.footer-nav__link
-								a(href="#") Самолеты
-							li.footer-nav__link
-								a(href="#") Вертолеты
-							li.footer-nav__link
-								a(href="#") Яхты
-							li.footer-nav__link
-								a(href="#") Аксессуары
-					.footer-nav.footer-nav--info
-						h2.main-footer__heading Ваши покупки
-						ul.footer-nav__links
-							li.footer-nav__link
-								a(href="#") Вопросы и ответы 
-							li.footer-nav__link
-								a(href="#") Оплата и доставка 
-							li.footer-nav__link
-								a(href="#") Гарантия
-							li.footer-nav__link
-								a(href="#") Условия использования сайта
-						.footer-payment-methods
-							p Принимаем к оплате
-							img(src="dist/images/payment-methods.png", alt="методы оплаты виза, мастеркард, приватбанк")
-					.footer-nav.footer-nav--site-links
-						ul.footer-nav__links
-							li.footer-nav__link
-								a(href="#") Блог
-							li.footer-nav__link
-								a(href="#") Новости и события 
-							li.footer-nav__link
-								a(href="#") О компании 
-							li.footer-nav__link
-								a(href="#") Вакансии 
-
-				.main-footer__contacts.clearfix
-					.footer-contact-info
-						h2.main-footer__heading Киев
-						.footer-contact-info__schedule
-							span.footer-contact-info__icon.footer-contact-info__icon--schedule
-							| пн-пт: 9-20, сб: 10-20
-						.footer-contact-info__phone
-							span.footer-contact-info__icon.footer-contact-info__icon--phone
-							| (044) 221-61-00
-						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
-
-						.footer-contact-info__country-phone
-							p 0 800 218-817
-							p.footer-contact-info__desc Бесплатно по Украине
-
-					.footer-contact-info
-						h2.main-footer__heading Харьков
-						.footer-contact-info__schedule
-							span.footer-contact-info__icon.footer-contact-info__icon--schedule
-							| пн-пт: 9-20, сб: 10-20
-						.footer-contact-info__phone
-							span.footer-contact-info__icon.footer-contact-info__icon--phone
-							| (057) 755-15-00
-						a(href="#").callback-link.footer-contact-info__callback перезвонить мне
-				.main-footer__socials
-					p Следите за нами в соцсетях
-					a(href="#", title="Facebook", target="_blank").footer-socials-link.fb-social-link
-					a(href="#", title="Vkontakte", target="_blank").footer-socials-link.vk-social-link
-					a(href="#", title="Youtube", target="_blank").footer-socials-link.youtube-social-link
-
-
-				a(href="#top").footer-up-link
-					span.footer-up-link__icon
-					| Вверх
-		script.
-			$(function () {
-				$('.header-search__input').on('focus', function(e) {
-					$('.header-search-results-wrapper').show();
-					$('.header-search-results').show();
-				});
-
-				$('.header-search__input').on('blur', function(e) {
-					$('.header-search-results-wrapper').hide();
-					$('.header-search-results').hide();
-				})
-			});
+block tabs
+	mixin present-choice(sectionId, className, focusY=0.13)
+		section.present-choice(id=sectionId, class=className).tab
+			.container.present-choice__inner
+				header.choice-steps.clearfix
+					.choice-step.choice-step--done 1
+					.choice-step.choice-step--current 2
+					.choice-step 3
+					.choice-step 4
+				h3.present-choice__title Какой размер предпочтительнее
+				section.present-choice__select
+					button.present-choice__option
+						span.svg-icon.
+							<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="-125px" width="65px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
+								<g id="Big"><g>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
+									C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
+											c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
+											c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
+											c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
+											c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
+											c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
+											L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
+											c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
+											c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
+											c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
+											c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
+											C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
+											c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
+									</g>
+								</g>
+							</svg>
+						.title Малый
+					button.present-choice__option
+						span.svg-icon.
+							<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="-125px" width="96px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
+								<g id="Big"><g>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
+									C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
+											c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
+											c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
+											c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
+											c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
+											c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
+											L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
+											c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
+											c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
+											c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
+											c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
+											C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
+											c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
+									</g>
+								</g>
+							</svg>
+						.title Средний
+					button.present-choice__option
+						span.svg-icon.
+							<svg version="1.1" id="Big_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="125px" width="125px" height="57px" viewBox="0 0 125 57" enable-background="new 0 0 125 57" xml:space="preserve">
+								<g id="Big"><g>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M124.785,34.113c0,0-0.459-0.665-0.663-2.29 c-0.252-2.038-1.852-3.779-2.845-4.5c-0.439-1.512-2.797-5.397-15.164-7.8c-8.723-1.694-11.58-2.724-12.485-3.154l-0.507-0.463
+									C92.41,15.242,75.12-0.424,53.122,0.009C38.018,0.327,27.94,2.375,22.531,3.471c-2.096,0.424-3.618,0.731-4.376,0.731 c-0.361-0.029-0.526-0.039-0.684-0.039c-1.042,0-1.657,0.462-1.979,0.856c-0.691,0.837-0.721,2.038-0.574,3.03 c-0.389,0.385-1.315,1.126-2.085,1.741c-3.139,2.499-5.584,4.547-6.16,6.191c-0.087,0.241-0.155,0.298-0.155,0.298 c-0.195,0-0.322-0.017-0.449-0.026c-0.194-0.021-0.389-0.04-0.594-0.04c-1.979,0-2.565,1.896-2.837,3.319 c-0.379,2.038-0.574,4.404-0.751,6.489c-0.195,2.356-0.419,5.021-0.858,5.705c-0.808,1.261-1.968,7.194,0.305,11.579 c1.325,2.567,3.615,4.153,6.664,4.646c-0.047-0.348-0.087-0.694-0.107-1.039c-0.007-0.251-0.037-0.49-0.037-0.741 c0-0.096,0.02-0.191,0.02-0.288c0.165-6.926,5.906-12.512,12.961-12.512c7.153,0,12.972,5.741,12.972,12.8
+											c0,0.241-0.028,0.461-0.038,0.692c-0.02,0.337-0.04,0.664-0.09,0.982c-0.037,0.334-0.087,0.662-0.155,0.979
+											c15.963,0.403,36.577,0.856,52.784,1.191c-0.106-0.315-0.194-0.652-0.262-0.989c-0.08-0.318-0.138-0.652-0.187-0.98
+											c-0.098-0.615-0.155-1.23-0.155-1.876c0-7.059,5.818-12.8,12.972-12.8c7.152,0,12.971,5.741,12.971,12.8
+											c0,0.827-0.087,1.625-0.231,2.405c-0.07,0.335-0.147,0.652-0.235,0.98c-0.097,0.327-0.204,0.654-0.321,0.972
+											c1.15,0.027,1.821,0.037,1.892,0.037c-0.051,0,1.247,0.173,2.961,0.173c5.392,0,8.598-1.605,9.269-4.663L125,45.874V34.382
+											L124.785,34.113z M98.676,35.344c-6.061,0-10.973,4.846-10.973,10.828c0,0.655,0.066,1.288,0.174,1.913
+											c0.067,0.337,0.137,0.665,0.234,0.992c0.098,0.335,0.205,0.662,0.332,0.99C90.03,54.124,94.008,57,98.676,57
+											c4.513,0,8.383-2.681,10.066-6.51c0.147-0.317,0.265-0.645,0.372-0.982c0.107-0.314,0.194-0.643,0.272-0.97
+											c0.167-0.761,0.264-1.559,0.264-2.366C109.65,40.189,104.738,35.344,98.676,35.344z M20.834,35.344
+											c-6.053,0-10.965,4.836-10.973,10.809c0,0-0.01,0.01-0.01,0.02c0,0.327,0.027,0.646,0.058,0.963c0.03,0.335,0.077,0.672,0.137,1
+											C10.982,53.174,15.456,57,20.834,57c5.145,0,9.463-3.499,10.644-8.221c0.078-0.317,0.145-0.645,0.195-0.982
+											c0.047-0.317,0.087-0.645,0.107-0.979c0.01-0.212,0.027-0.424,0.027-0.646C31.808,40.189,26.897,35.344,20.834,35.344z"/>
+									</g>
+								</g>
+							</svg>
+						.title Большой
+			// параметры data-focus-x и data-focus-y  - отвечают за точку фокуса для изображений, когда изображение полностью не влазит в область видимости (0, 0) - центр, (1, 1) - правый верхний угол
+			.present-choice__banner.banner(class="focuspoint", data-focus-x='0', data-focus-y=focusY, data-image-w="1200", data-image-h="480")
+				-imgSrc = 'dist/images/present/' + sectionId + '-banner.jpg'
+				img(src=imgSrc, alt=sectionId)
+	.tabs-container
+		+present-choice('avto', 'active')
+		+present-choice('tank', '', 0.1)
+		+present-choice('motorcycle','', 0.1)
+		+present-choice('plane', '', 0.2)
+		+present-choice('boat', '', -0.13)
+		+present-choice('helicopter', '', 0.1)
+		+present-choice('quadrocopter', '', 0)

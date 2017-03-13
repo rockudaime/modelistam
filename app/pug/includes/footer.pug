@@ -1,0 +1,90 @@
+// Начало основного футера сайта
+footer.main-footer
+	.container
+		.footer-nav-wrapper.clearfix
+			.footer-nav.footer-nav--categories
+				h2.main-footer__heading Всегда в наличии
+				ul.footer-nav__links
+					li.footer-nav__link
+						a(href="#") Автомобили
+					li.footer-nav__link
+						a(href="#") Квадракоптеры
+					li.footer-nav__link
+						a(href="#") Самолеты
+					li.footer-nav__link
+						a(href="#") Вертолеты
+					li.footer-nav__link
+						a(href="#") Яхты
+					li.footer-nav__link
+						a(href="#") Аксессуары
+			.footer-nav.footer-nav--info
+				h2.main-footer__heading Ваши покупки
+				ul.footer-nav__links
+					li.footer-nav__link
+						a(href="#") Вопросы и ответы 
+					li.footer-nav__link
+						a(href="#") Оплата и доставка 
+					li.footer-nav__link
+						a(href="#") Гарантия
+					li.footer-nav__link
+						a(href="#") Условия использования сайта
+				.footer-payment-methods
+					p Принимаем к оплате
+					img(src="dist/images/payment-methods.png", alt="методы оплаты виза, мастеркард, приватбанк")
+			.footer-nav.footer-nav--site-links
+				ul.footer-nav__links
+					li.footer-nav__link
+						a(href="#") Блог
+					li.footer-nav__link
+						a(href="#") Новости и события 
+					li.footer-nav__link
+						a(href="#") О компании 
+					li.footer-nav__link
+						a(href="#") Вакансии 
+
+		.main-footer__contacts.clearfix
+			.footer-contact-info
+				h2.main-footer__heading Киев
+				.footer-contact-info__schedule
+					span.footer-contact-info__icon.footer-contact-info__icon--schedule
+					| пн-пт: 9-20, сб: 10-20
+				.footer-contact-info__phone
+					span.footer-contact-info__icon.footer-contact-info__icon--phone
+					| (044) 221-61-00
+				a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+
+				.footer-contact-info__country-phone
+					p 0 800 218-817
+					p.footer-contact-info__desc Бесплатно по Украине
+
+			.footer-contact-info
+				h2.main-footer__heading Харьков
+				.footer-contact-info__schedule
+					span.footer-contact-info__icon.footer-contact-info__icon--schedule
+					| пн-пт: 9-20, сб: 10-20
+				.footer-contact-info__phone
+					span.footer-contact-info__icon.footer-contact-info__icon--phone
+					| (057) 755-15-00
+				a(href="#").callback-link.footer-contact-info__callback перезвонить мне
+		.main-footer__socials
+			p Следите за нами в соцсетях
+			a(href="#", title="Facebook", target="_blank").footer-socials-link.fb-social-link
+			a(href="#", title="Vkontakte", target="_blank").footer-socials-link.vk-social-link
+			a(href="#", title="Youtube", target="_blank").footer-socials-link.youtube-social-link
+
+
+		a(href="#top").footer-up-link
+			span.footer-up-link__icon
+			| Вверх
+script.
+	$(function () {
+		$('.header-search__input').on('focus', function(e) {
+			$('.header-search-results-wrapper').show();
+			$('.header-search-results').show();
+		});
+
+		$('.header-search__input').on('blur', function(e) {
+			$('.header-search-results-wrapper').hide();
+			$('.header-search-results').hide();
+		})
+	});

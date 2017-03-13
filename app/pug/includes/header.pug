@@ -1,0 +1,173 @@
+// ШАПКА
+header.main-header#top
+	.header-top-info
+		.container
+			a.header-logo(href="#", title="Planeta Hobby")
+				img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+			.header-phone
+				span.header-phone__number 0 800 218-817 
+				span.header-phone__description  Бесплатно по Украине
+				a(href="#").header-phone__callback.callback-link перезвонить мне
+			.header-nav
+				ul.for-customer
+					li.for-customer__btn 
+						span Покупателю
+						ul.for-customer__menu
+							li
+								a(href="#") Акции
+							li
+								a(href="#") Скидки
+							li
+								a(href="#") Дисконтная программа
+				ul.header-nav-links
+					li.header-nav-links__item
+						a(href="#") Дисконтная программа
+					li.header-nav-links__item
+						a(href="#") Доставка и оплата
+					li.header-nav-links__item
+						a(href="#") Контакты
+					li.header-nav-links__item.header-nav-links__item--desctop
+						a(href="#") Гарантия
+					li.header-nav-links__item.header-nav-links__item--desctop
+						a(href="#") Сервисный центр
+
+			// Корзина, видна только в мобильном виде до 768 пикселей
+			a(href="#").mobile-cart-link
+				span.header-link-indicator.mobile-cart-link__indicator 12
+			a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
+				span.bb-dashed.not-authorized Войти в личный кабинет
+				//span.authorized Алексей, 
+					i.header-profile-link__discount ваша скидка 3%
+			
+	.header-stripe
+		.container
+			// кнопка раскрытия меню, видна только в мобильном и планшетном виде
+			button.header-menu-link.active
+				i.header-menu-link__icon
+				| меню
+			// Поиск
+			form.header-search(action="/")
+				.container
+					input.header-search__input(type="search", placeholder="модель, аксессуар, бренд, код")
+					input.header-search__submit(type="submit", value="Найти")
+
+					// Результаты поиска
+					.header-search-results
+						.header-search-results__list-products
+							a(href="#").header-search-results__item.clearfix
+								.header-search-results__item-image
+									img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+								.header-search-results__item-details
+									h2.header-search-results__item-title.
+										Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+									.header-search-results__item-price 3 150 грн
+							a(href="#").header-search-results__item.clearfix
+								.header-search-results__item-image
+									img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+								.header-search-results__item-details
+									h2.header-search-results__item-title.
+										Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+									.header-search-results__item-price 3 150 грн
+							a(href="#").header-search-results__item.clearfix
+								.header-search-results__item-image
+									img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+								.header-search-results__item-details
+									h2.header-search-results__item-title.
+										Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+									.header-search-results__item-price 3 150 грн
+							a(href="#").header-search-results__item.clearfix
+								.header-search-results__item-image
+									img(src="dist/images/temporary/owerview-banner-small-1.jpg")
+								.header-search-results__item-details
+									h2.header-search-results__item-title.
+										Самолёт VolantexRC Decathlon RTF - 2.4GHz RTF - 2.4GHz (TW-765-1)
+									.header-search-results__item-price 3 150 грн
+						.header-search-results__list-category
+							a(href="#").header-search-results__item.header-search-results__item-category
+								h2.header-search-results__category-title Самолеты <b>для FPV и съемки</b> <span>Категория</span>
+							a(href="#").header-search-results__item.header-search-results__item-category
+								h2.header-search-results__category-title Самолеты <b>с камерой</b> <span>Категория</span>
+							a(href="#").header-search-results__item.header-search-results__item-category
+								h2.header-search-results__category-title Самолеты <b>для начинающих (электрические)</b> <span>Категория</span>
+						a(href="#").header-search-results__all-results Все результаты поиска
+			// персональные ссылки
+			.header-personal
+				.header-personal__links.clearfix
+					a.header-personal__item.active(href="#", data-id="popupWishlist")
+						i.header-personal__icon.header-personal__icon--wishlist
+							span.header-link-indicator.header-personal__indicator 3
+						| Желания
+					a.header-personal__item(href="#", data-id="popupCompare")
+						i.header-personal__icon.header-personal__icon--compare
+							span.header-link-indicator.header-personal__indicator 0
+						| Сравнение
+					a.header-personal__item(href="#", data-id="popupWatchPrice")
+						i.header-personal__icon.header-personal__icon--watch-price
+							span.header-link-indicator.header-personal__indicator 0
+						| Цены
+					a.header-personal__item.active(href="#", data-id="popupWaiting")
+						i.header-personal__icon.header-personal__icon--waiting
+							span.header-link-indicator.header-personal__indicator 12
+						| Ожидание
+				.header-personal__popups
+					// Попап Ожидания
+					.header-popup.header-popup-waiting#popupWaiting
+						.header-popup__main.clearfix
+							span.header-popup-icon.header-popup-icon--waiting
+							.header-popup__text
+								h2.header-popup__title Список ожиданий
+								p Здесь собраны ожидаемые Вами товары
+
+						// Блок, который виден незарегистрированному пользователю
+						.header-popup__unlogin
+							p Чтобы проверить ожидаемые товары, 
+								a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+					// Попап Желания
+					.header-popup.header-popup-wishlist#popupWishlist
+						.header-popup__main.clearfix
+							span.header-popup-icon.header-popup-icon--wishlist
+							.header-popup__text
+								h2.header-popup__title Список желаний
+								p Запомните товар, который вам понравился, добавив его в список желаний.
+
+						// Блок, который виден незарегистрированному пользователю
+						.header-popup__unlogin
+							p Чтобы добавить товар в список желаний, 
+								a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+					// Попап Сравнение
+					.header-popup.header-popup-compare#popupCompare
+						.header-popup__main.clearfix
+							span.header-popup-icon.header-popup-icon--compare
+							.header-popup__text
+								h2.header-popup__title Сравнение товаров
+								p Добавляйте товары, сравнивайте характеристики, чтобы выбрать лучшее!
+
+						// Блок, который виден незарегистрированному пользователю
+						.header-popup__unlogin
+							p Чтобы сравнить товар добавленный ранее, 
+								a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+					// Попап Цены
+					.header-popup.header-popup-watch-price#popupWatchPrice
+						.header-popup__main.clearfix
+							span.header-popup-icon.header-popup-icon--watch-price
+							.header-popup__text
+								h2.header-popup__title Следить за ценой
+								p Следить за ценой понравившегося товара очень просто
+
+						// Блок, который виден незарегистрированному пользователю
+						.header-popup__unlogin
+							p Если у вас уже есть отслеживаемые товары, 
+								a(href="#", data-popup-target="popupLogin").popup-open-link  авторизуйтесь
+
+			// Иконка для раскрытия формы поиска в мобильном виде
+			span.mobile-search-link
+			// Корзина
+			a(href="#", title="Перейти в корзину").header-cart
+				i.header-link-indicator.header-cart__indicator 10
+				//span.header-cart__empty Здесь пока ничего нет
+				span.header-cart__total 142 458
+					i.header-cart__total--text-smaller  грн
+.header-search-results-wrapper
+// Конец шапки сайта

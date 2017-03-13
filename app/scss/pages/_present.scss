@@ -39,6 +39,14 @@
 			float: left;
 		}
 
+		&:focus, &:hover {
+			color: #000;
+			outline: 0;
+			span {
+				border-color: #000;
+			}
+		}
+
 		span {
 			border-bottom: 1px dashed #a4a4a4;
 			display: inline-block;
