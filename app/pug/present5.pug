@@ -1,0 +1,122 @@
+extends present-template.pug
+
+block tabs-menu
+
+block tabs
+
+block content
+	.container
+		header.present-results__header.clearfix
+			h2.present-results__header-title Подбор подарка за 30 секунд
+			p
+				span мы подобрали для вас 37 моделей
+				button
+					span добавить всё в избранное
+				button
+					span отправить на почту
+
+			form#sort-form.category-sort-form.category-sort-form--half-mob(method='get', action='/')
+				input#sort-order(type='hidden', name='sort', value='')
+				input#paging(type='hidden', name='p', value='')
+				.sort.sort-main-block
+					ul#product-sort-simple.product-sort-simple
+						li Сортировать
+							ul
+								li
+									a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
+								li
+									a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
+								li
+									a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
+
+		section.present-results.clearfix
+			mixin category-product(imgName)
+				.category-product
+						.category-product__inner
+							.category-product__header
+								.category-product__photo
+									a(href="#")
+										img(src="dist/images/temporary/big-images/" + imgName + ".jpeg", alt="image")
+									i.product-rank-star.category-product__photo-rank-star 2
+								.category-product__product-status
+									span.cp-status.cp-status--pre-order Предзаказ
+									.category-product__product-info
+										span.category-product__product-comments
+											a(href="#") 0
+												span.cp-list-visible  отзывов
+										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+							.category-product__content
+								h3.category-product__heading
+									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+								span.cp-status.cp-status--pre-order Предзаказ
+								// cp-status дублируется второй раз для отображения списком
+							.category-product__content-right
+								.category-product__price
+									span.product-price--noprice Цена не установлена
+								.category-product__buy
+									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+									.category-product__product-links
+										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+							.category-product__hidden-content
+									.category-product__gallery
+										ul.cp-gallery
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+											li.cp-gallery__item
+												a(href="#")
+													img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__characteristics
+										ul
+											li с пультом управления
+											li литий ионный аккумулятор
+											li автономное время - 3ч
+									.category-product__rating
+										table
+											tr
+												td
+													span.product-rank-star.category-product__rank-star 2
+												td
+													div
+														a(href="#").category-product__review-link Обзор сравнение
+													.rateit-block
+														.rateit__range
+															.rateit__selected
+																.rateit__hover
+
+			+category-product("5_b")
+			+category-product("3_b")
+			+category-product("4_b")
+			+category-product("1_b")
+			+category-product("3_b")
+			+category-product("4_b")
+			+category-product("1_b")
+			+category-product("2_b")
+			+category-product("6_b")
+			+category-product("1_b")
+		// блок навигации
+		.catalog-bottom-pager
+			.pager-main-block
+				.catalog-nav
+					a.pmb-black.prev-navigation(href='#')
+						i
+						| Предыдущая
+					.nav-elems
+						span.pager__inner-elem(data-nav='1')
+							a(href='/catalog/avtomobili?page=1') 1
+						span.pager__inner-elem.pager__inner-elem--current.strong 2
+						span.pager__inner-elem(data-nav='3')
+							a(href='/catalog/avtomobili?page=3') 3
+						|  →  
+						span.pager__inner-elem(data-nav='55')
+							a(href='/catalog/avtomobili?page=55') 55
+					a.pmb-black.next-navigation(href='/catalog/avtomobili?page=2')
+						| Следующая
+						i
+		// конец блока навигации
