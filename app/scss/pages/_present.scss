@@ -77,7 +77,7 @@
 
 	&__title {
 		font: 1em $main-font;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 	}
 
 	&__banner {
@@ -139,12 +139,13 @@
 .svg-icon {
 	display: inline-block;
 	margin-bottom: 11px;
-	height: 90px;
+	height: 95px;
 	line-height: 90px;
 	// width: 134px;
 	font-size: 0;
 	svg {
 		vertical-align: bottom;
+		overflow: visible;
 	}
 	
 	svg path{
