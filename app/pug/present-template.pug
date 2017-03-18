@@ -52,7 +52,9 @@ html(lang="ru")
 								span Танк
 							li.present-nav__item.tab-link(data-target-id="motorcycle", tabindex="0")
 								span Мотоцикл
-					.gift-certificate__link
+
+					.gift-certificate__link.present-choice__gift-certificate.mobile-hidden.tablet-hidden
+						// эта ссылка дублируется ниже (для мобильного и платшетного вида)
 						a(href="#") Подарочные сертификаты
 			mixin present-choice(sectionId, className, focusY=0.13)
 				section.present-choice(id=sectionId, class=className).tab
@@ -65,46 +67,12 @@ html(lang="ru")
 						h3.present-choice__title Опыт использования модели
 						section.present-choice__select
 							button.present-choice__option
-								span.svg-icon.
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="134px" height="90px" viewBox="0 0 134 90" enable-background="new 0 0 134 90" xml:space="preserve">
-										<g id="lev-beginner-1_1_" enable-background="new    ">
-											<g id="lev-beginner-1">
-												<g>
-													<path fill-rule="evenodd" clip-rule="evenodd" d="M36,45H2c-1.104,0-2,0.896-2,2v41c0,1.104,0.896,2,2,2h34
-														c1.104,0,2-0.896,2-2V47C38,45.896,37.104,45,36,45z"/>
-												</g>
-											</g>
-										</g>
-										<g id="lev-beginner-2_1_" enable-background="new    ">
-											<g id="lev-beginner-2">
-												<g>
-													<path fill-rule="evenodd" clip-rule="evenodd" fill="transparent" stroke-width="2" d="M84,25H50c-1.104,0-2,0.896-2,2v61c0,1.104,0.896,2,2,2h34c1.104,0,2-0.896,2-2
-														V27C86,25.896,85.104,25,84,25z"/>
-												</g>
-											</g>
-										</g>
-										<g id="lev-beginner-3_1_" enable-background="new    ">
-											<g id="lev-beginner-3">
-												<g>
-													<path fill-rule="evenodd" clip-rule="evenodd" fill="transparent" stroke-width="2" d="M132,0H98c-1.104,0-2,0.896-2,2v86c0,1.104,0.896,2,2,2h34c1.104,0,2-0.896,2-2
-														V2C134,0.896,133.104,0,132,0z"/>
-												</g>
-											</g>
-										</g>
-									</svg>
+								span.svg-icon
+									img(src="dist/images/present/svg/beginner.svg", alt="электро двигатель", width="134px", height="90px")
 								.title Новичок
 							button.present-choice__option
-								span.svg-icon.
-									<svg version="1.1" id="profi_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="134px" height="90px" viewBox="0 0 134 90" enable-background="new 0 0 134 90" xml:space="preserve">
-										<g id="profi">
-											<g>
-												<path fill-rule="evenodd" clip-rule="evenodd" d="M36,45H2c-1.104,0-2,0.896-2,2v41c0,1.104,0.896,2,2,2h34
-													c1.104,0,2-0.896,2-2V47C38,45.896,37.104,45,36,45z M84,25H50c-1.104,0-2,0.896-2,2v61c0,1.104,0.896,2,2,2h34
-													c1.104,0,2-0.896,2-2V27C86,25.896,85.104,25,84,25z M132,0H98c-1.104,0-2,0.896-2,2v86c0,1.104,0.896,2,2,2h34
-													c1.104,0,2-0.896,2-2V2C134,0.896,133.104,0,132,0z"/>
-											</g>
-										</g>
-									</svg>
+								span.svg-icon
+									img(src="dist/images/present/svg/profi.svg", alt="электро двигатель", width="134px", height="90px")
 								.title Профи
 					// параметры data-focus-x и data-focus-y  - отвечают за точку фокуса для изображений, когда изображение полностью не влазит в область видимости (0, 0) - центр, (1, 1) - правый верхний угол
 					.present-choice__banner.banner(class="focuspoint", data-focus-x='0', data-focus-y=focusY, data-image-w="1200", data-image-h="480")
@@ -119,6 +87,9 @@ html(lang="ru")
 					+present-choice('boat', '', -0.13)
 					+present-choice('helicopter', '', 0.1)
 					+present-choice('quadrocopter', '', 0)
+			.container
+				.gift-certificate__link.present-choice__gift-certificate.desctop-hidden
+					a(href="#") Подарочные сертификаты
 
 
 		// ************************************************************************************

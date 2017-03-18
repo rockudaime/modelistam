@@ -497,7 +497,7 @@ h3.cabinet-title {
         margin-bottom: 4px;
 
         a {
-            font: 15px $main-font-semibold;
+            font: 15px $main-font;
 
             display: inline-block;
 
@@ -505,8 +505,14 @@ h3.cabinet-title {
 
             text-decoration: underline;
 
-            color: #3d6cab;
-            background: url(images/personal-cabinet/spritesheet.png) no-repeat -5px -617px;
+            color: #346cab;
+            // background: url(images/personal-cabinet/spritesheet.png) no-repeat -5px -617px;
+            background: url('images/svg/present-icon.svg') no-repeat 0 0;
+            background-size: 18px;
+
+            &:hover {
+                color: #d9450a;
+            }
         }
         @media (min-width: 768px) {
             display: inline-block;
@@ -514,7 +520,7 @@ h3.cabinet-title {
             vertical-align: middle;
 
             a {
-                background: url("images/ui-icon-personal-present.png") no-repeat 0 6px;
+                // background: url("images/ui-icon-personal-present.png") no-repeat 0 6px;
                 padding: 2px 0 10px 27px;
             }
         }
@@ -522,7 +528,7 @@ h3.cabinet-title {
             display: block;
             width: auto;
             a {
-                background: url(images/personal-cabinet/spritesheet.png) no-repeat -9px -623px;
+                // background: url(images/personal-cabinet/spritesheet.png) no-repeat -9px -623px;
             }
             
         }

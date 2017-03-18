@@ -5,6 +5,10 @@
 	@media (min-width: 768px) {
 		margin-bottom: 15px;
 	}
+
+	@media (min-width: 1235px) {
+		float: left;
+	}
 }
 .present-nav {
 	font: 16px $main-font;
@@ -90,7 +94,22 @@
 			height: 450px;
 		}
 	}
+	&__gift-certificate {
+		width: 240px;
+		height: 40px;
+		line-height: 40px;
+		padding: 0;
 
+		@media (min-width: 1235px) {
+			float: right;
+			width: auto;
+
+		}
+
+		a {
+			padding: 0 0 0 27px;
+		}
+	}
 	&__option {
 		border: 0;
 		background: none;
@@ -120,8 +139,11 @@
 			color: #d34f27;
 			outline: 0;
 
-			svg path{
+			svg path:first-child{
 				fill: #d34f27;
+			}
+
+			svg path {
 				stroke: #d34f27;
 			}
 		}
@@ -149,7 +171,7 @@
 	}
 	
 	svg path{
-		fill: #346cab;
+		// fill: #346cab;
 		stroke: #346cab;
 		vertical-align: bottom;
 	}
@@ -239,6 +261,4 @@
 			}
 		}
 	}
-
-
 }
