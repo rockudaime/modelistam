@@ -1,5 +1,6 @@
 $main-grey: #d6dbdf;
 $bg-grey: #F6F6F6;
+$main-bg: #f6f6f6;
 $main-blue: #4B80BB;
 $text-color: #434343;
 
@@ -13,3 +14,12 @@ $main-font-semibold: 'OpenSans_SemiBold', sans-serif;
 $main-font-light: 'OpenSans_Light', sans-serif;
 $main-font-bold: 'OpenSans_Bold', sans-serif;
 $main-font-italic: 'OpenSans_Italic', sans-serif;
+
+
+// =================== adaptive steps ===================
+$mobile-max: 767px;
+
+$tablet-min: 768px; // min width from where tablet starts
+$tablet-max: 1234px; // max tablet width
+
+$desktop-min: 1235px; // min-width from where desctop starts

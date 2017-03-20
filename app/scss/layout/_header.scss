@@ -5,7 +5,7 @@
     min-width: 360px;
     margin-bottom: 25px;
     @media (min-width: 768px) {
-        margin-bottom: 28px;
+        margin-bottom: 20px;
     }
     @media (min-width: 994px) {
         margin-bottom: 20px;
@@ -75,6 +75,7 @@
 		&:hover > ul, &:focus > ul {
 			display: block;
 			box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            z-index: 100;
 		}
 	}
 	& li > ul {
@@ -83,8 +84,6 @@
 		background: #fff;
 		border: 1px solid #777;
 		border-radius: 3px;
-		z-index: 10000;
-		
 	}
 
 	&  li > a{
@@ -369,7 +368,7 @@
 // Форма поиска
 .header-search {
     position: absolute;
-    z-index: 9999;
+    z-index: 102;
     top: 160px;
     right: 0;
     left: 0;
@@ -484,7 +483,7 @@
     position: absolute;
     // margin-top: -20px;
     // min-height: 100%;
-    z-index: 2;
+    z-index: 101;
     right: 0;
     left: 0;
     display: none;
@@ -508,7 +507,7 @@
     border-radius: 3px;
     background: #fff;
     position: absolute;
-    z-index: 200;
+    z-index: 101;
     display: none;
 
     @media (min-width: 768px) {
@@ -740,7 +739,7 @@
     &__popups {
     	position: absolute;
     	top: 98%;
-    	z-index: 9999;
+    	z-index: 101;
     	max-width: 510px;
     	left: 0;
     	padding: 0 5px;
@@ -918,7 +917,7 @@
     display: none;
 
     position: absolute;
-    z-index: 100000;
+    z-index: 100;
 
     box-sizing: border-box;
     width: 310px;

@@ -12,12 +12,13 @@ var pug           = require('gulp-pug');
 var combineMq     = require('gulp-combine-mq');
 var sourcemaps    = require('gulp-sourcemaps');
 var filter        = require('gulp-filter');
+var injectSvg     = require('gulp-inject-svg');
 
 var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['present2.html'],
+  html: ['present5.html'],
   pug: ['app/pug/present*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
@@ -52,7 +53,8 @@ gulp.task('pug', function() {
   return gulp.src(paths.pug) //('app/jade/**/*.jade')
     .pipe(pug({
       pretty: true
-      })) 
+      }))
+    .pipe(injectSvg())
     .pipe(gulp.dest('.')) // указываем gulp куда положить скомпилированные HTML файлы
     .pipe(reload({stream:true}));
 });

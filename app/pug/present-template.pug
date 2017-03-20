@@ -30,65 +30,68 @@ html(lang="ru")
 				span Подбор подарка
 			include includes/main-nav.pug
 		// ОСНОВНОЙ КОНТЕНТ
-		main
-			block content
-			block tabs-menu
-				.container
-					h2.pagetitle Подбор подарка за 30 секунд
-					.present-nav-wrapper
-						.mobile-custom-select.present-nav__mobile-select Авто
-						ul.present-nav.clearfix.tabs-links-container
-							li.present-nav__item.active.tab-link(data-target-id="avto", tabindex="0")
-								span Авто
-							li.present-nav__item.tab-link(data-target-id="plane", tabindex="0")
-								span Самолет
-							li.present-nav__item.tab-link(data-target-id="helicopter", tabindex="0")
-								span Вертолет
-							li.present-nav__item.tab-link(data-target-id="quadrocopter", tabindex="0")
-								span Квадракоптер
-							li.present-nav__item.tab-link(data-target-id="boat", tabindex="0")
-								span Катер, Яхта
-							li.present-nav__item.tab-link(data-target-id="tank", tabindex="0")
-								span Танк
-							li.present-nav__item.tab-link(data-target-id="motorcycle", tabindex="0")
-								span Мотоцикл
+		block content
+		block tabs-menu
+			.container
+				h2.pagetitle Подбор подарка за 30 секунд
+				.present-nav-wrapper
+					.mobile-custom-select.present-nav__mobile-select Авто
+					ul.present-nav.clearfix.tabs-links-container
+						li.present-nav__item.active.tab-link(data-target-id="avto", tabindex="0")
+							span Авто
+						li.present-nav__item.tab-link(data-target-id="plane", tabindex="0")
+							span Самолет
+						li.present-nav__item.tab-link(data-target-id="helicopter", tabindex="0")
+							span Вертолет
+						li.present-nav__item.tab-link(data-target-id="quadrocopter", tabindex="0")
+							span Квадракоптер
+						li.present-nav__item.tab-link(data-target-id="boat", tabindex="0")
+							span Катер, Яхта
+						li.present-nav__item.tab-link(data-target-id="tank", tabindex="0")
+							span Танк
+						li.present-nav__item.tab-link(data-target-id="motorcycle", tabindex="0")
+							span Мотоцикл
 
-					.gift-certificate__link.present-choice__gift-certificate.mobile-hidden.tablet-hidden
-						// эта ссылка дублируется ниже (для мобильного и платшетного вида)
-						a(href="#") Подарочные сертификаты
-			mixin present-choice(sectionId, className, focusY=0.13)
-				section.present-choice(id=sectionId, class=className).tab
-					.container.present-choice__inner
-						header.choice-steps.clearfix
-							.choice-step.choice-step--current 1
-							.choice-step 2
+				.gift-certificate__link.present-choice__gift-certificate.mobile-hidden.tablet-hidden
+					// эта ссылка дублируется ниже (для мобильного и платшетного вида)
+					a(href="#") Подарочные сертификаты
+		mixin present-choice(sectionId, className, focusY=0.13)
+			section.present-choice(id=sectionId, class=className).tab
+				.container.present-choice__inner
+					header.choice-steps.clearfix
+						.choice-step.choice-step--current 1
+						.choice-step 2
+						if sectionId == 'avto' || sectionId == 'motorcycle'
 							.choice-step 3
 							.choice-step 4
-						h3.present-choice__title Опыт использования модели
-						section.present-choice__select
-							button.present-choice__option
-								span.svg-icon
-									img(src="dist/images/present/svg/beginner.svg", alt="электро двигатель", width="134px", height="90px")
-								.title Новичок
-							button.present-choice__option
-								span.svg-icon
-									img(src="dist/images/present/svg/profi.svg", alt="электро двигатель", width="134px", height="90px")
-								.title Профи
-					// параметры data-focus-x и data-focus-y  - отвечают за точку фокуса для изображений, когда изображение полностью не влазит в область видимости (0, 0) - центр, (1, 1) - правый верхний угол
-					.present-choice__banner.banner(class="focuspoint", data-focus-x='0', data-focus-y=focusY, data-image-w="1200", data-image-h="480")
-						-imgSrc = 'dist/images/present/' + sectionId + '-banner.jpg'
-						img(src=imgSrc, alt=sectionId)
-			block tabs
-				.tabs-container
-					+present-choice('avto', 'active')
-					+present-choice('tank', '', 0.1)
-					+present-choice('motorcycle','', 0.1)
-					+present-choice('plane', '', 0.2)
-					+present-choice('boat', '', -0.13)
-					+present-choice('helicopter', '', 0.1)
-					+present-choice('quadrocopter', '', 0)
+						else
+							.choice-step 3
+					h3.present-choice__title Опыт использования модели
+					section.present-choice__select
+						button.present-choice__option
+							span.svg-icon
+								img(src="dist/images/present/svg/beginner.svg", alt="электро двигатель", width="134px", height="90px")
+							.title Новичок
+						button.present-choice__option
+							span.svg-icon
+								img(src="dist/images/present/svg/profi.svg", alt="электро двигатель", width="134px", height="90px")
+							.title Профи
+				// параметры data-focus-x и data-focus-y  - отвечают за точку фокуса для изображений, когда изображение полностью не влазит в область видимости (0, 0) - центр, (1, 1) - правый верхний угол
+				.present-choice__banner.banner(class="focuspoint", data-focus-x='0', data-focus-y=focusY, data-image-w="1200", data-image-h="480")
+					-imgSrc = 'dist/images/present/' + sectionId + '-banner.jpg'
+					img(src=imgSrc, alt=sectionId)
+		block tabs
+			.tabs-container
+				+present-choice('avto', 'active')
+				+present-choice('tank', '', 0.1)
+				+present-choice('motorcycle','', 0.1)
+				+present-choice('plane', '', 0.2)
+				+present-choice('boat', '', -0.13)
+				+present-choice('helicopter', '', 0.1)
+				+present-choice('quadrocopter', '', 0)
+		block gift-certificate-link-mobile
 			.container
-				.gift-certificate__link.present-choice__gift-certificate.desctop-hidden
+				.gift-certificate__link.present-choice__gift-certificate.desktop-hidden
 					a(href="#") Подарочные сертификаты
 
 
