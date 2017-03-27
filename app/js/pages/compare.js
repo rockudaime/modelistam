@@ -61,6 +61,7 @@ $(function() {
 		pagination: false,
 		nav: true,
 		dots: false,
+		scrollbar: true,
 
 		responsive:{
 			0:{

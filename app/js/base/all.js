@@ -194,13 +194,6 @@ $(function(){
 		});
 
 		function closePopupHandler (e) {
-			// e.preventDefault();
-			// // mypopup.wrapper.children().fadeOut();
-			// // mypopup.wrapper.fadeOut();
-			// $(this).parent().fadeOut();
-			// $(this).parent('.popup-outer').fadeOut();
-			// console.log('hello from all.js');
-			// console.log($(this).parent('.popup-outer'));
 			e.preventDefault();
 			$(this).closest('.popup-b').fadeOut();
 			$(this).closest('.popup-outer').fadeOut();
@@ -320,96 +313,8 @@ $(function () {
 	$('.store-gallery__main-image').on('click', function(e) {
 		e.preventDefault();
 	})
-	
-	// function dragBlock($blockObj) {
-	// 	'use strict';
-	// 	var blockWidth = $blockObj.width();
-	// 	var parent = $blockObj.parent();
-	// 	var parentWidth = parent.width();
-	// 	var offset = blockWidth - parentWidth;
-	// 	var minOffset = 0, maxOffset = blockWidth;
-	// 	var currentPosition = 0;
-	// 	var cursorPosition;
-	// 	console.log($blockObj);
-
-
-	// 		$blockObj.on('touchstart', function(e) {
-	// 			e.preventDefault();
-	// 			currentPosition = $(this).position().left;
-	// 			cursorPosition = e.pageX;
-	// 			console.log('touched');
-	// 		});
-	// 		$blockObj.on('touchmove', function(e) {
-	// 			e.preventDefault();
-	// 			console.log(e);
-	// 			currentPosition += e.pageX - cursorPosition;
-	// 			console.log(currentPosition);
-	// 			console.log('moving');
-	// 			$(this).css('transform', 'translate3d(-' + currentPosition + ',0,0)')
-	// 		});
-
-	// }	
+		
 });
-
-
-// ========================= Owl custom scrollbar ==================
-
-function addCustomScrollbar (owlContainer) {
-	'use strict';
-	var owlSlider = $(owlContainer);
-	var sliderItems = owlSlider.find('.owl-item');
-	var sliderItemsQuantity = sliderItems.length;
-	var sliderItemWidth = owlSlider.find('.owl-item').width();
-	var owlNavNext = owlSlider.find('.owl-next');
-	var owlNavPrev = owlSlider.find('.owl-prev');
-	var scrollbar;
-	var scrollbarWidth = 100 / (owlSlider.find('.owl-stage').width()/owlSlider.width());
-
-	addScrollbar(owlSlider);
-	setScrollbarWidth (scrollbar, owlSlider);
-	
-	owlNavNext.on('click', function (e) {
-		setScrollbarOffset(scrollbar, owlSlider, sliderItemWidth);
-	});
-	owlNavPrev.on('click', function (e) {
-		setScrollbarOffset(scrollbar, owlSlider, -sliderItemWidth);
-	});
-
-
-
-	function addScrollbar($obj) {
-		var newDiv = document.createElement('div');
-		newDiv.classList.add("owl-custom-scrollbar-wrapper");
-		newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-
-		scrollbar = $(newDiv).find('.owl-custom-scrollbar');
-		$obj.append(newDiv);
-	}
-
-	function setScrollbarWidth (scrollbar, owlContainer) {
-		scrollbar.css('width', scrollbarWidth + '%');
-	}
-
-	function setScrollbarOffset (scrollbar, owlContainer, offset) {
-		var stage = owlContainer.find('.owl-stage');
-	    var matrix = stage.css('transform').replace(/[^0-9\-.,]/g, '').split(',');
-		var x = matrix[12] || matrix[4];// предыдущий сдвиг
-		var newOffset = x - offset;
-		var stageWidth = stage.width(); // полная ширина контейнера с блоками товаров
-		if (-newOffset >= stageWidth) {
-			newOffset = x;
-		} else if (-newOffset <= 0) {
-			newOffset = 0;
-		}
-		var scrollbarOffset = 100 / (stageWidth / newOffset);
-		if (scrollbarWidth - 100 > scrollbarOffset) {
-			scrollbarOffset = scrollbarWidth - 100;
-		}
-
-		scrollbar.css('margin-left', - scrollbarOffset + '%');
-	}
-}
-
 
 function dragElement(obj) {
 	'use strict';

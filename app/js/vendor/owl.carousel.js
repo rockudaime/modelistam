@@ -482,6 +482,7 @@
 			this.invalidate('width');
 		}
 
+
 		this.$element
 			.removeClass(this.options.loadingClass)
 			.addClass(this.options.loadedClass);
@@ -878,6 +879,7 @@
 	 */
 	Owl.prototype.animate = function(coordinate) {
 		var animate = this.speed() > 0;
+		var scrollbarOffset;
 
 		this.is('animating') && this.onTransitionEnd();
 
@@ -889,6 +891,15 @@
 		if ($.support.transform3d && $.support.transition) {
 			this.$stage.css({
 				transform: 'translate3d(' + coordinate + 'px,0px,0px)',
+				transition: (this.speed() / 1000) + 's'
+			});
+			if (coordinate === 0) {
+				scrollbarOffset = 0;
+			} else {
+				scrollbarOffset = 100/ (this._items.length/this._current);
+			}
+			this.$element.find('.owl-custom-scrollbar').css({
+				marginLeft: '' + scrollbarOffset + '%',
 				transition: (this.speed() / 1000) + 's'
 			});
 		} else if (animate) {
@@ -2815,7 +2826,8 @@
 		dotsEach: false,
 		dotsData: false,
 		dotsSpeed: false,
-		dotsContainer: false
+		dotsContainer: false,
+		scrollbar: false
 	};
 
 	/**
@@ -2827,7 +2839,13 @@
 			settings = this._core.settings;
 
 		// create DOM structure for relative navigation
-
+		if (settings.scrollbar) {
+			this._controls.$scrollbar = $('<div>')
+			.addClass('owl-custom-scrollbar-wrapper')
+			.append($('<div class="owl-custom-scrollbar">'))
+			.appendTo(this.$element);
+		}
+		
 		this._controls.$relative = (settings.navContainer ? $(settings.navContainer)
 			: $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
 
@@ -2901,6 +2919,7 @@
 		var i, j, k,
 			lower = this._core.clones().length / 2,
 			upper = lower + this._core.items().length,
+			scrollbarWidth,
 			maximum = this._core.maximum(true),
 			settings = this._core.settings,
 			size = settings.center || settings.autoWidth || settings.dotsData
@@ -2925,6 +2944,18 @@
 					j = 0, ++k;
 				}
 				j += this._core.mergers(this._core.relative(i));
+			}
+		}
+
+		if (settings.scrollbar) {
+			scrollbarWidth = 100 / (this.$element.find('.owl-stage').width() / this.$element.width());
+			if (scrollbarWidth >= 100) {
+				this._controls.$scrollbar.addClass('disabled');
+			} else {
+				if (scrollbarWidth) {
+					this.$element.find('.owl-custom-scrollbar').css('width', scrollbarWidth + '%');
+					this._controls.$scrollbar.removeClass('disabled');
+				}
 			}
 		}
 	};
@@ -2963,6 +2994,10 @@
 
 			this._controls.$absolute.find('.active').removeClass('active');
 			this._controls.$absolute.children().eq($.inArray(this.current(), this._pages)).addClass('active');
+		}
+
+		if (settings.scrollbar) {
+
 		}
 	};
 

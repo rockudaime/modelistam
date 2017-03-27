@@ -129,6 +129,7 @@ $(function() {
 		pagination: false,
 		nav: true,
 		dots: false,
+		scrollbar: true,
 
 		responsive:{
 			0:{
@@ -152,6 +153,7 @@ $(function() {
 		loop: false,
 		margin:0,
 		navigationtext: false,
+		scrollbar: true,
 		
 		// responsiveclass:true,
 		nav: true,
@@ -183,6 +185,7 @@ $(function() {
 		// responsiveclass:true,
 		nav: true,
 		dots: false,
+		scrollbar: true,
 		responsive:{
 			0:{
 				items:1,
@@ -205,35 +208,4 @@ $(function() {
 		}
 	});
 
-	// scrollbar внизу блока с популярными товарами
-	// if ($(window).width() > 767) {
-	// 	var newDiv = document.createElement('div');
-	// 	newDiv.classList.add("owl-custom-scrollbar-wrapper");
-	// 	newDiv.innerHTML = "<div class='owl-custom-scrollbar' draggable></div>";
-	// 	var customScrollbar = $(newDiv).find('.owl-custom-scrollbar');
-
-	// 	popularProductsSlider.append(newDiv);
-	// 	var scrollbarWidth = 100 / (popularProductsSlider.find('.owl-stage').width()/popularProductsSlider.width());
-	// 	customScrollbar.css('width', scrollbarWidth + '%');
-	// }
-	
-	// function myCallback(event) {
-	//     var transformMatrix = popularProductsSlider.find('.owl-stage').css('transform');
-	//     var matrix = transformMatrix.replace(/[^0-9\-.,]/g, '').split(',');
-	// 	var x = matrix[12] || matrix[4];//translate x
-	// 	var y = matrix[13] || matrix[5];//translate y
-
-	// 	// customScrollbar.css('margin-left', -100 / (popularProductsSlider.find('.owl-stage').width() / x) + '%');
-	// }
-
-	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
-	var item;
-	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
-		item = owlSlidersWithScrollbar[i];
-		addCustomScrollbar(item);
-	}
-
-
-
 });
-

@@ -91,6 +91,9 @@
 
     border-top: 1px solid #e1e1e1;
 }
+.owl-custom-scrollbar-wrapper.disabled {
+	display: none!important;
+}
 .owl-custom-scrollbar {
     height: 5px;
 
