@@ -18,8 +18,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['present5.html'],
-  pug: ['app/pug/present*.pug'],
+  html: ['compare.html'],
+  pug: ['app/pug/compare.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
