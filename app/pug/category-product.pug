@@ -18,1248 +18,1272 @@ html(lang="ru")
 		script(src="dist/js/vendor/fancybox/jquery.fancybox.js?v=2.1.5")
 		link(rel="stylesheet", href="dist/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7")
 		script(src="dist/js/vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7")
+		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/category-product.js")
 
 	body
-		.page-inner.category-product-wrapper
-			h1 Самолеты для FPV и съемки
-			
-			section.category-content.clearfix
-				ul.catalog-top-menu
-					li.catalog-top-menu__item
-						a.catalog-top-menu__link.top-menu-choice-item(href='/info/howtochoice', rel='#')
-							i
-							span Как выбрать
-					li.catalog-top-menu__item
-						a.catalog-top-menu__link.top-menu-present-item(href='/info/ongift', rel='#')
-							i
-							span На подарок
-					li.catalog-top-menu__item
-						a.catalog-top-menu__link.top-menu-views-item(href='/info/overviews', rel='#')
-							i
-							span Обзоры
-					li.catalog-top-menu__item
-						a.catalog-top-menu__link.top-menu-video-item(href='/info/video', rel='#')
-							i
-							span Видео
-					li.catalog-top-menu__item
-						a.catalog-top-menu__link.top-menu-accesories-item(href='/info/accesories', rel='#')
-							i
-							span Аксессуары
-				.category-controls-wrapper.clearfix
-					.catalog-view-changer
-						a.view-changer-link.view-changer-link--active(title='Показать блоками', href='?view=block', data-view="block")
-							span.icon-view-block
-								i
-								i
-								i
-								i
-						a.view-changer-link(title='Показать списком', href='?view=list', data-view="list")
-							span.icon-view-list
-								i
-								i
-								i
-					
-					.filter-link Подбор 
+		include includes/header.pug
+		
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				span Самолеты для FPV и съемки
+			include includes/main-nav.pug
 
-					form#sort-form.category-sort-form(method='get', action='/')
-						input#sort-order(type='hidden', name='sort', value='')
-						input#paging(type='hidden', name='p', value='')
-						.sort.sort-main-block
-							ul#product-sort-simple.product-sort-simple
-								li Сортировать
-									ul
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
-					form#show-products-form.show-noavail-products(method="get", action="/")
-						input.custom-checkbox(type="checkbox", id="showProductsCheckbox")
-						label.custom-checkbox__label.product-filter__filter-label(for="showProductsCheckbox")
-							span.custom-checkbox__box
-							| Показать товары, которых нет в наличии
-				section.category-content__products
-					// product 1
-					.category-product.category-product--noavail
-						// товар, которого нет в наличии
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-									i.product-rank-star.category-product__photo-rank-star 1
-								.category-product__product-status
-									span.cp-status.cp-status--noavail Нет в наличии
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 3
-												span.cp-list-visible  отзыва
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--noavail Нет в наличии
-									// дублируется для вида списком (если есть возможность не выводить для мобильных телефонов)
-							.category-product__content-right
-								.category-product__price
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy-noavail(href="#") Купить
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link.cp-wished(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link.cp-compared(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-										.cp-gallery__items-qty +1
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-													span.product-rank-star.category-product__rank-star 1
-												td
-													div
-														a(href="#").category-product__review-link Обзор сравнение
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 2													
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/5_b.jpeg", alt="image")
-									i.product-rank-star.category-product__photo-rank-star 2
-								.category-product__product-status
-									span.cp-status.cp-status--pre-order Предзаказ
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 0
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--pre-order Предзаказ
-								// cp-status дублируется второй раз для отображения списком
-							.category-product__content-right
-								.category-product__price
-									span.product-price--noprice Цена не установлена
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-													span.product-rank-star.category-product__rank-star 2
-												td
-													div
-														a(href="#").category-product__review-link Обзор сравнение
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 3
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/3_b.jpeg", alt="image")
-								.category-product__product-status
-									span.cp-status.cp-status--available В наличии
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-										.cp-gallery__items-qty +5
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 4
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/4_b.jpeg", alt="image")
-								.category-product__product-status
-									span.cp-status.cp-status--waiting Ожидается
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--waiting Ожидается
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									// span.product-price--current 13 600 
-									// 	span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--waiting(href="#") Сообщить о поступлении
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 5
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									span.cp-status.cp-status--to-order Под заказ
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--to-order Под заказ
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--pre-order(href="#") Заказать
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 6
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 0
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 7
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										// span.category-product__product-comments
-										// 	a(href="#") 16
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 8
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 1
-												span.cp-list-visible  отзыв
-										span.product-info__code.category-product__product-code Код:&nbsp;94107
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 9													
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/5_b.jpeg", alt="image")
-									i.product-rank-star.category-product__photo-rank-star 2
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.product-info__code.category-product__product-code Код:&nbsp;789125K
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									span.product-price--new 2600 
-										span.product-price__text--small грн
-									span.product-price--old 2785 грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy.category-product__btn--buy-avail(href="#") Купить
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-													span.product-rank-star.category-product__rank-star 2
-												td
-													div
-														a(href="#").category-product__review-link Обзор сравнение
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 10
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/3_b.jpeg", alt="image")
-								.category-product__product-status
-									span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-										.cp-gallery__items-qty +5
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 11
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/temporary/big-images/4_b.jpeg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 12
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-												span.cp-list-visible  отзывов
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 13
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="http://modelistam.skalar.net/upload/iblock/2a1/2a1bca4c460ef3beab32cb1cd4bb7ed2_thumb_9c8ecbf3b85247ea.jpeg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 13 600 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 14
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/no-photo.jpg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 16
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 133 700 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// product 15
-					.category-product
-						.category-product__inner
-							.category-product__header
-								.category-product__photo
-									a(href="#")
-										img(src="dist/images/sample-airplane.jpg", alt="image")
-								.category-product__product-status
-									// span.product-status.product-status--new Новинка
-									// span.product-status.product-status--discount -10%
-									// span.product-status.product-status--top Топ продаж
-									// span.product-status.product-status--sale Акция
-									.category-product__product-info
-										span.category-product__product-comments
-											a(href="#") 3
-												span.cp-list-visible  отзыва
-										span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
-							.category-product__content
-								h3.category-product__heading
-									a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-								p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
-								span.cp-status.cp-status--available В наличии
-							.category-product__content-right
-								.category-product__price
-									// span.product-price--new 2600 
-									// 	span.product-price__text--small грн
-									// span.product-price--old 2785 грн
-									span.product-price--current 78 350 
-										span.product-price__text--small грн
-								.category-product__buy
-									a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-									.category-product__product-links
-										a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-										a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-										a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
-							.category-product__hidden-content
-									.category-product__gallery
-										ul.cp-gallery
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											li.cp-gallery__item
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-									.category-product__characteristics
-										ul
-											li с пультом управления
-											li литий ионный аккумулятор
-											li автономное время - 3ч
-									.category-product__rating
-										table
-											tr
-												td
-												td
-													.rateit-block
-														.rateit__range
-															.rateit__selected
-																.rateit__hover
-					// btn
-					.category-product.category-product--show-btn.show-btn
-						.show-btn__inner
-							.show-btn__link-block
-								a.show-btn__link(href="#") Показать товары,<br>которых<br>нет в наличии
-				// блок навигации
-				.catalog-bottom-pager
-					.pager-main-block
-						.catalog-nav
-							a.pmb-black.prev-navigation(href='#')
+		.category-product-wrapper
+			.container
+				h1 Самолеты для FPV и съемки
+				
+				section.category-content.clearfix
+					ul.catalog-top-menu
+						li.catalog-top-menu__item
+							a.catalog-top-menu__link.top-menu-choice-item(href='/info/howtochoice', rel='#')
 								i
-								| Предыдущая
-							.nav-elems
-								span.pager__inner-elem(data-nav='1')
-									a(href='/catalog/avtomobili?page=1') 1
-								span.pager__inner-elem.pager__inner-elem--current.strong 2
-								span.pager__inner-elem(data-nav='3')
-									a(href='/catalog/avtomobili?page=3') 3
-								|  →  
-								span.pager__inner-elem(data-nav='55')
-									a(href='/catalog/avtomobili?page=55') 55
-							a.pmb-black.next-navigation(href='/catalog/avtomobili?page=2')
-								| Следующая
+								span Как выбрать
+						li.catalog-top-menu__item
+							a.catalog-top-menu__link.top-menu-present-item(href='/info/ongift', rel='#')
 								i
-				// конец блока навигации
-
-			// начало сайдбара с фильтром
-			aside.category-sidebar
-				section.sidebar-filter
-					form#filter-form(method="get" action="/")
-						.product-filter
-							.filter-header.filter-header-main Подбор
-								// .filter-total-amount
-								// 	strong Найдено: 1298
-							.filter-values-block
-								a.filter-delete(href="#")
+								span На подарок
+						li.catalog-top-menu__item
+							a.catalog-top-menu__link.top-menu-views-item(href='/info/overviews', rel='#')
+								i
+								span Обзоры
+						li.catalog-top-menu__item
+							a.catalog-top-menu__link.top-menu-video-item(href='/info/video', rel='#')
+								i
+								span Видео
+						li.catalog-top-menu__item
+							a.catalog-top-menu__link.top-menu-accesories-item(href='/info/accesories', rel='#')
+								i
+								span Аксессуары
+					.category-controls-wrapper.clearfix
+						.catalog-view-changer
+							a.view-changer-link.view-changer-link--active(title='Показать блоками', href='?view=block', data-view="block")
+								span.icon-view-block
 									i
-									span Удалить фильтры
-							// если есть фильтры добавляется весь блок ниже с перечислением фильтров
-							.filter-values-block
-								.filter-value
-									a.filter-value-delete(href="#") Самолеты RTF
-								.filter-value
-									a.filter-value-delete(href="#") Для начинающих
+									i
+									i
+									i
+							a.view-changer-link(title='Показать списком', href='?view=list', data-view="list")
+								span.icon-view-list
+									i
+									i
+									i
 						
-						.product-filter
-							.filter-header По категории
-								
-							.filter-values-block
-								.prop-filter
-									input.custom-checkbox#prop-000001(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000001")
-										span.custom-checkbox__box
-										| Самолеты для FPV и съемки
-								.prop-filter
-									input.custom-checkbox#prop-000002(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000002")
-										span.custom-checkbox__box
-										| Самолеты с камерой
-								.prop-filter
-									input.custom-checkbox#prop-000003(type='checkbox', name='bycategory', checked)
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000003")
-										span.custom-checkbox__box
-										| Самолеты RTF
-								.prop-filter
-									input.custom-checkbox#prop-000004(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000004")
-										span.custom-checkbox__box
-										| Модели планеров
-								.prop-filter
-									input.custom-checkbox#prop-000005(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000005")
-										span.custom-checkbox__box
-										| Электрические
-								.prop-filter
-									input.custom-checkbox#prop-000006(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000006")
-										span.custom-checkbox__box
-										| ДВС
-								.prop-filter
-									input.custom-checkbox#prop-000007(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000007")
-										span.custom-checkbox__box
-										| С бензиновым мотором
-								.prop-filter
-									input.custom-checkbox#prop-000008(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000008")
-										span.custom-checkbox__box
-										| Реактивные
-								.prop-filter
-									input.custom-checkbox#prop-000009(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000009")
-										span.custom-checkbox__box
-										| Летающее крыло
-								.prop-filter
-									input.custom-checkbox#prop-000010(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000010")
-										span.custom-checkbox__box
-										| С бензиновым мотором
-								.prop-filter
-									input.custom-checkbox#prop-000011(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000011")
-										span.custom-checkbox__box
-										| Реактивные
-								.prop-filter
-									input.custom-checkbox#prop-000012(type='checkbox', name='bycategory')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000012")
-										span.custom-checkbox__box
-										| Летающее крыло
+						.filter-link Подбор 
 
-						.product-filter
-							.filter-header По уровню
-								
-							.filter-values-block
-								.prop-filter
-									input.custom-checkbox#prop-000021(type='checkbox', name='bylevel')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
-										span.custom-checkbox__box
-										| Для начинающих
-								.prop-filter
-									input.custom-checkbox#prop-000022(type='checkbox', name='bylevel')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
-										span.custom-checkbox__box
-										| Средний уровень
-								.prop-filter
-									input.custom-checkbox#prop-000023(type='checkbox', name='bylevel')
-									label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
-										span.custom-checkbox__box
-										| Экспертам
-						.product-filter
-							.filter-header По цене
-							.filter-values-block
-								.product-filter__price-block
-									| от
-									input.price-min.numeric-min.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[min]', onchange='set_filter_price(0)', placeholder='0')
-									| до
-									input.price-max.numeric-max.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[max]', onchange='set_filter_price(1)', placeholder='29808')
-								input.sidebar-filter__submit-btn(type='submit', value='Подобрать')
-						.product-filter
-							.filter-header Дополнительно
-							.filter-values-block
-								ul.additional-filters
-									li.additional-filter
-										span.additional-filter__toggler
-											span.af-bb Размах крыла 
-										.filter-values-block.additional-filter__values-block
-											.prop-filter
-												input.custom-checkbox#prop-000024(type='checkbox', name='bylevel')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
-													span.custom-checkbox__box
-													| Для начинающих
-											.prop-filter
-												input.custom-checkbox#prop-000025(type='checkbox', name='bylevel')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
-													span.custom-checkbox__box
-													| Средний уровень
-											.prop-filter
-												input.custom-checkbox#prop-000026(type='checkbox', name='bylevel')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
-													span.custom-checkbox__box
-													| Экспертам
-									li.additional-filter 
-										span.additional-filter__toggler
-											span.af-bb Комплектация
-										.filter-values-block.additional-filter__values-block
-											.prop-filter
-												input.custom-checkbox#prop-0000011(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000011")
-													span.custom-checkbox__box
-													| Самолеты для FPV и съемки
-											.prop-filter
-												input.custom-checkbox#prop-0000021(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000021")
-													span.custom-checkbox__box
-													| Самолеты с камерой
-											.prop-filter
-												input.custom-checkbox#prop-0000031(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000031")
-													span.custom-checkbox__box
-													| Самолеты RTF
-											.prop-filter
-												input.custom-checkbox#prop-0000041(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000041")
-													span.custom-checkbox__box
-													| Модели планеров
-											.prop-filter
-												input.custom-checkbox#prop-0000051(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000051")
-													span.custom-checkbox__box
-													| Электрические
-											.prop-filter
-												input.custom-checkbox#prop-0000061(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000061")
-													span.custom-checkbox__box
-													| ДВС
-											.prop-filter
-												input.custom-checkbox#prop-0000071(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000071")
-													span.custom-checkbox__box
-													| С бензиновым мотором
-											.prop-filter
-												input.custom-checkbox#prop-0000081(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000081")
-													span.custom-checkbox__box
-													| Реактивные
-											.prop-filter
-												input.custom-checkbox#prop-0000091(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000091")
-													span.custom-checkbox__box
-													| Летающее крыло
-											.prop-filter
-												input.custom-checkbox#prop-0000101(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000101")
-													span.custom-checkbox__box
-													| С бензиновым мотором
-											.prop-filter
-												input.custom-checkbox#prop-0000111(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000111")
-													span.custom-checkbox__box
-													| Реактивные
-											.prop-filter
-												input.custom-checkbox#prop-0000121(type='checkbox', name='bycategory')
-												label.custom-checkbox__label.product-filter__filter-label(for="prop-0000121")
-													span.custom-checkbox__box
-													| Летающее крыло
-									li.additional-filter
-										span.additional-filter__toggler
-											span.af-bb Материал
-									li.additional-filter
-										span.additional-filter__toggler
-											span.af-bb Особенности
-									li.additional-filter
-										span.additional-filter__toggler
-											span.af-bb Марка
-									li.additional-filter
-										span.additional-filter__toggler
-											span.af-bb Тип двигателя 
+						form#sort-form.category-sort-form(method='get', action='/')
+							input#sort-order(type='hidden', name='sort', value='')
+							input#paging(type='hidden', name='p', value='')
+							.sort.sort-main-block
+								ul#product-sort-simple.product-sort-simple
+									li Сортировать
+										ul
+											li
+												a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
+											li
+												a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
+											li
+												a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
+						form#show-products-form.show-noavail-products(method="get", action="/")
+							input.custom-checkbox(type="checkbox", id="showProductsCheckbox")
+							label.custom-checkbox__label.product-filter__filter-label(for="showProductsCheckbox")
+								span.custom-checkbox__box
+								| Показать товары, которых нет в наличии
+					section.category-content__products
+						// product 1
+						.category-product.category-product--noavail
+							// товар, которого нет в наличии
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+										i.product-rank-star.category-product__photo-rank-star 1
+									.category-product__product-status
+										span.cp-status.cp-status--noavail Нет в наличии
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 3
+													span.cp-list-visible  отзыва
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--noavail Нет в наличии
+										// дублируется для вида списком (если есть возможность не выводить для мобильных телефонов)
+								.category-product__content-right
+									.category-product__price
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--buy-noavail(href="#") Купить
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link.cp-wished(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link.cp-compared(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+											.cp-gallery__items-qty +1
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+														span.product-rank-star.category-product__rank-star 1
+													td
+														div
+															a(href="#").category-product__review-link Обзор сравнение
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 2													
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/5_b.jpeg", alt="image")
+										i.product-rank-star.category-product__photo-rank-star 2
+									.category-product__product-status
+										span.cp-status.cp-status--pre-order Предзаказ
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 0
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--pre-order Предзаказ
+									// cp-status дублируется второй раз для отображения списком
+								.category-product__content-right
+									.category-product__price
+										span.product-price--noprice Цена не установлена
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+														span.product-rank-star.category-product__rank-star 2
+													td
+														div
+															a(href="#").category-product__review-link Обзор сравнение
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 3
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/3_b.jpeg", alt="image")
+									.category-product__product-status
+										span.cp-status.cp-status--available В наличии
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+											.cp-gallery__items-qty +5
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 4
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/4_b.jpeg", alt="image")
+									.category-product__product-status
+										span.cp-status.cp-status--waiting Ожидается
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--waiting Ожидается
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										// span.product-price--current 13 600 
+										// 	span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--waiting(href="#") Сообщить о поступлении
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 5
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										span.cp-status.cp-status--to-order Под заказ
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--to-order Под заказ
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--pre-order(href="#") Заказать
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 6
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 0
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 7
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											// span.category-product__product-comments
+											// 	a(href="#") 16
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 8
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 1
+													span.cp-list-visible  отзыв
+											span.product-info__code.category-product__product-code Код:&nbsp;94107
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 9													
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/5_b.jpeg", alt="image")
+										i.product-rank-star.category-product__photo-rank-star 2
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.product-info__code.category-product__product-code Код:&nbsp;789125K
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										span.product-price--new 2600 
+											span.product-price__text--small грн
+										span.product-price--old 2785 грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--buy.category-product__btn--buy-avail(href="#") Купить
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+														span.product-rank-star.category-product__rank-star 2
+													td
+														div
+															a(href="#").category-product__review-link Обзор сравнение
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 10
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/3_b.jpeg", alt="image")
+									.category-product__product-status
+										span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+											.cp-gallery__items-qty +5
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 11
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/temporary/big-images/4_b.jpeg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 12
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+													span.cp-list-visible  отзывов
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 13
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/no-photo.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 13 600 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 14
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/no-photo.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 16
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 133 700 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// product 15
+						.category-product
+							.category-product__inner
+								.category-product__header
+									.category-product__photo
+										a(href="#")
+											img(src="dist/images/sample-airplane.jpg", alt="image")
+									.category-product__product-status
+										// span.product-status.product-status--new Новинка
+										// span.product-status.product-status--discount -10%
+										// span.product-status.product-status--top Топ продаж
+										// span.product-status.product-status--sale Акция
+										.category-product__product-info
+											span.category-product__product-comments
+												a(href="#") 3
+													span.cp-list-visible  отзыва
+											span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+								.category-product__content
+									h3.category-product__heading
+										a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
+									p.category-product__description Модель отличается исключительными маневренными и скоростными качествами. Описание может достигать 2-3 строки. Описание может достигать 2-3 строки.
+									span.cp-status.cp-status--available В наличии
+								.category-product__content-right
+									.category-product__price
+										// span.product-price--new 2600 
+										// 	span.product-price__text--small грн
+										// span.product-price--old 2785 грн
+										span.product-price--current 78 350 
+											span.product-price__text--small грн
+									.category-product__buy
+										a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+										.category-product__product-links
+											a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+											a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+											a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+								.category-product__hidden-content
+										.category-product__gallery
+											ul.cp-gallery
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+												li.cp-gallery__item
+													a(href="#")
+														img(src="dist/images/sample-airplane.jpg", alt="image")
+										.category-product__characteristics
+											ul
+												li с пультом управления
+												li литий ионный аккумулятор
+												li автономное время - 3ч
+										.category-product__rating
+											table
+												tr
+													td
+													td
+														.rateit-block
+															.rateit__range
+																.rateit__selected
+																	.rateit__hover
+						// btn
+						.category-product.category-product--show-btn.show-btn
+							.show-btn__inner
+								.show-btn__link-block
+									a.show-btn__link(href="#") Показать товары,<br>которых<br>нет в наличии
+					// блок навигации
+					.catalog-bottom-pager
+						.pager-main-block
+							.catalog-nav
+								a.pmb-black.prev-navigation(href='#')
+									i
+									| Предыдущая
+								.nav-elems
+									span.pager__inner-elem(data-nav='1')
+										a(href='/catalog/avtomobili?page=1') 1
+									span.pager__inner-elem.pager__inner-elem--current.strong 2
+									span.pager__inner-elem(data-nav='3')
+										a(href='/catalog/avtomobili?page=3') 3
+									|  →  
+									span.pager__inner-elem(data-nav='55')
+										a(href='/catalog/avtomobili?page=55') 55
+								a.pmb-black.next-navigation(href='/catalog/avtomobili?page=2')
+									| Следующая
+									i
+					// конец блока навигации
 
-						.filter-popup(style="display: block;top: 193px;")
-							.filter-popup-close
-								a.filter-popup-close-link(href='#')
-							p.filter-popup-info Найдено товаров: 131
-							a.filter-popup-btn(href='') Показать
+				// начало сайдбара с фильтром
+				aside.category-sidebar
+					section.sidebar-filter
+						form#filter-form(method="get" action="/")
+							.product-filter
+								.filter-header.filter-header-main Подбор
+									// .filter-total-amount
+									// 	strong Найдено: 1298
+								.filter-values-block
+									a.filter-delete(href="#")
+										i
+										span Удалить фильтры
+								// если есть фильтры добавляется весь блок ниже с перечислением фильтров
+								.filter-values-block
+									.filter-value
+										a.filter-value-delete(href="#") Самолеты RTF
+									.filter-value
+										a.filter-value-delete(href="#") Для начинающих
+							
+							.product-filter
+								.filter-header По категории
+									
+								.filter-values-block
+									.prop-filter
+										input.custom-checkbox#prop-000001(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000001")
+											span.custom-checkbox__box
+											| Самолеты для FPV и съемки
+									.prop-filter
+										input.custom-checkbox#prop-000002(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000002")
+											span.custom-checkbox__box
+											| Самолеты с камерой
+									.prop-filter
+										input.custom-checkbox#prop-000003(type='checkbox', name='bycategory', checked)
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000003")
+											span.custom-checkbox__box
+											| Самолеты RTF
+									.prop-filter
+										input.custom-checkbox#prop-000004(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000004")
+											span.custom-checkbox__box
+											| Модели планеров
+									.prop-filter
+										input.custom-checkbox#prop-000005(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000005")
+											span.custom-checkbox__box
+											| Электрические
+									.prop-filter
+										input.custom-checkbox#prop-000006(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000006")
+											span.custom-checkbox__box
+											| ДВС
+									.prop-filter
+										input.custom-checkbox#prop-000007(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000007")
+											span.custom-checkbox__box
+											| С бензиновым мотором
+									.prop-filter
+										input.custom-checkbox#prop-000008(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000008")
+											span.custom-checkbox__box
+											| Реактивные
+									.prop-filter
+										input.custom-checkbox#prop-000009(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000009")
+											span.custom-checkbox__box
+											| Летающее крыло
+									.prop-filter
+										input.custom-checkbox#prop-000010(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000010")
+											span.custom-checkbox__box
+											| С бензиновым мотором
+									.prop-filter
+										input.custom-checkbox#prop-000011(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000011")
+											span.custom-checkbox__box
+											| Реактивные
+									.prop-filter
+										input.custom-checkbox#prop-000012(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000012")
+											span.custom-checkbox__box
+											| Летающее крыло
 
-				// end if section .sidebar-filter
-				section.category-viewed-products
-					h2.category-viewed-products__heading Вы смотрели
-					ul
-						li.category-viewed-products__item
-							a(href="#", title="avto model that you looked for")
-								img(src="dist/images/temporary/avto.jpeg", alt="some img")
-						li.category-viewed-products__item
-							a(href="#", title="avto model that you looked for")
-								img(src="dist/images/temporary/avto.jpeg", alt="some img")
-						li.category-viewed-products__item
-							a(href="#", title="avto model that you looked for")
-								img(src="dist/images/temporary/avto.jpeg", alt="some img")
-						li.category-viewed-products__item
-							a(href="#", title="avto model that you looked for")
-								img(src="dist/images/temporary/avto.jpeg", alt="some img")
-				// /end of section .category-viewed-products
-										
-			// конец сайдбара с фильтром
+							.product-filter
+								.filter-header По уровню
+									
+								.filter-values-block
+									.prop-filter
+										input.custom-checkbox#prop-000021(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
+											span.custom-checkbox__box
+											| Для начинающих
+									.prop-filter
+										input.custom-checkbox#prop-000022(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
+											span.custom-checkbox__box
+											| Средний уровень
+									.prop-filter
+										input.custom-checkbox#prop-000023(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
+											span.custom-checkbox__box
+											| Экспертам
+							.product-filter
+								.filter-header По цене
+								.filter-values-block
+									.product-filter__price-block
+										| от
+										input.price-min.numeric-min.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[min]', onchange='set_filter_price(0)', placeholder='0')
+										| до
+										input.price-max.numeric-max.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[max]', onchange='set_filter_price(1)', placeholder='29808')
+									input.sidebar-filter__submit-btn(type='submit', value='Подобрать')
+							.product-filter
+								.filter-header Дополнительно
+								.filter-values-block
+									ul.additional-filters
+										li.additional-filter
+											span.additional-filter__toggler
+												span.af-bb Размах крыла 
+											.filter-values-block.additional-filter__values-block
+												.prop-filter
+													input.custom-checkbox#prop-000024(type='checkbox', name='bylevel')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
+														span.custom-checkbox__box
+														| Для начинающих
+												.prop-filter
+													input.custom-checkbox#prop-000025(type='checkbox', name='bylevel')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
+														span.custom-checkbox__box
+														| Средний уровень
+												.prop-filter
+													input.custom-checkbox#prop-000026(type='checkbox', name='bylevel')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
+														span.custom-checkbox__box
+														| Экспертам
+										li.additional-filter 
+											span.additional-filter__toggler
+												span.af-bb Комплектация
+											.filter-values-block.additional-filter__values-block
+												.prop-filter
+													input.custom-checkbox#prop-0000011(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000011")
+														span.custom-checkbox__box
+														| Самолеты для FPV и съемки
+												.prop-filter
+													input.custom-checkbox#prop-0000021(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000021")
+														span.custom-checkbox__box
+														| Самолеты с камерой
+												.prop-filter
+													input.custom-checkbox#prop-0000031(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000031")
+														span.custom-checkbox__box
+														| Самолеты RTF
+												.prop-filter
+													input.custom-checkbox#prop-0000041(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000041")
+														span.custom-checkbox__box
+														| Модели планеров
+												.prop-filter
+													input.custom-checkbox#prop-0000051(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000051")
+														span.custom-checkbox__box
+														| Электрические
+												.prop-filter
+													input.custom-checkbox#prop-0000061(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000061")
+														span.custom-checkbox__box
+														| ДВС
+												.prop-filter
+													input.custom-checkbox#prop-0000071(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000071")
+														span.custom-checkbox__box
+														| С бензиновым мотором
+												.prop-filter
+													input.custom-checkbox#prop-0000081(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000081")
+														span.custom-checkbox__box
+														| Реактивные
+												.prop-filter
+													input.custom-checkbox#prop-0000091(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000091")
+														span.custom-checkbox__box
+														| Летающее крыло
+												.prop-filter
+													input.custom-checkbox#prop-0000101(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000101")
+														span.custom-checkbox__box
+														| С бензиновым мотором
+												.prop-filter
+													input.custom-checkbox#prop-0000111(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000111")
+														span.custom-checkbox__box
+														| Реактивные
+												.prop-filter
+													input.custom-checkbox#prop-0000121(type='checkbox', name='bycategory')
+													label.custom-checkbox__label.product-filter__filter-label(for="prop-0000121")
+														span.custom-checkbox__box
+														| Летающее крыло
+										li.additional-filter
+											span.additional-filter__toggler
+												span.af-bb Материал
+										li.additional-filter
+											span.additional-filter__toggler
+												span.af-bb Особенности
+										li.additional-filter
+											span.additional-filter__toggler
+												span.af-bb Марка
+										li.additional-filter
+											span.additional-filter__toggler
+												span.af-bb Тип двигателя 
+
+							.filter-popup(style="display: block;top: 193px;")
+								.filter-popup-close
+									a.filter-popup-close-link(href='#')
+								p.filter-popup-info Найдено товаров: 131
+								a.filter-popup-btn(href='') Показать
+
+					// end if section .sidebar-filter
+					section.category-viewed-products
+						h2.category-viewed-products__heading Вы смотрели
+						ul
+							li.category-viewed-products__item
+								a(href="#", title="avto model that you looked for")
+									img(src="dist/images/temporary/avto.jpeg", alt="some img")
+							li.category-viewed-products__item
+								a(href="#", title="avto model that you looked for")
+									img(src="dist/images/temporary/avto.jpeg", alt="some img")
+							li.category-viewed-products__item
+								a(href="#", title="avto model that you looked for")
+									img(src="dist/images/temporary/avto.jpeg", alt="some img")
+							li.category-viewed-products__item
+								a(href="#", title="avto model that you looked for")
+									img(src="dist/images/temporary/avto.jpeg", alt="some img")
+					// /end of section .category-viewed-products
+											
+				// конец сайдбара с фильтром
+		.prefooter
+			.container
+				// signup block
+				.h-signup
+					p.h-signup__heading Получайте только акции и важные новости
+					form.h-signup__form
+						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
+						input.h-signup__submit(type="submit", value="Держите в курсе")
+					p.h-signup__form-caption 1 раз в неделю. Без спама
+
+		include includes/footer.pug

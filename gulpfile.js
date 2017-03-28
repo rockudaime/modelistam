@@ -19,7 +19,7 @@ var reload        = browserSync.reload;
 
 var paths = {
   html: ['compare.html'],
-  pug: ['app/pug/compare.pug'],
+  pug: ['app/pug/**/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };

@@ -881,6 +881,12 @@
 		var animate = this.speed() > 0;
 		var scrollbarOffset;
 
+		if (coordinate === 0) {
+			scrollbarOffset = 0;
+		} else {
+			scrollbarOffset = 100/ (this._items.length/this._current);
+		}
+
 		this.is('animating') && this.onTransitionEnd();
 
 		if (animate) {
@@ -893,11 +899,8 @@
 				transform: 'translate3d(' + coordinate + 'px,0px,0px)',
 				transition: (this.speed() / 1000) + 's'
 			});
-			if (coordinate === 0) {
-				scrollbarOffset = 0;
-			} else {
-				scrollbarOffset = 100/ (this._items.length/this._current);
-			}
+
+			/* scrollbar */
 			this.$element.find('.owl-custom-scrollbar').css({
 				marginLeft: '' + scrollbarOffset + '%',
 				transition: (this.speed() / 1000) + 's'
@@ -906,9 +909,17 @@
 			this.$stage.animate({
 				left: coordinate + 'px'
 			}, this.speed(), this.settings.fallbackEasing, $.proxy(this.onTransitionEnd, this));
+
+			this.$element.find('.owl-custom-scrollbar').animate({
+				marginLeft: '' + scrollbarOffset + '%'
+			}, this.speed(), this.settings.fallbackEasing, $.proxy(this.onTransitionEnd, this));
 		} else {
 			this.$stage.css({
 				left: coordinate + 'px'
+			});
+
+			this.$element.find('.owl-custom-scrollbar').css({
+				marginLeft: '' + scrollbarOffset + '%'
 			});
 		}
 	};

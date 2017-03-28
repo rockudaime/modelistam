@@ -32,36 +32,13 @@ $(function () {
 			}
 		}
 	});
-	
-	//    раскрытие пунктов меню сайдбара
-	// menuLinks.on('click', function(e) {
-	// 	if (e.target.nodeName !== 'A'){
-	// 		e.preventDefault();
-	// 		menuLink = $(this);
-	// 		if (menuLink.hasClass('opened')) {
-	// 			menuLink.next().slideUp();
-	// 			menuLink.removeClass('opened');
-	// 		} else {
-	// 			if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
-	// 				menuLinks.removeClass('opened');
-	// 				menuLink.addClass('opened');
-	// 				subcategories.slideUp();
-	// 				menuLink.next().slideDown();
-	// 			}
-				
-	// 		}
-	// 	}
-	// });
-
-
 
 	var popularProductsSlider = $("#owl-related-products");
 	popularProductsSlider.owlCarousel({
 		loop: false,
 		margin:0,
 		navigationtext: false,
-		
-		// responsiveclass:true,
+		scrollbar: true,
 		pagination: false,
 		nav: true,
 		dots: false,
@@ -84,11 +61,4 @@ $(function () {
 			}
 		}
 	});
-
-	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
-	var item;
-	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
-		item = owlSlidersWithScrollbar[i];
-		addCustomScrollbar(item);
-	}
 });

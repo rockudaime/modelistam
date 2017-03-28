@@ -98,10 +98,6 @@ $(document).ready(function() {
 		}, 500);
 		
 	});
-
-	
-
-
 	// link to characteristics tab in about product tab
 	$('#characteristicsLink').on('click', function() {
 		var tabId = this.dataset.id;
@@ -166,7 +162,7 @@ $(document).ready(function() {
 		loop: false,
 		margin:0,
 		navigationText: false,
-		// responsiveClass:true,
+		scrollbar: true,
 		pagination: true,
 		responsive:{
 			 0:{
@@ -302,9 +298,6 @@ $(document).ready(function() {
 			$(this).addClass('gallery-product__item--active');
 		}
 	}
-
-
-	
 
 // -----------------------------
 // Попап галереи
@@ -616,70 +609,6 @@ $(document).ready(function() {
 
 });
 
-
-// // accessories tabs
-// 	var accessoriesTabs = $('.accessories__tabs').children('.item-detail');
-// 	var accessoriesTabTabsHandler = tabsHandler('.accessories-tab__menu', '.accessories-tabs__item');
-// 	var accessoriesBlockTabsHandler = tabsHandler('.accessories__tabs-menu', '.accessories__item');
-// 	$('.accessories__tabs-menu .tabs-menu').on('click', accessoriesBlockTabsHandler);
-// 	$('.accessories-tab__menu .tabs-menu').on('click', accessoriesTabTabsHandler);
-
-
-// 	function tabsHandler(tabsMenuContainerClass, tabsClass) {
-// 		return function (event) {
-// 			var tabLinks = $(tabsMenuContainerClass + ' .tabs-menu__item');
-// 			var tabLink = $(event.target);
-// 			var tab = $('#' + tabLink.data('tabid'));
-// 			var accessoriesTabs = $(tabsClass);
-// 			accessoriesTabs.hide();
-// 			tab.show();
-// 			tabLinks.removeClass('tabs-menu__item--active');
-// 			tabLink.addClass('tabs-menu__item--active');
-// 		};
-// 	}
-
-
-/**
- * Changes price value to be in readable format (with spaces between number triplets) 
- * 
- * @param {number} price Number to be formatted
- * @return {string} formatted price value.
- */
-// function getPriceString (price) {
-//     var intPrice;
-//     price = price.toFixed(2);
-//     price = price.split('.');
-//     intPrice = price[0];
-
-//     // if (price.length == 1) {
-//     //     price.push('0'); // добавить ноль после запятой для целочисленных сум
-//     // }
-//     // ниже блок разбиения больших сумм в тройки с пробелом между ними
-//     if (intPrice.length > 3) {
-//         var n = parseInt(intPrice.length / 3);
-//         var m = intPrice.length % 3;
-//         var newPrice = '';
-
-//         if (m === 0) {
-//             newPrice = intPrice.slice(0, 3);
-//             for (i = 1; i < n; i++) {
-//                 newPrice += ' ' + intPrice.slice(i*3, i*3 + 3);
-//             }
-//         } else {
-//             newPrice = intPrice.slice(0, m);
-//             for (i = 0; i < n; i++) {
-//                 newPrice += ' ' + intPrice.slice(m + i*3, m + i*3 + 3);
-//             }
-//         }
-//         price[0] = newPrice;
-//     }
-
-
-//     return price.join('.');
-// }
-
-
-
 // ========================= Popups new ==================
 $(function () {
 
@@ -689,28 +618,6 @@ $(function () {
 		bestPricePopup.parent().fadeIn();
 	});
 
-	// var mypopup = {
-	// 	closeLink: $('.popup-b__close'),
-	// 	backLink: $('.popup-b__back'),
-	// 	wrapper: $('.popup-outer')
-	// };
-
-	// mypopup.closeLink.on('click', closePopupHandler);
-	// mypopup.backLink.on('click', closePopupHandler);
-	// mypopup.wrapper.on('click', function(e) {
-	// 	e.stopPropagation();
-	// 	if ($(e.target).hasClass('popup-outer')) {
-	// 		$(this).children().fadeOut();
-	// 		$(this).fadeOut();
-	// 	}
-	// });
-
-	// function closePopupHandler (e) {
-	// 	e.preventDefault();
-	// 	$(this).closest('.popup-b').fadeOut();
-	// 	$(this).closest('.popup-outer').fadeOut();
-	// }
-	// $('.popup-bcart__content').customScrollbar();
 	// Нажатие кнопки "Купить" открывает попап
 	$('#submitOrderBtn').on('click', function(e) {
 		e.preventDefault();
@@ -731,22 +638,9 @@ $(function () {
 			tr.addClass('r-active');
 			tr.find('input[type=radio]').prop("checked", true);
 		} else {
-			console.log('no');
+
 		}
 	});
-
-	// $('.popup-open-link').on('click', function(e) {
-	// 	e.preventDefault();
-	// 	var targetId = this.dataset.popupTarget;
-	// 	var popup = $('#' + targetId);
-
-	// 	popup.show();
-	// 	popup.parent().fadeIn();
-	// });
-
-
-	
-
 });
 
 

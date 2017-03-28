@@ -15,44 +15,28 @@ $(function () {
 			loop: false,
 			margin:0,
 			navigationtext: false,
-			
-			// responsiveclass:true,
 			pagination: false,
 			nav: true,
 			dots: false,
-			touchDrag: false,
-			mouseDrag: false,
+			scrollbar: true,
 
 			responsive:{
 				0:{
-					items:1,
-
+					items:1
 				},
 				544:{
-					items:2,
-
+					items:2
 				},
 				768:{
-					items:3,
-					// ontranslated: mycallback
+					items:3
 				},
 				994:{
-					items:3,
-					// ontranslated: mycallback
-
+					items:3
 				},
 				1200:{
-					items:4,
-					// ontranslated: mycallback
+					items:4
 				}
 			}
 		});
-	}
-
-	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
-	var item;
-	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
-		item = owlSlidersWithScrollbar[i];
-		addCustomScrollbar(item);
 	}
 });

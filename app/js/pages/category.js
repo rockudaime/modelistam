@@ -1,12 +1,9 @@
 $(function() {
 	var wWidth = $(window).width();
-	// var subcategories = $('.category-menu__subcategories');
-	// var menuLinks = $('.subcategory');
 
 	var sidebar = $('.category-sidebar-menu');
 	var filterLink = $('.filter-link');
 
-	// open sidebar filter by clicking on mobile filter link (подбор)
 	filterLink.click(function() {
 		var offset = filterLink.position();
 		var sidebarOffset = sidebar.offset();
@@ -17,7 +14,6 @@ $(function() {
 		sidebar.css('width', $(this).outerWidth() + 'px');
 		sidebar.css('top', top + filterLink.outerHeight()    + 'px' );
 		sidebar.css('left', left + 'px');
-		console.log(top + ' ' + left);
 		sidebar.toggle();
 		$(this).toggleClass('filter-link-active');
 	});
@@ -34,7 +30,6 @@ $(function() {
 			}
 		}
 	});
-
 	// раскрытие блока с брендами товара в мобильном виде
 	if (wWidth < 768) {
 		$('.brands-block__heading').on('click', function(e) {
@@ -42,7 +37,6 @@ $(function() {
 			$(this).next().slideToggle();
 		});
 	}
-
 });
 
 
@@ -53,8 +47,7 @@ $(function() {
 		loop: false,
 		margin:0,
 		navigationtext: false,
-		
-		// responsiveclass:true,
+		scrollbar: true,
 		pagination: false,
 		nav: true,
 		dots: false,
@@ -62,7 +55,6 @@ $(function() {
 		responsive:{
 			0:{
 				items:1,
-
 			},
 			544:{
 				items:2,
@@ -70,27 +62,15 @@ $(function() {
 			},
 			768:{
 				items:3,
-				// onTranslated: myCallback
 			},
 			994:{
 				items:2,
-
-
 			},
 			1200:{
 				items:3,
-
 			}
 		}
 	});
-	
-
-	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
-	var item;
-	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
-		item = owlSlidersWithScrollbar[i];
-		addCustomScrollbar(item);
-	}
 });
 // page slider
 $(function() {

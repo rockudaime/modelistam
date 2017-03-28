@@ -324,6 +324,7 @@
 // ============================================== CATEGORY CONTENT ===================================================
 .category-content {
     overflow: hidden;
+    margin-bottom: 34px;
 
     // padding-bottom: 30px;
     @media (min-width: 994px) {
@@ -1230,9 +1231,9 @@
 
 .sidebar-filter {
     position: absolute;
-    z-index: 99999;
+    z-index: 10;
     top: 0;
-    left: 10px;
+    // left: 10px;
 
     display: none;
 
