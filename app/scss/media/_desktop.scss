@@ -192,13 +192,13 @@
 // ************************************************************
 // *   Стили страницы доставки - delivery page  *
 // ************************************************************
-    .delivery-service-info{
-      padding: 0 20px;
-      width: 235px;
-    }
-    .delivery-service-desc{
-      width: 295px;
-    }
+    // .delivery-service-info{
+    //   padding: 0 20px;
+    //   width: 235px;
+    // }
+    // .delivery-service-desc{
+    //   width: 295px;
+    // }
     // ==================================================
     // Конец страницы доставки - delivery page mw: 1199px
     // ==================================================
@@ -884,9 +884,11 @@
     .delivery-service i{
         display: none;
     }
+    
     .delivery-cities .delivery-cities-tabs{
       padding: 0;
     }
+
     .delivery-city-link{
       display: block;
       background: $main-blue;
@@ -895,6 +897,7 @@
       border: none;
       border-radius: 5px;
     }
+
     .delivery-active a{
       background: none;
       border: 1px solid $main-grey;

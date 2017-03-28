@@ -19,7 +19,7 @@ var reload        = browserSync.reload;
 
 var paths = {
   html: ['compare.html'],
-  pug: ['app/pug/**/*.pug'],
+  pug: ['app/pug/compare.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
@@ -102,4 +102,3 @@ gulp.task('watcher',function(){
 
 
 gulp.task('default', ['scripts', 'pug', 'images', 'sass', 'watcher', 'browserSync']);
-
