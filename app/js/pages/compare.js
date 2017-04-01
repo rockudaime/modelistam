@@ -9,7 +9,7 @@ $(function() {
 
 
 
-	var tabs = new Tabs($('.top-brands-content__item'), $('.top-brands-menu__item'));
+	var tabs = new Tabs($('.compare-item'), $('.compare-menu__item'));
 	tabs.init();
 
 	function Tabs($tabs, $tabLinks) {
@@ -56,6 +56,7 @@ $(function() {
 		loop: false,
 		margin:0,
 		navigationtext: false,
+		dotsContainer: '#customDots',
 		
 		// responsiveclass:true,
 		pagination: false,
@@ -65,7 +66,7 @@ $(function() {
 
 		responsive:{
 			0:{
-				items:1,
+				items:2,
 			},
 			544:{
 				items:2,
@@ -74,7 +75,7 @@ $(function() {
 				items:3,
 			},
 			1200:{
-				items:3,
+				items:4,
 			}
 		}
 	});

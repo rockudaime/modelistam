@@ -32,25 +32,33 @@ html(lang="ru")
 
 		main
 			.container
-				section.top-brands
-					h2.home-title.top-brands__title Топ по брендам
-
-					.top-brands__inner.clearfix
-						.top-brands__mob-menu-select.mobile-custom-select ТОП 10
-						ul.top-brands-menu.mobile-custom-options
-							li.top-brands-menu__item.active(tabindex="0", data-target-id="top10")
-								span ТОП 10
-							li.top-brands-menu__item(tabindex="0", data-target-id="topavia")
-								span Авиа
-							li.top-brands-menu__item(tabindex="0", data-target-id="topquadro")
-								span Квадракоптеры
-							li.top-brands-menu__item(tabindex="0", data-target-id="topships")
-								span Корабли 
-							li.top-brands-menu__item(tabindex="0", data-target-id="topparts")
+				header.compare__header.clearfix
+					h2.pagetitle.compare__header-title.fl_l Сравнение
+					.mobile-hidden.tablet-hidden.fl_r.compare__header-links
+						a(href="#").compare__header-link
+							i.icon.icon--circle-plus.compare__header-icon
+							span Добавить еще к сравнению
+						a(href="#").compare__header-link
+							i.icon.icon--paper-plane.compare__header-icon
+							span Отправить на почту
+						a(href="#").compare__header-link
+							i.icon.icon--close.compare__header-icon
+							span Удалить всё
+				section.compare-items
+					.compare-items__inner.clearfix
+						.mobile-custom-select Багги
+						ul.compare-menu.mobile-custom-options
+							li.compare-menu__item.active(tabindex="0", data-target-id="top10")
+								span Багги
+							li.compare-menu__item(tabindex="0", data-target-id="topavia")
+								span Танки
+							li.compare-menu__item(tabindex="0", data-target-id="topquadro")
+								span Яхты 
+							li.compare-menu__item(tabindex="0", data-target-id="topships")
 								span Комплектующие
-						.top-brands-content
+						.compare-items__tabs
 							// класс .active у видимого блока
-							.top-brands-content__item.active#top10
+							.compare-item.active#top10
 								a(href="#").top-brands-content__link TOP 10
 								a(href="#").top-brands-content__link Brio
 								a(href="#").top-brands-content__link Himoto
@@ -61,7 +69,7 @@ html(lang="ru")
 								a(href="#").top-brands-content__link Brio
 								a(href="#").top-brands-content__link Himoto
 								a(href="#").top-brands-content__link Pilotage
-							.top-brands-content__item#topavia
+							.compare-item#topavia
 								a(href="#").top-brands-content__link AVIA
 								a(href="#").top-brands-content__link Brio
 								a(href="#").top-brands-content__link Himoto
@@ -73,7 +81,7 @@ html(lang="ru")
 								a(href="#").top-brands-content__link Himoto
 								a(href="#").top-brands-content__link Pilotage
 							
-							.top-brands-content__item#topships
+							.compare-item#topships
 								#owl-viewed-products.popular-products-block.clearfix.owl-carousel
 									// .custom-scrollbar  - класс для отображения нижнего скроллбара. HTML код для него генеририуется в home.js
 									.product-preview-item
@@ -213,6 +221,27 @@ html(lang="ru")
 														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
 
 				section.compare-table
+					h3.compare-table__heading.main-bg Характеристики
+					.compare-table__row
+						h4 Класс
+						.compare-table__col-wrapper#customDots
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+					.compare-table__row
+						h4 Класс
+						.compare-table__col-wrapper
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+							.compare-table__col Off-road внедорожники
+							.compare-table__col On-road гоночные машины
+
+					h3.compare-table__heading.main-bg Шасси
 
 		.prefooter
 			.container
