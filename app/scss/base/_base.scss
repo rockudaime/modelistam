@@ -29,7 +29,7 @@ body.modal-open {
 }
 
 a {
-    color: #346cab;
+    color: $link-color;
     text-decoration: none;
     cursor: pointer;
 }
@@ -94,6 +94,21 @@ br.clear {
     display: inline-block;
     vertical-align: middle;
     font-size: 0px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    width: 17px;
+    height: 18px;
+
+    &--paper-plane {
+        background-image: url('images/personal-cabinet/svg/icon-send.svg');
+        background-size: 18px;
+    }
+
+    &--close {
+        background-image: url('images/ui-icon-delete.png');
+        background-size: 12px;
+        background-position: center 40%;
+    }
 }
 select:-moz-focusring { // убираем outline в мозилле
     color: transparent;
@@ -289,6 +304,34 @@ span.bb-solid {
 
 .main-bg {
     background-color: $main-bg;
+}
+
+.more-link {
+    font-size: 16px;
+
+    span {
+        border-bottom: 1px solid #aabdd7;
+        display: inline-block;
+        line-height: 16px;
+    }
+
+    &::after {
+        display: inline-block;
+        content: "";
+        background: url("images/ui-icon-catalog-next.png") no-repeat 0 center;
+        height: 100%;
+        width: 20px;
+        min-height: 8px;
+        margin-left: 7px;
+    }
+
+    &:hover {
+        color: darken($link-color, 5%);
+
+        span {
+            border-bottom-color: $link-color;
+        }
+    }
 }
 
 img.alignright { float: right; margin: 0 0 1em 1em; } 

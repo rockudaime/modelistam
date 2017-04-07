@@ -9,18 +9,17 @@ $(document).ready(function(){
     navLink.toggleClass('active');
     asideNav.toggle();
   });
-
-  $(document).mouseup(function (e) { 
-    if (wWidth < 1235){
-      if (!menuBlock.is(e.target) // if the target of the click isn't the container...
-        && menuBlock.has(e.target).length === 0
-        && !navLink.is(e.target)) // ... nor a descendant of the container
-      {
-        asideNav.hide();
-        navLink.removeClass('active');
-      }
-    }
-  });
+  if (wWidth < 1235){
+    $(document).mouseup(function (e) { 
+        if (!menuBlock.is(e.target) // if the target of the click isn't the container...
+          && menuBlock.has(e.target).length === 0
+          && !navLink.is(e.target)) // ... nor a descendant of the container
+        {
+          asideNav.hide();
+          navLink.removeClass('active');
+        }
+    });
+  }
 
 
 
@@ -189,4 +188,35 @@ $(document).ready(function(){
 
   }
 
+});
+
+$(function() {
+  var sliders = $('.owl-compared-products');
+
+  if (sliders.length > 0) {
+    sliders.owlCarousel({
+      loop: false,
+      margin:0,
+      navigationtext: false,
+      pagination: false,
+      nav: true,
+      dots: false,
+      scrollbar: true,
+
+      responsive:{
+        0:{
+          items: 2,
+        },
+        544:{
+          items: 2,
+        },
+        768:{
+          items: 3,
+        },
+        1200:{
+          items: 2,
+        }
+      }
+    });
+  }
 });

@@ -1,0 +1,26 @@
+.compare-cabinet-title {
+	margin-bottom: 28px;
+}
+.cabinet-compare {
+
+	&__header-title.compare__header-title {
+		font: 18px $main-font;
+	}
+}
+
+.compared-category {
+	margin-bottom: 38px;
+
+	& + & {
+		border-top: 1px solid #eaeaea;
+		padding-top: 25px;
+	}
+
+	&__more-link {
+
+	}
+
+	.owl-compared-products {
+		margin-bottom: 17px;
+	}
+}

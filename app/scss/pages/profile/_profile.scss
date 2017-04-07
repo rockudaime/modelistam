@@ -78,6 +78,7 @@
     &:hover,
     &.active {
         font-family: $main-font-semibold;
+        transition: background-color .1s;
 
         background: #fafafa;
         .cabinet-menu-link__icon {
@@ -86,6 +87,9 @@
             }
             &--profile {
                 background-position: 6px -1005px;
+            }
+            &--compare {
+                background-position: 6px -862px;
             }
         }
     }
@@ -108,6 +112,9 @@
         }
         &--profile {
             background-position: 6px -969px;
+        }
+        &--compare {
+            background-position: 6px -826px;
         }
     }
     @media (min-width: 1235px) {
