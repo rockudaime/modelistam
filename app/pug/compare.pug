@@ -29,7 +29,8 @@ html(lang="ru")
 				span Сравнение
 			include includes/main-nav.pug
 
-		main
+		main.compare-content
+			include mixins/mixins.pug
 			.container
 				header.compare__header.clearfix
 					h2.pagetitle.compare__header-title.fl_l Сравнение
@@ -45,202 +46,163 @@ html(lang="ru")
 							span Удалить всё
 				section.compare-items
 					.compare-items__inner.clearfix
-						.mobile-custom-select Багги
+						.mobile-custom-select.compare-custom-select Багги
 						ul.compare-menu.mobile-custom-options
-							li.compare-menu__item.active(tabindex="0", data-target-id="top10")
+							li.compare-menu__item.active(tabindex="0", data-target-id="baggy")
 								span Багги
-							li.compare-menu__item(tabindex="0", data-target-id="topavia")
-								span Танки
-							li.compare-menu__item(tabindex="0", data-target-id="topquadro")
+							li.compare-menu__item(tabindex="0", data-target-id="rally")
+								span Ралли
+							li.compare-menu__item(tabindex="0", data-target-id="ships")
 								span Яхты 
-							li.compare-menu__item(tabindex="0", data-target-id="topships")
-								span Комплектующие
+							li.compare-menu__item(tabindex="0", data-target-id="tanks")
+								span Танки 
 						.compare-items__tabs
 							// класс .active у видимого блока
-							.compare-item.active#top10
-								a(href="#").top-brands-content__link TOP 10
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
-							.compare-item#topavia
-								a(href="#").top-brands-content__link AVIA
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
-								a(href="#").top-brands-content__link Brio
-								a(href="#").top-brands-content__link Himoto
-								a(href="#").top-brands-content__link Pilotage
+							.compare-item.compared-category#baggy.active
+								#owl-viewed-products.popular-products-block.clearfix.owl-carousel.owl-compared-products
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+							.compare-item.compared-category#rally
+								.popular-products-block.clearfix.owl-carousel.owl-compared-products
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
 							
-							.compare-item#topships
-								#owl-viewed-products.popular-products-block.clearfix.owl-carousel
-									// .custom-scrollbar  - класс для отображения нижнего скроллбара. HTML код для него генеририуется в home.js
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-													span.category-product__product-comments
-														a(href="#") 16
-													span(class="product-info__code") Код:&nbsp;HSP-94107Pro
-												h3.product-preview-item__heading
-													a(href="#") Модель р/у планера VolantexRC FPVRaptor V2 (TW-757-V2) 2000мм 2.4GHz...
-												.category-product__price
-													span.product-price--new 2600 
-														span.product-price__text--small грн
-													span.product-price--old 2785 грн
-													//- span.product-price--current 13 600 
-													//- 	span.product-price__text--small грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--waiting(href="#") Сообщить о поступлении
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
-														a.category-product__product-link.cp-watch-price-link(href="#", title="следить за ценой")
+							.compare-item.compared-category#ships
+								.popular-products-block.clearfix.owl-carousel.owl-compared-products
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+							.compare-item.compared-category#tanks
+								.popular-products-block.clearfix.owl-carousel.owl-compared-products
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
 
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--new Новинка
-													span.category-product__product-comments
-														a(href="#") 16
-													span.product-status.product-status--discount -10%
-													
-												h3.product-preview-item__heading
-													a(href="#") Радиоуправляемый планер VolantexRC FPVRaptor (RTF, 2.4GHz)(TW-757)...
-												.category-product__price
-													// span.product-price--new 2600 
-													// 	span.product-price__text--small грн
-													// span.product-price--old 2785 грн
-													span.product-price--current 13 600 
-														span.product-price__text--small грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+				section.compare-characteristics
+					h3.compare-characteristics__heading.main-bg Характеристики
+					.compare-table
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Класс
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
 
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.product-status.product-status--top Топ продаж
-													span.product-status.product-status--discount -10%
-												h3.product-preview-item__heading
-													a(href="#") Модель р/у планера VolantexRC FPVRaptor (TW-757) 1600мм 2.4GHz KIT
-												.product-preview-item__price
-													span.product-price--new 896 
-														span.product-price__text--small грн
-													span.product-price--old 1024 грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Масштаб
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 1:5 
+								.compare-table__cell.tbl__cell 1:8
+								.compare-table__cell.tbl__cell 1:6
+								.compare-table__cell.tbl__cell 1:24
+								.compare-table__cell.tbl__cell 1:48
+								.compare-table__cell.tbl__cell 1:5
 
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.category-product__product-comments
-														a(href="#") 16
-													span(class="product-info__code") Код:&nbsp;HSP-94107Pro
-													
-												h3.product-preview-item__heading
-													a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-												.product-preview-item__price
-													.product-price.product-price--current 1024 грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Длина
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Ширина
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Высота
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
+				section.compare-characteristics
+					h3.compare-characteristics__heading.main-bg Шасси
+					.compare-table
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Класс
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
+								.compare-table__cell.tbl__cell Off-road внедорожники
+								.compare-table__cell.tbl__cell On-road гоночные машины
 
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.cp-status.cp-status--available В наличии
-													
-												h3.product-preview-item__heading
-													a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-												.product-preview-item__price
-													.product-price.product-price--current 1024 грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Масштаб
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 1:5 
+								.compare-table__cell.tbl__cell 1:8
+								.compare-table__cell.tbl__cell 1:6
+								.compare-table__cell.tbl__cell 1:24
+								.compare-table__cell.tbl__cell 1:48
+								.compare-table__cell.tbl__cell 1:5
 
-									.product-preview-item
-										.product-preview-item__inner
-											.product-preview-item__photo
-												a(href="#")
-													img(src="dist/images/sample-airplane.jpg", alt="image")
-											.product-preview-item__content
-												.product-preview-item__product-status
-													span.cp-status.cp-status--available В наличии
-													
-												h3.product-preview-item__heading
-													a(href="#") Летающее крыло Skywalker FALCON YF-0908 KIT Black
-												.category-product__price
-													// span.product-price--new 2600 
-													// 	span.product-price__text--small грн
-													// span.product-price--old 2785 грн
-													span.product-price--current 13 600 
-														span.product-price__text--small грн
-												.category-product__buy
-													a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
-													.category-product__product-links
-														a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
-														a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Длина
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Ширина
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
+						.compare-table__row.clearfix
+							.compare-table__heading
+								h4 Высота
+							.compare-table__characteristics-slider.owl-carousel
+								.compare-table__cell.tbl__cell 490мм 
+								.compare-table__cell.tbl__cell 485мм
+								.compare-table__cell.tbl__cell 1010мм
+								.compare-table__cell.tbl__cell 654мм
+								.compare-table__cell.tbl__cell 586мм
+								.compare-table__cell.tbl__cell 785мм
 
-				section.compare-table
-					h3.compare-table__heading.main-bg Характеристики
-					.compare-table__row
-						h4 Класс
-						.compare-table__col-wrapper#customDots
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-					.compare-table__row
-						h4 Класс
-						.compare-table__col-wrapper
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-							.compare-table__col Off-road внедорожники
-							.compare-table__col On-road гоночные машины
-
-					h3.compare-table__heading.main-bg Шасси
 
 		.prefooter
 			.container

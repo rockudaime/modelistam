@@ -49,9 +49,8 @@ $(function() {
 
 
 
-	var popularProductsSlider = $("#owl-popular-products");
+
 	var viewedProductsSlider = $("#owl-viewed-products");
-	var newProductsSlider = $("#owl-new-products");
 	viewedProductsSlider.owlCarousel({
 		loop: false,
 		margin:0,
@@ -79,4 +78,46 @@ $(function() {
 			}
 		}
 	});
+
+	var comparedProductsCharacteristics = $('.compare-table__characteristics-slider');
+
+	comparedProductsCharacteristics.owlCarousel({
+		loop: false,
+		margin:0,
+		navigationtext: false,
+		
+		pagination: false,
+		nav: false,
+		dots: false,
+		scrollbar: false,
+		touchDrag: false,
+		mouseDrag: false,
+
+		responsive:{
+			0:{
+				items:2,
+			},
+			544:{
+				items:2,
+			},
+			768:{
+				items:3,
+			},
+			1200:{
+				items:4,
+			}
+		}
+	});
+
+	// viewedProductsSlider.on('change.owl.carousel', function(event) {
+	//   comparedProductsCharacteristics.trigger('to.owl.carousel', [event.item.index,300,true]);
+	// });
+
+	viewedProductsSlider.on('change.owl.carousel', function(event) {
+	  if (event.namespace && event.property.name === 'position') {
+	    var target = event.relatedTarget.relative(event.property.value, true);
+	    comparedProductsCharacteristics.owlCarousel('to', target, 300, true);
+	  }
+	});
 });
+
