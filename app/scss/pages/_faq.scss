@@ -1,0 +1,101 @@
+.faq-pagetitle {
+    margin-bottom: 10px;
+}
+
+.faq-mobile-menu {
+    margin-bottom: 15px;
+
+    @media (min-width: $tablet-min) {
+        display: none;
+    }
+}
+.questions-category {
+    margin-bottom: 30px;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    @media (min-width: $tablet-min) {
+        display: block;
+
+        &:last-child {
+            margin-bottom: 70px;
+        }
+    }
+
+    &__heading {
+        color: #454446;
+        font-size: 17px;
+        margin: 0 0 6px;
+        display: none;
+
+        @media (min-width: $tablet-min) {
+            display: block;
+        }
+    }
+}
+
+.question {
+    font: 15px/1.66 $main-font;
+    margin-bottom: 17px;
+
+    &__heading {
+        color: $link-color;
+        font: 15px/1.46 $main-font;
+        margin: 0 0 12px;
+
+        span {
+            // border-bottom: 1px dashed #b6c6dc;
+            background-image: linear-gradient(to right, #b6c6dc,#b6c6dc 60%, transparent 60%);
+            background-size: 10px 1px;
+            background-position: 0 95%;
+            background-repeat: repeat-x;
+            
+        }
+        
+        &:hover, &:focus {
+            color: $hovered-link-color;
+            outline: 0;
+
+            span {
+                background-image: linear-gradient(to right, #ecbdb3,#ecbdb3 60%, transparent 60%);
+                cursor: pointer;
+                // border-bottom-color: #ecbdb3;
+            }
+        }
+    }
+
+    &__answer {
+        display: none;
+
+        @media (min-width: $desktop-min) {
+            width: 700px;
+        }
+        p {
+            margin-bottom: 3px;
+            font: inherit;
+        }
+    }
+}
+.faq-mobile-menu {
+    position: relative;
+}
+.mobile-custom-select__options-menu {
+    display: none;
+
+    position: absolute;
+    margin-top: -1px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    
+
+    & > li {
+        border-bottom: 1px solid #eaeaea;
+        padding: 7px 30px 8px 12px;
+    }
+}

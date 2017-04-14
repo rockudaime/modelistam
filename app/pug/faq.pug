@@ -1,0 +1,185 @@
+doctype html
+html(lang="ru")
+	head
+		title Сравнение
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+
+		// main script
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/faq.js")
+
+	body
+		include includes/header.pug
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				span Сравнение
+			include includes/main-nav.pug
+
+		main.main-content
+			.container
+				h1.faq-pagetitle Вопросы и ответы
+				.faq-mobile-menu
+					.mobile-custom-select Вопросы и ответы
+					ul.mobile-custom-select__options-menu
+						// навигация в мобильном виде по категориям вопросов
+						// id для каждой категории
+						li(data-target-id="qst1", role="tab") Оформление заказа
+						li(data-target-id="qst2", role="tab") Оплата и доставка
+						li(data-target-id="qst3", role="tab") Обмен и возврат товара
+						li(data-target-id="qst4", role="tab") Общие вопросы
+
+				article.questions-category(role="tabpanel")#qst1.active
+					h2.questions-category__heading Оформление заказа
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Есть ли возможность заказать товар с доставкой в другую страну?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+							p.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Сколько дней товар находится в пункте выдачи?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+							p.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Возможно ли купить товар в рассрочку?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+							p.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+				article.questions-category(role="tabpanel")#qst2
+					h2.questions-category__heading Оплата и доставка
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Что делать, если товар был поврежден при перевозке?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Возможно ли купить товар в рассрочку?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+
+				article.questions-category(role="tabpanel")#qst3
+					h2.questions-category__heading Обмен и возврат товара
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Что делать, если товар был поврежден при перевозке?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Возможно ли купить товар в рассрочку?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+				article.questions-category(role="tabpanel")#qst4
+					h2.questions-category__heading Общие вопросы
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Возможно ли купить товар в рассрочку?
+						.question__answer(role="tabpanel")
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus recusandae magni quaerat unde excepturi voluptate dignissimos repellendus sunt laborum eligendi, eum aperiam, et, blanditiis culpa!
+							p Odit pariatur, iure inventore nobis assumenda! A, nemo ad maxime, distinctio laboriosam quisquam qui deserunt odit dolorem sequi quo neque minus aliquam blanditiis hic iusto.
+							p Dolores omnis quaerat excepturi velit natus laudantium saepe, hic, a error cum neque enim dolor in ipsam, consectetur ab, delectus voluptatem rerum maiores expedita quia!
+					section.question
+						h3.question__heading(tabindex="0", role="tab")
+							span Куда и на каких условиях осуществляется доставка?
+						.question__answer(role="tabpanel")
+							p.
+								В данный момент, к сожалению, отсутствует возможность оплатить заказ платежной картой при 
+								получении (с помощью POS-терминала).
+							p.
+								Однако, Вы можете оплатить заказ онлайн картой Visa 
+								и MasterCard или оформить заказ с указанием безналичной формы оплаты.
+							p.
+								Уточняем, что услуга оплаты картой доступна только при оформлении заказа на нашем сайте.
+								Для этого, при оформлении заказа у нас сайте, Вам необходимо выбрать соответствующий вид оплаты.
+								После оформления заявки на сайте — наш менеджер свяжется с вами для уточнения информации 
+								относительно доставки вашего заказа.
+
+
+
+		include includes/footer.pug

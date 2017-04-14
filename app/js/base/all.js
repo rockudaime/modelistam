@@ -72,8 +72,6 @@ $(function(){
 						var self = $(this);
 						myMouseLeaveTimer = setTimeout(function() {
 							self.find('.main-nav-link').removeClass('active');
-							console.log(self);
-							console.log('leave timeout fired!');
 						}, 100);
 					});
 					$('.main-nav-submenu__item').on('mouseleave', function (e) {
@@ -299,10 +297,15 @@ $(function () {
 
 	$('.store-gallery__miniatures').on('click', function(e) {
 		e.preventDefault();
+		var targetImg = $(e.target);
 		if (e.target.nodeName === "IMG") {
-			$('.store-gallery__main-image img').attr("src", $(e.target).parent().attr("href"));
-			$(this).find('.store-gallery__miniature--active').removeClass('store-gallery__miniature--active');
-			$(e.target).parent().parent().addClass('store-gallery__miniature--active');
+			var parentBlock = $(this).parent('.store-gallery');
+			var mainImg = parentBlock.find('.store-gallery__main-image img');
+			var activeMiniature = parentBlock.find('.store-gallery__miniature--active');
+			var targetMiniature = targetImg.parent().parent();
+			mainImg.attr("src", targetImg.parent().attr("href"));
+			activeMiniature.removeClass('store-gallery__miniature--active');
+			targetMiniature.addClass('store-gallery__miniature--active');
 		}
 	});
 	var footerGallery = document.querySelectorAll('.store-gallery__miniatures-inner');
@@ -334,14 +337,11 @@ function dragElement(obj) {
 		var chstart, chend;
 		var childs = this.children;
 		rightBorder =  childs[childs.length - 1].offsetLeft - this.offsetLeft;
-		console.log(rightBorder);
 		this.style.transition = 'none';
 	}
 
 	function handleMove(e) {			
 		moveVal =  e.touches[0].pageX - startPoint;
-		console.log('-(elPosition + moveVal) = ' + -(elPosition + moveVal));
-		console.log('rightBorder = ' + rightBorder);
 		if (elPosition + moveVal < 0 && -(elPosition + moveVal) < rightBorder) {
 			this.style.transform = 'translate3d(' + (elPosition + moveVal) +'px, 0, 0)';
 		} else if (-(elPosition + moveVal) > rightBorder ){
@@ -388,6 +388,41 @@ function tabElemsKeypressHandler(e) { // Trigger the click event from the keyboa
 	// 13 = Return, 32 = Space
 	if ((code === 13) || (code === 32)) {
 		$(this).click();
+	}
+}
+
+function Tabs($tabs, $tabLinks) {
+	var tabs = this;
+	tabs.elements = $tabs;
+	tabs.links = $tabLinks;
+
+	tabs.init = function () {
+		$tabLinks.on('click', showTargetTab);
+		$tabLinks.on('keypress', tabElemsKeypressHandler);
+	}
+
+	function showTargetTab (e) {
+		e.preventDefault();
+		var link = $(this);
+		var tabId = this.dataset.targetId;
+		var tab = $('#' + tabId);
+		var focus = tab.find('.focuspoint');
+
+		tabs.links.removeClass('active');
+		link.addClass('active');
+		tabs.elements.removeClass('active');
+		tab.addClass('active');
+		if (focus.length > 0) {
+			focus.focusPoint();
+		}
+
+		if ($(window).width() < 768) {
+			var linksContainer = tabs.links.parent()
+			mobileSelect = linksContainer.prev();
+			linksContainer.hide();
+			mobileSelect.removeClass('active');
+			mobileSelect.text($(this).text());
+		}
 	}
 }
 

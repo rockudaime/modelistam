@@ -206,6 +206,8 @@
     border-bottom: 1px dashed #8ca0b8;
     &:hover, &:focus {
         text-decoration: none;
+        color: $hovered-link-color;
+        border-bottom-color: #ecbdb3;
     }
 }
 
