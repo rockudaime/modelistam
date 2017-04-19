@@ -48,17 +48,15 @@ html(lang="ru")
 					.compare-items__inner.clearfix
 						.mobile-custom-select.compare-custom-select Багги
 						ul.compare-menu.mobile-custom-options
-							li.compare-menu__item.active(tabindex="0", data-target-id="baggy")
+							li.compare-menu__item.active(tabindex="0", data-target-class="baggy")
 								span Багги
-							li.compare-menu__item(tabindex="0", data-target-id="rally")
+							li.compare-menu__item(tabindex="0", data-target-class="rally")
 								span Ралли
-							li.compare-menu__item(tabindex="0", data-target-id="ships")
+							li.compare-menu__item(tabindex="0", data-target-class="ships")
 								span Яхты 
-							li.compare-menu__item(tabindex="0", data-target-id="tanks")
-								span Танки 
 						.compare-items__tabs
 							// класс .active у видимого блока
-							.compare-item.compared-category#baggy.active
+							.compare-item.compared-category.active(data-class="baggy")
 								#owl-viewed-products.popular-products-block.clearfix.owl-carousel.owl-compared-products
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
@@ -66,7 +64,7 @@ html(lang="ru")
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
-							.compare-item.compared-category#rally
+							.compare-item.compared-category(data-class="rally")
 								.popular-products-block.clearfix.owl-carousel.owl-compared-products
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
@@ -75,7 +73,7 @@ html(lang="ru")
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
 							
-							.compare-item.compared-category#ships
+							.compare-item.compared-category(data-class="ships")
 								.popular-products-block.clearfix.owl-carousel.owl-compared-products
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
@@ -83,125 +81,341 @@ html(lang="ru")
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
-							.compare-item.compared-category#tanks
-								.popular-products-block.clearfix.owl-carousel.owl-compared-products
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+				.compare-characheristics-tab(data-class="baggy").active
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Характеристики
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
 
-				section.compare-characteristics
-					h3.compare-characteristics__heading.main-bg Характеристики
-					.compare-table
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Класс
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
 
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Масштаб
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 1:5 
-								.compare-table__cell.tbl__cell 1:8
-								.compare-table__cell.tbl__cell 1:6
-								.compare-table__cell.tbl__cell 1:24
-								.compare-table__cell.tbl__cell 1:48
-								.compare-table__cell.tbl__cell 1:5
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Шасси
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
 
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Длина
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Ширина
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Высота
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
-				section.compare-characteristics
-					h3.compare-characteristics__heading.main-bg Шасси
-					.compare-table
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Класс
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
-								.compare-table__cell.tbl__cell Off-road внедорожники
-								.compare-table__cell.tbl__cell On-road гоночные машины
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
 
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Масштаб
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 1:5 
-								.compare-table__cell.tbl__cell 1:8
-								.compare-table__cell.tbl__cell 1:6
-								.compare-table__cell.tbl__cell 1:24
-								.compare-table__cell.tbl__cell 1:48
-								.compare-table__cell.tbl__cell 1:5
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
 
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Длина
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Ширина
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
-						.compare-table__row.clearfix
-							.compare-table__heading
-								h4 Высота
-							.compare-table__characteristics-slider.owl-carousel
-								.compare-table__cell.tbl__cell 490мм 
-								.compare-table__cell.tbl__cell 485мм
-								.compare-table__cell.tbl__cell 1010мм
-								.compare-table__cell.tbl__cell 654мм
-								.compare-table__cell.tbl__cell 586мм
-								.compare-table__cell.tbl__cell 785мм
+				.compare-characheristics-tab(data-class="rally")
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Характеристики ралли
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Шасси
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+
+				.compare-characheristics-tab(data-class="ships")
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Характеристики яхты
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+					section.compare-characteristics
+						h3.compare-characteristics__heading.main-bg Шасси
+						.compare-table
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Класс
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road внедорожники
+									.compare-table__cell.tbl__cell On-road гоночные машины
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Масштаб
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 1:5 
+									.compare-table__cell.tbl__cell 1:8
+									.compare-table__cell.tbl__cell 1:6
+									.compare-table__cell.tbl__cell 1:24
+									.compare-table__cell.tbl__cell 1:48
+									.compare-table__cell.tbl__cell 1:5
+
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Длина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Ширина
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
+							.compare-table__row.clearfix
+								.compare-table__heading
+									h4 Высота
+								.compare-table__characteristics-slider.owl-carousel
+									.compare-table__cell.tbl__cell 490мм 
+									.compare-table__cell.tbl__cell 485мм
+									.compare-table__cell.tbl__cell 1010мм
+									.compare-table__cell.tbl__cell 654мм
+									.compare-table__cell.tbl__cell 586мм
+									.compare-table__cell.tbl__cell 785мм
 
 
 		.prefooter

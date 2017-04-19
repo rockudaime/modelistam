@@ -8,7 +8,7 @@
 }
 
 .compare__header-title {
-    margin-bottom: 12px;
+    margin-bottom: -2px;
     font-size: 18px;
 
     @media (min-width: $desktop-min) {
@@ -57,8 +57,6 @@
             margin-top: 0;
         }
     }
-
-    
 }
 .compare-menu {
     font-size: 15px;
@@ -137,6 +135,13 @@
         }
     }
 }
+.compare-characheristics-tab {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
 
 .compare-characteristics {
 
@@ -145,16 +150,24 @@
     }
 
     &__heading {
+        border-top: 1px solid #e1e1e1;
         height: 50px;
         line-height: 50px;
+        font-size: 17px;
+        font-family: $main-font-semibold;
+        margin-bottom: 6px;
+        padding: 0 10px;
 
-        margin-bottom: 7px;
+        @media (min-width: $tablet-min) {
+            padding: 0 15px;
+        }
     }
 }
 .compare-table {
     
 
     &__row {
+        margin-bottom: 5px;
 
         @media (max-width: $tablet-max) {
             &:nth-child(odd) {
@@ -162,10 +175,15 @@
             }
         }
 
+        @media (min-width: $tablet-min) {
+            margin-bottom: 0;
+        }
+
         @media (min-width: $desktop-min) {
 
             &:hover {
                 background-color: $main-bg;
+                cursor: pointer;
             }
         }
     }
@@ -176,7 +194,7 @@
             margin: 0;
             text-align: center;
             height: 45px;
-            line-height: 45px;
+            line-height: 38px;
             font-size: 17px;
         }
         
@@ -202,11 +220,12 @@
 
     &__cell {
         font-size: 15px;
-        padding: 5px 20px 15px;
+        padding: 4px 10px 15px;
+        /* line-height: 35px; */
 
         @media (min-width: $desktop-min) {
             line-height: 37px;
-            padding: 0 20px;
+            padding: 0 15px;
         }
     }
 
@@ -229,6 +248,7 @@
     & + & {
         .compare-table__cell {
             border-left: 1px solid #eaeaea;
+            padding-left: 15px;
         }
     }
 }
