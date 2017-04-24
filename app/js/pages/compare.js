@@ -8,12 +8,20 @@ $(function() {
     $(this).next().toggle();
   });
 
+  $('.compare-characteristics__heading').on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('up');
+    $(this).next().slideToggle();
+  });
+
   $('.compare-menu__item').on('click', function(e) {
     e.preventDefault();
 
+
+
     var targetClass = $(this).data('target-class'),
       menuItem = $(this),
-      itemsTab = $('.compared-category'),
+      itemsTab = $('.compare-item'),
       characteristicsTab = $('.compare-characheristics-tab');
 
       itemsTab.filter('[data-class="' + targetClass +  '"]')
@@ -22,6 +30,10 @@ $(function() {
               .addClass('active')
               .siblings()
               .removeClass('active');
+      if ($(window).width() < 1235) {
+        $('.compare-menu').hide();
+         $('.mobile-custom-select').removeClass('active');
+      }
   });
 
   
@@ -90,13 +102,6 @@ $(function() {
 
     syncTwoSliders($(this), characteristicsSlider);
   });
-
-  // viewedProductsSlider.on('change.owl.carousel', function(event) {
-  //   if (event.namespace && event.property.name === 'position') {
-  //   var target = event.relatedTarget.relative(event.property.value, true);
-  //   comparedProductsCharacteristics.owlCarousel('to', target, 300, true);
-  //   }
-  // });
 
   function syncTwoSliders($slider, $sliderToSync) {
     $slider.on('change.owl.carousel', function(event) {

@@ -1,0 +1,13 @@
+@mixin bottom-line-dashed($color, $width) {
+  background-image: linear-gradient(to right, $color, $color 60%, transparent 60%);
+  background-size: 10px $width;
+  background-position: 0 95%;
+  background-repeat: repeat-x;
+}
+
+@mixin bottom-line-solid($color, $width) {
+  background-image: linear-gradient(to right, $color, $color);
+  background-size: 10px $width;
+  background-position: 0 95%;
+  background-repeat: repeat-x;
+}

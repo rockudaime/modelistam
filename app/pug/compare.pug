@@ -48,23 +48,29 @@ html(lang="ru")
 					.compare-items__inner.clearfix
 						.mobile-custom-select.compare-custom-select Багги
 						ul.compare-menu.mobile-custom-options
-							li.compare-menu__item.active(tabindex="0", data-target-class="baggy")
+							li.compare-menu__item.compare-menu__item-mobile.active(tabindex="0", data-target-class="baggy")
 								span Багги
-							li.compare-menu__item(tabindex="0", data-target-class="rally")
+									| 
+									span.compare__items-quantity 22
+							li.compare-menu__item.compare-menu__item-mobile(tabindex="0", data-target-class="rally")
 								span Ралли
-							li.compare-menu__item(tabindex="0", data-target-class="ships")
-								span Яхты 
+									| 
+									span.compare__items-quantity 8
+							li.compare-menu__item.compare-menu__item-mobile(tabindex="0", data-target-class="ships")
+								span Яхты
+									| 
+									span.compare__items-quantity 2
 						.compare-items__tabs
 							// класс .active у видимого блока
-							.compare-item.compared-category.active(data-class="baggy")
+							.compare-item.active(data-class="baggy")
 								#owl-viewed-products.popular-products-block.clearfix.owl-carousel.owl-compared-products
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+									+cabinet-product-incart('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
-							.compare-item.compared-category(data-class="rally")
+							.compare-item(data-class="rally")
 								.popular-products-block.clearfix.owl-carousel.owl-compared-products
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
@@ -73,14 +79,15 @@ html(lang="ru")
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
 							
-							.compare-item.compared-category(data-class="ships")
+							.compare-item(data-class="ships")
 								.popular-products-block.clearfix.owl-carousel.owl-compared-products
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
-									+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+						form.compare-items__show-differences-btn
+							input(type="checkbox" id="differences-btn")
+							label(for="differences-btn")
+								span Показать только отличия
+			.container
 				.compare-characheristics-tab(data-class="baggy").active
 					section.compare-characteristics
 						h3.compare-characteristics__heading.main-bg Характеристики
@@ -89,8 +96,8 @@ html(lang="ru")
 								.compare-table__heading
 									h4 Класс
 								.compare-table__characteristics-slider.owl-carousel
-									.compare-table__cell.tbl__cell Off-road внедорожники
-									.compare-table__cell.tbl__cell On-road гоночные машины
+									.compare-table__cell.tbl__cell Off-road (внедорожники) и очень длинная строка будет здесь
+									.compare-table__cell.tbl__cell Off-road (внедорожники)
 									.compare-table__cell.tbl__cell Off-road внедорожники
 									.compare-table__cell.tbl__cell On-road гоночные машины
 									.compare-table__cell.tbl__cell Off-road внедорожники
@@ -315,10 +322,6 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell Off-road внедорожники
 									.compare-table__cell.tbl__cell On-road гоночные машины
-									.compare-table__cell.tbl__cell Off-road внедорожники
-									.compare-table__cell.tbl__cell On-road гоночные машины
-									.compare-table__cell.tbl__cell Off-road внедорожники
-									.compare-table__cell.tbl__cell On-road гоночные машины
 
 							.compare-table__row.clearfix
 								.compare-table__heading
@@ -326,10 +329,6 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 1:5 
 									.compare-table__cell.tbl__cell 1:8
-									.compare-table__cell.tbl__cell 1:6
-									.compare-table__cell.tbl__cell 1:24
-									.compare-table__cell.tbl__cell 1:48
-									.compare-table__cell.tbl__cell 1:5
 
 							.compare-table__row.clearfix
 								.compare-table__heading
@@ -337,30 +336,21 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 							.compare-table__row.clearfix
 								.compare-table__heading
 									h4 Ширина
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 							.compare-table__row.clearfix
 								.compare-table__heading
 									h4 Высота
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 					section.compare-characteristics
 						h3.compare-characteristics__heading.main-bg Шасси
 						.compare-table
@@ -370,10 +360,7 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell Off-road внедорожники
 									.compare-table__cell.tbl__cell On-road гоночные машины
-									.compare-table__cell.tbl__cell Off-road внедорожники
-									.compare-table__cell.tbl__cell On-road гоночные машины
-									.compare-table__cell.tbl__cell Off-road внедорожники
-									.compare-table__cell.tbl__cell On-road гоночные машины
+
 
 							.compare-table__row.clearfix
 								.compare-table__heading
@@ -381,10 +368,7 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 1:5 
 									.compare-table__cell.tbl__cell 1:8
-									.compare-table__cell.tbl__cell 1:6
-									.compare-table__cell.tbl__cell 1:24
-									.compare-table__cell.tbl__cell 1:48
-									.compare-table__cell.tbl__cell 1:5
+
 
 							.compare-table__row.clearfix
 								.compare-table__heading
@@ -392,30 +376,21 @@ html(lang="ru")
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 							.compare-table__row.clearfix
 								.compare-table__heading
 									h4 Ширина
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 							.compare-table__row.clearfix
 								.compare-table__heading
 									h4 Высота
 								.compare-table__characteristics-slider.owl-carousel
 									.compare-table__cell.tbl__cell 490мм 
 									.compare-table__cell.tbl__cell 485мм
-									.compare-table__cell.tbl__cell 1010мм
-									.compare-table__cell.tbl__cell 654мм
-									.compare-table__cell.tbl__cell 586мм
-									.compare-table__cell.tbl__cell 785мм
+
 
 
 		.prefooter

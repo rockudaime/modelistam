@@ -1105,6 +1105,7 @@
 	    			top: -1px;
 	    			bottom: 0;
 	    			left: 100%;
+                    background-position-y: center;
 	    			// width: 517px;
 	    			// width: calc(768px - 251px);
 	    			// height: 100%;
@@ -1161,6 +1162,8 @@
         padding: 0;
 
         background: #f6f6f6;
+
+        display: none;
     }
     // непосредственно сами ссылки (Акции, Скидки)
     &__top-link {

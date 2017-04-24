@@ -37,9 +37,9 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-  // .pipe(combineMq({
-  //   beautify: true
-  // }))
+  .pipe(combineMq({
+    beautify: true
+  }))
   .pipe(sourcemaps.write('../maps'))
   .pipe(gulp.dest('dist'))
   .pipe(filter(['**/*.css']))  // filter the maps files so browsersync can inject css, instead of page reload
