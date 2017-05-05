@@ -116,7 +116,7 @@ $(document).ready(function(){
         });
       } else {
         $this.countdown(finalDate, function(event) {
-          $this.html(event.strftime('%-D %!D:день, дня, дней; %H %!H:час, часа, часов; %M %!M:минута, минуты, минут;'));
+          $this.html(event.strftime('<span>%-D</span> %!D:день, дня, дней; <span>%H</span> %!H:час, часа, часов; <span>%M</span>%!M:минута, минуты, минут;'));
         });
       }
       

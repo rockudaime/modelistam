@@ -1,0 +1,160 @@
+doctype html
+html(lang="ru")
+	head
+		title Все акции
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/owl.carousel.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+	
+		// main script
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/compare.js")
+
+	body
+		include includes/header.pug
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				span Акции
+			include includes/main-nav.pug
+		.page-content
+			.container
+				h2.pagetitle.sales-content__title Акции и специальные предложения
+				aside.sales-parameters
+					.sales-parameters__inner.clearfix
+						.mobile-custom-select.sales-custom-select Все акции
+						.category-sidebar-menu.category-menu.sales-parameters__menu
+							.category-menu__item.category-menu__item--no-subcategories.sales-parameters__menu-item.active
+								.subcategory
+									a(href="#") Все акции
+							.category-menu__item.category-menu__item--no-subcategories.sales-parameters__menu-item
+								.subcategory
+									a(href="#") Самолеты
+							.category-menu__item.category-menu__item--no-subcategories.sales-parameters__menu-item
+								.subcategory
+									a(href="#") Вертолеты
+							.category-menu__item.category-menu__item--no-subcategories.sales-parameters__menu-item
+								.subcategory
+									a(href="#") Яхты
+							.category-menu__item.category-menu__item--no-subcategories.sales-parameters__menu-item
+								.subcategory
+									a(href="#") Гироскутеры, мини-сигвеи, гироборды
+							.category-menu__item.category-menu__item--no-subcategories
+								.subcategory
+									a(href="#") Комплектующие
+						form.sales-filter.mobile-hidden.tablet-hidden
+							.sales-filter__header По типу
+							.sales-filter__options
+								.sales-filter__option
+									input.custom-checkbox(type="checkbox", id="wGifts")
+									label.custom-checkbox__label.sales-filter__label(for="wGifts")
+										span.custom-checkbox__box
+										span.sales-filter__icon.sales-filter__icon-gift  С подарками
+								.sales-filter__option
+									input.custom-checkbox(type="checkbox", id="wDiscount")
+									label.custom-checkbox__label.sales-filter__label(for="wDiscount")
+										span.custom-checkbox__box
+										span.sales-filter__icon.sales-filter__icon-discount  Со скидками
+								.sales-filter__option
+									input.custom-checkbox(type="checkbox", id="wLottery")
+									label.custom-checkbox__label.sales-filter__label(for="wLottery")
+										span.custom-checkbox__box
+										span.sales-filter__icon.sales-filter__icon-lottery  С розыгрышем
+				main.sales-content
+					include mixins/mixins.pug
+					section.sales-items
+						.sales-items__header
+							.sales-items__tab.sales-items__tab-active
+								img(src="dist/images/svg/new-sale.svg").mobile-hidden.sales-items__tab-icon
+								span Новые акции
+							.sales-items__tab
+								img(src="dist/images/svg/hot.svg").mobile-hidden.sales-items__tab-icon
+								span Скоро закончатся
+						mixin sales_item
+							.sales-item.clearfix
+								.sales-item__image
+									a(href="#")
+										img(src="dist/images/temporary/sale-1.jpg")
+								.sales-item__counter
+									span.sales-item__description Осталось
+									span.sales-item__counter-days 25
+									span дней
+								.sales-item__info
+									a(href="#")
+										p.sales-item__title.
+											Будь мобильным. Стань на гироборд! Гарантия лучшей цены. До окончания товарных запасов
+									p.sales-item__description Акция действует с 28 февраляпо 1 апреля
+						+sales_item
+						+sales_item
+						.sales-item.clearfix
+							.sales-item__image
+								a(href="#")
+									img(src="dist/images/temporary/sale-1.jpg")
+							.sales-item__counter
+								span.sales-item__description Осталось
+								span.sales-item__counter-days.sales-item__counter-days-extra  3
+								span.sales-item__counter-days-extra дня
+							.sales-item__info
+								a(href="#")
+									p.sales-item__title.
+										Будь мобильным. Стань на гироборд! Гарантия лучшей цены. До окончания товарных запасов
+								p.sales-item__description Акция действует с 28 февраля по 1 апреля
+						.sales-item.clearfix
+							.sales-item__image.sales-item__image-finished
+								a(href="#")
+									img(src="dist/images/temporary/sale-1.jpg")
+							.sales-item__counter
+								span.sales-item__description Акция завершена
+							.sales-item__info
+								a(href="#")
+									p.sales-item__title.
+										Механические 3D конструкторы из дерева Ugears
+								p.sales-item__description Акция действует с 28 февраля по 1 апреля
+						+sales_item
+						+sales_item
+					// блок навигации
+					.catalog-bottom-pager.sales-pager
+						.pager-main-block
+							.catalog-nav
+								a.pmb-black.prev-navigation(href='#')
+									i
+									| Предыдущая
+								.nav-elems
+									span.pager__inner-elem(data-nav='1')
+										a(href='/catalog/avtomobili?page=1') 1
+									span.pager__inner-elem.pager__inner-elem--current.strong 2
+									span.pager__inner-elem(data-nav='3')
+										a(href='/catalog/avtomobili?page=3') 3
+									|  →  
+									span.pager__inner-elem(data-nav='55')
+										a(href='/catalog/avtomobili?page=55') 55
+								a.pmb-black.next-navigation(href='/catalog/avtomobili?page=2')
+									| Следующая
+									i
+					// конец блока навигации
+
+
+
+
+		.prefooter
+			.container
+				// signup block
+				.h-signup
+					p.h-signup__heading Получайте только акции и важные новости
+					form.h-signup__form
+						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
+						input.h-signup__submit(type="submit", value="Держите в курсе")
+					p.h-signup__form-caption 1 раз в неделю. Без спама
+
+		include includes/footer.pug

@@ -17,8 +17,6 @@ $(function() {
   $('.compare-menu__item').on('click', function(e) {
     e.preventDefault();
 
-
-
     var targetClass = $(this).data('target-class'),
       menuItem = $(this),
       itemsTab = $('.compare-item'),
@@ -36,7 +34,6 @@ $(function() {
       }
   });
 
-  
   var viewedProductsSlider = $(".owl-compared-products");
   viewedProductsSlider.owlCarousel({
     loop: false,
@@ -94,7 +91,6 @@ $(function() {
   });
 
   viewedProductsSlider.each(function() {
-    console.log($(this).parent().data('class'));
     var targetClass = $(this).parent().data('class');
     var characteristicsTab = $('.compare-characheristics-tab[data-class="' + targetClass +  '"]');
     var characteristicsSlider = characteristicsTab.find('.compare-table__characteristics-slider');

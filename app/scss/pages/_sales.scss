@@ -1,0 +1,256 @@
+.page-content {
+	margin-top: -11px;
+
+	@media (min-width: $desktop-min) {
+		margin-top: -3px;
+	}
+}
+.sales-content__title {
+	font-size: 18px;
+	margin-bottom: 11px;
+
+	@media (min-width: $tablet-min) {
+		margin-bottom: 17px;
+	}
+
+	@media (min-width: $desktop-min) {
+		margin-bottom: 9px;
+		font-size: 20px;
+	}
+}
+
+.sales-parameters {
+	margin-bottom: 12px;
+	position: relative;
+	max-width: 360px;
+
+	@media (min-width: $tablet-min) {
+		margin-bottom: 32px;
+	}
+
+	@media (min-width: $desktop-min) {
+		float: left;
+		border: 1px solid $main-grey;
+		border-radius: 3px;
+		width: 265px;
+	}
+
+	&__menu {
+		margin-bottom: 0;
+		width: 100%;
+		max-width: 360px;
+
+		& .active {
+			color: #111;
+			font-family: $main-font-bold;
+			font-size: 17px;
+		}
+
+		&-item {
+			padding: 5px 0 12px;
+		}
+	}
+}
+
+.sales-custom-select {
+	@media (max-width: $tablet-max) {
+		display: block;
+		max-width: 360px;
+	}
+}
+
+// Sales filter styles
+
+.sales-filter {
+	margin-bottom: 25px;
+
+	@media (min-width: $desktop-min) {
+		margin-bottom: 0;
+	}
+
+	&__header {
+		background: $main-bg;
+		padding: 7px 15px 9px;
+		font-size: 15px;
+	}
+
+	&__options {
+		padding: 6px 15px;
+	}
+
+	&__label {
+		margin-bottom: 2px;
+		width: 180px;
+		font-family: $main-font;
+
+		&[for="wLottery"] {
+			padding-top: 0;
+			line-height: 30px;
+		}
+	}
+
+	&__icon {
+		display: inline-block;
+		width: inherit;
+
+		&-gift {
+			background: url("images/svg/icon-gift-sale.svg") no-repeat 105px -1px;
+		}
+		&-discount {
+			background: url("images/svg/prst.svg") no-repeat 101px 3px;
+		}
+		&-lottery {
+			background: url("images/svg/dice.svg") no-repeat 121px -1px;
+		}
+	}
+}
+
+// Sales items styles (main content)
+.sales-content {
+	@media (min-width: $desktop-min){
+		float: left;
+		margin-left: 32px;
+	}
+}
+.sales-items {
+	&__header {
+		margin-bottom: 16px;
+
+		@media (min-width: $tablet-min) {
+			margin-bottom: 10px;
+		}
+
+		@media (min-width: $desktop-min) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__tab {
+		display: inline-block;
+		padding: 7px 11px;
+		min-width: 134px;
+		box-sizing: border-box;
+		cursor: pointer;
+
+		&:first-child {
+			margin-right: 9px;
+		}
+
+		@media (min-width: $tablet-min) {
+			min-width: 169px;
+		}
+
+		&-icon {
+
+			@media (min-width: $tablet-min) {
+				float: left;
+				margin-right: 9px;
+				display: block;
+			}
+		}
+
+		& span {
+			font-size: 16px;
+			border-bottom: 1px dashed #b9b9b9;
+		}
+
+		&-active {
+			border: 1px solid $main-grey;
+			border-radius: 3px;
+
+			& span {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.sales-item {
+	margin-bottom: 20px;
+
+	&:last-child {
+		margin-bottom: 18px;
+	}
+	@media (min-width: $desktop-min) {
+		&:last-child {
+			margin-bottom: 29px;
+		}
+	}
+
+	&__image {
+		min-width: 355px;
+		max-width: 500px;
+		margin-bottom: 6px;
+		float: left;
+
+		&-finished {
+			& img {
+				opacity: .4;
+			}
+		}
+		
+		& img {
+			width: 100%;
+		}
+
+		@media (min-width: $tablet-min) {
+			margin-right: 21px;
+		}
+	}
+
+	&__counter {
+		width: 60px;
+		font-size: 13px;
+		text-align: center;
+		float: left;
+		margin-right: 26px;
+
+		@media (min-width: $tablet-min) {
+			padding-top: 5px;
+		}
+
+		& span {
+			display: block;
+		}		
+
+		&-days {
+			font-size: 36px;
+			font-family: $main-font-bold;
+			line-height: 32px;
+
+			&-extra {
+				color: #d9450a;
+			}
+		}
+	}
+
+	&__description {
+		font-size: 13px;
+		color: $text-grey;
+	}
+	
+	&__info {
+		float: left;
+		width: 269px;
+
+		@media (min-width: $tablet-min) {
+			width: 500px;
+		}
+
+		@media (min-width: $desktop-min) {
+			width: 240px;
+		}
+	}
+
+	&__title {
+		font-size: 15px;
+		color: $main-text-color;
+		text-decoration: underline;
+		margin-bottom: 8px;
+	}
+}
+
+.sales-pager {
+	clear: both;
+	margin-bottom: 51px;
+}

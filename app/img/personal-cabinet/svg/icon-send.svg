@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   viewBox="0 0 24 22.666668"
+   height="22.666668"
+   width="24"
+   xml:space="preserve"
+   id="svg2"
+   version="1.1"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><clipPath
+       id="clipPath22"
+       clipPathUnits="userSpaceOnUse"><path
+         id="path20"
+         d="M 0.9985361,0.9676219 0.7000307,0.090275 C 0.6923789,0.0682198 0.6756299,0.0511157 0.65463,0.0441841 0.63346,0.0372525 0.6105896,0.0415735 0.5929054,0.0553467 L 0.3137846,0.2732881 0.9549208,0.9514181 0.2297848,0.3390036 0.0257367,0.4984312 C 0.0070323,0.5129246 -0.00266,0.5374104 4.007e-4,0.5618962 0.0032914,0.586472 0.01868,0.6072669 0.0401901,0.616179 l 0.9291841,0.3822301 c 0.008247,0.003421 0.0175141,0.00135 0.0238056,-0.005311 0.006292,-0.006572 0.008417,-0.0165639 0.005356,-0.0254762 z M 0.2972907,0.0085357 C 0.2836875,-0.0010065 0.2663434,-0.0024469 0.2513799,0.0043947 0.2364163,0.0115064 0.2256188,0.0259998 0.2227281,0.0433739 L 0.1831088,0.2757187 0.1814084,0.2859811 0.4226103,0.1003574 C 0.4246507,0.0973867 0.3524687,0.0467947 0.2972907,0.0085357 Z" /></clipPath></defs><g
+     transform="matrix(1.3333333,0,0,-1.3333333,0,22.666667)"
+     id="g10"><g
+       id="g14"
+       transform="matrix(17.87265,0,0,16.879725,0.09132219,0.04824068)"><g
+         id="g16"><g
+           id="g18"
+           clip-path="url(#clipPath22)"><image
+             width="1"
+             height="1"
+             style="image-rendering:optimizeSpeed"
+             preserveAspectRatio="none"
+             transform="matrix(1,0,0,-1,0,1)"
+             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAABHNCSVQICAgIfAhkiAAAAB9JREFUOI1jXL9+/X8GKgAmahgyatCoQaMGjRpEBQAAFTkDLig/8V0AAAAASUVORK5CYII="
+             id="image24" /></g></g></g></g></svg>
