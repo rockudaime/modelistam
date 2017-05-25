@@ -40,7 +40,7 @@ html(lang="ru")
 				a(href="#").breadcrumbs-item
 					span.bb-solid Техника 
 				span Самолет Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF 
-		include includes/main-nav.pug
+			include includes/main-nav.pug
 		// Конец основного меню
 		.container
 			section.product-card
@@ -1228,7 +1228,6 @@ html(lang="ru")
 					form.popup-bcart__form(action="/" method="get")
 						.popup-bcart__content
 							.bcart-product.clearfix
-								span.bcart-product__sticker Под заказ
 								a.bcart-product__delete(href="#")
 								.bcart-product__img
 									a(href="#")
@@ -1245,8 +1244,8 @@ html(lang="ru")
 									span.u-control.u-control--add(data-target="prod-128")
 
 									span.bcart-product__pprice
-										span.product-price--current 1182
-										| грн
+										span.product-price--current 1182 
+											span.product-price--currency грн
 								// Всплывающий блок редактирования товара
 								div.popup-back-wrapper
 									.popup-back.popup-bcart__product-back
@@ -1431,7 +1430,8 @@ html(lang="ru")
 					.popup-b__header.popup-gallery__header.clearfix
 						h2.popup-b__heading.popup-gallery__heading Hubsan Spy Hawk H301F 843 мм 2.4 & 5.8GHz с бортовой видеокамерой и системой FPV RTF
 						.popup-gallery__price-block
-							span.product-price.product-price--current 3 170 грн
+							span.product-price.product-price--current 3 170 
+								span.product-price--currency грн
 							a.product-btn.product-btn--buy.popup-gallery__btn Купить
 					.popup-gallery__content.clearfix
 						.popup-gallery__nav

@@ -3,40 +3,40 @@ header.main-header#top
 	.header-top-info
 		.container
 			a.header-logo(href="#", title="Planeta Hobby")
-				img(src="dist/images/logo.png", alt="Planeta Hobby", width="120", height="48")
+				img(src="dist/images/micromodels_logo.svg", alt="Planeta Hobby", width="230", height="72")
 			.header-phone
-				span.header-phone__number 0 800 218-817 
+				span.header-phone__number.mobile-none +7 (495) 134-0486
+				span.header-phone__number 8 <span class="mobile-none">(</span>800<span class="mobile-none">)</span> 222-4035
 				span.header-phone__description  Бесплатно по Украине
-				a(href="#").header-phone__callback.callback-link перезвонить мне
+				a(href="javascript:void(0)").header-phone__callback.callback-link перезвонить мне
 			.header-nav
 				ul.for-customer
 					li.for-customer__btn 
 						span Покупателю
 						ul.for-customer__menu
 							li
-								a(href="#") Акции
+								a(href="/about/return-policy") Обмен и возврат
 							li
-								a(href="#") Скидки
+								a(href="/about/guaranty") Гарантия
 							li
-								a(href="#") Дисконтная программа
+								a(href="/about/discount") Как сэкономить
+							li
+								a(href="/about/garantiya-luchshey-tseny") Гарантия лучшей цены
+							li
+								a(href="/4") Вопросы-ответы
 				ul.header-nav-links
 					li.header-nav-links__item
-						a(href="#") Дисконтная программа
+						a(href="/about/delivery/") Доставка и оплата
 					li.header-nav-links__item
-						a(href="#") Доставка и оплата
-					li.header-nav-links__item
-						a(href="#") Контакты
+						a(href="/about/contacts/") Контакты
 					li.header-nav-links__item.header-nav-links__item--desctop
-						a(href="#") Гарантия
-					li.header-nav-links__item.header-nav-links__item--desctop
-						a(href="#") Сервисный центр
-
+						a(href="/about/") О нас
 			// Корзина, видна только в мобильном виде до 768 пикселей
 			a(href="#").mobile-cart-link
 				span.header-link-indicator.mobile-cart-link__indicator 12
 			a(href="#", title="Войти в личный кабинет", data-popup-target="popupLogin").header-profile-link.popup-open-link
-				span.bb-dashed.not-authorized Войти в личный кабинет
-				//span.authorized Алексей, 
+				//- span.bb-dashed.not-authorized Войти в личный кабинет
+				span.authorized Алексей, 
 					i.header-profile-link__discount ваша скидка 3%
 			
 	.header-stripe
@@ -105,7 +105,7 @@ header.main-header#top
 						i.header-personal__icon.header-personal__icon--watch-price
 							span.header-link-indicator.header-personal__indicator 0
 						| Цены
-					a.header-personal__item.active(href="#", data-id="popupWaiting")
+					//a.header-personal__item.active(href="#", data-id="popupWaiting")
 						i.header-personal__icon.header-personal__icon--waiting
 							span.header-link-indicator.header-personal__indicator 12
 						| Ожидание

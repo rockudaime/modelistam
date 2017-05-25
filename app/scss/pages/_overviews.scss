@@ -241,6 +241,10 @@ $sidebar-border: 1px solid #dfdfdf;
         margin-top: -8px;
     }
 
+    li {
+        list-style: none;
+    }
+
     &__item {
         font-size: 15px;
         line-height: 25px;
@@ -693,6 +697,10 @@ input.o-signup-form__input {
 
     @media (min-width: 1235px) {
         margin-bottom: 0;
+    }
+
+    li {
+        list-style: none;
     }
     
 }

@@ -31,14 +31,31 @@
     display: inline-block;
 
     margin-right: 9px;
-    @media (min-width: 768px) {
-    	margin-right: 21px;
+
+    img {
+        width: 100px;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $tablet-min) {
+        margin-right: 21px;
+        margin-left: 25px;
+
+        img {
+            width: 135px;
+        }
+    }
+    @media (min-width: 994px) {
+        position: relative;
+        top: -3px;
+
+        img {
+            width: 230px;
+        }
+    }
+    @media (min-width: $desktop-min) {
         position: absolute;
         top: 55px;
         img {
-            width: 175px;
+            width: 230px;
             height: auto;
         }
     }
@@ -59,6 +76,10 @@
 		margin-right: 11px;
 	}
 
+    li {
+        list-style: none;
+    }
+
 	&__btn{
 		cursor: pointer;
 
@@ -75,7 +96,7 @@
 		&:hover > ul, &:focus > ul {
 			display: block;
 			box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
-            z-index: 100;
+            z-index: 999;
 		}
 	}
 	& li > ul {
@@ -149,43 +170,53 @@
 .header-phone {
     display: inline-block;
 
-    width: 115px;
+    width: auto;
+    white-space: nowrap;
     margin-right: 0;
 
     vertical-align: top;
-    @media (min-width: 768px) {
-        width: 405px;
+    @media (min-width: $tablet-min) {
+        width: 438px;
         position: absolute;
         top: 51px;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $desktop-min) {
         
         top: 51px;
-
-        margin-left: 199px;
+        margin-left: 301px;
     }
     & > * {
         display: block;
-        @media (min-width: 768px) {
+        @media (min-width: $tablet-min) {
             display: inline-block;
         }
     }
     &__number {
         font: 17px $main-font-semibold;
+        width: auto;
+        text-indent: -.5px;
 
         color: #0d0d0d;
+
+        @media (min-width: $tablet-min) {
+            text-indent: initial;
+            width: 34%;
+            display: inline-block;
+            margin-right: 10px;
+        }
     }
     &__description {
         font-size: 12px;
         line-height: 15px;
 
-        width: 65%;
+        width: 100%;
 
         color: #777;
         @media (min-width: 768px) {
-            width: auto;
-            margin-left: 10px;
-            font-size: 13px;
+            // width: auto;
+            // margin-left: 10px;
+            // font-size: 13px;
+            display: none;
         }
     }
     &__callback {
@@ -193,7 +224,6 @@
         @media (min-width: 768px) {
             display: inline-block;
 
-            margin-left: 20px;
     		font-size: 13px;
     		line-height: 14px;
         }
@@ -202,7 +232,7 @@
 
 
 .callback-link {
-    color: #305e8e;
+    color: #4b80bb;
     border-bottom: 1px dashed #8ca0b8;
     &:hover, &:focus {
         text-decoration: none;
@@ -263,11 +293,12 @@
     	}
     }
 
-    &--authorized {
+    & .authorized {
 
-    	& > span {
-
-    	}
+    	background: url(images/svg/user-profile-icons-sprite.svg) no-repeat 0 0;
+        height: 33px;
+        line-height: 33px;
+        padding-left: 40px;
     }
 
     &__discount {
@@ -391,19 +422,19 @@
     	border: 0;
 		padding: 0;
 		background: transparent;
-    	height: 45px;
+    	height: 40px;
         position: relative;
         top: auto;
 
         float: left;
 
-        width: 300px;
+        width: 370px;
         margin: 18px 26px 20px 29px;
     }
 
     @media (min-width: 1235px) {
-        width: 471px;
-        margin: 33px 56px 0 200px;
+        width: 445px;
+        margin: 33px 10px 0 301px;
     }
 
     &__input {
@@ -425,12 +456,11 @@
             outline: 0;
         }
         @media (min-width: 768px) {
-        	width: 300px;
+        	width: 100%;
         }
 
         @media (min-width: 1235px) {
             box-sizing: border-box;
-            width: 100%;
             padding-right: 75px;
             
             &:focus {
@@ -621,16 +651,26 @@
 }
 // Персональные ссылки, представленные иконками, в шапке (желания, сравнить и т.д)
 .header-personal {
-    font: 11px $main-font;
+    font: 12px $main-font;
 
     float: left;
 
-    width: 250px;
+    width: 56%;
+    margin-left: 17%;
+
+    @media (min-width: $tablet-min) {
+        width: 26%;
+        margin-left: 0;
+    }
+
+    @media (min-width: $desktop-min) {
+        width: 20%;
+    }
     &__item {
         display: block;
         float: left;
 
-        width: 25%;
+        width: 33%;
 
         cursor: pointer;
         text-align: center;

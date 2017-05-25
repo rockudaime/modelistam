@@ -17,7 +17,8 @@ html(lang="ru")
 		// main script
 		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/compare.js")
-
+		script(src="dist/js/pages/sales.js")
+			
 	body
 		include includes/header.pug
 		.container
@@ -86,10 +87,9 @@ html(lang="ru")
 								.sales-item__image
 									a(href="#")
 										img(src="dist/images/temporary/sale-1.jpg")
-								.sales-item__counter
-									span.sales-item__description Осталось
-									span.sales-item__counter-days 25
-									span дней
+								.sales-item__counter.clearfix
+									.sales-item__description Осталось
+									.sale-timer.promo-extra-timer.clearfix(data-countdown="2017/05/19 19:00:00")
 								.sales-item__info
 									a(href="#")
 										p.sales-item__title.
@@ -102,7 +102,7 @@ html(lang="ru")
 								a(href="#")
 									img(src="dist/images/temporary/sale-1.jpg")
 							.sales-item__counter
-								span.sales-item__description Осталось
+								.sales-item__description Осталось
 								span.sales-item__counter-days.sales-item__counter-days-extra  3
 								span.sales-item__counter-days-extra дня
 							.sales-item__info

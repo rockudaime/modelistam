@@ -18,8 +18,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['sales-one-end.html'],
-  pug: ['app/pug/sales-one-end.pug'],
+  html: ['product.html'],
+  pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
@@ -33,13 +33,14 @@ gulp.task('sass', function () {
   .pipe(sourcemaps.init())
   .pipe(sass({errLogToConsole: true}))
   // .pipe(sass().on('error', sass.logError))
+  .pipe(combineMq({
+    beautify: true
+  }))
   .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-  .pipe(combineMq({
-    beautify: true
-  }))
+  
   .pipe(sourcemaps.write('../maps'))
   .pipe(gulp.dest('dist'))
   .pipe(filter(['**/*.css']))  // filter the maps files so browsersync can inject css, instead of page reload
@@ -54,7 +55,7 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true
       }))
-    .pipe(injectSvg())
+    // .pipe(injectSvg()) // включать только для страниц выбора подарка
     .pipe(gulp.dest('.')) // указываем gulp куда положить скомпилированные HTML файлы
     .pipe(reload({stream:true}));
 });

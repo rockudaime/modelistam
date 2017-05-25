@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
 	head
-		title Акция с подарком
+		title Акция
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -29,7 +29,7 @@ html(lang="ru")
 					span.bb-solid Главная
 				span Акции
 			include includes/main-nav.pug
-		.promo-page.promo-gift
+		.promo-page
 			.container
 				h1.pagetitle.promo-content__title Новогодние скидки на квадрокоптеры DJI и бесплатная доставка
 				main.promo-content
@@ -37,10 +37,11 @@ html(lang="ru")
 					section.promo-description.clearfix
 						.promo-description__image
 							img(src='dist/images/temporary/sale-one.jpg')
-						.promo-description__counter.clearfix
+						.promo-description__counter.promo-description__counter-fineshed.clearfix
 							.sales-item__description Осталось
-							.sale-timer.clearfix(data-countdown="2016/05/10 19:00:00")
-							p.sales-item__description.promo-description__text Акция действует с 28 февраля по 1 апреля
+							.sale-timer.clearfix(data-countdown="2017/05/10 19:00:00")
+							.sales-item__description.promo-description__text Акция действует с 28 февраля по 1 апреля
+						p.promo-description__more-info Чтобы мечта о новеньком DJI Phantom сбылась под Новый Год, не обязательно писать письма Деду Морозу, загадывать желание под бой курантов и надеяться на чудо. Достаточно заглянуть на огонек в «Planeta Hobby» и получить волшебную скидку.
 
 					section.promo-products
 						.promo-products__header.clearfix
@@ -164,7 +165,7 @@ html(lang="ru")
 										img(src="dist/images/temporary/sale-1.jpg")
 								.sales-item__counter.clearfix
 									.sales-item__description Осталось
-									.sale-timer.promo-extra-timer.clearfix(data-countdown="2017/05/19 19:00:00")
+									.sale-timer.promo-extra-timer.clearfix(data-countdown="2016/05/19 19:00:00")
 								.sales-item__info
 									a(href="#")
 										p.sales-item__title.

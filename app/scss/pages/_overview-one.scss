@@ -90,7 +90,9 @@
 		background-size: 24px 196.641px;
 		margin-right: 8px;	
 		height: 28px;
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			background-position: 0 -71px;
 		}
 	}
@@ -99,7 +101,9 @@
 		background-size: 24px 196.641px;
 		height: 28px;
 		margin-right: 13px;
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			background-position: 0 -118px;
 		}
 	}
@@ -107,7 +111,9 @@
 		background-position: 0 -171px;
 		background-size: 24px 196.641px;
 		height: 27px;
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			background-position: 0 -171px;
 		}
 	}
@@ -158,6 +164,10 @@
 		line-height: 25px;
 		margin-bottom: 8px;
 		text-decoration: underline;
+
+		li {
+			list-style: none;
+		}
 	}
 
 }

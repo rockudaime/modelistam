@@ -38,6 +38,11 @@ $form-border: 1px solid #dcd5bd;
 		img {
 			vertical-align: middle;
 		}
+		
+		svg {
+			width: 170px;
+			height: 100%;
+		}
 
 		@media (min-width: 1235px) {
 			position: static;
@@ -57,7 +62,7 @@ $form-border: 1px solid #dcd5bd;
 
 		@media (min-width: 768px) {
 			position: static;
-			width: 405px;
+			width: 411px;
 			text-align: right;
 		}
 	}
@@ -65,6 +70,10 @@ $form-border: 1px solid #dcd5bd;
 	&__phone-inner {
 		display: table-cell;
 		vertical-align: middle;
+
+		@media (min-width: 768px) {
+			display: table-cell;
+		}
 	}
 }
 .cart-breadcrumbs {
@@ -114,6 +123,10 @@ $form-border: 1px solid #dcd5bd;
 .order-checkout-tabs {
 	font-size: 16px;
 	margin-bottom: -1px;
+
+	li {
+		list-style: none;
+	}
 	&__tab {
 		height: 48px;
 		line-height: 48px;
@@ -442,7 +455,7 @@ $form-border: 1px solid #dcd5bd;
 .cart-content {
 	font-size: 16px;
 	color: $main-text-color;
-	margin-bottom: 15px;
+	margin-bottom: 16px;
 	@media (min-width: 1235px) {
 		width: 745px;
 		float: right;
@@ -571,7 +584,11 @@ $form-border: 1px solid #dcd5bd;
 }
 .cart-content-footer {
 	&__total {
-		color: #d31328;
+		color: #000;
+
+		& .current-price {
+			color: #d31328;
+		}
 
 		&-discount {
 			color: #628d00;
@@ -583,6 +600,7 @@ $form-border: 1px solid #dcd5bd;
 	padding-right: 73px;
 }
 .product-total-block.cart-total {
+
 	@media (min-width: 768px) {
 		padding-right: 43px;
 	}
@@ -648,16 +666,25 @@ $form-border: 1px solid #dcd5bd;
 
 	&__inner {
 		height: 60px;
+		box-sizing: border-box;
+
+		@media (min-width: 768px) {
+			padding-top: 18px;
+		}
+		@media (min-width: 1235px) {
+			padding-top: 0;
+		}
 	}
 
 	&__phone.header-phone {
 		@extend .cart-main-header__phone.header-phone;
+		width: 100%;
 		float: none;
 		margin: 0;
 
 		@media (min-width: 768px) {
 			position: static;
-			width: 405px;
+			width: 411px;
 			text-align: left;
 		}
 

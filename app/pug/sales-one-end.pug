@@ -29,16 +29,15 @@ html(lang="ru")
 					span.bb-solid Главная
 				span Акции
 			include includes/main-nav.pug
-		.promo-page
+		.promo-page.promo-finished
 			.container
 				h1.pagetitle.promo-content__title Новогодние скидки на квадрокоптеры DJI и бесплатная доставка
 				main.promo-content
 					include mixins/mixins.pug
-					section.promo-description
+					section.promo-description.clearfix
 						.promo-description__image
 							img(src='dist/images/temporary/sale-one.jpg')
 						.promo-description__counter.promo-description__counter-fineshed.clearfix
-							div.sale-timer.clearfix(data-countdown="2017/10/18 19:00:00")
 							p.sales-item__description.promo-description__text Акция завершена
 							p.sales-item__description.promo-description__text Акция действовала с 28 февраля по 1 апреля
 
@@ -50,11 +49,11 @@ html(lang="ru")
 									h3.mobile-hidden.promo-products__header-tab-info Подробнее об акции
 							.mobile-hidden.promo-products__header-share
 								span Отправить
-								img(src="dist/images/personal-cabinet/svg/icon-send.svg" width="19px" height="18px").promo-products__header-share-icon
-								img(src="dist/images/svg/facebook.svg").promo-products__header-share-icon
-								img(src="dist/images/svg/vk.svg").promo-products__header-share-icon
-								img(src="dist/images/svg/twitter.svg").promo-products__header-share-icon
-								img(src="dist/images/svg/Google.svg").promo-products__header-share-icon
+								a(href="#" target="_blank").promo-products__header-share-icon.share-icon__mail
+								a(href="#" target="_blank").promo-products__header-share-icon.share-icon__fb
+								a(href="#" target="_blank").promo-products__header-share-icon.share-icon__vk
+								a(href="#" target="_blank").promo-products__header-share-icon.share-icon__tw
+								a(href="#" target="_blank").promo-products__header-share-icon.share-icon__g
 
 						.promo-products__items.clearfix
 							mixin category-product(imgName)
@@ -155,10 +154,9 @@ html(lang="ru")
 								.sales-item__image
 									a(href="#")
 										img(src="dist/images/temporary/sale-1.jpg")
-								.sales-item__counter
-									span.sales-item__description Осталось
-									span.sales-item__counter-days 25
-									span дней
+								.sales-item__counter.clearfix
+									.sales-item__description Осталось
+									.sale-timer.promo-extra-timer.clearfix(data-countdown="2016/05/19 19:00:00")
 								.sales-item__info
 									a(href="#")
 										p.sales-item__title.
@@ -166,8 +164,6 @@ html(lang="ru")
 									p.sales-item__description Акция действует с 28 февраля по 1 апреля
 						+sales_item
 						+sales_item
-
-
 
 
 		.prefooter

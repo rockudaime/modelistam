@@ -221,9 +221,13 @@
 
         box-shadow: none;
     }
+    li {
+        list-style: none;
+    }
     &__item {
         //category-menu__item
         padding: 7px 0 12px;
+        list-style: none;
 
         border-bottom: 1px solid #eee;
         &:last-child {
