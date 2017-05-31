@@ -124,8 +124,8 @@
         margin-bottom: 0;
     }
     @media (min-width: 994px) {
-        width: 184px;
-        margin-right: 16px;
+        width: 250px;
+        // margin-right: 16px;
     }
 }
 .filter-link {
@@ -179,9 +179,12 @@
     text-decoration: underline;
 }
 .product-sort-simple {
-    @media (min-width: 1235px) {
+    cursor: pointer;
+
+    @media (min-width: $desktop-min) {
         margin-right: 15px;
     }
+
     & > li {
         font: 18px/51px 'OpenSans_SemiBold';
 
@@ -218,34 +221,36 @@
 .product-sort-simple li > ul {
     display: none;
 }
-.product-sort-simple > li:hover {
+.product-sort-simple.active > li{
     color: #fff;
     background-color: #4b80bb;
     background-image: url(images/select-arrow-small-up.png);
 }
-// .product-sort-simple li:hover > ul {
-//     font-size: 16px;
+.product-sort-simple li > ul {
+    font-size: 15px;
 
-//     position: absolute;
-//     z-index: 9999;
-//     top: 50px;
-//     left: 0;
+    position: absolute;
+    z-index: 9999;
+    top: 50px;
+    left: 0;
 
-//     display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 10px;
 
-//     box-sizing: border-box;
-//     width: 100%;
-//     padding: 5px 10px;
+    border: 1px solid #b8b8b8;
+    border-top: 0;
+    border-radius: 1px;
+    background: white;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .15);
+    @media (min-width: 994px) {
+        top: 29px;
+    }
+}
 
-//     border: 1px solid #b8b8b8;
-//     border-top: 0;
-//     border-radius: 1px;
-//     background: white;
-//     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .15);
-//     @media (min-width: 994px) {
-//         top: 29px;
-//     }
-// }
+.product-sort-simple [data-selected="true"] {
+    background: #fff url('images/ui-icon-avail-yes.png') 100% center no-repeat;
+}
 
 // =========================== CATEGORY VIEW CHANGER ==========================
 .catalog-view-changer {
@@ -343,9 +348,7 @@
     }
     @media (min-width: 1235px) {
         float: right;
-
         width: 870px;
-        padding-top: 10px;
         // padding-bottom: 35px;
     }
     &__products {
@@ -537,8 +540,8 @@
             .category-product__hidden-content,
             .category-product__photo-rank-star {
                 display: block;
-                top: 4px;
-                right: 3px;
+                // top: 4px;
+                // right: 3px;
             }
             .category-product__price {
                 // margin-bottom: 15px;
@@ -652,6 +655,7 @@
 
             display: none;
         }
+
     }
     &__product-status {
         //category-product__product-status
@@ -800,7 +804,7 @@
             padding-left: 38px;
 
             text-align: center;
-            white-space: normal;
+            // white-space: normal;
 
             background: #d34f27 url('images/product-card-sale-timer.png') no-repeat 12px 50%;
             background-size: 18px;
@@ -809,10 +813,12 @@
                 background-color: #c03911;
             }
         }
+
         &--waiting {
             background-image: url(images/ui-icon-info.png);
             font-size: 16px;
             margin-right: 0;
+            white-space: normal;
 
             @media (min-width: 768px) and (max-width: 993px) {
                 background-image: none;
@@ -1096,7 +1102,7 @@
                 display: inline-block;
             }
             .category-product__price {
-                // margin-bottom: 10px;
+                height: auto;
             }
         }
         @media (min-width: 1235px) {
@@ -1126,8 +1132,12 @@
         }
         &__photo {
             line-height: normal;
-
             height: 130px;
+
+            &-rank-star {
+                top: 0;
+                right: 3px;
+            }
         }
         &__heading {
             overflow: hidden;
@@ -1165,10 +1175,17 @@
                 background-position: 12px 50%;
                 background-size: 24px;
             }
+
+            &--waiting {
+                white-space: normal;
+                background-image: none;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
         }
         &__price {
-            // height: auto;
-            // margin-bottom: 10px;
+            height: auto;
+            margin-bottom: 10px;
         }
         &__product-comments {
             margin-left: 30px;
@@ -1342,10 +1359,10 @@
     background-size: 9px 9px;
 }
 .prop-filter:hover {
-    color: #d34f27;
+    color: $hovered-link-color;
 
     & .custom-checkbox__box {
-        border-color: #d34f27;
+        border-color: $hovered-link-color;
     }
 }
 .product-filter {
@@ -1403,8 +1420,8 @@
     vertical-align: middle;
 
     box-sizing: border-box;
-    width: 82px;
-    max-width: 82px;
+    width: 81px;
+    max-width: 81px;
     height: 34px;
     margin: 0 8px;
     padding: 2px 5px;

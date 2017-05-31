@@ -190,16 +190,16 @@
 
 	div{
 		display: inline-block;
-		background: #346cab url(images/ui-icon-catalog-prev-hover.png) no-repeat center center;
+		background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
 		width: 40px;
 		height: 40px;
 		border: 1px solid #dfdfdf;
 		text-indent: -9999px;
 		border-radius: 3px;
 	}
-	// div.disabled{
-	// 	background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
-	// }
+	div.disabled{
+		display: none;
+	}
 	div:active,
 	div:hover{
 		background-color: #346cab;
@@ -213,7 +213,7 @@
 	}
 	
 	.owl-next{
-		background-image: url(images/ui-icon-next-hover.png);
+		background-image: url(images/ui-icon-catalog-next.png);
     float: right;
 	}
 

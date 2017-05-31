@@ -35,9 +35,10 @@ html(lang="ru")
 
 		.category-product-wrapper
 			.container
-				h1 Самолеты для FPV и съемки
+				
 				
 				section.category-content.clearfix
+					h1 Самолеты для FPV и съемки
 					ul.catalog-top-menu
 						li.catalog-top-menu__item
 							a.catalog-top-menu__link.top-menu-choice-item(href='/info/howtochoice', rel='#')
@@ -82,7 +83,7 @@ html(lang="ru")
 								ul#product-sort-simple.product-sort-simple
 									li Сортировать
 										ul
-											li
+											li(data-selected="true")
 												a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
 											li
 												a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
@@ -131,7 +132,7 @@ html(lang="ru")
 											ul.cp-gallery
 												li.cp-gallery__item
 													a(href="#")
-														img(src="dist/images/sample-airplane.jpg", alt="image")
+														img(src="dist/images/video-icon.png", alt="image")
 												li.cp-gallery__item
 													a(href="#")
 														img(src="dist/images/sample-airplane.jpg", alt="image")

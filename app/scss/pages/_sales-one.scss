@@ -24,7 +24,7 @@
 		max-width: 500px;
 
 		@media (min-width: $desktop-min) {
-			width: 22%;
+			// width: 22%;
 			float: left;
 		}
 
@@ -73,6 +73,16 @@
 		@media (min-width: $desktop-min) {
 			width: 22%;
 			margin-bottom: 63px;
+		}
+	}
+
+	&__text {
+		float: left;
+		width: 40%;
+
+		@media (min-width: $tablet-min) {
+			width: 100%;
+			float: none;
 		}
 	}
 
@@ -125,10 +135,20 @@
 				margin-right: 5px;
 				padding-top: 6px;
 				font-size: 13px;
+
+				span {
+					line-height: 20px;
+					vertical-align: top;
+				}
 			}
 
 			@media (min-width: $desktop-min) {
 				margin-right: 3%;
+
+				span {
+					line-height: 20px;
+					vertical-align: top;
+				}
 			}
 
 			&-icon {
@@ -262,13 +282,13 @@
 		color: $text-grey;
 	}
 }
-.sales-item__description {
-	margin-bottom: 10px;
+// .sales-item__description {
+// 	margin-bottom: 10px;
 
-	@media (min-width: $tablet-min) {
-		margin-bottom: 0;
-	}
-}
+// 	@media (min-width: $tablet-min) {
+// 		margin-bottom: 0;
+// 	}
+// }
 
 
 

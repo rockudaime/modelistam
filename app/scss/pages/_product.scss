@@ -1365,6 +1365,7 @@ div.shop-info__work-time {
   margin-top: 10px;
 
   text-decoration: none;
+  line-height: 15px;
 
   color: $link-color;
   border-bottom: 1px solid #a6bccd;
@@ -1469,9 +1470,8 @@ div.shop-info__work-time {
 .about-product__text {
   margin-bottom: 20px;
   @media (min-width: 1235px) {
-    float: left;
 
-    width: 665px;
+    width: 973px;
   }
 }
 // Product characteristics table
@@ -1842,7 +1842,7 @@ a.products-purchase__show-link {
     background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
     border: 1px solid #dfdfdf;
     display: none;
-    z-index: 999;
+    z-index: 99;
 
     &.active {
       display: block;
@@ -2816,6 +2816,8 @@ a.products-purchase__show-link {
     @media (min-width: 1235px) {
       padding: 0;
       line-height: 47px;
+      height: 47px;
+      box-sizing: border-box;
     }
     &:hover {
       background: #398701;
@@ -3175,6 +3177,8 @@ input::-webkit-inner-spin-button {
 
 .u-control {
   display: inline-block;
+  border: 0;
+  outline: 0;
 
   width: 17px;
   height: 17px;
@@ -3182,6 +3186,14 @@ input::-webkit-inner-spin-button {
   vertical-align: middle;
 
   background: url(images/icon-controls.png) no-repeat 0 0;
+
+  &:active {
+    border: 0;
+    outline: 0;
+    position: relative;
+    top: 1px;
+  }
+
   &--add {
     margin-right: 30px;
 

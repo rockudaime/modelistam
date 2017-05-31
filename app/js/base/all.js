@@ -99,13 +99,13 @@ $(function () {
 					e.preventDefault();
 					var link = $(this); //$($(this).children()[0]);
 					var links = link.parent().parent().find('.main-nav-link');
-					myMouseEnterTimer2 = setTimeout(function () {
+					// myMouseEnterTimer2 = setTimeout(function () {
 						links.removeClass('active');
-					}, 100);
+					// }, 50);
 
-					myMouseEnterTimer = setTimeout(function () {
+					// myMouseEnterTimer = setTimeout(function () {
 						link.addClass('active');
-					}, 300);
+					// }, 100);
 				}
 
 				$(document).mouseup(function (e) {
@@ -203,7 +203,7 @@ $(function () {
 			var popup = $('#' + targetId);
 
 			popup.show();
-			popup.parent().fadeIn();
+			popup.closest('.popup-outer').fadeIn();
 		});
 
 		// profile page
@@ -249,6 +249,12 @@ $(function () {
 			}
 		});
 	}());
+
+	$('.product-sort-simple').on('click', function (e) {
+		e.preventDefault();
+		$(this).find('ul').toggle();
+		$(this).toggleClass('active');
+	})
 
 });
 
@@ -435,3 +441,5 @@ var MYFUNCS = {
 		}
 	}
 }
+
+

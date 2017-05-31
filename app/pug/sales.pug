@@ -16,7 +16,7 @@ html(lang="ru")
 	
 		// main script
 		script(src="dist/js/base/all.js")
-		script(src="dist/js/pages/compare.js")
+		script(src="dist/js/vendor/countdown/jquery.countdown.js")
 		script(src="dist/js/pages/sales.js")
 			
 	body
@@ -57,19 +57,19 @@ html(lang="ru")
 						form.sales-filter.mobile-hidden.tablet-hidden
 							.sales-filter__header По типу
 							.sales-filter__options
-								.sales-filter__option
+								.sales-filter__option.prop-filter
 									input.custom-checkbox(type="checkbox", id="wGifts")
-									label.custom-checkbox__label.sales-filter__label(for="wGifts")
+									label.custom-checkbox__label.sales-filter__label.prop-filter(for="wGifts")
 										span.custom-checkbox__box
 										span.sales-filter__icon.sales-filter__icon-gift  С подарками
-								.sales-filter__option
+								.sales-filter__option.prop-filter
 									input.custom-checkbox(type="checkbox", id="wDiscount")
-									label.custom-checkbox__label.sales-filter__label(for="wDiscount")
+									label.custom-checkbox__label.sales-filter__label.prop-filter(for="wDiscount")
 										span.custom-checkbox__box
 										span.sales-filter__icon.sales-filter__icon-discount  Со скидками
-								.sales-filter__option
+								.sales-filter__option.prop-filter
 									input.custom-checkbox(type="checkbox", id="wLottery")
-									label.custom-checkbox__label.sales-filter__label(for="wLottery")
+									label.custom-checkbox__label.sales-filter__label.prop-filter(for="wLottery")
 										span.custom-checkbox__box
 										span.sales-filter__icon.sales-filter__icon-lottery  С розыгрышем
 				main.sales-content

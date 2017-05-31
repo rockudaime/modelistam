@@ -161,35 +161,37 @@ $(document).ready(function() {
 	owl.owlCarousel({
 		loop: false,
 		margin:0,
-		navigationText: false,
+		navigationText: true,
 		scrollbar: true,
-		pagination: true,
+		pagination: false,
 		responsive:{
 			 0:{
 				items:1,
-				nav:false
+				nav:true,
+				dots: false
 			 },
 			544:{
 				items:2,
-				nav: false
+				nav: true,
+				dots: false
 			},
 			768:{
 				items:3,
-				nav:false,
-				paginatioin: true
+				nav:true,
+				dots: false
 			},
 			994:{
 				items:4,
 				nav:true,
 				loop:false,
-				paginatioin: false
+				dots: false
 
 			},
 			1200:{
 				items:5,
 				nav:true,
 				loop:false,
-				paginatioin: false
+				dots: false
 			}
 		}
 	});
