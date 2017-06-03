@@ -235,14 +235,14 @@ $(function () {
 				e.preventDefault();
 				menuLink = $(this);
 				if (menuLink.hasClass('opened')) {
-					menuLink.next().slideUp();
+					menuLink.next().finish().slideUp();
 					menuLink.removeClass('opened');
 				} else {
 					if (!menuLink.parent().hasClass('category-menu__item--no-subcategories')) {
 						menuLinks.removeClass('opened');
 						menuLink.addClass('opened');
-						subcategories.slideUp();
-						menuLink.next().slideDown();
+						subcategories.finish().slideUp();
+						menuLink.next().finish().slideDown();
 					}
 
 				}

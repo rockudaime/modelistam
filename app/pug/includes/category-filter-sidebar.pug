@@ -1,0 +1,177 @@
+aside.category-sidebar
+	section.sidebar-filter
+		section.search-sidebar__category-menu
+			.category-sidebar-menu.category-menu
+				.category-menu__item
+					.subcategory
+						a(href="#") Авто 
+						span.found-items-amount (10)
+
+					ul.category-menu__subcategories.sub-menu
+						li
+							a(href="#") Мини, электро
+								span.found-items-amount (77)
+						li
+							a(href="#") С электродвигателем
+								span.found-items-amount (54)
+							ul.sub-menu.sub-menu-2
+								li
+									a(href="#") На батарейках
+								li
+									a(href="#") На аккумуляторах
+						li
+							a(href="#") С двс двигателем
+								span.found-items-amount (33)
+						li
+							a(href="#") С бензиновым двигателем
+								span.found-items-amount (16)
+				.category-menu__item
+					.subcategory
+						a(href="#") Самолеты 
+							span.found-items-amount (135)
+					ul.category-menu__subcategories.sub-menu
+						li
+							a(href="#") Мини, электро
+								span.found-items-amount (14)
+						li
+							a(href="#") С электродвигателем
+								span.found-items-amount (120)
+							ul.sub-menu.sub-menu-2
+								li
+									a(href="#") На батарейках
+								li
+									a(href="#") На аккумуляторах
+						li
+							a(href="#") С двс двигателем
+								span.found-items-amount (11) 
+						li
+							a(href="#") С бензиновым двигателем
+								span.found-items-amount (2)
+				.category-menu__item
+					.subcategory
+						a(href="#") Вертолеты 
+							span.found-items-amount (15)
+					ul.category-menu__subcategories.sub-menu
+						li
+							a(href="#") Мини, электро
+								span.found-items-amount (2)
+						li
+							a(href="#") С электродвигателем
+								span.found-items-amount (10)
+							ul.sub-menu.sub-menu-2
+								li
+									a(href="#") На батарейках
+								li
+									a(href="#") На аккумуляторах
+						li
+							a(href="#") С двс двигателем
+								span.found-items-amount (1) 
+						li
+							a(href="#") С бензиновым двигателем
+								span.found-items-amount (10)
+				.category-menu__item
+					.subcategory
+						a(href="#") Яхты 
+							span.found-items-amount (11)
+					ul.category-menu__subcategories.sub-menu
+						li
+							a(href="#") Мини, электро
+								span.found-items-amount (10)
+						li
+							a(href="#") С электродвигателем
+								span.found-items-amount (100)
+							ul.sub-menu.sub-menu-2
+								li
+									a(href="#") На батарейках
+								li
+									a(href="#") На аккумуляторах
+						li
+							a(href="#") С двс двигателем 
+								span.found-items-amount (10)
+						li
+							a(href="#") С бензиновым двигателем
+								span.found-items-amount (10)
+				.category-menu__item.category-menu__item--no-subcategories
+					.subcategory
+						a(href="#") Квадракоптеры 
+							span.found-items-amount (86)
+		form#filter-form(method="get" action="/")
+			.product-filter
+				.filter-header Производитель
+					
+				.filter-values-block
+					.prop-filter
+						input.custom-checkbox#prop-000021(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
+							span.custom-checkbox__box
+							| Revell 
+							span.found-items-amount (275)
+					.prop-filter
+						input.custom-checkbox#prop-000022(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
+							span.custom-checkbox__box
+							| КУМ 
+							span.found-items-amount (105)
+					.prop-filter
+						input.custom-checkbox#prop-000023(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
+							span.custom-checkbox__box
+							| LEGO 
+							span.found-items-amount (89)
+					.prop-filter
+						input.custom-checkbox#prop-000024(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000024")
+							span.custom-checkbox__box
+							| Zvezda 
+							span.found-items-amount (85)
+					.prop-filter
+						input.custom-checkbox#prop-000025(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000025")
+							span.custom-checkbox__box
+							| Kyosho 
+							span.found-items-amount (69)
+					.prop-filter
+						input.custom-checkbox#prop-000026(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000026")
+							span.custom-checkbox__box
+							| Puccini 
+							span.found-items-amount (45)
+					.prop-filter
+						input.custom-checkbox#prop-000027(type='checkbox', name='bylevel')
+						label.custom-checkbox__label.product-filter__filter-label(for="prop-000027")
+							span.custom-checkbox__box
+							| 4D MASTER 
+							span.found-items-amount (33)
+			.product-filter
+				.filter-header По цене
+				.filter-values-block
+					.product-filter__price-block
+						| от
+						input.price-min.numeric-min.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[min]', onchange='set_filter_price(0)', placeholder='0')
+						| до
+						input.price-max.numeric-max.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[max]', onchange='set_filter_price(1)', placeholder='29808')
+					input.sidebar-filter__submit-btn(type='submit', value='Подобрать')
+
+			.filter-popup(style="display: block;top: 456px;")
+				.filter-popup-close
+					a.filter-popup-close-link(href='#')
+				p.filter-popup-info Найдено товаров: 131
+				a.filter-popup-btn(href='') Показать
+
+	// end if section .sidebar-filter
+	section.category-viewed-products
+		h2.category-viewed-products__heading Вы смотрели
+		ul
+			li.category-viewed-products__item
+				a(href="#", title="avto model that you looked for")
+					img(src="dist/images/temporary/avto.jpeg", alt="some img")
+			li.category-viewed-products__item
+				a(href="#", title="avto model that you looked for")
+					img(src="dist/images/temporary/avto.jpeg", alt="some img")
+			li.category-viewed-products__item
+				a(href="#", title="avto model that you looked for")
+					img(src="dist/images/temporary/avto.jpeg", alt="some img")
+			li.category-viewed-products__item
+				a(href="#", title="avto model that you looked for")
+					img(src="dist/images/temporary/avto.jpeg", alt="some img")
+	// /end of section .category-viewed-products

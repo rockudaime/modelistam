@@ -111,6 +111,7 @@
 
 .category-sort-form {
     margin-bottom: 12px;
+    position: relative;
 
     &--half-mob {
         float: right;
@@ -126,6 +127,21 @@
     @media (min-width: 994px) {
         width: 250px;
         // margin-right: 16px;
+    }
+}
+
+.sort {
+
+    &__label {
+        font: 11px $main-font-light;
+        color: #a8a8a8;
+        position: absolute;
+        top: -18px;
+        display: none;
+
+        @media (min-width: $desktop-min) {
+            display: inline-block;
+        }
     }
 }
 .filter-link {
@@ -187,6 +203,7 @@
 
     & > li {
         font: 18px/51px 'OpenSans_SemiBold';
+        // list-style: none;
 
         position: relative;
 
@@ -226,6 +243,9 @@
     color: #000;
     // background-color: #4b80bb;
     background-image: url(images/select-arrow-small-up.png);
+    color: #fff;
+    background-color: #4B80BB;
+    background-image: url(images/select-arrow-small-up.png);
 }
 .product-sort-simple li > ul {
     font-size: 15px;
@@ -243,7 +263,7 @@
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .15);
 
     @media (min-width: 994px) {
-        top: 35px;
+        top: 33px;
         width: 268px;
         border-top: 1px solid #4b80bb;
     }

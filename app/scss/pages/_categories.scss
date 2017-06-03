@@ -335,7 +335,7 @@
 .subcategory.opened {
     transition: background-image .15s ease-in;
 
-    color: #111;
+    // color: #111;
     background-image: url(images/category-arrow-up.png);
     a {
         color: inherit;
