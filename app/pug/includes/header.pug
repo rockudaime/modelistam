@@ -39,6 +39,7 @@ header.main-header#top
 				span.authorized Алексей, 
 					i.header-profile-link__discount ваша скидка 3%
 			
+			
 	.header-stripe
 		.container
 			// кнопка раскрытия меню, видна только в мобильном и планшетном виде
@@ -169,5 +170,39 @@ header.main-header#top
 				//span.header-cart__empty Здесь пока ничего нет
 				span.header-cart__total 142 458
 					i.header-cart__total--text-smaller  грн
+	.header-popup-wrapper
+		.container
+			section.popup-b.popup-login#popupLogin
+				header
+					h2.popup-login__title Вход
+					a(href="#").popup-login__reg-link Регистрация
+				form(action="/", method="POST", name="login").login-form
+					
+					label(for="email").login-form__label E-mail
+					input(type="email", required).login-form__input.form-control
+					
+					label(for="email").login-form__label Пароль
+					input(type="password", required).login-form__input.form-control
+
+					.form-group
+						input(type="checkbox", id="forgotPassword").custom-checkbox
+						label(for="forgotPassword").custom-checkbox__label.login-form__label
+							span.custom-checkbox__box.login-form__checkbox-box 
+							|  Запомнить меня
+					.form-group
+						.login-form__invalid-data Неправильный логин или пароль
+						input(type="submit", value="Войти").btn.login-form__btn
+						a(href="#").login-form__reminder-link Забыли пароль?
+				.social-login
+					h2.social-login__title Вход через социальные сети
+					ul.social-login__links.clearfix
+						li.social-login__link.social-login__link--fb
+							a(href="#", title="facebook")
+						li.social-login__link.social-login__link--vk
+							a(href="#", title="vkontakte")
+						li.social-login__link.social-login__link--gp
+							a(href="#", title="google plus")
+
+				a.popup-b__close(href="#")
 .header-search-results-wrapper
 // Конец шапки сайта

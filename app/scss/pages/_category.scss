@@ -182,7 +182,7 @@
     cursor: pointer;
 
     @media (min-width: $desktop-min) {
-        margin-right: 15px;
+        margin-right: 9px;
     }
 
     & > li {
@@ -202,7 +202,7 @@
         background: #fff url(images/select-arrow-small.png) no-repeat right 10px  top 50%;
         background-size: 17px;
         @media (min-width: 994px) {
-            font: 15px/30px 'OpenSans';
+            font: 14px/30px 'OpenSans';
 
             box-sizing: border-box;
             width: 100%;
@@ -220,36 +220,64 @@
 }
 .product-sort-simple li > ul {
     display: none;
+    list-style: none;
 }
 .product-sort-simple.active > li{
-    color: #fff;
-    background-color: #4b80bb;
+    color: #000;
+    // background-color: #4b80bb;
     background-image: url(images/select-arrow-small-up.png);
 }
 .product-sort-simple li > ul {
     font-size: 15px;
-
     position: absolute;
     z-index: 9999;
     top: 50px;
     left: 0;
-
     box-sizing: border-box;
     width: 100%;
-    padding: 5px 10px;
-
-    border: 1px solid #b8b8b8;
+    padding: 0 15px;
+    border: 1px solid #4b80bb;
     border-top: 0;
     border-radius: 1px;
     background: white;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .15);
+
     @media (min-width: 994px) {
-        top: 29px;
+        top: 35px;
+        width: 268px;
+        border-top: 1px solid #4b80bb;
+    }
+
+    & > li {
+        padding: 0 7px;
+        border-bottom: 1px solid #e1e1e1;
+        font-size: 14px;
+        line-height: 38px;
+        &:first-child {
+            padding-top: 5px;
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background-color: #f6f6f6;
+
+            a {
+                color: $hovered-link-color;
+                text-decoration: none;
+            }
+        }
     }
 }
 
 .product-sort-simple [data-selected="true"] {
-    background: #fff url('images/ui-icon-avail-yes.png') 100% center no-repeat;
+    background: #fff url('images/svg/Cart-check.svg') 98% center no-repeat;
+    background-size: 23px;
+
+    a {
+        color: #000;
+    }
 }
 
 // =========================== CATEGORY VIEW CHANGER ==========================

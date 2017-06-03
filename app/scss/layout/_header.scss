@@ -1540,11 +1540,31 @@
         // margin-top: 35px;
     }
 }
+.header-popup-wrapper {
+    
+    position: absolute;
+    z-index: 9999;
+    box-sizing: border-box;
+    width: 100%;
+    top: 47px;
 
+    .container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
 .popup-login {
 	max-width: 350px !important;
 	padding: 41px 40px 27px;
-    margin-top: 46px;
+    position: relative;
+
+    margin: 0;
+    margin-left: auto;
+    float: right;
+
+    @media (min-width: $tablet-min) {
+        margin: 0;
+    }
 
 	.popup-b__close {
 		top: 18px;

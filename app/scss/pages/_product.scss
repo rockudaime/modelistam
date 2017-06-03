@@ -1245,20 +1245,16 @@ div.shop-info__work-time {
   &__link,
   &__tablet-toggler {
     font: 15px OpenSans;
-
     display: block;
-
     padding: 15px 20px;
-
     white-space: nowrap;
     text-decoration: none;
-
     color: #151515;
     @media (min-width: 994px) {
       padding: 15px;
     }
     @media (min-width: 1235px) {
-      padding: 15px 20px;
+      padding: 15px 19px;
     }
   }
   &__link--active {
@@ -1319,7 +1315,6 @@ div.shop-info__work-time {
   p {
     font-family: inherit;
     font-size: inherit;
-
     margin-bottom: 10px;
   }
   ol {
@@ -1351,6 +1346,18 @@ div.shop-info__work-time {
   }
   &__completing {
     margin-top: 40px;
+
+    @media (min-width: 1235px) {
+      width: 70%;
+    }
+  }
+
+  &__characteristics {
+    margin-top: 40px;
+
+    @media (min-width: 1235px) {
+      width: 70%;
+    }
   }
 }
 .about-product__similar-products {
@@ -1470,14 +1477,12 @@ div.shop-info__work-time {
 .about-product__text {
   margin-bottom: 20px;
   @media (min-width: 1235px) {
-
     width: 973px;
   }
 }
 // Product characteristics table
 .product-characteristics {
   font: 15px OpenSans, sans-serif;
-
   width: 100%;
 }
 .characteristic {

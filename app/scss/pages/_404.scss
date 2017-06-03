@@ -1,10 +1,17 @@
 .page404{
 	max-width: 629px;
-	margin: 0 auto;
+	margin-left: 40px;
 	padding-bottom: 50px;
 
 	@media(min-width: 768px){
 		padding: 51px 0 243px;
+	}
+
+	@media (min-width: 1235px) {
+		max-width: 495px;
+		padding: 20px 0 243px 40px;
+		margin-left: 0;
+		background: #fff url('images/svg/arrow404.svg') 0 52% no-repeat;
 	}
 
 	&__type{
@@ -15,10 +22,11 @@
 
 	&__details{
 		font-size: 16px;
-		margin-bottom: 30px;
+		line-height: 28px;
+		margin-bottom: 10px;
 
 		@media(min-width: 768px){
-			margin-bottom: 45px;
+			margin-bottom: 10px;
 		}
 
 		&-link{
@@ -33,30 +41,4 @@
 		}
 	}
 
-	&__categories{
-
-		li {
-			list-style: none;
-		}
-
-		&-item{
-			font-size: 16px;
-			margin-bottom: 15px;
-
-			& a:hover{
-				color: darken(#346cab, 20%);
-			}
-		}
-
-		@media(min-width: 768px){
-			&--left{
-				float: left;
-				display: inline-block;
-				margin-right: 63px;
-			}
-			&--right{
-				float: left;
-			}
-		}
-	}
 }

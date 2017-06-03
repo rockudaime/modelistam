@@ -533,14 +533,14 @@ html(lang="ru")
 						input#paging(type='hidden', name='p', value='')
 						.sort.sort-main-block
 							ul#product-sort-simple.product-sort-simple
-								li Сортировать
+								li со скидкой
 									ul
 										li
-											a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
+											a.product-sort__link(href='/catalog/avtomobili?s=new') от дорогих к дешевым
 										li
 											a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
+										li(data-selected="true")
+											a.product-sort__link(href='/catalog/avtomobili?s=name') со скидкой
 			main.category-content.search-results.clearfix
 				section.category-content__products.search-results__products
 					// product 1
