@@ -108,7 +108,9 @@
         clear: none;
     }
 }
-
+#sort-form {
+    position: relative;
+}
 .category-sort-form {
     margin-bottom: 12px;
     position: relative;
@@ -132,12 +134,13 @@
 
 .sort {
 
-    &__label {
+    &:before {
         font: 11px $main-font-light;
         color: #a8a8a8;
         position: absolute;
         top: -18px;
         display: none;
+        content: "Сортировка";
 
         @media (min-width: $desktop-min) {
             display: inline-block;
@@ -203,9 +206,11 @@
 
     & > li {
         font: 18px/51px 'OpenSans_SemiBold';
-        // list-style: none;
+        list-style: none;
+        
 
         position: relative;
+        
 
         display: block;
 
@@ -234,6 +239,13 @@
             vertical-align: middle;
         }
     }
+}
+.product-sort__btn {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .product-sort-simple li > ul {
     display: none;

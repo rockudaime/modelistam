@@ -17,6 +17,7 @@ html(lang="ru")
 		script(src="dist/js/pages/category.js")
 
 	body
+		include mixins/mixins.pug
 		include includes/header.pug
 		
 		.container
@@ -338,45 +339,7 @@ html(lang="ru")
 										
 			// конец сайдбара с меню по категориям
 			// начало секции с брендами для данной категории
-			section.brands-block
-				h2.brands-block__heading Катера для рыбалки по брендам
-				ul.brands-list.item-detail.item-detail--active
-					li.brands-list__item
-						a(href="#") Pilotage
-					li.brands-list__item
-						a(href="#") Brio
-					li.brands-list__item
-						a(href="#") Himoto
-					li.brands-list__item
-						a(href="#") HSP
-					li.brands-list__item
-						a(href="#") Maverick
-					li.brands-list__item
-						a(href="#") Pilotage
-					li.brands-list__item
-						a(href="#") Brio
-					li.brands-list__item
-						a(href="#") Pilotage
-					li.brands-list__item
-						a(href="#") Brio
-					li.brands-list__item
-						a(href="#") Himoto
-					li.brands-list__item
-						a(href="#") HSP
-					li.brands-list__item
-						a(href="#") Maverick
-					li.brands-list__item
-						a(href="#") Pilotage
-					li.brands-list__item
-						a(href="#") Brio
-				.brands-block__links
-					a(href="#").brands-block__link.brands-block__link--accessories
-						span Аксессуары
-					a(href="#").brands-block__link.brands-block__link--maintenance
-						span Обслуживание
-					a(href="#").brands-block__link.brands-block__link--howtochoose
-						span Как выбрать
-
+			+brands-block('Катера для рыбалки')
 
 
 		// Все попапы

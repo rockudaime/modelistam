@@ -175,3 +175,51 @@ $(function(){
 
 });
 
+$(function() {
+	var categoryDescription = $('.category-prefooter-description');
+
+	var text = categoryDescription.find('.category-prefooter-description__text');
+	var link = categoryDescription.find('.content-show-link');
+	var firstParagraph = text.find('p:first');
+	var paragraphsToHide = text.find('p:not(:first)');
+
+	// link.hide();
+
+	var paragraphText = firstParagraph.text();
+	if (paragraphText.length > 500) {
+		var firstPart = paragraphText.slice(0, 500);
+		var secondPart = paragraphText.slice(500, paragraphText.length);
+		firstParagraph.html(firstPart + '...' + '<span class="hidden">' + secondPart + '</span>');
+	}
+
+	if (paragraphsToHide.length > 0) {
+		paragraphsToHide.hide();
+		// link.css('display', 'inline-block');
+	}
+	
+
+
+	link.on('click', function (e) {
+		e.preventDefault();
+
+		if (this.dataset.state == 'collapse') {
+			paragraphsToHide.slideUp();
+			this.dataset.state = 'expand';
+			this.innerHTML = '<span>Развернуть</span>';
+
+			if (firstPart) {
+				firstParagraph.html(firstPart + '...' + '<span class="hidden">' + secondPart + '</span>');
+			}
+
+		}  else {
+			paragraphsToHide.slideDown();
+			this.dataset.state = 'collapse';
+			this.innerHTML = '<span>Свернуть</span>';
+
+			if (firstPart) {
+				firstParagraph.html(firstPart + secondPart);
+			}
+		}
+	});
+});
+

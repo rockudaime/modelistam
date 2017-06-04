@@ -84,3 +84,43 @@ mixin cabinet-product-incart(imageSrc, description, price, priceNew)
 					a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
 					.category-product__product-links
 						a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+
+mixin brands-block(title)
+	section.brands-block
+		h2.brands-block__heading #{title} по брендам
+		ul.brands-list.item-detail.item-detail--active
+			li.brands-list__item
+				a(href="#") Pilotage
+			li.brands-list__item
+				a(href="#") Brio
+			li.brands-list__item
+				a(href="#") Himoto
+			li.brands-list__item
+				a(href="#") HSP
+			li.brands-list__item
+				a(href="#") Maverick
+			li.brands-list__item
+				a(href="#") Pilotage
+			li.brands-list__item
+				a(href="#") Brio
+			li.brands-list__item
+				a(href="#") Pilotage
+			li.brands-list__item
+				a(href="#") Brio
+			li.brands-list__item
+				a(href="#") Himoto
+			li.brands-list__item
+				a(href="#") HSP
+			li.brands-list__item
+				a(href="#") Maverick
+			li.brands-list__item
+				a(href="#") Pilotage
+			li.brands-list__item
+				a(href="#") Brio
+		.brands-block__links
+			a(href="#").brands-block__link.brands-block__link--accessories
+				span Аксессуары
+			a(href="#").brands-block__link.brands-block__link--maintenance
+				span Обслуживание
+			a(href="#").brands-block__link.brands-block__link--howtochoose
+				span Как выбрать

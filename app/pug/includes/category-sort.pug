@@ -1,10 +1,10 @@
 form#sort-form.category-sort-form.category-sort-form--half-mob(method='get', action='/')
 	input#sort-order(type='hidden', name='sort', value='')
 	input#paging(type='hidden', name='p', value='')
-	span.sort__label Сортировка
 	.sort.sort-main-block
 		ul#product-sort-simple.product-sort-simple
-			li со скидкой
+			li
+				span.product-sort__btn от дорогих к дешевым до очень дорогих
 				ul
 					li
 						a.product-sort__link(href='/catalog/avtomobili?s=new') от дорогих к дешевым
@@ -12,3 +12,5 @@ form#sort-form.category-sort-form.category-sort-form--half-mob(method='get', act
 						a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
 					li(data-selected="true")
 						a.product-sort__link(href='/catalog/avtomobili?s=name') со скидкой
+					li
+						a.product-sort__link(href='/catalog/avtomobili?s=name') по рейтингу покупателей

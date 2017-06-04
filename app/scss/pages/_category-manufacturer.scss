@@ -1,12 +1,19 @@
 .category-manufacturer-header {
 	@extend .search-page-header;
 	margin-top: 10px;
+	@media (min-width: $desktop-min) {
+		width: 100%;
+		float: none;
+	}
 }
 
 .category-manufacturer-header__left {
 	@extend .search-page-header__left;
 	background-image: none;
 	padding-left: 0;
+	@media (min-width: $desktop-min) {
+		width: auto;
+	}
 }
 
 .category-manufacturer-header__right {
@@ -128,7 +135,7 @@
 
 	h2, 
 	h3 {
-		font-size: 1em;
+		font-size: 20px;
 		font-family: $main-font-semibold;
 		margin-bottom: 4px;
 	}

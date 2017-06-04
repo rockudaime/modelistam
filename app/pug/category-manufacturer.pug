@@ -58,19 +58,7 @@ html(lang="ru")
 					
 					.filter-link.filter-link--half-mob Подбор 
 
-					form#sort-form.category-sort-form.category-sort-form--half-mob(method='get', action='/')
-						input#sort-order(type='hidden', name='sort', value='')
-						input#paging(type='hidden', name='p', value='')
-						.sort.sort-main-block
-							ul#product-sort-simple.product-sort-simple
-								li Сортировать
-									ul
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=new') по новинкам
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=price') по стоимости
-										li
-											a.product-sort__link(href='/catalog/avtomobili?s=name') по имени
+					include includes/category-sort.pug
 			main.category-content.clearfix.category-manufacturer-content
 				section.category-content__products.search-results__products
 					// product 1

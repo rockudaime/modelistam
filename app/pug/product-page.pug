@@ -30,6 +30,7 @@ html(lang="ru")
 		script(src="//dev.mneniya.pro/jquery.rating.pack.js")
 
 	body
+		include mixins/mixins.pug
 		include includes/header.pug
 		.container
 			// ХЛЕБНЫЕ КРОШКИ
@@ -1098,6 +1099,8 @@ html(lang="ru")
 					// Похожие товары
 					h2.additional-blocks__heading С этой моделью также смотрят
 					+accessories-carousel
+
+				+brands-block('Самолеты')
 			// Начало попапов один контейнер для всех попапов
 			.popup-outer
 

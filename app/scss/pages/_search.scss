@@ -1,6 +1,10 @@
 .search-page-header {
 	margin-bottom: 15px;
 
+	& * {
+		box-sizing: border-box;
+	}
+
 	@media (min-width: 994px) {
 		margin-bottom: 21px;
 		border-bottom: 1px solid #e1e1e1;
@@ -29,10 +33,10 @@
 			float: left;
 			margin-bottom: 0;
 			max-width: 700px;
-			width: 700px;
+			width: 650px;
 		}
 
-		@media (min-width: 1235px) {
+		@media (min-width: $desktop-min) {
 			max-width: 855px;
 			width: 530px;
 		}
@@ -49,16 +53,31 @@
 			}
 
 			.category-sort-form {
-				width: 199px;
+				// width: 199px;
 			}
 
 			.catalog-view-changer {
 				margin: 0;
 			}
 		}
+
+		@media (min-width: 1235px) {
+			max-width: 320px;
+		}
 	}
 }
-
+.search-nav {
+	padding-top: 15px;
+	.breadcrumbs-menu-btn {
+		max-width: none;
+		width: 150px;
+		font-size: 18px;
+		height: 40px;
+		line-height: 40px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
 .search-page-title {
 	// font-size: 20px;
 	margin-bottom: -2px;
