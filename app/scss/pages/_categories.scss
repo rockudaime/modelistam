@@ -247,6 +247,10 @@
             .subcategory {
                 background-image: none;
             }
+
+            &:hover .subcategory {
+                background-image: none;
+            }
         }
     }
     &-back-link {

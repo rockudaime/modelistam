@@ -130,6 +130,11 @@
 		}
 	}
 }
+
+.search-results-sidebar {
+	position: relative;
+	top: -21px;
+}
 .search-sidebar__category-menu {
 	padding-bottom: 8px;
 	border-bottom: 1px solid #dfdfdf;
@@ -165,4 +170,8 @@
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+[data-text-truncated="true"]:after {
+	content: '...';
 }

@@ -180,46 +180,77 @@ $(function() {
 
 	var text = categoryDescription.find('.category-prefooter-description__text');
 	var link = categoryDescription.find('.content-show-link');
-	var firstParagraph = text.find('p:first');
-	var paragraphsToHide = text.find('p:not(:first)');
+	var firstParagraph = text.find(':first');
+	var paragraphsToHide = text.find(':not(:first)');
 
-	// link.hide();
+	function truncateInnerText ($elem, maxLength) {
+		var $childElements = $elem.children();
+		var textToHide, textToShow, child, childText;
+		var totalLength = 0;
 
-	var paragraphText = firstParagraph.text();
-	if (paragraphText.length > 500) {
-		var firstPart = paragraphText.slice(0, 500);
-		var secondPart = paragraphText.slice(500, paragraphText.length);
-		firstParagraph.html(firstPart + '...' + '<span class="hidden">' + secondPart + '</span>');
+		for (var i=0; i < $childElements.length; i++) {
+			child = $($childElements[i]);
+			childText = child.html();
+			if (childText.length > maxLength && totalLength < maxLength) {
+				hideTextPart(child, maxLength);
+				totalLength += childText.length;
+				continue;
+			} else if (childText.length + totalLength > maxLength && totalLength < maxLength) {
+				var length = maxLength - totalLength;
+				hideTextPart(child, length);
+				totalLength += childText.length;
+				continue;
+			} else if (totalLength > maxLength) {
+				child.attr("data-state", "hidden");
+				child.hide();
+				continue;
+			}
+			totalLength += childText.length;
+		}
+
+		$childElements.filter(function() {
+			return $(this).data('state') === 'hidden';
+		}).wrap('<div class="hidden"></div>')
 	}
 
-	if (paragraphsToHide.length > 0) {
-		paragraphsToHide.hide();
-		// link.css('display', 'inline-block');
+	function hideTextPart(elem, length) {
+		var elemText = elem.html();
+		var textToShow = elemText.slice(0, length);
+		var textToHide = elemText.slice(length, elemText.length);
+		elem.html(textToShow  + '<span class="hidden" data-state="hidden">' + textToHide + '</span>');
+		elem.attr('data-text-truncated', 'true');
 	}
-	
+
+
+	truncateInnerText(text, 531);
+
+	function showText () {
+		$('[data-text-truncated]').attr('data-text-truncated', 'false');
+		text.find('div.hidden').slideDown();
+		text.find('span.hidden').show();
+	}
+
+	function hideText () {
+		$('[data-text-truncated]').attr('data-text-truncated', 'true');
+		text.find('div.hidden').slideUp();
+		text.find('span.hidden').hide();
+	}
 
 
 	link.on('click', function (e) {
 		e.preventDefault();
 
 		if (this.dataset.state == 'collapse') {
-			paragraphsToHide.slideUp();
+			hideText();
 			this.dataset.state = 'expand';
 			this.innerHTML = '<span>Развернуть</span>';
-
-			if (firstPart) {
-				firstParagraph.html(firstPart + '...' + '<span class="hidden">' + secondPart + '</span>');
-			}
 
 		}  else {
 			paragraphsToHide.slideDown();
 			this.dataset.state = 'collapse';
 			this.innerHTML = '<span>Свернуть</span>';
-
-			if (firstPart) {
-				firstParagraph.html(firstPart + secondPart);
-			}
+			showText()
+		
 		}
 	});
 });
-

@@ -27,6 +27,13 @@ body.modal-open {
     // width: 100%;
     
 }
+ul {
+    margin-bottom: 20px;
+}
+
+ul > li {
+    list-style-position: inside;
+}
 
 a {
     color: $link-color;
