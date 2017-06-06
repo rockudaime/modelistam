@@ -186,12 +186,6 @@ $(document).ready(function() {
 				loop:false,
 				dots: false
 
-			},
-			1200:{
-				items:5,
-				nav:true,
-				loop:false,
-				dots: false
 			}
 		}
 	});
@@ -217,6 +211,14 @@ $(document).ready(function() {
 	var mainImage = $('.product-card__main-image img');
 	var smallImages = $('.gallery-product__item');
 	var galleryContent = $('.gallery-product__content');
+
+	// раскрытие блока с брендами товара в мобильном виде
+	if (wWidth < 768) {
+		$('.brands-block__heading').on('click', function(e) {
+			$(this).toggleClass('active');
+			$(this).next().finish().slideToggle();
+		});
+	}
 
 	galleryConfig = {
 		galleryImagesParentBlock:  $('.gallery-product'),
@@ -319,6 +321,7 @@ $(document).ready(function() {
 			self.mainImage = $('.popup-gallery__main-image img');
 			self.galleryImages = previewImages.find('.gallery-product__item');
 			self.handleNavLinksStatus();
+			self.addNavLinks(previewImagesParentBlock);
 			
 			// Переключение изображений по клику
 			self.galleryImages.on('mouseover', imageSwitchHandler);
@@ -369,6 +372,7 @@ $(document).ready(function() {
 				'use strict';
 				var parent = activeImage.parent();
 				var container = parent.parent();
+				var controlButtonUp = container.find('.gallery-product__control--up');
 				var containerSize, activeImageOffset, activeImageSize;
 				var parentShiftLeft = 0;
 				var parentShiftTop = 0;
@@ -387,9 +391,11 @@ $(document).ready(function() {
 				if (activeImageOffset > containerSize) {
 					parent.css('transform', 'translate3d(' + parentShiftLeft + 'px, ' + parentShiftTop + 'px, 0px)' )
 					parent.css('transition', 'transform 0.2s ease');
+					controlButtonUp.addClass('gallery-product__control--active');
 				} else {
 					parent.css('transform', 'translate3d(' + 0 + 'px, ' + 0 + 'px, 0px)' )
 					parent.css('transition', 'transform 0.2s ease');
+					controlButtonUp.removeClass('gallery-product__control--active');
 				}
 			}
 
@@ -461,9 +467,55 @@ $(document).ready(function() {
 			block.on('touchend', function(e) {
 				endPos = $(this).position().left;
 			});
+		},
+		addNavLinks: function (smallImagesContainer) {
+			var galleryContentPosition = 0;
+			var galleryImagesBlock = smallImagesContainer.find('.gallery-product__content');
+			var galleryImagesBlockHeight = galleryImagesBlock.height();
+			var galleryImagesParentBlockHeight = smallImagesContainer.height();
+			var activeControlButtonClassName = 'gallery-product__control--active';
+
+			if (!this.iniatialized) {
+				var controlButtonUp = $('.gallery-product__control--up').clone().appendTo(smallImagesContainer);
+				var controlButtonDown = $('.gallery-product__control--down').clone().appendTo(smallImagesContainer);
+				
+				if (galleryImagesBlockHeight > galleryImagesParentBlockHeight) {
+					controlButtonDown.addClass(activeControlButtonClassName);
+					controlButtonDown.on('click', function (e) {
+						e.preventDefault();
+
+						if (galleryContentPosition + galleryImagesParentBlockHeight > galleryImagesBlockHeight - galleryImagesParentBlockHeight) {
+							galleryContentPosition = galleryImagesBlockHeight - galleryImagesParentBlockHeight;
+							galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition - 12 + 'px)'));
+							controlButtonUp.addClass(activeControlButtonClassName);
+							$(this).removeClass(activeControlButtonClassName);
+						} else {
+							galleryContentPosition += galleryImagesParentBlockHeight;
+							galleryImagesBlock.css('transform', 'translateY(' + ( -(galleryContentPosition) - 12 + 'px)'));
+							controlButtonUp.addClass(activeControlButtonClassName);
+						}
+					});
+
+					controlButtonUp.on('click', function (e) {
+						e.preventDefault();
+
+						if (galleryContentPosition - galleryImagesParentBlockHeight <= 0) {
+							galleryContentPosition = 0;
+							galleryImagesBlock.css('transform', 'translateY(' + (0 + 'px)'));
+							$(this).removeClass(activeControlButtonClassName);
+							$(controlButtonDown).addClass(activeControlButtonClassName);
+						} else {
+							galleryContentPosition -= galleryImagesParentBlockHeight;
+							galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition + 12 + 'px)'));
+							$(controlButtonDown).addClass(activeControlButtonClassName);
+						}
+					});
+				}
+			}
+			
 		}
 
-	};	
+	};
 // Открытие попапа галереи
 	(function() {
 		'use strict';

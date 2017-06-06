@@ -4104,6 +4104,7 @@ div.star-rating-hover a{background-position:0 0px}
   &__all-images {
     // .popup-gallery__all-images
     overflow: hidden;
+    position: relative;
     width: 100%;
 
     @media (min-width: 768px) {
@@ -4122,7 +4123,7 @@ div.star-rating-hover a{background-position:0 0px}
 
     .gallery-product__content{
       white-space: nowrap;
-      transition: none;
+      // transition: none;
 
       @media (min-width: 768px) {
        

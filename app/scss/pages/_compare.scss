@@ -114,12 +114,13 @@
         cursor: pointer;
         padding: 8px 15px;
         width: 155px;
-        box-sizing: border-box;      
+        box-sizing: border-box;
+        list-style: none;
 
         &.active {
             position: relative;
             background: #d5e8f3;
-            outline: 0;                
+            outline: 0;
         }
         @media  (max-width: $tablet-max) {
             &-mobile {

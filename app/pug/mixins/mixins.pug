@@ -85,8 +85,9 @@ mixin cabinet-product-incart(imageSrc, description, price, priceNew)
 					.category-product__product-links
 						a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
 
-mixin brands-block(title)
-	section.brands-block
+//- brands-block используется на странице товара (product-page.pug), на странице категории (category.pug)
+mixin brands-block(title, additionalClass)
+	section.brands-block(class=additionalClass)
 		h2.brands-block__heading #{title} по брендам
 		ul.brands-list.item-detail.item-detail--active
 			li.brands-list__item

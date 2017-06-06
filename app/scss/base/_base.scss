@@ -1,16 +1,6 @@
 /*---------------------------------------
  start of _base.scss
 ----------------------------------------*/
-// @font-face {
-//     font-family: OpenSans_light; /* Имя шрифта */
-//     src: url(fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
-// }
-
-// @font-face {
-//     font-family: OpenSans_Semibold; /* Имя шрифта */
-//     src: url(fonts/OpenSans-Semibold.ttf); /* Путь к файлу со шрифтом */
-// }
-
 html, body {
     height: 100%;
 }
@@ -92,8 +82,9 @@ br.clear {
 .underline {
     text-decoration: underline;
 }
-
-
+.u-no-border {
+    border: 0 !important;
+}
 .required {
     color: #ed0005;
 }
