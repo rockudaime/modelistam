@@ -175,82 +175,115 @@ $(function(){
 
 });
 
-$(function() {
-	var categoryDescription = $('.category-prefooter-description');
+// $(function() {
+// 	var categoryDescription = $('.category-prefooter-description');
 
-	var text = categoryDescription.find('.category-prefooter-description__text');
-	var link = categoryDescription.find('.content-show-link');
-	var firstParagraph = text.find(':first');
-	var paragraphsToHide = text.find(':not(:first)');
+// 	var text = categoryDescription.find('.category-prefooter-description__text');
+// 	var link = categoryDescription.find('.content-show-link');
+// 	var firstParagraph = text.find(':first');
+// 	var paragraphsToHide = text.find(':not(:first)');
 
-	function truncateInnerText ($elem, maxLength) {
-		var $childElements = $elem.children();
-		var textToHide, textToShow, child, childText;
-		var totalLength = 0;
+// 	function truncateInnerText ($elem, maxLength) {
+// 		var $childElements = $elem.children();
+// 		var textToHide, textToShow, child, childText;
+// 		var totalLength = 0;
 
-		for (var i=0; i < $childElements.length; i++) {
-			child = $($childElements[i]);
-			childText = child.html();
-			if (childText.length > maxLength && totalLength < maxLength) {
-				hideTextPart(child, maxLength);
-				totalLength += childText.length;
-				continue;
-			} else if (childText.length + totalLength > maxLength && totalLength < maxLength) {
-				var length = maxLength - totalLength;
-				hideTextPart(child, length);
-				totalLength += childText.length;
-				continue;
-			} else if (totalLength > maxLength) {
-				child.attr("data-state", "hidden");
-				child.hide();
-				continue;
-			}
-			totalLength += childText.length;
-		}
+// 		for (var i=0; i < $childElements.length; i++) {
+// 			child = $($childElements[i]);
+// 			childText = child.html();
+// 			if (childText.length > maxLength && totalLength < maxLength) {
+// 				hideTextPart(child, maxLength);
+// 				totalLength += childText.length;
+// 				continue;
+// 			} else if (childText.length + totalLength > maxLength && totalLength < maxLength) {
+// 				var length = maxLength - totalLength;
+// 				hideTextPart(child, length);
+// 				totalLength += childText.length;
+// 				continue;
+// 			} else if (totalLength > maxLength) {
+// 				child.attr("data-state", "hidden");
+// 				child.hide();
+// 				continue;
+// 			}
+// 			totalLength += childText.length;
+// 		}
 
-		$childElements.filter(function() {
-			return $(this).data('state') === 'hidden';
-		}).wrap('<div class="hidden"></div>')
-	}
+// 		$childElements.filter(function() {
+// 			return $(this).data('state') === 'hidden';
+// 		}).wrap('<div class="hidden"></div>')
+// 	}
 
-	function hideTextPart(elem, length) {
-		var elemText = elem.html();
-		var textToShow = elemText.slice(0, length);
-		var textToHide = elemText.slice(length, elemText.length);
-		elem.html(textToShow  + '<span class="hidden" data-state="hidden">' + textToHide + '</span>');
-		elem.attr('data-text-truncated', 'true');
-	}
-
-
-	truncateInnerText(text, 531);
-
-	function showText () {
-		$('[data-text-truncated]').attr('data-text-truncated', 'false');
-		text.find('div.hidden').slideDown();
-		text.find('span.hidden').show();
-	}
-
-	function hideText () {
-		$('[data-text-truncated]').attr('data-text-truncated', 'true');
-		text.find('div.hidden').slideUp();
-		text.find('span.hidden').hide();
-	}
+// 	function hideTextPart(elem, length) {
+// 		var elemText = elem.html();
+// 		var textToShow = elemText.slice(0, length);
+// 		var textToHide = elemText.slice(length, elemText.length);
+// 		elem.html(textToShow  + '<span class="hidden" data-state="hidden">' + textToHide + '</span>');
+// 		elem.attr('data-text-truncated', 'true');
+// 	}
 
 
-	link.on('click', function (e) {
+// 	truncateInnerText(text, 531);
+
+// 	function showText () {
+// 		$('[data-text-truncated]').attr('data-text-truncated', 'false');
+// 		text.find('div.hidden').slideDown();
+// 		text.find('span.hidden').show();
+// 	}
+
+// 	function hideText () {
+// 		$('[data-text-truncated]').attr('data-text-truncated', 'true');
+// 		text.find('div.hidden').slideUp();
+// 		text.find('span.hidden').hide();
+// 	}
+
+
+// 	link.on('click', function (e) {
+// 		e.preventDefault();
+
+// 		if (this.dataset.state == 'collapse') {
+// 			hideText();
+// 			this.dataset.state = 'expand';
+// 			this.innerHTML = '<span>Развернуть</span>';
+
+// 		}  else {
+// 			paragraphsToHide.slideDown();
+// 			this.dataset.state = 'collapse';
+// 			this.innerHTML = '<span>Свернуть</span>';
+// 			showText()
+		
+// 		}
+// 	});
+// });
+
+$(function(){
+	var desc = $('.prefooter-description'); // блок с описанием в префутере
+	var text = desc.find('.prefooter-description__inner-text');
+	var initialHeight = text.height();
+	var collapsedHeight = 192; // height for 6 lines of text
+	console.log(initialHeight);
+	var toggleLink = desc.find('.prefooter-description__toggle');
+	setTextHeight(text, collapsedHeight);
+	text.css({
+		'overflow': 'hidden',
+		'transition': 'height  .3s ease-in'
+	})
+
+	toggleLink.on('click', function (e) {
 		e.preventDefault();
 
 		if (this.dataset.state == 'collapse') {
-			hideText();
+			setTextHeight(text, collapsedHeight);
 			this.dataset.state = 'expand';
 			this.innerHTML = '<span>Развернуть</span>';
 
-		}  else {
-			paragraphsToHide.slideDown();
+		} else {
 			this.dataset.state = 'collapse';
 			this.innerHTML = '<span>Свернуть</span>';
-			showText()
-		
+			setTextHeight(text, initialHeight);
 		}
 	});
+
+	function setTextHeight (text, height) {
+		text.height(height);
+	}
 });
