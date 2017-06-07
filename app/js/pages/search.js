@@ -137,18 +137,23 @@ $(function(){
 		
 	});
 
+	if ($(document).width() <= 994){
+		hideElementOnEmptyClick(sidebar, filterLink);
+	}
+	
+	
 	// close sidebar filter by clicking on empty space
-	$(document).mouseup(function (e)
-	{ if ($(document).width() <= 994){
-	        if (!sidebar.is(e.target) // if the target of the click isn't the container...
-	            && sidebar.has(e.target).length === 0 // ... nor a descendant of the container
-	            && !filterLink.is(e.target))
-	        {
-	            sidebar.hide();
-	            filterLink.removeClass('filter-link-active');
-	        }
-	    }
-	});
+	// $(document).mouseup(function (e)
+	// { if ($(document).width() <= 994){
+	//         if (!sidebar.is(e.target) // if the target of the click isn't the container...
+	//             && sidebar.has(e.target).length === 0 // ... nor a descendant of the container
+	//             && !filterLink.is(e.target))
+	//         {
+	//             sidebar.hide();
+	//             filterLink.removeClass('filter-link-active');
+	//         }
+	//     }
+	// });
 	// open sidebar filter by clicking on mobile filter link (подбор)
 	filterLink.click(function() {
 		var offset = filterLink.position();
@@ -157,7 +162,7 @@ $(function(){
 	    sidebar.css('top', (offset.top) + filterLink.outerHeight()  + 'px' );
 	    sidebar.css('left', (offset.left)  + 'px' );
 	    sidebar.toggle();
-	    $(this).toggleClass('filter-link-active');
+	    $(this).toggleClass('active');
 	});
 
 	// ======================== filter popup ==================

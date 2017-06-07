@@ -250,11 +250,25 @@ $(function () {
 		});
 	}());
 
-	$('.product-sort-simple').on('click', function (e) {
+	var loginPopup = $('.popup-login');
+	var loginPopupOpenLink = $('.header-profile-link');
+
+	if (loginPopup.length > 0){
+		hideElementOnEmptyClick(loginPopup, loginPopupOpenLink);
+	}
+
+	var sortLink = $('.product-sort-simple');
+	var sortParameters = sortLink.find('ul');
+	sortLink.on('click', function (e) {
 		e.preventDefault();
-		$(this).find('ul').toggle();
+		sortParameters.toggle();
 		$(this).toggleClass('active');
-	})
+	});
+
+	if (sortLink.length > 0){
+		hideElementOnEmptyClick(sortParameters, sortLink);
+	}
+
 
 });
 
@@ -442,4 +456,16 @@ var MYFUNCS = {
 	}
 }
 
-
+/* Функция скрывает элемент, если клик происходит вне его области */
+function hideElementOnEmptyClick($element, $elementOpener) {
+	$(document).mouseup(function (e) {
+		if (!$element.is(e.target) // if the target of the click isn't the container...
+			&& $element.has(e.target).length === 0 // ... nor a descendant of the container
+			&& !$elementOpener.is(e.target)
+			&& $elementOpener.has(e.target).length === 0)
+		{
+			$element.hide();
+			$elementOpener.removeClass('active');
+		}
+	});
+}

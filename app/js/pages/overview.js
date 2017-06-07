@@ -61,11 +61,4 @@ $(function () {
 			}
 		}
 	});
-
-	var owlSlidersWithScrollbar = document.querySelectorAll('.owl-loaded.custom-scrollbar');
-	var item;
-	for (var i=0; i < owlSlidersWithScrollbar.length; i++) {
-		item = owlSlidersWithScrollbar[i];
-		addCustomScrollbar(item);
-	}
 });

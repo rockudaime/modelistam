@@ -127,7 +127,7 @@
         margin-bottom: 0;
     }
     @media (min-width: 994px) {
-        width: 250px;
+        width: 201px;
         // margin-right: 16px;
     }
 }
@@ -186,7 +186,7 @@
 .filter-link:hover {
     cursor: pointer;
 }
-.filter-link-active {
+.filter-link.active {
     cursor: pointer;
 
     color: #fff;
@@ -199,6 +199,7 @@
 }
 .product-sort-simple {
     cursor: pointer;
+    margin: 0;
 
     @media (min-width: $desktop-min) {
         margin-right: 9px;
@@ -250,19 +251,24 @@
 .product-sort-simple li > ul {
     display: none;
     list-style: none;
+    margin-bottom: 0;
 }
-.product-sort-simple.active > li{
+.product-sort-simple.active > li {
     color: #000;
-    // background-color: #4b80bb;
+    background-image: url(images/select-arrow-small-up.png);
     background-image: url(images/select-arrow-small-up.png);
     color: #fff;
     background-color: #4B80BB;
-    background-image: url(images/select-arrow-small-up.png);
+
+    @media (min-width: $desktop-min) {
+        background-color: #fff;
+        color: #000;
+    }
 }
 .product-sort-simple li > ul {
     font-size: 15px;
     position: absolute;
-    z-index: 9999;
+    z-index: 99;
     top: 50px;
     left: 0;
     box-sizing: border-box;
@@ -292,13 +298,9 @@
             border-bottom: 0;
         }
 
-        &:hover {
-            background-color: #f6f6f6;
-
-            a {
-                color: $hovered-link-color;
-                text-decoration: none;
-            }
+        &:hover a {
+            color: $hovered-link-color;
+            text-decoration: none;
         }
     }
 }

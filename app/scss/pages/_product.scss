@@ -1241,6 +1241,10 @@ div.shop-info__work-time {
     position: relative;
 
     display: inline-block;
+
+    @media (min-width: 1235px) {
+      max-height: 50px;
+    }
   }
   &__link,
   &__tablet-toggler {
@@ -4189,4 +4193,13 @@ div.nav-next {
     right: 5px;
   }
 
+}
+
+.product-card .brands-block{
+  &__links {
+    left: 24%;
+  }
+  &__link:first-child {
+    display: none;
+  }
 }

@@ -221,6 +221,9 @@
 
         box-shadow: none;
     }
+    ul {
+        margin-bottom: 0;
+    }
     li {
         list-style: none;
     }
@@ -301,6 +304,7 @@
 .sub-menu {
     margin-top: 5px;
     padding-left: 19px;
+
 }
 .sub-menu-2 {
     margin-bottom: -10px;
