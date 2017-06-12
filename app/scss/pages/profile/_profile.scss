@@ -91,6 +91,9 @@
             &--compare {
                 background-position: 6px -862px;
             }
+            &--waiting {
+                background-position: 6px -208px;
+            }
         }
     }
     &__icon {
@@ -115,6 +118,9 @@
         }
         &--compare {
             background-position: 6px -826px;
+        }
+        &--waiting {
+            background-position: 6px -172px;
         }
     }
     @media (min-width: 1235px) {
@@ -166,7 +172,7 @@
     }
 }
 .cabinet-title {
-    font: 20px/16px $main-font-semibold;
+    font: 20px/43px $main-font-semibold;
 
     margin: 0 0 19px;
 

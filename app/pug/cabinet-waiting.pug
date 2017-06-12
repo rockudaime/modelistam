@@ -1,0 +1,29 @@
+extends extends/cabinet-template.pug
+
+block breadcrumbs
+	section.breadcrumbs
+		a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+		a(href="#").breadcrumbs-item
+			span.bb-solid Главная
+		a(href="#").breadcrumbs-item
+			span.bb-solid Личный кабинет 
+		span Мои ожидания
+
+block main-content
+	main.cabinet-main-content
+		h2.cabinet-title.fl_l Мои ожидания
+		.fl_r.compare__header-links
+			a(href="#").compare__header-link.mobile-hidden
+				i.icon.icon--paper-plane.compare__header-icon
+				span Отправить на почту
+			a(href="#").compare__header-link
+				i.icon.icon--close.compare__header-icon
+				span Удалить все
+		include mixins/mixins
+		.product-group.cabinet-products-preview.clearfix
+			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+
+			

@@ -1,0 +1,161 @@
+doctype html
+html(lang="ru").no-js
+	head
+		title Личный кабинет - Как сэкономить
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+		script(src="dist/js/vendor/countdown/jquery.countdown.js")
+
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/personal-cabinet.js")
+
+	body
+		include ../includes/header.pug
+		// Конец шапки сайта
+		// Хлебные крошки и Основное меню
+		.container
+			// Хлебные крошки
+			block breadcrumbs
+				section.breadcrumbs
+					a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+					a(href="#").breadcrumbs-item
+						span.bb-solid Главная
+					a(href="#").breadcrumbs-item
+						span.bb-solid Личный кабинет 
+					span Название этой страницы
+			// Начало основного меню
+
+			include ../includes/main-nav.pug
+			// Конец основного меню
+		// Контент страницы
+		.container.personal-cabinet-content
+			// Блок меню личного кабинета
+			aside.cabinet-menu-block
+				// Кнопка раскрытия меню в мобильном и табличном виде
+				.mobile-custom-select.cabinet-menu__custom-select Как сэкономить
+				// Меню
+				block cabinet-menu
+					nav.cabinet-menu
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--save
+							| Как сэкономить
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
+							| Мои заказы
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--compare
+							| Сравнение
+						a(href="#").cabinet-menu-link.active
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--waiting
+							| Лист ожидания
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
+							| Профиль 
+			.cabinet-content-block.clearfix
+
+				// Блок main  - содержимое отличается для разных страниц личного кабинета
+				block main-content
+					main.cabinet-main-content
+						h2.cabinet-title Как сэкономить
+
+				// Сайдбар личного кабинета (общее)
+				aside.cabinet-sidebar
+					section.cabinet-extra-info
+						.personal-discount-block
+							.personal-status
+								a(href="#").personal-status__link
+									span.bb-solid Статус 
+								|  VIP
+								i.personal-status-icon.personal-status-icon--vip
+							
+							.personal-discount-label Алексей, Ваша скидка — 3%
+							.personal-discount
+								ul.personal-discount-list
+									li.active 3%
+									li 5%
+									li 10%
+									li 15%
+								.status-bar.discount-status-bar
+									.status-bar__progress.status-bar__progress--3
+									// for 5%  .status-bar__progress--5
+									// for 10% .status-bar__progress--10
+									// for 15% .status-bar__progress--15
+							.increase-discount
+								.increase-discount__title Хотите скидку в 5%?
+								a(href="#").increase-discount__link 
+									span Докупите еще на 7 450 грн
+									i.increase-discount__link-icon
+						.personal-manager-block.clearfix
+							.personal-manager-block__left
+								h3.personal-manager__title Ваш менеджер
+								p.personal-manager__info.
+									Евгений<br>
+									Никитенко
+								p.personal-manager__info.
+									(067) 234-52-68<br>
+									<a mailto="ev@modelistam.com.ua">ev@modelistam.com.ua</a>
+								a.chat-btn(href="#") Онлайн чат
+							.personal-manager-block__right
+								img(src="dist/images/personal-cabinet/photo-manager.jpg").personal-manager__photo
+								
+						.gift-certificate-block
+							.gift-certificate__link
+								a(href="#") Подарочные сертификаты
+							form.gift-certificate__form(action="/", method="POST")
+								select.gift-certificate__select
+									option(value="500") 500 грн
+									option(value="1000") 1000 грн
+									option(value="1500") 1500 грн
+								input.gift-certificate__btn.btn(type="submit" value="Купить")
+
+
+
+					section.cabinet-signup
+						.cabinet-signup__icon
+						form.cabinet-signup-form(method="POST", action="/")
+							h3.cabinet-signup__title Лучшие предложения
+							.cabinet-signup__options
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suStock")
+									label.custom-checkbox__label.cabinet-signup__label(for="suStock")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--stock Акции
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suDiscount")
+									label.custom-checkbox__label.cabinet-signup__label(for="suDiscount")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--discount Скидки
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suHits")
+									label.custom-checkbox__label.cabinet-signup__label(for="suHits")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--hits Хиты
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suNovelty")
+									label.custom-checkbox__label.cabinet-signup__label(for="suNovelty")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--novelty Новинки
+								.cabinet-signup__option
+									input.custom-checkbox(type="checkbox", id="suOverviews")
+									label.custom-checkbox__label.cabinet-signup__label(for="suOverviews")
+										span.custom-checkbox__box
+										span.cabinet-signup__option-label.cabinet-signup__option-label--overviews Обзоры
+							input.btn.cabinet-signup__btn(type="submit", value="Следить за лучшими предложениями")
+
+							p.cabinet-signup__legend.
+								Без спама.<br>
+								Отписка в любое время
+
+		// Все попапы
+		.popup-outer
+			
+		// Начало основного футера сайта
+		include ../includes/footer.pug
