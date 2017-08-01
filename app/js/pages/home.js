@@ -50,11 +50,14 @@ $(function() {
 	var pageSlider = $(".page-slider");
 	var pageSliderContainer, pageSliderControls;
 
+
 	pageSlider.owlCarousel({
  
 		nav : true, // Show next and prev buttons
 		navText: false,
 		autoplay: true,
+		autoplayTimeout: 5000,
+		autoplayHoverPause: true,
 		loop: true,
 		pagination: true,
 		slideSpeed : 2000,
@@ -77,6 +80,19 @@ $(function() {
 				nav:true,
 			},
 		}
+	});
+	var timer;
+
+	pageSlider.on('mouseleave', function () {
+		var self = $(this);
+		timer = setTimeout(function () {
+			self.trigger('next.owl.carousel');
+			console.log('triggered');
+		}, 1000);
+	});
+
+	pageSlider.on('mouseenter', function () {
+		clearTimeout(timer);
 	});
 
 	(function() {

@@ -1,1 +1,0 @@
-<?$arTemplate = Array("NAME"=>"Modelistam шаблон", "DESCRIPTION"=>"Адаптивный Modelistam шаблон магазина");?>

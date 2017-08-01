@@ -133,12 +133,12 @@ a.link-to-images {
   top: 0;
   height: 0;
   
-  background: #fff url('images/image-slider-icon.png') no-repeat 50% -28px;
+  background: #fff url('images/product-page/gallery-arrow-up.png') no-repeat 50% 50%;
   outline: 0;
   z-index: 30;
 
   &:hover {
-    background-position: 50% -14px;
+    background-image: url('images/product-page/gallery-arrow-up-active.png');
   }
 
   &:link,
@@ -149,7 +149,7 @@ a.link-to-images {
     border: 0;
   }
   &:active {
-    background-position: 50% 0px;
+    
     outline: 0;
   }
 
@@ -162,8 +162,9 @@ a.link-to-images {
   &--active {
     @media (min-width: 1235px) {
       width: 100%;
-      height: 12px;
+      height: 18px;
       display: block;
+      background-color: rgba(255, 255, 255, .6);
     }
     
   }
@@ -877,6 +878,10 @@ a.link-to-images {
     border: 0;
     background: transparent;
   }
+
+  @media (min-width: $desktop-min) {
+    white-space: nowrap;
+  }
 }
 
 // Product actions block
@@ -956,7 +961,7 @@ a.link-to-images {
     content: '';
 
     border-radius: 50%;
-    background: #76a035 url(images/personal-cabinet/icon-checked.png) no-repeat center center;
+    background: #76a035 url('images/personal-cabinet/icon-checked.png') no-repeat center center;
   }
 }
 .action-personal--selected i::after {
@@ -1395,7 +1400,7 @@ div.shop-info__work-time {
 
   border: 1px solid #787878;
   border-radius: 2px;
-  background: #fff url(images/ui-icon-catalog-tabs-mobile.png) no-repeat 95% 50%;
+  background: #fff url('images/ui-icon-catalog-tabs-mobile.png') no-repeat 95% 50%;
   @media (min-width: 768px) {
     display: none;
   }
@@ -1405,7 +1410,7 @@ div.shop-info__work-time {
   margin-bottom: 15px;
 
   color: #fff;
-  background: $link-color url(images/ui-arrow-accordion-up.png) no-repeat 95% 50%;
+  background: $link-color url('images/ui-arrow-accordion-up.png') no-repeat 95% 50%;
 }
 .item-detail__title {
   font: 20px OpenSans_SemiBold;
@@ -1978,11 +1983,26 @@ a.products-purchase__show-link {
     }
   }
 
+  &__sticker {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    z-index: 1;
+
+    @media (min-width: $tablet-min) {
+      left: 15px;
+    }
+
+    @media (min-width: $desktop-min) {
+      left: 46px;
+    }
+  }
+
   &__delete {
     position: absolute;
     top: 0;
     right: 4px;
-    z-index: 1;
+    z-index: 2;
 
     outline: 0;
     border: 0;
@@ -1997,13 +2017,13 @@ a.products-purchase__show-link {
   }
   &__photo {
     font-size: 0;
-    line-height: 165px;
+    line-height: 121px;
 
     // float: left;
 
     // width: 45%;
-    height: 165px;
-    margin-bottom: 25px;
+    height: 121px;
+    margin-bottom: 11px;
 
     text-align: center;
     @media (min-width: 544px) {
@@ -2027,11 +2047,17 @@ a.products-purchase__show-link {
     }
   }
   &__product-status {
-    display: none;
+    // display: none;
+
+    margin-bottom: 12px;
     @media(min-width: 544px) {
       display: block;
-
       height: 30px;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-min) {
+      margin-bottom: 0;
     }
   }
   &__heading {
@@ -2039,10 +2065,11 @@ a.products-purchase__show-link {
 
     overflow: hidden;
 
-    height: 130px;
+    height: 68px;
     margin: 0 0 15px;
-    @media(min-width: 544px) {
-      height: 85px;
+
+    @media (min-width: $desktop-min) {
+      margin-bottom: 15px;
     }
     a {
       color: #151515;
@@ -2152,6 +2179,19 @@ a.products-purchase__show-link {
   }
 }
 
+.preview-sticker {
+  font: 15px/2 $main-font;
+  height: 30px;
+  width: 159px;
+  box-sizing: border-box;
+
+  &--available {
+    background: #f6f6f6 url('images/personal-cabinet/icon-check.png') no-repeat 11px 50%;
+    color: #568800;
+    padding-left: 32px;
+  }
+}
+
 .product-status {
   font: 15px OpenSans, sans-serif;
 
@@ -2160,7 +2200,7 @@ a.products-purchase__show-link {
   white-space: nowrap;
   text-decoration: none;
   &--new {
-    color: #008739;
+    color: #0f8b90;
   }
   &--top {
     color: #da7600;
@@ -2188,15 +2228,15 @@ a.products-purchase__show-link {
   color: #151515;
 
   @media (min-width: 1235px) {
-    font: 22px OpenSans_Bold;
+    font: 20px $main-font-semibold;
 
     & > .product-price--currency {
-      font: 18px OpenSans;
+      font: 18px $main-font;
     }
   }
 }
 .product-price--new {
-  font: 20px OpenSans_Bold;
+  font: 20px $main-font-semibold;
 
   margin-right: 20px;
 
@@ -2204,7 +2244,7 @@ a.products-purchase__show-link {
 }
 
 .product-price--old {
-  font: 13px OpenSans;
+  font: 13px $main-font;
 
   text-decoration: line-through;
 
@@ -2219,6 +2259,7 @@ a.products-purchase__show-link {
 
 .product-price__text--small {
   font-size: .75em;
+  font-family: $main-font;
 }
 
 

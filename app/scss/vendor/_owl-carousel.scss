@@ -183,10 +183,14 @@
 }
 .owl-nav {
 	position: absolute;
-	  top: 86px;
-    right: 0;
-    left: 0;
-    height: 0;
+  top: 66px;
+  right: 0;
+  left: 0;
+  height: 0;
+
+  @media (min-width: $tablet-min) {
+    top: 86px;
+  }
 
 	div{
 		display: inline-block;
@@ -260,14 +264,13 @@
 .owl-carousel .owl-stage-outer {
 	border: 0;
 	margin-bottom: 0;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .owl-custom-scrollbar-wrapper {
     overflow: hidden;
 
     padding-top: 2px;
-
-    border-top: 1px solid #e1e1e1;
 }
 .owl-custom-scrollbar-wrapper.disabled {
 	display: none!important;

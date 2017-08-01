@@ -1,5 +1,0 @@
-.last-viewed ul:after {
-	clear: both;
-	display: block;
-	content: "";
-}

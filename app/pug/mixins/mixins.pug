@@ -46,10 +46,45 @@ mixin cabinet-product-preview-item(imageSrc, description, price, priceNew)
 				.category-product__price
 					if priceNew
 						span.product-price--new= priceNew
+							|  
 							span.product-price__text--small грн
 						span.product-price--old #{price} грн
 					else
 						span.product-price--current= price
+							|  
+							span.product-price__text--small грн
+				.category-product__buy
+					a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв
+					.category-product__product-links
+						a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+						//- a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+
+mixin cabinet-product-preview-item-waiting(imageSrc, description, price, priceNew)
+	.product-preview-item
+		.product-preview-item__inner
+			button.product-preview-item__delete
+			div.product-preview-item__sticker.preview-sticker.preview-sticker--available Уже в продаже
+			.product-preview-item__photo
+				a(href="#")
+					img(src=imageSrc, alt="image")
+			.product-preview-item__content
+				.product-preview-item__product-status
+					span.product-status.product-status--new Новинка
+					span.category-product__product-comments
+						a(href="#") 16
+					span.product-status.product-status--discount -10%
+					
+				h3.product-preview-item__heading
+					a(href="#", title=description)= description
+				.category-product__price
+					if priceNew
+						span.product-price--new= priceNew
+							|  
+							span.product-price__text--small грн
+						span.product-price--old #{price} грн
+					else
+						span.product-price--current= price
+							|  
 							span.product-price__text--small грн
 				.category-product__buy
 					a.product-btn.category-product__btn.category-product__btn--reserve(href="#") В резерв

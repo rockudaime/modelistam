@@ -1,17 +1,8 @@
 extends extends/cabinet-template.pug
 
-block breadcrumbs
-	section.breadcrumbs
-		a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
-		a(href="#").breadcrumbs-item
-			span.bb-solid Главная
-		a(href="#").breadcrumbs-item
-			span.bb-solid Личный кабинет 
-		span Мои ожидания
-
 block main-content
 	main.cabinet-main-content
-		h2.cabinet-title.fl_l Мои ожидания
+		h2.cabinet-title.fl_l Лист ожидания
 		.fl_r.compare__header-links
 			a(href="#").compare__header-link.mobile-hidden
 				i.icon.icon--paper-plane.compare__header-icon
@@ -21,9 +12,30 @@ block main-content
 				span Удалить все
 		include mixins/mixins
 		.product-group.cabinet-products-preview.clearfix
-			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
-			+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item-waiting('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item-waiting('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+			+cabinet-product-preview-item-waiting('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
 
-			
+			.product-preview-item
+				.product-preview-item__inner
+					button.product-preview-item__delete
+					.product-preview-item__photo
+						a(href="#")
+							img(src='dist/images/sample-airplane.jpg', alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.category-product__product-comments
+								a(href="#") 16
+							span.product-status.product-status--discount -10%
+							
+						h3.product-preview-item__heading
+							a(href="#") модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...
+						.category-product__price
+							span.product-price--new 359 478
+								|  
+								span.product-price__text--small грн
+							span.product-price--old 487 125 грн
+
+block cabinet-signup
+	

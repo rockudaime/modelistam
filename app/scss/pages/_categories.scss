@@ -570,12 +570,16 @@
 
         border-radius: 4px;
         background: #fffae8;
-        background: rgba(255, 250, 232, .75);
+        background: rgba(255, 255, 255, .75);
         @media (min-width: 768px) {
             right: 43px;
             bottom: 34px;
 
             padding-left: 20px;
+        }
+        @media (min-width: $desktop-min) {
+            right: 22px;
+            bottom: 22px;
         }
         .product-price--current {
             font-size: 24px;
@@ -585,6 +589,7 @@
             margin-right: 20px;
 
             vertical-align: middle;
+            font-family: $main-font-semibold;
         }
     }
     &__btn {
@@ -601,6 +606,7 @@
         color: #fffae8;
         border-radius: 3px;
         background: #4b80bb;
+
         &:hover {
             text-decoration: none;
 
@@ -674,7 +680,7 @@
         @media (min-width: 768px) {
             margin: 0;
 
-            border: 0;
+            // border: 0;
         }
     }
 }

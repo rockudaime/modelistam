@@ -10,10 +10,10 @@ html(lang="ru").no-js
 		link(rel="stylesheet" href="dist/template_styles.css")
 		
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/owl.carousel.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
-		script(src="dist/js/vendor/countdown/jquery.countdown.js")
-
+	
+		// main script
 		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/personal-cabinet.js")
 
@@ -23,14 +23,14 @@ html(lang="ru").no-js
 		// Хлебные крошки и Основное меню
 		.container
 			// Хлебные крошки
-			block breadcrumbs
-				section.breadcrumbs
-					a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
-					a(href="#").breadcrumbs-item
-						span.bb-solid Главная
-					a(href="#").breadcrumbs-item
-						span.bb-solid Личный кабинет 
-					span Название этой страницы
+			//- block breadcrumbs
+			//- 	section.breadcrumbs
+			//- 		a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+			//- 		a(href="#").breadcrumbs-item
+			//- 			span.bb-solid Главная
+			//- 		a(href="#").breadcrumbs-item
+			//- 			span.bb-solid Личный кабинет 
+			//- 		span Название этой страницы
 			// Начало основного меню
 
 			include ../includes/main-nav.pug
@@ -40,7 +40,7 @@ html(lang="ru").no-js
 			// Блок меню личного кабинета
 			aside.cabinet-menu-block
 				// Кнопка раскрытия меню в мобильном и табличном виде
-				.mobile-custom-select.cabinet-menu__custom-select Как сэкономить
+				.mobile-custom-select.cabinet-menu__custom-select Лист ожидания
 				// Меню
 				block cabinet-menu
 					nav.cabinet-menu
@@ -50,6 +50,9 @@ html(lang="ru").no-js
 						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
 							| Мои заказы
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--favorite
+							| Избранное
 						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--compare
 							| Сравнение
@@ -70,11 +73,11 @@ html(lang="ru").no-js
 				aside.cabinet-sidebar
 					section.cabinet-extra-info
 						.personal-discount-block
-							.personal-status
-								a(href="#").personal-status__link
-									span.bb-solid Статус 
-								|  VIP
-								i.personal-status-icon.personal-status-icon--vip
+							//- .personal-status
+							//- 	a(href="#").personal-status__link
+							//- 		span.bb-solid Статус 
+							//- 	|  VIP
+							//- 	i.personal-status-icon.personal-status-icon--vip
 							
 							.personal-discount-label Алексей, Ваша скидка — 3%
 							.personal-discount
@@ -114,48 +117,56 @@ html(lang="ru").no-js
 									option(value="500") 500 грн
 									option(value="1000") 1000 грн
 									option(value="1500") 1500 грн
-								input.gift-certificate__btn.btn(type="submit" value="Купить")
+								input.gift-certificate__btn.product-btn.category-product__btn.category-product__btn--buy(type="submit" value="Купить")
 
 
+					block cabinet-signup
+						section.cabinet-signup
+							.cabinet-signup__icon
+							form.cabinet-signup-form(method="POST", action="/")
+								h3.cabinet-signup__title Лучшие предложения
+								.cabinet-signup__options
+									.cabinet-signup__option
+										input.custom-checkbox(type="checkbox", id="suStock")
+										label.custom-checkbox__label.cabinet-signup__label(for="suStock")
+											span.custom-checkbox__box
+											span.cabinet-signup__option-label.cabinet-signup__option-label--stock Акции
+									.cabinet-signup__option
+										input.custom-checkbox(type="checkbox", id="suDiscount")
+										label.custom-checkbox__label.cabinet-signup__label(for="suDiscount")
+											span.custom-checkbox__box
+											span.cabinet-signup__option-label.cabinet-signup__option-label--discount Скидки
+									.cabinet-signup__option
+										input.custom-checkbox(type="checkbox", id="suHits")
+										label.custom-checkbox__label.cabinet-signup__label(for="suHits")
+											span.custom-checkbox__box
+											span.cabinet-signup__option-label.cabinet-signup__option-label--hits Хиты
+									.cabinet-signup__option
+										input.custom-checkbox(type="checkbox", id="suNovelty")
+										label.custom-checkbox__label.cabinet-signup__label(for="suNovelty")
+											span.custom-checkbox__box
+											span.cabinet-signup__option-label.cabinet-signup__option-label--novelty Новинки
+									.cabinet-signup__option
+										input.custom-checkbox(type="checkbox", id="suOverviews")
+										label.custom-checkbox__label.cabinet-signup__label(for="suOverviews")
+											span.custom-checkbox__box
+											span.cabinet-signup__option-label.cabinet-signup__option-label--overviews Обзоры
+								input.btn.cabinet-signup__btn(type="submit", value="Следить за лучшими предложениями")
 
-					section.cabinet-signup
-						.cabinet-signup__icon
-						form.cabinet-signup-form(method="POST", action="/")
-							h3.cabinet-signup__title Лучшие предложения
-							.cabinet-signup__options
-								.cabinet-signup__option
-									input.custom-checkbox(type="checkbox", id="suStock")
-									label.custom-checkbox__label.cabinet-signup__label(for="suStock")
-										span.custom-checkbox__box
-										span.cabinet-signup__option-label.cabinet-signup__option-label--stock Акции
-								.cabinet-signup__option
-									input.custom-checkbox(type="checkbox", id="suDiscount")
-									label.custom-checkbox__label.cabinet-signup__label(for="suDiscount")
-										span.custom-checkbox__box
-										span.cabinet-signup__option-label.cabinet-signup__option-label--discount Скидки
-								.cabinet-signup__option
-									input.custom-checkbox(type="checkbox", id="suHits")
-									label.custom-checkbox__label.cabinet-signup__label(for="suHits")
-										span.custom-checkbox__box
-										span.cabinet-signup__option-label.cabinet-signup__option-label--hits Хиты
-								.cabinet-signup__option
-									input.custom-checkbox(type="checkbox", id="suNovelty")
-									label.custom-checkbox__label.cabinet-signup__label(for="suNovelty")
-										span.custom-checkbox__box
-										span.cabinet-signup__option-label.cabinet-signup__option-label--novelty Новинки
-								.cabinet-signup__option
-									input.custom-checkbox(type="checkbox", id="suOverviews")
-									label.custom-checkbox__label.cabinet-signup__label(for="suOverviews")
-										span.custom-checkbox__box
-										span.cabinet-signup__option-label.cabinet-signup__option-label--overviews Обзоры
-							input.btn.cabinet-signup__btn(type="submit", value="Следить за лучшими предложениями")
-
-							p.cabinet-signup__legend.
-								Без спама.<br>
-								Отписка в любое время
+								p.cabinet-signup__legend.
+									Без спама.<br>
+									Отписка в любое время
 
 		// Все попапы
-		.popup-outer
+		.prefooter
+			.container
+				.h-signup
+
+					p.h-signup__heading Получайте только акции и важные новости
+					form.h-signup__form
+						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
+						input.h-signup__submit(type="submit", value="Держите в курсе")
+					p.h-signup__form-caption 1 раз в неделю. Без спама
 			
 		// Начало основного футера сайта
 		include ../includes/footer.pug

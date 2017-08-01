@@ -18,8 +18,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['cabinet-waiting.html'],
-  pug: ['app/pug/cabinet*.pug'],
+  html: ['sales.html'],
+  pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
@@ -32,7 +32,7 @@ gulp.task('sass', function () {
   gulp.src('app/scss/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({errLogToConsole: true}))
-  // .pipe(sass().on('error', sass.logError))
+  .pipe(sass().on('error', sass.logError))
   .pipe(combineMq({
     beautify: true
   }))
@@ -42,7 +42,7 @@ gulp.task('sass', function () {
     }))
   
   .pipe(sourcemaps.write('../maps'))
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('dist/dist'))
   .pipe(filter(['**/*.css']))  // filter the maps files so browsersync can inject css, instead of page reload
   .pipe(browserSync.stream());
 });
@@ -56,7 +56,7 @@ gulp.task('pug', function() {
       pretty: true
       }))
     // .pipe(injectSvg()) // включать только для страниц выбора подарка
-    .pipe(gulp.dest('.')) // указываем gulp куда положить скомпилированные HTML файлы
+    .pipe(gulp.dest('./dist')) // указываем gulp куда положить скомпилированные HTML файлы
     .pipe(reload({stream:true}));
 });
 // ////////////////////////////////////////////////
@@ -68,7 +68,7 @@ gulp.task('scripts', function() {
     // .pipe(jshint.reporter('default'))
     // .pipe(concat('all.js'))
     // .pipe(uglify())
-    .pipe(gulp.dest('dist/js/'))
+    .pipe(gulp.dest('dist/dist/js/'))
     .pipe(reload({stream:true}));
 });
 // ////////////////////////////////////////////////
@@ -77,7 +77,7 @@ gulp.task('scripts', function() {
 gulp.task('images', function() {
   return gulp.src('app/img/**/*')
   .pipe(imagemin())
-  .pipe(gulp.dest('dist/images'));
+  .pipe(gulp.dest('dist/dist/images'));
 });
 // ***********************
 // Browser Syncronize
@@ -85,7 +85,7 @@ gulp.task('images', function() {
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: "./",
+      baseDir: "./dist/",
       index: paths.html
     },
     port: 8080,

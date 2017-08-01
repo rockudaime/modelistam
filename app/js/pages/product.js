@@ -252,12 +252,12 @@ $(document).ready(function() {
 
 				if (galleryContentPosition + galleryImagesParentBlockHeight > galleryImagesBlockHeight - galleryImagesParentBlockHeight) {
 					galleryContentPosition = galleryImagesBlockHeight - galleryImagesParentBlockHeight;
-					galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition - 12 + 'px)'));
+					galleryImagesBlock.css('transform', 'translateY(' + ( -galleryContentPosition + 'px)'));
 					controlButtonUp.addClass(activeControlButtonClassName);
 					$(this).removeClass(activeControlButtonClassName);
 				} else {
 					galleryContentPosition += galleryImagesParentBlockHeight;
-					galleryImagesBlock.css('transform', 'translateY(' + ( -(galleryContentPosition) - 12 + 'px)'));
+					galleryImagesBlock.css('transform', 'translateY(' + ( -(galleryContentPosition) + 'px)'));
 					controlButtonUp.addClass(activeControlButtonClassName);
 				}
 			});
@@ -272,7 +272,7 @@ $(document).ready(function() {
 					$(controlButtonDown).addClass(activeControlButtonClassName);
 				} else {
 					galleryContentPosition -= galleryImagesParentBlockHeight;
-					galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition + 12 + 'px)'));
+					galleryImagesBlock.css('transform', 'translateY(' + (  -galleryContentPosition + 'px)'));
 					$(controlButtonDown).addClass(activeControlButtonClassName);
 				}
 			});

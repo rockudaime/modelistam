@@ -113,6 +113,7 @@ $form-border: 1px solid #dcd5bd;
 .order-checkout-tabs,
 .order-checkout-content,
 .cart-content {
+	position: relative;
 	margin: 0 -10px;
 	
 	@media (min-width: 420px) {
@@ -120,9 +121,18 @@ $form-border: 1px solid #dcd5bd;
 		margin-right: 0;
 	}
 }
+.order-checkout-content {
+	
+	.popup-login {
+		top: -50px;
+		z-index: 999;
+		position: absolute;
+	}
+}
 .order-checkout-tabs {
 	font-size: 16px;
 	margin-bottom: -1px;
+	z-index: 2;
 
 	li {
 		list-style: none;
@@ -565,7 +575,7 @@ $form-border: 1px solid #dcd5bd;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 9999;
+	z-index: 9;
 	padding: 6px 20px 7px 16px;
 	color: #fff;
 	border-bottom-right-radius: 17px;

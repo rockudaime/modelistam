@@ -19,12 +19,12 @@
     height: 80px;
     padding-top: 13px;
     // min-width: 360px;
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-min) {
     	height: 83px;
     }
-    @media (min-width: 1235px) {
-        height: 46px;
-        padding-top:  7px;
+    @media (min-width: $desktop-min) {
+        height: 54px;
+        padding-top: 15px;
     }
 }
 .header-logo {
@@ -53,9 +53,11 @@
     }
     @media (min-width: $desktop-min) {
         position: absolute;
-        top: 55px;
+        top: 62px;
+        margin-left: 26px;
+
         img {
-            width: 230px;
+            width: 214px;
             height: auto;
         }
     }
@@ -182,7 +184,7 @@
     }
     @media (min-width: $desktop-min) {
         
-        top: 51px;
+        top: 59px;
         margin-left: 301px;
     }
     & > * {
@@ -202,7 +204,7 @@
             text-indent: initial;
             width: 34%;
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 12px;
         }
     }
     &__description {
@@ -265,15 +267,14 @@
     @media (min-width: 544px) {
     	margin-right: 25px;
     }
-    @media (min-width: 768px) {
+
+    @media (min-width: $tablet-min) {
         margin-right: 12px;
         margin-top: 0;
     }
-    @media (min-width: 994px) {
-       
-    }
-    @media (min-width: 1235px) {
-    	margin: 3px 0 0;
+
+    @media (min-width: $desktop-min) {
+    	margin: 0;
     	width: auto;
         height: auto;
 
@@ -417,7 +418,7 @@
     	padding: 0;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-min) {
     	display: block;
     	border: 0;
 		padding: 0;
@@ -432,8 +433,8 @@
         margin: 18px 26px 20px 29px;
     }
 
-    @media (min-width: 1235px) {
-        width: 445px;
+    @media (min-width: $desktop-min) {
+        width: 440px;
         margin: 33px 10px 0 301px;
     }
 
@@ -499,12 +500,12 @@
         border: 0;
         outline: 0;
         background: url('images/main-header-spritesheet.png') no-repeat 0 -397px;
-    	@media (min-width: 758px) {
+    	@media (min-width: $tablet-min) {
     		position: absolute;
 	        top: 0;
 	        right: 0;
 	        height: 100%;
-	        background-position: 0 -393px;
+	        background-position: 5px -394px;
         }
     }
 

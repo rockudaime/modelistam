@@ -1,19 +1,20 @@
 .personal-cabinet-content {
     margin-bottom: 40px;
-    @media (min-width: 768px) {
+
+    @media (min-width: $tablet-min) {
         margin-bottom: 50px;
-    }
-    @media (min-width: 1235px) {
-        margin-top: 8px;
     }
 }
 .cabinet-menu-block {
-    margin-bottom: 31px;
+    margin-bottom: 21px;
     position: relative;
     & * {
         box-sizing: border-box;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $tablet-min) {
+        margin-bottom: 18px;
+    }
+    @media (min-width: $desktop-min) {
         float: left;
 
         box-sizing: border-box;
@@ -39,21 +40,24 @@
 }
 
 .cabinet-menu__custom-select {
-    font: 18px $main-font-semibold;
-    line-height: 50px;
+    font: 17px $main-font-semibold;
+    line-height: 38px;
 
     max-width: 360px;
-    height: 50px;
+    height: 43px;
     padding: 0 30px 0 12px;
 
     border: 1px solid #777;
     border-radius: 3px;
     outline: 0;
     background: url(images/ui-icon-catalog-tabs-mobile.png) no-repeat right 13px top 50%;
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-min) {
         display: block;
+        line-height: 50px;
+        height: 50px;
+        font-size: 18px;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $desktop-min) {
         display: none;
     }
 }
@@ -94,8 +98,12 @@
             &--waiting {
                 background-position: 6px -208px;
             }
+            &--favorite {
+                background-position: 6px -490px;
+            }
         }
     }
+
     &__icon {
         position: absolute;
         top: 0;
@@ -121,6 +129,9 @@
         }
         &--waiting {
             background-position: 6px -172px;
+        }
+        &--favorite {
+            background-position: 6px -453px;
         }
     }
     @media (min-width: 1235px) {
@@ -148,38 +159,45 @@
     }
 }
 .cabinet-content-block {
-    @media (min-width: 1235px) {
+    @media (min-width: $desktop-min) {
         float: right;
 
         width: 870px;
     }
 }
 .cabinet-main-content {
-    border-bottom: 1px solid #e1e1e1;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    // border-bottom: 1px solid #e1e1e1;
+    // margin-bottom: 30px;
+    // padding-bottom: 30px;
 
-    @media (min-width: 768px) {
-        padding-bottom: 49px;
-    }
-    @media (min-width: 1235px) {
+    // @media (min-width: $tablet-min) {
+    //     padding-bottom: 49px;
+    // }
+    @media (min-width: $desktop-min) {
         float: left;
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;
 
         width: 570px;
+        padding-top: 7px;
+    }
+
+    .compare__header-link {
+        @media (min-width: $desktop-min) {
+            line-height: 2.13;
+        }
     }
 }
 .cabinet-title {
-    font: 20px/43px $main-font-semibold;
+    font: 20px/1.6 $main-font-semibold;
 
-    margin: 0 0 19px;
+    margin: 0 0 8px;
 
     color: #151515;
 
     @media (min-width: 768px) {
-
+        margin-bottom: 19px;
     }
     @media (min-width: 1235px) {
         margin-bottom: 21px;
@@ -194,11 +212,10 @@ h3.cabinet-title {
     & * {
         box-sizing: border-box;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $desktop-min) {
         float: right;
 
         width: 270px;
-        padding-top: 35px;
     }
 }
 
@@ -353,11 +370,10 @@ h3.cabinet-title {
 .increase-discount {
     font-size: 16px;
     &__title {
-        padding: 10px 0 8px;
-        padding-left: 38px;
+        font-size: 15px;
+        padding: 3px 4px 4px;
 
         color: #ce1e36;
-        background: url(images/personal-cabinet/spritesheet.png) no-repeat -2px -791px;
     }
     &__link {
         font-size: 15px;
@@ -405,11 +421,11 @@ h3.cabinet-title {
 
     border-bottom: 1px dashed #c2c2c2;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-min) {
         padding-top: 21px;
     }
-    @media (min-width: 1235px) {
-        padding-top: 24px;
+    @media (min-width: $desktop-min) {
+        padding-top: 22px;
     }
     &__left {
         float: left;
@@ -428,6 +444,7 @@ h3.cabinet-title {
 .personal-manager {
     &__title {
         font: 15px $main-font-bold;
+        white-space: nowrap;
 
         margin-bottom: 5px;
     }
@@ -435,7 +452,7 @@ h3.cabinet-title {
     &__info {
         line-height: 25px;
         color: #000;
-        margin-bottom: 9px;
+        margin-bottom: 11px;
 
         a {
             color: inherit;
@@ -469,8 +486,8 @@ h3.cabinet-title {
     text-align: center;
     text-decoration: none;
 
-    color: #76972a;
-    border: 1px #76972a solid;
+    color: $main-color;
+    border: 1px $main-color solid;
     border-radius: 3px;
     background: #fff;
     position: absolute;
@@ -486,28 +503,29 @@ h3.cabinet-title {
     &:hover {
     text-decoration: none;
 
-    color: #76972a;
-    background-color: #f9fef4;
+    color: $main-color;
+    background-color: lighten($main-color, 53%);
     }
 }
 
 
 .gift-certificate-block {
     padding: 21px 12px 27px 17px;
+    font-size: 15px;
 
     background-color: #f3f3f3;
-    @media (min-width: 768px) {
-        padding: 17px 12px 13px 17px;
+    @media (min-width: $tablet-min) {
+        padding: 17px 12px 13px 16px;
     }
-    @media (min-width: 1235px) {
-        padding-top: 26px;
+    @media (min-width: $desktop-min) {
+        padding-top: 21px;
         padding-bottom: 32px;
     }
 }
 
 .gift-certificate {
     &__link {
-        margin-bottom: 4px;
+        margin-bottom: 6px;
 
         a {
             font: 15px $main-font;
@@ -562,7 +580,7 @@ h3.cabinet-title {
         line-height: 38px;
 
         box-sizing: border-box;
-        width: 119px;
+        width: 110px;
         height: 38px;
         padding: 0 30px 0 10px;
 
@@ -574,30 +592,17 @@ h3.cabinet-title {
 
         appearance: none;
     }
-    &__btn {
+    &__btn.category-product__btn {
         font: 17px $main-font-semibold;
         line-height: 38px;
 
         box-sizing: border-box;
-        width: 104px;
+        width: 118px;
         height: 38px;
-        margin-left: 10px;
-
-        cursor: pointer;
-        text-align: center;
-
-        color: white;
-        border: none;
-        border-radius: 3px;
-        outline: none;
-        background: #76972a;
-        padding: 0;
-        vertical-align: top;
-
-        &:hover,
-        &:focus {
-            background-color: #6b8925;
-        }
+        margin: 0;
+        margin-left: 4px;
+        border: 0;
+        box-shadow: 0;
     }
 }
 
@@ -1064,6 +1069,27 @@ h3.cabinet-title {
             @media (min-width: 544px) {
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+.cabinet-products {
+    margin-bottom: 48px;
+    border-bottom: 1px solid #e1e1e1;
+
+    &--carousel {
+        border-bottom: 0;
+    }
+
+    @media (min-width: $desktop-min) {
+        margin-bottom: 28px;
+    }
+
+    .product-preview-item {
+        padding-bottom: 0px;
+
+        @media (min-width: 544px) {
+            padding-bottom: 30px;
         }
     }
 }

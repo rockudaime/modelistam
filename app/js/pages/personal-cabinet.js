@@ -206,14 +206,16 @@ $(function() {
       responsive:{
         0:{
           items: 2,
+          scrollbar: true,
         },
         544:{
           items: 2,
         },
         768:{
           items: 3,
+          scrollbar: true,
         },
-        1200:{
+        1235:{
           items: 2,
         }
       }

@@ -800,16 +800,12 @@
     }
     &__price {
         overflow: hidden;
-
         height: 30px;
         min-height: 25px;
-        margin-bottom: 3px;
-        // margin-bottom: 15px;
-        @media (min-width: 994px) {
-            // .product-price--new,
-            // .product-price--old{
-            //     display: block;
-            // }
+        margin-bottom: 8px;
+
+        @media (min-width: $desktop-min) {
+            margin-bottom: 11px;
         }
     }
     &__buy {
