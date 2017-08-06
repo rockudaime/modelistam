@@ -5,12 +5,10 @@ html(lang="ru")
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
-		//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
 		link(rel="stylesheet" href="dist/normalize.css")
 		link(rel="stylesheet" href="dist/template_styles.css")
 		
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
 		script(src="dist/js/vendor/owl.carousel.js")
 		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
 	
@@ -76,12 +74,16 @@ html(lang="ru")
 					include mixins/mixins.pug
 					section.sales-items
 						.sales-items__header
-							.sales-items__tab.sales-items__tab-active
-								img(src="dist/images/svg/new-sale.svg").mobile-hidden.sales-items__tab-icon
-								span Новые акции
-							.sales-items__tab
-								img(src="dist/images/svg/hot.svg").mobile-hidden.sales-items__tab-icon
-								span Скоро закончатся
+							button(type="button").sales-radio.sales-radio--new.active
+								span.sales-radio__inner-text Новые акции
+							button(type="button").sales-radio.sales-radio--hot
+								span.sales-radio__inner-text Скоро закончатся
+							//- .sales-items__tab.sales-items__tab-active
+							//- 	img(src="dist/images/svg/new-sale.svg").mobile-hidden.sales-items__tab-icon
+							//- 	span Новые акции
+							//- .sales-items__tab
+							//- 	img(src="dist/images/svg/hot.svg").mobile-hidden.sales-items__tab-icon
+							//- 	span Скоро закончатся
 						mixin sales_item
 							.sales-item.clearfix
 								.sales-item__image
@@ -89,12 +91,12 @@ html(lang="ru")
 										img(src="dist/images/temporary/sale-1.jpg")
 								.sales-item__counter.clearfix
 									.sales-item__description Осталось
-									.sale-timer.promo-extra-timer.clearfix(data-countdown="2017/05/19 19:00:00")
+									.sale-timer.promo-extra-timer.clearfix(data-countdown="2017/09/1 19:00:00")
 								.sales-item__info
-									a(href="#")
-										p.sales-item__title.
+									h2.sales-item__title
+										a(href="#").
 											Будь мобильным. Стань на гироборд! Гарантия лучшей цены. До окончания товарных запасов
-									p.sales-item__description Акция действует с 28 февраляпо 1 апреля
+									p.sales-item__description Акция действует с 1 по 31 апреля
 						+sales_item
 						+sales_item
 						.sales-item.clearfix
@@ -106,9 +108,8 @@ html(lang="ru")
 								span.sales-item__counter-days.sales-item__counter-days-extra  3
 								span.sales-item__counter-days-extra дня
 							.sales-item__info
-								a(href="#")
-									p.sales-item__title.
-										Будь мобильным. Стань на гироборд! Гарантия лучшей цены. До окончания товарных запасов
+								h2.sales-item__title
+									a(href="#") Механические 3D конструкторы из дерева Ugears
 								p.sales-item__description Акция действует с 28 февраля по 1 апреля
 						.sales-item.clearfix
 							.sales-item__image.sales-item__image-finished
@@ -117,10 +118,8 @@ html(lang="ru")
 							.sales-item__counter
 								span.sales-item__description Акция завершена
 							.sales-item__info
-								a(href="#")
-									p.sales-item__title.
-										Механические 3D конструкторы из дерева Ugears
-								p.sales-item__description Акция действует с 28 февраля по 1 апреля
+									h2.sales-item__title
+										a(href="#") Механические 3D конструкторы из дерева Ugears
 						+sales_item
 						+sales_item
 					// блок навигации
@@ -143,9 +142,6 @@ html(lang="ru")
 									| Следующая
 									i
 					// конец блока навигации
-
-
-
 
 		.prefooter
 			.container
