@@ -523,12 +523,12 @@ $(document).ready(function() {
 		
 		// открытие попапа при клике на основное изображение
 		// происходит для всех размеров экрана
-		mainImage.on('click', function(e) {
+		$('.product-card__main-image').on('click', function(e) {
 			e.preventDefault();
 
 			popup.show();
 			popup.parent().fadeIn();
-			var imageFilePath = $(this).parent().attr("href");
+			var imageFilePath = mainImage.parent().attr("href");
 			setGalleryPopupMainImage(imageFilePath);
 		});
 
