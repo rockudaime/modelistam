@@ -362,6 +362,10 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
         border-bottom: 1px dashed #90a4bc;
     }
 }
+
+.pagetitle {
+    font: 18px/1.45 $main-font-semibold;
+}
 /*--------------------------
  ^ end of _base.scss
  --------------------------*/

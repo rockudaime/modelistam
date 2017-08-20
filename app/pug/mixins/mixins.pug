@@ -339,3 +339,174 @@ mixin category-filter-sidebar(additionalClass)
 					a(href="#", title="avto model that you looked for")
 						img(src="dist/images/temporary/avto.jpeg", alt="some img")
 		// /end of section .category-viewed-products
+
+mixin category-product-status(status)
+	case status
+		when 'available'
+			span.cp-status.cp-status--available В наличии
+		when 'incart'
+			span.cp-status.cp-status--available В наличии
+		when 'new'
+			span.product-status.product-status--new Новинка
+		when 'discount'
+			span.product-status.product-status--discount -10%
+		when 'top'
+			span.product-status.product-status--top Топ продаж
+		when 'sale'
+			span.product-status.product-status--sale Акция
+		when 'noavail'
+			span.cp-status.cp-status--noavail Нет наличии
+		when 'to-order'
+			span.cp-status.cp-status--to-order Под заказ
+		when 'waiting'
+			span.cp-status.cp-status--waiting Ожидается
+
+mixin category-product-button(status)
+	case status
+		when 'to-order'
+			a.product-btn.category-product__btn.category-product__btn--pre-order(href="#") Заказать
+		when 'waiting'
+			a.product-btn.category-product__btn.category-product__btn--waiting(href="#") Сообщить о поступлении
+		when 'noavail'
+			a.product-btn.category-product__btn.category-product__btn--buy-noavail(href="#") Купить
+		when 'incart'
+			a.product-btn.category-product__btn.category-product__btn--incart(href="#") В корзине
+		default
+			a.product-btn.category-product__btn.category-product__btn--buy(href="#") Купить
+
+
+
+mixin category-product(imageSrc, status, title, description, price, priceNew)
+	.category-product(class=status=='noavail'? 'category-product--noavail' : '')
+		.category-product__inner
+			.category-product__header
+				.category-product__photo
+					a(href="#")
+						img(src=imageSrc, alt="image")
+				.category-product__product-status
+					+category-product-status(status)
+
+					.category-product__product-info
+						span.category-product__product-comments
+							a(href="#") 16
+						span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+			.category-product__content
+				h3.category-product__heading
+					a(href="#")=title
+				p.category-product__description=description
+				+category-product-status(status)
+
+			.category-product__content-right
+				.category-product__price
+					if priceNew
+						span.product-price--new= priceNew
+							span.product-price__text--small грн
+						span.product-price--old #{price} грн
+					else if price
+						span.product-price--current= price
+							span.product-price__text--small грн
+					else
+						span.product-price--noprice Цена не установлена
+				.category-product__buy
+					+category-product-button(status)
+					.category-product__product-links
+						a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+						a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+			.category-product__hidden-content
+					.category-product__gallery
+						ul.cp-gallery
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+					.category-product__characteristics
+						ul
+							li с пультом управления
+							li литий ионный аккумулятор
+							li автономное время - 3ч
+					.category-product__rating
+						table
+							tr
+								td
+								td
+									.rateit-block
+										.rateit__range
+											.rateit__selected
+												.rateit__hover
+
+
+mixin category-product-with-gift(imageSrc, status, title, description, price, priceNew)
+	.category-product(class=status=='noavail'? 'category-product--noavail' : '')
+		.category-product__inner
+			.category-product__header
+				.category-product__photo
+					a(href="#")
+						img(src=imageSrc, alt="image")
+				.category-product__product-status
+					+category-product-status(status)
+
+					.category-product__product-info
+						span.category-product__product-comments
+							a(href="#") 16
+						span.product-info__code.category-product__product-code Код:&nbsp;HSP-94107Pro
+			.category-product__content
+				h3.category-product__heading
+					a(href="#")=title
+				p.category-product__description=description
+				+category-product-status(status)
+
+			.category-product__content-right
+				.category-product__price
+					if priceNew
+						span.product-price--new= priceNew
+							span.product-price__text--small грн
+						span.product-price--old #{price} грн
+					else if price
+						span.product-price--current= price
+							span.product-price__text--small грн
+					else
+						span.product-price--noprice Цена не установлена
+				.category-product__buy
+					+category-product-button(status)
+					.category-product__product-links
+						a.category-product__product-link.cp-wishlist-link(href="#", title="отложить")
+						a.category-product__product-link.cp-compare-link(href="#", title="добавить к сравнению")
+						a.category-product__product-link.cp-watch-price-link.cp-watched(href="#", title="следить за ценой")
+			.category-product__hidden-content
+					.category-product__gallery
+						ul.cp-gallery
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+							li.cp-gallery__item
+								a(href="#")
+									img(src="dist/images/sample-airplane.jpg", alt="image")
+					.category-product__characteristics
+						ul
+							li с пультом управления
+							li литий ионный аккумулятор
+							li автономное время - 3ч
+					.category-product__rating
+						table
+							tr
+								td
+								td
+									.rateit-block
+										.rateit__range
+											.rateit__selected
+												.rateit__hover
+			.category-product__gift
+				p.category-product__gift-title в подарок
+				a(href="#").category-product__gift-image
+					img(src="dist/images/temporary/product-gift.jpg")
+				a(href="#").category-product__gift-name.
+					Аккумулятор Dinogy Giant

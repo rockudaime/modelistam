@@ -1,3 +1,286 @@
+.sale-pagetitle {
+	margin-bottom: 17px;
+
+	@media (min-width: $desktop-min) {
+		margin-bottom: 12px;
+		letter-spacing: 1px;
+	    word-spacing: 1px;
+	}
+}
+
+.sale-info {
+	color: #666;
+	font: 15px $main-font;
+	margin-bottom: 26px;
+
+	&__banner {
+		margin-bottom: 11px;
+		font-size: 0px;
+
+		@media (min-width: $tablet-min) {
+			width: 67.7506%;
+			float: left;
+			margin-right: 2.71%;
+			margin-bottom: 13px;
+
+		}
+		@media (min-width: $desktop-min) {
+			width: 870px;
+			margin-right: 30px;
+			margin-bottom: 0;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__period {
+		font-size: 13px;
+		margin-bottom: 26px;
+		
+
+		@media (min-width: $tablet-min) {
+			float: left;
+			width: 29.5392%;
+		}
+		@media (min-width: $desktop-min) {
+			width: 270px;
+			position: relative;
+			top: -5px;
+			margin-bottom: 57px;
+		}
+
+		&-timer {
+			width: 170px;
+			float: left;
+			margin-right: 30px;
+
+			@media (min-width: $desktop-min) {
+				float: none;
+				margin-right: 0;
+				margin-bottom: 15px;
+			}
+		}
+		&-text {
+			padding-top: 14px;
+
+			@media (min-width: $desktop-min) {
+				padding-top: 0;
+				clear: both;
+				padding-right: 65px;
+			}
+		}
+	}
+
+	&__description {
+		clear: both;
+
+		@media (min-width: $tablet-min) {
+			width: 67.7506%;
+		}
+
+		@media (min-width: $desktop-min) {
+			clear: none;
+			float: left;
+			width: 270px;
+
+		}
+		p {
+			margin-bottom: 0;
+		}
+
+		p + p {
+			margin-top: 7px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sale-timer {
+	color: #111;
+	margin-top: -6px;
+
+	&--gift {
+		color: #d9450a;
+
+		.countdown-label {
+			color: #d9450a;
+		}
+	}
+}
+
+.sale-tree-sidebar {
+
+	@media (min-width: $desktop-min) {
+		padding-top: 50px;
+	}
+}
+
+.sale-info-more {
+	clear: both;
+	padding-bottom: 17px;
+	margin-bottom: 36px; 
+	border-bottom: 1px solid #eaeaea;
+
+	@media (min-width: $tablet-min) {
+		padding-bottom: 37px;
+		margin-bottom: 39px;
+	}
+
+	@media (min-width: $desktop-min) {
+		margin-top: 18px;
+		padding-bottom: 38px;
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 15px;
+		line-height: 24px;
+		margin-bottom: 0px;
+	}
+	P + p {
+		margin-top: 10px;
+	}
+	p + ul {
+		margin-top: 10px;
+	}
+	li {
+		list-style: none;
+		line-height: 24px;
+	}
+	li:before {
+		content: "-   ";
+	}
+
+	&__special-conditions {
+		color: $text-grey;
+	}
+}
+
+.sale-one-items {
+	@media (min-width: $desktop-min) {
+		margin-bottom: 11px;
+	}
+}
+
+.filter-link.filter-link--sale {
+	margin-bottom: 13px;
+	height: 44px;
+	font: 17px/41px $main-font;
+	clear: both;
+
+	@media (min-width: $tablet-min) {
+		width: 50%;
+		margin-bottom: 0;
+	}
+}
+
+.share-links {
+	color: #666;
+	
+	@media (min-width: $tablet-min) {
+		display: block;
+		float: right;
+		margin-right: 5px;
+		padding-top: 1px;
+		font-size: 13px;
+
+		span {
+			line-height: 20px;
+			vertical-align: top;
+		}
+	}
+
+	@media (min-width: $desktop-min) {
+		margin-right: 53px;
+
+		span {
+			line-height: 20px;
+			vertical-align: top;
+		}
+	}
+}
+
+
+.share-icon {
+	display: inline-block;
+	height: 20px;
+	width: 25px;
+	margin-left: 8px;
+	cursor: pointer;
+
+	&:nth-child(2) {
+		margin-left: 8px;
+
+		@media (min-width: $desktop-min) {
+			margin-left: 15px;
+		}
+	}
+
+	@media (min-width: $desktop-min) {
+		margin-left: 7px;
+	}
+
+	&__mail {
+		background: url('images/svg/share-send.svg') no-repeat 7px 2px;
+
+		&:hover {
+			background-image: url('images/svg/share-send-hov.svg');
+		}
+
+		@media (min-width: $desktop-min) {
+			background-position: 0 2px;
+		}
+	}
+
+	&__fb {
+		width: 20px;
+		background: url('images/svg/facebook.svg') no-repeat 7px 2px;
+
+		&:hover {
+			background-image: url('images/svg/facebook-hov.svg');
+		}
+
+		@media (min-width: $desktop-min) {
+			background-position: 1px 2px;
+		}
+	}
+	&__vk {
+		width: 30px;
+		background: url('images/svg/vk.svg') no-repeat 0px 4px;
+
+		&:hover {
+			background-image: url('images/svg/vk-hov.svg');
+		}
+	}
+	&__tw {
+		background: url('images/svg/twitter.svg') no-repeat 0 4px;
+
+		&:hover {
+			background-image: url('images/svg/twitter-hov.svg');
+		}
+
+		@media (min-width: $desktop-min) {
+			background-position: -2px 4px;
+		}
+	}
+	&__g {
+		background: url('images/svg/Google.svg') no-repeat 1px 4px;
+
+		&:hover {
+			background-image: url('images/svg/Google-hov.svg');
+		}
+	}
+}
+/*-------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------*/
 .promo-content__title {
 	font-size: 18px;
 
@@ -200,58 +483,6 @@
 	}
 }
 
-.share-icon {
-	&__mail {
-		background: url('images/svg/share-send.svg') no-repeat 7px 2px;
-
-		&:hover {
-			background-image: url('images/svg/share-send-hov.svg');
-		}
-
-		@media (min-width: $desktop-min) {
-			background-position: 0 2px;
-		}
-	}
-
-	&__fb {
-		width: 20px;
-		background: url('images/svg/facebook.svg') no-repeat 7px 2px;
-
-		&:hover {
-			background-image: url('images/svg/facebook-hov.svg');
-		}
-
-		@media (min-width: $desktop-min) {
-			background-position: 1px 2px;
-		}
-	}
-	&__vk {
-		width: 30px;
-		background: url('images/svg/vk.svg') no-repeat 0px 4px;
-
-		&:hover {
-			background-image: url('images/svg/vk-hov.svg');
-		}
-	}
-	&__tw {
-		background: url('images/svg/twitter.svg') no-repeat 0 4px;
-
-		&:hover {
-			background-image: url('images/svg/twitter-hov.svg');
-		}
-
-		@media (min-width: $desktop-min) {
-			background-position: -2px 4px;
-		}
-	}
-	&__g {
-		background: url('images/svg/Google.svg') no-repeat 1px 4px;
-
-		&:hover {
-			background-image: url('images/svg/Google-hov.svg');
-		}
-	}
-}
 
 .promo-details {
 
@@ -327,49 +558,51 @@
 }
 
 // Styles for timer
-.sale-timer {
-	padding-left: 17px;
-	margin-top: -7px;
-	margin-bottom:23px;
-	width: 51.5%;
-	float: left;
 
-	@media (min-width: $tablet-min) {
-		width: 100%;
-	}
 
-}
+
 .countdown {
+	width: 170px;
+
 	&-item {
 		float: left;
-		width: 61px;
+		width: 45px;
 		position: relative;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
 
 		&:first-child {
-			width: 41px;
+			width: 65px;
 		}
 	}
 
 	&-time {
 		font-size: 36px;
+		height: 40px;
 	
 		&__day {
 			font-family: $main-font-bold;
+
 		}
 
 		&__min {
-			margin-left: -20px;
+			margin-left: -5px;
 		}
 	}
 
 	&-label {
-		position: absolute;
-		width: 80px;
-		bottom: -9px;
-		left: -4px;
+		// position: absolute;
+		// width: 80px;
+		// bottom: -9px;
+		// left: -4px;
 		display: inline-block;
 		font-size: 13px;
 		color: $text-grey;
+	}
+
+	&-day {
+
 	}
 
 	&-hour > &-label{
@@ -398,6 +631,11 @@
 	font-size: 13px;
 	color: #d34f27;
 	overflow: hidden;
+	display: none;
+
+	@media (min-width: 544px) {
+		display: block;
+	}
 
 	@media (min-width: $tablet-min) {
 		top: 93px;
@@ -440,7 +678,7 @@
 }
 
 @media (min-width: $desktop-min) {
-	.promo-products__items .category-product:hover {
+	.category-product:hover {
 		& .category-product__gift {
 			top: 114px;
 			right: 21px;
