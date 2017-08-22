@@ -607,7 +607,7 @@
                 left: -4px;
 
                 height: auto;
-                padding: 4px 29px 0;
+                padding: 4px 29px 0 24px;
                 padding-bottom: 25px;
 
                 border: 1px solid #4b80bb !important;
@@ -639,7 +639,7 @@
                 position: absolute;
                 content: "";
                 display: block;
-                width: 25px;
+                width: 20px;
                 height: 1px;
                 background-color: #fff;
                 bottom: -1px;
@@ -687,7 +687,7 @@
     &__inner {
         // category-product__inner
         margin-bottom: 35px;
-        padding: 0 25px;
+        padding: 0 25px 0 20px;
         // padding-top: 5px;
         @media (min-width: 544px) {
             border: 1px solid transparent;
@@ -824,7 +824,7 @@
         margin-bottom: 8px;
 
         @media (min-width: $desktop-min) {
-            margin-bottom: 11px;
+            margin-bottom: 3px;
         }
     }
     &__buy {
@@ -1177,7 +1177,7 @@
                 height: auto;
             }
         }
-        @media (min-width: 1235px) {
+        @media (min-width: $desktop-min) {
             &:nth-child(2n) {
                 .category-product__inner {
                     border-color: transparent;
@@ -1229,13 +1229,13 @@
         &__content {
             float: left;
 
-            width: 60%;
+            width: 51%;
             margin-left: 2%;
         }
         &__content-right {
             float: right;
 
-            width: 14%;
+            width: 20%;
         }
         &__btn {
             display: inline-block;
@@ -1302,7 +1302,7 @@
     .category-product__content .cp-status,  .category-product__content .product-status {
         display: inline-block;
     }
-    .category-product__product-status .cp-status, .category-product__product-status .product-status {
+    .category-product__product-status .cp-status {
         display: none;
     }
     .cp-watch-price-link {

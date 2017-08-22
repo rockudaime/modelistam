@@ -16,7 +16,237 @@ block sales-header
 
 
 block aside
-	+category-filter-sidebar('sale-tree-sidebar')
+	aside.category-sidebar.sale-tree-sidebar
+		section.sidebar-filter
+			form#filter-form(method="get" action="/")
+				.product-filter
+					.filter-header.filter-header-main Подбор
+						// .filter-total-amount
+						// 	strong Найдено: 1298
+					.filter-values-block
+						a.filter-delete(href="#")
+							i
+							span Удалить фильтры
+					// если есть фильтры добавляется весь блок ниже с перечислением фильтров
+					.filter-values-block
+						.filter-value
+							a.filter-value-delete(href="#") Самолеты RTF
+						.filter-value
+							a.filter-value-delete(href="#") Для начинающих
+				
+				.product-filter
+					.filter-header По категории
+						
+					.filter-values-block
+						.prop-filter
+							input.custom-checkbox#prop-000001(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000001")
+								span.custom-checkbox__box
+								| Самолеты для FPV и съемки
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000002(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000002")
+								span.custom-checkbox__box
+								| Самолеты с камерой
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000003(type='checkbox', name='bycategory', checked)
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000003")
+								span.custom-checkbox__box
+								| Самолеты RTF
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000004(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000004")
+								span.custom-checkbox__box
+								| Модели планеров
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000005(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000005")
+								span.custom-checkbox__box
+								| Электрические
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000006(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000006")
+								span.custom-checkbox__box
+								| ДВС
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000007(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000007")
+								span.custom-checkbox__box
+								| С бензиновым мотором
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000008(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000008")
+								span.custom-checkbox__box
+								| Реактивные
+								span.found-items-amount (99)
+						.prop-filter
+							input.custom-checkbox#prop-000009(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000009")
+								span.custom-checkbox__box
+								| Летающее крыло
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000010(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000010")
+								span.custom-checkbox__box
+								| С бензиновым мотором
+								span.found-items-amount (20)
+						.prop-filter
+							input.custom-checkbox#prop-000011(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000011")
+								span.custom-checkbox__box
+								| Реактивные
+								span.found-items-amount (10)
+						.prop-filter
+							input.custom-checkbox#prop-000012(type='checkbox', name='bycategory')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000012")
+								span.custom-checkbox__box
+								| Летающее крыло
+								span.found-items-amount (80)
+
+				.product-filter
+					.filter-header По уровню
+						
+					.filter-values-block
+						.prop-filter
+							input.custom-checkbox#prop-000021(type='checkbox', name='bylevel')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
+								span.custom-checkbox__box
+								| Для начинающих
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000022(type='checkbox', name='bylevel')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
+								span.custom-checkbox__box
+								| Средний уровень
+								span.found-items-amount (120)
+						.prop-filter
+							input.custom-checkbox#prop-000023(type='checkbox', name='bylevel')
+							label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
+								span.custom-checkbox__box
+								| Экспертам
+								span.found-items-amount (120)
+				.product-filter
+					.filter-header По цене
+					.filter-values-block
+						.product-filter__price-block
+							| от
+							input.price-min.numeric-min.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[min]', onchange='set_filter_price(0)', placeholder='0')
+							| до
+							input.price-max.numeric-max.filter-value-field(type='number', min="0", size='4', maxlength='10', name='price[max]', onchange='set_filter_price(1)', placeholder='29808')
+						input.sidebar-filter__submit-btn(type='submit', value='Подобрать')
+				.product-filter
+					.filter-header Дополнительно
+					.filter-values-block
+						ul.additional-filters
+							li.additional-filter
+								span.additional-filter__toggler
+									span.af-bb Размах крыла 
+								.filter-values-block.additional-filter__values-block
+									.prop-filter
+										input.custom-checkbox#prop-000024(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000021")
+											span.custom-checkbox__box
+											| Для начинающих
+									.prop-filter
+										input.custom-checkbox#prop-000025(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000022")
+											span.custom-checkbox__box
+											| Средний уровень
+									.prop-filter
+										input.custom-checkbox#prop-000026(type='checkbox', name='bylevel')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-000023")
+											span.custom-checkbox__box
+											| Экспертам
+							li.additional-filter 
+								span.additional-filter__toggler
+									span.af-bb Комплектация
+								.filter-values-block.additional-filter__values-block
+									.prop-filter
+										input.custom-checkbox#prop-0000011(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000011")
+											span.custom-checkbox__box
+											| Самолеты для FPV и съемки
+									.prop-filter
+										input.custom-checkbox#prop-0000021(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000021")
+											span.custom-checkbox__box
+											| Самолеты с камерой
+									.prop-filter
+										input.custom-checkbox#prop-0000031(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000031")
+											span.custom-checkbox__box
+											| Самолеты RTF
+									.prop-filter
+										input.custom-checkbox#prop-0000041(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000041")
+											span.custom-checkbox__box
+											| Модели планеров
+									.prop-filter
+										input.custom-checkbox#prop-0000051(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000051")
+											span.custom-checkbox__box
+											| Электрические
+									.prop-filter
+										input.custom-checkbox#prop-0000061(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000061")
+											span.custom-checkbox__box
+											| ДВС
+									.prop-filter
+										input.custom-checkbox#prop-0000071(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000071")
+											span.custom-checkbox__box
+											| С бензиновым мотором
+									.prop-filter
+										input.custom-checkbox#prop-0000081(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000081")
+											span.custom-checkbox__box
+											| Реактивные
+									.prop-filter
+										input.custom-checkbox#prop-0000091(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000091")
+											span.custom-checkbox__box
+											| Летающее крыло
+									.prop-filter
+										input.custom-checkbox#prop-0000101(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000101")
+											span.custom-checkbox__box
+											| С бензиновым мотором
+									.prop-filter
+										input.custom-checkbox#prop-0000111(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000111")
+											span.custom-checkbox__box
+											| Реактивные
+									.prop-filter
+										input.custom-checkbox#prop-0000121(type='checkbox', name='bycategory')
+										label.custom-checkbox__label.product-filter__filter-label(for="prop-0000121")
+											span.custom-checkbox__box
+											| Летающее крыло
+							li.additional-filter
+								span.additional-filter__toggler
+									span.af-bb Материал
+							li.additional-filter
+								span.additional-filter__toggler
+									span.af-bb Особенности
+							li.additional-filter
+								span.additional-filter__toggler
+									span.af-bb Марка
+							li.additional-filter
+								span.additional-filter__toggler
+									span.af-bb Тип двигателя 
+
+				.filter-popup(style="display: block;top: 193px;")
+					.filter-popup-close
+						a.filter-popup-close-link(href='#')
+					p.filter-popup-info Найдено товаров: 131
+					a.filter-popup-btn(href='') Показать
 
 block category-content
 	section.category-content__products.search-results__products

@@ -110,12 +110,18 @@
 	}
 }
 
+.sale-one-header {
+	@media (min-width: $desktop-min) {
+		padding-left: 20px;
+	}
+}
 .sale-tree-sidebar {
 
 	@media (min-width: $desktop-min) {
 		padding-top: 50px;
 	}
 }
+
 
 .sale-info-more {
 	clear: both;
@@ -132,6 +138,7 @@
 		margin-top: 18px;
 		padding-bottom: 38px;
 		margin-bottom: 40px;
+		padding-left: 20px;
 	}
 
 	&__title {
@@ -166,6 +173,7 @@
 .sale-one-items {
 	@media (min-width: $desktop-min) {
 		margin-bottom: 11px;
+		padding-left: 20px;
 	}
 }
 
@@ -198,7 +206,7 @@
 	}
 
 	@media (min-width: $desktop-min) {
-		margin-right: 53px;
+		margin-right: 32px;
 
 		span {
 			line-height: 20px;
@@ -643,7 +651,7 @@
 	}
 
 	@media (min-width: $desktop-min) {
-		top: 111px;
+		top: 124px;
 		right: 18px;
 	}
 
@@ -680,7 +688,7 @@
 @media (min-width: $desktop-min) {
 	.category-product:hover {
 		& .category-product__gift {
-			top: 114px;
+			top: 127px;
 			right: 21px;
 		}
 	}
