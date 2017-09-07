@@ -112,6 +112,12 @@
 		padding-bottom: 40px;
 		margin-bottom: -5px;
 	}
+
+	&--fullwidth {
+		@media (min-width: 768px) {
+			padding-bottom: 67px;
+		}
+	}
 }
 
 .category-prefooter-description,

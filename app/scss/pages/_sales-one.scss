@@ -3,8 +3,6 @@
 
 	@media (min-width: $desktop-min) {
 		margin-bottom: 12px;
-		letter-spacing: 1px;
-	    word-spacing: 1px;
 	}
 }
 
@@ -65,10 +63,14 @@
 		&-text {
 			padding-top: 14px;
 
+			& + & {
+				margin-top: 11px;
+			}
+
 			@media (min-width: $desktop-min) {
 				padding-top: 0;
 				clear: both;
-				padding-right: 65px;
+				padding-right: 62px;
 			}
 		}
 	}
@@ -215,7 +217,6 @@
 	}
 }
 
-
 .share-icon {
 	display: inline-block;
 	height: 20px;
@@ -286,288 +287,21 @@
 		}
 	}
 }
-/*-------------------------------------------------------------------
----------------------------------------------------------------------
----------------------------------------------------------------------*/
-.promo-content__title {
-	font-size: 18px;
 
-	@media (min-width: $desktop-min) {
-		font-size: 20px;
-		margin-bottom: 11px;
-	}
-}
+.sale-end-content {
+	margin-bottom: 28px;
 
-.promo-description {
-	margin-bottom: 11px;
-
-	@media (min-width: $tablet-min) {
-		margin-bottom: 10px;
-	}
-	@media (min-width: $desktop-min) {
-		margin-bottom: 20px;
-	}
-
-	p {
-		font-size: 15px;
-		line-height: 22px;
-		color: $text-grey;
-		max-width: 500px;
-
+	.sale-info-more {
 		@media (min-width: $desktop-min) {
-			// width: 22%;
-			float: left;
+			padding-left: 0px;
 		}
-
 	}
-
-	&__image {
-		float: left;
-		margin-right: 21px;
-		margin-bottom: 13px;
-
-		@media (min-width: $tablet-min) {
-			margin-bottom: 8px;
-		}
-		@media (max-width: $tablet-max) {
-			width: 100%;
-			max-width: 500px;
-		}
-
+	.sales-items {
 		@media (min-width: $desktop-min) {
-			margin-right: 31px;
-		}
-
-		& img {
-			width: 100%;
-		}
-	}
-
-	&__counter {
-		float: left;
-		width: 100%;
-		margin-bottom: 8px;
-
-		& div.sales-item__description {
-			margin-top: -6px;
-			margin-bottom: 1px;
-
-			@media (min-width: $tablet-min) {
-				margin-bottom: 0;
-			}
-		}
-
-		@media (min-width: $tablet-min) {
-			width: 29%;
-		}
-
-		@media (min-width: $desktop-min) {
-			width: 22%;
-			margin-bottom: 63px;
-		}
-	}
-
-	&__text {
-		float: left;
-		width: 40%;
-
-		@media (min-width: $tablet-min) {
-			width: 100%;
-			float: none;
-		}
-	}
-
-	@media (min-width: $tablet-min) {
-		& p {
-			line-height: 22px;
-			margin-bottom: 8px;
+			width: 850px;
 		}
 	}
 }
-
-.promo-products {
-	
-	border-bottom: 1px solid #eaeaea;
-	margin-bottom: 34px;
-
-	&__header {
-		@media (min-width: $desktop-min) {
-			border-bottom: 1px solid #eaeaea;
-			padding-bottom: 2px;
-		}
-		
-		&-tabs {
-			display: inline-block;
-		}
-
-		&-tab-products {
-			float: left;
-			font-size: 22px;
-			font-family: Arial;
-			margin-bottom: 0;
-			margin-right: 24px;
-		}
-	
-		&-tab-info {
-			@media (min-width: $tablet-min) {
-				float: left;
-				display: block;
-				border-bottom: 1px dashed #acbed8;
-				font-size: 18px;
-				font-family: Arial;
-				line-height: 13px;
-				padding-top: 12px;
-			}
-		}
-		&-share {
-			@media (min-width: $tablet-min) {
-				display: block;
-				float: right;
-				margin-right: 5px;
-				padding-top: 6px;
-				font-size: 13px;
-
-				span {
-					line-height: 20px;
-					vertical-align: top;
-				}
-			}
-
-			@media (min-width: $desktop-min) {
-				margin-right: 3%;
-
-				span {
-					line-height: 20px;
-					vertical-align: top;
-				}
-			}
-
-			&-icon {
-				display: inline-block;
-				height: 20px;
-				width: 25px;
-				margin-left: 8px;
-				cursor: pointer;
-
-				&:nth-child(2) {
-					margin-left: 8px;
-
-					@media (min-width: $desktop-min) {
-						margin-left: 15px;
-					}
-				}
-
-				@media (min-width: $desktop-min) {
-					margin-left: 7px;
-				}
-			}
-		}
-	}
-
-	&__items {
-		clear: both;
-
-		@media (min-width: $desktop-min) {
-			margin-bottom: 40px;
-			border-bottom: 1px solid #eaeaea;
-		}
-
-		& .category-product {
-			@media (min-width: 920px) {
-				width: 33.333%;
-
-				&:nth-child(2n) .category-product__inner {
-					border-right-color: #eaeaea;
-				}
-			}
-			@media (min-width: $desktop-min) {
-				width: 25%;
-
-				&:nth-child(3n) .category-product__inner {
-					border-right-color: #eaeaea;
-				}
-			}
-		}
-	}
-}
-
-
-.promo-details {
-
-	&__more-info {
-		clear: both;
-		padding-bottom: 17px;
-		margin-bottom: 36px; 
-		border-bottom: 1px solid #eaeaea;
-
-		@media (min-width: $tablet-min) {
-			padding-bottom: 29px;
-			margin-bottom: 39px;
-		}
-
-		&-title {
-			font-size: 16px;
-			margin-bottom: 10px;
-		}
-
-		& p {
-			font-size: 15px;
-			line-height: 24px;
-			margin-bottom: 10px;
-		}
-	}
-
-	&__special-conditions {
-		color: $text-grey;
-	}
-}
-// .sales-item__description {
-// 	margin-bottom: 10px;
-
-// 	@media (min-width: $tablet-min) {
-// 		margin-bottom: 0;
-// 	}
-// }
-
-
-
-.promo-pager {
-	margin-bottom: 67px;
-}
-
-
-// More special offers
-.promo-extra {
-	clear: both;
-
-	@media (min-width: $tablet-min) {
-		& .sales-item__info {
-			display: none;
-		}
-	}
-
-	@media (min-width: $desktop-min) {
-		width: 50%;
-		margin: 0 auto;
-		padding-left: 4.55%;
-		
-		& .sales-item {
-			margin-bottom: 23px;
-
-			&__image {
-				margin-right: 26px;
-			}
-
-			&__counter {
-				margin-right: 0;			
-			}
-		}
-	}
-}
-
-// Styles for timer
-
-
 
 .countdown {
 	width: 170px;
@@ -617,6 +351,27 @@
 		margin-left: 6px;
 	}
 }
+/*-------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Styles for timer
+
+
+
+
 .promo-gift {
 	& .sale-timer, .countdown-label {
 		color: #d9450a;

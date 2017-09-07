@@ -457,6 +457,43 @@
 
             content: '';
         }
+
+        &--4inrow {
+            @media (min-width: $desktop-min) {
+                .category-product {
+                    width: 25%;
+                    &:nth-child(3n) {
+                       .category-product__inner {
+                            border-right-color: #eaeaea;
+                        }     
+                    }
+                    &:nth-child(4n) {
+                        .category-product__inner {
+                            border-right-color: transparent;
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                    &:nth-last-child(5n) {
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            display: block;
+                            width: 20px;
+                            height: 1px;
+                            background-color: #fff;
+                            bottom: -1px;
+                            left: 0;
+                        }
+                    }
+
+                    
+                }
+                
+            }
+        }
     }
 }
 
@@ -589,12 +626,29 @@
 
         width: 50%;
         height: 470px;
+
+        &:nth-child(2n) {
+            .category-product__inner {
+                border-right-color: transparent;
+            }
+        }
     }
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-min) {
         float: left;
 
         width: 33.333%;
         height: 465px;
+
+        &:nth-child(2n) {
+            .category-product__inner {
+                border-right-color: #eaeaea;
+            }
+        }
+        &:nth-child(3n) {
+            .category-product__inner {
+                border-color: transparent;
+            }
+        }
     }
     @media (min-width: $desktop-min) {
 
@@ -651,16 +705,7 @@
                 display: none;
             }
         }
-        &:nth-child(2n) {
-            .category-product__inner {
-                border-right-color: #eaeaea;
-            }
-        }
-        &:nth-child(3n) {
-            .category-product__inner {
-                border-color: transparent;
-            }
-        }
+        
     }
     &:after {
         display: table;
@@ -751,7 +796,7 @@
             height: auto;
 
             white-space: nowrap;
-            text-overflow: ellipsis;
+            // text-overflow: ellipsis;
             margin: 4px 0 4px;
         }
         .product-status {
