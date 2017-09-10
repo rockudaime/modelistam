@@ -424,11 +424,12 @@
             margin-bottom: 13px;
 
             @media (min-width: $tablet-min) {
-                margin-right: 25px;
+                margin-right: 26px;
             }
         }
         &-anchor {
             font: 18px Arial, $main-font;
+            line-height: 26px;
 
             &:hover, &:focus {
                 text-decoration: none;
