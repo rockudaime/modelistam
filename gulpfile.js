@@ -18,8 +18,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['sales-one-end.html'],
-  pug: ['app/pug/sales-one*.pug'],
+  html: ['cabinet-recommend.html'],
+  pug: ['app/pug/cabinet*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
