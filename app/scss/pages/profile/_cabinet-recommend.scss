@@ -1,0 +1,53 @@
+.cabinet-products--recommend {
+	@media (min-width: $desktop-min) {
+		margin-bottom: 34px;
+	}
+}
+
+.cabinet-products__title {
+
+	&--recommend {
+		font-family: $main-font;
+		font-size: 18px;
+		margin-bottom: 22px;
+	}
+}
+.social-links-big {
+	margin-top: 11px;
+}
+.social-link-big {
+	display: inline-block;
+	font-size: 0px;
+	width: 48px;
+	height: 48px;
+	background: url(images/personal-cabinet/social-icons/social-icons-big.png) 0 0 no-repeat;
+
+	& + & {
+		margin-left: 22px;
+	}
+
+	&--youtube {
+		background-position: 0 -192px;
+
+		&:hover {
+			background-position: 0 -240px;
+		}
+	}
+
+	&--facebook {
+		background-position: 0 0;
+
+		&:hover {
+			background-position: 0 -48px;
+		}
+	}
+
+	&--twitter {
+		background-position: 0 -96px;
+
+		&:hover {
+			background-position: 0 -144px;
+		}
+	}
+
+}

@@ -1,0 +1,37 @@
+extends extends/cabinet-template.pug
+
+block main-content
+	main.cabinet-main-content
+		include mixins/mixins.pug
+		
+		h2.cabinet-title Рекомендации
+		section.cabinet-social-header
+			p Выбирайте с умом. Экономьте и учавствуйте в акциях
+			p
+				a(href="#").cabinet-social-header__link Обзоры моделей
+				a(href="#").cabinet-social-header__link Акции
+			.social-links-big
+				a(href="#", title="facebook").social-link-big.social-link-big--facebook
+				a(href="#", title="youtube").social-link-big.social-link-big--youtube
+				a(href="#", title="twitter").social-link-big.social-link-big--twitter
+		section.cabinet-products.cabinet-products--carousel.cabinet-products--recommend
+			h2.cabinet-products__title.cabinet-products__title--recommend На основе просмотров
+			.compared-category__items
+				.owl-compared-products.products-preview-carousel.clearfix.owl-carousel
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+		section.cabinet-products.cabinet-products--carousel.cabinet-products--recommend
+			h2.cabinet-products__title.cabinet-products__title--recommend На основе предыдущих заказов
+			.compared-category__items
+				.owl-compared-products.products-preview-carousel.clearfix.owl-carousel
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'летающее крыло skywalker falcon yf-0908 kit black', 1024)
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 56000)
+		section.cabinet-products.cabinet-products--carousel.cabinet-products--recommend
+			h2.cabinet-products__title.cabinet-products__title--recommend На основе отзывов
+			.compared-category__items
+				.owl-compared-products.products-preview-carousel.clearfix.owl-carousel
+					+cabinet-product-preview-item('dist/images/sample-airplane.jpg', 'модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...', 2600, 2785)
+
+block cabinet-signup

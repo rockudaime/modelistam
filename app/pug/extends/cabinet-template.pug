@@ -22,15 +22,6 @@ html(lang="ru").no-js
 		// Конец шапки сайта
 		// Хлебные крошки и Основное меню
 		.container
-			// Хлебные крошки
-			//- block breadcrumbs
-			//- 	section.breadcrumbs
-			//- 		a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
-			//- 		a(href="#").breadcrumbs-item
-			//- 			span.bb-solid Главная
-			//- 		a(href="#").breadcrumbs-item
-			//- 			span.bb-solid Личный кабинет 
-			//- 		span Название этой страницы
 			// Начало основного меню
 
 			include ../includes/main-nav.pug
@@ -40,7 +31,7 @@ html(lang="ru").no-js
 			// Блок меню личного кабинета
 			aside.cabinet-menu-block
 				// Кнопка раскрытия меню в мобильном и табличном виде
-				.mobile-custom-select.cabinet-menu__custom-select Лист ожидания
+				.mobile-custom-select.cabinet-menu__custom-select Рекомендации
 				// Меню
 				block cabinet-menu
 					nav.cabinet-menu
@@ -51,14 +42,26 @@ html(lang="ru").no-js
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--orders
 							| Мои заказы
 						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--delivery
+							| Доставка и оплата
+						a(href="#").cabinet-menu-link.active
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--recommend
+							| Рекомендации
+						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--favorite
 							| Избранное
 						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--compare
 							| Сравнение
-						a(href="#").cabinet-menu-link.active
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--techsupport
+							| Поддержка
+						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--waiting
 							| Лист ожидания
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--look-price
+							| Следить за ценой
 						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
 							| Профиль 

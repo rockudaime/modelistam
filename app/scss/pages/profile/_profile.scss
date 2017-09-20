@@ -65,13 +65,13 @@
 .cabinet-menu-link {
     font-family: $main-font;
     font-size: 16px;
-    line-height: 46px;
+    line-height: 45px;
 
     position: relative;
 
     display: block;
 
-    height: 46px;
+    height: 45px;
     padding: 0 45px 0 50px;
 
     color: #000;
@@ -81,7 +81,6 @@
     }
     &:hover,
     &.active {
-        font-family: $main-font-semibold;
         transition: background-color .1s;
 
         background: #fafafa;
@@ -99,9 +98,29 @@
                 background-position: 6px -208px;
             }
             &--favorite {
-                background-position: 6px -490px;
+                background-position: 5px -490px;
+            }
+
+            &--recommend {
+                background-position: 5px -754px;
+            }
+
+            &--look-price {
+                background-position: 6px -681px;
+            }
+
+            &--delivery {
+                background-position: 6px -417px;
+            }
+
+            &--techsupport {
+                background-position: 4px -932px;
             }
         }
+    }
+
+    &.active {
+        font-family: $main-font-semibold;
     }
 
     &__icon {
@@ -131,7 +150,20 @@
             background-position: 6px -172px;
         }
         &--favorite {
-            background-position: 6px -453px;
+            background-position: 5px -454px;
+        }
+        &--recommend {
+            background-position: 5px -718px;
+        }
+        &--look-price {
+            background-position: 6px -646px;
+        }
+
+        &--delivery {
+            background-position: 6px -381px;
+        }
+        &--techsupport {
+            background-position: 4px -896px;
         }
     }
     @media (min-width: 1235px) {
@@ -180,7 +212,7 @@
         padding-bottom: 0;
 
         width: 570px;
-        padding-top: 7px;
+        padding-top: 6px;
     }
 
     .compare__header-link {
@@ -1092,4 +1124,27 @@ h3.cabinet-title {
             padding-bottom: 30px;
         }
     }
+}
+
+.cabinet-social-header {
+    margin-top: -3px;
+    padding-bottom: 17px;
+    margin-bottom: 23px;
+    border-bottom: 1px dashed #c2c2c2;
+
+    p {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 0;
+    }
+
+    &__link {
+        font-size: 15px;
+        text-decoration: underline;
+
+        & + & {
+            margin-left: 28px;
+        }
+    }
+
 }
