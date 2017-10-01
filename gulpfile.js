@@ -18,8 +18,8 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['cabinet-recommend.html'],
-  pug: ['app/pug/cabinet*.pug'],
+  html: ['home.html'],
+  pug: ['app/pug/home.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };

@@ -16,6 +16,7 @@ html(lang="ru").no-js
 		// main script
 		script(src="dist/js/base/all.js")
 		script(src="dist/js/pages/personal-cabinet.js")
+		script(src="dist/js/pages/cabinet-lookprice.js")
 
 	body
 		include ../includes/header.pug
@@ -64,7 +65,10 @@ html(lang="ru").no-js
 							| Следить за ценой
 						a(href="#").cabinet-menu-link
 							i.cabinet-menu-link__icon.cabinet-menu-link__icon--profile
-							| Профиль 
+							| Профиль
+						a(href="#").cabinet-menu-link
+							i.cabinet-menu-link__icon.cabinet-menu-link__icon--logout
+							| Выход
 			.cabinet-content-block.clearfix
 
 				// Блок main  - содержимое отличается для разных страниц личного кабинета

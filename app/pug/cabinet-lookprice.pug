@@ -1,0 +1,150 @@
+extends extends/cabinet-template.pug
+
+block main-content
+	main.cabinet-main-content
+		h2.cabinet-title.fl_l Следить за ценой
+		.fl_r.compare__header-links
+			a(href="#").compare__header-link.mobile-hidden
+				i.icon.icon--paper-plane.compare__header-icon
+				span Отправить на почту
+			a(href="#").compare__header-link
+				i.icon.icon--close.compare__header-icon
+				span Удалить все
+		.product-group.cabinet-products-preview.clearfix.cabinet-products--lookprice
+			.product-preview-item
+				.product-setprice
+					.product-setprice__header Ваша цена
+					.product-setprice__price
+						span.product-setprice__user-price 22 000 грн
+						a(href="#").product-setprice__link.product-setprice__link--edit
+							span.product-setprice__link--text
+								span изменить
+					form.product-setprice__form.hideField
+						input(type="text" value="22000").product-setprice__form-field
+						span.product-setprice__form-text грн
+						button.product-setprice__btn.product-setprice__form-submit Ok
+				.product-preview-item__inner.product-setprice__inner
+					button.product-preview-item__delete
+					.product-preview-item__photo
+						a(href="#")
+							img(src='dist/images/sample-airplane.jpg', alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.category-product__product-comments
+								a(href="#") 16
+							span.product-status.product-status--discount -10%
+							
+						h3.product-preview-item__heading
+							a(href="#") модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...
+						.category-product__price.cabinet-product__price
+							span.product-price--new 359 478
+								|  
+								span.product-price__text--small грн
+							span.product-price--changed.product-price--up +1 250
+								|  
+								span.product-price__text--small грн
+
+			.product-preview-item
+				.product-setprice
+					button.category-product__btn--buy.product-setprice__btn Купите по вашей цене
+					.product-setprice__price
+						span.product-setprice__user-price 22 000 грн
+						a(href="#").product-setprice__link.product-setprice__link--edit
+							span.product-setprice__link--text
+								span изменить
+					form.product-setprice__form.hideField
+						input(type="text", value="22000").product-setprice__form-field
+						span.product-setprice__form-text грн
+						button.product-setprice__btn.product-setprice__form-submit Ok
+				.product-preview-item__inner.product-setprice__inner
+					button.product-preview-item__delete
+					.product-preview-item__photo
+						a(href="#")
+							img(src='dist/images/sample-airplane.jpg', alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.category-product__product-comments
+								a(href="#") 16
+							span.product-status.product-status--discount -10%
+							
+						h3.product-preview-item__heading
+							a(href="#") модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...
+						.category-product__price.cabinet-product__price
+							span.product-price--new 359 478
+								|  
+								span.product-price__text--small грн
+							span.product-price--changed.product-price--down -1 250
+								|  
+								span.product-price__text--small грн
+
+			.product-preview-item
+				.product-setprice
+					.product-setprice__header Ваша цена
+					.product-setprice__price
+						a(href="#").product-setprice__link.product-setprice__link--set
+							span.product-setprice__link--text
+								span установить
+					.product-setprice__form.hideField
+						input(type="text").product-setprice__form-field
+						span.product-setprice__form-text грн
+						button.product-setprice__btn.product-setprice__form-submit Ok
+				.product-preview-item__inner.product-setprice__inner
+					button.product-preview-item__delete
+					.product-preview-item__photo
+						a(href="#")
+							img(src='dist/images/sample-airplane.jpg', alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.category-product__product-comments
+								a(href="#") 16
+							span.product-status.product-status--discount -10%
+							
+						h3.product-preview-item__heading
+							a(href="#") модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...
+						.category-product__price.cabinet-product__price
+							span.product-price--new 359 478
+								|  
+								span.product-price__text--small грн
+							span.product-price--changed.product-price--up +1 250
+								|  
+								span.product-price__text--small грн
+
+			.product-preview-item
+				.product-setprice
+					.product-setprice__header Ваша цена
+					.product-setprice__price
+						span.product-setprice__user-price 22 000 грн
+						a(href="#").product-setprice__link.product-setprice__link--edit
+							span.product-setprice__link--text
+								span изменить
+					.product-setprice__form.hideField
+						input(type="text").product-setprice__form-field
+						span.product-setprice__form-text грн
+						button.product-setprice__btn.product-setprice__form-submit Ok
+				.product-preview-item__inner.product-setprice__inner
+					button.product-preview-item__delete
+					.product-preview-item__photo
+						a(href="#")
+							img(src='dist/images/sample-airplane.jpg', alt="image")
+					.product-preview-item__content
+						.product-preview-item__product-status
+							span.product-status.product-status--new Новинка
+							span.category-product__product-comments
+								a(href="#") 16
+							span.product-status.product-status--discount -10%
+							
+						h3.product-preview-item__heading
+							a(href="#") модель р/у планера volantexrc fpvraptor v2 (tw-757-v2) 2000мм 2.4ghz...
+						.category-product__price.cabinet-product__price
+							span.product-price--new 359 478
+								|  
+								span.product-price__text--small грн
+							span.product-price--changed.product-price--up +1 250
+								|  
+								span.product-price__text--small грн
+
+block cabinet-signup
+	

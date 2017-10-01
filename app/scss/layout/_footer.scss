@@ -344,20 +344,20 @@
 	}
 }
 .h-signup {
-	padding: 20px 10px 15px;
-	background: #f6f6f6;
-	margin: 0 -10px 40px;
+	padding: 20px 0 15px;
+	background: #eff3f4;
+	margin: 0 0 40px;
 	// box-shadow: 2px 2px 0px #d9d9d9;
-	border-right: 2px solid #d9d9d9;
-	border-bottom: 2px solid #d9d9d9;
-	border-radius: 3px;
+	// border-right: 2px solid #d9d9d9;
+	// border-bottom: 2px solid #d9d9d9;
+	// border-radius: 3px;
 	clear: both;
 	overflow: hidden;
 	box-sizing: border-box;
-    max-width: 1033px;
+    // max-width: 1033px;
 	@media (min-width: 768px) {
 		margin: 0 auto 36px;
-		padding: 18px 30px 21px;
+		padding: 30px 30px 42px;
 	}
 	@media (min-width: 1235px) {
 		border-right-width: 1px;
@@ -365,15 +365,16 @@
 	}
 
 	&__heading {
-		font-size: 18px;
+		font: 18px/30px $main-font;
 		margin-bottom: 5px;
-		line-height: 26px;
 
-		@media (min-width: 1235px) {
-			display: inline-block;
+		@media (min-width: $desktop-min) {
 			margin-right: 15px;
+			float: left;
+			width: 355px;
 			margin-bottom: 0;
-			vertical-align: middle;
+		    margin-left: 106px;
+		    margin-top: -8px;
 		}
 	}
 
@@ -384,69 +385,79 @@
 		white-space: nowrap;
 
 		@media (min-width: 768px) {
-			display: inline-block;
 			margin-right: 4px;
 			margin-bottom: 0;
+			
+		}
+
+		@media (min-width: $desktop-min) {
+			margin-right: 112px;
+			float: right;
 		}
 	}
 
-	&__email-input {
-		height: 40px;
-		line-height: 40px;
-		border-radius: 3px;
-		border: 1px solid #787878;
-		padding: 12px 12px 8px;
+	&__field {
+		display: block;
+		width: 100%;
 		box-sizing: border-box;
-		width: 200px;
-		vertical-align: middle;
-		// @media (min-width: 544px) {
-		// 	width: 200px;
-		// }
+		height: 40px;
+		border: 1px solid #abadb3;
+		padding: 0 13px;
+		margin-bottom: 5px;
+		line-height: 40px;
+		overflow: hidden;
 
-		&:required,
-		&:required:valid {
-			background: #fff;
-			padding: 12px 12px 8px;
-		}
-		&:focus {
-			border-color: #006caf;
-			outline: 0;
+		@media (min-width: $tablet-min) {
+			float: left;
+			width: 250px;
+			margin-bottom: 0;
+
+			& + & {
+				border-left: 0;
+			}
 		}
 	}
+
 	&__submit {
-		display: inline-block;
+		display: block;
 		height: 40px;
+		width: 100%;
+		float: right;
+		
 		box-sizing: border-box;
 		color: #fff;
-		background-color: #006caf;
+		background: #7ea0ac;
 		padding: 0 15px;
 		border: 0;
 		outline: 0;
 		border-radius: 3px;
-		margin-left: -8px;
+		
 		transition: background .15s ease-in;
 		vertical-align: middle;
 
-		@media (min-width: 544px) {
-	        padding: 0px 13px;
-		    font-size: 17px;
-		    line-height: 42px;
+
+		@media (min-width: $tablet-min) {
+			margin-left: -3px;
+			width: 60px;
+			float: left;
+			text-indent: -999999px;
+			background: #7ea0ac url('images/footer/send-btn.png') no-repeat center center;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: #336297;
+			background-color: darken(#7ea0ac, 5%);
 		}
 
 
 	}
 	&__form-caption {
+		clear: both;
 		font-size: 13px;
 		color: #777;
 		margin-bottom: 0;
-		@media (min-width: 768px) {
-			display: inline-block;
-		}
+		padding-top: 7px;
+		white-space: normal;
 	}
 
 }
