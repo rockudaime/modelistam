@@ -822,6 +822,7 @@
 
     &__title {
     	margin-bottom: 10px;
+        font: 20px/1.6 $main-font-semibold;
     }
 
     &__unlogin {
@@ -1575,6 +1576,7 @@
 
 	&__title {
 		font-size: 18px;
+        font-family: $main-font-semibold;
 		display: inline-block;
 		margin-right: 16px;
 		margin-bottom: 8px;
