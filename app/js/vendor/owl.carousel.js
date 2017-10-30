@@ -684,13 +684,20 @@
 			this.$element.addClass(this.options.dragClass);
 			this.$stage.on('mousedown.owl.core', $.proxy(this.onDragStart, this));
 			this.$stage.on('dragstart.owl.core selectstart.owl.core', function() { return false });
+
+			this.$element.find('.owl-custom-scrollbar').on('mousemove.owl.core', function (e) {
+				console.log('hello from here');
+			});
 		}
 
 		if (this.settings.touchDrag){
 			this.$stage.on('touchstart.owl.core', $.proxy(this.onDragStart, this));
 			this.$stage.on('touchcancel.owl.core', $.proxy(this.onDragEnd, this));
 		}
+
 	};
+
+
 
 	/**
 	 * Handles `touchstart` and `mousedown` events.
@@ -724,6 +731,63 @@
 
 		if (this.is('animating')) {
 			$.support.transform ? this.animate(stage.x) : this.$stage.stop()
+			this.invalidate('position');
+		}
+
+		this.$element.toggleClass(this.options.grabClass, event.type === 'mousedown');
+
+		this.speed(0);
+
+		this._drag.time = new Date().getTime();
+		this._drag.target = $(event.target);
+		this._drag.stage.start = stage;
+		this._drag.stage.current = stage;
+		this._drag.pointer = this.pointer(event);
+
+		$(document).on('mouseup.owl.core touchend.owl.core', $.proxy(this.onDragEnd, this));
+
+		$(document).one('mousemove.owl.core touchmove.owl.core', $.proxy(function(event) {
+			var delta = this.difference(this._drag.pointer, this.pointer(event));
+
+			$(document).on('mousemove.owl.core touchmove.owl.core', $.proxy(this.onDragMove, this));
+
+			if (Math.abs(delta.x) < Math.abs(delta.y) && this.is('valid')) {
+				return;
+			}
+
+			event.preventDefault();
+
+			this.enter('dragging');
+			this.trigger('drag');
+		}, this));
+	};
+	Owl.prototype.scrollbarOnDragStart = function(event) {
+		console.log('here we are')
+		var stage = null;
+
+		if (event.which === 3) {
+			return;
+		}
+
+		if ($.support.transform) {
+			stage = this.$stage.find('.owl-custom-scrollbar').css('transform').replace(/.*\(|\)| /g, '').split(',');
+			stage = {
+				x: stage[stage.length === 16 ? 12 : 4],
+				y: stage[stage.length === 16 ? 13 : 5]
+			};
+		} else {
+			stage = this.$stage.find('.owl-custom-scrollbar').position();
+			$elem = this.$stage.find('.owl-custom-scrollbar');
+			stage = {
+				x: this.settings.rtl ?
+					stage.left + $elem.width() - this.width() + this.settings.margin :
+					stage.left,
+				y: stage.top
+			};
+		}
+
+		if (this.is('animating')) {
+			$.support.transform ? this.animate(stage.x) : this.find('.owl-custom-scrollbar').stop()
 			this.invalidate('position');
 		}
 
@@ -2855,8 +2919,14 @@
 			.addClass('owl-custom-scrollbar-wrapper')
 			.append($('<div class="owl-custom-scrollbar">'))
 			.appendTo(this.$element);
+
+			this._controls.$scrollbar
+				.find('.owl-custom-scrollbar')
+				.on('mousedown.owl.core', $.proxy(function (event) {
+					console.log('mousedown');
+				}, this));
 		}
-		
+
 		this._controls.$relative = (settings.navContainer ? $(settings.navContainer)
 			: $('<div>').addClass(settings.navContainerClass).appendTo(this.$element)).addClass('disabled');
 

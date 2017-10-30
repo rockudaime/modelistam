@@ -208,7 +208,54 @@ $sidebar-border: 1px solid #dfdfdf;
     &__signup {
         &.h-signup {
             padding: 8px;
+            font-size: 15px;
+            margin: 0px;
+            min-width: 360px;
+            white-space: nowrap;
             margin-bottom: 21px;
+        }
+        .h-signup__form {
+            margin: 0;
+            float: none;
+        }
+        .h-signup__email-input {
+            height: 40px;
+            line-height: 40px;
+            border-radius: 3px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border: 1px solid #787878;
+            padding: 12px 12px 8px;
+            box-sizing: border-box;
+            width: 200px;
+            vertical-align: middle;
+        }
+
+        .h-signup__submit {
+            display: inline-block;
+            height: 40px;
+            font-size: 17px;
+            box-sizing: border-box;
+            color: #fff;
+            background: #006caf;
+            padding: 0 15px;
+            text-indent: 0;
+            border: 0;
+            outline: 0;
+            border-radius: 3px;
+            margin-left: -11px;
+            transition: background .15s ease-in;
+            vertical-align: middle;
+            float: none;
+            width: auto;
+
+            &:hover,
+            &:focus {
+                // background-color: darken(#7ea0ac, 5%);
+                background-color: darken(#006caf, 5%);
+            }
         }
     }
 

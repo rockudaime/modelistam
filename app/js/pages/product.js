@@ -40,82 +40,8 @@ $(document).ready(function() {
 	$('.rateit__range').on('mouseleave', function(e){
 		$('.rateit__hover').css('width', '0');
 	});
-	
 
-
-	// *********************** ТАБЫ И НАВИГАЦИЯ *******************
-		// Меню для навигации по табам в десктопном\планшетном виде
-		// .menu-details - меню - ul список ссылок для навигации по табам
-		// .menu-details__link - отдельный элемент меню
-
-	var $root = $('html, body');
-	var tabs = $('.item-detail'); // блоки с сожержимым табов
-
-	$('.menu-details').on('click', function(e){
-		e.preventDefault();
-		var link = e.target;
-		if (link.nodeName === 'A'){
-			var tabs = $('.details-product__detail-item');
-			var tabId = link.dataset.target;
-			var links = $('.menu-details__link'); // Элемент меню
-			var tab = $('#' + tabId);
-
-			if (tabId === 'accessories') {
-				$('.accessories').hide();
-			} else {
-				$('.accessories').show();
-			}
-
-			if (tabId && !tab.hasClass('item-detail--active')){
-				tabs.removeClass('item-detail--active');
-				links.removeClass('menu-details__link--active');
-				$(link).addClass('menu-details__link--active');
-				tab.addClass('item-detail--active');
-			}
-		}
-		
-	});
-
-	// Аккордеон для мобильного вида (все что меньше 768 пикселей в ширину)
-
-	$('.item-detail__mobile-menu-item').on('click', function(e) {
-		e.preventDefault();
-		var link = $(this);
-		var links = $('.item-detail__mobile-menu-item');
-		var tab = link.next();
-		
-		if (!tab.hasClass('item-detail--active')){ // если таб не активный, закрыть все остальные и открыть таб
-			tabs.removeClass('item-detail--active');
-			links.removeClass('mobile-menu-item--active');
-			tab.addClass('item-detail--active');
-			link.addClass('mobile-menu-item--active');
-		} else { // если клик по уже активному табу, то просто закрыть его
-			tab.removeClass('item-detail--active');
-			link.removeClass('mobile-menu-item--active');
-		}
-		$root.animate({
-				scrollTop: tab.offset().top
-		}, 500);
-		
-	});
-	// link to characteristics tab in about product tab
-	$('#characteristicsLink').on('click', function() {
-		var tabId = this.dataset.id;
-		var tabs = $('.item-detail');
-		var links = $('.menu-details__link');
-		var tab = $('#' + tabId);
-
-		$('.accessories').hide();
-		tabs.removeClass('item-detail--active');
-		links.removeClass('menu-details__link--active');
-		$('.menu-details__link[data-target="characteristics"]').addClass('menu-details__link--active');
-		tab.addClass('item-detail--active');
-		$root.animate({
-				scrollTop: tab.offset().top
-		}, 500);
-	});
-
-	/**
+		/**
 	*
 	* Processing the layout of video elements on the page (if there is more than one video). 
 	* Creates navigation links to navigate across the tabs. 
@@ -560,107 +486,184 @@ $(document).ready(function() {
 	}());
 
 
-	(function() {
-		function TabsNavigation($tabsContainerElement) {
-			var tabsObj = this;
-			// tabsObj.offset = 0;
-			tabsObj.currentOffset = 0;
-			tabsObj.container = $tabsContainerElement;
-			tabsObj.menu = tabsObj.container.find('.tabs-menu');
-			tabsObj.menuItems = tabsObj.menu.find('.tabs-menu__item');
-			tabsObj.tabs = $('.' + tabsObj.container.data('tab-class'));
-			tabsObj.prevNav = tabsObj.container.find('.tabs-menu__control.tabs-menu__control--prev');
-			tabsObj.nextNav = tabsObj.container.find('.tabs-menu__control.tabs-menu__control--next');
-			tabsObj.navElementWidth = tabsObj.prevNav.width();
-			tabsObj.maxOffset = tabsObj.container.outerWidth() - tabsObj.menu.outerWidth();
-			tabsObj.offset = -tabsObj.maxOffset;
+	
 
-			if (tabsObj.menu.outerWidth() > tabsObj.container.outerWidth()) {
-				tabsObj.nextNav.addClass('active');
+});
+$(window).load(function() {
+	// *********************** ТАБЫ И НАВИГАЦИЯ *******************
+		// Меню для навигации по табам в десктопном\планшетном виде
+		// .menu-details - меню - ul список ссылок для навигации по табам
+		// .menu-details__link - отдельный элемент меню
 
-				if (-tabsObj.maxOffset > tabsObj.container.outerWidth()) {
-					tabsObj.offset = tabsObj.container.outerWidth() - tabsObj.nextNav.outerWidth()*2;
-				}
+	var $root = $('html, body');
+	var tabs = $('.item-detail'); // блоки с сожержимым табов
+
+	$('.menu-details').on('click', function(e){
+		e.preventDefault();
+		var link = e.target;
+		if (link.nodeName === 'A'){
+			var tabs = $('.details-product__detail-item');
+			var tabId = link.dataset.target;
+			var links = $('.menu-details__link'); // Элемент меню
+			var tab = $('#' + tabId);
+
+			
+
+			if (tabId && !tab.hasClass('item-detail--active')){
+				tabs.removeClass('item-detail--active');
+				links.removeClass('menu-details__link--active');
+				$(link).addClass('menu-details__link--active');
+				tab.addClass('item-detail--active');
+			}
+
+			if (tabId === 'accessories') {
+				$('.accessories').hide();
+				var accessoriesMain = new TabsNavigation($('#accessoriesMain'));
+				accessoriesMain.init();
 			} else {
-				tabsObj.nextNav.removeClass('active');
+				$('.accessories').show();
 			}
+		}
+		
+	});
 
-			tabsObj.init = function () {
-				tabsObj.menuItems.on('click', tabsMenuItemClickHandler);
-				tabsObj.nextNav.on('click', -1,  navClickHandler);
-				tabsObj.prevNav.on('click', 1,  navClickHandler);
+	// Аккордеон для мобильного вида (все что меньше 768 пикселей в ширину)
+
+	$('.item-detail__mobile-menu-item').on('click', function(e) {
+		e.preventDefault();
+		var link = $(this);
+		var links = $('.item-detail__mobile-menu-item');
+		var tab = link.next();
+		
+		if (!tab.hasClass('item-detail--active')){ // если таб не активный, закрыть все остальные и открыть таб
+			tabs.removeClass('item-detail--active');
+			links.removeClass('mobile-menu-item--active');
+			tab.addClass('item-detail--active');
+			link.addClass('mobile-menu-item--active');
+		} else { // если клик по уже активному табу, то просто закрыть его
+			tab.removeClass('item-detail--active');
+			link.removeClass('mobile-menu-item--active');
+		}
+		$root.animate({
+				scrollTop: tab.offset().top
+		}, 500);
+		
+	});
+	// link to characteristics tab in about product tab
+	$('#characteristicsLink').on('click', function() {
+		var tabId = this.dataset.id;
+		var tabs = $('.item-detail');
+		var links = $('.menu-details__link');
+		var tab = $('#' + tabId);
+
+		$('.accessories').hide();
+		tabs.removeClass('item-detail--active');
+		links.removeClass('menu-details__link--active');
+		$('.menu-details__link[data-target="characteristics"]').addClass('menu-details__link--active');
+		tab.addClass('item-detail--active');
+		$root.animate({
+				scrollTop: tab.offset().top
+		}, 500);
+	});
+
+
+	// Инициализация табов аксуссуаров
+	function TabsNavigation($tabsContainerElement) {
+		var tabsObj = this;
+		// tabsObj.offset = 0;
+		tabsObj.currentOffset = 0;
+		tabsObj.container = $tabsContainerElement;
+		tabsObj.menu = tabsObj.container.find('.tabs-menu');
+		tabsObj.menuItems = tabsObj.menu.find('.tabs-menu__item');
+		tabsObj.tabs = $('.' + tabsObj.container.data('tab-class'));
+		tabsObj.prevNav = tabsObj.container.find('.tabs-menu__control.tabs-menu__control--prev');
+		tabsObj.nextNav = tabsObj.container.find('.tabs-menu__control.tabs-menu__control--next');
+		tabsObj.navElementWidth = tabsObj.prevNav.width();
+		tabsObj.maxOffset = tabsObj.container.outerWidth() - tabsObj.menu.outerWidth();
+		tabsObj.offset = -tabsObj.maxOffset;
+
+		if (tabsObj.menu.outerWidth() > tabsObj.container.outerWidth()) {
+			tabsObj.nextNav.addClass('active');
+
+			if (-tabsObj.maxOffset > tabsObj.container.outerWidth()) {
+				tabsObj.offset = tabsObj.container.outerWidth() - tabsObj.nextNav.outerWidth()*2;
 			}
-
-
-			function getOffset (dir) {
-				var offset = tabsObj.offset * dir + tabsObj.currentOffset;
-				if (offset >= 0) {
-					offset = 0;
-				}
-				else if (offset <= tabsObj.maxOffset) {
-					offset = tabsObj.maxOffset;
-				}
-
-				return offset;
-			}
-
-			function updateCurrentOffset (offset) {
-				tabsObj.currentOffset = offset;
-			}
-
-			function updateTabsMenuPosition(offsetX, offsetY, offsetZ) {
-				var offsetX = offsetX || 0;
-				var offsetY = offsetY || 0;
-				var offsetZ = offsetZ || 0;
-				tabsObj.menu.css('transform', 'translate3d(' + offsetX + 'px, ' + offsetY + 'px, ' + offsetZ + 'px');
-			}
-
-			function navClickHandler (event) {
-				var dir = event.data;
-				var offset = getOffset(dir);
-				updateCurrentOffset(offset);
-
-				if (offset >= 0) {
-					tabsObj.prevNav.removeClass('active');
-					tabsObj.nextNav.addClass('active');
-				} 
-				else if (offset <= tabsObj.maxOffset) {
-					tabsObj.nextNav.removeClass('active');
-				} else if (offset < 0 && offset > tabsObj.maxOffset) {
-					tabsObj.nextNav.addClass('active');
-				}
- 
-				if (offset < 0) {
-					tabsObj.prevNav.addClass('active');
-				}
-
-				updateTabsMenuPosition(offset);
-			}
-
-			function tabsMenuItemClickHandler (event) {
-				event.preventDefault();
-
-				var tabLink = $(this);
-				var tab = $('#' + tabLink.data('tabid'));
-				// var accessoriesTabs = $(tabsClass);
-				tabsObj.tabs.hide();
-				tab.show();
-
-				tabsObj.menuItems.removeClass('tabs-menu__item--active');
-				tabLink.addClass('tabs-menu__item--active');
-			}
-
-
-			return tabsObj;
+		} else {
+			tabsObj.nextNav.removeClass('active');
 		}
 
-		var accessoriesAdditional = new TabsNavigation($('#accessoriesAdditional'));
-		accessoriesAdditional.init();
+		tabsObj.init = function () {
 
-		var accessoriesMain = new TabsNavigation($('#accessoriesMain'));
-		accessoriesMain.init();
-	}());
+			tabsObj.menuItems.on('click', tabsMenuItemClickHandler);
+			tabsObj.nextNav.on('click', -1,  navClickHandler);
+			tabsObj.prevNav.on('click', 1,  navClickHandler);
+		}
 
+
+		function getOffset (dir) {
+			var offset = tabsObj.offset * dir + tabsObj.currentOffset;
+			if (offset >= 0) {
+				offset = 0;
+			}
+			else if (offset <= tabsObj.maxOffset) {
+				offset = tabsObj.maxOffset;
+			}
+
+			return offset;
+		}
+
+		function updateCurrentOffset (offset) {
+			tabsObj.currentOffset = offset;
+		}
+
+		function updateTabsMenuPosition(offsetX, offsetY, offsetZ) {
+			var offsetX = offsetX || 0;
+			var offsetY = offsetY || 0;
+			var offsetZ = offsetZ || 0;
+			tabsObj.menu.css('transform', 'translate3d(' + offsetX + 'px, ' + offsetY + 'px, ' + offsetZ + 'px');
+		}
+
+		function navClickHandler (event) {
+			var dir = event.data;
+			var offset = getOffset(dir);
+			updateCurrentOffset(offset);
+
+			if (offset >= 0) {
+				tabsObj.prevNav.removeClass('active');
+				tabsObj.nextNav.addClass('active');
+			} 
+			else if (offset <= tabsObj.maxOffset) {
+				tabsObj.nextNav.removeClass('active');
+			} else if (offset < 0 && offset > tabsObj.maxOffset) {
+				tabsObj.nextNav.addClass('active');
+			}
+
+			if (offset < 0) {
+				tabsObj.prevNav.addClass('active');
+			}
+
+			updateTabsMenuPosition(offset);
+		}
+
+		function tabsMenuItemClickHandler (event) {
+			event.preventDefault();
+
+			var tabLink = $(this);
+			var tab = $('#' + tabLink.data('tabid'));
+			// var accessoriesTabs = $(tabsClass);
+			tabsObj.tabs.stop().hide();
+			tab.stop().show();
+
+			tabsObj.menuItems.removeClass('tabs-menu__item--active');
+			tabLink.addClass('tabs-menu__item--active');
+		}
+
+
+		return tabsObj;
+	}
+
+	var accessoriesAdditional = new TabsNavigation($('#accessoriesAdditional'));
+	accessoriesAdditional.init();
 });
 
 // ========================= Popups new ==================

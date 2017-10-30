@@ -143,14 +143,15 @@ html(lang="ru")
 									i
 					// конец блока навигации
 
-		.prefooter
-			.container
-				// signup block
-				.h-signup
-					p.h-signup__heading Получайте только акции и важные новости
-					form.h-signup__form
-						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
-						input.h-signup__submit(type="submit", value="Держите в курсе")
-					p.h-signup__form-caption 1 раз в неделю. Без спама
+		//- .prefooter
+		//- 	.container
+		//- 		// signup block
+		//- 		.h-signup
+		//- 			p.h-signup__heading Получайте только акции и важные новости
+		//- 			form.h-signup__form
+		//- 				input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
+		//- 				input.h-signup__submit(type="submit", value="Держите в курсе")
+		//- 			p.h-signup__form-caption 1 раз в неделю. Без спама
+		include includes/footer-signup.pug
 
 		include includes/footer.pug

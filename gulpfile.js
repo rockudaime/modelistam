@@ -18,14 +18,14 @@ var reload        = browserSync.reload;
 
 
 var paths = {
-  html: ['home.html'],
-  pug: ['app/pug/home.pug'],
+  html: ['product.html'],
+  pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
 };
 
 // ////////////////////////////////////////////////
-// CSS 
+// CSS
 // ///////////////////////////////////////////////
 
 gulp.task('sass', function () {
@@ -40,7 +40,7 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-  
+
   .pipe(sourcemaps.write('../maps'))
   .pipe(gulp.dest('dist/dist'))
   .pipe(filter(['**/*.css']))  // filter the maps files so browsersync can inject css, instead of page reload
@@ -48,7 +48,7 @@ gulp.task('sass', function () {
 });
 
 // ////////////////////////////////////////////////
-// HTML 
+// HTML
 // ///////////////////////////////////////////////
 gulp.task('pug', function() {
   return gulp.src(paths.pug) //('app/jade/**/*.jade')
@@ -60,16 +60,16 @@ gulp.task('pug', function() {
     .pipe(reload({stream:true}));
 });
 // ////////////////////////////////////////////////
-// JavaScript 
+// JavaScript
 // ///////////////////////////////////////////////
 gulp.task('scripts', function() {
   gulp.src('app/js/**/*.js')
-    .pipe(jshint())
+    // .pipe(jshint())
     // .pipe(jshint.reporter('default'))
     // .pipe(concat('all.js'))
     // .pipe(uglify())
-    .pipe(gulp.dest('dist/dist/js/'))
-    .pipe(reload({stream:true}));
+    .pipe(gulp.dest('dist/dist/js'))
+    // .pipe(reload({stream:true}));
 });
 // ////////////////////////////////////////////////
 // Images

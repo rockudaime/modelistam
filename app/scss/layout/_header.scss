@@ -23,8 +23,8 @@
     	height: 83px;
     }
     @media (min-width: $desktop-min) {
-        height: 54px;
-        padding-top: 15px;
+        height: 47px;
+        padding-top: 8px;
     }
 }
 .header-logo {
@@ -53,8 +53,8 @@
     }
     @media (min-width: $desktop-min) {
         position: absolute;
-        top: 62px;
-        margin-left: 26px;
+        top: 55px;
+        margin-left: 24px;
 
         img {
             width: 214px;
@@ -184,8 +184,8 @@
     }
     @media (min-width: $desktop-min) {
         
-        top: 59px;
-        margin-left: 301px;
+        top: 52px;
+        margin-left: 300px;
     }
     & > * {
         display: block;
@@ -204,7 +204,7 @@
             text-indent: initial;
             width: 34%;
             display: inline-block;
-            margin-right: 12px;
+            margin-right: 11px;
         }
     }
     &__description {
@@ -486,6 +486,10 @@
                 padding-right: 74px;
             }
 
+        }
+
+        &::placeholder {
+            color: #a8a8a8;
         }
     }
 
@@ -992,10 +996,10 @@
     	margin-left: 0;
     	margin-top: -20px;
     }
-    @media (min-width: 1235px) {
+    @media (min-width: $desktop-min) {
     	border-color: #eee;
         width: 268px;
-        margin-top: -14px;
+        margin-top: -24px;
 
         .media-link {
         	padding-left: 8px;
@@ -1684,7 +1688,7 @@
 	font: 15px $main-font;
 
 	@media (min-width: 1235px) {
-		margin-bottom: 12px;
+		margin-bottom: 22px;
 		display: block;
 	}
 
