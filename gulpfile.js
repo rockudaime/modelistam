@@ -1,23 +1,24 @@
 'use strict';
 require('es6-promise').polyfill();
-var gulp          = require("gulp");
-var concat        = require("gulp-concat");
-var sass          = require("gulp-sass");
-var autoprefixer  = require('gulp-autoprefixer');
-var uglify        = require("gulp-uglify");
-var jshint        = require("gulp-jshint");
-var imagemin      = require("gulp-imagemin");
-var browserSync   = require('browser-sync');
-var pug           = require('gulp-pug');
-var combineMq     = require('gulp-combine-mq');
-var sourcemaps    = require('gulp-sourcemaps');
-var filter        = require('gulp-filter');
-var injectSvg     = require('gulp-inject-svg');
+let gulp          = require("gulp");
+let concat        = require("gulp-concat");
+let sass          = require("gulp-sass");
+let autoprefixer  = require('gulp-autoprefixer');
+let uglify        = require("gulp-uglify");
+let jshint        = require("gulp-jshint");
+let imagemin      = require("gulp-imagemin");
+let browserSync   = require('browser-sync');
+let pug           = require('gulp-pug');
+let combineMq     = require('gulp-combine-mq');
+let sourcemaps    = require('gulp-sourcemaps');
+let filter        = require('gulp-filter');
+let injectSvg     = require('gulp-inject-svg');
+let cleanCSS      = require('gulp-clean-css');
 
-var reload        = browserSync.reload;
+let reload        = browserSync.reload;
 
 
-var paths = {
+let paths = {
   html: ['product.html'],
   pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
@@ -42,6 +43,7 @@ gulp.task('sass', function () {
     }))
 
   .pipe(sourcemaps.write('../maps'))
+  .pipe(cleanCSS({compatibility: 'ie8', rebase: false}))
   .pipe(gulp.dest('dist/dist'))
   .pipe(filter(['**/*.css']))  // filter the maps files so browsersync can inject css, instead of page reload
   .pipe(browserSync.stream());

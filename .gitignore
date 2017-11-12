@@ -2,6 +2,7 @@ upload/
 app/img/
 app/assets/
 dist/
+old_dist/
 bitrix/js/
 bitrix/components/
 *.html

@@ -208,10 +208,10 @@
     & > li {
         font: 18px/51px 'OpenSans_SemiBold';
         list-style: none;
-        
+
 
         position: relative;
-        
+
 
         display: block;
 
@@ -466,7 +466,7 @@
                     &:nth-child(3n) {
                        .category-product__inner {
                             border-right-color: #eaeaea;
-                        }     
+                        }
                     }
                     &:nth-child(4n) {
                         .category-product__inner {
@@ -490,9 +490,9 @@
                         }
                     }
 
-                    
+
                 }
-                
+
             }
         }
     }
@@ -706,7 +706,7 @@
                 display: none;
             }
         }
-        
+
     }
     &:after {
         display: table;
@@ -1018,7 +1018,7 @@
         margin-right: 10px;
     }
     &__characteristics {
-        font: 15xp/26px 'OpenSans';
+        font: 15px/26px 'OpenSans';
         margin-bottom: 10px;
         color: #151515;
 
@@ -1800,4 +1800,4 @@ span.af-bb {
     background-image: url('images/ui-icon-catalog-prev-hover.png');
 }
 
-// end of category.scss file 
+// end of category.scss file

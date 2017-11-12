@@ -101,7 +101,7 @@ a.link-to-images {
   // display: inline-block;
   width: 100%;
   max-width: 100%;
-  
+
 
   text-align: center;
   @media(min-width: 768px) {
@@ -132,7 +132,7 @@ a.link-to-images {
   left: 0;
   top: 0;
   height: 0;
-  
+
   background: #fff url('images/product-page/gallery-arrow-up.png') no-repeat 50% 50%;
   outline: 0;
   z-index: 30;
@@ -149,7 +149,7 @@ a.link-to-images {
     border: 0;
   }
   &:active {
-    
+
     outline: 0;
   }
 
@@ -166,7 +166,7 @@ a.link-to-images {
       display: block;
       background-color: rgba(255, 255, 255, .6);
     }
-    
+
   }
 
 }
@@ -275,7 +275,7 @@ a.link-to-images {
 // Блок с выбором опций и кнопкой купить
 
 .product-card__buy-block.product-info {
-  
+
   width: 100%;
   background: #fffae8;
   margin-right: -10px;
@@ -292,7 +292,7 @@ a.link-to-images {
     width: 270px;
     padding-top: 0;
 
-    
+
   }
   @media (min-width: 994px) {
     width: 336px;
@@ -350,7 +350,7 @@ a.link-to-images {
 
       padding-left: 45px;
     }
-    // 
+    //
   }
 }
 
@@ -669,6 +669,8 @@ a.link-to-images {
   border: 0;
   border-radius: 4px;
   outline: 0;
+  cursor: pointer;
+
   &:hover {
     text-decoration: none;
   }
@@ -762,7 +764,7 @@ a.link-to-images {
 
   //     color: $link-color;
   // }
-  
+
   @media (min-width: 994px) {
     cursor: text;
     text-decoration: none;
@@ -785,7 +787,7 @@ a.link-to-images {
   //     margin: 0;
   // }
 
-  
+
   @media(min-width: 994px) {
     display: inline-block;
 
@@ -871,7 +873,7 @@ a.link-to-images {
   //     border-radius: 3px;
   //     background: #fff;
   // }
-  // box-shadow: 0px 0px 0 1px rgba(0, 0, 0, 0.3); 
+  // box-shadow: 0px 0px 0 1px rgba(0, 0, 0, 0.3);
   @media(min-width: 994px) {
     position: static;
 
@@ -1122,7 +1124,7 @@ a.link-to-images {
       margin-right: 15px;
     }
     @media (min-width: 994px) {
-      
+
 
       margin-right: 30px;
     }
@@ -1262,8 +1264,8 @@ div.shop-info__work-time {
     border: 1px solid transparent;
     border-top: 3px solid transparent;
     border-bottom: 1px solid #d4d4d4;
-    @media (min-width: 994px) {
-      padding: 0 12px 0 15px;
+    @media (min-width: $tablet-min) {
+      padding: 0 15px 0 15px;
     }
     @media (min-width: $desktop-min) {
 
@@ -1292,16 +1294,18 @@ div.shop-info__work-time {
     padding-right: 25px;
 
     background: url('images/select-arrow-small.png') no-repeat top 52% right 7px;
-    @media (min-width: 768px) and (max-width: 993px) {
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
       display: block;
+      padding-right: 25px;
     }
   }
   &__item:hover > &__tablet-toggled {
     display: block;
   }
   &__tablet-toggled {
-    @media (min-width: 768px) and (max-width: 993px) {
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
       position: absolute;
+      z-index: 100;
       top: 100%;
       right: 0;
 
@@ -1810,7 +1814,7 @@ a.products-purchase__show-link {
       border-radius: 1px;
       overflow: hidden;
       position: relative;
-      
+
     }
   }
 }
@@ -1881,7 +1885,7 @@ a.products-purchase__show-link {
     &--prev {
       left: -1px;
       &:hover {
-        
+
       }
     }
 
@@ -1890,7 +1894,7 @@ a.products-purchase__show-link {
       background:  url(images/ui-icon-catalog-next.png) no-repeat right 14px top 18px,
        linear-gradient(to left, white 0%, white 50%, rgba(255,255,255,0) 100%);
       &:hover {
-        
+
       }
     }
   }
@@ -1971,7 +1975,7 @@ a.products-purchase__show-link {
       padding: 5px 15px 5px 0;
       background: url('images/category-arrow-right.png') no-repeat right 0 top 50%;
       white-space: nowrap;
-      
+
 
       // background-size: 13px;
     }
@@ -2172,7 +2176,7 @@ a.products-purchase__show-link {
       background-color: #689323;
     }
 
-    @media (min-widht: 994px) {
+    @media (min-width: 994px) {
       font-size: 14px;
     }
 
@@ -2366,7 +2370,7 @@ a.products-purchase__show-link {
   @media (min-width: 994px) {
 
     margin-bottom: 30px;
-    
+
     border: 1px solid #76a035;
     border-radius: 3px;
   }
@@ -2460,7 +2464,7 @@ a.products-purchase__show-link {
       margin-bottom: 15px;
       margin-left: 24px;
     }
-    
+
   }
   &__price-sm {
     font: 15px 'OpenSans';
@@ -2474,7 +2478,7 @@ a.products-purchase__show-link {
   min-height: 90px;
   box-sizing: border-box;
 
-  
+
 
   // width: 140px;
   // margin-right: 40px;
@@ -2526,7 +2530,7 @@ a.products-purchase__show-link {
   &:last-child:after {
     content: '';
   }
-  
+
   &__photo.product-preview-item__photo {
     height: 90px;
     width: 110px;
@@ -2585,7 +2589,7 @@ a.products-purchase__show-link {
   padding-left: 45px;
   @media (min-width: 768px) {
     padding-right: 18px;
-    
+
   }
 }
 
@@ -3278,7 +3282,7 @@ input::-webkit-inner-spin-button {
 }
 
 .popup-bcredit {
-  
+
   // width: 95%;
   // box-sizing: border-box;
   // overflow: hidden;
@@ -3474,12 +3478,12 @@ div.r-mobile {
     }
   }
   &__share {
-    
+
 
     @media (min-width: 768px) {
       float: left;
 
-      width: 63.3427%; 
+      width: 63.3427%;
     }
     p {
       margin-bottom: 5px;
@@ -3713,7 +3717,7 @@ ul.mp-rating-items li.mp-rating-item {
 
   @media (min-width: 768px) {
      width: 120px;
-     text-align: center; 
+     text-align: center;
   }
 }
 .mp-wrap-right {
@@ -4029,7 +4033,7 @@ div.star-rating-hover a{background-position:0 0px}
 
     @media (min-width: 768px) {
       border-bottom: 0;
-      
+
     }
 
     @media (min-width: 1235px) {
@@ -4067,8 +4071,8 @@ div.star-rating-hover a{background-position:0 0px}
     box-sizing: border-box;
 
     @media (min-width: 768px) {
-      
-      
+
+
       padding: 0 55px;
       margin-left: 30px;
       margin-right: 55px;
@@ -4124,12 +4128,12 @@ div.star-rating-hover a{background-position:0 0px}
   &__main-image {
     position: relative;
     text-align: center;
-    
+
     @media (min-width: 768px) {
       max-width: 100%;
       margin-bottom: 15px;
       border: 1px solid #ececec;
-      
+
     }
 
     @media (min-width: 1235px) {
@@ -4137,7 +4141,7 @@ div.star-rating-hover a{background-position:0 0px}
       height: 480px;
       line-height: 480px;
       text-align: center;
-      
+
     }
 
     img {
@@ -4175,7 +4179,7 @@ div.star-rating-hover a{background-position:0 0px}
       // transition: none;
 
       @media (min-width: 768px) {
-       
+
         margin-right: 50px;
       }
 

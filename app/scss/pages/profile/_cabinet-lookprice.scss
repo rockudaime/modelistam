@@ -64,8 +64,7 @@
 
   @media (min-width: $desktop-min) {
     background-size: 18px;
-    background-position-x: 10px;
-    background-position-y: 30%;
+    background-position: 10px 30%;
     padding-left: 19px;
   }
 }
@@ -73,13 +72,13 @@
 .product-setprice__link {
   @media (min-width: $tablet-min) {
     &--edit {
-      background: url('./images/svg/edit-icon.svg') no-repeat 0 50%;
+      background: url('images/svg/edit-icon.svg') no-repeat 0 50%;
       background-size: 13px;
       padding-left: 17px;
     }
 
     &--set {
-      background: url('./images/personal-cabinet/set-price-icon.png') no-repeat 0 50%;
+      background: url('images/personal-cabinet/set-price-icon.png') no-repeat 0 50%;
       background-size: 18px;
       padding-left: 24px;
     }
@@ -152,12 +151,12 @@
 }
 .product-price--up {
   color: #d9450a;
-  background: url('./images/personal-cabinet/price-up-arrow.png') no-repeat 0 50%;
+  background: url('images/personal-cabinet/price-up-arrow.png') no-repeat 0 50%;
 }
 
 .product-price--down {
   color: #568800;
-  background: url('./images/personal-cabinet/price-down-arrow.png') no-repeat 0 50%;
+  background: url('images/personal-cabinet/price-down-arrow.png') no-repeat 0 50%;
 }
 
 .cabinet-product__price {

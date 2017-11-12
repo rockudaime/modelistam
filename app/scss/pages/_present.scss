@@ -416,13 +416,13 @@
             padding-right: 9px;
             padding-left: 66px;
 
-            background-position-x: 24px;
+            background-position: 24px center;
         }
         @media (min-width: $desktop-min) {
             padding-right: 21px;
             padding-left: 55px;
 
-            background-position-x: 14px;
+            background-position: 14px center;
         }
     }
 }

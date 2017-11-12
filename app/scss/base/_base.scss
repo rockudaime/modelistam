@@ -15,9 +15,15 @@ body.modal-open {
     // overflow: hidden;
     // position:fixed;
     // width: 100%;
-    
+
 }
+dl, menu, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
 ul {
+
     margin-bottom: 20px;
 }
 
@@ -192,7 +198,7 @@ strong, b {
 }
 
 .tablet-hidden {
-    @media (min-width: $tablet-min) and (max-widht: $tablet-max) {
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
         display: none !important;
     }
 }
@@ -202,7 +208,6 @@ strong, b {
         display: none !important;
     }
 }
-
 
 .btn{
     display: inline-block;
@@ -214,9 +219,9 @@ strong, b {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    touch-action: manipulation;
+    // touch-action: manipulation;
     cursor: pointer;
-    user-select: none;
+    // user-select: none;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -245,7 +250,7 @@ strong, b {
     }
 
     &--sale {
-        background-color: #ce3b1e; 
+        background-color: #ce3b1e;
         color: #fff;
 
         &:hover,
@@ -338,12 +343,12 @@ span.bb-solid {
     }
 }
 
-img.alignright { float: right; margin: 0 0 1em 1em; } 
-img.alignleft { float: left; margin: 0 10px 0 0; vertical-align: middle;} 
-img.aligncenter { display: block; margin-left: auto; margin-right: auto; } 
-.alignright { float: right; } 
-.alignleft { float: left; } 
-.aligncenter { display: block; margin-left: auto; margin-right: auto; } 
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 10px 0 0; vertical-align: middle;}
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .larger-font { font-size: 1.1em; }
 
 
