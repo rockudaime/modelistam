@@ -1713,9 +1713,8 @@
 			top: 12px;
 			width: 25px;
 			height: 10px;
-			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAKCAYAAABblxXYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAACySURBVHjatFIxCoQwENwctiJp7ATJB/R5uRfEF9w9KZbBKm3SaGFzD4hjcycqFsceN7Cw7MAMw6wAQAyY3X4/kzdiIsaoLwx+Ex3Hkbz3+p30IJxdOX2Duq7JWkvzPOumaWKe5xsnABjnnOYIhxDo00lVVaSUIillx45/LnhZlu0mALDiT9Ok+74nKSW1bfsqiuJ5cGSMsdZiGAaklB4AzJ7PuPHLsiSlVHf1q+Ifz78OAJ2bgcxAsuFLAAAAAElFTkSuQmCC');
+			background-image: url('images/svg/arrow-right.svg');
 			background-repeat: no-repeat;
-
 		}
 
 		span {
@@ -1728,14 +1727,16 @@
     &-next {
         color: $text-grey;
     }
+
 	&-menu-btn {
-        font: 16px $main-font-semibold;
+        font: 16px $main-font;
         background: #1581be url(images/header-menu-down-icon.png) no-repeat right 12px top 50%;
         max-width: 107px;
         color: #fff;
         text-align: left;
         padding: 5px 33px 5px 9px;
         box-sizing: border-box;
+        line-height: 22px;
 	}
 }
 /* end of header.scss*/
