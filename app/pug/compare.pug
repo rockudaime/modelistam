@@ -41,9 +41,21 @@ html(lang="ru")
 						a(href="#").compare__header-link
 							i.icon.icon--paper-plane.compare__header-icon
 							span Отправить на почту
-						a(href="#").compare__header-link
+						a(href="#").compare__header-link.compare__header-link--delete
 							i.icon.icon--close.compare__header-icon
 							span Удалить всё
+						// Всплывающий блок редактирования товара
+						div.popup-back-wrapper
+							.popup-back.popup-bcart__product-back
+								.delete-detail-block
+									a(href="#").page-cart__delete_checkbox
+										i
+										span Подтвердить удаление товаров
+								.close-popup
+									a(href="#" rel="#").come-back
+										i
+										span Оставить товары
+
 				section.compare-items
 					.compare-items__inner.clearfix
 						.mobile-custom-select.compare-custom-select Багги
@@ -393,14 +405,39 @@ html(lang="ru")
 
 
 
-		.prefooter
-			.container
+
 				// signup block
-				.h-signup
-					p.h-signup__heading Получайте только акции и важные новости
-					form.h-signup__form
-						input.h-signup__email-input(type="email", placeholder="Эл. почта для рассылки", required)
-						input.h-signup__submit(type="submit", value="Держите в курсе")
-					p.h-signup__form-caption 1 раз в неделю. Без спама
+		include includes/footer-signup.pug
 
 		include includes/footer.pug
+
+		.popup-outer
+			section.popup-b.popup-b__compare#sendCompareProductPopup
+				.popup-b__header
+					h2.popup-b__heading Отправлено!
+				.popup-b__content
+					p.
+						Александра, список подобранных вами товаров отправлен на почту <span class="popup-b__content-email">firstname.lastname@gmail.com</span>.
+					p.
+						Если у вас остались вопросы, мы можем <a href="#" data-popup-target="id" class="popup-b__callback">перезвонить вам</a>.<br>
+						Наши операторы имеют техническое образование и хорошо разбираются в технике.
+						Они смогут оперативно помочь вам подыскать подходящий вариант.
+					a.popup-b__more(href="#") Вернуться к покупкам
+				a.popup-b__close(href="#")
+
+
+			section.popup-b.popup-b__compare#enterEmailComparePopup
+				.popup-b__header
+					h2.popup-b__heading Отправить товары на почту
+				.popup-b__content
+					p.
+						Список подобранных товаров удобно хранить под рукой на своей почте, 
+						если вам нужно больше времени для принятия решения.
+				.product-add__fast-order.pa-fast-order.clearfix
+						.form-group
+							input(type="text" placeholder="Эл. почта" name="Contacts" required).pa-fast-order__field.form-control
+						.form-group
+							input(type="text" placeholder="Ваше имя" name="Name" required).pa-fast-order__field.form-control
+						.form-group
+							input(type="submit" value="Отправить" ).pa-fast-order__form-btn
+				a.popup-b__close(href="#")

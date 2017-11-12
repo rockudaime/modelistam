@@ -107,5 +107,14 @@ $(function() {
       }
     });
   }
+
+  //  Стили для обработки всплывающего окна очистки списка
+	//  при нажатии на кнопку удалить все. 
+		$(".compare__header-link--delete").on("click", function (e) {
+			e.preventDefault();
+			var ppBlock = $(this).parent().find('.popup-back');
+			ppBlock.show();
+			ppBlock.parent().addClass("in-tr-background");
+		});
 });
 
