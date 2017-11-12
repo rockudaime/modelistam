@@ -14,6 +14,18 @@
 
 .compare__header {
     margin-bottom: 14px;
+
+    .in-tr-background {
+        position: relative;
+    }
+
+    .popup-bcart__product-back .delete-detail-block {
+        border-bottom: 1px dashed #c2c2c2;
+    }
+
+    .close-popup {
+        border-bottom: 0;
+    }
 }
 
 .compare__header-title {
@@ -42,6 +54,11 @@
         line-height: 16px;
     }
 }
+
+.compare__header-link:first-child span {
+    border-bottom-style: solid;
+}
+
 .icon--circle-plus {
     background: url("images/svg/icon-plus.svg") no-repeat 0 0;
 }
@@ -342,9 +359,6 @@
 
         @media (min-width: $desktop-min) {
             align-items: stretch;
-            &:first-child {
-                // border-left: 1px solid #eaeaea;
-            }
         }
     }
 }
@@ -414,6 +428,85 @@
                 bottom: 0;
                 top: 4px;
             }
+        }
+    }
+}
+
+// .popup-outer {
+//     display: block;
+// }
+
+.popup-b.popup-b__compare {
+
+    @media(min-width: $desktop-min) {
+        margin-top: 250px;
+        max-width: 760px;
+    }
+
+    .popup-b__header {
+        background: url('images/svg/icon-send-blue.svg') 32px 55% no-repeat;
+        padding-left: 70px;
+        padding-bottom: 19px;
+        margin-bottom: 18px;
+        border-bottom: 1px dashed #c2c2c2;
+    }
+
+    .popup-b__heading {
+
+        @media (min-width: $tablet-min) {
+            line-height: 33px;
+        }
+    }
+
+    .popup-b__content {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+
+        p {
+            font-size: 15px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        &-email {
+            background: #f8e9a2;
+        }
+    }
+
+    .popup-b__callback {
+        transition: .1s border ease-in;
+        text-decoration: none;
+        color: #a6bccd;
+        color: #346cab;
+        border-bottom: 1px solid #a6bccd;
+
+        &:hover {
+            border-color: #346cab;
+        }
+    }
+
+    .popup-b__more {
+        background: url('images/svg/arrow-left-blue.svg') 0 50% no-repeat;
+        padding-left: 30px;
+        font-family: $main-font-semibold;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        @media (min-width: $tablet-min) {
+            margin-bottom: 0;
+        }
+    }
+
+    .pa-fast-order {
+        padding-top: 35px;
+        padding-bottom: 15px;
+    }
+
+    .pa-fast-order__form-btn {
+        @media (min-width: $tablet-min) {
+            max-width: 135px;
         }
     }
 }
