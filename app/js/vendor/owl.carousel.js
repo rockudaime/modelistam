@@ -2804,6 +2804,21 @@
 		this._controls = {};
 
 		/**
+		 * Current state information for the drag operation.
+		 * @todo #261
+		 * @protected
+		 */
+		this._drag = {
+			time: null,
+			target: null,
+			pointer: null,
+			stage: {
+				start: null,
+				current: null
+			},
+			direction: null
+		};
+		/**
 		 * Markup for an indicator.
 		 * @protected
 		 * @type {Array.<String>}
@@ -2826,6 +2841,8 @@
 			prev: this._core.prev,
 			to: this._core.to
 		};
+
+
 
 		/**
 		 * All event handlers.
@@ -2924,6 +2941,15 @@
 				.find('.owl-custom-scrollbar')
 				.on('mousedown.owl.core', $.proxy(function (event) {
 					console.log('mousedown');
+					var stage = null;
+
+
+
+					this._drag.time = new Date().getTime();
+					this._drag.target = $(event.target);
+					this._drag.stage.start = stage;
+					this._drag.stage.current = stage;
+					this._drag.pointer = this.pointer(event);
 				}, this));
 		}
 

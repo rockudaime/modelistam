@@ -453,7 +453,7 @@ h3.cabinet-title {
     padding-bottom: 31px;
     padding-left: 16px;
     position: relative;
-    
+
 
     border-bottom: 1px dashed #c2c2c2;
 
@@ -597,9 +597,9 @@ h3.cabinet-title {
             a {
                 // background: url(images/personal-cabinet/spritesheet.png) no-repeat -9px -623px;
             }
-            
+
         }
-        
+
     }
 
     &__form {
@@ -638,7 +638,7 @@ h3.cabinet-title {
         margin: 0;
         margin-left: 4px;
         border: 0;
-        box-shadow: 0;
+        box-shadow: none;
     }
 }
 
@@ -847,7 +847,7 @@ h3.cabinet-title {
     }
 }
 .profile-form-add-phone {
-    
+
 
     @media (min-width: 768px) {
         position: absolute;
@@ -1026,10 +1026,10 @@ h3.cabinet-title {
 .cabinet-subscription {
 
     &__item {
-        
+
 
         @media (min-width: 0px)  and (max-width: 520px){
-            margin-right: 12px;       
+            margin-right: 12px;
             &:nth-child(2n) {
                 margin-right: 0;
             }

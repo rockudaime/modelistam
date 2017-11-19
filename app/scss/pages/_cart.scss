@@ -28,7 +28,7 @@ $form-border: 1px solid #dcd5bd;
 	}
 	&__inner {
 		height: 72px;
-		border-bottom: 1px solid $border-color;	
+		border-bottom: 1px solid $border-color;
 	}
 
 	&__logo.header-logo {
@@ -38,7 +38,7 @@ $form-border: 1px solid #dcd5bd;
 		img {
 			vertical-align: middle;
 		}
-		
+
 		svg {
 			width: 170px;
 			height: 100%;
@@ -115,14 +115,14 @@ $form-border: 1px solid #dcd5bd;
 .cart-content {
 	position: relative;
 	margin: 0 -10px;
-	
+
 	@media (min-width: 420px) {
 		margin-left: 0;
 		margin-right: 0;
 	}
 }
 .order-checkout-content {
-	
+
 	.popup-login {
 		top: -50px;
 		z-index: 999;
@@ -271,7 +271,8 @@ $form-border: 1px solid #dcd5bd;
 				background-position: right -10px top -4px;
 			}
 		}
-		&.required:valid {
+		// &.required:valid,
+		&.valid {
 			@extend .checkout-form__field.valid--icon;
 		}
 
@@ -283,11 +284,11 @@ $form-border: 1px solid #dcd5bd;
 			outline: 0;
 			padding: 0 8px;
 
-			&.required:invalid {
+			&.required.invalid {
 				background-position: right 9px  top 50%;
 				padding-right: 24px;
 			}
-			&.required:valid,
+			// &.required:valid,
 			&.valid {
 				padding: 0 9px;
 				padding-right: 25px;
@@ -447,7 +448,7 @@ $form-border: 1px solid #dcd5bd;
 		}
 	}
 
-	
+
 }
 .toggleLink {
 	font-size: 15px;
@@ -647,7 +648,7 @@ $form-border: 1px solid #dcd5bd;
 	}
 }
 .cart-recomended-goods {
-	
+
 	font-size: 13px;
 
 	&__heading {
