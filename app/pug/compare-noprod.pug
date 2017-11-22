@@ -1,0 +1,57 @@
+doctype html
+html(lang="ru")
+	head
+		title Сравнение
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		//- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/assets/owl.carousel.min.css")
+		link(rel="stylesheet" href="dist/normalize.css")
+		link(rel="stylesheet" href="dist/template_styles.css")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.5/owl.carousel.min.js")
+		script(src="dist/js/vendor/owl.carousel.js")
+		script(src="dist/js/vendor/modernizr-2.8.3.min.js")
+	
+		// main script
+		script(src="dist/js/base/all.js")
+		script(src="dist/js/pages/compare.js")
+
+	body
+		include includes/header.pug
+		.container
+			// ХЛЕБНЫЕ КРОШКИ
+			section.breadcrumbs
+				a(href="#").breadcrumbs-item.breadcrumbs-menu-btn.btn Каталог
+				a(href="#").breadcrumbs-item
+					span.bb-solid Главная
+				span Сравнение
+			include includes/main-nav.pug
+
+		main.compare-content
+			include mixins/mixins.pug
+			.container
+				header.compare__header.clearfix
+					h2.pagetitle.compare__header-title.fl_l Сравнение
+				section.compare-items
+					.compare-items__inner.clearfix
+						.mobile-custom-select.compare-custom-select Багги
+						ul.compare-menu.mobile-custom-options
+							li.compare-menu__item.compare-menu__item-mobile.active(tabindex="0", data-target-class="baggy")
+								span Багги
+									| 
+									span.compare__items-quantity
+							li.compare-menu__item.compare-menu__item-mobile(tabindex="0", data-target-class="rally")
+								span Ралли
+									| 
+									span.compare__items-quantity 8
+							li.compare-menu__item.compare-menu__item-mobile(tabindex="0", data-target-class="ships")
+								span Яхты
+									| 
+									span.compare__items-quantity 2
+						.compare__items-content
+							p.compare__items-content--description В категории Багги нет товаров для сравнения
+							a(href="#").compare__items-content--link Посмотреть все Багги на сайте<i class="compare__items-content--link-icon"></i>
+		include includes/footer-signup.pug
+		include includes/footer.pug
