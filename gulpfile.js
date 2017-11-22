@@ -19,7 +19,7 @@ let reload        = browserSync.reload;
 
 
 let paths = {
-  html: ['product.html'],
+  html: ['home.html'],
   pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']

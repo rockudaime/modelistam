@@ -43,6 +43,14 @@
     @media (min-width: 544px) {
         margin: 0 0 29px;
     }
+    @media (min-width: $tablet-min) {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    @media (min-width: 994px) {
+        margin: 0 0 29px;
+    }
 }
 .home-slider {
     margin-bottom: 6px;
@@ -492,7 +500,7 @@
         }
         @media (min-width: 994px) {
             width: 145px;
-            
+
         }
 
         @media (min-width: 1235px) {
