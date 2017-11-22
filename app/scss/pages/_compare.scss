@@ -432,10 +432,6 @@
     }
 }
 
-// .popup-outer {
-//     display: block;
-// }
-
 .popup-b.popup-b__compare {
 
     @media(min-width: $desktop-min) {
@@ -505,8 +501,51 @@
     }
 
     .pa-fast-order__form-btn {
+        line-height: 40px;
+ 
         @media (min-width: $tablet-min) {
             max-width: 135px;
+        }
+    }
+}
+
+.compare__items-content {
+    margin-top: 20px;
+
+    @media(min-width: $tablet-min) {
+        float: left;
+        margin: 33px 0 0 180px;
+        min-height: 285px;
+    }
+
+    @media(min-width: $desktop-min) {
+        margin-left: 245px;
+    }
+
+    &--description {
+        font: 20px $main-font;
+        margin-bottom: 15px;
+    }
+
+    &--link {
+        font: 15px $main-font;
+        display: inline-block;
+        line-height: 15px;
+        color: #346cab;
+        border-bottom: 1px solid #a6bccd;
+        position: relative;
+
+        @media (min-width: $tablet-min) {
+            margin-left: 100px;
+        }
+
+        &-icon {
+            position: absolute;
+            top: 4px;
+            right: -23px;
+            width: 15px;
+            height: 9px;
+            background: url('images/svg/arrow-right-blue.svg') no-repeat 0 50%;
         }
     }
 }
