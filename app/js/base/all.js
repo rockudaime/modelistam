@@ -58,7 +58,7 @@ $(function () {
 					}
 				}
 
-				// Desctop menu 
+				// Desctop menu
 				if (menu.isDesctop) {
 					$('.breadcrumbs-menu-btn').on('click', function (e) {
 						e.preventDefault();
@@ -115,6 +115,7 @@ $(function () {
 							&& !menu.headerBtn.is(e.target)) // ... nor a descendant of the container
 						{
 							menu.menuBlock.hide();
+							menu.navLink.removeClass('active');
 							menu.headerBtn.removeClass('active');
 						}
 					}
@@ -211,7 +212,7 @@ $(function () {
 		profilePopupCloseLink.on('click', closePopupHandler);
 
 		//  Стили для обработки всплывающего окна редактирования корзины
-		//  при нажатии на крестик в провом верхнем углу. 
+		//  при нажатии на крестик в провом верхнем углу.
 		$(".bcart-product__delete").on("click", function (e) {
 			e.preventDefault();
 			var ppBlock = $(this).parent().find('.popup-back');
