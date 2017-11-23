@@ -18,8 +18,8 @@ let cleanCSS      = require('gulp-clean-css');
 let reload        = browserSync.reload;
 
 
-let paths = {
-  html: ['product.html'],
+var paths = {
+  html: ['category-product.html'],
   pug: ['app/pug/*.pug'],
   css: ['app/scss/**/*.scss'],
   script: ['app/js/**/*.js']
