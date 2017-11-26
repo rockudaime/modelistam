@@ -4216,18 +4216,27 @@ div.star-rating-hover a{background-position:0 0px}
 div.nav-prev {
   position: absolute;
   left: 0;
-  background-image: url(images/ui-icon-catalog-prev-hover.png);
+  background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
+
+  &:hover {
+    background: rgb(52, 108, 171) url(images/ui-icon-catalog-prev-hover.png) no-repeat center center;
+  }
 }
 .nav-prev.disabled {
-  background: #f5f5f5 url(images/ui-icon-catalog-prev.png) no-repeat center center;
+  display: none;
 }
 
 div.nav-next {
   position: absolute;
   right: 0;
+  background: #f5f5f5 url(images/ui-icon-catalog-next.png) no-repeat center center;
+
+  &:hover {
+    background: rgb(52, 108, 171) url(images/ui-icon-catalog-next-hover.png) no-repeat center center;
+  }
 }
 .nav-next.disabled {
-  background: #f5f5f5 url(images/ui-icon-catalog-next.png) no-repeat center center;
+  display: none;
 }
 
 .full-image-popup {

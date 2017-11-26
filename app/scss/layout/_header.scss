@@ -380,13 +380,20 @@
     border: 0;
     outline: 0;
     background-color: #0082c2;
-    @media (min-width: 768px) {
+
+    @media (min-width: 544px) {
+         margin-left: 0;
+    }
+
+    @media (min-width: $tablet-min) {
         margin-left: -15px;
     }
+
     @media (min-width: 994px) {
     	margin-left: 0;
     }
-    @media (min-width: 1235px) {
+
+    @media (min-width: $desktop-min) {
         display: none;
     }
     &__icon {
